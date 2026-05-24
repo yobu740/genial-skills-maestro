@@ -318,7 +318,19 @@ Cada pregunta debe ser apropiada al grado y al final añade una clave de respues
       { name: 'tipo',      label: 'Formato',   type: 'select', options: ['Selección múltiple', 'Respuesta corta', 'Mixto (selección + procedimiento)'], default: 'Mixto (selección + procedimiento)' },
           { name: 'estandares', type: 'standards', subject: 'Matemáticas', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER + ' Cuando incluyas matemáticas, usa LaTeX entre $...$ para fórmulas inline y $$...$$ para bloques.',
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
+
+Para esta herramienta de matemáticas específicamente:
+- Usa LaTeX entre $...$ inline y $$...$$ para bloques (fracciones, exponentes, ecuaciones). Para fracciones SIEMPRE $\\frac{a}{b}$, nunca "a/b" en texto plano.
+- Las imágenes [IMAGE: ...] son útiles para CONTEXTO VISUAL de problemas (no para mediciones precisas). Usa estilo: "math textbook illustration, clean, friendly, age-appropriate, single concept per image, white background".
+- Buenos usos de imagen en exámenes de matemáticas:
+  • Problemas verbales con contexto (3 niños compartiendo pizza, productos en mercado, etc.)
+  • Modelos visuales de fracciones (barras, círculos divididos, modelos de área)
+  • Geometría conceptual (figuras 3D, simetrías, transformaciones)
+  • Patrones y secuencias visuales
+  • Coordenadas y planos cartesianos (pero las medidas exactas siempre en LaTeX)
+- NO uses imagen para: ángulos exactos en grados, mediciones precisas, números específicos en gráficas — para eso describe con LaTeX o ASCII art.
+- Idealmente 2-4 imágenes por examen de 10 problemas, en los problemas que más se benefician visualmente.`,
     buildPrompt: (f) => `Crea un examen de matemáticas para ${f.grado} grado sobre "${f.tema}".
 Cantidad: ${f.cantidad || 10} problemas.
 Formato: ${f.tipo}.
@@ -326,6 +338,7 @@ Formato: ${f.tipo}.
 Incluye:
 1. **Instrucciones para el estudiante** (1-2 líneas)
 2. **Problemas numerados** con dificultad progresiva (fácil → difícil)
+   - Para los problemas que se beneficien de contexto visual (verbales, geometría conceptual, fracciones, patrones), incluye un tag [IMAGE: prompt en inglés] como apoyo. Mira las reglas en el system prompt.
 3. Espacio sugerido para trabajo cuando aplique
 4. **--- HOJA DE RESPUESTAS ---** al final con explicación paso a paso de cada problema, no solo la respuesta`,
   },
