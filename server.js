@@ -1071,37 +1071,67 @@ app.post('/api/generate-image', async (req, res) => {
 
   const finalPrompt = style ? `${prompt}, ${style}` : prompt;
   const t0 = Date.now();
+
+  // Retry on 429 (rate-limited) with exponential backoff.
+  // Replicate free tier: 6 req/min with burst 1 while under $5 credit.
+  const MAX_ATTEMPTS = 5;
+  let lastError = null;
+  let attempt = 0;
+
   try {
-    const upstream = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${REPLICATE_API_TOKEN}`,
-        'Content-Type':  'application/json',
-        'Prefer':        'wait',
-      },
-      body: JSON.stringify({
-        input: {
-          prompt: finalPrompt.slice(0, 500),  // FLUX-schnell soft cap
-          aspect_ratio,
-          num_outputs: 1,
-          output_format: 'webp',
-          output_quality: 85,
-          go_fast: true,
+    while (attempt < MAX_ATTEMPTS) {
+      attempt++;
+      const upstream = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${REPLICATE_API_TOKEN}`,
+          'Content-Type':  'application/json',
+          'Prefer':        'wait',
         },
-      }),
-    });
+        body: JSON.stringify({
+          input: {
+            prompt: finalPrompt.slice(0, 500),
+            aspect_ratio,
+            num_outputs: 1,
+            output_format: 'webp',
+            output_quality: 85,
+            go_fast: true,
+          },
+        }),
+      });
 
-    const data = await upstream.json();
-    if (!upstream.ok) {
-      return res.status(upstream.status).json({ error: data?.detail || data?.error || `Replicate ${upstream.status}` });
-    }
-    if (data.status === 'failed' || data.error) {
-      return res.status(502).json({ error: data.error || 'Replicate prediction failed', detail: data.logs });
-    }
-    const url = Array.isArray(data.output) ? data.output[0] : data.output;
-    if (!url) return res.status(502).json({ error: 'No output URL returned', status: data.status });
+      if (upstream.status === 429) {
+        // Parse reset hint when present, else use exponential backoff (3s, 6s, 12s, 24s).
+        const retryAfterHdr = Number(upstream.headers.get('retry-after')) || 0;
+        const data = await upstream.json().catch(() => ({}));
+        const hintFromMsg = (data?.detail || '').match(/(\d+)\s*s/);
+        const waitMs = (retryAfterHdr || Number(hintFromMsg?.[1]) || (3 * 2 ** (attempt - 1))) * 1000;
+        lastError = data?.detail || 'Rate limited by Replicate';
+        if (attempt < MAX_ATTEMPTS) {
+          await new Promise(r => setTimeout(r, Math.min(waitMs, 30_000)));
+          continue;
+        }
+        return res.status(429).json({ error: lastError, attempts: attempt });
+      }
 
-    res.json({ url, took_ms: Date.now() - t0, model: 'black-forest-labs/flux-schnell', prompt: finalPrompt });
+      const data = await upstream.json();
+      if (!upstream.ok) {
+        return res.status(upstream.status).json({ error: data?.detail || data?.error || `Replicate ${upstream.status}` });
+      }
+      if (data.status === 'failed' || data.error) {
+        return res.status(502).json({ error: data.error || 'Replicate prediction failed', detail: data.logs });
+      }
+      const url = Array.isArray(data.output) ? data.output[0] : data.output;
+      if (!url) return res.status(502).json({ error: 'No output URL returned', status: data.status });
+
+      return res.json({
+        url,
+        took_ms: Date.now() - t0,
+        model: 'black-forest-labs/flux-schnell',
+        prompt: finalPrompt,
+        attempts: attempt,
+      });
+    }
   } catch (e) {
     res.status(500).json({ error: String(e) });
   }
