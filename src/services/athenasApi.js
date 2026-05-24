@@ -112,8 +112,15 @@ export async function searchLessons({
     const j = await r.json();
     if (!r.ok || j.error) throw new Error(j.error || `HTTP ${r.status}`);
     if (j.fromMock) return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
-    // Normalize: keep the full Standards + Definitions arrays so consumers
-    // can render the real lesson content (not just title metadata).
+    // Normalize: keep ALL pedagogical content the LLM needs to actually
+    // adapt/build on the real lesson — not just metadata.
+    // Confirmed fields via live API inspection on sci-sp/2:
+    //   LessonDetailModel.Description   — lesson body in HTML
+    //   LessonObjectiveModelList[].Desc — learning objectives
+    //   LessonDefinitionModelList[].{Name,Desc} — vocab + definitions (HTML)
+    //   LessonExampleModelList[].{Name,Desc}    — concept examples (HTML w/ images)
+    //   LessonPerformanceTaskModelList[].Desc   — performance tasks
+    //   LessonStrategyModelList[].Desc          — teaching strategies
     const lessons = (j.lessons || []).map(L => ({
       Id:           L.LessonModel?.Id,
       LessonNo:     L.LessonModel?.LessonNo,
@@ -122,8 +129,14 @@ export async function searchLessons({
       LessonTitle:  L.LessonModel?.LessonTitle,
       IsGapClosing: L.LessonModel?.IsGapClosing,
       Blueprint:    L.LessonModel?.Blueprint,
-      Standards:    L.LessonStandardModelList || [],
-      Definitions:  L.LessonDefinitionModelList || [],
+      Standards:    L.LessonStandardModelList     || [],
+      Definitions:  L.LessonDefinitionModelList   || [],
+      Description:  L.LessonDetailModel?.Description || '',
+      Objectives:   L.LessonObjectiveModelList    || [],
+      Examples:     L.LessonExampleModelList      || [],
+      PerformanceTasks: L.LessonPerformanceTaskModelList || [],
+      Strategies:   L.LessonStrategyModelList     || [],
+      Themes:       L.LessonTransversalThemeModelList || [],
     }));
     return { lessons, total: j.total, fromMock: false };
   } catch (e) {

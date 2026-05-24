@@ -178,17 +178,24 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
                   type="button"
                   className="alp-item"
                   onClick={() => handlePick({
-                    // Full normalized shape so parent can build a rich reference block
-                    id:           l.Id,
-                    title:        l.LessonTitle,
-                    lessonNo:     l.LessonNo,
-                    subjectCode:  l.SubjectCode,
-                    levelCode:    l.LevelCode,
-                    blueprint:    l.Blueprint === '1',
-                    isGapClosing: l.IsGapClosing === '1',
-                    standards:    Array.isArray(l.Standards) ? l.Standards : [],
-                    definitions:  Array.isArray(l.Definitions) ? l.Definitions : [],
-                    // legacy convenience fields (first standard)
+                    // Full normalized shape — the formatter in ToolModal builds
+                    // a rich markdown reference block from all of this.
+                    id:               l.Id,
+                    title:            l.LessonTitle,
+                    lessonNo:         l.LessonNo,
+                    subjectCode:      l.SubjectCode,
+                    levelCode:        l.LevelCode,
+                    blueprint:        l.Blueprint === '1',
+                    isGapClosing:     l.IsGapClosing === '1',
+                    standards:        Array.isArray(l.Standards)        ? l.Standards        : [],
+                    definitions:      Array.isArray(l.Definitions)      ? l.Definitions      : [],
+                    description:      l.Description || '',
+                    objectives:       Array.isArray(l.Objectives)       ? l.Objectives       : [],
+                    examples:         Array.isArray(l.Examples)         ? l.Examples         : [],
+                    performanceTasks: Array.isArray(l.PerformanceTasks) ? l.PerformanceTasks : [],
+                    strategies:       Array.isArray(l.Strategies)       ? l.Strategies       : [],
+                    themes:           Array.isArray(l.Themes)           ? l.Themes           : [],
+                    // legacy convenience (first standard)
                     standard:     l.Standards?.[0]?.Code || null,
                     objective:    l.Standards?.[0]?.Description || '',
                   })}

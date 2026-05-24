@@ -42,17 +42,93 @@ function formatLessonAsReference(lesson) {
     });
   }
 
+  // Lesson body (HTML stripped) — the actual pedagogical text the teacher uses
+  if (lesson.description) {
+    const desc = stripDefinitionHtml(lesson.description);
+    if (desc) {
+      lines.push('');
+      lines.push('Descripción / cuerpo de la lección:');
+      lines.push(desc.length > 1500 ? desc.slice(0, 1500) + '…' : desc);
+    }
+  }
+
+  if (lesson.objectives?.length) {
+    lines.push('');
+    lines.push(`Objetivos de aprendizaje (${lesson.objectives.length}):`);
+    lesson.objectives.forEach(o => {
+      const text = stripDefinitionHtml(o.Desc || o.Description || '');
+      if (text) lines.push(`  • ${text}`);
+    });
+  }
+
   if (lesson.definitions?.length) {
     lines.push('');
     lines.push(`Conceptos / Definiciones (${lesson.definitions.length}):`);
     lesson.definitions.forEach(d => {
-      const term = d.DefinitionTitle || d.Term || d.Title || d.Name || '';
-      const body = d.DefinitionText  || d.Definition || d.Description || d.Body || '';
+      // Athenas: Name = term, Desc = body (HTML, may contain <audio> + entities)
+      const term = d.Name || d.DefinitionTitle || d.Term || d.Title || '';
+      const body = stripDefinitionHtml(d.Desc || d.DefinitionText || d.Definition || d.Description || d.Body || '');
       if (term || body) lines.push(`  • ${term}${term && body ? ': ' : ''}${body}`.trim());
     });
   }
 
+  if (lesson.examples?.length) {
+    lines.push('');
+    lines.push(`Ejemplos pedagógicos (${lesson.examples.length}):`);
+    lesson.examples.forEach(e => {
+      const name = e.Name || e.Title || '';
+      const body = stripDefinitionHtml(e.Desc || e.Description || '');
+      if (name || body) {
+        const truncated = body.length > 280 ? body.slice(0, 280) + '…' : body;
+        lines.push(`  • ${name}${name && truncated ? ': ' : ''}${truncated}`.trim());
+      }
+    });
+  }
+
+  if (lesson.performanceTasks?.length) {
+    lines.push('');
+    lines.push(`Tareas de desempeño sugeridas (${lesson.performanceTasks.length}):`);
+    lesson.performanceTasks.forEach(t => {
+      const text = stripDefinitionHtml(t.Desc || t.Description || t.Name || '');
+      if (text) lines.push(`  • ${text}`);
+    });
+  }
+
+  if (lesson.strategies?.length) {
+    lines.push('');
+    lines.push(`Estrategias de enseñanza (${lesson.strategies.length}):`);
+    lesson.strategies.forEach(s => {
+      const text = stripDefinitionHtml(s.Desc || s.Description || s.Name || '');
+      if (text) lines.push(`  • ${text}`);
+    });
+  }
+
+  if (lesson.themes?.length) {
+    const themeText = lesson.themes.map(t => stripDefinitionHtml(t.Desc || t.Name || '')).filter(Boolean).join(', ');
+    if (themeText) {
+      lines.push('');
+      lines.push(`Temas transversales: ${themeText}`);
+    }
+  }
+
   return lines.join('\n');
+}
+
+/**
+ * Athenas returns definition bodies as HTML wrapped in <p> tags, often with
+ * embedded <audio> elements pointing to /assets/audio-resources/.../foo.mp3.
+ * For an LLM prompt we want plain readable text — strip tags, drop audio,
+ * decode common entities, collapse whitespace.
+ */
+function stripDefinitionHtml(html) {
+  if (!html) return '';
+  return String(html)
+    .replace(/<audio[\s\S]*?<\/audio>/gi, '')              // drop audio players
+    .replace(/<[^>]+>/g, ' ')                               // strip all other tags
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function buildAthenasAssistantPrompt(rawPrompt, action) {
