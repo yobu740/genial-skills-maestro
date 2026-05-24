@@ -1,0 +1,22 @@
+# Render deployment manifest — autoconfigures the service when the repo is connected.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: genial-skills-maestro
+    runtime: node
+    plan: free                      # upgrade to "starter" ($7/mo) to remove cold-start spin-down
+    region: oregon                  # change to nearest region if you prefer
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: OPENROUTER_API_KEY
+        sync: false                 # ← MUST be set in Render dashboard (never committed)
+      - key: PORT
+        value: 8001
+      - key: WEEKLY_PLANS_BASE_URL
+        sync: false                 # ← Optional. Set to your Cloudflare R2 public URL once PDFs are uploaded.
+    healthCheckPath: /api/health
+    autoDeploy: true

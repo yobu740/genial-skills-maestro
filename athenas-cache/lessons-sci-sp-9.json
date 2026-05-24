@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204696",
+    "LessonNo": "4",
+    "LessonTitle": "Movimiento y fuerza: leyes de Newton",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204695",
+    "LessonNo": "3",
+    "LessonTitle": "Energía y sus transformaciones",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  }
+]

@@ -1,0 +1,858 @@
+[
+  {
+    "code": "8.AO.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Participa en grupos variados en los que aporta y colabora de diferentes formas, intercambia ideas, desarrolla nueva comprensión y resuelve problemas hacia una meta en común.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.1.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Participa en una variedad de discusiones (en parejas, en grupos), guiadas por el docente, sobre temas, textos o asuntos relacionados, y aporta sus ideas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.1.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Inicia discusiones; lee y estudia el material con anticipación; comenta y hace referencia a la evidencia sobre el tema o texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.1.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Sigue las reglas de las discusiones entre compañeros; establece metas específicas, fechas límite y funciones individuales. Propone y responde a preguntas específicas; elabora los detalles y aporta a la discusión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.1.1c",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Hace preguntas para suscitar elaboración, para mantener y aportar a la discusión dentro del tema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.2",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Integra y evalúa la información presentada en diversos medios y formatos; utiliza gráficas y recursos tecnológicos para enriquecer la presentación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.2.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Expone el propósito de la información presentada por diversos medios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.3",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Evalúa la actitud del hablante, el razonamiento, el uso de evidencia y retórica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.3.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Interpreta el argumento del hablante al evaluar su exposición oral, el razonamiento y la relevancia de la evidencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.4",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Demuestra el aprendizaje y el conocimiento del valor de la expresión al considerar la ética, los valores y la virtud humana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.4.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Interpreta las técnicas de persuasión en textos orales y en la publicidad, y asume una postura crítica sobre su valor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.5",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Presenta información, hallazgos y evidencia para que el receptor pueda seguir la línea de razonamiento, la organización, el desarrollo y el estilo apropiado para la tarea, el propósito y la audiencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.5.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Presenta hallazgos y enfatiza los puntos prominentes de manera enfocada y coherente, con descripciones, hechos, detalles y ejemplos pertinentes; establece, de manera apropiada, contacto visual, usa un volumen adecuado y pronuncia con claridad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.6",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Utiliza efectivamente los medios, los recursos visuales y las destrezas tecnológicas para crear y mejorar las presentaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.6.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Utiliza estratégicamente los medios digitales para mejorar las presentaciones y evidenciar o sustentar el trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.7",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Adapta el lenguaje a diferentes contextos, realiza tareas que fomentan la comunicación oral y utiliza medios informativos para demostrar dominio del registro formal y coloquial del dialecto puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.7.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Adapta el habla y el lenguaje a diversos contextos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.7.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Distingue el uso de los diferentes registros (coloquial, familiar, semiformal, formal y culto).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.7.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Maneja diversas tipologías de discursos orales (charla, informe oral, narración, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.8",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Utiliza las expresiones no verbales para enfatizar y apoyar el discurso oral de acuerdo con el contexto y la audiencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.8.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Identifica y demuestra la relación entre los mensajes verbales y no verbales del hablante. Utiliza y deduce mensajes e información basados en la actitud y el lenguaje verbal y no verbal del hablante.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.AO.8.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "AO",
+    "expectation": "Utiliza destrezas comunicativas no verbales, tales como contacto visual, expresiones faciales, gestos y postura, para apoyar el mensaje verbal. Lectura de textos literarios e informativos El estudiante, mediante el dominio de los cinco componentes lingüísticos, examina, organiza y evalúa información de textos literarios e informativos para construir un significado y desarrollar el pensamiento crítico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Lee detenidamente para hacer inferencias lógicas, llegar a conclusiones y establecer conexiones entre diferentes textos; identifica información en conflicto, subjetividad en los puntos de vista (narrador, autor, pares, entre otros); usa evidencia textual para apoyar los resúmenes y las interpretaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.1.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Utiliza estrategias para inferir el significado de diversos textos, al citar información, de forma implícita o explícita, para sustentar ideas, resúmenes, inferencias e interpretaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.2",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Determina la idea central o los temas de un texto; produce un resumen de ideas claves y detalles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.2.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Determina un tema o idea central, analiza su desarrollo mediante el texto, incluido cómo se relaciona con los personajes, el lugar y la trama; provee un resumen objetivo y crítico del texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.3",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Explica las relaciones entre los diferentes textos; analiza cómo estas relaciones influyen en el desarrollo de eventos, individuos y temas universales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.3.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Identifica el uso de técnicas en textos literarios (retrospectiva, presagios, diálogo, detalles sensoriales, descripción, comparaciones y analogías) y en textos informativos (exposición, descripción, argumentación). Explica cómo las técnicas y las estrategias contribuyen al desarrollo del tema y la trama. Interpreta cómo estos revelan aspectos de un personaje, un problema o una situación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.4",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Interpreta palabras y frases utilizadas en el texto; aplica el conocimiento sobre el origen de las palabras (etimología), sus derivados y el lenguaje figurado para determinar significados técnicos, connotativos y denotativos. Evalúa cómo la selección de un vocabulario específico, la sintaxis, el tono y la voz dan forma al significado para sustentar el propósito del texto y del autor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.4.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Determina el significado de las palabras y frases, según se usen en contextos conocidos o nuevos (históricos, culturales, políticos, matemáticos, figurativos, connotativos, técnicos...); analiza el significado y el tono de palabras, analogías y alusiones a otros textos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.5",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Analiza cómo estructuras y patrones específicos del texto dan secuencia a las ideas o afectan el tono, mientras considera las relaciones entre las partes del texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.5.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Compara y contrasta la estructura de dos o más textos literarios o informativos y analiza cómo las diferentes estructuras contribuyen al desarrollo del tema, el argumento, el significado y el estilo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.6",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Reconoce e interpreta cómo los autores utilizan el lenguaje literario, las estrategias narrativas, el estilo del discurso, las técnicas persuasivas y la propaganda para lograr su propósito o presentar su punto de vista y evocar una respuesta emocional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.6.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Analiza cómo las diferencias en el punto de vista de los personajes o del autor crean efectos en el lector o en el propósito del autor en un texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.7",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Integra y evalúa información, incluso visual y cuantitativa, presentada en diversos medios y formatos, para exponer ideas, resolver conflictos y desarrollar una interpretación que va más allá de la que está explícitamente en el texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.7.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Integra y evalúa la información presentada en diversos géneros, medios o formatos (textos, diseño gráfico, ilustraciones, medios impresos, iluminación, edición y sonido en televisión, radio y cine) para generar ideas, resolver conflictos y desarrollar una interpretación que va más allá de la que está explícitamente en el texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.7.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Interpreta y contrasta las ideas representativas de un texto en cualquier medio artístico (adaptaciones e interpretaciones de guiones de escena, cine, televisión y otros medios).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.8",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Delinea, evalúa y critica el argumento y las afirmaciones específicas de un texto, incluida la validez del razonamiento, así como la exactitud, la relevancia y la suficiencia de la información.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.8.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Distingue y analiza entre argumentos subjetivos y objetivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.9",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Analiza dos o más textos que atienden el mismo tema para adquirir conocimiento, comparar los métodos de los autores o determinar cómo estos llegan a conclusiones similares o diferentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.9.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Analiza cómo dos o más textos utilizan temas universales, patrones de eventos, tipos de personajes de los mitos, cuentos tradicionales, obras religiosas o información de múltiples fuentes para desarrollar una comprensión más profunda del tema, y puede describir cómo actualizar el material.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.10",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Evalúa las influencias filosóficas, políticas, religiosas, étnicas y socioeconómicas en una variedad de textos de diferentes periodos y reconoce su impacto sobre cómo se percibe a sí mismo y al mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.10.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Reconoce y evalúa contrastes en los valores culturales, lingüísticos y socioeconómicos presentes en textos literarios sobre temas o eventos similares; comprende que los textos literarios o informativos pueden satisfacer una función social, según la época, la localización y el propósito del autor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.11",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Lee y comprende, independiente y competentemente, textos literarios e informativos de diferentes niveles de complejidad para satisfacer diversos propósitos (por ejemplo: por placer, para ampliar el conocimiento, para resolver un problema, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.LLI.11.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "LLI",
+    "expectation": "Al finalizar el octavo grado, el estudiante lee y comprende textos literarios e informativos de una complejidad apropiada para su edad, con independencia, fluidez y proficiencia. Dominio de la lengua El estudiante demuestra dominio de las normas gramaticales y ortográficas del español al producir con corrección discursos orales y escritos claros, coherentes y cohesivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Demuestra dominio de las normas gramaticales del español al hablar y escribir.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.1.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Demuestra dominio de las normas del español apropiadas para el grado al hablar y escribir.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.1.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Conoce y demuestra la función de cada elemento de la estructura en la oración simple: • frase y oración (unimembre y bimembre). • impersonal, grupo nominal, grupo adjetival, grupo verbal, complemento directo, indirecto y circunstancial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.1.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Reconoce y utiliza cláusulas dentro de oraciones y párrafos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.1.1c",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Reconoce la función y clasificación de las palabras en la oración –al nivel del grado– y las utiliza: sustantivos, artículos, adjetivos, verbos, pronombres, adverbios, preposiciones, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.2",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Demuestra dominio de las normas ortográficas del español al hablar y escribir",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.2.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Demuestra dominio de las normas del español apropiadas para su grado, tales como uso de mayúsculas, puntuación, acentuación, pronunciación, ortografía y sintaxis correcta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.2.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Aplica y utiliza los acentos diacríticos en monosílabos, así como los signos de puntuación de acuerdo con el mensaje del hablante, al traducir los patrones de entonación oral a la escritura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.3",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Aplica el conocimiento del lenguaje para comparar e interpretar el significado o la intención de su uso en diferentes textos y contextos, para seleccionar palabras o frases efectivamente, según el significado o estilo, y para comprender temas complejos al leer o escuchar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.3.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Utiliza el conocimiento del lenguaje, la gramática y las particularidades de la lengua al escuchar, hablar, leer o escribir.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.4",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Determina o aclara el significado de vocabulario (técnico o de dominio específico) mediante el uso de referencias especializadas sobre el texto o el contexto presentado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.4.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Utiliza el contexto como clave para entender el significado de una palabra o frase.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.4.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Utiliza raíces y afijos comunes, griegos y latinos, como claves para entender el significado de una palabra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.4.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Consulta material de referencia general y especializado, tanto digital como impreso, para encontrar la pronunciación de una palabra o frase y determinar o aclarar su significado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.5",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Establece conexiones conceptuales entre palabras y frases, y analiza el significado en diferentes contextos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.5.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Demuestra comprensión del lenguaje figurado, las relaciones entre las palabras y sus diversos significados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.5.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Interpreta lenguaje figurado (ironía, sarcasmo, juegos de palabras...) en contexto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.5.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Utiliza la relación entre palabras particulares para comprender mejor cada una de las palabras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.6",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Adquiere y utiliza una variedad de vocabulario técnico y de dominio específico, suficiente para escuchar, hablar, leer y escribir a un nivel apropiado para la preparación postsecundaria y profesional. Demuestra independencia al identificar vocabulario nuevo o un término desconocido que sea importante para la comprensión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.L.6.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "L",
+    "expectation": "Adquiere y utiliza con exactitud palabras y frases académicas de dominio específico que son apropiadas para el nivel del grado; desarrolla conocimiento sobre el vocabulario al considerar una palabra o frase importante para la comprensión o expresión. Escritura y producción de textos El estudiante es capaz de seguir procesos recursivos e interactivos de escritura para seleccionar, analizar y organizar sus ideas con el objetivo de producir textos literarios e informativos que comuniquen ideas, conceptos, experiencias, valores, sentimientos y emociones de forma clara, precisa, coherente y cohesiva, mientras demuestra dominio de la lengua.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe argumentos y críticas sustentadas con evidencia válida y relevante, y aplica una estructura de organización, fuentes confiables y estrategias retóricas efectivas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe argumentos para apoyar las declaraciones con razones precisas, datos relevantes, citas (evidencia textual) o ejemplos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Redacta las declaraciones sobre un tema y evidencia su perspectiva; reconoce posturas alternas u opuestas; organiza las razones y la evidencia de manera clara y lógica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Selecciona y organiza datos relevantes, evidencia textual o citas y hechos o ejemplos de fuentes exactas y confiables para apoyar las declaraciones o las oposiciones de la audiencia. Usa conectores lógicos al escribir.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1c",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Desarrolla la oración tesis con lenguaje preciso o técnico; utiliza herramientas de transición y preguntas retóricas para crear un efecto y mantiene una posición de autoridad y consistencia en el estilo del discurso y la voz.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1d",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Elabora su razonamiento para una tesis, mediante un lenguaje, preciso o técnico; utiliza herramientas de transición y preguntas retóricas para ese efecto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1e",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Establece y mantiene un estilo formal y una estructura del texto apropiada para textos más largos, según su propósito y género.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.1.1f",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe conclusiones mediante la síntesis de información; resume los puntos clave y la cadena de razonamiento y los vincula a la tesis para reflejar una respuesta a la oposición.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza efectivamente una estructura de organización y múltiples fuentes de referencia para escribir textos informativos y explicativos con el fin de comunicarse y establecer relaciones entre conceptos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe textos informativos o explicativos para examinar un tema y transmitir ideas, conceptos e información mediante la selección, la organización y el análisis del contenido relevante.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza estrategias de organización (organizadores gráficos, bosquejos, entre otros) para analizar la información relacionada con los temas y subtemas (comparación y contraste, causa y efecto, problema y solución).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Desarrolla un tema con claridad y anticipa lo que prosigue; organiza las ideas, conceptos e información en categorías amplias; incluye el formato (por ejemplo: encabezamientos), gráficas (por ejemplo: tablas) y elementos multimedia para ayudar en la comprensión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2.1c",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Desarrolla el tema con datos relevantes, definiciones, detalles concretos, citas y otras características del texto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.2.1d",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza un lenguaje preciso y un vocabulario de dominio específico y especializado para informar o explicar el tema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe narraciones que desarrollan experiencias o eventos reales o imaginarios; toma en consideración la coherencia general de las técnicas literarias, los detalles exactos y auténticos y la secuencia de eventos bien estructurada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe narraciones para desarrollar experiencias o eventos reales o imaginarios mediante técnicas efectivas, detalles descriptivos relevantes y una secuencia de eventos bien estructurada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Emplea estrategias para desarrollar las imágenes, los personajes, la trama, el mensaje o tema central y el estilo del discurso.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Mantiene un punto de vista, el estilo del discurso y una estructura del texto apropiada para el propósito y el género.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1c",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Involucra al lector al establecer el contexto y el tono y al presentar al narrador o a los personajes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1d",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza palabras y frases precisas, detalles descriptivos relevantes, imágenes sensoriales y diálogo para mejorar el tono y complicar la trama; utiliza estrategias de transición para controlar el ritmo y añadir interés (retrospectiva, presagio...).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1e",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza técnicas literarias (ritmo, descripción, reflexión...) para desarrollar los eventos y los personajes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.3.1f",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe una conclusión que siga el curso de las ideas y proporcione al lector un motivo para reflexionar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.4",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Genera, recopila, planifica y organiza ideas para producir una escritura clara y coherente, según la tarea, el género y la audiencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.4.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Produce trabajos escritos claros y coherentes en los que la organización y el desarrollo son apropiados para la tarea, el propósito y la audiencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.5",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Aplica estrategias sofisticadas de edición y revisión a textos completos para clarificar la intención y el significado, darle profundidad a la información y a la técnica de presentación; utiliza reglas gramaticales, letras mayúsculas, puntuación y deletreo apropiado, según el nivel de su grado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.5.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Aplica estrategias de revisión a textos completos para aclarar la intención y el significado y fortalecer el impacto sobre el lector; hace juicios sobre la cabalidad y exactitud de la información, la validez de las fuentes citadas y el estilo del discurso; trata de satisfacer las necesidades de la audiencia (emoción, interés, autoridad moral, potenciales objeciones...).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.5.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Aplica estrategias de edición a textos completos, según el nivel del grado, mediante reglas gramaticales, acentuación, deletreo (identifica y reconoce los grafemas que componen una palabra nueva cuando la escribe), puntuación y mayúsculas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.5.1b",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Evalúa la efectividad de su escritura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.6",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza la tecnología de la información y la comunicación para planificar, hacer borradores, revisar, editar y publicar trabajos escritos, así como para interactuar y colaborar con otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.6.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza la tecnología para escribir borradores, producir y publicar trabajos escritos (cartas, ensayos, poemas, cuentos, entre otros) y vincularlos a las fuentes citadas, así como para interactuar y colaborar con otros; utiliza los medios y las destrezas visuales para crear productos que transmitan nueva comprensión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.7",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Mantiene un registro de sus lecturas personales como evidencia de progreso en la escritura, lo que le permite cumplir con sus metas académicas y personales. Planifica y persevera en aquellas tareas de lectura y escritura que presentan mayor complejidad y extensión mediante criterios y requisitos específicos; se monitorea.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.7.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Establece metas y lleva un registro escrito del progreso y las fechas límite de tareas específicas; define las funciones individuales al redactar textos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.8",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Lleva a cabo proyectos, tareas e investigaciones en los que organiza, analiza e integra información variada y compleja, así como elementos significativos del texto según el tema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.8.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Lleva a cabo proyectos cortos de investigación para obtener información sobre un tema o texto (incluye preguntas que genera al consultar diversas fuentes y que se dirigen a ampliar la búsqueda o la investigación).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.9",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Utiliza técnicas de investigación avanzadas para recopilar información relevante de varias fuentes impresas y digitales; evalúa la credibilidad y exactitud de cada fuente. Identifica y explica asuntos de ética, haciéndose responsable por el uso y la producción de textos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.9.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Recopila información relevante de múltiples fuentes, impresas y digitales; evalúa la credibilidad y exactitud de cada fuente; cita y parafrasea los datos o las conclusiones ajenas para evitar el plagio; hace una lista de las referencias con el formato adecuado para las citas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.9.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Evita el plagio al seguir el formato para crear las citas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.10",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Obtiene evidencia de textos informativos y literarios para apoyar el análisis, la reflexión y la investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.10.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Obtiene evidencia de textos literarios e informativos para sustentar el análisis, la reflexión, la investigación y la redacción.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.10.1a",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Aplica los estándares de lectura de textos literarios e informativos para octavo grado; compara y contrasta textos de diferentes formas y cómo estos atienden temas similares o diferentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.11",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Completa varias tareas a partir de una rutina de escritura continua que responde a periodos de tiempo cortos (reacción inmediata) o extendidos (investigación, revisión y reflexión) y diversos propósitos, y considera a la audiencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  },
+  {
+    "code": "8.E.11.1",
+    "subject": "Español",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Escribe en periodos de tiempo cada vez más cortos, tomando en cuenta las características de la comunicación escrita, para producir textos y completar una variedad de tareas específicas de la disciplina, con diferentes propósitos y de acuerdo con la audiencia y su nivel o grado. Comprensión auditiva y expresión oral El estudiante, mediante el dominio de las artes de escuchar y hablar, comprende y produce, con corrección y claridad, discursos orales que promueven el mutuo entendimiento al adaptar el lenguaje según el contexto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Español (2022)"
+  }
+]

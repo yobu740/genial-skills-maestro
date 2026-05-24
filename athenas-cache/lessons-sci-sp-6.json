@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "205009",
+    "LessonNo": "1",
+    "LessonTitle": "Reacciones químicas",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  },
+  {
+    "Id": "205008",
+    "LessonNo": "0",
+    "LessonTitle": "Ley de conservación de materia",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  }
+]

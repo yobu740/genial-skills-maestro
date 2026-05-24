@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204433",
+    "LessonNo": "0",
+    "LessonTitle": "High-Frequency Words",
+    "SubjectCode": "en",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 10
+  },
+  {
+    "Id": "204387",
+    "LessonNo": "0",
+    "LessonTitle": "Writing Informational Texts",
+    "SubjectCode": "en",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 10
+  },
+  {
+    "Id": "203477",
+    "LessonNo": "32",
+    "LessonTitle": "Using Digital Tools for English",
+    "SubjectCode": "en",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  }
+]

@@ -1,0 +1,1514 @@
+[
+  {
+    "code": "5.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Reconoce lugares históricos de las Américas: Machu Pichu, Cuzco, Tikal, Chichén Itzá, Tenochtitlán, Teotihuacán, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Utiliza imágenes para representar diferentes lugares históricos de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Observa videos, películas, documentales y otros recursos tecnológicos para conocer distintos lugares históricos de América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Compara y contrasta características de las sociedades indígenas de las Américas, el Caribe y Puerto Rico (arcaicos, igneris, subtaínos, taínos, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Describe los procesos y conceptos de la historia: los atributos del ser humano (capacidad para discernir); deidad y religión, la organización de la vida en sociedad y la convivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Relaciona aspectos fundamentales de la historia: fuentes documentales, fuentes orales, materiales, texto histórico, investigación histórica, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Describe críticamente temas del desarrollo político, social y cultural de las Américas, tales como economía precolombina, instituciones coloniales, organización política y mercantilismo, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Ordena cronológicamente eventos de la historia de las Américas durante la colonización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Investiga a las personalidades históricas que contribuyeron significativamente al desarrollo de las sociedades y las culturas de las Américas durante el periodo colonial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Interpreta pasajes de las vidas de personalidades históricas de las Américas, como Moctezuma, Atahualpa, Anacaona, Fernando de Magallanes, Américo Vespucio, Vasco Núñez de Balboa, Malinche, Hernán Cortés, Francisco Pizarro, Isabel Barreto, Inés Suárez, fray Bartolomé de las Casas, sor Juana Inés de la Cruz, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Investiga las formas de vida de los grupos esclavizados de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Explica críticamente los procesos que ocurrieron en la historia de las Américas: mestizaje, intercambio cultural (simbiosis), dominación, explotación, evangelización, choque cultural, enfrentamiento, insurrección y emancipación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Compara y contrasta el intercambio cultural (productos, minerales, enfermedades, tradiciones) entre Europa y las Américas desde el periodo de la conquista hasta la actualidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Investiga en torno a temas fundamentales de la historia de las Américas: sociedades precolombinas, conquista y colonización, instituciones coloniales, rutas comerciales, Iglesia y mestizaje.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Elabora organizadores gráficos sobre las sociedades precolombinas y las instituciones coloniales en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Construye líneas de tiempo para ubicar cronológicamente eventos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Demuestra cómo el arte, la música y el patrimonio edificado fortalecen la cultura de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Identifica grandes aportaciones de los pueblos originarios de las Américas a la cultura, tales como calendarios, quipu, chinampas, canales de riego, terrazas agrícolas, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Investiga la contribución de los seres humanos musicales en la historia de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Identifica las representaciones de patrimonio edificado durante la época colonial presentes en la actualidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Realiza búsquedas en internet para describir y explicar eventos de la historia de las Américas, como rituales, inventos, innovaciones, entre otros, y los explica desde una perspectiva crítica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Expone en clase eventos con el propósito de analizarlos desde una perspectiva crítica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Compara y contrasta a Puerto Rico con otros países de las Américas en términos de gastronomía, música, arquitectura, costumbres y tradiciones, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Construye organizadores gráficos y tablas para describir conceptos históricos relacionados con las sociedades de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Plantea temas éticos de interés personal y defiende argumentos relacionados con los deberes y derechos de los ciudadanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Investiga sobre los derechos de los niños en los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CC",
+    "expectation": "Identifica personalidades que abogan por la defensa de los derechos de los niños en las Américas. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Define con el uso apropiado de diferentes fuentes (glosarios, diccionarios, notas explicativas, entre otros) y explica con ejemplos los siguientes conceptos: geografía, geología, Pangea, región, continente, istmo, hidrografía, esfera o globo terráqueo, hemisferio, planisferio, líneas geográficas, sistemas de coordenadas, grados, censo y densidad poblacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Participa de laboratorios cartográficos para construir y analizar mapas, localizar diversos puntos en el mapa, utilizar las coordenadas, meridianos, paralelos, longitud y latitud, comparar distintos mapas de América y hacer inferencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Plantea y explica diferentes teorías de poblamiento de las Américas y el concepto migración en diferentes momentos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Presenta ejemplos de experiencias migratorias contemporáneas (autóctona, origen único, origen múltiple, migraciones internas y externas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Construye organizadores gráficos que ilustran las teorías de poblamiento de América (incluido el Caribe): indígena, europea, africana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Explica cómo la localización geográfica influye en el desarrollo económico, político y social de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Desarrolla búsquedas en internet para construir tablas, gráficas (de barra, circulares, lineales, pictográficas) y mapas temáticos de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Identifica patrones de distribución espacial y temporal: crecimiento, distribución, movilidad poblacional, migraciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Plantea ejemplos concretos por medio de los cuales los ciudadanos de diversos países de las Américas conservan y preservan el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Presenta alternativas para dirigir esfuerzos hacia el logro de la preservación y la conservación del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Participa activamente de iniciativas dirigidas a la preservación y la conservación del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Realiza búsquedas en las redes cibernéticas para obtener información sobre la participación ciudadana de las naciones que conforman las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Asume posturas críticas en torno a asuntos que afectan al medioambiente: cambio climático global y disposición de desperdicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Investiga sobre la diversidad del paisaje de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Identifica las diferentes regiones geográficas de las Américas: desiertos, taigas, tundras, bosques, selvas, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Describe las características geográficas de las Américas: clima, hidrografía, topografía, relieve, flora y fauna.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Utiliza los elementos del mapa para interpretar características de diversas regiones geográficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Investiga sobre el paisaje de las Américas y utiliza la tecnología para documentar sus hallazgos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Construye mapas interactivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Participa de viajes virtuales o estudios de campo por medio de los cuales desarrolla investigación sobre temas relacionados con el medioambiente de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Explica cómo la localización geográfica de los países de las Américas propicia su interrelación económica y política.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Crea tablas para analizar las ventajas y desventajas de la localización geográfica de los países de las Américas en términos de las relaciones económicas y políticas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Plantea críticamente la necesidad de expresar solidaridad y empatía con los seres humanos y su relación con el ambiente en los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PLA",
+    "expectation": "Expresa sus ideas y opiniones sobre la importancia de la relación responsable entre los seres humanos y el ambiente en las Américas. Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Compara y contrasta actitudes y valores de la familia puertorriqueña con la familia de otros países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Identifica valores que los seres humanos acogen y promueven en su comportamiento y actitudes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Examina con ejemplos el concepto emprendimiento en las Américas. 5. DP.2.1 Selecciona personalidades destacadas de las Américas que son ejemplo de liderazgo y emprendimiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Demuestra cómo el esfuerzo personal contribuye a emprender y alcanzar metas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Participa de experiencias de trabajo comunitario.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Identifica fortalezas que lo ayudan en su desarrollo personal y en áreas de oportunidad para superar retos en su aprendizaje.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Practica la autorreflexión para la superación personal y colectiva.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Produce testimonio oral y escrito en el que resume cómo se supera y alcanza nuevas metas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Reconoce lo que es justo y lo que es injusto, lo que es equitativo y lo que es desigual, y reflexiona sobre cómo enfrentar estas realidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Ejecuta iniciativas y comportamientos en los que práctica el respeto, la tolerancia, el trato justo y equitativo hacia todos los integrantes de la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Diseña un perfil del ciudadano que mejor le sirve a la comunidad y al país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Explica el concepto percepción y lo relaciona con los prejuicios y estereotipos que desarrollan los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Explica con ejemplos cómo evitar los prejuicios y utilizar los estereotipos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Valora iniciativas para manejar conflictos e intercambiar ideas con los pares a fin de elegir opciones responsables.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Integra virtudes, valores y talentos en las actividades personales, familiares, escolares y comunitarias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Participa en actividades en las que integra virtudes, valores y talentos en las relaciones personales, familiares, escolares y comunitarias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Aplica conceptos fundamentales para el desarrollo personal, tales como inviolabilidad de la dignidad humana y derecho de los diversos grupos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Produce representaciones gráficas en las que se promueven los derechos humanos y civiles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Identifica normas, reglamentos y leyes que garantizan los derechos de los niños dentro de su entorno social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Crea representaciones gráficas o artísticas en las que representa los derechos de los niños de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Demuestra con su comportamiento el conocimiento de normas, reglamentos, ordenanzas y leyes en su comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Participa de trabajo en grupo (panel, coloquio, foro), en el que expone experiencias personales, familiares, escolares o comunitarias en las que se integran virtudes, valores y talentos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Describe experiencias de su diario vivir en las que demuestra trato justo y equitativo entre los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.DP.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "DP",
+    "expectation": "Ofrece soluciones a situaciones de comportamiento violento y trato injusto entre las personas. Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Investiga sobre las aportaciones culturales (costumbres y tradiciones) de Europa y África en las Américas y el desarrollo de sus pueblos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Elabora y presenta en clase organizadores gráficos en los que resume las características fundamentales de grupos humanos que se establecieron en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Demuestra respeto por los símbolos nacionales de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Investiga en torno a los símbolos nacionales (himno, escudo y bandera) de los diversos países de las Américas, y los compara con los de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Narra experiencias orales o escritas en las que describe cómo los ciudadanos de las Américas expresan patriotismo mediante las artes y actividades cívicas y deportivas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Identifica semejanzas y diferencias en las actividades económicas y culturales que realizan los diversos grupos humanos de las América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Describe las actividades económicas y culturales en películas, videos y documentales de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Describe características culturales que distinguen a los puertorriqueños de personas de otros países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Personifica y ejemplifica las diferencias culturales de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Describe el concepto diversidad cultural en el contexto del desarrollo político de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Elabora diagramas de Venn para comparar y contrastar las actividades políticas y culturales de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Elabora una definición propia de cultura a partir de lo que los seres humanos hacen y producen, de sus creencias, ideas y comportamientos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Compone un poema concreto para definir el concepto cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Investiga en torno a un grupo social o cultural para describir las creencias, los valores, los comportamientos y las tradiciones que caracterizan a los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Diseña una presentación ilustrada para describir las creencias y los valores de una cultura de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Explica por qué se adoptan símbolos que identifican a una nacionalidad, un pueblo o una nación y por qué se desarrollan respeto y lealtad hacia estos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Diseña representaciones gráficas o artísticas de los símbolos nacionales de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Describe las actividades de los diversos grupos culturales de las Américas y resalta el intercambio de su respectiva producción.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Recrea diseños de la producción cultural de los pueblos de las Américas (obras de arte, inventos, recetas, producción artesanal).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Demuestra respeto, tolerancia y empatía en la relación y el intercambio con las personas de otras culturas y de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "IC",
+    "expectation": "Presenta experiencias que demuestran cómo se practican el respeto, la tolerancia y la empatía con ciudadanos de otras culturas. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica actividades económicas de los grupos indígenas de América y del período colonial (agricultura de subsistencia, explotación minera, mercantilismo, economía de plantación, producción agrícola, comercio colonial, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Prepara un glosario de conceptos de economía de los indígenas y del periodo colonial de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Selecciona una actividad económica y la describe en términos de su aportación al progreso y desarrollo de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica conceptos fundamentales del desarrollo económico de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Redacta un párrafo breve para describir cómo el trabajo es una actividad fundamental en las sociedades de las Américas a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Plantea el impacto cultural de la conquista y colonización de las Américas como una empresa con objetivos económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Investiga sobre actividades económicas desarrolladas en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica cómo las haciendas, las plantaciones y los latifundios, entre otros, constituyeron actividades económicas y sociales en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Plantea cómo las necesidades humanas exceden la producción y los recursos disponibles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Reconoce el cooperativismo como una herramienta fundamental para el desarrollo económico, personal y colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Investiga en torno a la aportación de la mujer y los afrodescendientes al desarrollo económico de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Selecciona a una mujer líder en un sector de la economía y presenta una breve descripción de su contribución en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Busca información sobre la aportación de los esclavizados al desarrollo económico de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Investiga sobre el desarrollo político y económico de las Américas en los contextos de la encomienda, la minería, la esclavitud, la producción agrícola, el comercio y la exportación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Enumera actividades económicas realizadas en las Américas durante la conquista y colonización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica con ejemplos el concepto dependencia económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica cómo la unión de esfuerzos e iniciativas regionales contribuye al desarrollo económico de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos del cooperativismo como alternativa para el desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica cómo se desarrolla una cultura de consumo responsable y de manejo sabio de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Reconoce la importancia del ahorro para alcanzar una meta económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Distingue entre necesidades y deseos para desarrollar patrones de consumo responsable.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de manejo sabio de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Investiga cómo el mercado, las ventas, las ganancias y el ahorro pueden ser alternativas para aumentar el capital.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Utiliza la publicidad y la propaganda comercial para comparar precios que le permitan hacer una mejor inversión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Investiga sobre diferentes eventos que impactan la economía de los países de América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos del impacto económico de los eventos (tormentas, terremotos, pandemia, crisis de gobierno, producción, sobreproducción y escasez de productos, entre otros) en los países de América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Explica el concepto ciudadano emprendedor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de personas emprendedoras en el plano económico de Puerto Rico y de otros países de las Américas. Conciencia Cívica y Democrática Práctica y valora los principios que rigen la vida en una sociedad democrática y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Investiga en torno al gobierno colonial implantado por España en Puerto Rico: colonialismo, monarquía, absolutismo, instituciones coloniales (Consejo de Indias, Casa de Contratación, virreinatos, audiencias, capitanías generales, gobernadores, cabildos), entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Utiliza imágenes para parear conceptos de política del periodo colonial español en América con sus respectivas definiciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Explica conceptos que ayudan a entender el comportamiento cívico de las personas en la vida de comunidad: leyes, decretos, constitución, independencia, república, rebelión, revolución, virreinato y audiencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Utiliza el diccionario para definir y diferenciar entre una ley y un derecho.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Redacta en grupo un modelo de constitución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Explica cómo la economía afecta la vida política de las colonias de España en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Plantea, por medio de un panel, cómo la economía de la explotación minera de las colonias contribuyó al desarrollo del Imperio español en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Demuestra cómo ejerce la función del buen ciudadano como participante activo de una democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Compara y contrasta el sistema político de Puerto Rico con el de otros países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Colabora en su comunidad en forma solidaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Identifica hechos históricos que demuestran cómo se ejerce la democracia en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Describe las constituciones democráticas y las cartas de derecho (la declaración de independencia).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Identifica figuras clave de las revoluciones de independencia de las Américas (Mariana Bracetti, Benjamín Franklin, Simón Bolívar, Manuela Sáenz, José de San Martín, Miguel Hidalgo, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Identifica prácticas fundamentales de la vida en una sociedad democrática.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Utiliza imágenes para representar la partición ciudadana en la sociedad, (capacidad de los pueblos para gobernarse, derecho de los ciudadanos para elegir a sus gobernantes, derecho al voto, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Lee y comenta alguna noticia sobre gobierno y democracia en los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Expresa respeto y tolerancia ante opiniones divergentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Manifiesta empatía y reconoce la importancia de posicionarse en el lugar del otro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Reconoce la importancia de los avances tecnológicos para las sociedades democráticas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Participa de conferencias virtuales para conocer las formas de vida de otros ciudadanos de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Establece cómo la participación ciudadana contribuye al desarrollo y beneficio de una sociedad productiva.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Investiga ejemplos de participación ciudadana en países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Plantea derechos y deberes de los ciudadanos en los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CCD",
+    "expectation": "Analiza la Declaración Universal de Derechos Humanos de las Naciones Unidas para explicar ejemplos de derechos inalienables. Conciencia Global Evidencia, con su comportamiento, que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Utiliza mapas para trazar conexiones globales y migraciones humanas de Puerto Rico y las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Traza en un mapa rutas de comercio, viajes marítimos, vuelos, migraciones fronterizas y marítimas (yolas, balsas, pateras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Compara y contrasta las civilizaciones indígenas de las Américas desde diferentes perspectivas: social, cultural, política y económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Construye un diagrama de Venn para comparar aspectos sociales, culturales, políticos y económicos de las civilizaciones indígenas de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Presenta ejemplos de conflicto y cooperación entre personas, grupos y naciones de los diferentes países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Menciona las aportaciones de los diferentes grupos migratorios al desarrollo económico de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Reconoce la importancia de los habitantes de las Américas en el contexto de ciudadanía global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Identifica causas y movimientos (globales ambientales, sociales [desigualdad], de equidad, políticos, económicos) y las luchas de los pueblos indígenas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Reconoce la importancia de las relaciones globales para superar los conflictos políticos, intereses económicos y luchas sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Personifica el papel de un diplomático en la búsqueda de soluciones a conflictos, intereses y luchas globales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Identifica problemas comunes presentes en las Américas: deforestación, migraciones, pobreza, trato desigual, crisis política, guerra y enfermedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Investiga un problema común presente en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Compara y contrasta los problemas sociales que impactan a los países de las Américas: deforestación del Amazonas, agua potable, desigualdad, sistemas de gobierno, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Expone posibles soluciones a problemas que impactan a las sociedades de los países de las Américas: deforestación del Amazonas, agua potable, desigualdad, sistemas de gobierno, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Plantea alternativas que contribuyen a la solución de problemas en los países de las Américas, tales como el calentamiento global, la conservación del ambiente, la protección de especies, la calidad del aire y del agua, la producción de alimentos, el uso de nuevas formas de producción de energía, los acuerdos de paz.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Utiliza la tecnología para investigar sobre problemas comunes que afectan a los países de las Américas y sus posibles soluciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Investiga las relaciones entre las Américas y otros países del mundo a lo largo de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Ilustra con ejemplos del contexto las relaciones de las Américas y otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Produce mensajes con pensamientos originales que contribuyen al entendimiento, la paz y la unidad entre los seres humanos de los diferentes pueblos de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "CG",
+    "expectation": "Utiliza expresiones artísticas para manifestar mensajes que contribuyan al entendimiento, la paz, la unidad de los ciudadanos de las Américas y del mundo. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Utiliza la tecnología para describir conceptos, tales como geografía, cartografía, latitud, longitud, paralelos, localización, coordenadas, ciencias sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Localiza lugares en el mapa utilizando un geolocalizador.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Selecciona información precisa utilizando variedad de métodos y herramientas digitales para construir conocimiento de la historia de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Explica cómo la ciencia y la tecnología aportan a la solución de las necesidades básicas mediante el uso de recursos digitales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Investiga la aportación de las innovaciones en el desarrollo económico de las civilizaciones de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Identifica ejemplos de artefactos innovadores que utilizaron las civilizaciones del mundo (calendario, quipus, chinampas, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Crea trabajos originales para investigar la movilización social en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Utiliza aplicaciones digitales para diseñar gráficos sobre temas sociales en favor del ambiente, los derechos, la educación, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Expone cómo la ciencia y la tecnología pueden aportar a mejorar la calidad de vida de los países de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Utiliza la tecnología para investigar y describir inventos que aportaron al desarrollo social de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Aplica tecnologías que fomentan el trabajo colaborativo entre pares o grupos para examinar problemas de América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Produce videos y presentaciones sobre las sociedades indígenas de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Ejemplifica cómo la tecnología ayuda a la preservación de la cultura de las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Utiliza imágenes y sonidos para representar ejemplos de expresión cultural en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Identifica y compara aportes importantes de la ciencia y la tecnología en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Investiga aportaciones de personas destacadas en la ciencia y la tecnología en las Américas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Explora colaborativamente diversos problemas de las Américas a causa del uso de la tecnología y plantea soluciones concretas para estos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Recopila información y diseña protocolos sobre el uso apropiado de la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Desarrolla responsabilidad cívica y ética en el uso de la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Maneja su identidad y sus acciones en el mundo digital.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "5.SCT.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "5",
+    "domain": "SCT",
+    "expectation": "Maneja sus datos personales con privacidad y seguridad durante su navegación en línea. Cambio y Continuidad Estudia la vida de las sociedades en el contexto de los cambios y las transformaciones que se producen con el paso del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

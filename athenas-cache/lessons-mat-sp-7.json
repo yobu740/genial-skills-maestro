@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204798",
+    "LessonNo": "6",
+    "LessonTitle": "Expresiones algebraicas",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204797",
+    "LessonNo": "5",
+    "LessonTitle": "Ecuaciones de un paso",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  }
+]

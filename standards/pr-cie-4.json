@@ -1,0 +1,570 @@
+[
+  {
+    "code": "4.IT1.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Distingue y aplica las prácticas de ciencias e ingeniería en cada proceso de investigación y experimentación que realiza.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Utiliza los procesos de observación, medición, inferencia, predicción, clasificación, comunicación y experimentación para desarrollar prácticas de ciencias e ingeniería.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Lleva a cabo investigaciones para identificar la variable manipulada, la variable de respuesta, el grupo control y el grupo experimental.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Utiliza pensamiento matemático para determinar la magnitud y las unidades correspondientes a una medida, en el Sistema Internacional de Unidades (SI); y las conversiones propias de esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Comunica datos mediante tablas; esquemas; diagramas; o gráficas lineales, circulares o pictóricas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Desarrolla prácticas de las ciencias e ingeniería, tales como definir un problema de diseño o ingeniería; desarrollar posibles soluciones, y optimizar (mejorar) las soluciones al problema, prototipo o diseño generado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.IT1.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "IT",
+    "expectation": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o diseño generado. Ciencias Biológicas Estudia e investiga los procesos de la vida; así como el origen, las propiedades y las características de los organismos vivos y su interacción con el ambiente. 4.CB1 Analiza y argumenta sobre el hecho de que los seres vivos (con énfasis en los seres humanos) están compuestos de células y desarrollan estructuras internas y externas que les permiten llevar a cabo funciones de crecimiento, desarrollo y reproducción para su sobrevivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Reconoce la célula como la unidad básica funcional y estructural de los seres vivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Menciona las características principales y establece las diferencias entre la célula procariota y la eucariota (la célula animal y la vegetal).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Explica las funciones de —al menos— las siguientes partes y orgánulos de la célula eucariota: el núcleo, la membrana celular, la membrana nuclear, la pared celular, la vacuola, la mitocondria, el citoplasma, el cloroplasto el retículo endoplásmico, el aparato de Golgi, el lisosoma y el ribosoma.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Crea modelos de la estructura y la función de las células en los sistemas biológicos (la célula procariota, la célula eucariota [célula animal y vegeta]).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Utiliza analogías para comparar y contrastar las estructuras celulares y sus funciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Reconoce e identifica los órganos principales que forman algunos de los sistemas del cuerpo humano y la función básica que cumple cada sistema (sistemas digestivo, reproductor, circulatorio, musculoesquelético, respiratorio y nervioso).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Explica cómo las partes principales de los sistemas del cuerpo humano se interconectan, para argumentar sobre la importancia de proteger, respetar y mantener saludable cada sistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.8",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Construye modelos de sistemas del cuerpo humano, como el digestivo, el reproductor, el circulatorio, el músculo esquelético, el respiratorio y el nervioso.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.9",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Utiliza un modelo para describir que los animales (incluyendo a los seres humanos) reciben información mediante sus sentidos (sistemas de transferencia de información); procesan la información en el cerebro, y responden a ella de manera distinta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.10",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Describe e identifica las etapas y los cambios que ocurren durante el crecimiento y el desarrollo del ser humano, con énfasis en la etapa de la adolescencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB1.11",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Identifica y acepta los cambios que ocurren durante la adolescencia. 4.CB2 Identifica y analiza las necesidades de protección y adaptación entre las especies, en interacción con otras dentro de sus ambientes, para la sobrevivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB2.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Define adaptación para explicar la ventaja funcional y estructural que esta otorga a los seres vivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB2.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Identifica los mecanismos adaptativos en las plantas y los animales, para elaborar argumentos que sostengan cómo estos mecanismos les permiten sobrevivir y reaccionar a cambios en el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CB2.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CB",
+    "expectation": "Compara y explica las ventajas funcionales de las adaptaciones fisiológicas, morfológicas o de comportamiento en los seres vivos, que les permiten sobrevivir mejor en su ambiente. Ciencias Físicas Estudia la materia, sus propiedades, cambios y su relación entre velocidad, movimiento y fuerza; así como el comportamiento de las ondas, al explicar sus interacciones con la energía. 4.CF1 Analiza la importancia de describir y clasificar adecuadamente la materia, considerando sus propiedades físicas y químicas, así como sus procesos de conservación y cambio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Describe, en términos cualitativos y cuantitativos, las propiedades físicas (el tamaño, la masa, el volumen, la temperatura, el magnetismo y la flotabilidad) y químicas (la inflamabilidad, la combustión, la corrosión y la reactividad) de la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Identifica diferentes tipos de medida (masa, longitud, volumen, temperatura) y las unidades correspondientes a cada tipo (gramos (g), metro (m), centímetro cúbico (cm ), Celsius (°C), Fahrenheit (°F), Kelvin (K), litro (L), entre otras), para describir la materia cuantitativamente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Compara y contrasta las propiedades físicas y las propiedades químicas de la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Explica que la energía es necesaria para producir cambios en las propiedades de la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Predice cambios en los estados de la materia, a partir del aumento o la disminución del calor que se le aplique.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Describe y define, operacionalmente, los procesos que conservan y los que cambian las propiedades de la materia, tales como: la fusión, la solidificación, la evaporación, la condensación, la combustión, la oxidación y la reactividad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Identifica y establece las diferencias entre un cambio físico y un cambio químico en la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.8",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Analiza la aplicabilidad y la importancia de los procesos de fusión, solidificación, evaporación y condensación, en la industria, en los organismos y en la vida diaria de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.9",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Reconoce que la materia se puede clasificar en materia homogénea o materia heterogénea, según sus propiedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.10",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Clasifica la materia en materia homogénea o materia heterogénea, al considerar sus propiedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.11",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Establece la diferencia entre mezclas homogéneas y mezclas heterogéneas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF1.12",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Compara y contrasta las propiedades que distinguen las mezclas y las soluciones. 4.CF2 Explica y describe cómo las fuerzas se relacionan con la energía y con los cambios en la velocidad de movimiento de los objetos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF2.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Define e identifica los tipos de fuerza y cómo estos se relacionan con la energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF2.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Explica y propone ejemplos sobre cómo la energía presente en una fuerza afecta el movimiento del objeto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF2.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Establece la relación entre la velocidad de un objeto y su energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF2.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Diseña una investigación para formular preguntas y predecir resultados acerca de los cambios en energía que ocurren cuando los objetos chocan, mediante el uso de prácticas de ciencias e ingeniería (construir prototipos o diseñar modelos). 4.CF3 Identifica, describe y compara diferentes formas y tipos de energía, y cómo estas se pueden transferir a otra forma u otro tipo de energía, al diseñar y construir modelos simples y experimentales de dichas transferencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Define y provee ejemplos de diferentes formas de energía (potencial, cinética) y de algunos tipos de energía (mecánica, eléctrica, lumínica).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Describe cómo la energía puede transformarse de una forma a otra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Compara y describe los procesos y los resultados de la transferencia y la conservación de la energía, cuando los objetos chocan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Construye un diseño que convierte la energía de una forma a otra (como, por ejemplo, un diseño que convierte energía lumínica [luz], sonido, calor, energía mecánica o eléctrica a otro tipo de energía [como el diseño de un calentador solar, que convierte la energía lumínica en calor]).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Distingue entre conductores y aisladores, y aplica su utilidad en la transferencia de energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF3.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Experimenta con el diseño de un aparato que usa distintas vías para transferir energía, como los circuitos simples. 4.CF4 Describe los diferentes tipos de onda, sus propiedades y su comportamiento, para explicar la relación entre cómo se manifiesta la energía en una onda y el consecuente patrón de movimiento que genera, así como su aplicabilidad en la transferencia de información.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Define e identifica diferentes tipos de onda (mecánicas y electromagnéticas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Describe las propiedades generales de las ondas (la longitud, la amplitud, la frecuencia, la velocidad, el valle, la cresta).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Explica cómo los cambios en la longitud, la amplitud y la frecuencia de las ondas provocan alteraciones en los componentes de un sistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Utiliza modelos para demostrar la relación que existe entre las propiedades de las ondas (la amplitud y la frecuencia) y el efecto (sonido fuerte, sonido débil, sonido agudo o grave) que se produce en el movimiento de estas (como, por ejemplo: sonido fuerte [amplitud mayor], sonido débil [amplitud menor], sonido agudo [frecuencia mayor], sonido grave [frecuencia menor]).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Lleva a cabo un experimento para describir lo que significa interferencia entre las ondas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Describe algunas propiedades del comportamiento de onda que presentan la luz y el sonido, como la reflexión y la refracción.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Identifica ejemplos de reflexión y refracción de ondas en la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CF4.8",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CF",
+    "expectation": "Crea y compara patrones, para identificar y agrupar datos y transferirlos como información codificada (como, por ejemplo: códigos binarios [como masculino = 1, femenino = 2]; datos para representar blancos y negros en una imagen; el uso de clave morse para enviar información, entre otros). Ciencias Terrestres y del Espacio Estudia y comprende el conjunto de disciplinas que se relaciona con los procesos que ocurren en el planeta Tierra, y la interacción de este con el universo. 4.CT2 Explica el proceso de formación, los cambios, los patrones y las características que conforman la Tierra, para ofrecer evidencia sobre la historia terrestre, la formación del suelo, de las rocas y del relieve de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Interpreta y analiza datos contenidos en mapas, para describir patrones en las características de la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Recopila evidencia sobre los efectos, en las características de la superficie terrestre, que provocan el desgaste y la erosión por agua, hielo, viento o vegetación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Define y describe erosión, compactación, sedimentación y cristalización, en relación con los cambios que dan lugar a la formación de suelo y rocas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Describe y representa, mediante modelos, las diferentes formas y tipos de relieve en Puerto Rico: montañas, mogotes, planicies, colinas, valles, cañones, cañadas, cuencas, cordilleras y llanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Establece la relación entre los diferentes tipos de relieve en Puerto Rico y sus ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Describe el impacto de la erosión y la sedimentación en los suelos y en los tipos de relieve en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Investiga para descubrir las propiedades particulares de los minerales —que permite identificarlos— para reconocer su importancia como recurso natural en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.8",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Explica el ciclo de formación de las rocas mediante el uso o la creación de modelos y representaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.9",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Provee ejemplos de tipos de roca presentes en Puerto Rico, y las agrupa en ígneas, metamórficas y sedimentarias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.10",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Identifica evidencia, a partir de los patrones en la formación de las rocas y de los fósiles en las capas de rocas, para apoyar una explicación acerca de los cambios que ocurren en el paisaje a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.11",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Analiza patrones en las características de la Tierra, para ofrecer evidencia que describa la historia de la Tierra y el desplazamiento de los continentes a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.12",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Identifica, ilustra y busca información sobre la ubicación de las placas continentales donde se encuentra Puerto Rico, y cómo estas se mueven y liberan energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CT2.13",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CT",
+    "expectation": "Menciona algunas consecuencias de los movimientos entre las placas tectónicas (volcanes, terremotos, movimiento del suelo terrestre, entre otras). Ciencias Ambientales Estudia la relación entre los seres humanos y el ambiente para proponer, de manera multidisciplinaria, alternativas para la conservación de los recursos naturales y soluciones a problemas ambientales, mediante propuestas para el desarrollo sostenible. 4.CA1 Diseña soluciones a los problemas ambientales provocados por las actividades humanas y el impacto de fenómenos atmosféricos sobre los recursos naturales en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.1",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Define los conceptos recursos renovables, recursos no renovables y energía renovable.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.2",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Compara y contrasta entre recursos renovables y no renovables en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.3",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Describe que la energía y los combustibles que utilizamos los seres humanos se derivan de fuentes naturales, y que su uso puede afectar el ambiente y la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.4",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Distingue entre los riesgos y los beneficios en los usos de cada fuente de energía: renovable y no renovable.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.5",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Describe e identifica problemas ambientales causados por la interacción de los seres humanos con los cuerpos de agua, el suelo y el relieve (planicie, montañas, mogotes, colinas, valles, cañones, cañadas, cuencas, cordilleras, llanos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.6",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Identifica cómo los fenómenos naturales severos (terremotos, huracanes, tsunamis, erupciones volcánicas) pueden alterar el ambiente y cómo puede recuperarse el equilibrio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "4.CA1.7",
+    "subject": "Ciencias",
+    "grade": "4",
+    "domain": "CA",
+    "expectation": "Diseña alternativas de solución a problemas ambientales provocados por el impacto de las actividades humanas sobre los recursos renovables y no renovables, y por el uso inadecuado de los recursos naturales en Puerto Rico. Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 5.IT1 Analiza y aplica las prácticas de las ciencias e ingeniería al describir, desarrollar y optimizar diseños que le permitan solucionar problemas relacionados con las ciencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

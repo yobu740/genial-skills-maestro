@@ -1,0 +1,370 @@
+[
+  {
+    "code": "K.N.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Reconoce la relación entre los números cardinales y las cantidades que estos representan desde 0 hasta 100.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.1.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Cuenta (o cuenta de memoria) números cardinales de uno en uno y de 10 en 10 hasta 100.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.1.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Escribe números cardinales en forma ascendente y descendente, a partir de un número dado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Compara y ordena números cardinales hasta dos dígitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.2.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Compara números cardinales hasta dos dígitos (es mayor, es menor o es igual).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.2.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Ordena, de forma ascendente y descendente, números cardinales hasta dos dígitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.2.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Nombra y utiliza los números ordinales (al menos hasta el sexto) para resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Construye el significado de la suma con totales de 10 y la resta por medio de modelos concretos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.3.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Representa los conceptos de suma y resta de números cardinales hasta 10 para resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.3.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Utiliza el algoritmo de suma con dos sumandos de números cardinales menores o iguales a 10.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.3.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Realiza suma y resta aplicando el cálculo mental. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.4",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Identifica y representa fracciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.N.4.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "N",
+    "expectation": "Identifica, nombra y representa la fracción unitaria. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.A.5",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "A",
+    "expectation": "Interpreta y amplía patrones repetitivos y crecientes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.A.5.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "A",
+    "expectation": "Identifica y amplía un patrón con materiales concretos, semiconcretos, movimientos y/o sonidos en situaciones de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.A.6",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "A",
+    "expectation": "Comprende el concepto de igualdad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.A.6.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "A",
+    "expectation": "Identifica y utiliza el signo de igualdad (=) para llegar a conclusiones. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial a fin de analizar sus estructuras, características, propiedades y relaciones para reconocer y descubrir el entorno físico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.7",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Reconoce, identifica y nombra formas geométricas en su entorno.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.7.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Identifica y describe figuras geométricas bidimensionales (triángulo, cuadrado, rectángulo y círculo) y tridimensionales (esfera, cubo, cilindro, cono y pirámide) en su entorno sin importar la posición. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.7.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Clasifica figuras geométricas bidimensionales y tridimensionales por su forma y tamaño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.7.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Describe la posición relativa de un objeto utilizando los siguientes términos: arriba, abajo, cerca, lejos, a un lado, enfrente, detrás, sobre, entre, afuera, adentro y junto a, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.8",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Construye y analiza figuras geométricas bidimensionales y tridimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.8.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Clasifica figuras geométricas en bidimensionales o tridimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.8.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Nombra y construye (dibuja) figuras geométricas bidimensionales por su forma y tamaño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.8.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Construye, traza y/o dibuja figuras bidimensionales y tridimensionales de acuerdo con patrones dados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.G.8.4",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "G",
+    "expectation": "Clasifica, reconoce y nombra figuras geométricas tridimensionales como: la esfera, el cubo, el cilindro, el cono y la pirámide. Medición El estudiante es capaz de aplicar sistemas, herramientas y técnicas de medición con precisión, y establece conexiones entre conceptos espaciales y numéricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.9",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Clasifica, compara y ordena objetos por categorías.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.9.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Características de los objetos por categorías: ➢ Identifica, ➢ describe, ➢ clasifica, ➢ compara y ordena hasta tres objetos por tamaño (grande, mediano o pequeño) y/o peso. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.10",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Comprende los atributos que se pueden medir (longitud y peso, entre otros) de los objetos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.10.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Utiliza unidades no estandarizadas (manos, pies, brazos, entre otros) para medir la longitud de un objeto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.10.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Compara, contrasta y ordena objetos o sucesiones de eventos que tengan atributos comunes o se puedan medir; utiliza términos como: el más, el menos, antes, entre y después.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Reconoce las relaciones de tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Identifica cuál de dos actividades toma más o menos tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Reconoce el concepto de tiempo y comprende que algunos eventos tienen lugar en el pasado, presente o futuro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.3",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Determina si un evento sucede en la mañana, tarde o noche.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.4",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Identifica las partes del reloj.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.5",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Lee e interpreta el reloj (análogo y digital) hasta la hora en punto utilizando materiales concretos y semiconcretos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.11.6",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Reconoce la información del calendario (Ejemplo: días de la semana y meses del año).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.12",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Reconoce y aplica el valor de las monedas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.12.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Identifica el valor de las monedas (1¢, 5¢, 10¢ y 25¢).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.M.12.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "M",
+    "expectation": "Utiliza monedas de 1¢ y 5¢ para resolver problemas matemáticos de suma o resta. KINDERGARTEN Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.E.13",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "E",
+    "expectation": "Recopila, organiza y representa datos en gráficas pictóricas y de barra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.E.13.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "E",
+    "expectation": "Recopila, organiza y representa datos en gráficas pictóricas y de barra utilizando materiales concretos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.E.13.2",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "E",
+    "expectation": "Contesta preguntas relacionadas con los datos representados en gráficas pictóricas y de barras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.E.14",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "E",
+    "expectation": "Realiza predicciones para llegar a conclusiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "K.E.14.1",
+    "subject": "Matemáticas",
+    "grade": "K",
+    "domain": "E",
+    "expectation": "Describe sucesos como probables o no probables usando los siguientes términos: seguro, probable e imposible. Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  }
+]

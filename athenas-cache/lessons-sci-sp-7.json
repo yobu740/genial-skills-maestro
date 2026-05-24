@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204700",
+    "LessonNo": "8",
+    "LessonTitle": "Ecosistemas y cadenas alimentarias",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204699",
+    "LessonNo": "7",
+    "LessonTitle": "La célula y sus organelos",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 9
+  }
+]

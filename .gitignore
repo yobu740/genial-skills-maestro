@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Logs + temp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+plan-resp.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Large source assets — NOT in repo (originals stay local, deploy to Cloudflare R2)
+Planes semanales/
+BELLAS ARTES-Planes semanales*/
+Estudios sociales-Planes semanales/
+Estandares y expectativas/
+standards/raw/
+
+# Generated transient files
+files planificacion/

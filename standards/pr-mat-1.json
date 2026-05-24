@@ -1,0 +1,370 @@
+[
+  {
+    "code": "1.N.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Reconoce la relación entre los números cardinales hasta tres dígitos (0 al 999), las cantidades que estos representan y el valor posicional de sus dígitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.1.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Cuenta, lee y escribe números cardinales hasta tres dígitos a partir de un número dado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.1.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Determina y escribe el número que va antes, entre y después utilizando los números cardinales hasta tres dígitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.1.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Nombra y utiliza los números ordinales hasta el décimo para resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.1.4",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Compara y ordena números cardinales hasta tres dígitos basándose en el significado de las centenas, decenas y unidades, y registra el resultado de las comparaciones utilizando los símbolos >, =, <.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Aplica el valor posicional de un número cardinal con base 10 hasta la centena.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.2.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Representa 10 unidades como una decena, 10 decenas como una centena y 10 centenas como un millar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.2.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Compone y descompone números cardinales de hasta tres dígitos mediante notación desarrollada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Representa y resuelve problemas de suma con totales hasta 999 y de resta con diferencias hasta 0.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.3.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Escribe y resuelve ejercicios y problemas de aplicación de suma (hasta tres sumandos) y resta, hasta la centena.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.3.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Aplica las propiedades (conmutativa, asociativa y el elemento identidad de la suma [0]) para efectuar operaciones de suma. Para sumar 2 + 6 + 4, los dos últimos números se pueden sumar para formar una decena. Por lo tanto, 2 + 6 + 4 = 2 + 10 = 12 (propiedad asociativa de la suma). (El estudiante no tiene que conocer ni usar los nombres formales de estas propiedades).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.3.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Suma números cardinales de hasta tres dígitos y utiliza diversas estrategias: ➢ un número de dos dígitos y un número de un dígito ➢ un número de dos dígitos con un múltiplo de 10 ➢ modelos concretos, dibujos y estrategias basadas en el valor posicional ➢ propiedades de las operaciones y/o la relación que hay entre la suma y la resta ➢ relaciona la estrategia con un método escrito y explica el razonamiento utilizado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.3.4",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Relaciona el conteo con la suma y la resta (Ejemplo: Contar 2 hacia delante para sumar 2).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.4",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Identifica y representa fracciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.4.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Identifica, nombra y representa fracciones unitarias (,, entre otras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.4.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Representa y compara fracciones como parte de un entero o conjunto usando materiales concretos y semiconcretos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.N.4.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "N",
+    "expectation": "Reconoce, en forma concreta, que al unir todas las partes fraccionarias en que se divide un entero se vuelve a tener el entero. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.5",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Reconoce, lee, describe y amplía patrones repetitivos y crecientes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.5.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Identifica patrones numéricos con números cardinales de hasta tres dígitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.5.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Identifica, completa y crea patrones que incluyen: ➢ modelos concretos ➢ figuras geométricas ➢ movimientos ➢ sonidos ➢ números Utiliza patrones para resolver problemas de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.6",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Utiliza expresiones y relaciones numéricas para determinar si una ecuación de suma o resta es cierta o falsa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.6.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Reconoce y aplica el significado de los símbolos de suma, resta e igualdad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.6.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Determina si una ecuación de suma o resta es cierta o falsa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.6.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Determina el número cardinal desconocido en una ecuación de suma o resta relacionando tres números (Ejemplo: 8 + ___ = 11).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.A.6.4",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "A",
+    "expectation": "Escribe y resuelve expresiones numéricas de problemas matemáticos y de la vida diaria que expresen relaciones entre la suma y la resta hasta 100. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.7",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Reconoce, describe, nombra, compara y compone figuras bidimensionales y tridimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.7.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Figuras geométricas bidimensionales (cuadrado, círculo, triángulo, rectángulo y trapecio) ➢ nombra y describe ➢ clasifica ➢ construye",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.7.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Figuras geométricas tridimensionales (cilindro, esfera, pirámide, prisma rectangular, cono y cubo) ➢ nombra y describe ➢ clasifica ➢ construye ➢ compone y descompone",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.8",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Identifica y traza el eje de simetría en forma concreta y semiconcreta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.8.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Identifica y traza el eje de simetría en forma concreta y semiconcreta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.9",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Reconoce y describe transformaciones en figuras bidimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.G.9.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "G",
+    "expectation": "Identifica la rotación como una transformación en figuras bidimensionales. Medición El estudiante es capaz de aplicar sistemas, herramientas y técnicas de medición con precisión, y establece conexiones entre conceptos espaciales y numéricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.10",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Reconoce y usa medidas de tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.10.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Lee, escribe e interpreta el reloj (análogo y digital) hasta la media hora.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.10.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Lee, escribe e interpreta información del calendario (días de la semana y mes).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.11",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Reconoce e identifica el valor de las monedas hasta 25¢ y determina equivalencias para resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.11.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Utiliza diferentes combinaciones de monedas para representar equivalencia y resolver problemas en los que se determina si se puede comprar un artículo a partir de una cantidad monetaria hasta 25¢.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.12",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Identifica y estima medidas estandarizadas y arbitrarias de longitud (pulgada, pie y metro).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.M.12.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "M",
+    "expectation": "Utiliza medidas arbitrarias y las unidades del sistema métrico (metro) e inglés (pulgada y pie) para estimar y medir longitudes mediante el uso de instrumentos calibrados. Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.13",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Recopila, organiza, representa e interpreta datos en gráficas de barra, gráficas pictóricas y tablas para resolver problemas matemáticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.13.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Identifica las partes de una gráfica (de barra y pictóricas) y de una tabla.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.13.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Interpreta los datos de una gráfica (de barra y pictórica) y tabla para resolver problemas matemáticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.13.3",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Usa los datos para: ➢ recopilar y organizar información, ➢ ordenar e interpretar ➢ formular y contestar preguntas simples usando materiales concretos, láminas y gráficas pictóricas relacionadas con los datos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.14",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Determina la probabilidad de un evento simple.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.14.1",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Realiza experimentos sencillos con materiales concretos (Ejemplo: Lanzar una moneda). Hace predicciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "1.E.14.2",
+    "subject": "Matemáticas",
+    "grade": "1",
+    "domain": "E",
+    "expectation": "Determina el suceso más probable a partir de una información dada. Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  }
+]

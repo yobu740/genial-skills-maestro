@@ -1,0 +1,378 @@
+[
+  {
+    "code": "8.N.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "N",
+    "expectation": "Describe los números reales como el conjunto de todos los números decimales y utiliza la notación científica, la estimación y las propiedades de las operaciones para representar y resolver problemas con números reales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.N.1.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "N",
+    "expectation": "Reconoce, relaciona y aplica las propiedades de los números racionales (asociativa, conmutativa, identidad, inverso, distributiva, clausura) para resolver problemas, y usa técnicas de estimación para decidir si la respuesta es razonable.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.N.1.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "N",
+    "expectation": "Usa los símbolos de raíz cuadrada y raíz cúbica para representar soluciones a las ecuaciones de la forma 푥 =푝 푦 푥 =푝, donde 푝 es un número racional positivo, y determina las raíces cuadradas de cuadrados perfectos y la raíz cúbica de cubos perfectos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.N.1.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "N",
+    "expectation": "Realiza operaciones con números expresados en notación científica y en notación decimal. Usa la notación científica para representar medidas muy grandes o muy pequeñas como las producidas por la tecnología (megabits y gigabytes, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.N.1.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "N",
+    "expectation": "Describe los números reales como el conjunto de todos los posibles números decimales. Reconoce que los números reales que no son racionales se llaman números irracionales (휋, √ 2, entre otros) y distingue entre ambos conjuntos. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria. ÁLGEBRA I",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Identifica funciones basándose en el comportamiento de su gráfica y su razón de cambio, y describe funciones usando la notación y terminología apropiada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.2.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Reconoce y describe, usando la terminología apropiada, el concepto función (dominio, campo de valores o alcance, entre otros) y determina a partir de su gráfica, diagramas de correspondencia, tablas y descripción verbal si una relación representa o no una función.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.2.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Compara las propiedades de dos funciones y las representa de diferentes formas (algebraica, gráficas, tablas de valores y/o descripción verbal).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.2.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Relación lineal o no lineal ➢ Determina e interpreta si una relación representada por descripción verbal, tabla de valores, gráfica o forma simbólica es lineal o no lineal verificando si la razón de cambio es constante o no constante. ➢ Interpreta que la ecuación de la forma y = mx + b define una función lineal cuya gráfica es una recta y la razón de cambio o pendiente es constante.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.2.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Relaciona el dominio de una función con su gráfica y en el contexto de un problema matemático o de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Resuelve ecuaciones lineales de una variable y usa funciones lineales para modelar relaciones entre cantidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.3.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Resuelve ecuaciones lineales en una variable con una solución, un número infinito de soluciones o sin solución. Muestra cuál de estas posibilidades se presenta transformando la ecuación original a ecuaciones equivalentes más simples de la forma x = a, a = a, o a = b, donde a y b son números diferentes. ÁLGEBRA I",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.3.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Traza la gráfica de una función que representa una relación lineal entre dos cantidades (dos variables). Determina y/o interpreta la razón de cambio y el intercepto en y de la función a partir de la descripción de una relación o de dos valores (x, y) presentados en una tabla, en una gráfica o en el contexto de un problema matemático o de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.3.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Resuelve ecuaciones lineales en una variable con coeficientes numéricos racionales, incluidas ecuaciones cuya solución requiere utilizar y aplicar la propiedad distributiva y combinar términos semejantes. (+)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.3.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Utiliza la función lineal para interpretar, modelar y resolver problemas que exhiben razón de cambio constante.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Analiza y resuelve pares de ecuaciones lineales simultáneas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.4.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Resuelve un sistema que consiste en: ➢ dos ecuaciones lineales en dos variables ➢ dos inecuaciones lineales en dos variables usando gráficas, tablas, el método algebraico y la tecnología, y describe la naturaleza de las posibles soluciones (no tiene solución; tiene una solución; tiene infinitas soluciones).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.4.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Analiza y explica el razonamiento usado para resolver un sistema de ecuaciones lineales. Reconoce que las soluciones para un sistema de dos ecuaciones lineales de dos variables corresponden a los puntos de intersección, si existen, de sus gráficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.4.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Reconoce y resuelve problemas que se pueden representar por un sistema de ecuaciones e inecuaciones lineales. Interpreta la solución en términos del contexto del problema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.4.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Resuelve problemas matemáticos y de la vida diaria utilizando un sistema de dos ecuaciones lineales en dos variables. ÁLGEBRA I",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.5",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Reconoce y aplica las propiedades de los exponentes para simplificar expresiones numéricas y algebraicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.5.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Propiedades de los exponentes. ➢ Reconoce las propiedades de los exponentes enteros. ➢ Aplica las propiedades de los exponentes enteros para simplificar expresiones numéricas y algebraicas equivalentes (Ejemplo: 푧 × 푧 −5 =푧 −3 = 푧 ).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.6",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Realiza las operaciones básicas con monomios, binomios, trinomios y polinomios en general.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.6.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Utiliza la terminología relacionada a expresiones polinómicas y efectúa las operaciones de suma, resta, multiplicación y división.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.6.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Utiliza la factorización y las propiedades de los exponentes para realizar operaciones básicas con polinomios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.6.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Representa mediante expresiones algebraicas el perímetro, área y volumen de figuras geométricas bidimensionales y tridimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.6.4",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Factoriza expresiones cuadráticas simples (factor común, trinomio cuadrado perfecto, diferencia de cuadrados y cuadráticas de la forma ax + bx + c que factorizan sobre los enteros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.7",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Reconoce que la razón de cambio constante se asocia a relaciones lineales y la interpreta en problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.7.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Demuestra que la inclinación de una recta representa que la razón de cambio es constante y describe gráficamente la relación proporcional de las variables.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.7.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Describe, usa e interpreta la razón de cambio (asociada con incrementos y reducciones) para modelar problemas matemáticos y de la vida diaria, como tasas, razones y porcentajes. ÁLGEBRA I",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.A.7.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "A",
+    "expectation": "Establece conexiones y traduce entre representaciones equivalentes de relaciones lineales, que incluyen gráficas, tablas y expresiones verbales para resolver problemas. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.G.8",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "G",
+    "expectation": "Explora y aplica el teorema de Pitágoras para solucionar problemas de medición.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.G.8.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "G",
+    "expectation": "Prueba el teorema de Pitágoras midiendo el área de cuadrados construidos sobre los lados de un triángulo rectángulo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.G.8.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "G",
+    "expectation": "Aplica el teorema de Pitágoras para determinar la longitud desconocida de un lado de un triángulo rectángulo y para calcular la distancia entre dos puntos en el plano cartesiano. Medición El estudiante es capaz de aplicar sistemas, herramientas y técnicas de medición con precisión, y establece conexiones entre conceptos espaciales y numéricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.M.9",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "M",
+    "expectation": "Utiliza instrumentos y técnicas para determinar medidas con el grado de precisión apropiado y reconoce las fórmulas de volumen de conos, cilindros y esferas, y las usa para resolver problemas de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.M.9.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "M",
+    "expectation": "Determina cómo son afectadas las medidas y dimensiones por los cambios en la escala de la figura que se mide.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.M.9.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "M",
+    "expectation": "Investiga la relación entre el cilindro y el cono para desarrollar la fórmula de volumen. ÁLGEBRA I",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.M.9.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "M",
+    "expectation": "Usa coordenadas y la fórmula de distancia para determinar el perímetro de polígonos, y longitudes para calcular el área de triángulos y rectángulos en el plano cartesiano. Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.10",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Formula preguntas que pueden contestarse con el análisis de datos obtenidos de una encuesta. Analiza los resultados de una encuesta presentada en los medios de comunicación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.10.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Examina los resultados de encuestas presentadas en los medios de comunicación para determinar cómo fue seleccionada la muestra de la población y cuál fue el método utilizado para presentarla.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.10.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Identifica las fuentes de sesgos que pueden afectar los resultados de la encuesta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.10.3",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Analiza e identifica gráficas engañosas (dudosas o ambiguas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.11",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Determina el espacio muestral de un experimento y emplea la regla de conteo de multiplicación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.11.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Describe el evento como subconjuntos de un espacio muestral (el conjunto de resultados) usando las características (o categorías) de los resultados, o como uniones, intersecciones o complementos de otros eventos (“o”, “y”, “no” diagrama de Venn).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.12",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Resume, representa e interpreta datos de una sola variable continua o discreta. ÁLGEBRA I (+)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.12.1",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Usa la estadística adecuada, según la forma de la distribución de los datos para comparar el centro (moda, mediana, media) y la dispersión (rango intercuartil, desviación estándar) de dos o más conjuntos de datos. (+)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "8.E.12.2",
+    "subject": "Matemáticas",
+    "grade": "8",
+    "domain": "E",
+    "expectation": "Interpreta la diferencia de la forma, el centro y la dispersión, según el contexto de los conjuntos de datos, al analizar los posibles efectos de los valores extremos. ÁLGEBRA II Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria. ES.N.1 Usa la propiedad de clausura de números racionales e irracionales, y aplica conceptos básicos de la teoría de conjuntos. ES.N.1.1 Comprende por qué la suma, la resta o el producto de dos números racionales es racional; y por qué la suma o el producto de un número racional y un número irracional es irracional. ES.N.2 Razona cuantitativamente y usa unidades para resolver problemas. ES.N.2.1 Define cantidades adecuadas con el fin de hacer modelos descriptivos. ES.N.2.2 Escoge el grado de precisión adecuado a las restricciones de medición al reportar cantidades. ES.N.3 Realiza operaciones aritméticas con números complejos. ES.N.3.1 Reconoce que existe un número complejo i, tal que i² = -1, y que todo número complejo es de la forma a + bi, donde a y b son números reales. ES.N.3.2 Usa la relación i² = –1 y las propiedades conmutativa, asociativa y distributiva para sumar, restar y multiplicar números complejos. ES.N.3.3 División de números complejos ➢ Determina el conjugado de un número complejo. ➢ Utiliza conjugados para hallar cocientes de números complejos. ÁLGEBRA II ES.N.4 Usa números complejos en identidades polinómicas y ecuaciones. ES.N.4.1 Resuelve ecuaciones cuadráticas con coeficientes en el conjunto de los números reales que tienen soluciones en el conjunto de los números complejos. (+) ES.N.4.2 Extiende las identidades polinómicas a los números complejos (reescribir la expresión x² + 4 como ( 푥+2푖 )( 푥−2푖 ) ). (+) ES.N.4.3 Conoce el teorema fundamental del álgebra; demuestra que se cumple para polinomios cuadráticos. ES.N.7 Realiza operaciones con logaritmos. ES.N.7.1 Realiza operaciones básicas con logaritmos naturales y comunes. ES.N.7.2 Aplica las propiedades de los logaritmos 푙표푔 푏 ( 푥푦 ) = 푙표푔 푏 푥+푙표푔 푏 푦; 푙표푔 푏 ( 푥 푦 )=푙표푔 푏 푥−푙표푔 푏 푦; 푙표푔 푏 푥 푎 =푎푙표푔 푏 푥 para todo 푥>0,푦>0,푏>0,푏≠1. ES.N.8 Realiza operaciones en matrices y usa matrices en aplicaciones. (+) ES.N.8.1 Usa matrices para representar y manipular datos (para representar pagos o relaciones de incidencia en una red). (+) ES.N.8.2 Multiplica matrices por escalares para producir matrices nuevas (cuando se duplican los pagos en un juego). (+) ES.N.8.3 Suma, resta y multiplica matrices de dimensiones apropiadas. ÁLGEBRA II ES.N.9 Usa las propiedades de los números reales para resolver problemas con expresiones, ecuaciones y funciones. ES.N.9.1 Usa las propiedades para resolver problemas con expresiones, ecuaciones y funciones, y escoge e interpreta unidades en fórmulas de manera consistente, así como la escala y el origen en gráficas al representar datos. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria. ES.A.10 Realiza las operaciones básicas con monomios, binomios y polinomios, aplica estas operaciones para analizar el comportamiento gráfico de las funciones polinómicas y aplica la composición y descomposición de funciones para construir modelos y resolver problemas. ES.A.10.2 Utiliza la factorización y las propiedades de los exponentes para realizar las operaciones básicas con polinomios. ES.A.10.4 Factoriza expresiones cuadráticas simples (factor común, trinomio cuadrado perfecto, diferencia de cuadrados y cuadráticas de la forma 푎푥 +푏푥+푐 que factorizan sobre los enteros). ES.A.12 Interpreta la estructura de las expresiones. ES.A.12.1 Interpreta expresiones que representan una cantidad, según su contexto y los componentes de una expresión, como sus términos, factores y coeficientes (Ejemplo: Interpretar 푃(1+푟) 푛 como el producto de 푃 y un factor que no depende de 푃). ES.A.13 Escribe expresiones en formas equivalentes para resolver problemas. ÁLGEBRA II (+) ES.A.13.1 Determina la fórmula para la suma de una serie aritmética y geométrica finita (cuando la razón común no es 1) y usa la fórmula para resolver problemas de la vida diaria (Ejemplo: Calcular los pagos de una hipoteca). ES.A.14 Reconoce la propiedad de clausura. ES.A.14.1 Reconoce que los polinomios forman un sistema análogo a los enteros, es decir, son cerrados para las operaciones de suma, resta y multiplicación. ES.A.15 Reconoce la relación entre los ceros y los factores de un polinomio. ES.A.15.1 Reconoce y aplica el teorema del residuo: para un polinomio p(x) y un número a, el residuo de división por x – a es p(a), por tanto, p(a) = 0 si, y solo si, (x – a) es un factor de p(x). ES.A.15.2 Identifica los ceros en polinomios mediante la factorización, y usa los ceros para construir una gráfica aproximada de la función definida por el polinomio. ES.A.16 Usa polinomios para resolver problemas matemáticos. ES.A.16.3 Reescribe expresiones racionales simples de diferentes formas; escribe 푎(푥) 푏(푥) de la forma 푞 ( 푥 ) + 푟(푥) 푏 ( 푥 ),donde 푎 ( 푥 ),푏 ( 푥 ),푞 ( 푥 ) y 푟 ( 푥 ) son polinomios, con el grado de r(x) menor que el grado de b(x), b(x) ≠ 0, usando la división larga y la división sintética (si aplica). ES.A.16.4 Reconoce que las expresiones racionales forman un sistema análogo a los números racionales, que es cerrado para la suma, la resta, la multiplicación y la división por una expresión racional diferente de cero. ÁLGEBRA II ES.A.17 Crea ecuaciones que describen números o relaciones. ES.A.17.1 Representa restricciones mediante ecuaciones o inecuaciones, y mediante sistemas de ecuaciones y/o inecuaciones, e interpreta las soluciones como opciones viables o no viables en el contexto de hacer un modelo (Ejemplo: Representar inecuaciones para describir restricciones nutricionales y de costos en combinaciones de diferentes alimentos). ES.A.18 Identifica ciertas relaciones no lineales y las clasifica en relaciones exponenciales o relaciones cuadráticas basándose en la razón de cambio en tablas, formas simbólicas o representaciones gráficas. ES.A.18.1 Multiplica un par de expresiones lineales e interpreta el resultado de la operación numéricamente por evaluación, por medio de una tabla de valores y gráficamente. ➢ Reconoce que al multiplicar factores lineales produce relaciones no lineales. ES.A.19 Representa e interpreta funciones exponenciales y cuadráticas basadas en situaciones matemáticas y de la vida diaria por medio de tablas, formas simbólicas y representaciones gráficas, y soluciona ecuaciones relacionadas con estas funciones. ES.A.19.1 Describe los efectos de los cambios en el coeficiente, la base y el exponente en el comportamiento de una función exponencial. Distingue entre las representaciones generales para ecuaciones exponenciales (푦=푏 푥; 푦=푎(푏 푥 ) y ecuaciones cuadráticas 푦=−푥; 2푦= (−푥); 푦=푥; 푦=푎푥; 푦=푥 +푐; 푦=푎푥 +푐, y describe cómo los valores a, b, c afectan su gráfica. ES.A.19.2 Desarrolla y describe las múltiples representaciones de las soluciones de las ecuaciones cuadráticas y exponenciales utilizando manipulativos, tablas, gráficas, expresiones simbólicas y la tecnología. ÁLGEBRA II ES.A.20 Reconoce la solución de ecuaciones como un proceso de razonamiento y explica dicho razonamiento. ES.A.20.1 Resuelve ecuaciones racionales y radicales simples de una variable y reconoce que algunas soluciones pueden dar como resultado soluciones extrañas (soluciones que no satisfacen la ecuación o el problema realmente). ES.A.21 Resuelve ecuaciones e inecuaciones de una variable. ES.A.21.1 Resuelve ecuaciones cuadráticas de una variable. Usa el método de completar el cuadrado para transformar cualquier ecuación cuadrática de x en una ecuación de la forma (x – p) ² = q que tenga las mismas soluciones. Demuestra la fórmula cuadrática a partir de esta forma. ES.A.21.2 Resuelve ecuaciones cuadráticas por: ➢ inspección (x² = 49), ➢ factorización, ➢ raíz cuadrada, ➢ completar el cuadrado y ➢ la fórmula cuadrática, según corresponda a la forma original de la ecuación. Reconoce casos en que la fórmula cuadrática da soluciones complejas y las escribe como a ± bi para números reales a y b. ES.A.22 Resuelve sistemas de ecuaciones e inecuaciones. ES.A.22.1 Utiliza método gráfico, sustitución y eliminación para sistema mayor de 2 x 2 y lo clasifica en sistema consistente independiente, consistente dependiente e inconsistente. ES.A.22.2 Resuelve algebraica y gráficamente un sistema formado por una ecuación lineal y una ecuación cuadrática en dos variables. (+) ES.A.22.5 Resuelve sistemas de ecuaciones utilizando el método de Gauss Jordan y la regla de Cramer. ÁLGEBRA II ES.A.23 Representa y resuelve ecuaciones e inecuaciones por el método gráfico. ES.A.23.1 Reconoce que la gráfica de una ecuación de dos variables es el conjunto de todas sus soluciones ubicadas en el plano cartesiano, lo cual frecuentemente da una curva (que podría ser una recta). ES.A.23.2 Intersección de las gráficas de dos funciones: ➢ explica por qué las coordenadas x de los puntos donde las gráficas de las ecuaciones y = f(x) y y = g(x) se intersecan son las soluciones de la ecuación f(x) = g(x), ➢ determina las soluciones aproximadas de la ecuación f(x) = g(x) (utiliza la tecnología para graficar las funciones y prepara tablas de valores o encuentra aproximaciones sucesivas), ➢ incluye casos en los que f(x) y/o g(x) sean funciones lineales, polinómicas, racionales, de valor absoluto, exponenciales y logarítmicas. ES.A.23.3 Traza la gráfica de las soluciones de una desigualdad lineal de dos variables como un semiplano, y para un sistema de desigualdades lineales de dos variables, como la intersección de los correspondientes semiplanos con o sin tecnología. ES.A.23.4 Resuelve inecuaciones cuadráticas en una y dos variables, y traza la gráfica de la solución. ES.A.24 Clasifica sucesiones como aritméticas, geométricas o ninguna, y desarrolla fórmulas para el término general y las sumas relacionadas. (+) ES.A.24.1 Determina e interpreta la razón de cambio encontrada en sucesiones y la utiliza para clasificar las sucesiones como aritméticas, geométricas o ninguna. ÁLGEBRA II (+) ES.A.24.2 Desarrolla el término general para las sucesiones aritméticas o geométricas, y métodos para calcular la suma de los términos de una sucesión aritmética finita o sucesión geométrica y la suma de una serie geométrica infinita. ES.A.25 Resuelve ecuaciones logarítmicas y exponenciales. (+) ES.A.25.1 Resuelve ecuaciones exponenciales. (+) ES.A.25.2 Resuelve ecuaciones logarítmicas y presta atención a las raíces extrañas e interpreta la solución en el contexto del problema matemático. Funciones El estudiante es capaz de entender, interpretar, analizar y construir modelos de diversas funciones y sus representaciones. Esto incluye las descripciones verbales, tablas, ecuaciones y gráficas para hacer predicciones y analizar las relaciones al solucionar problemas matemáticos y de la vida diaria. ES.F.26 Reconoce el concepto de función y usa notación de funciones. (+) ES.F.26.2 Reconoce que las sucesiones son funciones, algunas veces definidas recursivamente, cuyo domino es un subconjunto de los enteros (Ejemplo: La sucesión de Fibonacci está definida recursivamente por f (0) = f(1) = 1, f(n+1) = f(n) + f(n-1) para n ≥ 1). ES.F.27 Reconoce, interpreta, evalúa y analiza funciones. ÁLGEBRA II ES.F.27.1 Escribe una función definida por una expresión en formas diferentes pero equivalentes, para explicar diferentes propiedades de la función. ➢ Usa el proceso de factorización y compleción del cuadrado en una función cuadrática para mostrar los ceros, los valores en los extremos y la simetría de la gráfica, y los interpreta según un contexto. ➢ Usa las propiedades de los exponentes para interpretar expresiones de funciones exponenciales (identificar la tasa porcentual de cambio en funciones tales como 푦= ( 1.02 ) 푡;푦= ( 0.97 ) 푡;푦= 1.01(12) 푡; 푦=(1.2) 푡 y clasificarlas como crecimiento o disminución exponencial). ES.F.27.2 Compara las propiedades de dos funciones, cada una representada de diferente manera: algebraicamente, gráficamente, en una tabla numérica o descrita verbalmente (Ejemplo: Dada la gráfica para una función cuadrática y otra función expresada de forma algebraica, determinar cuál función tiene el valor máximo mayor). ES.F.27.3 Reconoce y describe la continuidad, las asíntotas, la simetría (funciones pares e impares) y relaciona estos conceptos con la gráfica de la función. ES.F.27.4 Distingue entre situaciones que pueden ser modeladas con funciones lineales y con funciones exponenciales. Demuestra que las funciones lineales aumentan por diferencias iguales en intervalos iguales, y que las funciones exponenciales aumentan por factores iguales en intervalos iguales. ES.F.27.5 Reconoce situaciones en las que una cantidad cambia con respecto a otra cantidad a una tasa constante por intervalo unitario y situaciones en las cuales una cantidad aumenta o disminuye con respecto a otra cantidad a una tasa porcentual constante por intervalo unitario. ES.F.27.6 Interpreta los parámetros de una función lineal o exponencial en términos de un contexto. ÁLGEBRA II ES.F.28 Interpreta funciones que resultan en aplicaciones según el contexto. ES.F.28.1 Interpreta las características básicas de las gráficas y las tablas de una función que representa dos cantidades en términos de esas cantidades, y traza gráficas que muestran las características a partir de una descripción verbal de la relación. Entre las características se incluyen: intercepto, intervalos en los que la función es creciente, decreciente, positiva o negativa, máximos y mínimos relativos, simetrías, comportamiento en los extremos y periodicidad. ES.F.28.2 Calcula e interpreta la tasa de cambio promedio de una función (presentada simbólicamente o en una tabla) en un intervalo específico. Estima la tasa de cambio a partir de una gráfica. ES.F.28.3 Modela y resuelve problemas usando la variación directa, inversa y combinada. ES.F.28.4 Modela situaciones elaborando ecuaciones e inecuaciones basadas en funciones racionales. ES.F.28.5 Utiliza diferentes métodos para resolver ecuaciones e inecuaciones e interpreta las soluciones en términos del contexto. ES.F.29 Analiza funciones usando diferentes representaciones. ES.F.29.1 Compara y contrasta las características de las diferentes familias de las funciones: polinómicas, racionales, radicales, exponenciales, logarítmicas, trigonométricas y funciones definidas por partes, representadas de múltiples formas. ES.F.29.2 Compone y descompone dos funciones, determina su dominio y alcance (campo de valores, rango, imagen), y traza su gráfica. Utiliza la composición de funciones para determinar si dos funciones son inversas una de la otra. ÁLGEBRA II ES.F.29.3 Traza la gráfica de funciones expresadas simbólicamente y muestra las características claves de la gráfica con y sin tecnología. ➢ Grafica funciones lineales y cuadráticas, indica los puntos de intersección, el punto máximo o mínimo. ➢ Grafica funciones de raíz cuadrada, raíz cúbica y funciones por partes, incluye funciones discontinuas y de valor absoluto. ➢ Grafica funciones polinómicas e identifica los ceros cuando las factorizaciones son razonables, y muestra su comportamiento en los extremos. ➢ Grafica funciones racionales e identifica los ceros y las asíntotas cuando las factorizaciones son razonables, y muestra su comportamiento en los extremos. ➢ Grafica funciones trigonométricas y muestra período, línea media (eje primo), amplitud y desfase. ➢ (+) Grafica funciones exponenciales y logarítmicas, y señala los interceptos y su comportamiento en los extremos. ES.F.30 Construye una función como modelo de la relación entre dos cantidades. ES.F.30.1 Modelos de funciones ➢ Usa una función que describe una relación entre dos cantidades. ➢ Determina una expresión explícita, un proceso recursivo o los pasos para un cálculo a partir de un contexto. ➢ Combina tipos de funciones en su forma estándar usando operaciones aritméticas (Ejemplo: Construir una función que modele la temperatura de un cuerpo que se va enfriando, agregarle una función constante a una función exponencial decreciente y relacionar estas funciones con el modelo). ÁLGEBRA II (+) ES.F.30.2 Aplica el concepto de composición y descomposición de funciones en modelos y en la solución de problemas matemáticos y de la vida diaria (Ejemplo: Si T(y) es la temperatura de la atmósfera en función de la altura, y h(t) es la altitud de un globo meteorológico en función del tiempo, entonces T(h(t)) es la temperatura en el lugar donde se encuentra el globo en función del tiempo). ES.F.31 Construye nuevas funciones a partir de funciones existentes. ES.F.31.2 Identifica funciones pares e impares a partir de sus gráficas y de sus expresiones algebraicas. ES.F.31.3 Funciones inversas ➢ Determina la función inversa de una función f(x). Resuelve una ecuación de la forma f(x) = c para una función simple f que tiene inverso, y escribe la expresión de la función inversa de una función (Ejemplo: 푓 ( 푥 ) =2푥;o 푓 ( 푥 ) = 푥+1 푥−1 para 푥 ≠1). ES.F.32 Construye y compara modelos lineales, cuadráticos y exponenciales, y resuelve problemas de la vida diaria. ES.F.32.1 Construye funciones lineales y exponenciales, incluidas: ➢ sucesiones aritméticas y geométricas, ➢ una gráfica, ➢ una descripción de la relación o ➢ dos pares de entradas y salidas (representadas en tabla o diagrama) para resolver problemas de la vida diaria. ES.F.32.2 Utiliza gráficas y tablas de funciones para observar que una cantidad que aumenta de manera exponencial excede a una cantidad que aumenta de forma lineal, cuadrática o polinómica. ÁLGEBRA II ES.F.32.3 En modelos exponenciales, expresa como logaritmo la solución de 푎푏 (푐푡) =푑, donde a, c y d son números reales, y la base b es 2, 10 o e. Evalúa logaritmos usando la tecnología. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico. ES.G.47 Utiliza teoremas de semejanza. ES.G.47.1 Demuestra teoremas sobre triángulos, que incluyen los siguientes: ➢ una recta paralela a uno de los lados de un triángulo divide a los otros dos proporcionalmente, y viceversa. ➢ el teorema de Pitágoras (usando la semejanza de triángulos). ES.G.48 Define razones trigonométricas y resuelve problemas matemáticos con triángulos rectángulos. ES.G.48.3 Usa razones trigonométricas y el teorema de Pitágoras para resolver triángulos rectángulos en problemas matemáticos y de la vida diaria. (+) ES.G.48.4 Desarrolla las identidades pitagóricas trigonométricas fundamentales de suma y diferencia, doble ángulo y de las funciones (secante, cosecante, tangente y cotangente), que utiliza para simplificar expresiones trigonométricas y resolver triángulos. ES.G.53 Representa números complejos y sus operaciones en el plano complejo. (+) ES.G.53.3 Calcula la distancia entre números en el plano complejo como el módulo de la diferencia, y el punto medio de un segmento, como el promedio de los números en sus puntos extremos. ÁLGEBRA II Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones. ES.E.61 Resume, representa e interpreta datos de una sola variable de conteo o medición. ES.E.61.1 Usa la media y la desviación estándar de un conjunto de datos para ajustarla a una distribución normal y para estimar porcentajes de población. Reconoce que hay conjuntos de datos para los cuales dicho proceso no es el adecuado. Usa calculadoras, hojas de cálculo y tablas para estimar las áreas bajo una curva normal. ES.E.61.2 Identifica escenarios en los que la distribución normal es de utilidad. Describe las características de la distribución normal. ES.E.64 Interpreta modelos lineales. ES.E.64.1 Interpreta la inclinación (razón de cambio) y el punto de corte (término constante) de un modelo lineal según el contexto de los datos. ES.E.64.2 Determina la correlación lineal entre dos variables numéricas con o sin tecnología. (+) ES.E.64.5 Examina la influencia de los valores extremos en la correlación y en los modelos de tendencias. ➢ Investiga y describe los efectos de los valores extremos en el coeficiente de correlación, la pendiente y los interceptos de la línea de regresión. GEOMETRÍA Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria. ES.N.9 Usa las propiedades de los números reales para resolver problemas con expresiones, ecuaciones y funciones. ES.N.9.1 Usa las propiedades para resolver problemas con expresiones, ecuaciones y funciones, y escoge e interpreta unidades en fórmulas de manera consistente, así como la escala y el origen en gráficas al representar datos. ES.N.9.2 Representa e interpreta datos en matrices, y desarrolla la suma de matrices y sus propiedades para resolver problemas. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria. ES.A.10 Realiza las operaciones básicas con monomios, binomios y polinomios, aplica estas operaciones para analizar el comportamiento gráfico de las funciones polinómicas y aplica la composición y descomposición de funciones para construir modelos y resolver problemas. ES.A.10.3 Representa mediante expresiones algebraicas el perímetro, área y volumen de figuras geométricas bidimensionales y tridimensionales. ES.A.11 Multiplica matrices, verifica las propiedades de la multiplicación de matrices y usa la representación matricial de un sistema de ecuaciones lineales en dos variables para resolver sistemas con y sin tecnología. GEOMETRÍA ES.A.11.1 Verifica las propiedades de la multiplicación de matrices (2x2), una matriz por un escalar y utiliza estas propiedades para resolver problemas. ES.A.11.2 Construye un sistema de ecuaciones lineales modelando situaciones de la vida diaria y representa el sistema como una ecuación matricial (Ax = B). ES.A.11.3 Resuelve un sistema que consiste en dos ecuaciones lineales en dos variables al resolver la ecuación matricial Ax = B, y hallar 푥=퐴 −1 퐵 utilizando la tecnología. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico. ES.G.36 Conceptos básicos de geometría ES.G.36.1 Reconoce el concepto geometría. ES.G.36.2 Nombra e identifica los conceptos básicos en figuras geométricas y de la vida diaria como: ➢ punto ➢ recta ➢ plano ➢ segmento ➢ rayo ES.G.36.3 Reconoce y aplica los postulados básicos de la geometría euclidiana. GEOMETRÍA ES.G.39 Aplica métodos matemáticos de prueba para desarrollar justificaciones para los teoremas básicos de la geometría euclidiana. ES.G.39.1 Demuestra teoremas sobre rectas y ángulos. Incluye los siguientes teoremas: los ángulos rectos son congruentes; cuando una transversal se corta por rectas paralelas, los ángulos internos alternos son congruentes y los ángulos correspondientes son congruentes; los puntos sobre una bisectriz perpendicular de un segmento de recta son exactamente equidistantes de los puntos extremos del segmento. ES.G.39.2 Demuestra teoremas sobre triángulos. Incluye los siguientes teoremas: la suma de los ángulos interiores de un triángulo es de 180°; los ángulos de la base de un triángulo isósceles son congruentes; el segmento que une los puntos medios de dos lados de un triángulo es paralelo al tercer lado y la mitad de su longitud; las medianas de un triángulo se encuentran en un punto. ES.G.39.3 Demuestra teoremas sobre paralelogramos. Incluye los siguientes teoremas: los lados opuestos son congruentes; los ángulos opuestos son congruentes; las diagonales de un paralelogramo se bisecan una a la otra y, a la inversa, los rectángulos son paralelogramos con diagonales congruentes. ES.G.40 Identifica figuras congruentes y justifica estas congruencias estableciendo los criterios mínimos (LLL, LAL, ALA) y realiza las transformaciones que conservan la congruencia entre las figuras. ES.G.40.1 Compara y contrasta la igualdad, la congruencia y la semejanza de triángulos. ES.G.40.2 Usa descripciones geométricas de movimientos rígidos para transformar figuras, predice el efecto de un movimiento rígido sobre una figura y usa la definición de congruencia para determinar si son congruentes. GEOMETRÍA ES.G.40.3 Usa la definición de congruencia en términos de movimientos rígidos para mostrar que dos triángulos son congruentes si y solo si los pares de lados correspondientes y los pares de ángulos correspondientes son congruentes. ES.G.40.4 Establece los criterios de congruencia de triángulos (ALA, LAL, LLL) que se derivan de la definición de congruencia. ES.G.41 Identifica y aplica las transformaciones de figuras en el plano cartesiano y describe los resultados de estas transformaciones. ES.G.41.1 Representa transformaciones en el plano cartesiano, describe transformaciones como funciones y compara las que conservan distancia y ángulo con las que no los conservan (traslación, rotación o reflexión versus estiramiento o contracción). ES.G.41.2 Describe las reflexiones y rotaciones de polígonos regulares al moverlos sobre sí mismos. ES.G.41.3 Desarrolla definiciones para las transformaciones en ángulos, círculos, rectas perpendiculares, rectas paralelas y segmentos de recta. ES.G.41.4 Construye una figura geométrica que resulta de una rotación, reflexión o traslación de la figura original (papel milimetrado, papel para calcar o software de geometría). Describe una secuencia de transformaciones que mueve a una figura dada sobre otra. ES.G.42 Aplica los conceptos de congruencia y semejanza usando modelos físicos, transparencias o software de geometría para identificar figuras semejantes o congruentes. Establece los criterios mínimos (LAL, ALA, LLL) para justificar la semejanza de triángulos y determina las transformaciones que conservan la semejanza entre figuras geométricas. GEOMETRÍA ES.G.42.1 Reconoce que una figura bidimensional es congruente con otra si la segunda se puede obtener de la primera mediante una secuencia de rotaciones, reflexiones y traslaciones. ES.G.42.2 Describe el resultado de transformaciones, traslaciones, rotaciones y reflexiones de figuras bidimensionales usando coordenadas. ES.G.42.3 Identifica y aplica los criterios mínimos de acuerdo con los postulados LAL, LLL, AA para establecer la semejanza de triángulos y descubre que la congruencia es un caso especial de semejanza. ES.G.42.4 Utiliza la semejanza y las proporciones para calcular las medidas de las partes correspondientes de figuras semejantes y las aplica en otras disciplinas. Usa criterios de congruencia y semejanza de triángulos para resolver problemas matemáticos y demostrar relaciones entre figuras geométricas. ES.G.42.5 Construye la representación de una figura semejante a otra figura a partir de la razón de semejanza. ES.G.42.6 Utiliza triángulos semejantes para demostrar que la razón de cambio asociada a cualquier par de puntos en una línea se mantiene. ES.G.42.7 Utiliza transformaciones centradas en el origen para describir e investigar semejanzas. ES.G.43 Reconoce y aplica teoremas sobre círculos. ES.G.43.1 Demuestra que todos los círculos son semejantes. ES.G.43.2 Identifica y describe relaciones entre ángulos inscritos, radios y cuerdas (incluir las relaciones entre ángulos centrales, inscritos y circunscritos; los ángulos inscritos en un diámetro son ángulos rectos; el radio de un círculo es perpendicular a la tangente en el punto donde el radio interseca el círculo). GEOMETRÍA ES.G.43.3 Construye círculos inscritos y circunscritos en un triángulo y demuestra las propiedades de los ángulos de un cuadrilátero inscrito en un círculo. ES.G.43.4 Construye la recta tangente a un círculo desde un punto exterior. ES.G.44 Realiza construcciones geométricas. Nota: Se recomienda integrar el enfoque STEM-PBL y el uso de la tecnología. ES.G.44.1 Realiza construcciones geométricas formales con una variedad de herramientas y métodos (compás, regla no graduada, cuerda, dispositivos de reflexión, plegado de papel, software de geometría). Copia un segmento; copia un ángulo; biseca un segmento; biseca un ángulo; construye rectas perpendiculares, la bisectriz perpendicular de un segmento de recta; y construye una recta paralela a otra que pase por un punto específico en el mismo plano. ES.G.44.2 Construye un triángulo equilátero, un cuadrado y un hexágono regular inscrito en un círculo. ES.G.45 Aplica conceptos geométricos para diseñar modelos de formas geométricas. ES.G.45.1 Aplica conceptos de densidad basándose en área y volumen para crear modelos (Ejemplo: personas por milla cuadrada, BTU por pie cúbico). ES.G.45.2 Aplica métodos geométricos para resolver problemas de diseño (Ejemplo: Diseñar un objeto o estructura para satisfacer restricciones físicas o minimizar costos; trabajar con sistemas tipográficos de cuadrículas utilizando razones). ES.G.46 Aplica métodos matemáticos de prueba para desarrollar justificaciones para los teoremas básicos de la geometría euclidiana. GEOMETRÍA ES.G.46.1 Establece conjeturas basadas en la exploración de situaciones geométricas, con y sin tecnología. ES.G.46.2 Prueba, directa o indirectamente, que un enunciado matemático válido es cierto. Desarrolla un contraejemplo para demostrar que un enunciado no es válido. (+) ES.G.46.3 Formula e investiga la validez del inverso de una proposición condicional. (+) ES.G.46.4 Organiza y presenta pruebas directas y pruebas indirectas utilizando dos columnas, párrafos y diagramas de flujo. ES.G.47 Utiliza teoremas de semejanza. ES.G.47.1 Demuestra teoremas sobre triángulos. Incluye los siguientes teoremas: ➢ una recta paralela a uno de los lados de un triángulo divide a los otros dos proporcionalmente, y viceversa. ➢ el teorema de Pitágoras (usando la semejanza de triángulos). Medición El estudiante es capaz de aplicar sistemas, herramientas y técnicas de medición con precisión, y establece conexiones entre conceptos espaciales y numéricos. ES.M.56 Justifica y aplica las fórmulas de medidas asociadas a figuras geométricas bidimensionales y tridimensionales para perímetro/circunferencia, área y volumen, y aplica estas fórmulas y propiedades geométricas relacionadas con ángulos y medidas de arco para resolver problemas matemáticos y de la vida diaria. ES.M.56.1 Presenta un argumento informal para las fórmulas de la circunferencia y área de un círculo, volumen de un cilindro, pirámide, cono y esferas. GEOMETRÍA ES.M.56.2 Resuelve problemas de la vida diaria usando las fórmulas de volumen para cilindros, pirámides, conos y esferas. ES.M.56.3 Identifica las figuras de las secciones transversales bidimensionales de objetos tridimensionales, e identifica objetos tridimensionales generados por la rotación de objetos bidimensionales. ES.M.57 Justifica y aplica las fórmulas de medidas asociadas a figuras geométricas bidimensionales y tridimensionales para perímetro/circunferencia, área, volumen. (+) ES.M.57.1 Describe objetos a través de figuras geométricas bidimensionales y tridimensionales, sus medidas y sus propiedades (Ejemplo: un modelo cilíndrico del tronco de un árbol o de un torso humano). Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones. ES.E.58 Calcula valores esperados y los usa para resolver problemas matemáticos. ES.E.58.1 Define una variable aleatoria para una cantidad de interés asignándole un valor numérico a cada evento de un espacio muestral; grafica la distribución de probabilidad correspondiente con las mismas imágenes gráficas usadas para la distribución de datos. ES.E.59 Usa probabilidades para evaluar resultados y tomar decisiones. (+) ES.E.59.1 Considera los posibles resultados, asignando probabilidades de acuerdo con los valores esperados para la toma de decisiones. (+) ES.E.59.2 Evalúa y compara estrategias usando los valores esperados. GEOMETRÍA (+) ES.E.59.3 Usa probabilidades para tomar decisiones justas. (+) ES.E.59.4 Analiza decisiones y estrategias al usar conceptos de probabilidad para resolver problemas de la vida diaria. ES.E.60 Desarrolla, usa e interpreta simulaciones para estimar probabilidades de eventos cuyos valores teóricos son difíciles o imposibles de calcular. (+) ES.E.60.1 Describe una simulación identificando los componentes y supuestos en un problema de la vida diaria, selecciona el instrumento para generar los resultados, define y especifica la cantidad de intentos y realiza la simulación. (+) ES.E.60.2 Resume datos de una simulación usando datos numéricos y las gráficas apropiadas, desarrolla un estimado para la probabilidad de un evento asociado a una situación de la vida diaria y discute el efecto de la cantidad de intentos en la probabilidad estimada de un evento. (+) ES.E.60.3 Reconoce que los resultados de una simulación difieren de una simulación a otra; observa que los resultados de una simulación tienden a converger a medida que aumenta el número de intentos. TRIGONOMETRÍA Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria. ES.N.2 Razona cuantitativamente y usa unidades para resolver problemas. ES.N.2.1 Define cantidades adecuadas con el fin de hacer modelos descriptivos. ES.N.2.2 Escoge el grado de precisión adecuado a las restricciones de medición al reportar cantidades. Funciones El estudiante es capaz de entender, interpretar, analizar y construir modelos de diversas funciones y sus representaciones. Esto incluye las descripciones verbales, tablas, ecuaciones y gráficas para hacer predicciones y analizar las relaciones al solucionar problemas matemáticos y de la vida diaria. ES.F.29 Analiza funciones usando diferentes representaciones. TRIGONOMETRÍA ES.F.29.3 Traza la gráfica de funciones expresadas simbólicamente y muestra las características claves de la gráfica con y sin tecnología. ➢ Grafica funciones lineales y cuadráticas, indica los puntos de intersección, el punto máximo o mínimo. ➢ Grafica funciones de raíz cuadrada, raíz cúbica y funciones por partes, incluye funciones discontinuas y de valor absoluto. ➢ Grafica funciones polinómicas e identifica los ceros cuando las factorizaciones son razonables, y muestra su comportamiento en los extremos. ➢ Grafica funciones racionales e identifica los ceros y las asíntotas cuando las factorizaciones son razonables, y muestra su comportamiento en los extremos. ➢ Grafica funciones trigonométricas y muestra período, línea media (eje primo), amplitud y desfase. ➢ (+) Grafica funciones exponenciales y logarítmicas, y señala los interceptos y su comportamiento en los extremos. ES.F.29.4 Representa las funciones trigonométricas por medio de tablas, gráficas, expresiones verbales y expresiones algebraicas. ES.F.29.5 Evalúa funciones trigonométricas para un número real de su dominio. ES.F.29.6 Reconoce las características principales de cada una de las funciones trigonométricas: ➢ dominio, ➢ recorrido (campo de valores, imagen, alcance), ➢ intersecciones con los ejes, ➢ valores máximos y mínimos, ➢ asíntotas, ➢ intervalos donde la función es creciente, decreciente o constante. TRIGONOMETRÍA ES.F.31 Construye nuevas funciones a partir de funciones existentes. (+) ES.F.31.5 Produce una función que tenga función inversa a partir de una función que no es uno-uno restringiendo el dominio. ES.F.33 Extiende el dominio de funciones trigonométricas al utilizar el círculo unitario. ES.F.33.1 Reconoce la medida de un ángulo en radianes como la longitud del arco que subtiende ese ángulo sobre el círculo unitario. ES.F.33.2 Determina ángulos coterminales (positivos y negativos) para un ángulo en posición estándar. ES.F.33.3 Expresa la medida en radianes de un ángulo en grados y viceversa (radianes a grados y grados a radianes). ES.F.33.4 Explica cómo el círculo unitario sobre el plano cartesiano permite extender las funciones trigonométricas a todos los números reales utilizando las medidas de los ángulos en radianes. ES.F.33.5 Triángulos especiales y círculo unitario ➢ Usa triángulos especiales para determinar de forma geométrica los valores de seno, coseno y tangente de 0,휋, 휋, 휋, 휋, 휋 y sus múltiplos. ➢ Usa el círculo unitario para expresar los valores de seno, coseno y tangente de x, π+ x, y 2π–x en términos de sus valores de x, donde x es un número real cualquiera. (+) ES.F.33.6 Usa el círculo unitario para explicar la simetría (impar y par) y la periodicidad de las funciones trigonométricas. TRIGONOMETRÍA ES.F.33.7 Determina el ángulo de referencia para ángulos (positivos y negativos) en posición estándar. ES.F.34 Representa fenómenos periódicos con funciones trigonométricas. ES.F.34.1 Utiliza funciones trigonométricas para construir modelos y resolver problemas matemáticos y de la vida diaria. ES.F.34.2 Selecciona funciones trigonométricas para modelar fenómenos periódicos con amplitud, frecuencia y línea media. (+) ES.F.34.3 Reconoce que al restringir una función trigonométrica a un dominio que siempre aumenta o disminuye permite construir su función inversa correspondiente. (+) ES.F.34.4 Resuelve ecuaciones trigonométricas utilizando funciones inversas y evalúa e interpreta las soluciones utilizando la tecnología. ES.F.34.5 Utiliza diferentes estrategias para resolver ecuaciones trigonométricas. ES.F.35 Demuestra y aplica identidades trigonométricas. (+) ES.F.35.1 Demuestra la identidad pitagórica sen²(θ) + cos²(θ)=1 y la usa para determinar sen(θ), cos(θ), o tan(θ), dado sen(θ), cos(θ), o tan(θ) y el cuadrante del ángulo. (+) ES.F.35.2 Determina las fórmulas de suma y resta para seno, coseno y tangente, y las usa para resolver problemas matemáticos. TRIGONOMETRÍA Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico. ES.G.37 Experimenta con transformaciones en el plano cartesiano. ES.G.37.1 Transformaciones geométricas ➢ Representa transformaciones en el plano cartesiano usando transparencias y software para geometría; describe transformaciones como funciones que asumen puntos en el plano cartesiano como entrada y entregan otros puntos como salida. ➢ Compara transformaciones que conservan distancia y ángulo con las que no los conservan (traslación versus ampliación). ES.G.48 Define razones trigonométricas y resuelve problemas matemáticos con triángulos rectángulos. ES.G.48.1 Reconoce que, por semejanza, las razones entre los lados de un triángulo rectángulo son una propiedad de los ángulos del triángulo, lo que lleva a la definición de razones trigonométricas para ángulos agudos. ES.G.48.2 Explica y usa la relación entre seno y coseno de ángulos complementarios. ES.G.48.3 Usa razones trigonométricas y el teorema de Pitágoras para resolver triángulos rectángulos en problemas matemáticos y de la vida diaria. (+) ES.G.48.4 Desarrolla las identidades pitagóricas trigonométricas fundamentales de suma y diferencia, doble ángulo y de las funciones (secante, cosecante, tangente y cotangente), que utiliza para simplificar expresiones trigonométricas y resolver triángulos. TRIGONOMETRÍA ES.G.49 Determina la longitud de arco y áreas de sectores circulares. ES.G.49.1 Establece, usando la semejanza, que la longitud del arco intersecado por un ángulo central es proporcional al ángulo y define la medida del ángulo en radianes como la constante de proporcionalidad. ES.G.54 Aplica la trigonometría en triángulos comunes. (+) ES.G.54.1 Determina la fórmula 퐴= 푎푏 푠푒푛(퐶) para el área de un triángulo y dibuja una recta auxiliar desde el vértice perpendicularmente hasta el lado opuesto. (+) ES.G.54.2 Demuestra las leyes del seno y del coseno, y las usa para resolver problemas. (+) ES.G.54.3 Reconoce y aplica la ley del seno y la del coseno para determinar medidas desconocidas en triángulos rectángulos y triángulos oblicuos (problemas matemáticos de planimetría, fuerzas resultantes). DUODÉCIMO GRADO: ESTADÍSTICAS Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  }
+]

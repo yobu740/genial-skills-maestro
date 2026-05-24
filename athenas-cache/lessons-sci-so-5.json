@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204399",
+    "LessonNo": "5",
+    "LessonTitle": "La democracia y sus valores",
+    "SubjectCode": "sci-so",
+    "LevelCode": "5",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  },
+  {
+    "Id": "204398",
+    "LessonNo": "4",
+    "LessonTitle": "Los taínos: cultura y legado",
+    "SubjectCode": "sci-so",
+    "LevelCode": "5",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  }
+]

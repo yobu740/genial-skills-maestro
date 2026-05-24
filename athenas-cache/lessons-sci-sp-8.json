@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204698",
+    "LessonNo": "6",
+    "LessonTitle": "Genética y herencia",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204697",
+    "LessonNo": "5",
+    "LessonTitle": "Evolución y selección natural",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  }
+]

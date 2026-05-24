@@ -1,0 +1,498 @@
+[
+  {
+    "code": "7.IT1.1",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Describe las ramas de las ciencias asociadas con la química, como bioquímica, química física, química ambiental, química analítica, química industrial y química orgánica y las asocia a científicos y profesiones relacionadas con estas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.2",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Aplica los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación, y las prácticas de ciencias e ingeniería, en cada experimento e investigación que le lleve a resolver problemas relacionados con las ciencias químicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.3",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Planifica y lleva a cabo investigaciones con énfasis en el uso correcto de los instrumentos de experimentación, así como en las reglas de seguridad inherentes a su investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.4",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Analiza e interpreta datos mediante tablas, gráficas, cálculos matemáticos, uso del Sistema Internacional de Unidades (SI), uso de la tecnología y sus anotaciones, de manera sistemática, para establecer conclusiones claras y precisas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.5",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Formula preguntas basadas en datos relevantes e información científica corroborable, sobre problemas de investigación en las ciencias químicas, para definir problemas de ingeniería.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.6",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Aplica las prácticas de ingeniería —define un problema, desarrolla una solución al problema y optimiza la solución— considerando los siguientes aspectos: ● Presta atención a la precisión de los criterios necesarios o no necesarios, así como a las limitaciones que pudiesen afectar la posible solución al problema. ● Combina partes de diferentes soluciones para crear una nueva solución. ● Utiliza procesos sistemáticos para someter a prueba interactiva la solución al problema, y refinar la solución. SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT1.7",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Aplica prácticas de ciencias e ingeniería al comunicar pensamiento crítico y computacional en la representación de datos, en la preparación de informes de laboratorio y de experimentos, así como en la elaboración de informes orales y escritos. 7.IT2 Diseña soluciones óptimas para mejorar una solución a problemas de la vida real, tomando en cuenta los requerimientos y las necesidades de la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT2.1",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Define, con suficiente precisión, las especificaciones y las limitaciones de un problema de diseño, para asegurar una solución exitosa, tomando en consideración los principios científicos relevantes y los impactos potenciales sobre las personas y el ambiente, que delimitan las posibles soluciones (como por ejemplo, desarrollar un plan de implementación para la solución de algún problema ambiental observado por contaminación por sustancias químicas, derrames o desechos tóxicos, y expone el impacto de este problema sobre las personas y el ambiente).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT2.2",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Desarrolla un modelo para generar datos, al realizar pruebas interactivas y modificaciones a un objeto, una herramienta o un proceso, con el fin de documentar y obtener el diseño óptimo (como, por ejemplo, generar datos observables para ofrecer alternativas de solución a problemas de contaminación química, de uso indebido de material químico, de desecho de materiales tóxicos o de desecho de material biomédico, que faciliten la mejor disposición de desechos y de desperdicios sólidos, químicos, biomédicos y otros). Diseña el modelo, lo pone a prueba, mediante datos obtenidos, le hace modificaciones, lo somete a prueba nuevamente y evalúa su funcionamiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT2.3",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Analiza los datos obtenidos de pruebas, para determinar las similitudes y las diferencias entre varias soluciones de diseño, e identificar las mejores características de cada una, para combinarlas en una solución nueva, que atienda mejor los criterios para el éxito de estas (como, por ejemplo, proveer varias soluciones probables a problemas ambientales relacionados con la Química, y las somete a prueba).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT2.4",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Evalúa soluciones de diseño competitivas, usando un proceso sistemático para determinar cuán bien atienden las especificaciones y las limitaciones del problema, con énfasis en realizar proyectos en los que se integren varias disciplinas como, por ejemplo, la Robótica (aplicar la robótica o las simulaciones computacionales al diseño que va a ponerse a prueba). SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.IT2.5",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "IT",
+    "expectation": "Conoce los conceptos fundamentales inherentes a la creación de una propuesta de investigación (con énfasis en conocer las prácticas de ciencias e ingeniería, y las bases para el desarrollo de una propuesta de investigación: identificación de problemas de investigación, identificación de variables, redacción de hipótesis, medición, medios para recopilar e interpretar datos, y aspectos de ética y seguridad). Ciencias Físicas - Química Estudia la estructura y la composición de la materia, así como los cambios y las interacciones entre sus partículas. 7.CFQ1 Obtiene, comunica y representa información de la estructura, las propiedades, los cambios y la organización de la materia, a partir de la estructura del átomo, mediante el uso de modelos e investigaciones sencillas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.1",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define conceptualmente materia, así como las propiedades generales que la distinguen: masa, volumen e inercia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.2",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Distingue y compara propiedades físicas (intensivas y extensivas) y propiedades químicas de la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.3",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe cualitativamente la materia, incluyendo las siguientes propiedades: densidad, solubilidad, transparencia (materia transparente, translúcida u opaca), elasticidad, magnetismo, compresibilidad y divisibilidad, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.4",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe cuantitativamente las propiedades físicas de la materia, como la masa, el volumen, la longitud, la densidad y la temperatura, utilizando el Sistema Internacional de Unidades (SI).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.5",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Relaciona las medidas (de masa, volumen, longitud, densidad y temperatura) con sus unidades correspondientes, y con los instrumentos de medición adecuados para cada una.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.6",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Experimenta con las magnitudes y las unidades del Sistema Internacional de Unidades (SI), para calcular la densidad de algunos sólidos y líquidos, y destacar la importancia y la utilidad de esta propiedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.7",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Experimenta con la propiedad de densidad de varios materiales, para utilizar el pensamiento matemático y resolver problemas en los que se obtengan datos de masa y volumen; y calcular entonces la densidad mediante la ecuación D = m/V (donde D = densidad; m = masa; V = volumen).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.8",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Experimenta con las propiedades físicas que se relacionan con los estados de la materia (punto de fusión, punto de ebullición, punto de congelación), para describir sus cambios. SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.9",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define y distingue los conceptos sustancia, mezcla homogénea y mezcla heterogénea.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.10",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Experimenta con diferentes materiales, para explicar cómo distinguir las sustancias de las mezclas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.11",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Elabora un esquema gráfico (diagrama, representación pictórica o mapa conceptual) que representa el sistema de clasificación de la materia y las propiedades físicas y químicas de la materia, considerando su conocimiento previo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.12",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Establece la diferencia entre una sustancia y una mezcla.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.13",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Distingue entre los métodos físicos de separación de mezclas (filtración, cromatografía, decantación, cristalización y destilación, entre otros) y los métodos químicos de descomposición de compuestos (calentamiento, electrólisis, fotólisis).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.14",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define solución, e identifica sus propiedades principales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.15",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe las propiedades de los distintos tipos de solución: solución diluida, solución saturada y solución sobresaturada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.16",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Recopila información para explicar y proveer ejemplos de los usos que se le dan en la vida cotidiana a cada tipo de solución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.17",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Reconoce que las partículas que componen la materia están en continuo movimiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.18",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe cómo el movimiento de las partículas de la materia provoca cambios en el estado físico de esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.19",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Desarrolla y utiliza modelos cualitativos que demuestran los cambios en el movimiento (energía cinética) de las partículas, en la temperatura y en el estado (sólido, líquido, gaseoso) de una sustancia, cuando se le aplica o se le quita energía térmica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.20",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Explica que los cambios físicos no producen cambios en la materia (no altera la identidad de la sustancia), a diferencia de los cambios químicos, de los que surgen nuevas sustancias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.21",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Predice y describe los cambios físicos y los cambios químicos (inflamabilidad, combustibilidad, reactividad, formación de precipitado, cambios en color, efervescencia, cambios de estado) en la materia, producidos por los efectos de aplicar o quitar calor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.22",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define y distingue los conceptos átomo, elemento y compuesto. SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.23",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe la estructura del átomo (núcleo, nube de electrones) y las partículas subatómicas (los protones, los neutrones y los electrones) que lo componen.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.24",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Recopila información de fuentes confiables, para explicar cómo se fueron modificando los modelos del átomo a través del tiempo hasta desarrollar la teoría atómica actual.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.25",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Explica que todos los elementos están representados en la tabla periódica, y que se los organiza por familias y periodos, considerando tanto sus propiedades físicas (estado físico, metal, no metal, metaloide) como sus propiedades químicas (estado de oxidación).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.26",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Identifica dónde se localizan el número atómico y el número de masa atómica de los elementos en la tabla periódica, qué representan y cómo se calculan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.27",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Explica cómo se obtienen el número de protones, el número de electrones y el número de neutrones del átomo de, al menos, los primeros 18 elementos, usando los datos incluidos en la tabla periódica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.28",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Utiliza el modelo del átomo de Niels Bohr para escribir la configuración de los electrones, por niveles de energía, para los primeros 18 elementos de la tabla periódica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.29",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Examina la configuración de los electrones, por niveles de energía, de los primeros 18 elementos de la tabla periódica, para identificar los electrones de valencia y representar las estructuras de Lewis de los átomos de dichos elementos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.30",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Identifica elementos que se clasifican como metales y elementos que se clasifican como no metales; describe las propiedades que los caracterizan; e investiga sobre sus usos y aplicaciones en la industria y en la vida cotidiana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.31",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe y nombra las familias principales de elementos químicos (1A - 8A), según sus propiedades físicas generales (familias de los alcalinos, alcalinotérreos, halógenos, gases nobles, familia de carbono, de nitrógeno, oxígeno y boro).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.32",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe qué representa el número de oxidación de un elemento, y cómo se identifica esta propiedad química en la tabla periódica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.33",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Explica cómo la interacción entre los átomos se relaciona con la formación de moléculas y otros compuestos. SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.34",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe los procesos por los cuales las sustancias se combinan para formar compuestos, e identifica los tipos de enlaces que los forman.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.35",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Explica cómo se forman los enlaces iónicos y los enlaces covalentes simples.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.36",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Utiliza modelos de la estructura de Lewis de los átomos de algunos elementos para representar cómo se forman los compuestos iónicos y los compuestos covalentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.37",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Aplica el conocimiento sobre las propiedades físicas y las propiedades químicas de la materia, así como los cambios que sufre, para analizar e interpretar datos sobre las propiedades de las sustancias antes y después de interactuar, y poder determinar si ha ocurrido una reacción química.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.38",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define operacionalmente, reacción química y ecuación química.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.39",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe y representa pictóricamente las partes de una ecuación química (reactivos, productos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.40",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Provee ejemplos simples de reacciones químicas, mediante ecuaciones químicas, y las balancea para demostrar la ley de conservación de materia y energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.41",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Clasifica las reacciones químicas simples como reacciones de síntesis, de descomposición o de desplazamiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.42",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Distingue entre reacciones endotérmicas (que absorben calor) y reacciones exotérmicas (que liberan calor).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.43",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Desarrolla modelos (dibujos, modelos 3D, representaciones a computadora y otros) para describir la composición atómica de moléculas simples como la del agua (H O) o la del dióxido de carbono (CO ), y estructuras extendidas como la del cloruro de sodio (NaCl) o el diamante, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.44",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Recopila y comprende información, para describir que los materiales sintéticos se fabrican a partir de recursos naturales y que tienen un impacto sobre la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.45",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Lleva a cabo un proyecto para construir, probar y modificar un aparato que libera o absorbe energía térmica a través de procesos químicos [ejemplos de diseños pueden involucrar reacciones químicas, como disolver bicarbonato de sodio y ácido acético (vinagre), integrando los conceptos reacción química endotérmica (absorbe energía) y reacción química exotérmica (libera energía)].",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.46",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Define sustancia ácida y sustancia alcalina (base). SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.47",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Describe y analiza las propiedades generales de los ácidos y las bases (sustancias alcalinas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.48",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Utiliza la determinación cualitativa del pH de distintos materiales (mezclas y sustancias) para clasificarlos como ácidos o alcalinos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.49",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Provee ejemplos de los usos y las aplicaciones de las sustancias ácidas y básicas en las ciencias y en la vida cotidiana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "7.CFQ1.50",
+    "subject": "Ciencias",
+    "grade": "7",
+    "domain": "CFQ",
+    "expectation": "Recopila evidencia de fuentes diversas para construir una explicación sobre los usos, los beneficios, los riesgos y los peligros de las sustancias químicas (ácidos, bases) en la vida cotidiana. OCTAVO GRADO: FÍSICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 8.IT1 Utiliza y aplica las prácticas de las ciencias e ingeniería al evaluar investigaciones relacionadas con las ciencias físicas, y en la solución de problemas de investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

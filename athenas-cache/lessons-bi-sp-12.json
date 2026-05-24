@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204596",
+    "LessonNo": "8",
+    "LessonTitle": "Ecología y cambio climático",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "12",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204595",
+    "LessonNo": "7",
+    "LessonTitle": "Evolución humana",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "12",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 9
+  }
+]

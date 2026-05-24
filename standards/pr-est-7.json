@@ -1,0 +1,1786 @@
+[
+  {
+    "code": "7.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Evalúa los fenómenos naturales y su impacto en el desarrollo histórico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Investiga las causas y los efectos históricos y sociales de los desastres naturales (huracanes, tsunamis y sismos) en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Explica las consecuencias de los desastres naturales en el patrimonio histórico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Describe diversas formas en las que los procesos naturales y las actividades humanas afectan las características físicas de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Define los conceptos historia, hechos históricos, método histórico, narrativa histórica, cronología, fuentes primarias y secundarias, investigación histórica, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Construye y explica representaciones gráficas, como mapas de conceptos, líneas de tiempo, infografía, diccionarios pictóricos, entre otros, para explicar el desarrollo político, económico y social de Puerto Rico desde el siglo XVI hasta el siglo XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Investiga sobre temas correspondientes a los cambios históricos en Puerto Rico y sus municipios a partir de diversas fuentes: documentos (manuscritos e impresos), libros y enciclopedias, monumentos, obras de arte, fotografía histórica, memorias, testimonios, historia oral (entrevistas) y búsqueda en internet, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Describe los cambios históricos y el impacto económico ocurridos en Puerto Rico a partir de la segunda mitad del siglo XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Analiza el impacto de eventos económicos en el desarrollo de Puerto Rico, tales como la Real Cédula de Gracias de 1815, la abolición de la esclavitud, la encomienda, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Investiga a las personalidades históricas que contribuyeron al desarrollo político, económico y social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Reconoce las aportaciones históricas de las siguientes personalidades tales como: Juan Ponce de León, los Reyes Católicos de España, Miguel Enríquez, Juan Alejo de Arizmendi, Ramón Power y Giralt, Ramón Emeterio Betances, Segundo Ruiz Belvis, Lola Rodríguez de Tió, Mariana Bracetti, Celestina y Rafael Cordero, José Campeche, Eugenio María de Hostos, Francisco Oller, Román Baldorioty de Castro, Ana Roqué de Duprey, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Crea representaciones artísticas en torno a las personalidades históricas de Puerto Rico durante los siglos XVI al XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Identifica las ideologías que dieron origen a los primeros partidos políticos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Investiga sobre los aspectos significativos del desarrollo político y los nuevos retos que esto representa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Describe las diversas ramas de gobierno y sus funciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Debate sobre las plataformas de los partidos políticos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Identifica problemas sociales del pasado y plantea posibles soluciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Describe la influencia del ambiente geográfico en el desarrollo histórico y social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Analiza los cambios en las estructuras sociales desde la colonización hasta el siglo XIX, tales como la presencia de peninsulares, criollos, africanos esclavizados, cimarrones, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Elabora organizadores gráficos para describir la estructura social de la época.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Analiza críticamente expresiones artísticas que resaltan características de la vida, la sociedad y la historia de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Identifica elementos de la cultura puertorriqueña en la obra de José Campeche.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Identifica elementos de la cultura puertorriqueña del siglo XIX en la obra de Francisco Oller.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Investiga la obra de artistas contemporáneos que resaltan características de la vida, la sociedad y la historia de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Indaga en diversas fuentes de información las causas y consecuencias de diversos acontecimientos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Compara y contrasta un hecho histórico en diversas fuentes de información.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Analiza la relación política, cultural y económica de Puerto Rico con el Caribe, Estados Unidos, Latinoamérica y otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Identifica las aportaciones sociales y culturales de diversos grupos étnicos en la formación cultural de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Reconoce la influencia de mitos y leyendas en la historia de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CC",
+    "expectation": "Personifica fragmentos de leyendas puertorriqueñas (Cayetano Coll y Toste) en el contexto histórico estudiado en el curso. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Describe y analiza formas variadas del espacio geográfico en Puerto Rico y el Caribe. 7 PLA.1.1 Construye e interpreta mapas, tablas y gráficas para ilustrar y describir diversos aspectos de la geografía física y humana de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Distingue la influencia del ambiente geográfico en el desarrollo de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Localiza en un mapa político los municipios de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.1.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Crea una línea del tiempo sobre la fundación de los municipios de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Examina cómo la localización de Puerto Rico y el Caribe influye en el desarrollo histórico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Utiliza mapas, tablas y gráficas para determinar la influencia de los procesos históricos en Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Explica cómo la localización y los recursos naturales influyen en el desarrollo económico de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Investiga cómo los diversos recursos (renovables y no renovables) de Puerto Rico y el Caribe influyen en el desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Analiza diversas formas en las que los procesos naturales y las actividades humanas afectan a los habitantes de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Evalúa cómo los procesos demográficos influyen en la vida de los puertorriqueños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Investiga en el censo las características demográficas y su impacto social y económico en los habitantes de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Construye gráficas, pirámides poblacionales y diversos análisis geográficos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Identifica formas de participación ciudadana que orientaron las acciones políticas a lo largo de la historia de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Evalúa la influencia de la participación ciudadana en los procesos políticos del Imperio español en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Construye representaciones gráficas del desarrollo político de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Analiza la estructura social de Puerto Rico desde las civilizaciones precolombinas hasta el siglo XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Reconoce la formación de diversas instituciones sociales y la formulación de sus normas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Produce expresiones artísticas que demuestran los valores culturales de la sociedad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Construye diversas representaciones gráficas de la estructura social del periodo estudiado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Valora las aportaciones de las personas y los lugares en el desarrollo de expresiones culturales de Puerto Rico y el Caribe. 7. PLA.7.1 Ilustra con imágenes y graficas los patrones de distribución poblacional, lingüística, religiosa y otros elementos culturales de Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Describe cómo se desarrolló la tecnología en la sociedad de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Crea una imagen en la que se muestra una invención tecnológica de la época estudiada comparada con su uso en la actualidad. (Fotomontaje)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Investiga cómo la globalización influye en el espacio geográfico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Crea una narración que aborda el tema de diversos problemas globales y su impacto en el Puerto Rico de los siglos XVI al XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Analiza las implicaciones de los objetivos de desarrollo sostenible sobre el ambiente y las personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Plantea y evalúa medios por medio de los cuales los puertorriqueños pueden hacer uso responsable de los recursos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Define los conceptos energía renovable, agricultura, reciclaje, desarrollo sustentable, civismo, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PLA.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PLA",
+    "expectation": "Compara y contrasta cómo, a lo largo del tiempo, las acciones de las personas han afectado el medioambiente de Puerto Rico. Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Relaciona el espacio geográfico y su importancia con el desarrollo personal del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica los retos que enfrenta la sociedad puertorriqueña en torno a su relación con el espacio geográfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Propone el manejo responsable de los recursos naturales y la protección del medioambiente para garantizar el desarrollo sostenible de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Valora el espacio geográfico puertorriqueño y promueve conductas asertivas para la protección de este.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Reconoce el significado del pasado para poder entender nuestro presente y proyectarse hacia el futuro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Argumenta en torno a situaciones actuales apoyándose en el conocimiento de eventos pasados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Analiza hechos históricos o eventos que fueron fundamentales en el reconocimiento de derechos y libertades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica aspectos relevantes sobre la organización económica personal y familiar en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Desarrolla una actitud emprendedora por medio de la cual se puede adaptar a las nuevas exigencias de Puerto Rico y del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica historias de éxito en ambientes de emprendimiento y cooperativismo, y propone formas para emularlas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Promueve alternativas de desarrollo económico sostenible para Puerto Rico, tales como emprendimiento, cooperativismo, turismo y agricultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica características y peculiaridades del desarrollo humano en correspondencia con los cambios físicos, cognitivos y emocionales que se producen en las diversas etapas de la vida.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Genera juicios en torno a temas como personalidad, motivación y las consecuencias de la presión de grupo en el comportamiento individual.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Integra estrategias que identifica como favorecedoras a su forma particular de aprender, y reconoce el aprendizaje como una experiencia continua y permanente de la vida.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Reconoce y aprecia las aportaciones de puertorriqueños y puertorriqueñas en diversos escenarios, y argumenta en torno a cómo emularlos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Plantea críticamente diversos puntos de vista políticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica las características de diferentes colectivos políticos fundados entre los siglos XIX y XXI.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Debate en torno a las plataformas políticas en tiempos eleccionarios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Evalúa cómo los partidos políticos que han ostentado el poder han atendido las necesidades de la población en términos de salud, seguridad y educación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Produce ejemplos de situaciones en las que demuestra cómo solucionar problemas propios de su edad y de sus realidades personales, familiares y sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Evalúa el impacto de la esclavitud y el racismo durante los procesos de invasión, colonización y formación de la sociedad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Promueve el antirracismo mediante ejercicios de oratoria o redacción.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Propone soluciones a problemas sociales mediante la distribución equitativa de recursos y el acceso a medios que promueven la erradicación de la pobreza.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Reconoce la importancia de la cultura en el desarrollo personal de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica formas para enfrentarse a nuevos retos, de manera individual y colectiva, por medio de recursos originales, como composiciones musicales, artísticas, teatrales y gráficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PD.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PD",
+    "expectation": "Demuestra de forma verbal, escrita u oral orgullo por el patrimonio cultural puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Valora las aportaciones de diferentes contingentes poblacionales que han contribuido a la formación de la identidad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Demuestra dominio de destrezas tecnológicas para el desarrollo personal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Utiliza recursos tecnológicos para incrementar su conocimiento en áreas de investigación y comunicación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica formas en las que los avances tecnológicos son indispensables para el desarrollo del ser humano y la sociedad en la que habita.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica estrategias de comunicación, intercambio y acercamiento entre Puerto Rico y otros pueblos y culturas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Redacta discursos con originalidad o en los que se reflejan características personales y una actitud ciudadana responsable.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Identifica formas en las que Puerto Rico sostiene relaciones amigables con otros pueblos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Demuestra que se guía por valores y principios éticos por medio de iniciativas concretas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Reconoce el trato justo y la equidad entre los seres humanos e identifica acciones afirmativas que promueven la equidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Demuestra que comprende la importancia del trato justo y equitativo entre los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Exhibe un compromiso con la defensa de causas justas que le permiten desarrollarse como un ciudadano activo y responsable en contra de la violencia en todas sus manifestaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.DP.10.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "DP",
+    "expectation": "Participa en actividades dirigidas a proteger el ambiente y la calidad de vida en Puerto Rico. Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Determina cómo el entorno geográfico influye en la cultura puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Analiza las manifestaciones culturales de cada zona geográfica de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Evalúa cómo las personas de diversas culturas interpretan los datos y hechos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Identifica los símbolos patrios de Puerto Rico y sus municipios (himno, escudo y bandera) para comprender su significado histórico y cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Formula preguntas y respuestas en torno a cómo la identidad cultural cambia por medio de diversos procesos históricos en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Identifica aspectos culturales distintivos de Puerto Rico: herencia taína, africana y española, lugares icónicos, vestimenta típica, música, alimentos y tradiciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Analiza el rol de la cultura en asuntos y conflictos económicos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Compara y contrasta los elementos culturales que influyen en los asuntos económicos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Explica cómo los valores y creencias de los hombres y mujeres influyen en el intercambio cultural de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Evalúa mediante dramatizaciones los actos heroicos de patriotas que defendieron con orgullo su país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Investiga cómo los valores personales y familiares se expresan en la cultura de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Explica cómo las experiencias familiares y comunitarias contribuyen a la formación de la identidad cultural de cada persona.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.4.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Propone iniciativas que expresan el amor a la patria puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Reconoce las características políticas de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Describe mediante diálogos cómo diversas instituciones gubernamentales, sociales y culturales contribuyen a transmitir, promover y desarrollar la cultura puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Evalúa cómo las distintas instituciones sociales promueven la cultura de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Elabora explicaciones en torno a cómo la cultura influye en la forma como los diversos grupos sociales proponen soluciones a los problemas cotidianos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Investiga cómo los valores de las familias, grupos étnicos, religiones y nacionalidades se expresan en la cultura puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Reconoce las características culturales de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Valora las aportaciones culturales de diversos artistas puertorriqueños mediante la observación de sus obras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Demuestra con ejemplos cómo las expresiones culturales de Puerto Rico han contribuido a crear y desarrollar la identidad de los puertorriqueños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Plantea cómo la cultura puertorriqueña responde a los cambios sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Demuestra cómo Puerto Rico expresa, desarrolla y afirma la identidad cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Utiliza herramientas tecnológicas para investigar temas de interés sobre Puerto Rico en un contexto cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Ilustra diversas contribuciones culturales por medio de presentaciones gráficas, documentales o mediáticas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Utiliza herramientas tecnológicas para crear presentaciones sobre los cambios que se producen en las tradiciones y en la cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Investiga en torno a la influencia cultural de Puerto Rico en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Argumenta sobre las aportaciones culturales al mundo de diversas figuras destacadas de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Demuestra con ejemplos cómo las expresiones culturales han contribuido a desarrollar la identidad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Analiza los valores y tradiciones que se manifiestan en la cultura de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "IC",
+    "expectation": "Desarrolla descripciones orales o escritas de posturas, actitudes y aptitudes de puertorriqueños destacados en la vida cultural y que son ejemplos valiosos de lo que es un ciudadano productivo. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Examina cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios según el entorno geográfico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Desarrolla y describe en una línea de tiempo digital sobre los productos, bienes y servicios que impactaron el entorno geográfico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Analiza las estrategias adoptadas en Puerto Rico a lo largo del tiempo para resolver los problemas económicos, como por ejemplo la economía de monocultivo, los tipos de producción agrícola y el cambio de una sociedad agrícola a una industrial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Define conceptos básicos de la disciplina, como producción, distribución, intercambio, consumo, capital, bienes, servicios y decisiones económicas. 7.PDC 2.2 Identifica estrategias adoptadas en Puerto Rico para resolver sus problemas económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Narra el impacto histórico de las ideologías políticas en el desarrollo económico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Explica términos y conceptos económicos, como economía agrícola, mercantilismo, cooperativismo, capitalismo, emprendimiento, contrabando, economía informal, socialismo, monopolio, propiedad pública, propiedad privada, economía subterránea, corrupción y transparencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Agrupa las alternativas que utilizó Puerto Rico para mejorar su economía, como el aumento en la producción de bienes y servicios, el turismo, la agricultura, las inversiones, las oportunidades de empleo, el aumento del salario mínimo, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Identifica las causas y los efectos de los modelos económicos en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Describe el impacto de la ley de cabotaje desde su aprobación y sus consecuencias en el presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Identifica diversas maneras de hacer buen uso de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Crea un opúsculo sobre estrategias para el buen uso de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Informa posibles soluciones a problemas económicos en los ámbitos personal y colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Investiga y analiza el impacto en la economía de las políticas públicas establecidas en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Crea un organizador gráfico que describe las causas y los efectos de la crisis política del Estado español en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Construye una línea de tiempo sobre el impacto de la invasión estadounidense en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Propone alternativas para solucionar problemas como la desigualdad social, el desempleo, la corrupción y la falta de transparencia, la concentración y mala distribución de las riquezas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Redacta la importancia del dinero como medio de intercambio y sus implicaciones en la actividad económica y social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Sugiere actividades económicas y culturales que fomentan la creatividad, la productividad y el emprendimiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Identifica la aportación cultural de las ferias artesanales y fiestas patronales y su impacto en la economía de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Identifica herramientas tecnológicas para el estudio y el análisis de la producción, la distribución y el consumo en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Compara el uso de diferentes tecnologías en adolescentes, y su impacto en el desarrollo social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Identifica las condiciones necesarias para que Puerto Rico y otros países se puedan integrarse al comercio internacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Diseña una encuesta sobre la importancia y la integración del comercio internacional para el desarrollo laboral en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Analiza la forma en que los puertorriqueños establecen prioridades para satisfacer sus necesidades económicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "PDC",
+    "expectation": "Reconoce la importancia de hacer un buen uso de los recursos naturales y humanos para el bienestar social y económico de Puerto Rico. Conciencia Cívica y Democrática Practica y valora los principios que rigen la vida en una sociedad democrática y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Examina la situación de Puerto Rico para comprender su funcionamiento territorial, político, económico y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Examina ideas de cómo los ciudadanos pueden contribuir a favor del desarrollo de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Define conceptos en la discusión y la redacción de temas cívicos, sociales y políticos: gobierno, división de poderes (ejecutivo, legislativo y judicial), municipio, ayuntamiento, Asamblea municipal, constitución, ley, reglamento, ordenanza, Legislatura (Cámara de Representantes y Senado), entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Describe la estructura gubernamental y política que se rige bajo la Constitución del Estado Libre Asociado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Identifica leyes y regulaciones que afectan los procesos de desarrollo cívico y democrático de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Analiza la relación entre los principios que rigen la vida en una sociedad democrática y los poderes económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Comprende los principios éticos que deben dirigir los aspectos económicos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Demuestra por medio de iniciativas personales cómo se actúa con responsabilidad cívica y ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Actúa como ciudadano solidario por medio de la práctica del aprendizaje-servicio en la comunidad y en el país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Practica el aprendizaje-servicio en la comunidad y en el país como manifestación responsable del ciudadano solidario.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Analiza la ejecución del poder político de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Define conceptos relacionados con el asunto político de Puerto Rico: Rama Ejecutiva (gobernador y gabinete de gobierno), Rama Legislativa (senadores y representantes), Rama Judicial (Tribunal Supremo y Administración de Tribunales), elecciones generales, Comisión Estatal de Elecciones, elector, voto, sufragio, partidos políticos, grupos de interés, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Argumenta en forma valorativa y crítica en torno a asuntos políticos de Puerto Rico: conflictos, estatus político, relaciones federales, dependencia, estadidad, estadolibrismo, independencia, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Valora y defiende los procesos democráticos, los derechos humanos, la diversidad y las libertades civiles en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Juzga los valores de la dignidad, la solidaridad y la igualdad entre los puertorriqueños en asuntos de justicia social, libertad y derechos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Distingue expresiones artísticas y culturales de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Crea diferentes expresiones artísticas en las cuales expone temas de la cultura puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Utiliza la tecnología para comunicar ideas de interés, político, social y cultural relacionadas con Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Argumenta sobre la importancia de hacer un buen manejo de la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Juzga beneficios y retos en el manejo de la tecnología en la sociedad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Argumenta en forma crítica sobre cómo la mediación puede ser una estrategia para el manejo de conflictos globales en la sociedad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Evalúa, mediante diversos escritos (ensayos, poemas, párrafos, monografías, entre otros), el proceso de mediación ante conflictos globales entre Puerto Rico y los demás países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Plantea ejemplos en los cuales se describen diversas formas de practicar la democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Define conceptos del proceso democrático: derecho al voto, sufragio universal, desobediencia civil, manifestaciones multisectoriales, huelga, grupos comunitarios y de interés, formación de partidos políticos, debates, foros, participación ciudadana, voto libre, consenso, división de poderes (ejecutivo, legislativo y judicial).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Ilustra con ejemplos cómo en la vida democrática se plantean y se practican los derechos y deberes del ciudadano en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CCD.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CCD",
+    "expectation": "Explica, a partir de experiencias concretas, cómo el diálogo y la participación ciudadana pueden contribuir a la solución de problemas como la crisis ambiental, la crisis energética, la manifestación pública, la discusión pública (medios de comunicación), entre otros. Conciencia Global Evidencia, con su comportamiento, que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Utiliza el concepto geopolítico para comparar las relaciones entre los municipios de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Localiza a Puerto Rico en un mapa mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Identifica la latitud y la longitud donde se encuentra Puerto Rico. 7. CG.2 Explica la relación de Puerto Rico a partir de procesos globales que se dan en diferentes momentos de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Asume una posición con respecto a las migraciones indígenas, europeas, africanas y entre diversos países del Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Produce un documento audiovisual sobre las relaciones globales de Puerto Rico durante los siglos XVI al XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Investiga cómo la relación de Puerto Rico con España tuvo un impacto económico global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Reseña por medio de una noticia el impacto económico en Puerto Rico tras la venta de café y azúcar en el ámbito global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Investiga en torno a las relaciones entre procesos políticos, económicos y conflictos sociales en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Identifica alguna situación actual de su comunidad y plantea una solución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Compara y contrasta la situación actual de Puerto Rico con situaciones de los siglos XVI al XIX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Promueve una conciencia global en el proceso de la integración política de Puerto Rico con el resto del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Investiga los esfuerzos gubernamentales que se han realizado a favor del desarrollo político de Puerto Rico mediante una tabla comparativa o líneas de tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Analiza las situaciones sociales del mundo y cómo esto impacta a Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Investiga diversos problemas sociales que afectan el desarrollo de Puerto Rico, tales como la salud, la pobreza, la discriminación, el racismo, el tráfico ilegal, el calentamiento global, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Plantea la unidad y la diversidad entre Puerto Rico y el resto de los países del mundo en el ámbito cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Crea una lista focalizada sobre los elementos culturales de Puerto Rico con el resto de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Compara con una línea de tiempo ilustrada las expresiones culturales de Puerto Rico con el resto de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Identifica las relaciones globales que promueve una sociedad tecnológica y de conocimientos en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Informa sobre el impacto de la ciencia y la tecnología en la sociedad actual de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Demuestra con ejemplos la relación de Puerto Rico con otros países, basándose en conceptos tales como relaciones globales, conflictos, cooperación e interdependencia, vínculo, privatización, globalización, dependencia, ecosistema, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Manifiesta en un ambiente valorativo y crítico el impacto de las relaciones de Puerto Rico con otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Investiga cómo los derechos humanos universales pueden promoverse en la sociedad puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "CG",
+    "expectation": "Prepara carteles de propaganda que exponen los derechos humanos universales. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Explica cómo el conocimiento integrado de las ciencias sociales, las ciencias naturales y la tecnología nos ayudan a proporcionar una descripción y una interpretación racional, precisa y ordenada de carácter variable de la geografía de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Realiza un viaje de campo para explorar el entorno natural puertorriqueño, integrando tecnología de localización espacial, fotografía y video.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Construye lazos colaborativos utilizando las herramientas digitales para discutir abiertamente los problemas historiográficos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Investiga en los recursos digitales diversas fuentes primarias para comprender los procesos históricos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Organiza comunidades digitales en redes sociales, para intercambiar argumentos sobre temas historiográficos del Puerto Rico contemporáneo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Evalúa, mediante el uso de diversos medios digitales, los cambios que provocan los avances científicos y tecnológicos sobre la organización económica de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Diseña en algún programa de computadoras o aplicación: gráficas que ilustran los cambios provocados por los avances científicos y tecnológicos en la organización económica de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Investiga temas sociales, científicos y tecnológicos que influyen en el desarrollo histórico, cultural y social de Puerto Rico",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Produce un cartel digital o un audiovisual que resalta las aportaciones de los puertorriqueños al desarrollo científico, social y tecnológico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Identifica recursos tecnológicos para el estudio de los procesos políticos y el desarrollo de política pública en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT5.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Diseña en formato digital un repositorio de objetos de aprendizaje, luego de realizar una búsqueda de diferentes fuentes de información disponibles en red, como páginas gubernamentales, documentos históricos, trámite legislativo, museos, archivos, periódicos, entre otros, que ayuden a conseguir fuentes primarias para la investigación de los procesos políticos y el establecimiento de política pública en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Analiza cómo los avances científicos y tecnológicos han influenciado el desarrollo social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Redacta varios párrafos identificando la influencia de los avances tecnológicos y científicos en el desarrollo social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Investiga los aportes de la ciencia y la tecnología en la evolución de las expresiones artísticas y culturales en Puerto Rico y el Caribe.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Diseña mediante un trabajo colaborativo, un cartel o dibujo digital que refleja la evolución histórica, económica, cultural y social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Investiga el impacto de los cambios tecnológicos en el desarrollo histórico, político y económico de la sociedad de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Investiga, mediante organizadores gráficos, cambios en diversas tecnologías, y demuestra su impacto en el desarrollo histórico, político, económico y social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Compara y contrasta la influencia de los avances científicos y tecnológicos en el desarrollo social de Puerto Rico con otras regiones del Caribe y el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Utiliza la tecnología disponible para crear un diagrama de Venn en el que compara y contrasta los avances científicos y tecnológicos de Puerto Rico con otras partes del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Exhibe un comportamiento cívico y ético aplicando responsablemente la ciudadanía digital y haciendo buen uso de los recursos tecnológicos disponibles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Maneja de manera positiva, legal, ética y segura su identidad digital y en internet.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "7.SCT.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "7",
+    "domain": "SCT",
+    "expectation": "Comparte, crea, edita, usa y maneja documentos en internet respetando la propiedad intelectual. Cambio y Continuidad Estudia la vida de las sociedades en el contexto de los cambios y las transformaciones que se producen con el paso del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

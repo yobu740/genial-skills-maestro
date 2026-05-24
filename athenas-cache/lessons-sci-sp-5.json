@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204276",
+    "LessonNo": "3",
+    "LessonTitle": "Zonas climáticas",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "5",
+    "std": "5.ESS2.D",
+    "Objective": "Weather and Climate",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 0
+  },
+  {
+    "Id": "205010",
+    "LessonNo": "2",
+    "LessonTitle": "Prácticas de ciencia e ingeniería en investigación y diseño",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "5",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  },
+  {
+    "Id": "205007",
+    "LessonNo": "5",
+    "LessonTitle": "División celular",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "5",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 7
+  }
+]

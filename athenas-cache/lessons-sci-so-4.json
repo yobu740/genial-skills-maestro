@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204400",
+    "LessonNo": "6",
+    "LessonTitle": "Puerto Rico: geografía e historia",
+    "SubjectCode": "sci-so",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  },
+  {
+    "Id": "204396",
+    "LessonNo": "2",
+    "LessonTitle": "Mapas y orientación geográfica",
+    "SubjectCode": "sci-so",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  }
+]

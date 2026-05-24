@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204847",
+    "LessonNo": "5",
+    "LessonTitle": "Reacciones y balanceo de ecuaciones",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "11",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204846",
+    "LessonNo": "4",
+    "LessonTitle": "Gases y leyes de los gases",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "11",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  },
+  {
+    "Id": "204845",
+    "LessonNo": "3",
+    "LessonTitle": "Soluciones y concentraciones",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "11",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  }
+]

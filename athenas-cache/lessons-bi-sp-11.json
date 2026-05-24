@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204598",
+    "LessonNo": "10",
+    "LessonTitle": "Sistema nervioso y endocrino",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "11",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 9
+  },
+  {
+    "Id": "204597",
+    "LessonNo": "9",
+    "LessonTitle": "Biotecnología y bioética",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "11",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  }
+]

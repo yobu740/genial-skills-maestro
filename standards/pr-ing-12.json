@@ -1,0 +1,930 @@
+[
+  {
+    "code": "12.LS.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Comprehend and analyze information from a variety of listening activities to ask and answer questions on social, academic, college, and career topics.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.1.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Listen to and interact with peers during class, group, and partner discussions, developing logical arguments to expand upon conversations on a variety of grade-appropriate academic, social, college, and career topics.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.1.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Demonstrate comprehension of oral presentations and discussions on a variety of social, academic, college, and career topics by asking and answering questions that show critical consideration and extension of the ideas or arguments.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.1.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Work with peers to establish norms for discussions and decision-making, analyze information and key ideas, establish goals based on knowledge and individual roles, and demonstrate respect for diverse perspectives.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.1.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Listen and respond during a read aloud, presentation, or performance from a variety of literature, periods, genres, and styles to analyze character development and setting and to distinguish the characteristics of tone, voice, and mood. Make connections to the text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.1.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Listen and respond to synthesize, explain, support, and discuss information. Answer and formulate closed- and open-ended questions. Listen to, classify, and prioritize information.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.2",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Contribute to discussions on a variety of social, academic, college, and career topics in diverse contexts and with different audiences.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.2.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Contribute to class, group, and partner discussions. Sustain conversations on a variety of appropriate and relevant academic, social, college, and career topics by following turn‐taking rules and asking and answering on‐topic.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.2.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "React to others with relevant information by paraphrasing, evaluating, analyzing, and synthesizing ideas. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.3",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Evaluate information and determine appropriate responses to answer questions effectively.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.3.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Respond orally through closed- and open-ended questions about real-life and academic situations and answer questions demonstrating knowledge of the topic.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.3.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Listen to, discuss, and respond to complex instructions and information during group discussions.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.3.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Synthesize, analyze, and debate information, justifying answers with details from texts, self, and experiences.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.3.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Critically analyze closed- and open-ended questions and answer them with logical arguments and knowledge.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.4",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Contribute to social, academic, college, and career conversations using accurate and appropriate language.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.4.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Accurately and appropriately use a variety of grade‐appropriate general academic and content‐specific academic, social, college, and career-ready words when producing complex spoken texts and when telling, retelling, explaining, and analyzing stories; personal experiences; and current, social, college, and career events.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.5",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Provide, justify, and defend opinions or positions in speech.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.5.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Negotiate with and persuade others during discussions and conversations using acquired vocabulary and open responses to express and defend point of view.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.6",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Adjust language choices according to the task, context, purpose, and audience.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.6.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Apply language choices in different contexts for different purposes and audiences during speech deliverance.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.6.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Use idiomatic expressions correctly. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.6.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Use techniques for overcoming cultural and linguistic barriers to communication. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.7",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Plan and deliver different types of oral presentations/reports to express information and support ideas in social, academic, college, and career settings.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.7.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Plan and deliver a variety of oral presentations and reports on social, academic, college, and career topics that present evidence and facts to support ideas and demonstrate understanding of formal and informal registers. Integrate a variety of technology, print, or digital resources in presentations and reports.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LS.7.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LS",
+    "expectation": "Apply knowledge of direct/indirect quotations to strengthen oral presentations. + Foundational Skills The Foundational Skills Standard is aimed at fostering the student’s understanding and working knowledge of print concepts, the alphabetic principle, and other basic conventions of the English writing system. These foundational skills are not independent objectives; rather, they are necessary and important components of an effective, comprehensive reading program. Instruction should be differentiated: good readers will need much less practice with these concepts than struggling readers. The objective is to discern when students need attention in these skills.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Print concepts",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Demonstrate understanding of the organization and basic features of print.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Recognize relevant information from multiple reliable print and digital sources.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Gather relevant information from multiple print and digital sources to assess the credibility of each source.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Cite or paraphrase the data and conclusions of others avoiding plagiarism and following a standard format for citation (e.g., MLA and APA student format).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Provide complex reference information of source(s) applying required MLA and APA student format.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1e",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Understand that ideas are connected through cohesive devices and larger meaningful chunks of text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.1.1f",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Produce complete complex and compound sentences, recognizing and correcting inappropriate run-ons and fragments.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.2",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Phonological awareness (rhyming, blending, segmentation, deletion, isolation, substitution)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.2.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Refer to previous grades as needed to reinforce these skills.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Phonics and word recognition",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Understand and apply grade-level phonics and word analysis skills to decode and encode words.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Use a combined knowledge of strategies to encode grade-level monosyllabic and multisyllabic words.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Accurately read multisyllabic words using a combined knowledge of all letter-sound correspondences, syllabication patterns, prefixes, and suffixes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Apply meaning to single units of sound in existing word parts to encode a given word.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.3.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Process encoding sounds through letters (s,r), consonant blends (sh, sk), digraphs (ay, ew), or trigraphs (sch, thr) using conventional spelling patterns to form words.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.4",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Fluency",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.4.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Accurately and automatically read grade-level texts with appropriate patterns of stress, intonation, or expression.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.4.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Read with sufficient accuracy and fluency to support comprehension.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.4.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Read grade-level prose and poetry orally with appropriate purpose, intonation, expression, and understanding.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.FS.4.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "FS",
+    "expectation": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary. Reading The Reading Standard places equal importance on the complexity of what students read and the skill with which they read. This standard defines a grade-by-grade level of text complexity that starts with beginning reading since they began reading and increases up to the college and career-readiness high school level. When reading or viewing multimedia resources, the student must also demonstrate a growing ability to understand or use texts, make connections among ideas and between texts, and use textual evidence to support comprehension.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Read critically to make logical inferences and cite specific textual evidence to support conclusions drawn from the text",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Evaluate, analyze, research/synthesize, and document inferences and conclusions drawn from in-depth critical reading of appropriate texts and viewing of multimedia. Interpret ideas, increasingly complex phenomena, processes, genres, and relationships within and across texts.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Distinguish and explain fact vs. opinion.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Distinguish and explain fiction vs. nonfiction.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Determine and explain facts/details that support main idea(s) from the texts.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.1.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Explain inferences and conclusions drawn from texts to support analysis.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.2",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Determine main ideas or themes of a text and analyze their development. Summarize the key supporting details and ideas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.3",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Analyze how and why individuals, events, or ideas develop and interact over the course of a text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.4",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Interpret words and phrases as they are used in a text, determining technical, connotative, and figurative meanings. Analyze how specific word choices shape meaning or tone.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.5",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Analyze the structure of a text, including how specific sentences, paragraphs, and larger portions of the text (e.g., sections, chapters, scenes, or stanzas) relate to each other and to the whole.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.6",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Assess how point of view or purpose shapes the content and style of a text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.7",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Integrate and evaluate content presented in diverse media and formats.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.8",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Delineate and evaluate an author’s argument through evidence specified in a text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.8.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Delineate and evaluate the reasoning in seminal texts, including the application of constitutional principles. This includes, but is not limited to, narrative, persuasive, and descriptive writing and knowledge of their qualities.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.9",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Compare and contrast 2 or more authors’ presentations of similar themes or topics.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.10",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Read and comprehend complex literary and informational texts independently and proficiently.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.R.10.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "R",
+    "expectation": "Read and demonstrate comprehension of a variety of culturally diverse literature (e.g., stories, dramas, poetry) and informational texts (e.g., history, social studies, science, and technical texts) of appropriate complexity. Writing The Writing Standard develops the student’s capacity and skills to plan, revise, edit, and publish many types of writing, such as arguments, informational/explanatory texts, and narratives. This standard stresses the importance of the reading-writing connection by requiring students to draw upon and write about evidence from literary and informational texts/media or when writing for research and investigations.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write arguments to support point of view using valid reasoning and relevant evidence.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.1.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write arguments to support claims in an analysis of substantive topics or texts using valid reasoning and sufficient evidence in 5 or more paragraphs.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.1.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Express, clarify, and defend viewpoints and opinions. Justify arguments with the support of the thesis statement and claims.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.2",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write informational texts to examine and convey complex ideas and information clearly and accurately through the selection, organization, and analysis of relevant content.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.2.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write college-level essays (e.g., argumentative, expository, compare and contrast, persuasive, and process), research papers, and film reviews with independence and precision using appropriate text organization; expanding vocabulary; and selection, organization, and analysis of content in 5 or more paragraphs.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.3",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write literary texts to develop real or imagined experiences or events using effective technique, details, and structure.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.3.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write narratives (e.g., short stories, memoirs, and journals) using transitional words and other cohesive devices to better organize writing and develop real or imagined experiences or events using effective literary devices (e.g., techniques and elements), well-chosen details, and structured sequences in 5 or more paragraphs.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.4",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Develop and strengthen writing as needed by using the writing process (planning, drafting, revising, editing, rewriting, and publishing).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.4.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Develop and strengthen writing as needed by planning (e.g., using outlines and graphic organizers), drafting, revising, editing (using editing marks), rewriting, and publishing, focusing on how well purpose and audience have been addressed, avoiding plagiarism, considering style guides (e.g., MLA and APA student format), and using citations. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.5",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Use technology, including the internet, to interact and collaborate with others and produce and publish writing.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.5.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Use technology, including the internet, to produce, publish, and update individual or shared writing products, linking to other information and displaying information flexibly and dynamically.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.6",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Conduct research projects of varying lengths based on focused questions to demonstrate understanding of the subject.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.6.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Conduct sustained research projects to answer a question (including a self-generated question) or to solve a problem or job/university inquiry. Synthesize multiple reliable sources to demonstrate knowledge on the subject.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.7",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Draw evidence from literary or informational texts to support analysis, reflection, and research.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.7.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Cite evidence from literary or informational texts to support analysis, reflection, and research.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.8",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write routinely over short and extended periods of time for a variety of tasks, purposes, and audiences.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.W.8.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "W",
+    "expectation": "Write routinely for a variety of discipline-specific tasks, formal and informal purposes, and audiences, demonstrating research, reflection, and revision (e.g., integrating technology or digital/print resources). Language The Language Standard is presented as a summary of the skills and abilities that support the understanding of essential rules of written and spoken English. The vocabulary focuses on understanding and acquiring new general, academic, and content-specific words and phrases.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate command of English grammar and usage conventions.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate command of English grammar and usage conventions when writing and speaking.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply different types of sentences in various contexts. Assess various grammar and usage texts and online resources. Analyze subject-verb agreement and parallel structure.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Express thoughts in grammatically correct sentences and phrases in both oral and written form. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Understand the meaning of different verb tenses, modal auxiliaries, and word order in sentences, reported speech, questions, and phrases. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Recognize grammatical modifications for stylistic reasons. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.1.1e",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Identify, analyze, synthesize, and use diverse syntactic and semantic language structures in context. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.2",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply appropriate English capitalization, punctuation, and spelling conventions.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.2.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate command of English capitalization, punctuation, and spelling conventions when writing.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.2.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Use punctuation marks correctly. Observe hyphenation conventions.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.2.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Spell correctly.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate understanding of how language functions in different contexts, making effective choices for meaning, style, and comprehension.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of language to understand how it functions in different contexts, to make effective choices for meaning or style, and to comprehend more fully when reading or listening.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply varied syntax rules for effect, consulting references for guidance as needed.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of verb tenses (e.g., simple present, present progressive, simple past, past progressive, future, future progressive, and present perfect, including irregular verbs).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of active/passive voice. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of subjunctive mood. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1e",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of verb tense sequence (e.g., compound/complex sentences). +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1f",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of verbals (e.g., infinitives, participles, and gerunds used as adjectives and nouns) and modal auxiliaries (e.g., can, could, shall, should, will, would, must, have to, may, might, ought to). +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1g",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of subject-verb agreement (compound subjects, indefinite pronouns, collective nouns, inverted word order). +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1h",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of tag questions and direct/indirect questions. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1i",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of comparative and superlative adjectives and adverbs. +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1j",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of connecting words and expressions (e.g., coordinating and subordinating conjunctions, conjunctive adverbs, transitional expressions, relative pronouns, correlative conjunctions). +",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.3.1k",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Apply knowledge of prepositions and prepositional phrases.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Determine or clarify the meaning of unknown words and phrases by using context clues, analyzing meaningful word parts, and consulting reference materials.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Determine or clarify the meaning of unknown and multiple-meaning words and phrases based on appropriately complex reading and content, choosing flexibly from a variety of strategies.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Use context (e.g., the overall meaning of a sentence, paragraph, or text; a word’s position or function in a sentence) as a clue to the meaning of a word or phrase.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Correctly identify and use patterns of word changes that indicate different meanings or parts of speech (e.g., conceive/conception/conceivable).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4.1c",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Consult general and specialized reference materials (e.g., college-level dictionaries, glossaries, thesauri), both print and digital, to find the pronunciation of a word, parts of speech, spelling, origin, meaning, and usage.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.4.1d",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Verify the preliminary determination of the meaning of a word or phrase (e.g., by checking the inferred meaning in context or in a dictionary).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.5",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate understanding of figurative language, word relationships, and variation in word meanings.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.5.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Demonstrate understanding of figurative language, word relationships, and variation in word meanings.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.5.1a",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Interpret figures of speech (e.g., oxymoron, hyperbole, paradox) in context and analyze their role in the text.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.5.1b",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Analyze differences in the meanings of words with similar denotations and connotations.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.6",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Accurately use a variety of social, academic, and content-specific words and phrases sufficient for reading, writing, speaking, and listening at the college and career-readiness level.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  },
+  {
+    "code": "12.LA.6.1",
+    "subject": "Inglés",
+    "grade": "12",
+    "domain": "LA",
+    "expectation": "Accurately use general, academic, and domain-specific words and phrases sufficient for reading, writing, speaking, and listening at the college and career-readiness level. Demonstrate independence when using a word or phrase important to comprehension or expression. GLOSSARY • Academic Content Standard: o The skills and knowledge expected of the students in the core content areas for each subject material. • Academic Language: o The vocabulary and lexical tools that students need for speaking, reading. The oral and written text required to succeed in school that entails deep understanding and communication of the language of content within a classroom environment; revolves around meaningful application of specific criteria related to linguistic Complexity at the discourse level • Auditory Discrimination: o The ability to detect a difference between sounds (usually speech sounds) • Aural: o Related to the ear or to the sense of hearing. • Automaticity: o Refers to decoding that is rapid, accurate, and effortless; develops through extensive practice decoding words. • Balanced Literacy: o Balanced Literacy is a methodology that integrates various modalities of literacy instruction. Assessment based planning at the core of each model. • Blending: o Combining separate spoken phonemes onsets or rhymes to create words. • Cognates: o Words similar in two or more languages as a result of common descent. • Cohesive Devices: o Words or phrases that show the relationship between paragraphs or sections of a text or speech. • Consonant clusters: o A group of consonants that have no intervening vowel (“spr” in spring). • Consonant digraphs: o Two adjacent consonant letters that represent a single speech sound (e.g., “sh” in shore). • College Career Readiness: o (CCR) Acquired knowledge related to the Educational Standards, reading/language arts, mathematics, and technical skills, needed to succeed in Postsecondary education which provides the foundational skills to become a competent individual in the workplace. • Complex Sentence: o One independent clause joined by one or more dependent clauses with a subordinator such as; because, since, after, although, or when or a relative pronoun, such as; who, or which. • Cues: o Sources of information used by readers or listeners to construct meaning • Compound Sentence: o Two or more independent clauses joined by coordinating conjunction (e.g., School started today; the students were excited”). • Conjunction: o A word used to connect clauses or sentences or to coordinate words in the same clause. (e.g., and, but, if) • Connotative: o A word or Expression culturally or emotionally associated to the word defined. • CVC Words: o Consonant Vowel Consonant: (cat) • Denotative: o It is literal and dictionary meaning of a word. • Differentiated Instruction: o This approach emphasizes in Lesson Planning in the ESL classroom while considering and integrating each student’s special needs: ▪ Considers different learning styles ▪ It allows teacher to apply different intervention models in the teaching and learning process ▪ Acknowledges students’ diversity. • Discourse: o Extended oral or written language conveying multiple connected ideas; its language feature especially of people or events studied. • Expectation: o The highest level of academic performance to be achieved by a student. • Fluency: o The ability to read with speed, accuracy, and proper expression. • Foundational Skills: o Basic Ideas, principles and facts that should be mastered before becoming lifelong readers. • Framework: o See standards framework. • Genres: o Socially –defined ways in which language (e.g., oral and written) is used to participate in particular context to serve specific purposes. • Graphemes: o A grapheme is the smallest part of written language that represents a phoneme in the spelling of a word. • Guided Reading: o The strategy whereby a teacher \"guides\" small groups of students through the text for the purpose of predicting, assisting in comprehension, focusing upon specific skills, and/or coaching the use of various reading strategies which will make the reading effort more successful. • Homographs: o Words that are written identically but have a different pronunciation and meaning. • Homophones: o Words that sound the same as other words but is different in spelling and/or meaning (to, too, and two). • Idioms: o An expression with a meaning that cannot be guessed at or derived from the meanings of the individual words that form it (“To have a chip on one's shoulder” is of U.S. origin). • Indicator: o An indicator is measurement or value of what something is like. • Inflectional ending: o The change of form that words undergo to mark distinctions such as number and tense (-ie, -ing, -s, -es). • Informational Text: o Nonfictional resources text which have key points organized in such a way that make it easy for readers to find information. • Instructional Language: o The language that typifies classroom discourse from teacher to teacher across. • Intervention: o Involvement in a situation or condition that requires changes and improvement • Intonation: o The distinctive patterns of pitch that contribute to the meanings of spoken phrases and sentences, e. g., “Open your books to page_.” • Language: o The means and usage of human spoken and written structures. Focuses on the correct use of word and phrases. • Literacy: o The ability to interpret a written text. • Literary Text: o A wide variety of imaginative and creative writing that leads to the appreciation of the cultural heritages of students. • Learning Progression Frameworks: o (LPF) Present a broad description of the essential content and general sequencing for student learning and skill development. • L1. o The first language a student acquires, usually before a home language, other than English. Although for some English Language Learners, L2 (English) may developed alongside L1. • L2. o The second Language a student acquires; usually refers to English as an additional Language • Performance Indicator: o Specific Level of English Language Domain within a grade or grade level cluster. • Phonemes: o The smallest part of spoken language (The word check has four phonemes /ch/ /e/ /k/). • Phonemic Awareness: o The ability to pick out and manipulate sounds in spoken words. • Phonics: o The relationship between sounds and the spelling patterns that are used to represent them in print. • Phonograms: o A succession of orthographic letters that occurs with the same phonetic value in several words (“ight” in bright, fight, and flight). • Print Concepts: o The features of print and how it works. • Process: o Is a series of progressive and independent steps to something that goes on or takes place; e.g. teaching and learning. • Prompt: o Prose, or writing, that is based on true facts and designed to explain. • Standards and Expectations for the English Program: o The skills and knowledge expected from students in English Language Arts. • Reading Informational Text: o Designed to communicate factual information rather than to tell a narrative. I.T. enables individuals to experience language and content simultaneously. • Readiness: o State of being ready and able to do something that might or will happen and accept the challenge. • Realia: o Objects or activities used to relate classroom teaching to the real life especially of people or events studied. • Relevance: o Describes how closely the content of an informational source or topic. • Rhyme: o The part of a syllable that contains a vowel and all that follows it. • Rigor: o An increasing level of difficulty designed to provide a learning experience. • Rubric: o The guide used to score performance assessments in a reliable and fair manner. • Scaffolding: o Careful shaping of the supports used to build on students already acquired skills, and knowledge to support the progress from to level to level of language proficiency. • Shared Reading: o Reading with your students and guiding them to actively engage in the shoulder (is of U.S. origin). • Socio-cultural context: o The association of language with the culture and society in which it is used; in reference to schooling, understandings of Socio-cultural context revolve around the interaction between the students and reading/language environment. • Sophistication: o The quality of knowing and understanding a lot about a specific subject. • Standards: o Academic Principles that established the framework of the Educational System. • Standards Based Education (SBE) o 1. Standards Based Learning provides the foundation for 21 st Century Learning Opportunities that prepare students for today, tomorrow and the future 2. Provides a fair and objective way to evaluate students based on what they have learned while providing appropriate level of challenge and rigor. 3. Gives teachers a powerful system for teaching. • Substitution: o Enciphering by replacing one letter by another. • Syllabication: o The act, process, or method of forming or dividing words into syllables. • Text Complexity: o the inherent difficulty of reading and comprehending a text combined with consideration of reader and tasks variables, and standards, a three part assessment of text difficulty that pairs qualitative and quantity measures with reader task consideration • Text Types: o Textual Types referring to the following four basic aspects of writing: descriptive, narrative, expository, and argumentative text. • Tone: o The quality of a piece of writing that demonstrates the attitudes, feelings, upon specific skills, and/or coaching the use of various reading strategies valid manner. It is generally composed of dimensions for judging student value in several words (“ight” in bright, fight, and flight). • VCCV: o Pattern: Vowel-consonant-consonant-vowel pattern. • VCV: o Pattern Vowel-consonant-vowel. • Voice: o Means by which something is expressed. • Vowel: o -consonant-vowel pattern. • WIDA ELD: o World Class Instructional Design and Assessments of the English Language Development Standards (2012). COLLABORATORS The English Program is grateful for the commitment and valuable contributions of all the stakeholders who were part of the curriculum review process. Their efforts and expertise contributed to the development, revision and validation of the English Content Standards and Grade Level Expectations document. Prof. a Tamar Acevedo Feliciano Maestra Escuela Francisco Mendoza Álvarez Dra. Lorelei Aldarondo Maldonado Universidad Ana G. Méndez Prof. Jahzeel Algarín Álvarez Universidad Ana G. Méndez Prof. a Zelidith Ares Otero Maestra Escuela Guillermina Rosado Prof. a Sandra Blondett Rivera Facilitadora Docente de inglés ORE Ponce Prof. Harry Bonksky Maestro Escuela Bilingüe Juan Ponce de León Prof. Edwin Bosque Nieves Maestro Escuela. Marta Vélez de Fajardo Prof. a Elane A. Brown Acevedo Maestra Escuela Luis Muñoz Rivera Prof. a Vanessa Buitrón Ayala Maestra Escuela Ángel Pedro Millán Prof. Miguel Camacho González Maestro Escuela Asunción Rodríguez de Sala Prof. a Caridad Carbillido Romero Puerto Rico TESOL Prof. Gerald Castilloveita Costa Maestro Escuela Sol Isolina Ferré Prof. a Sandra I. Cruz Gómez Maestra Escuela Manuela Toro Dra. María L. Cruz Otero Maestra Escuela Cristóbal Santana Melecio Prof. a Carolina Dávila Colón Maestra Escuela San Patricio Prof. a Cristina M. Dávila Colón Maestra Escuela Primaria Inocencio Prof. a Yarisette Grigg Ruiz Maestra Escuela Bilingüe Luis Muñoz Iglesias Prof. Héctor Guevara Morales Maestro Escuela Ángela Cordero Bernard Prof. Héctor León Cartagena Puerto Rico Tesol Prof. a Nydia Lugo Duprey Caribbean University Adriana Márquez Colón Estudiante Universitaria Stakeholder Prof. a Germarie Marrero Nieves Maestra Escuela Miguel Ángel Juliá Collazo Prof. a Sandra Martínez Figueroa Maestra Escuela Francisco Menéndez Babañe Prof. a Myrna Martínez López Maestra Escuela Abelardo Díaz Alfaro Dra. Yolanda Mercado Fretts Caribbean University Prof. a Joany Morales Fiol Maestra Escuela Bilingüe Juan Ponce de León Prof. a Natalia Morales Ortiz Puerto Rico TESOL Prof. a Vanessa Negrón Marcano Maestra Escuela Luis Muñoz Rivera Prof. a Lizza Padovani Homs Facilitadora Docente de inglés ORE Mayagüez Prof. a Celia Pagán Alarcón Maestra Escuela Luis Muñoz González Prof. a Rina M. Pérez Castro Maestra Escuela Eugenia LeCompte Prof. a Lizamari Pérez Jackson Maestra Escuela Pachín Marín Prof. a Loida L. Plaza Quiñones Maestra Escuela Guillermina Rosado de Ayala Prof. a Ilia Rodríguez Andino Maestra Escuela Miguel Such Prof. a Elba Rodríguez Román Maestra Escuela Cristóbal Colón Prof. Javier Rodríguez Torres Maestro Escuela Vocacional Costa Rica Prof. a Karem M. Román Maestro Prof. a Yadira Román Chanza Maestra Escuela José Mercado Bilingüe Prof. a Zindy Ruiz Cruz Maestra Escuela Inés María Mendoza Prof. a Jennifer Sanjurjo Pabón Miembro de la comunidad, Bayamón Prof. Nelson Soto Miranda Maestro Escuela S.U. José R. Carreras Prof. a Karen Valentín Torres Maestra Escuela Fernández Callejo Prof. Jorge Wong Maestro Escuela Especializada Padre Rufo",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Inglés (2022)"
+  }
+]

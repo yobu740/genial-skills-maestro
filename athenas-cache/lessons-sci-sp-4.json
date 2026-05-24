@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "205006",
+    "LessonNo": "4",
+    "LessonTitle": "El método científico",
+    "SubjectCode": "sci-sp",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  }
+]

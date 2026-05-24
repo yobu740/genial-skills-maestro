@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "204950",
+    "LessonNo": "6",
+    "LessonTitle": "Triángulos y sus propiedades",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  },
+  {
+    "Id": "204949",
+    "LessonNo": "5",
+    "LessonTitle": "Ángulos y rectas paralelas",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204947",
+    "LessonNo": "3",
+    "LessonTitle": "Transformaciones geométricas",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204945",
+    "LessonNo": "1",
+    "LessonTitle": "Razonamiento deductivo e inductivo",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  }
+]

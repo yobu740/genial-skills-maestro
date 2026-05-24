@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204497",
+    "LessonNo": "3",
+    "LessonTitle": "Problemas sociales en las Américas",
+    "SubjectCode": "sci-so",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  },
+  {
+    "Id": "204496",
+    "LessonNo": "2",
+    "LessonTitle": "Desarrollo personal: valores e identidad cultural",
+    "SubjectCode": "sci-so",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  },
+  {
+    "Id": "204495",
+    "LessonNo": "1",
+    "LessonTitle": "Relación de Puerto Rico con otros países",
+    "SubjectCode": "sci-so",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 7
+  }
+]

@@ -1,0 +1,1690 @@
+[
+  {
+    "code": "1.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Indica la importancia de la escuela en su formación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Identifica los días de la semana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Reconoce las reglas de la comunidad escolar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Reconoce la importancia de la familia en su formación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Explica cambios que ocurren en la familia, en los trabajos y en la vivienda.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Estima el efecto de los cambios en su formación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Emplea vocabulario a partir de los conceptos antes, ahora, después.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Identifica la importancia del trabajo para mejorar las condiciones de vida familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Menciona oficios o profesiones de los miembros de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Reconoce que los oficios y profesiones generan un salario.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Informa sobre una profesión de su interés.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Describe la composición familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Dibuja un árbol genealógico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Reconoce los deberes y las responsabilidades de los miembros de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Define los conceptos deberes y responsabilidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Menciona deberes y responsabilidades de los miembros de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Menciona eventos de la comunidad en los que participa la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Nombra actividades de la comunidad en las que se involucra la familia, tales como eventos deportivos, culturales, religiosos, cívicos y comunitarios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Compara actividades que realizan las familias en Puerto Rico con las de otras familias del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Identifica días festivos del calendario escolar de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Menciona días festivos, como por ejemplo el Día de Navidad, el Día de Año Nuevo, el Día de Reyes, el Día de las Madres, el Día de los Padres, el Día del Niño, el Día del Planeta Tierra, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Utiliza fotografías para reconocer cambios en sí mismo y en su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Compara cambios en la familia a partir de fotografías del pasado y del presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Describe características de las familias de los primeros pobladores de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Ilustra cómo vivían las familias de los primeros pobladores de Puerto Rico (vida en comunidad, agricultura, alimentación, vestimenta, entre otras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Reconoce el papel de la familia en su formación como ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CC",
+    "expectation": "Expresa opiniones sobre asuntos familiares y posibles soluciones de conflictos. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica el vocabulario adecuado para hablar sobre escalas de dimensión del espacio inmediato: el salón y su casa (fila, pupitre, mesas, sillas, muebles); tamaño (grande, pequeño); distancia (cerca, lejos); dirección (arriba, abajo, izquierda, derecha).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Utiliza conceptos de orientación en sus movimientos en el salón y en la escuela: norte, sur, este y oeste.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Dibuja y colorea planos sencillos de Puerto Rico y su casa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Comprende la diferencia básica entre un mapa y un globo terráqueo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.1.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Observa el medio natural e identifica flora y fauna, montañas y cuerpos de agua, como por ejemplo identificar el medio natural alrededor de la escuela o de su casa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Formula y busca contestaciones a preguntas sobre los cambios geográficos y de localización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica que los calendarios se utilizan para representar los días de la semana y los meses del año.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica cambios importantes que ocurren en la familia, como el mudarse de casa, barrio o pueblo, o visitar lugares nuevos en Puerto Rico o fuera de la isla, como por ejemplo responder si se ha mudado de pueblo o país, o si ha visitado algún lugar fuera de su pueblo, y describir qué cambios observa en la gente, el clima, el paisaje, los animales, entre otros elementos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica de manera sencilla cómo se utilizan los recursos económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica de forma sencilla cómo llegan los alimentos y la ropa a su casa o su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica el dólar y la moneda en sus diferentes valores.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Reconoce la importancia del trabajo de sus padres o encargados. Por ejemplo: realizar una presentación con diferentes oficios y profesiones y la importancia de cada uno de ellos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica espacios y familiares en imágenes y mapas mediante la participación de diferentes experiencias de campo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica a sus familiares inmediatos y sus respectivos lugares de vivienda, como por ejemplo traer fotos de sus familiares (padres, encargados, abuelos, tíos o primos) y verbalizar dónde viven.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Relaciona la participación de líderes políticos y su efecto en la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Reconoce algunas funciones básicas del alcalde de su pueblo y cómo este ayuda a las personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Participa en experiencias en las que reconoce los espacios, paisajes diversos y sus componentes estructurales en su entorno familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica y reconoce el paisaje y el espacio donde se desarrolla su entorno familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Localiza paisajes diversos relevantes para las familias de diferentes lugares del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Distingue la participación familiar en actividades y su relación con el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Dibuja imágenes, recorta láminas o muestra fotos para describir características del espacio, el ambiente y las actividades de su entorno familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica aspectos importantes para reconocer los cambios climáticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Observa videos para reconocer cómo el clima, el tiempo y los fenómenos atmosféricos afectan la geografía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica de manera sencilla cuáles son los efectos y consecuencias de un evento atmosférico en su entorno familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica diferencias en el clima de diferentes regiones del planeta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Compara y contrasta a las familias de Puerto Rico con las de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Explica de manera sencilla, mediante imágenes de familias de Europa, Asia, África, Oceanía, América y de diferentes tribus, las diferencias sociales y económicas entre las familias de Puerto Rico y las de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Menciona cómo la niñez puede ayudar a preservar mejor los recursos de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Escucha cuentos sobre cómo proteger nuestros recursos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PLA.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PLA",
+    "expectation": "Identifica qué actividades puede hacer su familia para cuidar los recursos naturales, como por ejemplo cerrar el grifo de agua cuando se están lavando los dientes, apagar la luz cuando no haya nadie en algún lugar de la casa, entre otras. Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Construye ilustraciones de su entorno a partir de descripciones verbales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Escucha descripciones verbales para construir ilustraciones que demuestran comprensión sobre aspectos geográficos estudiados en clase.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Describe verbalmente imágenes de entornos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Expresa diferentes emociones que experimenta ante eventos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Reconoce cambios físicos que se dan en los niños a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Describe los cambios en rasgos físicos desde su nacimiento hasta el presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Organiza cronológicamente fotos o láminas de etapas del desarrollo humano, como las de infantes, niños, jóvenes, adultos y ancianos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Establece la diferencia entre necesidad y deseo en su núcleo familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Incorpora vocabulario relacionado con el consumo y el intercambio de bienes y servicios, como bienes, utilidades y servicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Reconoce el valor de las monedas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que simula la compra e intercambio de bienes y servicios, como por ejemplo recrear visitas al mercado, al banco, al médico, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Plantea semejanzas, diferencias, habilidades e intereses que poseen los miembros de su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Nombra y describe a los componentes de su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Utiliza imágenes para describir las habilidades y los intereses de los componentes de su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Menciona municipios de Puerto Rico que ha visitado con su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Comparte con sus compañeros datos básicos de un municipio de Puerto Rico visitado con su familia, como la bandera, el escudo, el alcalde y un lugar de interés.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Modela conductas que promueven una sana convivencia en el hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Describe las actividades que realiza en el hogar para contribuir a la sana convivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Participa en actividades culturales junto a su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Utiliza fotos para describir su experiencia en una actividad cultural junto a su familia, como visitas a museos, fiestas patronales, actividades cívicas, visitas y recorridos por municipios distintos del suyo, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Reflexiona sobre su participación en eventos culturales junto a su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Analiza tradiciones culturales de otros países y las compara con las de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Explica cómo la tecnología ayuda a satisfacer las necesidades básicas de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Identifica cómo la tecnología ha facilitado completar las tareas en el hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Utiliza imágenes de una escoba, una aspiradora, un tendedero, una secadora, entre otras, para demostrar cómo la tecnología ha facilitado completar las tareas en el hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Exhibe conductas de tolerancia en la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Menciona situaciones familiares que demuestran tolerancia y respeto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Define el concepto acoso escolar (bullying) y sus implicaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Exhibe conductas en la familia que contribuyen al logro de la sana convivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Exhibe trato justo y conductas no violentas con sus familiares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.DP.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "DP",
+    "expectation": "Demuestra trato justo y equitativo entre los seres humanos. Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y la valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Desarrolla una perspectiva geográfica sobre las expresiones culturales que hay en su entorno.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Identifica mediante láminas las fiestas, tradiciones, costumbres y otras expresiones culturales que se celebran en su familia, en su país y en otros países americanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Compara cómo las familias de Puerto Rico y de otros países celebran las festividades similares, como por ejemplo Navidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Compara y contrasta los días de fiesta con los días de trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Distingue entre lo que son días de fiesta y días de trabajo que celebra su familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Menciona ejemplos de días festivos que celebran las familias de diferentes continentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Distingue diferentes tipos de empresas culturales en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Asocia diversas empresas culturales con los oficios que la representan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Ilustra, por medio de láminas o dibujos, lugares que son empresas culturales puertorriqueñas, como por ejemplo museos, edificios históricos, teatros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Elabora una lista de lugares que puede visitar con la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Reconoce a personas destacadas que aportan al desarrollo de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Elabora un álbum pictórico de personajes destacados en la cultura puertorriqueña.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Personifica a algún puertorriqueño destacado en la música, el deporte, la música, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Identifica a algún personaje destacado de otro país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Reconoce la importancia de los símbolos patrios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Identifica diferentes símbolos patrios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Muestra originalidad y creatividad al recrear, por medio de juegos pictóricos o rompecabezas, la bandera y el escudo de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Reconoce la importancia de respetar el himno y los demás símbolos nacionales, como también los de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.5.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Memoriza la letra del himno de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Participa de actividades que promueven valores y tradiciones de la cultura puertorriqueña: juegos infantiles, bailes folclóricos, canciones escolares, estampas tradicionales y poesía coreada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Diferencia entre tradiciones, costumbres y otras expresiones de la cultura que se desarrollan en la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Describe aspectos culturales característicos de las familias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Describe ejemplos de comidas típicas y manjares tradicionales que caracterizan la gastronomía y la economía de las familias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Identifica juegos tradicionales que son parte de las familias puertorriqueñas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Expresa apreciación por canciones distintivas y poemas que resaltan la identidad del puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.7.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Escucha cuentos, canciones, leyendas de aspectos culturales de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Investiga el patrimonio cultural utilizando medios tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Explica cómo los recursos tecnológicos ayudan a conservar tradiciones como la música, el arte y las fiestas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Realiza visitas virtuales a lugares históricos y culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Describe las características que hacen únicas a las familias puertorriqueñas y las de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Describe, mediante un esquema pictórico, cómo las familias tienen sus propias reglas y costumbres diferentes de otros lugares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Prepara un collage que resalta las características de las familias puertorriqueñas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Reconoce su deber familiar, patriótico y cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "IC",
+    "expectation": "Crea un cartel sobre los valores familiares que fomentan el amor y el respeto a la cultura y al patriotismo puertorriqueño. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Indica lugares de la comunidad donde se compran y se venden productos que utilizan las familias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Nombra espacios comerciales de la comunidad, como centros comerciales, tiendas, panaderías, reposterías, farmacias, ferreterías, colmados, supermercados, plazas de mercado, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica países de diferentes continentes que producen productos que se consumen en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Describe qué son bienes y servicios en la escuela y en la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de bienes y servicios que hay en la escuela y en la comunidad (bienes: mesas, sillas, tabletas o computadoras; servicios: comedor escolar, transportación escolar, enfermería, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Utiliza vocabulario de economía en sus diálogos cotidianos: monedas, billetes, cheques, ahorro, retiro, préstamo, pagos, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Practica en forma simulada el desarrollo de transacciones monetarias: pagar un préstamo, depositar ahorro, comprar o vender un producto, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Reconoce el ahorro como alternativa para lograr satisfacer necesidades personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica una necesidad que se propone satisfacer por medio del ahorro personal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica a líderes en el hogar, en la escuela y en la comunidad que ayudan a trabajar en forma organizada y emprenden proyectos que benefician a todos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Reconoce al líder emprendedor como aquella persona que inicia una tarea o un proyecto y trabaja junto con otros para lograr una meta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica características socioeconómicas de diferentes grupos de la sociedad en términos de riqueza y de pobreza.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de comunidades que carecen de recursos y viven en la pobreza.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Reconoce los conceptos de pobreza y la desigualdad social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica actividades culturales de la comunidad y del pueblo en las que diversas personas generan ingresos: presentación de espectáculos, conciertos, obras de teatro, exhibiciones de arte y presentaciones de libros, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Reconoce personalidades de la comunidad y del pueblo que son trabajadores de la cultura y se destacan en alguna de sus diversas expresiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Describe cómo la familia utiliza la tecnología para diversas actividades y gestiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica productos que la familia utiliza, que aparecen en anuncios de la televisión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Identifica alimentos que se consumen en el hogar y en la comunidad que son típicos de otros países, como tacos, pizzas, arroz chino, paellas, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Selecciona un país al cual le gustaría viajar e indica por qué lo elige.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Demuestra con el comportamiento cómo se practica el respeto a las demás personas y a las cosas que le pertenecen.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "PDC",
+    "expectation": "Reconoce por qué es importante actuar como buen ciudadano. Conciencia Cívica y Democrática Practica y valora los principios que rigen la vida en una sociedad democrática, y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Aplica reglas y normas al participar en diferentes actividades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Indica la importancia del buen comportamiento en actividades escolares y familiares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Describe experiencias vividas sobre cómo los miembros de la familia participan en la vida democrática.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce la importancia de asistir a reuniones, asambleas, votar, escuchar y orientarse.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Expresa cómo debe ayudar a su familia a ahorrar energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Expresa posibles métodos de ahorrar energía en su hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce la importancia de cooperar con sus compañeras y compañeros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Participa en diversas actividades en las cuales interactúa con otros compañeros y compañeras, tales como juegos, tareas en equipo, tareas en el hogar, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Identifica algunas de las instituciones que regulan la vida colectiva.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Personifica a funcionarios que garantizan el orden común, tales como el policía estatal, el policía municipal, el bombero, el juez, el abogado, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Describe cómo los padres, madres o encargados hacen que se cumplan las normas del hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Identifica las normas que deben cumplir en sus hogares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Participa en actividades culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Describe sus tradiciones y sus costumbres.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce tradiciones y costumbres de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce diferentes medios tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Identifica la importancia de cuidar y proteger los medios tecnológicos que utiliza.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Aplica reglas de seguridad básicas para protegerse cuando utiliza medios tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce el liderazgo como medio para servir y fomentar sanas relaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Identifica diferentes líderes que han logrado cambios significativos en sus comunidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Reconoce los conceptos básicos de civismo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Señala los conceptos propios del civismo: ética, valores, prácticas ciudadanas, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CCD.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CCD",
+    "expectation": "Explica la importancia del civismo entre diferentes países. Conciencia Global Evidencia con su comportamiento que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Localiza en un mapa los países del mundo que producen productos agrícolas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Distingue los países que trabajan los productos de arroz, café, azúcar, ganado, harinas, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Identifica diferentes continentes en un mapa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Identifica los alimentos que se consumen en Puerto Rico con los de algunos países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Coloca imágenes en una tabla sobre los alimentos consumidos en Puerto Rico y los consumidos en otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Escribe los productos que cultivan las familias en Puerto Rico y se encuentran en otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Relaciona los alimentos y los precios de los productos de Puerto Rico utilizando una hoja de especiales (shopper de supermercado).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Expresa su opinión sobre personas que representan a Puerto Rico en otros países en las bellas artes, la música y los deportes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Demuestra con imágenes la importancia de representar a su país en el ámbito mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Expresa su opinión sobre lo que debe ser justo y necesario para la niñez de Puerto Rico y sus comunidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Observa en un video el trato justo para la niñez de Puerto Rico y el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Observa los comportamientos de la sociedad en sus comunidades y cómo se desempeña la convivencia diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Explica cómo las comunidades puertorriqueñas conviven sanamente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Reconoce las costumbres y tradiciones de Puerto Rico y de otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Identifica en un mapa los países cuyas costumbres y tradiciones se asemejan a las nuestras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Menciona cómo las familias buscan alternativas para enfrentar problemas de abasto de agua, crisis energética, conservación del ambiente, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Identifica alternativa para conservar el ambiente en su comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Reconoce retos que enfrentan diferentes comunidades del mundo para enfrentar problemas que afectan su entorno económico, político y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Nombra ejemplos de diversas conexiones globales en la comunidad y el país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Identifica las diferentes maneras de comunicarse entre las familias y comunidades alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Expresa cómo los valores ayudan a que tengamos una mejor convivencia en el hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "CG",
+    "expectation": "Crea un árbol con los valores que ayudan a la convivencia entre las familias. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica términos y conceptos propios del entorno como espacio natural: familia, plantas, árboles, vegetales, frutas, flores, alimentos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Dibuja, recorta y pega imágenes que representan diversos conceptos del entorno natural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Investiga sobre diversos entornos naturales en otros continentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica el uso de diversos instrumentos tecnológicos en el hogar, la escuela y la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Expresa el uso que se les da en su hogar, su escuela y su comunidad a diversos instrumentos tecnológicos presentados en láminas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica el costo de instrumentos tecnológicos, como computadoras, videojuegos, televisor, radio, estufa, carros, camiones, etc.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Utiliza un dinero asignado para comprar varios artefactos electrónicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Relata formas en las que las familias hacen buen uso de la tecnología para resolver problemas del día a día.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica la hora en el reloj.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Demuestra el uso del dinero que tiene disponible para comprar meriendas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica formas en que las instituciones gubernamentales utilizan la tecnología para mejorar los servicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Explica cómo la tecnología ayuda a su familia a obtener diversos servicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica cómo la tecnología ha transformado las relaciones familiares de los puertorriqueños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Relata cómo a lo largo de los años la tecnología ha ido evolucionando las relaciones de las familias de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Narra cómo la tecnología puede servir para preservar las tradiciones: música, arte, fiesta, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Explica cómo la tecnología ayuda a preservar diversas expresiones culturales de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica cómo puede resolver problemas de la vida utilizando instrumentos tecnológicos: ver televisión para saber sobre la trayectoria de un huracán, llamar por teléfono para saber de un enfermo, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Expresa posibles soluciones a problemas de la comunidad haciendo uso de recursos tecnológicos: atención a medios de comunicación informativos, uso de la telefonía para emergencias, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Plantea cómo la tecnología une a los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Reconoce e identifica medios tecnológicos para conocer y entender a personas de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Discute en torno a prácticas y comportamientos dirigidos al uso apropiado y al manejo responsable de la tecnología, como por ejemplo establecer el control del tiempo en la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "1.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "1",
+    "domain": "SCT",
+    "expectation": "Identifica las mejores prácticas y comportamientos en el uso responsable del manejo de la tecnología. Cambio y Continuidad Estudia la vida de las sociedades en el contexto de los cambios y las transformaciones que se producen con el paso del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

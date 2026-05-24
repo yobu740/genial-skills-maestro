@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204898",
+    "LessonNo": "8",
+    "LessonTitle": "Función cuadrática: parábola",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  },
+  {
+    "Id": "204896",
+    "LessonNo": "6",
+    "LessonTitle": "Monomios y polinomios",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "8",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  }
+]

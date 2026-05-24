@@ -1,0 +1,394 @@
+[
+  {
+    "code": "2.IT1.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Desarrolla prácticas de ciencias e ingeniería como procesos para solucionar problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Utiliza las prácticas de ciencias e ingeniería para poner a prueba una hipótesis en la posible solución de un problema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Utiliza pensamiento matemático para determinar la medida (y las unidades) de algunas propiedades físicas de los objetos, como la longitud y el volumen (de líquidos); e instrumentos de medición, como la regla, el reloj, un envase calibrado y el termómetro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Aplica los procesos de observación, medición, inferencia, predicción, clasificación, comunicación y experimentación, al utilizar prácticas de ciencias e ingeniería.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Utiliza prácticas de ingeniería al definir problemas, desarrollar soluciones y optimizar las soluciones al problema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.6",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Representa posibles soluciones a problemas de ingeniería, al diseñar modelos o representaciones visuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.7",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Compara posibles soluciones de ingeniería, las somete a prueba y evalúa cada una de las opciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.IT1.8",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "IT",
+    "expectation": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería. Ciencias Biológicas Estudia e investiga los procesos de la vida; así como el origen, las propiedades y las características de los organismos vivos y su interacción con el ambiente. 2.CB2 Analiza y representa, mediante el diseño de modelos, las interacciones entre organismos (plantas y animales), sus estructuras y el ambiente, que les permiten sobrevivir y reproducirse en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Realiza observaciones directas de las partes de las plantas (raíces, tallos, hojas, flores) para identificar sus funciones básicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Reconoce la importancia de la flor —entre otros organismos— en la polinización, como proceso importante en la reproducción de las plantas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Construye modelos o diagramas sobre cómo las estructuras de las plantas interaccionan con el proceso de la polinización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Desarrolla un modelo simple que demuestra la función que cumplen los animales en el proceso de dispersar semillas y polinizar plantas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Experimenta e investiga para determinar si las plantas necesitan luz, aire y agua para crecer.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.6",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Define ecosistema, comunidad y hábitat.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.7",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Reconoce los ecosistemas como lugares donde interactúan lo vivo (factores bióticos) y lo no vivo (factores abióticos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.8",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Identifica, mediante ejemplos, los componentes vivos y los no vivos en un ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.9",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Reconoce las cadenas alimentarias y describe la función de las plantas como productores.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB2.10",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Clasifica animales de acuerdo con su alimentación: los herbívoros se alimentan de plantas; el frugívoro se alimenta de frutas; el folívoro come hojas; los carnívoros se alimentan de otros animales; y los omnívoros se alimentan de cualquier fuente de alimento. 2.CB4 Identifica y reconoce la importancia de la conservación de los recursos naturales para mantener la biodiversidad y las condiciones ambientales adecuadas que favorecen la interacción de los organismos en su ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB4.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Distingue entre ecosistemas acuáticos de agua dulce (ríos, arroyos) y ecosistemas terrestres (bosques, desiertos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB4.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Observa y compara la biodiversidad de un ecosistema terrestre con la de un ecosistema acuático de Puerto Rico, y los representa con láminas, dibujos, modelos o diagramas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB4.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Describe en qué consisten los recursos naturales y menciona cómo se relacionan con la biodiversidad de los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CB4.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CB",
+    "expectation": "Describe la importancia del cuidado de los recursos naturales para organismos (plantas y animales) que viven en los ecosistemas de Puerto Rico. Ciencias Físicas Estudia la materia, sus propiedades, cambios y su relación entre velocidad, movimiento y fuerza; así como el comportamiento de las ondas, al explicar sus interacciones con la energía. 2.CF1 Describe la materia y la clasifica cualitativamente, según las propiedades físicas que posee, para explicar posibles cambios que esta pueda sufrir.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF1.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Describe las propiedades de tres de los estados de la materia: sólido, líquido y gaseoso; y clasifica los objetos de acuerdo con el estado en que se encuentren.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF1.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Describe y agrupa distintos tipos de materiales, según las propiedades físicas observables que presentan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF1.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Compara y contrasta la materia de acuerdo con las propiedades físicas que presentan (tamaño, color, maleabilidad, porosidad, forma, textura, dureza, flexibilidad).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF1.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Describe cómo los cambios en temperatura pueden producir cambios en algunas propiedades de los materiales (color, forma, tamaño).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF1.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Investiga y explica los cambios reversibles y los no-reversibles que ocurren a partir de aplicar o quitar calor a un material. 2.CF2 Realiza observaciones para comparar y explicar los efectos de las fuerzas magnéticas o de fricción sobre los objetos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF2.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Hace observaciones sobre las distintas fuerzas que ejercen los imanes, y provee ejemplos de sus usos en el mundo real.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF2.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Describe las interacciones magnéticas entre imanes, con algunos metales y sobre las brújulas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF2.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Distingue entre fuerza de contacto y fuerza a distancia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF2.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Explica la relación entre la fuerza magnética y el movimiento en los objetos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF2.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Compara y contrasta los efectos de las fuerzas magnéticas sobre los cambios en movimiento y posición de los objetos sobre los que se ejercen esas fuerzas. 2.CF3 Identifica y explica la importancia de diversas fuentes de energía, con énfasis en las formas de energía que provienen del Sol: la luz y el calor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF3.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Reconoce diversas fuentes de energía como el Sol, los alimentos, las baterías, el aire, el agua, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF3.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Identifica el Sol como fuente de calor y de luz para el planeta Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF3.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Construye un modelo de la Tierra donde identifica el Sol como fuente de luz y de calor para el Planeta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF3.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Hace observaciones sobre distintas fuentes de energía, como la luz y el calor, y establece similitudes y diferencias entre ambas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CF3.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CF",
+    "expectation": "Explica que el alimento es la fuente primaria de energía de los organismos vivos, y clasifica los diferentes alimentos de acuerdo con su origen (animal o vegetal). Ciencias Terrestres y del Espacio Estudia y comprende el conjunto de disciplinas que se relaciona con los procesos que ocurren en el planeta Tierra, y la interacción de este con el universo. 2.CT1 Establece la relación que existe entre el Sol y los movimientos de la Tierra para que ocurran ciertos eventos, procesos y cambios continuos en nuestro planeta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT1.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Observa un modelo, simulación o cartel sobre la inclinación y la ubicación del eje de la Tierra, para explicar cómo estas afectan la forma en la que la luz del Sol llega a la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT1.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Predice la posición del Sol con respecto a la Tierra, en diferentes tiempos a lo largo del día.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT1.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Recopila datos observables, a lo largo de varias noches, sobre la posición de la Luna y las estrellas con respecto a la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT1.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Explica la diferencia observable en la forma de la Luna a lo largo de varias noches.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT1.5",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Hace observaciones del cielo nocturno para describir, por medio de modelos, las fases de la Luna (luna nueva, cuarto creciente, cuarto menguante y luna llena). 2.CT2 Describe y construye modelos sobre patrones observables en las formaciones terrestres de Puerto Rico (montañas, llanos, mogotes, cuevas, entre otras), y reconoce los cambios provocados por las condiciones del tiempo y el clima sobre dichas formaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT2.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Representa y describe -mediante modelos, diagramas o ilustraciones- las formaciones terrestres (montañas, llanos, mogotes, entre otros) y los cuerpos de agua (ríos, lagunas, entre otros) en algunas zonas de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT2.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Identifica fenómenos naturales que producen cambios en la superficie terrestre (lluvia, viento, nieve, inundaciones, tormentas, tsunami, terremotos y huracanes, entre otros), y cómo alteran el relieve.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CT2.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CT",
+    "expectation": "Compara posibles soluciones para reducir o prevenir los efectos del agua y el viento sobre la superficie terrestre. Ciencias Ambientales Estudia la relación entre los seres humanos y el ambiente para proponer, de manera multidisciplinaria, alternativas para la conservación de los recursos naturales y soluciones a problemas ambientales, mediante propuestas para el desarrollo sostenible. 2.CA1 Identifica problemas ambientales provocados por las actividades humanas y el impacto de fenómenos atmosféricos, para proveer posibles alternativas de solución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CA1.1",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CA",
+    "expectation": "Identifica y explica los efectos de la contaminación en diversos recursos naturales (el agua, el suelo y el aire).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CA1.2",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CA",
+    "expectation": "Explica cómo las actividades humanas o el impacto de algún fenómeno natural pueden aumentar la contaminación en el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CA1.3",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CA",
+    "expectation": "Desarrolla un plan de acción dirigido a llevar a cabo prácticas de conservación ambiental (reducir, reutilizar y reciclar) en su comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "2.CA1.4",
+    "subject": "Ciencias",
+    "grade": "2",
+    "domain": "CA",
+    "expectation": "Diseña y construye un prototipo experimental para llevar a cabo prácticas de descomposición de materia orgánica, a través del compostaje. Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 3.IT1 Utiliza y aplica las prácticas de las ciencias e ingeniería al describir, desarrollar, optimizar y evaluar diseños que le permitan solucionar problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

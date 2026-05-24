@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204800",
+    "LessonNo": "8",
+    "LessonTitle": "Razones y proporciones",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  },
+  {
+    "Id": "204799",
+    "LessonNo": "7",
+    "LessonTitle": "Números racionales en la recta numérica",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  }
+]

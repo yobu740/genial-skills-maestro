@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204600",
+    "LessonNo": "12",
+    "LessonTitle": "ADN y replicación genética",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 10
+  },
+  {
+    "Id": "204599",
+    "LessonNo": "11",
+    "LessonTitle": "Fotosíntesis y respiración celular",
+    "SubjectCode": "bi-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  }
+]

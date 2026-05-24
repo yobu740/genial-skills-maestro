@@ -1,0 +1,2562 @@
+[
+  {
+    "code": "12.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Argumenta los cambios que han ocurrido a lo largo de la historia que contribuyen al establecimiento de relaciones entre los grupos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Realiza ejercicios cartográficos que establecen las relaciones entre los grupos humanos a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Compara y contrasta, mediante informes orales, las actividades económicas (pesca, agricultura, ganadería, tipos de cooperativas y sector de servicios, entre otros) de diversas regiones geográficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Explica, mediante carteles, los cambios geopolíticos (división de distritos representativos y senatoriales, movimientos migratorios y reglas y normas sociales) que han ocurrido a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Demuestra conceptos clave, como tiempo, cronología, causalidad, conflicto, cambio y continuidad, perspectivas de análisis y procesos históricos, para explicar conexiones entre hechos del pasado y del presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Diseña una línea de tiempo sobre los hechos históricos de mayor relevancia de la materia de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Utiliza un mapa de conceptos que presenta los cambios económicos a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Utiliza diversos medios, como caricatura, historieta, dibujo o ilustración gráfica (artística, artesanal o digital), entre otras, para ilustrar cambios sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Argumenta acerca de problemas relacionados con el proceso histórico y económico de Puerto Rico en comparación con otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Crea un orden cronológico sobre problemas relacionados con los procesos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Crea gráficas para comparar la economía de Puerto Rico con las de otros países tomando en cuenta el salario, el producto bruto nacional, el desarrollo empresarial, la economía subterránea, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Diseña un documental sobre temas de pobreza y desigualdad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Valora las contribuciones significativas que han hecho diversas figuras al desarrollo político, económico, jurídico, laboral, social y cultural en Puerto Rico y otros países, como por ejemplo Mahatma Gandhi, Nelson Mandela, Beatrice Webb, Joan Robinson, Anna Schwartz, Winston Churchill, Bill Gates, Malala Yousafzai, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Presenta un drama sobre una personalidad histórica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Investiga sobre diferentes líderes que han contribuido al desarrollo económico (líderes cooperativos, emprendedores de pequeños negocios, entre otros) y los presenta como persona del año.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Compara las características de un buen líder a partir de los valores éticos expresados en la Ley de Ética Gubernamental (Ley Núm. 12 del 24 de julio de 1985, según enmendada).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Investiga las contribuciones significativas que han hecho diferentes líderes del mundo moderno y contemporáneo al desarrollo político, económico y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Compara las contribuciones significativas dentro de un evento histórico, como por ejemplo el papel de John F. Kennedy y Fidel Castro en la crisis de los misiles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Determina e informa los aportes al desarrollo económico de personas como, por ejemplo, Santiago Iglesias Pantín, monseñor Antulio Parrilla, Ana María O’Neill, Atilano Cordero Badillo, Mercedes Amalia Marchand, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Selecciona a un personaje histórico contemporáneo destacado en el ámbito social o político y crea un poema sobre sus aportaciones, en el que incluye el nombre del personaje, dos adjetivos, tres temas relacionados, cuatro nombres para describir a la persona, tres verbos sobre cómo actúa la persona y dos adjetivos que describen a la persona.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Investiga y explica las aportaciones de las organizaciones establecidas actualmente para salvaguardar el bienestar de las personas, como por ejemplo la Organización de las Naciones Unidas, la Organización Mundial de la Salud, la Organización Mundial para la Agricultura y la Alimentación, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Colabora en la creación de organizaciones en la escuela para solucionar problemas que afectan a la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Diseña una propuesta con un modelo económico para ofrecer soluciones a algún problema que afecta a la sociedad, como por ejemplo la pobreza, el acceso a la salud, la educación, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Crea enmiendas a las leyes actuales que afectan las relaciones sociopolíticas entre los países y las presenta en un escrito.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Analiza imágenes contenidas en obras de arte, fotografías, periódicos y otros medios gráficos y fílmicos de relevancia que ayudan a comprender e interpretar los cambios sociales, políticos y económicos de Puerto Rico y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Diseña una revista que contiene imágenes relacionadas con los eventos históricos más importantes de la historia mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Crea una propuesta cooperativista con el fin de satisfacer las necesidades económicas y sociales de los artistas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Crea un collage sobre cómo inciden los cambios sociopolíticos en el arte.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Aplica técnicas de investigación histórica y social para producir trabajos que conllevan reconstruir el pasado y producir narrativas históricas: historia oral, entrevistas y estudio de fuentes documentales primarias y secundarias, tanto impresas como cibernéticas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Interpreta y crea, de forma impresa o digital, líneas de tiempo de hechos históricos de Puerto Rico, el Caribe, Latinoamérica, los Estados Unidos y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Utiliza fuentes primarias y secundarias para reconstruir transformaciones económicas por medio de graficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Diseña y presenta una entrevista, sobre aspectos relacionados con el derecho y la sociedad, en la que asume el rol de periodista o defensor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Investiga e indaga en torno a la relación cultural, económica, política, migratoria y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Redacta un ensayo en el que relaciona los cambios que han ocurrido en las relaciones internacionales a lo largo de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Investiga y presenta, por medio de un libro interactivo, las estrategias internacionales para lograr la educación financiera y cómo se implementan en la actualidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Organiza en un mapa de conceptos los cambios en sistemas políticos, desde Gobiernos autoritarios hasta Gobiernos democráticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Interpreta y diseña temas históricos por medio de imágenes creadas utilizando diversos medios: historietas, ilustración gráfica (artística, artesanal o digital), entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Construye un collage utilizando mensajes críticos sobre temas históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Construye un texto creativo, como por ejemplo una publicación digital en una red social, sobre un contenido ético que conecte con el aprendizaje logrado sobre un referente cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CC.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CC",
+    "expectation": "Evalúa puntos de vista, interpretaciones y mensajes críticos valorativos relacionados con temas sociales o políticos, utilizando caricaturas, tirillas, dibujos o ilustraciones, y presenta sus conclusiones en un cartel. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Compara y contrasta las características del medioambiente geográfico de Puerto Rico y otros países en el contexto de su localización y de sus regiones geográficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Usa escalas para calcular distancias, área y densidad, así como para desarrollar mapas y modelos de información geográfica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga temas geográficos de la actualidad, como población, ambiente, sustentabilidad, urbanismo y desarrollo, transportación colectiva, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Construye formas de representaciones geográficas (gráficas, mapas físicos o digitales, cuadros) que expliquen algunos fenómenos humanos (redes de transporte, localización de centros comerciales, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga cómo el impacto de los hechos históricos y las actividades humanas influyen en la geografía física y humana de Puerto Rico, sus municipios y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Demuestra cómo los movimientos migratorios han configurado a la sociedad puertorriqueña y a otras sociedades en los aspectos políticos, económicos, sociales y culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga cómo la inflación ha impactado los movimientos migratorios de la sociedad puertorriqueña y los de otras sociedades. (migraciones de puertorriqueños y de mexicanos a los Estados Unidos, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga y presenta cómo los movimientos migratorios del campo a la ciudad fomentaron el crecimiento de arrabales en San Juan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga cómo los cambios del medioambiente afectan a la sociedad y la economía de Puerto Rico y las de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Compara y contrasta las crisis energéticas de 1970, 1980 y la actual, y explica cómo afectaron la economía de Puerto Rico y de otros países, y cómo nos afectan en el presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Prepara un plan y un presupuesto que le permiten enfrentar situaciones de emergencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Propone la creación de nuevas leyes a favor del cuidado del medioambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Plantea cómo el impacto de los hechos históricos y las actividades humanas influye en la geografía física y humana de Puerto Rico, sus municipios y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea un anuncio que denuncia la amenaza constante del ser humano a nuestros bosques tropicales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Evalúa cómo algunas actividades económicas modernas, como la tala desmesurada de árboles, la minería, el uso de combustibles fósiles, entre otros, afectan a nuestra sociedad y el medioambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Evalúa su huella humana (www.footprintcalculator.org), crea un proyecto progresivo para reducir los resultados iniciales y documenta los resultados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga problemas e instituciones políticas en el actual escenario global, caracterizado por la integración económica, el desarrollo tecnológico, la desigualdad y los avances científicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Debate sobre los pros y contras de la globalización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Redacta un tratado de libre comercio para los países caribeños enfocado en los conceptos justicia y equidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga sobre el concepto desigualdad social y redacta un informe sobre los posibles temas: la pobreza extrema en Puerto Rico, la discriminación étnica y cultural, la desigualdad de ingresos, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Analiza cambios de los espacios geográficos y la relación de los seres humanos con los recursos ofrecidos por el medio natural con el fin de satisfacer sus necesidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Prepara un opúsculo que demuestra cómo los cambios geográficos de la actualidad han afectado la población, el ambiente y el desarrollo urbano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Explica mediante un informe oral cómo el ser humano puede hacer un buen uso de los recursos económicos que nos provee el medio natural, como por ejemplo el gas natural, el carbón, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea un mapa digital o físico que identifica y describe ejemplos de modificaciones humanas alrededor del edificio escolar (alcantarillas, áreas pavimentadas, áreas con vegetación, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Produce y compara imágenes contenidas en obras de arte, fotografías, periódicos u otros medios gráficos o fílmicos de relevancia para los temas de población, lugares, ambiente, aspectos culturales, socioeconómicos y políticos de Puerto Rico, sus municipios y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea un foto-ensayo, físico o digital, que evidencia los cambios geográficos, sociales o ambientales que han tenido los países en los últimos treinta años a partir, por ejemplo, de la crisis energética, los cambios climáticos, los incendios forestales, las inundaciones, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea una forma digital que mide la composición socioeconómica de su escuela y unas gráficas con la información obtenida, y divulga los resultados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga sobre la influencia de los medios noticiosos en la política pública de nuestro país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Utiliza y aplica instrumentos tecnológicos en la vida diaria que le facilitan el movimiento espacial y la localización de lugares a fin de ganar tiempo y ser más productivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Produce un mapa digital o físico, mediante un geolocalizador, donde muestra los lugares históricos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Identifica, mediante un geo localizador, rutas accesibles para la creación de una empresa de transporte, como por ejemplo la transportación médica, la entrega de alimentos no cocinados, el transporte colectivo, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Identifica, mediante un geolocalizador, las rutas más accesibles a los centros gubernamentales, hospitales y otros centros de importancia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Propone soluciones a los problemas que representa la globalización en la degradación ambiental, la amenaza para la salud de individuos y comunidades en los ámbitos local y global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Investiga las posibles soluciones a los problemas ambientales que han perdurado a lo largo de la historia, tanto en el ámbito local como en el global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Presenta, mediante el uso de un ordenador gráfico, medidas económicas para atender los problemas ambientas y salubres, tanto en el ámbito local como en el global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea medidas de política pública que atienden los problemas ambientales y salubres tanto en el ámbito local como en el global, y las presenta en un informe oral.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Explica los problemas del ambiente en diversos países: abasto de agua, deforestación, contaminación, calentamiento global, cambio climático, uso de incineración y desperdicios sólidos, entre otros, y produce alternativas para su solución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Argumenta por escrito el impacto que han tenido los problemas ambientales en los cambios geográficos y en el comportamiento humano a lo largo de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Produce un video junto con una entidad sin fines de lucro sobre la importancia de atender y aportar a los problemas ambientales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PLA.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PLA",
+    "expectation": "Crea una campaña en redes sociales para concienciar sobre la importancia de resolver los problemas ambientales en el mundo. Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Compara los comportamientos de las distintas sociedades humanas en torno a las relaciones entre el medio natural y el ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Prepara un opúsculo en el que expresa las causas y las consecuencias del buen uso de los recursos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Utiliza un mapa para informar cómo la localización geográfica beneficia la distribución y la producción de los recursos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Analiza en fuentes periodísticas las aportaciones políticas y sociales que afectan las relaciones entre el medio natural y el ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Analiza los factores de eventos históricos que ejercen influencia en las sociedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Explica en un organizador gráfico los acontecimientos que promovieron las relaciones internacionales y que impactaron a las sociedades de la época.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Prepara un presupuesto para determinar los recursos necesarios y satisfacer las necesidades personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Crea una línea de tiempo sobre los procesos sociopolíticos que marcaron a las sociedades actuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Argumenta cómo el crecimiento económico sostenible promueve el desarrollo humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Realiza una entrevista sobre cómo el desarrollo económico aporta al bienestar de las sociedades y su entorno geográfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Analiza los patrones de consumo y producción en las sociedades modernas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Utiliza los recursos disponibles para mejorar el bienestar y la calidad de vida de la población mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Describe cómo los factores genéticos, sociales, culturales, económicos y ambientales contribuyen al desarrollo de cada ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Promueve la salud mental entre los ciudadanos por medio de estrategias comunicativas eficaces: mensajes mediáticos, gráficos o de otros medios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Demuestra, por medio de experiencias personales, que es un ser humano emprendedor para el bienestar personal y el de la familia, así como para el beneficio colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Expresa mediante un collage las aportaciones de las estructuras sociopolíticas en la globalización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Analiza cómo el desarrollo humano plantea la necesidad de desarrollar instituciones democráticas y modelos de gobernabilidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Prepara un mapa sobre los diferentes sistemas de gobierno existentes en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Explica, mediante un pódcast, las estrategias económicas presentadas por los sistemas de gobierno actuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Justifica, mediante un infograma, las consecuencias de los conflictos sociales y políticos en las sociedades modernas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Investiga entidades comunitarias en organizaciones sin fines de lucro que se han establecido para promover la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Entrevista a un líder comunitario con el fin de determinar qué soluciones propone para la diversidad poblacional en su área.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Crea un collage con las propuestas económicas establecidas por las comunidades cercanas al área geográfica donde reside.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Presenta una propuesta donde expone las necesidades sociopolíticas de la comunidad donde vive.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Plantea cómo la cultura ejerce un papel determinante en el desarrollo de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Graba un video sobre la diversidad cultural y el impacto geográfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Diseña un organizador gráfico sobre los efectos de la diversidad cultural en la economía global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Prepara un esquema en el que presenta las estructuras sociopolíticas y cómo impactan el desarrollo cultural de su región.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Demuestra dominio de destrezas en las que utiliza la tecnología para el desarrollo personal y para incrementar el conocimiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Crea un periódico digital o impreso sobre la ciudadanía digital y su impacto las sociedades a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Presenta un video sobre la producción, la distribución y el consumo de los países subdesarrollados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Informa cómo las aportaciones económicas influencian las relaciones sociopolíticas de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Manifiesta virtudes y talentos propios que expone en las actividades en las que participa, al igual que reconoce los que ostentan otras personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Realiza un recorrido didáctico virtual en lugares que exponen las aportaciones de las sociedades actuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Participa de un foro para exponer las contribuciones económicas y su impacto en la economía global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Crea un plan para insertar las relaciones sociopolíticas en países subdesarrollados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Demuestra el trato justo y equitativo entre las personas, y valora críticamente los factores sociales y culturales que influyen en la construcción de este concepto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Diseña una propaganda para promover la armonía y los principios éticos en el hogar, la comunidad y la escuela.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Informa cómo el trabajo cooperativo permite la integración a redes de colaboración comunitaria mediante el desarrollo de experiencias personales y grupales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.DP.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "DP",
+    "expectation": "Debate sobre la importancia de las estructuras sociopolíticas en el desarrollo de experiencias personales y colectivas. Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y la valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Contribuye al desarrollo de la identidad cultural por medio de la participación en actividades en las que se cultivan y se manifiestan las características de las comunidades del país de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea un documento escrito que explica cómo la cultura influye en los procesos históricos de un período.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Establece, mediante una libreta interactiva, cómo los festivales, ferias, exposiciones y conciertos promueven las actividades económicas de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Elabora un producto visual de lugares visitados (museos, edificios históricos, oficinas) que manifiestan la actividad cultural en el país de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Valora y respeta el patrimonio y la cultura de Puerto Rico, sus municipios y otros países, así como lo que caracteriza e identifica a sus ciudadanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea un periódico digital o impreso que muestra diversos patrimonios culturales que representan la identidad de los grupos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga cómo el turismo cultural promueve el emprendimiento en familias o en comunidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Demuestra, mediante el juego, el valor y el respeto por elementos culturales (costumbres y tradiciones) de Puerto Rico y de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Analiza la relación causal entre la economía y la cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga el desarrollo de la economía cultural como determinante para el retorno o el impacto económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Plantea, por medio de una exposición grupal, cómo las culturas de otros países influyen en la identidad nacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga, utilizando recursos electrónicos y bibliográficos, cómo las leyes protegen los patrimonios culturales y ayudan a la economía de esos espacios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Demuestra cómo los individuos se identifican y establecen conexiones personales con el tiempo y el espacio en los que han vivido.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Entrevista a aquellos ciudadanos de otros países que se han tenido que adaptar a la cultura de Puerto Rico, y elabora una presentación sobre ellos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea un informe, un noticiero o un documental sobre cómo los grupos culturales de otras regiones han influido en la economía de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Personifica mediante dramatizaciones a aquellos ciudadanos que han aportado a la cultura de Puerto Rico y de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Describe cómo diversas instituciones gubernamentales, sociales y culturales contribuyen a transmitir, promover y desarrollar la cultura y la historia del país o del sector de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Demuestra conocimiento sobre los símbolos nacionales de diferentes países (himno, escudo y bandera) y practica las normas y protocolos de actividades oficiales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Prepara una presentación sobre la labor del Instituto de Cultura Puertorriqueña y la Oficina de Conservación Histórica, entre otras instituciones, y su influencia cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Recrea en un trabajo cooperativo una institución gubernamental y explica sus funciones y cómo promueve la cultura del país de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Explica cómo los diversos países del mundo utilizan las instituciones sociales y culturales para transmitir y promover la cultura en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Realiza una encuesta a grupos sociales de otros países que viven en Puerto Rico sobre las particularidades culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Diseña una infografía sobre cómo el movimiento cooperativista promueve el desarrollo de instituciones culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga, mediante recursos electrónicos, los museos, las galerías y las oficinas gubernamentales que ayudan a la conservación de la cultura en diferentes países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga y profundiza en las expresiones musicales, artísticas y culturales de Puerto Rico, sus municipios y otros países para conocer cómo contribuyen al desarrollo histórico y cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Ilustra con ejemplos gráficos la expresión cultural y artística de Puerto Rico y otros países por medio de presentaciones artísticas individuales o grupales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Demuestra iniciativa y creatividad al participar en actividades culturales que se celebran en la escuela y en la comunidad, como la Semana de la Puertorriqueñidad, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea representaciones artísticas que demuestran el desarrollo cultural de diferentes grupos sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea, analiza e investiga textos poéticos y musicales que describen y resaltan temas de la historia y la cultura de Puerto Rico y otros países para valorar su contribución al desarrollo cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Prepara un video o un informe oral que explica el desarrollo de los ritmos latinoamericanos o afrocaribeños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga, mediante internet, cómo la música popular transforma la producción y el consumo de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Plantea, mediante foros o debates, cómo los anuncios y las redes influyen en la identidad cultural musical de los jóvenes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Comprende los cambios, semejanzas y diferencias que se producen en la cultura de Puerto Rico y otros países a lo largo del tiempo, y los contrasta con los de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Compara en una tabla los cambios culturales ocurridos a lo largo del tiempo en América Latina, Puerto Rico y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Elabora un presupuesto para un viaje cultural que promueva el turismo tanto en Puerto Rico como en otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Construye un organizador gráfico en el que determina cómo los Gobiernos protegen los patrimonios culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Analiza características propias de la vida y la cultura que contribuyen a elaborar un perfil de la idiosincrasia de los puertorriqueños, así como el de otros países y sociedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Crea un pabellón para resaltar los aspectos relevantes de la cultura de diferentes sociedades del Caribe, Latinoamérica y de otras partes del mundo, como por ejemplo la música, la gastronomía, las artesanías, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Presenta, mediante exposiciones, las formas en que los puertorriqueños y otros grupos humanos emprenden sus actividades económicas para resaltar la cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.IC.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "IC",
+    "expectation": "Investiga cómo los diferentes grupos sociales, tanto en Puerto Rico como en otros países, resaltan su cultura por medio de los derechos de los demás. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Analiza problemas que afectan diferentes sectores de la economía de Puerto Rico y sus respectivos espacios productivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Contrasta diferentes áreas de producción económica de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica cambios en los patrones de consumo en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica cómo afecta el problema energético a la economía de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica el proceso de modernización económica que se dio en Puerto Rico e implicó el cambio de una sociedad agrícola a una sociedad industrial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica áreas en las que se reflejó el proceso de modernización económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Describe instituciones que apoyan el desarrollo económico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Analiza leyes que apoyan el desarrollo económico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Analiza diversos tipos de organizadores gráficos que describen comportamientos de las actividades económicas de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Compara y contrasta datos de desempleo de un país a lo largo de un período de tiempo determinado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Infiere información de un organizador gráfico que le permite formular conclusiones sobre cambios económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Extrae características de la economía de un país por medio de la información contenida en un organizador gráfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Expresa cómo el conocimiento de conceptos fundamentales de economía ayuda a actuar con responsabilidad en el manejo de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Investiga cómo la educación financiera influye en las actividades cotidianas para manejar eficazmente las finanzas individuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica con ejemplos prácticos el concepto deseos frente al de necesidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Describe la importancia de fomentar la cultura del ahorro en la vida de las personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Evalúa cómo la creación de instituciones reguladoras determina la política fiscal de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica el objetivo de la creación de una junta del control fiscal para el manejo de las finanzas de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Describe cómo otros países han adoptado medidas que les permiten alcanzar salud fiscal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Investiga cómo las políticas económicas se relacionan con las acciones y decisiones que los Gobiernos de cada país llevan a cabo en el ámbito económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Analiza el concepto desarrollo social para comparar y contrastar la economía de diferentes países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica elementos que forman parte del desarrollo social de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Compara y contrasta la economía de diferentes países a partir del nivel de desarrollo social alcanzado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica prácticas económicas innovadoras que utilizan diferentes países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Reconoce la cultura como un sector fundamental para fomentar el desarrollo económico de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Reconoce alternativas de desarrollo de eventos artísticos, festivales y otros encuentros culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Investiga el impacto del turismo cultural en la economía de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Propone alternativas para desarrollar políticas públicas que fomenten el desarrollo económico en el contexto de la cultura de un país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica cómo el desarrollo de la ciencia y la tecnología ayuda a comprender y explicar con mayor certeza los procesos económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Describe adelantos científicos y tecnológicos que contribuyen al desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica cambios que se implantan en la industria y el comercio vinculados al desarrollo de la ciencia y la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Describe formas alternas para substituir el flujo de moneda tradicional por las transacciones económicas virtuales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica cómo las relaciones globales afectan la economía mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Analiza cómo los países se integran a procesos de relaciones económicas globales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica tratados regionales de relación comercial que promueven los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Demuestra cómo el cooperativismo y el emprendimiento son alternativas para el desarrollo social, político y económico de Puerto Rico y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Explica conceptos fundamentales que describen el comportamiento ético de los trabajadores en los sectores público y privado: excelencia, integridad personal, honestidad, responsabilidad y veracidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de comportamientos éticos en el servicio público y privado dignos de emular.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Plantea situaciones en las que asume posturas éticas para garantizar responsabilidad y excelencia en el trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.PDC.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "PDC",
+    "expectation": "Identifica a personas que han servido a Puerto Rico y a otros países, que representan los más altos valores de la sociedad a la que le sirven. Conciencia Cívica y Democrática Practica y valora los principios que rigen la vida en una sociedad democrática y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga cómo el medioambiente natural y los elementos que componen su medioambiente social interrelacionan en el desarrollo de ciudadanos responsables y activos en el mundo presente y futuro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Evalúa, mediante un foro de discusión, cómo están configurados geográfica y políticamente los países estudiados, y establece formas de mejorar la configuración geopolítica, económica y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Evalúa, mediante un foro de discusión, la relación del medioambiente natural con el social en el establecimiento de políticas de desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Diseña una gráfica que establece los cambios en la relación del ser humano-ambiente y su impacto en los ámbitos político, ético y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y expone las posibles soluciones sobre los asuntos urgentes dentro de la sociedad: ambiente, desarrollo sostenible, vulnerabilidad física y geográfica, vivienda, pobreza, marginación, inclusión, salud, política, educación y gobierno, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Demuestra, mediante un reportaje histórico, la aportación de personas que han contribuido de forma política en el país, la región y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Establece en forma de tabla cómo ha sido el desarrollo de las políticas financieras, cooperativistas, sistemas económicos y/o desarrollo empresarial en Puerto Rico y el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Establece en forma de tabla cómo ha sido el desarrollo histórico de las políticas o normas del proceso electoral y los cambios sociales en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Examina las formas en que los ciudadanos cumplen con sus obligaciones económicas, así como los derechos económicos y sociales a los que tienen acceso en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Diseña una revista acerca de los aspectos económicos y sociales que afectan la vida de las personas que viven en el país, la región y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Diseña una revista económica acerca de cómo le educación financiera, el cooperativismo, el emprendimiento y la economía, en general, contribuyen en los aspectos sociopolíticos de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Diseña una revista sobre el impacto económico que han tenido los procesos electorales, la redacción de leyes y la sociedad en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Analiza la situación actual de Puerto Rico, sus municipios y otros países en un contexto territorial, político, económico y social, y propone ideas de cómo los ciudadanos pueden contribuir con su desarrollo y beneficiarlos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y expone de forma gráfica los esfuerzos de comunidades de base política y social para contribuir en el país, la región y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y expone de forma gráfica los esfuerzos de empresarios y/o cooperativas para contribuir a Puerto Rico en diferentes ámbitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y expone de forma gráfica los esfuerzos de comunidades de base política y social para contribuir de manera ética en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Compara el sistema de gobierno que se practica en Puerto Rico y otros países con otros sistemas políticos: socialismo, comunismo, dictadura, monarquía, monarquía parlamentaria y otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y plantea, mediante un pódcast, las diversas formas de expresar la democracia en relación con el aspecto ciudadano y con las instituciones del país, la región y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y plantea, mediante un organizador gráfico, los organismos reguladores que establecen los elementos económicos dentro del país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga y plantea, mediante un pódcast, la división de poderes en el Gobierno de Puerto Rico, en el contexto de los límites y alcances de cada autoridad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Formula cómo las sociedades crean instituciones para regular su proceso político, y establece iniciativas que cumplen con los objetivos de un desarrollo sostenible.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Realiza un producto audiovisual en el que propone mejorar el establecimiento de normas, valores y reglas que garanticen la dignidad humana en el país, la región y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Redacta un informe sobre cómo las cooperativas, las empresas y/o los sistemas económicos afectan el desarrollo de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Crea un anuncio publicitario, como parte de una campaña en el desarrollo de una iniciativa política, para que Puerto Rico tenga un desarrollo sostenible.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Participa de manera responsable en procesos, tales como la organización de actividades políticas, sociales y culturales; el trámite legislativo; la radicación independiente de proyectos de ley; la celebración de vistas públicas; el cabildeo; las enmiendas a la Constitución; entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Elabora un foto-ensayo en el que presenta la importancia de la participación ciudadana en los diferentes ámbitos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Diseña una propuesta ciudadana en la que establece la manera en que las cooperativas, las empresas y los sistemas económicos podrían apoyar al crecimiento y al desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Idea tres propuestas de ley para mejorar las instituciones sociales (escuela, familia y comunidad) en el desarrollo social de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Investiga cómo la participación tecnológica ha cambiado la forma de ejercer la democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Ilustra, mediante una línea del tiempo, las formas en las cuales Puerto Rico y otros países se integran en un mundo de relaciones globales, como por ejemplo el intercambio de prácticas y estrategias comerciales, la promoción de talentos y productos del país, así como la interacción por medio de tecnologías de la comunicación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Demuestra, mediante un ensayo pictográfico, cómo la tecnología influye en los procesos de participación ciudadana dentro de una cooperativa, una empresa y/o un sistema económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Propone ideas sobre cómo mejorar el sistema electoral, en términos tecnológicos, de manera que garantice la participación de la ciudadanía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Evalúa y resalta la labor de diversos grupos y organizaciones puertorriqueñas e internacionales que luchan por los derechos civiles y la protección ambiental.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Atribuye, mediante un mural, las aportaciones que ha hecho el país, la región y/o el continente de estudio a la protección ambiental y los derechos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Comprueba, mediante el estudio de base de datos, los beneficios que se obtienen mediante diversos sistemas económicos, cooperativas y empresas para garantizar los derechos de los ciudadanos y la protección del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Establece un modelo de aportación ciudadana, basado en las personas ejemplares de Puerto Rico, para garantizar los derechos civiles y la protección del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Promueve una mejor convivencia social por medio de la participación en actividades sobre asuntos controversiales, y comunica ideas de forma clara y eficaz.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Produce un anuncio para las redes sociales con el fin de establecer una propuesta para mejorar la convivencia en países, regiones y/o el continente de estudio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Elabora un cartel en el que ilustra cómo el modelo cooperativista y/o empresarial apoya al ciudadano para tener una mejor salud financiera.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CCD.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CCD",
+    "expectation": "Analiza y debate sobre asuntos controversiales de amplia discusión e impacto social para los puertorriqueños y otras sociedades, tales como la pena de muerte, el aborto, el ambiente, el uso y abuso de sustancias, los derechos de los seres humanos, la trata humana, la explotación sexual y la pobreza. Conciencia Global Evidencia, con su comportamiento, que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Evalúa las características de la geopolítica en el ámbito global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Identifica cómo la evolución de los conflictos armados afectó el desarrollo de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Expone en un ensayo los efectos económicos de los conflictos armados en el ámbito global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Analiza y debate cómo la estructura política influye en las conductas sociales de la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Investiga el rol de la globalización como formación histórica y las consecuencias que ha tenido en las sociedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Compara y contrasta la diversidad geográfica en la formación histórica de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Realiza un esquema productos y recursos económicos de mayor impacto en el ámbito global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Analiza cómo las relaciones sociopolíticas influencian el desarrollo en la formación histórica de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Evalúa los fenómenos sociales, como la inmigración de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Redacta las aportaciones geográficas e históricas durante los procesos migratorios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Realiza un bosquejo en el que determina el impacto de la inmigración en los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Construye una línea de tiempo digital sobre las consecuencias de la inmigración y las relaciones sociopolíticas en el ámbito global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Valora y demuestra respeto por la labor de personas que trabajan en la solución de problemas para adelantar una causa y que constituyen un modelo que se puede emular.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Construye un anuncio en el que se demuestran el valor y el respeto por los trabajadores de las sociedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Presenta cómo las cooperativas contribuyen a los valores y al respeto de una comunidad atendiendo los asuntos económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Grafica en un mapa los modelos globales que se utilizan para fomentar los valores y el respeto de los ciudadanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Analiza los conceptos soberanía y unión entre países en el contexto de un mundo de relaciones globales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Investiga las características que presenta un país soberano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Compara y contrasta los sistemas de gobierno de los países y cómo integran la educación financiera como mecanismo de desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Relaciona los aspectos sociales y políticos con las oportunidades que ofrecen los países desarrollados y los subdesarrollados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Plantea posibles soluciones y/o alternativas a problemas sociales, políticos y económicos que afectan el ámbito mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Investiga cómo los problemas sociales, políticos y económicos emergieron durante el desarrollo histórico de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Prepara un plan de trabajo para promover estrategias económicas que aporten a la solución de los problemas sociales, políticos y económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Expone sobre organizaciones que aportan a la solución de problemas de sus comunidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Explica cómo los elementos de la cultura se integran entre sí: música, artes plásticas, lengua y literatura, deportes y manifestaciones políticas y sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Desarrolla un reportaje sobre la integración de los elementos culturales de acuerdo con la localización geográfica continental.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Reseña cómo los festivales culturales aportan a las estrategias económicas de los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Debate cómo la cultura de los países influye en el desarrollo sociopolítico de la globalización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Ejemplifica cómo la tecnología interconecta las sociedades del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Construye un mapa de conceptos digital sobre cómo los países se conectan a lo largo de la historia y la geografía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Prepara un flujograma sobre las relaciones de producción y distribución continentales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Reseña un artículo sobre las relaciones sociopolíticas que presentan los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Analiza las diversas formas en que los países se insertan a un mundo globalizado.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Narra cómo los países, a lo largo de su historia, van integrándose a la globalización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Dramatiza cómo la globalización ayudó a crear sociedades emprendedoras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Crea una ponencia sobre las relaciones sociales y políticas de los países acogidas luego de la globalización.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Participa de iniciativas de grupos comunitarios y/o entidades sin fines de lucro que asisten y colaboran en la prevención, el tratamiento o la solución de problemas sociales y/o ambientales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Compara y contrasta organizaciones sin fines de lucro del ámbito mundial y especifica su aportación según su zona geográfica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Realiza una exposición sobre los logros de las organizaciones sin fines de lucro para el desarrollo de cooperativas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.CG.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "CG",
+    "expectation": "Explica cómo los modelos sociopolíticos de los países obstruyen las labores de las organizaciones sin fines de lucro. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Demuestra dominio del geolocalizador (GPS), e identifica en estos puntos específicos relacionados con eventos trascendentales de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Utiliza el geolocalizador para recrear un mapa con puntos específicos de eventos trascendentales de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Utiliza el geolocalizador para recrear un mapa con eventos económicos trascendentales de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Utiliza el geolocalizador para recrear un mapa con puntos específicos de eventos políticos trascendentales de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Demuestra dominio de la tecnología como herramienta para investigar, crear y producir información.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Crea un blog en el que argumenta con información precisa de recursos digitales, mediante el uso de fuentes válidas, para la investigación de temas históricos y geográficos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Crea un blog en el que argumenta con información precisa de recursos digitales, mediante el uso de fuentes válidas, para la investigación de temas económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Crea un blog en el que argumenta con información precisa de recursos digitales, mediante el uso de fuentes válidas, para la investigación de temas sociopolíticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Investiga y plantea cómo el uso de la tecnología influye en las actitudes y comportamientos de los puertorriqueños en los aspectos económico, social, político y laboral.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante la realización de un video o una presentación, cómo la tecnología influye en la economía y en los procesos históricos y geográficos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante la realización de un video o una presentación, cómo la tecnología influye en la economía del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante la realización de un video o una presentación, cómo la tecnología influye en la economía y en los procesos sociopolíticos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Investiga la utilización de los conocimientos científicos y de los nuevos dispositivos e instrumentos tecnológicos para facilitar el quehacer de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Compara y contrasta, mediante el uso de un organizador gráfico, cómo los conocimientos científicos y los dispositivos tecnológicos facilitan el quehacer humano en la historia y la geografía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Compara y contrasta, mediante el uso de un organizador gráfico, cómo los conocimientos científicos y los dispositivos tecnológicos facilitan el quehacer humano en la economía global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Compara y contrasta, mediante el uso de un organizador gráfico, cómo los conocimientos científicos y los dispositivos tecnológicos facilitan el quehacer humano en los procesos sociopolíticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza cómo el desarrollo científico y tecnológico ha propiciado cambios en el orden político de los diversos países a partir del siglo XX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en un medio digital, en el que examina cómo el desarrollo científico y tecnológico ha fomentado cambios en el orden histórico y geográfico del siglo XX, como por ejemplo la sociedad urbana, la suburbana, la rural, las políticas públicas, entre otros aspectos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en un medio digital, en el que examina cómo el desarrollo científico y tecnológico ha fomentado cambios en el orden económico del siglo XX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en un medio digital, en el que examina cómo el desarrollo científico y tecnológico ha fomentado cambios en el orden sociopolítico del siglo XX.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Evalúa críticamente el impacto de los cambios científicos y tecnológicos en las estructuras sociales, como el trabajo, los medios de transportación, la comunicación, la educación, la recreación y los deportes, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza un muro digital en el que sustenta el impacto de los cambios científicos y tecnológicos en las estructuras sociales desde una perspectiva histórica y geográfica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza un muro digital en el que sustenta el impacto de los cambios científicos y tecnológicos en las estructuras sociales desde una perspectiva económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.6.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza un muro digital en el que sustenta el impacto de los cambios científicos y tecnológicos en las estructuras sociales desde una perspectiva sociopolítica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Investiga la tecnología como parte del ambiente humano y cómo está ligada a la cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante un video corto, cómo la tecnología se ha ligado a la cultura desde una perspectiva histórica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante un video corto, cómo la tecnología se ha ligado a la cultura y contribuye a la economía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza, mediante un video corto, cómo la tecnología se ha ligado a la cultura y contribuye a los procesos sociopolíticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Analiza y plantea cómo las aportaciones de la ciencia y la tecnología contemporánea influyen en la forma de vida de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en una red social sobre las ventajas para los seres humanos de integrar la tecnología a la investigación, al análisis y a la evaluación de asuntos históricos y geográficos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en una red social en el que plantea las ventajas para los seres humanos de integrar la tecnología a la investigación, el análisis y la evaluación de asuntos económicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.8.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Redacta un escrito en una red social en el que plantea las ventajas para los seres humanos de integrar la tecnología a la investigación, el análisis y la evaluación procesos sociopolíticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Explica formas en las cuales el uso de la tecnología contribuye a las relaciones globales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Evalúa con exactitud, mediante el uso de un ordenador gráfico, cómo la tecnología ha contribuido a las relaciones globales en los aspectos histórico y geográfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Evalúa con exactitud, mediante el uso de un ordenador gráfico, cómo la tecnología ha contribuido a las relaciones globales en el aspecto económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.9.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Evalúa con exactitud, mediante el uso de un ordenador gráfico, cómo la tecnología ha contribuido a las relaciones globales en el aspecto sociopolítico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Argumenta en torno a la utilización correcta y ética de las nuevas tecnologías de la información y de la comunicación en el ámbito internacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza una presentación e investiga sobre el uso correcto y los parámetros éticos de las nuevas tecnologías de la información y de la comunicación en los procesos histórico y geográfico del ámbito internacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza una presentación e investiga sobre el uso correcto y los parámetros éticos de las nuevas tecnologías de la información y de la comunicación en actividades económicas del ámbito internacional.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "12.SCT.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "12",
+    "domain": "SCT",
+    "expectation": "Realiza una presentación e investiga sobre el uso correcto y los parámetros éticos de las nuevas tecnologías de la información y de la comunicación en los procesos sociopolíticos del ámbito internacional. GLOSARIO • Aprendizaje auténtico: o Se refiere al aprendizaje significativo en el cual el estudiante es responsable de su tarea y el maestro es un colaborador en vez de un mero transmisor del conocimiento. El alumno percibe y organiza sus experiencias de acuerdo con sus capacidades, valores e intereses como el agente activo responsable de su aprendizaje. • Assessment: o Proceso mediante el cual se recopila información por medio de diversas actividades en la sala de clase con el propósito de dar seguimiento al aprendizaje y así poder mantener niveles óptimos de calidad durante el proceso de aprendizaje y enseñanza. Existen una gran variedad de técnicas de assessment documentadas tales como el diario reflexivo, la lista focalizada, organizadores gráficos, mapas de conceptos, poemas concretos, poemas syntu y cinquain, tirilla cómica o caricaturas, respuesta escrita inmediata, portafolios, preguntas abiertas, la observación, dinámicas de grupo, debates, trabajos de creación y pruebas de ejecución. Las hojas de cotejo y las rúbricas son instrumentos que se utilizan para evaluar los trabajos realizados. El assessment y la medición establecen la base de la evaluación. • Blog: o Página web, generalmente de carácter personal, con una estructura cronológica que se actualiza regularmente y que se suele dedicar a tratar un tema concreto. • Conciencia: o Entendimiento de que los países y la gente que habita el planeta Tierra son interdependientes, que todos somos ciudadanos de nuestros respectivos países, que reconozcan que es necesario conocer acerca de las culturas, sociedades y los sistemas que prevalecen en otras partes del mundo. Estándares: Los estándares son enunciados que establecen criterios claros, sencillos y medibles que los maestros deben considerar como meta del aprendizaje de todos los estudiantes, así como de lo que deben saber y poder hacer. Son los aprendizajes básicos que todo niño debe alcanzar en su grado al finalizar cada año escolar. • Estándares de contenido: o Los estándares de contenidos curriculares deben estar orientados al desarrollo de conocimientos, destrezas y actitudes por nivel en los alumnos. Son descripciones amplias de los conocimientos y las destrezas que los estudiantes deben lograr en una materia académica específica. Estos conocimientos incluyen las ideas, los dilemas y la información sobre las materias. Las destrezas incluyen las formas de pensar, trabajar, comunicarse, razonar e investigar que caracterizan a dicha materia. Expectativas: Las expectativas son ejemplos concretos y definidos de lo que los estudiantes deben saber y son capaces de hacer para demostrar su proficiencia en cuanto al dominio del conocimiento y a la posesión de las destrezas enmarcadas en los estándares de contenido. • ComicCon Criollo: o Festival donde los asistentes se disfrazan de diferentes personajes de su interés. • Competencias: o La totalidad de los conocimientos, destrezas y actitudes que pueda demostrar una persona en un nivel requerido en una determinada área o materia de estudio. Criterios: Son los indicadores a partir de los cuales basamos tanto la medición como el assessment para realizar la evaluación. Son los requisitos necesarios para llevar a cabo unas tareas que, como puntos de referencia más específicos, nos sirven para darles más precisión y así poder cualificar y cuantificar las ejecutorias de los estudiantes en el proceso de enseñanza y aprendizaje. • Currículo: o Programa de estudio que orientado en unos fundamentos filosóficos, sociológicos y sicológicos organiza el contenido o material en forma sistemática para facilitar unas experiencias de enseñanza y aprendizaje hacia el logro de unas metas u objetivos. • Destreza de aprendizaje: o Habilidad específica que utiliza o puede utilizar un aprendiz para aprender, cuyo componente fundamental es cognitivo. Un conjunto de destrezas que constituyen una capacidad. • Diseño curricular: o Es una descripción gráfica que, en forma delineada y bosquejada, presenta los diferentes componentes y elementos de un programa educativo. Los componentes del currículo son: la filosofía educativa, las metas y objetivos, el contenido del curso, actividades de enseñanza y aprendizaje, recursos a utilizarse y la evaluación. • Estrategias instruccionales: o Son todas aquellas técnicas y métodos de enseñanza que selecciona el maestro para exponer a los estudiantes con la intención de que reciba, internalice, modifique y evalúe las experiencias de aprendizaje a las cuales se confronta. Las estrategias contestan la pregunta: ¿cómo lo voy a hacer? • Evaluación: o Es un proceso sistemático y continuo que integra todas las experiencias de enseñanza y aprendizaje para determinar el nivel o grado de efectividad en que los alumnos alcanzan los objetivos propuestos en un programa educativo. La evaluación hace uso de la medición y del assessment para llevar a cabo su función. • Evaluación diagnóstica: o Se lleva a cabo al inicio de un curso y usualmente se realiza mediante la administración de una o más pruebas. Su propósito es determinar fortalezas y debilidades de los estudiantes y así poder ubicarlos por niveles. • Evaluación formativa: o Se lleva a cabo durante el curso con el propósito de dar seguimiento a la labor académica de los estudiantes y así poder determinar los logros alcanzados durante el proceso de enseñanza y aprendizaje. Para lograr este tipo de evaluación se deben utilizar todos los medios y actividades tales como pruebas parciales, proyectos, informes escritos y orales, asignaciones y de assessment, entre otras. • Evaluación sumativa: o Se da al finalizar el curso, ya que es la suma total de los resultados obtenidos por medio de todos los medios y actividades de evaluación llevados a cabo durante el curso. No es la prueba o examen final. Si el maestro da una prueba final o comprensiva, esta viene a ser parte de la evaluación sumativa. Con la evaluación sumativa se determina la nota o calificación final del estudiante. Los resultados de la evaluación sumativa se utilizan con fines administrativos para justificar propuestas y como fuente de información para demostrar la calidad del aprendizaje en competencias nacionales e internacionales. • Foto – ensayo: o Un ensayo fotográfico, es un conjunto o serie de fotografías que están obtenidas para causar una serie de emociones en el espectador. • Geocalizador: o dispositivo o de un sistema de geolocalización, o fijación de posición geográfica para determinar o estimar la posición geográfica de un objeto. • GPS: o Sistema americano de navegación y localización mediante satélites. • Identidad: o La identidad es un sentido de conciencia de que se pertenece a un conjunto humano con el cual se comparten visiones, sentimientos, preceptos morales, estéticos, religiosos y formas de vivir la vida. El tema de la identidad está muy ligado al de la cultura. La identidad de un pueblo está en su historia; no es un producto de la biología, sino una construcción social. • Identidad cultural: o Conocimiento y aprecio de la historia y del patrimonio cultural que nos identifican como puertorriqueños, reconociendo las aportaciones de otros pueblos y otras culturas a nuestro desarrollo histórico. • Indicador (objetivo) de ejecución: o Una aseveración que describe los resultados deseados. Constituye el próximo nivel de efectividad luego de las expectativas de grado. Los indicadores establecen la pauta a seguir en secuencia y rigor para alcanzar las metas establecidas en cada expectativa. • Libreta interactiva: o una libreta común, en el cual los estudiantes pueden expresar su creatividad y documentar su proceso de aprendizaje utilizando papeles de colores, dibujos, laminas y diseños originales o dados para exponer los contenidos documentados. El nivel de dificultad de las actividades depende de la edad o la etapa escolar de los estudiantes. • Mapa conceptual: o El mapa conceptual es un recurso esquemático usado para representar un conjunto de conceptos y sus relaciones, de una manera gráfica que facilita la organización y la comunicación. Se puede utilizar para representar la comprensión del estudiante sobre un contenido curricular específico. La relación entre los conceptos se establece mediante el uso de palabras conectoras. • Mapa curricular: o Un mapa curricular es un manuscrito en el cual se cuenta la historia del currículo operacional. Con este mapa en mano los (las) maestros(as) u otro personal se convierten en editores al revisarlo y validarlo a la luz del contexto real de un escenario particular. Objetivos operacionales: Los objetivos operacionales especifican la ejecución o comportamiento que los estudiantes han de demostrar como resultado del proceso de enseñanza y aprendizaje. • Objetivos instruccionales: o Dentro de los objetivos instruccionales podemos encontrar dos tipos de objetivos: los terminales y los capacitantes. El alcanzar un objetivo terminal dependerá siempre del logro de los objetivos capacitantes. • Objetivo terminal: o Es el objetivo que describe en términos observables los comportamientos totales identificados en los propósitos o las metas del tópico bajo estudio. Conocidos como generales. • Objetivos capacitantes: o Los objetivos capacitantes son los que permiten el logro de los objetivos terminales, ya que describen conductas específicas o pasos a realizarse para lograr los objetivos terminales. Conocidos como específicos. • Organizador grafico: o Es una representación visual de conocimientos que presenta información rescatando aspectos importantes de un concepto o materia dentro de un esquema usando etiquetas. Se le denomina de variadas formas, como: mapa semántico, mapa conceptual, organizador visual, mapa mental etc. • Pabellón: o Espacio determinado para exponer información, objetos, representaciones visuales, etc.; sobre un tema determinado. • Podcast: o Emisión de radio o de televisión que un usuario puede descargar de internet mediante una suscripción previa y escucharla tanto en una computadora como en un reproductor portátil. • Técnicas instruccionales: o Instrumento específico utilizado para enseñar la lección y así lograr los objetivos capacitantes. Algunas técnicas de assessment que a su vez son excelentes para explorar, conceptuar y evaluar el aprendizaje de los estudiantes son: lista focalizada, organizadores gráficos, mapas de conceptos, poemas concretos, tirillas cómicas. COLABORADORES El Programa de Estudios Sociales agradece el compromiso y las valiosas aportaciones de todos los grupos de interés que formaron parte del proceso de revisión curricular. Sus esfuerzos y conocimientos contribuyeron al desarrollo, revisión y validación del documento de Estándares de Contenido y Expectativas del Grado de Estudios Sociales. Dra. Itzaira Adrover UPR-Río Piedras Dr. José Anazagasty UPR-Mayagüez Prof. Ernesto L. Ayala Maestro Escuela Ernesto Ramos Antonini Prof a. Jesselia Ayala Torres Maestra Escuela Luis Negrón López Dra. Beatriz Aybar Escuela Venus Gardens Prof. Noel Belén Santiago Maestro Escuela Trina Padilla de Sanz Dra. Carmen Bellido UPR-Mayagüez Prof a. Mercedes Cancel Rodríguez Maestra Escuela Segundo Ruíz Belvis Dr. Javier Carrión UPR-Río Piedras Prof. Ramón Carvajal Mercado Maestro Escuela República de Costa Rica Dra. Elsa Castro Maestra Escuela University Gardens Prof a. Olga I. Colón Maestra Prof a. Melissa Cruz Maestra Escuela Antonio Luchetti Dr. Bryan Deida Maestro Escuela Miguel F. Santiago Echegaray Prof a. Juliana Díaz Pérez Maestra Escuela Vocacional Ana Delia Flores Dr. José Encarnación UPR-Humacao Dra. Enilda Figueroa Maestra Escuela Juana Rosario Prof a. Carmen G. Flores Martínez Maestra Escuela Laura Mercado Prof a. Mariluz Franco Ortiz UPR-Cayey Prof a. Erika M. García Santiago Maestra Escuela Adela Rolón Fuentes Dr. Víctor Hernández UPR-Río Piedras Prof a. Maribelle Herrero Maestra Escuela Miguel Such Prof a. Geydalis Liciaga Maestra Escuela Petra Corretjer Prof. José Marrero León Maestro Escuela Juan Serrallés Prof. a Angélica Martínez Arocho Maestra Escuela Julián Blanco Prof. José Martínez Cruz Maestro Escuela Josefa Vélez Bauza Prof a. Linette Mendoza Martínez Maestra Escuela Brígida Álvarez Dra. Dámaris Mercado Superintendente retirada Prof a. Silvia Morales Maestra Escuela Luis Muñoz Marín Prof a. Sybaris Morales Maestra Escuela Libre de Música Prof a. Elsie Muñiz Morales Maestra Escuela Luis F. Crespo Prof. Kadmiel Ortiz Maestro Escuela Federico Degetau Prof. Enoc Ortiz Uribe Maestro Escuela Elvira Vicente Prof a. Jeanette Pagán La Luz Maestra Escuela Petra Corretjer Dra. Ileana Quintero UPR-Río Piedras Prof a. Tania Rivera Ramos Maestra Escuela Superior Urbana Nueva Prof a. Ruth Rodríguez Maestra Escuela Abelardo Martínez Otero Prof. Raymond Rollocks Maestro Escuela Bethsaida Velázquez Andújar Prof a. Celimar de La Rosa Maestra Escuela Asunción Lugo Colón Prof a. Carmen Y. Rosado Sánchez Universidad Ana G. Méndez Prof. Wilfredo Salazar Maestro Escuela Betty Rosado de Vega Prof. José L. Santana Vargas Maestro Escuela Dr. Juan José Maunez Pimentel Prof a. Linette Segarra Laboy Maestra Escuela Josefina Boya León Prof. Edwin Torres Maestro Escuela CROEC Prof a. María Elba Torres Muñoz UPR-Río Piedras Dra. Elga del Valle Maestra Escuela Libre de Música ERA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

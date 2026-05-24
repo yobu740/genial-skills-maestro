@@ -1,0 +1,346 @@
+[
+  {
+    "code": "K.IT1.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "IT",
+    "expectation": "Reconoce y utiliza instrumentos tales como la lupa, el termómetro, el reloj y la regla, para recopilar información y datos relacionados con las ciencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.IT1.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "IT",
+    "expectation": "Desarrolla pensamiento científico y matemático al implementar -de forma sencilla- procesos de observación, medición, inferencia, predicción, clasificación y experimentación; y prácticas de ciencias e ingeniería.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.IT1.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "IT",
+    "expectation": "Ejecuta experimentos y demostraciones científicas sencillas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.IT1.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "IT",
+    "expectation": "Expresa y sugiere de forma oral posibles soluciones a diferentes problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.IT1.5",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "IT",
+    "expectation": "Construye modelos para describir y representar ideas científicas, mediante prácticas de ciencias e ingeniería, para solucionar problemas. Ciencias Biológicas Estudia e investiga los procesos de la vida; así como el origen, las propiedades y las características de los organismos vivos y su interacción con el ambiente. K.CB1 Utiliza y desarrolla prácticas de observación a través de los sentidos, para entender el mundo que le rodea y las interacciones de los seres vivos en su entorno natural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Distingue entre materia viva y no viva.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Utiliza los sentidos para llevar a cabo observaciones sobre algunos seres vivos (las plantas, los animales, los seres humanos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Distingue características parecidas entre los seres vivos, de características que los hacen diferentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Infiere que los seres vivos requieren de agua, luz y suelo para sobrevivir, observando su entorno natural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.5",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Hace observaciones para describir relaciones entre las plantas, los animales y los humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.6",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Reconoce que las plantas son parte esencial en la vida de los animales, y en su entorno. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.7",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Identifica las partes principales de una planta (la raíz, las hojas y el tallo).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.8",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Representa una planta con sus estructuras básicas, utilizando diferentes materiales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.9",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Reconoce e identifica características particulares de los animales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.10",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Describe y clasifica los animales y sus crías (como, por ejemplo, yegua-potro, gallina-pollito, vaca-becerro, seres humanos-niños, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.11",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Reconoce que los alimentos son la fuente primaria de energía para los organismos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.12",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Distingue entre lo que es alimento y lo que no lo es.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.13",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Explica la importancia de la buena alimentación para contribuir a mantener saludables los sistemas del cuerpo humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB1.14",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Menciona cambios que ocurren durante el ciclo de vida de los seres vivos. K.CB3 Observa y reconoce que los seres vivos poseen variaciones en las características heredadas de sus progenitores.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB3.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Reconoce que la reproducción es una forma de conservación de los seres vivientes. K.CB4 Reconoce la importancia de la conservación de los recursos naturales para mantener las condiciones adecuadas que favorecen la sobrevivencia de los organismos en su ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB4.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Valora y respeta la diversidad de los seres vivientes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CB4.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CB",
+    "expectation": "Describe el entorno físico donde viven los animales, y valora su cuidado. Ciencias Físicas Estudia la materia, sus propiedades, cambios y su relación entre velocidad, movimiento y fuerza; así como el comportamiento de las ondas, al explicar sus interacciones con la energía. K.CF1 Describe y agrupa la materia según sus propiedades físicas, para inferir posibles cambios al exponerla al calor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF1.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Reconoce y describe los distintos tipos de materia, de acuerdo con sus propiedades físicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF1.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Describe y agrupa la materia según algunas de las propiedades físicas que presentan (la textura, la forma, el color, el tamaño).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF1.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Utiliza el pensamiento matemático en el proceso de experimentación, al emplear medidas arbitrarias para describir la materia. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF1.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Identifica que el calor puede producir cambios en la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF1.5",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Predice y corrobora cómo reacciona la materia al aplicarle o quitarle calor (estímulos de calor-frío; calentar y enfriar). K.CF2 Realiza observaciones para describir los efectos de las fuerzas sobre los objetos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF2.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Observa y describe los efectos de la aplicación de fuerza sobre un objeto cuando se empuja o se hala (con énfasis en los cambios de velocidad y dirección).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CF2.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CF",
+    "expectation": "Identifica que la aplicación de fuerzas iguales en direcciones opuestas crea equilibrio. Ciencias Terrestres y del Espacio Estudia y comprende el conjunto de disciplinas que se relaciona con los procesos que ocurren en el planeta Tierra, y la interacción de este con el universo. K.CT1 Observa patrones sobre la relación entre el Sol y los movimientos de los cuerpos celestes desde la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Hace observaciones para determinar el efecto de la luz solar sobre la superficie de la Tierra (con énfasis en los efectos del calor y la creación de sombras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Describe las diferencias que se observan entre el Sol, la Luna y la Tierra durante el día y la noche.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Predice patrones en la Tierra (respecto al clima, el día y la noche, las fases de la Luna, las estaciones), causados por la interacción entre el Sol, la Luna y la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Diseña y construye un modelo que ayuda a reducir el efecto de la temperatura del Sol en un área.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.5",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Reconoce que nuestro sistema solar está formado principalmente por el Sol, la Luna y los planetas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT1.6",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Identifica, al menos, la posición de los planetas internos del sistema solar (Mercurio, Venus, Tierra, Marte). K.CT2 Reconoce los estados del tiempo y los cambios asociados a dichas condiciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT2.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Reconoce características del clima en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT2.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Hace observaciones sobre las condiciones locales del clima, para describir patrones en el tiempo. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT2.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Describe diferentes acontecimientos climáticos que ocurren en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CT2.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CT",
+    "expectation": "Compara entre los diferentes estados del tiempo. Ciencias Ambientales Estudia la relación entre los seres humanos y el ambiente para proponer, de manera multidisciplinaria, alternativas para la conservación de los recursos naturales y soluciones a problemas ambientales, mediante propuestas para el desarrollo sostenible. K.CA1 Identifica problemas ambientales provocados por las actividades humanas y provee alternativas para su solución.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CA1.1",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CA",
+    "expectation": "Menciona prácticas de conservación ambiental.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CA1.2",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CA",
+    "expectation": "Representa, por medio de dibujos, algunas actividades humanas para conservar el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CA1.3",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CA",
+    "expectation": "Expresa de forma oral las relaciones entre los seres humanos y su ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "K.CA1.4",
+    "subject": "Ciencias",
+    "grade": "K",
+    "domain": "CA",
+    "expectation": "Explica maneras en las que los seres humanos pueden reducir, reusar y reciclar desechos para promover prácticas de conservación ambiental. Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 1.IT1 Utiliza las prácticas de las ciencias e ingeniería para solucionar problemas en su quehacer científico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

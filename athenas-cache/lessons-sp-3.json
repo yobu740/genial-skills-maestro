@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204560",
+    "LessonNo": "14",
+    "LessonTitle": "Organizadores gráficos para comprensión",
+    "SubjectCode": "sp",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  },
+  {
+    "Id": "204559",
+    "LessonNo": "13",
+    "LessonTitle": "El resumen",
+    "SubjectCode": "sp",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204558",
+    "LessonNo": "12",
+    "LessonTitle": "Estrategias de lectura",
+    "SubjectCode": "sp",
+    "LevelCode": "3",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  }
+]

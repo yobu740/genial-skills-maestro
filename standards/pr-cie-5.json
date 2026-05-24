@@ -1,0 +1,602 @@
+[
+  {
+    "code": "5.IT1.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.IT1.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Utiliza pensamiento matemático para determinar la magnitud y las unidades correspondientes a una medida, en el Sistema Internacional de Unidades (SI); y las conversiones propias de esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.IT1.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Planifica y lleva a cabo investigaciones utilizando las prácticas de ciencias e ingeniería con énfasis en el uso correcto de los instrumentos de experimentación, así como en las reglas de seguridad inherentes a su investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.IT1.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.IT1.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.IT1.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "IT",
+    "expectation": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Biológicas Estudia e investiga los procesos de la vida; así como el origen, las propiedades y las características de los organismos vivos y su interacción con el ambiente. 5.CB1 Analiza y explica los medios de clasificación y agrupación de los seres vivos según sus estructuras; así como la manera en la que producen el material que necesitan para crecer y transferirlo -mediante el aire y el suelo- a otros organismos vivos, para su recuperación, crecimiento, desarrollo, reproducción y sobrevivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Identifica las características que se utilizan para agrupar los organismos en seis de los siete reinos, mediante el sistema de clasificación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Reconoce que los seres vivos se agrupan en categorías taxonómicas (distintos niveles de organización de los reinos) al interactuar en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Establece la diferencia entre el reino archeobacteria, el reino eubacteria y el reino protista, para explicar la importancia de los microorganismos en el ambiente y la función que cumplen en el ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Diferencia entre el reino hongo, el reino planta y el reino animal, para explicar la importancia de estos en el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Enumera y explica algunos usos que los seres humanos dan a los hongos, y la función que estos cumplen en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Describe el reino planta y sus características particulares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.7",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Identifica y agrupa plantas en vasculares y no vasculares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.8",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Clasifica entre plantas con semillas y plantas sin semillas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.9",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Crea modelos para representar la diferencia entre las plantas que se reproducen por semillas (las plantas gimnospermas y las plantas angiospermas) y las plantas que se reproducen por esporas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.10",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Clasifica y agrupa plantas angiospermas en monocotiledóneas y dicotiledóneas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.11",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Describe y representa, mediante gráficos o modelos simples, cómo ocurre el proceso de fotosíntesis en las plantas, para reconocer su importancia en los ecosistemas y para los seres vivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.12",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Explica por qué los musgos y las hepáticas tienen que vivir en lugares húmedos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.13",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Distingue las particularidades de los animales vertebrados y de los animales invertebrados, y menciona algunas de las funciones que cumplen en el ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.14",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Clasifica y agrupa animales en vertebrados o invertebrados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.15",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Identifica las características principales de cada subgrupo dentro del grupo de los animales invertebrados (porífero, celenterado, gusano, molusco, artrópodo y equinodermo).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB1.16",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Identifica las características principales de cada subgrupo dentro del grupo de los animales vertebrados (peces, anfibios, reptiles, aves y mamíferos). 5.CB2 Identifica y analiza las necesidades de protección, adaptación e interacción de las especies dentro de sus ecosistemas para la sobrevivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Explica el rol de la fotosíntesis al representar el movimiento de la materia y el flujo de energía dentro y fuera de un ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Explica, mediante diagramas o construcción de modelos, el valor comercial y el valor ecológico de las plantas en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Desarrolla un modelo para describir el movimiento de materia entre productores, consumidores (plantas, animales), descomponedores y el ambiente; y establece la función que cumple cada uno de estos en el proceso.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Utiliza modelos para describir que la energía en la comida de los animales (usada para su recuperación, su crecimiento y su movimiento) fue originalmente energía solar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Explica cómo algunos factores (como la presencia o la ausencia de sol o una fuente de luz, el espacio, el agua, los minerales, el terreno y los tipos de suelo) afectan el crecimiento de las plantas en un ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB2.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Apoya el argumento de que las plantas adquieren el material que necesitan para crecer, principalmente, del aire y del agua (no necesariamente del suelo) demostrado mediante medios de cultivos hidropónicos. 5.CB4 Explica la importancia de la conservación de los recursos naturales para mantener la biodiversidad y las condiciones ambientales adecuadas que favorecen la interacción, la sobrevivencia y la reproducción de los organismos en su ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB4.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Describe los recursos naturales que son esenciales para mantener la biodiversidad en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB4.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Identifica un ecosistema cercano a su comunidad, para describir formas en las que puede evitarse la contaminación que altera los organismos en su ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB4.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Explica cómo, entre individuos de la misma especie, las variaciones en características les pueden ofrecer ventajas para sobrevivir, encontrar pareja y reproducirse.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CB4.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CB",
+    "expectation": "Diseña soluciones para que los seres humanos puedan ayudar a manejar y proteger los factores bióticos y abióticos en los ecosistemas. Ciencias Físicas Estudia la materia, sus propiedades, cambios y su relación entre velocidad, movimiento y fuerza; así como el comportamiento de las ondas, al explicar sus interacciones con la energía. 5.CF1 Aplica su conocimiento sobre las propiedades y los cambios en la materia, para desarrollar modelos e investigaciones sencillas que representan los componentes microscópicos de la materia (átomos y partículas subatómicas), y cómo interactúan para dar paso a la formación de nuevas sustancias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Reconoce que la materia se forma de partículas microscópicas denominadas átomos, que a su vez están compuestas de partículas subatómicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Describe las partes del átomo y las partículas que lo forman (protones, neutrones y electrones).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Construye un modelo del átomo y sus partículas subatómicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Explica que los elementos están formados de un solo tipo de átomo y que, al combinarse con otros tipos de átomo, originan moléculas y compuestos que -a su vez- son el origen de todas las sustancias (como, por ejemplo, el agua (H O) y el oxígeno (O ), que son esenciales para la vida).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Clasifica la materia, según sus propiedades, en sustancias (elementos y compuestos) y mezclas [mezclas homogéneas (soluciones) y mezclas heterogéneas].",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Experimenta, para adquirir destrezas, al utilizar algunos métodos de separación de mezclas como la filtración, la decantación y la evaporación; y entiende la importancia de estos métodos en la vida diaria y en la conservación del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.7",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Identifica -en la tabla periódica- dónde se localizan el número atómico y el número de masa de los átomos, y qué representan estos datos (número de protones, número de electrones y número de neutrones del átomo).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.8",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Reconoce que todos los elementos están representados en la tabla periódica, y que esta se organiza según las propiedades que presenta cada elemento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.9",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Describe el formato básico de organización de los elementos: en grupos o familias, en periodos, por su propiedad metálica (metal, no metal, metaloide) y por estado de la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.10",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Investiga para determinar si la combinación de dos sustancias o más resulta en sustancias nuevas; y define el concepto reacción química.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.11",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Lleva a cabo una investigación para interpretar datos sobre las propiedades de las sustancias, antes y después de que hayan interactuado, para determinar si ha ocurrido una reacción química (reacciones simples y caseras, como uso de bicarbonato de sodio, vinagre, jabón, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.12",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Analiza cómo las propiedades químicas (la corrosividad, la descomposición, la reactividad, la oxidación, la inflamabilidad) se manifiestan en las reacciones químicas, y reconoce que la masa de los materiales se conserva al ocurrir los cambios químicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.13",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Explica cómo las transformaciones de los materiales están acompañadas por cambios en la energía, reconocibles por el aumento o la disminución de calor (se absorbe energía o se libera energía).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.14",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Analiza datos en los que se expresan las cantidades relacionadas con la combinación de dos sustancias o más, con el fin de evidenciar que la masa total se conserva aún al aportarles o quitarles calor a las sustancias; y explica lo que expresa la ley de conservación de materia y energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.15",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Explica cómo la ley de conservación de materia y energía se relaciona con el equilibrio de energías en la materia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF1.16",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Explica los términos masa y peso, y establece la diferencia entre ambos. 5.CF2 Lleva a cabo investigaciones o pruebas de diseño para explicar la importancia de los tipos de máquina; y su relación entre energía, movimiento y trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF2.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Reconoce que las máquinas nos permiten realizar trabajo con menos esfuerzo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF2.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Define y distingue entre fuerza, trabajo y máquina, y entre máquinas simples y máquinas compuestas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF2.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Agrupa ejemplos de máquinas simples y máquinas compuestas, y explica sus usos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF2.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Diseña una investigación, con su conocimiento sobre máquinas, para demostrar las interacciones entre trabajo, fuerza y energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF2.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Evalúa la importancia y la utilidad de las máquinas para los seres humanos. 5.CF3 Analiza y aplica su conocimiento sobre las formas y los tipos de energía y la transferencia de energía, en la construcción de diseños que maximizan la transferencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Define los conceptos energía y transferencia de energía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Identifica y describe las formas de energía (energía cinética, potencial) y los diferentes tipos de energía, tales como: radiante, térmica y energía química.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Analiza la importancia de los diferentes tipos de energía en nuestra vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Explica cómo se relacionan la energía cinética y la energía potencial en sistemas cerrados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Aplica su conocimiento sobre la transferencia de energía, al presentar ejemplos que sostienen la idea de que, cuando cambia la energía cinética de un objeto, se transfiere energía desde el objeto o hacia él.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CF3.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CF",
+    "expectation": "Aplica principios científicos para diseñar, construir y probar un prototipo que minimiza o maximiza la transferencia de energía térmica. Ciencias Terrestres y del Espacio Estudia y comprende el conjunto de disciplinas que se relaciona con los procesos que ocurren en el planeta Tierra, y la interacción de este con el universo. 5.CT2 Utiliza evidencia científica -de varias fuentes de información- para explicar y representar, mediante modelos, la función del Sol y los océanos en el ciclo del agua y en las zonas climáticas de la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Reconoce la necesidad del agua en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Describe la importancia del ciclo del agua para la vida en el Planeta (como, por ejemplo, en la formación de ríos y otros cuerpos de agua; ofreciendo hábitat y alimentación; satisfaciendo necesidades básicas; para la instauración y funcionamiento de industrias; para el uso doméstico; el uso agrícola y para divertirse).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Establece la diferencia entre el agua potable y el agua como recurso natural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Utiliza fuentes de información científica para describir y construir gráficas que representan las cantidades y los porcentajes de distribución de agua (agua salada y agua dulce) en la Tierra -y en Puerto Rico-, considerando las formaciones acuáticas naturales (masas de agua), como océanos, mares, lagos, ríos, glaciares, formaciones acuáticas subterráneas, acuíferos, y capas de hielo polar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Define el concepto zonas climáticas de la Tierra, y establece su relación con respecto a la posición del Sol.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Describe y representa, mediante el diseño de modelos, las zonas climáticas de la Tierra (zona fría, zona templada y zona cálida).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.7",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Menciona y describe, de forma general, las cuatro esferas que constituyen la Tierra (geósfera, biósfera, hidrósfera, atmósfera).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.8",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Distingue los componentes que conforman cada esfera terrestre.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.9",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Desarrolla un modelo, a partir de un ejemplo, para describir la interacción de, al menos, dos de las esferas de la Tierra; y cómo influye la energía del Sol en estas interacciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CT2.10",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CT",
+    "expectation": "Explica el efecto del agua en los cambios de la superficie de la Tierra, sobre largos periodos de tiempo (con énfasis en la erosión y la precipitación); y la importancia de la función del Sol en el ciclo del agua. Ciencias Ambientales Estudia la relación entre los seres humanos y el ambiente para proponer, de manera multidisciplinaria, alternativas para la conservación de los recursos naturales y soluciones a problemas ambientales, mediante propuestas para el desarrollo sostenible. 5.CA1 Provee y diseña soluciones para los problemas ambientales provocados por las actividades humanas, con énfasis en el calentamiento global y su efecto en los ecosistemas de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.1",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Define y distingue los conceptos cambio climático y calentamiento global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.2",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Describe en qué consiste el cambio climático y sus implicaciones a nivel mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.3",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Reconoce las causas que provocan el cambio climático en los biomas [tundra, taiga, bosque (templado, lluvioso, seco), pradera y desierto] de la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.4",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Identifica los efectos del cambio climático en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.5",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Obtiene y analiza información sobre la forma en la que las comunidades y los individuos usan las ideas científicas para proteger el ambiente y los recursos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "5.CA1.6",
+    "subject": "Ciencias",
+    "grade": "5",
+    "domain": "CA",
+    "expectation": "Desarrolla alguna alternativa de solución, o proyectos comunitarios, para proteger el ambiente local y contribuir a disminuir los efectos del calentamiento global y el cambio climático en Puerto Rico. SEXTO GRADO: BIOLOGÍA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 6.IT1 Utiliza y desarrolla prácticas de las ciencias e ingeniería al evaluar investigaciones relacionadas con las ciencias biológicas, y en la solución de problemas de investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

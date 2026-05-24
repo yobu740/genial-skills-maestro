@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "205031",
+    "LessonNo": "5",
+    "LessonTitle": "Relaciones numéricas",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 3
+  },
+  {
+    "Id": "205030",
+    "LessonNo": "4",
+    "LessonTitle": "Las ecuaciones",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  },
+  {
+    "Id": "205029",
+    "LessonNo": "3",
+    "LessonTitle": "Suma y resta de números mixtos",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 3
+  },
+  {
+    "Id": "205027",
+    "LessonNo": "1",
+    "LessonTitle": "Líneas de simetría",
+    "SubjectCode": "mat-sp",
+    "LevelCode": "4",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 3
+  }
+]

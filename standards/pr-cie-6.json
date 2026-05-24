@@ -1,0 +1,666 @@
+[
+  {
+    "code": "6.IT1.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Obtiene información sobre las diferentes ramas de la biología, y las asocia a científicos y profesiones relacionados con esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Planifica y lleva a cabo investigaciones con énfasis en el uso correcto de los instrumentos de experimentación, así como en las reglas de seguridad inherentes a su investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Desarrolla preguntas basadas en datos relevantes, sobre problemas de investigación en ciencias, para definir problemas de ingeniería.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Redacta hipótesis para un problema de investigación relacionado con las ciencias biológicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Utiliza los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación, y las prácticas de ciencias e ingeniería, en cada experimento e investigación que le lleve a resolver problemas relacionados con las ciencias biológicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Analiza e interpreta datos mediante tablas, gráficas, cálculos matemáticos, uso del Sistema Internacional de Unidades (SI), uso de la tecnología y sus anotaciones, de manera sistemática, para establecer conclusiones claras y precisas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Analiza y distingue entre datos útiles y datos irrelevantes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.8",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Aplica destrezas de comunicación al preparar informes de laboratorio y de experimentos, así como informes orales y escritos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT1.9",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Aplica las prácticas de ingeniería —define un problema, desarrolla una solución al problema y optimiza la solución— considerando los siguientes aspectos: ● Presta atención a la precisión de los criterios necesarios o no necesarios, así como a las limitaciones que pudiesen afectar la posible solución al problema. ● Combina partes de diferentes soluciones para crear una nueva solución. ● Utiliza procesos sistemáticos para someter a prueba interactiva la solución al problema, y refinar la solución. SEXTO GRADO: BIOLOGÍA PREPARATORIA 6.IT2 Diseña soluciones óptimas para mejorar una solución a problemas de la vida real, tomando en cuenta los requerimientos y las necesidades de la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Define con suficiente precisión las especificaciones y las limitaciones de un problema de diseño, para asegurar una solución exitosa, tomando en consideración los principios científicos relevantes y los impactos potenciales sobre las personas y el ambiente, que delimitan las posibles soluciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Desarrolla un modelo para generar datos, al realizar pruebas interactivas y modificaciones a un objeto, una herramienta o un proceso, con el fin de documentar y obtener el diseño óptimo (como, por ejemplo, diseñar un prototipo experimental para desarrollar prácticas de descomposición de materia orgánica, a través del compostaje).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Analiza los datos obtenidos de pruebas, para determinar las similitudes y las diferencias entre varias soluciones de diseño, e identificar las mejores características de cada una, para combinarlas en una solución nueva, que atienda mejor los criterios para el éxito de esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Evalúa soluciones de diseño competitivas, usando un proceso sistemático para determinar cuán bien atienden las especificaciones y limitaciones del problema (con énfasis en realizar proyectos en los que se integren varias disciplinas como, por ejemplo, Robótica).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Conoce los conceptos fundamentales inherentes a la creación de una propuesta de investigación (con énfasis en conocer el método científico y las bases para el desarrollo de una propuesta de investigación: identificación de problemas de investigación, identificación de variables, redacción de hipótesis, medición, medios para recopilar e interpretar datos, y aspectos de ética y seguridad).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Argumenta y diseña alguna posible solución relacionada con el impacto de la ingeniería genética y la biotecnología en la agricultura, la producción de alimentos y las aplicaciones médicas, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.IT2.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "IT",
+    "expectation": "Recopila y resume información acerca de las tecnologías que han cambiado la manera en la que los humanos controlan la herencia de características deseadas en los organismos (con énfasis en la síntesis de información de fuentes confiables, acerca de la influencia de los seres humanos en los resultados genéticos de la selección artificial, tales como la modificación genética). Ciencias Biológicas Estudia e investiga los procesos de la vida; así como el origen, las propiedades y las características de los organismos vivos y su interacción con el ambiente. 6.CB1 Analiza y explica los aspectos de organización, estructura y función, así como de crecimiento, desarrollo y reproducción en los organismos. SEXTO GRADO: BIOLOGÍA PREPARATORIA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define conceptos como célula, organismo unicelular y organismo multicelular para establecer sus diferencias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe los postulados de la teoría celular, para reconocer que la célula es la unidad funcional básica de los seres vivos y que los organismos pueden ser unicelulares o multicelulares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara y contrasta entre células eucariotas y células procariotas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Establece las diferencias entre las células eucariotas (animal y vegetal) y las células procariotas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Identifica los orgánulos y su función en las células eucariotas (animal y vegetal) y las células procariotas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Utiliza recursos tecnológicos para representar modelos de las células eucariotas (animal y vegetal) y las células procariotas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara y contrasta los procesos de transporte intercelular y extracelular (ósmosis, difusión, transporte activo).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.8",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Demuestra que el cuerpo es un sistema que, a su vez, está formado por subsistemas compuestos de grupos de células que interactúan entre ellas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.9",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Analiza la interacción de los subsistemas dentro de un sistema, y el funcionamiento normal de dicho sistema. Incluye los sistemas circulatorio, excretor, digestivo, respiratorio, músculo esquelético, nervioso, endocrino y reproductor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.10",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Recopila y comunica información, mediante modelos, sobre la reproducción de los mamíferos y las etapas del desarrollo humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.11",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Establece las diferencias entre los sistemas reproductores masculino y femenino en los seres humanos; y los cambios en la estructura y la función de estos durante la adolescencia, la pubertad, la fecundación, el embarazo o gestación, y el parto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.12",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define el rol de los adolescentes en la sociedad, mediante la recopilación de información sobre el periodo de la adolescencia, para reconocer que ocurren procesos de cambio esenciales en la vida.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.13",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe de forma simple las etapas de la división celular (la mitosis, la meiosis).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.14",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara y contrasta los procesos de reproducción celular mediante diagramas o modelos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.15",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica por qué la reproducción asexual resulta en progenie con información genética idéntica, y por qué la reproducción sexual resulta en progenie con variación genética. SEXTO GRADO: BIOLOGÍA PREPARATORIA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.16",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Establece las características que se utilizan para agrupar los organismos mediante un sistema de clasificación (el sistema de clasificación de siete reinos: bacteria, arquea, animal, planta, hongo, protozoario y cromista).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.17",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Diferencia entre los reinos arquea, bacteria y protozoario, para explicar la importancia de los microorganismos en el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.18",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define el concepto virus y su estructura general, para reconocer que los virus no pertenecen al sistema de clasificación de los seres vivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.19",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Identifica las causas, los síntomas y las formas de prevención de las enfermedades infecciosas más comunes (dengue, varicela, neumonía, mononucleosis, SIDA, COVID-19, entre otras enfermedades emergentes) provocadas por los virus y las bacterias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.20",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Reconoce que algunos microorganismos y virus pueden ser beneficiosos para los seres humanos y su ambiente (con énfasis en los beneficios de los virus en la farmacología; y el valor de los microorganismos en la producción de medicamentos, en la limpieza de desechos tóxicos, en el mantenimiento de la flora bacteriana y en la industria de alimentos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.21",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Diferencia entre el reino hongo, el reino planta, el reino cromista y el reino animal y explica la importancia de estos en el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.22",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Investiga sobre los tipos de hongo y los usos que los seres humanos les dan a los hongos en la industria de la alimentación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.23",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Distingue entre plantas vasculares y plantas no vasculares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.24",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica la función del xilema, el floema y los estomas en las plantas vasculares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.25",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara las diferencias en estructura y función entre las plantas angiospermas y las plantas gimnospermas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.26",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe los procesos de reproducción en las plantas angiospermas y las plantas gimnospermas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.27",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica que la energía radiante del Sol es transformada en energía química a través del proceso de fotosíntesis; y describe, mediante algún diagrama o modelo, el proceso de fotosíntesis y su importancia para las plantas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.28",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Reconoce las particularidades de cada grupo de animales invertebrados y vertebrados, e identifica las diferencias entre ellos. SEXTO GRADO: BIOLOGÍA PREPARATORIA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB1.29",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Identifica los niveles de organización de los organismos dentro de su reino (como, por ejemplo, nombre científico = género-especie; taxonomía = reino-filum-clase-orden-familia-género-especie). 6.CB2 Analiza las relaciones interdependientes en los ecosistemas, entre los organismos y los recursos disponibles para la sobrevivencia, así como la importancia de la conservación y la biodiversidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define ecología y describe qué es un ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Distingue los componentes que constituyen un ecosistema (organismos, poblaciones, comunidades).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica la importancia de los ecosistemas para el ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Clasifica y agrupa los ecosistemas, considerando su ambiente natural (acuático, terrestre o mixto).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Identifica y describe los ecosistemas que existen en Puerto Rico y dónde están localizados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica las formas en las que puede contribuir a la conservación de los ecosistemas en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define los conceptos cadena trófica y red trófica, para presentar ejemplos dentro de los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.8",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Distingue entre los tipos de organismos que forman los ecosistemas (productores, consumidores, descomponedores), considerando su función dentro de la cadena trófica y el orden en esta.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.9",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Construye modelos de cadenas y redes alimentarias, para describir la circulación de la materia y el flujo de energía dentro de un ecosistema, entre los seres vivos y lo no vivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.10",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica cómo los descomponedores utilizan y reciclan los nutrientes en los ecosistemas y, con ello, sostienen la vida en un ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.11",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Identifica, mediante la búsqueda de información, los recursos disponibles en una población dentro de un ecosistema; y explica cómo estos pueden verse afectados en la medida que aumenta la población de organismos dentro de su propia comunidad y del ecosistema.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.12",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara y contrasta las relaciones entre las diferentes comunidades de un ecosistema: el parasitismo, la competencia, la depredación, el comensalismo y el mutualismo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.13",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica cómo las estructuras especializadas de las plantas (como la coloración) y el comportamiento animal (como la construcción de nidos, la organización en manadas, la vocalización y el plumaje colorido) han evolucionado de modo que contribuyen a la reproducción y la preservación de las especies.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.14",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define biodiversidad y reconoce su importancia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.15",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Reconoce la importancia de la conservación de los recursos naturales para mantener la biodiversidad de los organismos en los ecosistemas. SEXTO GRADO: BIOLOGÍA PREPARATORIA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.16",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe cómo la destrucción del hábitat afecta la biodiversidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.17",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica, con argumentos científicos, la importancia de la conservación de recursos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.18",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica por qué es importante preservar la biodiversidad en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.19",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Investiga qué es extinción y qué especies se encuentran en peligro de extinción en Puerto Rico, para argumentar sobre la importancia de proteger las especies en peligro de extinción en los ecosistemas de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.20",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica cómo los cambios en el Planeta, producidos por el calentamiento global, la actividad humana y los fenómenos naturales, alteran el equilibrio en los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.21",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Representa y explica, mediante diseños de modelos, el impacto del efecto invernadero, la lluvia ácida y la deforestación en la biodiversidad de los ecosistemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.22",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Reconoce y menciona los daños que los seres humanos causan al ambiente (quema de combustibles, desechos tóxicos, deforestación, contaminación térmica, entre otros), provocando el cambio climático que afecta la estructura y la biodiversidad de los ecosistemas, para dar recomendaciones de mitigación a estos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB2.23",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Propone soluciones para un problema ambiental (contaminación atmosférica, cambio climático, desgaste de suelo, erosión de costas, desperdicios sólidos, desechos tóxicos, deforestación, quema de combustible y otros) que esté alterando los ecosistemas en Puerto Rico. 6.CB3 Construye modelos para representar la progenie resultante de la reproducción asexual o sexual de los seres vivos, e identifica qué podría provocar la variedad genética.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define genética y genera representaciones o diagramas sobre términos relacionados con la genética (genes, alelos, cromosomas, mutaciones, proteínas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe la estructura básica del ADN y su importancia para los organismos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica por qué los cambios estructurales en los genes (mutaciones), localizados en los cromosomas, pueden afectar las proteínas y causar cambios beneficiosos, dañinos o neutrales en la estructura y la función del organismo (con énfasis en comprender que los cambios en el material genético pueden resultar en la fabricación de proteínas distintas).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Menciona y argumenta las aportaciones de Gregor Mendel al estudio de la genética.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Distingue entre alelos y genes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica cómo se relacionan los genes y los alelos con el fenotipo y el genotipo. SEXTO GRADO: BIOLOGÍA PREPARATORIA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Utiliza el cuadro de Punnett para identificar y describir las características fenotípicas y genotípicas de la progenie.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB3.8",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica por qué la reproducción asexual resulta en progenie con información genética idéntica, y por qué la reproducción sexual resulta en progenie con variación genética, mediante el uso de diagramas, modelos, cuadro de Punnett o -si se poseen los medios- simulaciones tecnológicas. 6.CB4 Recopila información para explicar los procesos de evolución a través de los registros fósiles, las variaciones genéticas y la selección natural, que permiten reconstruir la historia evolutiva.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.1",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Define evolución para presentar evidencia de la evolución de estructuras anatómicas en los organismos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.2",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Describe qué es un fósil, y recopila información para elaborar argumentos que expliquen cómo se formaron los fósiles a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.3",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Interpreta datos sobre patrones en los registros fósiles, que documentan la existencia, la diversidad, la extinción y el cambio de formas de vida a lo largo del tiempo, en la Tierra.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.4",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara y contrasta las semejanzas y las diferencias anatómicas entre los organismos del presente y los organismos fósiles, para inferir relaciones evolutivas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.5",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Compara patrones de semejanzas en el desarrollo embrionario de múltiples especies; e identifica relaciones no evidentes en la anatomía de los individuos completamente desarrollados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.6",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica cómo las variaciones genéticas, en las características de una población, aumentan la probabilidad de algunos individuos de sobrevivir y reproducirse en un ambiente específico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  },
+  {
+    "code": "6.CB4.7",
+    "subject": "Ciencias",
+    "grade": "6",
+    "domain": "CB",
+    "expectation": "Explica lo que es la selección natural. SÉPTIMO GRADO: QUÍMICA PREPARATORIA Ingeniería y Tecnología Estudia y aplica las prácticas de ciencias e ingeniería en el diseño y la construcción de prototipos, para solucionar problemas basado en evidencia científica. 7.IT1 Utiliza y desarrolla prácticas de las ciencias e ingeniería al evaluar investigaciones relacionadas con las ciencias químicas, y en la solución de problemas de investigación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Ciencias (2022)"
+  }
+]

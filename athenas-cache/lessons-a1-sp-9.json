@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "204900",
+    "LessonNo": "10",
+    "LessonTitle": "Ecuaciones cuadráticas",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204899",
+    "LessonNo": "9",
+    "LessonTitle": "Sistemas de ecuaciones",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 5
+  },
+  {
+    "Id": "204897",
+    "LessonNo": "7",
+    "LessonTitle": "Inequalities y su representación",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 6
+  },
+  {
+    "Id": "204895",
+    "LessonNo": "5",
+    "LessonTitle": "Factorización de expresiones",
+    "SubjectCode": "a1-sp",
+    "LevelCode": "9",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  }
+]

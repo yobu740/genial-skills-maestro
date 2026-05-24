@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204948",
+    "LessonNo": "4",
+    "LessonTitle": "Círculos: arcos y sectores",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204946",
+    "LessonNo": "2",
+    "LessonTitle": "Área y volumen de sólidos",
+    "SubjectCode": "geo-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  }
+]

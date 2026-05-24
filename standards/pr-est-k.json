@@ -1,0 +1,1578 @@
+[
+  {
+    "code": "K.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Integra vocabulario pertinente para referirse a eventos que ocurren en diferentes periodos de tiempo. K. CC.1.1 Reconoce diferentes periodos de tiempos, como ayer, hoy, mañana, tarde, día y noche.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica características que lo distinguen como puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Nombra a las razas que aportaron a la formación del puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Expresa la importancia del trabajo para satisfacer necesidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica y describe oficios, profesiones y trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Reconoce que los oficios, las profesiones y los trabajos generan un salario.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Explica por qué las personas de una comunidad realizan distintos trabajos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Expresa sucesos importantes que ocurren en su vida.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica eventos importantes que ocurren en su vida, tales como nacimientos, fechas importantes, viajes, muertes, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica cambios en la composición familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Nombra conceptos básicos del Gobierno.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica los símbolos patrios (bandera, escudo, himno, flor, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Menciona las personalidades del Gobierno y sus funciones (alcaldes, gobernadores, entre otros). KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Reconoce reglas y normas, tales como las leyes de tránsito, los protocolos de seguridad, y las consecuencias de incumplirlas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica la composición familiar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Nombra diferentes miembros de la familia (padres, abuelos, tíos, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Menciona reglas de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Reconoce las semejanzas y diferencias entre las familias puertorriqueñas y las de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Utiliza diferentes medios para ilustrar las características de las familias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Utiliza imágenes digitales para reconocer características de los puertorriqueños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Utiliza medios tecnológicos para identificar características físicas de los puertorriqueños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Reconoce características propias y las compara con las de otras personas del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Identifica juegos tradicionales de Puerto Rico y de otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Escucha cuentos para identificar características de los niños de otros lugares del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Reconoce actitudes y valores necesarios para su formación como individuo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CC",
+    "expectation": "Ejemplifica con acciones valores, tales como respeto, honradez, honestidad, entre otros. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla la habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano. KINDERGARTEN K. PLA.1 Utiliza puntos de referencia y objetos concretos para orientarse en diferentes ambientes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Describe de forma verbal imágenes y objetos, como por ejemplo la bandera de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce la forma de la isla de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce y localiza, en un mapa de América y en un globo terráqueo, la isla de Puerto Rico, indicando al lado, arriba y abajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.1.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Distingue la topografía en el mapa de Puerto Rico utilizando los siguientes colores: verde, marrón y azul. 1. verde: vegetación 2. marrón: montañas 3. azul: mares",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Identifica eventos y los ubica de manera secuencial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce que los calendarios se utilizan para representar los días de la semana y los meses del año.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Identifica qué días de la semana asiste a la escuela y qué días no asistirá.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Expresa verbalmente su rutina del día.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce cómo los recursos económicos afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Identifica el dólar y las monedas que se utilizan en Puerto Rico para comprar. Por ejemplo: muestra los dólares y las monedas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce que, para comprar artículos, se deben utilizar el dólar o las monedas. Por ejemplo: compra con dinero falso en una mini tienda recreada en el salón.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce espacios y personas en imágenes y mapas mediante la participación de diferentes experiencias de campo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce sus etapas de vida mediante imágenes o fotos personales. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce quiénes son líderes comunitarios y políticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Identifica al alcalde de su pueblo. Por ejemplo: muestra una foto del alcalde o lo invita a la escuela.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Observa cómo los seres humanos interactúan en la comunidad escolar. K. PLA. 6.1 Aprecia el paisaje de la escuela y sus alrededores para luego expresar sus opiniones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Reconoce la importancia de la participación en actividades escolares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Expresa interés por participar en las actividades escolares",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Establece relaciones con grupos escolares más amplios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Describe aspectos importantes para reconocer los cambios climáticos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Observa videos para reconocer cómo el clima, el tiempo y los fenómenos atmosféricos afectan la geografía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Observa y compara cómo son los niños de Puerto Rico y otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Identifica, por medio de imágenes, semejanzas y diferencias entre los niños de Puerto Rico y los de otros países, como por ejemplo presentar imágenes de niños de América, África, Asia, Europa, Oceanía y de diferentes tribus.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Menciona cómo los niños de Puerto Rico pueden ayudar a preservar mejor los recursos naturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Mantiene su área limpia y ordenada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PLA.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PLA",
+    "expectation": "Escucha canciones sobre la protección de nuestros recursos naturales, como por ejemplo la canción de Remi titulada Vamos a salvar nuestro planeta. KINDERGARTEN Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Utiliza destrezas de localización para verbalizar una dirección.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Reconoce la diferencia entre izquierda y derecha.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe verbalmente cómo llegar a distintas localidades de la escuela, como el baño, el comedor, la biblioteca, la cooperativa, las áreas recreativas, la oficina, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Observa los cambios en rasgos físicos desde su nacimiento hasta el presente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe verbalmente fotos de sí mismo en diferentes periodos de su desarrollo, como por ejemplo de 0 a 1 año, de 2 a 3 años, de 4 a 5 años.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Establece la diferencia entre los conceptos necesidad y deseo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Clasifica como necesidad o deseo ejemplos de productos y servicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe rasgos y características físicas que lo distinguen de otros niños.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Nombra las partes del cuerpo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe sus rasgos físicos, como el color de sus ojos, la forma del pelo, la estatura, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Menciona habilidades e intereses personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe las labores básicas de funcionarios del Gobierno. K.DP. 5.1 Define el concepto funcionario de gobierno o empleado público. KINDERGARTEN K.DP. 5.2 Menciona las tareas básicas de funcionarios públicos, como por ejemplo el gobernador, el alcalde, el policía, el bombero, el maestro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Modela conductas de una sana convivencia escolar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Demuestra ejemplos de prácticas de cortesía y respeto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que demuestra las destrezas de seguir reglas, esperar su turno, ser paciente y respetar el espacio de otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Reconoce la función de la familia en la sociedad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Comprende los términos familia inmediata y extendida.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Nombra personas de su familia inmediata y extendida, y demuestra cómo se relacionan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Aprende sobre diferencias y similitudes entre familias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Describe cómo la tecnología se utiliza para mejorar la calidad de vida de las personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que utiliza equipos de apoyo para las comunidades de diversidad funcional, como por ejemplo andador, silla de ruedas, bastón blanco, audífonos, espejuelos, programas de comunicación, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Demuestra comportamientos de respeto, sensibilidad y trato justo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que demuestra respetar la opinión y los intereses de otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Comprende los términos relacionados con la burla y la ofensa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Reconoce la importancia de un trato adecuado al ser humano y a los seres vivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "DP",
+    "expectation": "Participa de actividades de interacción con el medioambiente. KINDERGARTEN Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y la valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Comienza a desarrollar una perspectiva geográfica sobre las expresiones culturales de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica mediante láminas las costumbres y tradiciones de su comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Menciona cuál es la costumbre que más lo identifica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.1.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Reconoce su participación en las expresiones culturales de su país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Valora los días festivos como celebraciones de eventos especiales que forman parte del patrimonio histórico y cultural de Puerto Rico",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica celebraciones, tales como el Descubrimiento de América, el Descubrimiento de Puerto Rico, el Día de Acción de Gracias, el Día de Navidad, el Día de Reyes, la Semana Santa, el Día de las Madres y el Día de los Padres.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica lo que son empresas culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Distingue, por medio de láminas, empresas culturales de la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Dramatiza los diferentes roles de una empresa cultural comunitaria, tales como guía turístico, arqueólogo fotógrafo, músico, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Demuestra interés en cómo las personas se destacan en Puerto Rico en la pintura, la literatura, el teatro, la música, los deportes, entre otros. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Compara y explica de forma sencilla por qué estos personajes son importantes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Dibuja a un personaje destacado en su pueblo o en Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Demuestra respeto por los símbolos patrios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica símbolos patrios de su municipio y de nuestro país: escudo, himno y bandera.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Observa videos sobre el himno de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.5.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Muestra respeto al ver su bandera y al escuchar el himno.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Demuestra interés en actividades que promueven las tradiciones culturales",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Participa de actividades que promueven las tradiciones, como juegos infantiles, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Emplea vocabulario como cultura, expresión cultural, baile, deporte y música.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica aspectos culturales destacados de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Identifica comidas típicas y manjares tradicionales que caracterizan la gastronomía de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Participa de juegos tradicionales, como el trompo y la peregrina, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Investiga el patrimonio cultural utilizando medios tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Participa de visitas virtuales a lugares históricos relevantes para los temas trabajados en clase.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Compara medios electrónicos que facilitan su apreciación de los sonidos de las canciones, el lenguaje y el arte. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Define las características que hacen únicos a los puertorriqueños, como parte de la comunidad caribeña y universal, considerando nuestras raíces.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Observa cómo otros niños expresan su cultura por medio de la música y el arte.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.9.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Compara canciones, juegos y tradiciones de otros niños del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Demuestra aprecio por la cultura de su país.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Entona canciones sobre el orgullo de ser puertorriqueño.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.IC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "IC",
+    "expectation": "Manifiesta, por medio de dibujos o láminas, el respeto por la cultura puertorriqueña. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Identifica ejemplos de alimentos que se producen en la comunidad y se consumen en el hogar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Presenta nombres de alimentos que se producen en la comunidad, tales como pan, pollo, guineos, plátanos; comidas preparadas (hamburguesas, carnes asadas, arroz, habichuelas, ensaladas, entre otras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Identifica y compara deseos y necesidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de cosas que desea tener.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de cosas que debe adquirir para satisfacer sus necesidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Reconoce qué es más importante entre adquirir lo que desea o adquirir lo que necesita. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Explica los beneficios del trabajo tanto para las personas como para los diferentes países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Identifica diferentes tipos de trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Selecciona un trabajo que le gustaría hacer y explica por qué quiere practicarlo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Describe prácticas responsables en el manejo de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Explica la importancia de ahorrar utilizando su alcancía personal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Reconoce las reglas para trabajar en forma organizada y participar responsablemente en iniciativas en las que se emprende para el bienestar de la familia y de la escuela.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Identifica reglas de la familia y de la escuela que son beneficiosas para emprender y trabajar en grupos, tales como observar las reglas de los juegos y las normas del salón de clase y del hogar; hacer filas y seguir turnos, llegar a tiempo, ser puntual y productivo en las tareas que se asignan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Reconoce que en la sociedad hay diferencias entre unas personas y otras en términos de su ingreso económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Desarrolla empatía con los que más necesitan.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Participa de iniciativas en las que se ayuda a los que menos tienen.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Explica cómo las expresiones del arte y la cultura ayudan a la economía de la familia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de trabajadores de la cultura que obtienen ingresos por medio del arte que practican, tales como artesanos, artistas, bailarines, cantantes, músicos y pintores, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Identifica diversos tipos de actividades económicas que se desarrollan en eventos artísticos y culturales que contribuyen al desarrollo económico de Puerto Rico: venta de boletos, utilización de diversos medios de transporte, venta de alimentos, entre otros. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Reconoce que los eventos artísticos y culturales constituyen una alternativa valiosa para el desarrollo económico de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Narra experiencias de los niños de otros países que ha visto en la televisión.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Participa de un viaje simulado a otro país con un clima diferente del de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Explica por qué es importante mantener buenas relaciones con los demás niños de la escuela y de la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "PDC",
+    "expectation": "Reconoce la importancia del respeto a otras personas y a las cosas que le pertenecen. Conciencia Cívica y Democrática Practica y valora los principios que rigen la vida en una sociedad democrática, y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Reconoce la participación ciudadana en el cuidado del entorno geográfico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica figuras que colaboran en mejorar el entorno, como ambientalistas, políticos, celebridades, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Reconoce características de un buen ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica personajes importantes en su vida (mamá, papá, hermanos, primos, tíos, entre otros).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Reconoce la importancia del trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica los propósitos del trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Participa en actividades en las que tiene la oportunidad de tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica los beneficios de tomar buenas decisiones. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica las consecuencias de tomar malas decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Comprende el signifcado del voto.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Participa en votaciones para expresar su opinión sobre diferentes decisiones que se toman en el salón de clases.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Describe varios tipos de trabajos u oficios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Señala diferentes herramientas y/o utensilios que utilizan las personas en sus trabajos u oficios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Participa en actividades culturales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica características que lo distinguen de otros compañeros o compañeras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica medios tecnológicos que ayudan a los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Reconoce diversos medios tecnológicos (celulares, tabletas, computadoras, entre otras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica estrategias positivas para solucionar conflictos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Demuestra destrezas de sana convivencia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Reconoce destrezas de trabajo en equipo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CCD",
+    "expectation": "Identifica sus propios talentos y los de sus demás compañeros y compañeras. Conciencia Global Evidencia con su comportamiento que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Descubre en un mapa algunos países del mundo. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Busca láminas de paisajes distintivos de los países del mundo encontrados en el mapa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Describe a las personas que son líderes comunitarios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Dibuja cómo los líderes comunitarios han ayudado a las comunidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Comenta cómo las personas obtienen recursos económicos para ayudar en las necesidades esenciales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Colorea imágenes que promueven ayudas económicas para el bienestar de las personas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Reconoce la importancia de las personas en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Manifiesta, mediante un dibujo, cómo se siente cuando brinda ayuda a una persona necesitada.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Relaciona la importancia de seguir las reglas en la comunidad y en los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Recorta acciones que representan el seguir las normas y reglas de la comunidad y los países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Explora la importancia de los elementos de cooperación y convivencia en el contexto de la vida cotidiana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Participa en actividades escolares.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Pega imágenes que representan la convivencia escolar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Observa las costumbres y tradiciones de Puerto Rico y de otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Colorea imágenes que representan las costumbres y tradiciones de Puerto Rico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Parea las imágenes que representan las costumbres y tradiciones de Puerto Rico y las de otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Identifica las distintas maneras que existen para poder establecer comunicación con personas que están lejos (incluidos la internet, las redes sociales, entre otros). KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Observa en un video las diferentes formas que las personas tienen para comunicarse.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Expresa la diversidad entre los seres humanos que habitan nuestro mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Identifica en imágenes las diferencias que existen entre los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Relaciona los valores que ayudan a las personas a tener una mejor convivencia en el hogar, la escuela o la comunidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "CG",
+    "expectation": "Realiza carteles que presentan los valores que lo ayudan a convivir en la escuela y en el hogar. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica términos y conceptos propios del entorno como espacio natural: familia, plantas, árboles, vegetales, frutas, flores, alimentos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Colorea imágenes que representan diversos conceptos del entorno natural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica el uso de diversos instrumentos tecnológicos, como enseres domésticos, celular, televisión, tableta, computadora, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica en láminas diversos instrumentos tecnológicos y expresa su uso.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica el valor de los instrumentos tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Clasifica las herramientas tecnológicas por su valor.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Descubre prácticas y comportamientos dirigidos al uso apropiado y al manejo responsable de la tecnología en su vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Utiliza herramientas tecnológicas para expresarse con creatividad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica formas en las que la escuela utiliza la tecnología para mejorar los servicios y la comunicación. KINDERGARTEN",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica experiencias lúdicas por medio del uso de la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Relaciona y distingue entre sucesos del presente, del pasado y del futuro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Compara características del pasado con el presente en temas como transporte, vivienda, escuela, entretenimiento, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Recolecta y organiza información sobre aspectos relacionados con la cultura utilizando una variedad de medios digitales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica en una serie de imágenes y dibujos digitales elementos culturales de Puerto Rico, como hábitos alimenticios, bailes, deportes, música, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Reconoce instrumentos y términos tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Describe e identifica los cambios que se han dado en su hogar, en la escuela y en su comunidad al utilizar nueva tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Utiliza diversos tipos de herramientas tecnológicas para desarrollar destrezas y experiencias lúdicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Demuestra destrezas necesarias para la comunicación de información y el procesamiento de tecnologías.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Recrea situaciones en las que establece por qué es necesaria la buena comunicación.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Explora conceptos de responsabilidad y manejo de aparatos tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "K.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "K",
+    "domain": "SCT",
+    "expectation": "Identifica, por medio de imágenes, el uso apropiado y el manejo responsable de la tecnología en su vida diaria. Cambio y Continuidad Estudia la vida de las sociedades en el contexto de los cambios y las transformaciones que se producen con el paso del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

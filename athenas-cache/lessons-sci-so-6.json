@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204397",
+    "LessonNo": "3",
+    "LessonTitle": "La colonización de América",
+    "SubjectCode": "sci-so",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  },
+  {
+    "Id": "204395",
+    "LessonNo": "1",
+    "LessonTitle": "La economía global",
+    "SubjectCode": "sci-so",
+    "LevelCode": "6",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 7
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "code": "7.N.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Desarrolla comprensión unificada de los números al reconocer las fracciones, números decimales (representación decimal finita o recurrente) y porcentajes como diversas representaciones de números racionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.1.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Interpreta, representa y resuelve problemas matemáticos y de la vida diaria utilizando: ➢ potencias positivas enteras como una multiplicación repetida. ➢ potencias enteras negativas como una división repetida, o la multiplicación usando el inverso multiplicativo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.1.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Escribe y compara números racionales en notación científica utilizando potencias de 10 con exponentes enteros e interpreta las aplicaciones de la notación científica en diversos contextos de la vida diaria, incluidos instrumentos tecnológicos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Aplica la suma y resta de números racionales y representa las operaciones en la recta numérica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.2.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Operaciones con números racionales. ➢ Reconoce que p + q es el número ubicado a una distancia |q| de p, en dirección positiva o negativa, dependiendo de que q sea positivo o negativo. ➢ Comprende la resta de números racionales como la suma del inverso aditivo, p – q = p + (–q). ➢ Muestra que un número y su opuesto suman cero (0) (son inversos aditivos). ➢ Interpreta las sumas de números racionales usando contextos de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.2.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Muestra que la distancia entre dos números racionales en una recta numérica es el valor absoluto de su diferencia y aplica este principio a contextos de la vida diaria. PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.2.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Aplica las propiedades de las operaciones como estrategias para sumar y restar números racionales, y estima y juzga la razonabilidad de los resultados al resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Aplica la multiplicación y división de números racionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.3.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Comprende y aplica la multiplicación de números racionales, incluidas las reglas de multiplicación de números enteros, e interpreta productos de números racionales en contextos de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.3.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Comprende y aplica la división de números racionales (siempre que el divisor sea diferente de cero), incluidas las reglas de división de números enteros, e interpreta los cocientes de números racionales en contextos de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.3.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Convierte un número racional que está representado como fracción a un número decimal y viceversa utilizando el algoritmo de división. Reconoce que la forma decimal de un número racional termina o es una representación infinita periódica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.4",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Reconoce y representa relaciones proporcionales entre cantidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.4.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Calcula la razón de cambio asociada a fracciones y a razones con cantidades de medidas en unidades iguales o diferentes como longitud, área y volumen, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.4.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Determina si dos cantidades constituyen una relación e identifica la constante de proporcionalidad (razón de cambio) en tablas, gráficas, ecuaciones, diagramas y en descripciones verbales de relaciones proporcionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.4.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Representa relaciones proporcionales mediante el uso de ecuaciones. PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.4.4",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Establece y resuelve una proporción con factores de conversión de escalas, medidas, porcentajes y probabilidades en situaciones de la vida diaria (Ejemplo: interés simple, impuestos, aumentos o reducciones de precios, propinas, comisiones, tarifas y error, aumento o disminución porcentual).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.5",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Representa y utiliza los números racionales en diversas formas equivalentes (enteros, fracciones, números decimales y notaciones exponenciales) para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.5.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Efectúa las operaciones básicas con números enteros y fracciones, y expresa la solución en su forma más simple.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.5.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Identifica y resuelve problemas matemáticos y de la vida diaria en los que se utiliza la suma, resta, multiplicación y división de números enteros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.6",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Resuelve ejercicios y problemas matemáticos de números enteros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.N.6.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "N",
+    "expectation": "Resuelve ejercicios y problemas matemáticos de suma de números enteros utilizando la recta numérica, patrones, modelos concretos y semiconcretos. Álgebra El estudiante es capaz de realizar y representar operaciones numéricas que incluyen relaciones de cantidad, funciones, análisis de cambios, emplea números, variables y signos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.7",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Usa símbolos, operaciones y gráficas para representar e interpretar situaciones matemáticas y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.7.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Usa e identifica conceptos algebraicos de manera apropiada (variable, expresión, ecuación, desigualdad, término, coeficiente y constante). PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.7.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Traduce frases lingüísticas en expresiones algebraicas y viceversa.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.7.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Interpreta que reescribir una expresión de varias formas en el contexto de un problema ayuda a clarificar el problema y la manera en que se relacionan sus cantidades. (Ejemplo: a + 0.05a = 1.05a significa que “aumentar en un 5%” es lo mismo que “multiplicar por 1.05”.)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.7.4",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Representa relaciones cuantitativas con gráficas e interpreta el significado de un segmento específico de una gráfica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.8",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Resuelve ecuaciones lineales en una variable (de uno y dos pasos) mediante el uso de tablas, gráficas y manipulaciones algebraicas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.8.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Representa y resuelve problemas matemáticos y de la vida diaria con ecuaciones lineales de la forma ax + b = c, donde a, b y c son números racionales, utilizando métodos gráficos y simbólicos con o sin tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.9",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Representa e interpreta inecuaciones en una variable de forma geométrica y simbólica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.A.9.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "A",
+    "expectation": "Representa y escribe la solución de una desigualdad de la forma x > a, x < a, x ≤ a, x ≥ a y a ≤ x ≤ b en una recta numérica. Geometría El estudiante es capaz de identificar formas y dimensiones geométricas, y de utilizar el conocimiento espacial para analizar sus estructuras, características, propiedades y relaciones a fin de reconocer y descubrir el entorno físico. PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.10",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Formula enunciados generales que relacionan figuras geométricas bidimensionales y tridimensionales usando sus características y propiedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.10.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Relaciona y aplica redes (Ejemplo: plantilla del cubo, pirámide, entre otras) para analizar y representar figuras geométricas tridimensionales en términos de figuras geométricas bidimensionales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.10.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Formula aseveraciones generales que describen las características y propiedades de los círculos, polígonos, prismas, pirámides, conos, esferas y cilindros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.10.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Aplica y relaciona las fórmulas para el área y la circunferencia de un círculo y las usa para resolver problemas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.11",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Identifica las partes del círculo y sus relaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.11.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Construye, identifica y define las partes del círculo: radio, cuerda, diámetro, centro, circunferencia y arco.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.G.11.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "G",
+    "expectation": "Determina la relación entre el diámetro, el radio y la circunferencia. Medición El estudiante es capaz de aplicar sistemas, herramientas y técnicas de medición con precisión, y establece conexiones entre conceptos espaciales y numéricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.12",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Convierte e investiga las relaciones entre unidades de medida del sistema métrico e inglés",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.12.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Utiliza los conceptos razón y proporción para resolver problemas de velocidad promedio, distancia, tiempo o variación directa. PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.13",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Aplica el concepto de medida para determinar perímetro, área de superficie y volumen de figuras geométricas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.13.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Establece y aplica las fórmulas de perímetro y de área de figuras geométricas bidimensionales para determinar el área de superficie, y calcula el volumen de figuras geométricas tridimensionales, incluidas pirámides y cilindros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.13.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Selecciona la unidad de medida más apropiada para determinar perímetro, área y volumen.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.M.13.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "M",
+    "expectation": "Formula y aplica cambios de escala en las dimensiones de una figura que produce cambios en el perímetro, área, circunferencia, área de superficie y volumen de la figura resultante. ➢ Construye e interpreta dibujos y modelos a escala. ➢ Reconoce que el perímetro, área y volumen se afectan por cambios en la escala. Análisis de datos y probabilidad El estudiante es capaz de aplicar diferentes métodos de recopilación, organización, interpretación y representación de datos para describir, hacer inferencias, predicciones, llegar a conclusiones y tomar decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.14",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Compara e interpreta dos grupos de datos relacionados en tablas y gráficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.14.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Define una población pequeña donde recopila datos de dos atributos y determina cómo medir esos atributos para contestar y formular preguntas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.15",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Organiza datos de dos variables por sus atributos y los clasifica en variable categórica o numérica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.15.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Clasifica y representa por separado cada atributo de una variable cuantitativa o cualitativa utilizando la gráfica apropiada (tallo y hoja, diagrama de dispersión, gráfica de barras, diagrama de caja y bigote). PREÁLGEBRA",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Investiga los procesos de probabilidad y evalúa sus modelos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Aproxima la probabilidad de un suceso aleatorio y predice su frecuencia relativa aproximada con respecto al total de intentos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Desarrolla un modelo de probabilidad uniforme o no uniforme y lo usa para determinar la probabilidad de sucesos. Compara las probabilidades de un modelo con las frecuencias observadas de datos generados por un proceso aleatorio.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Interpreta que la probabilidad de un suceso compuesto es la fracción de resultados del espacio muestral en el cual ocurre el suceso.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16.4",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Identifica y representa los resultados de espacios muestrales de sucesos compuestos usando métodos, como listas organizadas, tablas y diagramas de árbol.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.16.5",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Diseña y usa una simulación para generar frecuencias de sucesos compuestos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.17",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Reconoce que la estadística se puede usar para obtener información sobre una población analizando una muestra de la misma.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.17.1",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Interpreta que las generalizaciones a partir de una muestra son válidas solo si la muestra es representativa de la población.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.17.2",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Reconoce que el muestreo aleatorio tiende a producir muestras representativas y a respaldar inferencias válidas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.17.3",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Compara las estadísticas utilizando las medidas de tendencia central y de dispersión de los datos obtenidos para llegar a conclusiones. PREÁLGEBRA (+)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  },
+  {
+    "code": "7.E.17.4",
+    "subject": "Matemáticas",
+    "grade": "7",
+    "domain": "E",
+    "expectation": "Interpreta que la media de la muestra tiende a acercarse a la media de la población a medida que el tamaño de la muestra aumenta. ÁLGEBRA I Numeración y Operación El estudiante es capaz de reconocer y aplicar los conceptos matemáticos al representar, estimar, realizar cómputos, relacionar números y sistemas numéricos para resolver problemas matemáticos y de la vida diaria.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Matemáticas (2022)"
+  }
+]

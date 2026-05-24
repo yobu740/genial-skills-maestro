@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "205105",
+    "LessonNo": "3",
+    "LessonTitle": "C5 Identifica el inicio y el cierre de una oración",
+    "SubjectCode": "sp",
+    "LevelCode": "k",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  },
+  {
+    "Id": "205083",
+    "LessonNo": "1",
+    "LessonTitle": "C6 Por qué separamos las palabras",
+    "SubjectCode": "sp",
+    "LevelCode": "k",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  },
+  {
+    "Id": "205082",
+    "LessonNo": "0",
+    "LessonTitle": "C6 Espacios que ayudan a leer con fluidez",
+    "SubjectCode": "sp",
+    "LevelCode": "k",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  },
+  {
+    "Id": "205044",
+    "LessonNo": "2",
+    "LessonTitle": "C5 Aprendo palabras con imágenes",
+    "SubjectCode": "sp",
+    "LevelCode": "k",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  },
+  {
+    "Id": "205033",
+    "LessonNo": "1",
+    "LessonTitle": "C5 ¿Por dónde empiezo a leer?",
+    "SubjectCode": "sp",
+    "LevelCode": "k",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204500",
+    "LessonNo": "6",
+    "LessonTitle": "Contribuciones culturales de Puerto Rico",
+    "SubjectCode": "sci-so",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 5
+  },
+  {
+    "Id": "204499",
+    "LessonNo": "5",
+    "LessonTitle": "Estrategias de desarrollo económico en América",
+    "SubjectCode": "sci-so",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 6
+  },
+  {
+    "Id": "204498",
+    "LessonNo": "4",
+    "LessonTitle": "Trato justo y equitativo",
+    "SubjectCode": "sci-so",
+    "LevelCode": "7",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "0",
+    "Definitions": 4
+  }
+]

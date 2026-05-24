@@ -1,0 +1,1522 @@
+[
+  {
+    "code": "6.CC.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga en torno a lugares históricos del mundo: cueva de Altamira, pirámides en Egipto, Taj Majal, Acrópolis, Coliseo de Roma, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Utiliza imágenes para representar diferentes lugares históricos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Observa videos, películas, documentales y otros recursos tecnológicos para conocer distintos lugares históricos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Plantea críticamente procesos y conceptos de la historia del mundo antiguo: deidad y religión, organización de la vida en sociedad, deberes y derechos del ciudadano, polis y base de la democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Explica con ejemplos conceptos relacionados con la historia, como prehistoria, civilización, edades históricas, fuentes históricas, investigación histórica, historiografía, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Explica cuáles eran los procesos económicos del mundo antiguo, desde la prehistoria hasta la Edad Media.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga sobre las actividades económicas, las rutas y los sistemas comerciales del mundo antiguo, desde la prehistoria hasta la Edad Media.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga a las personalidades históricas que contribuyeron significativamente al desarrollo de las sociedades y culturas del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Evalúa eventos de las vidas de personalidades históricas del mundo, tales como Heródoto, Jesús, Cleopatra, Nabucodonosor, Sócrates, Platón, Aristóteles, Hipatia de Alejandría, Tucídides, Alejandro Magno, Julio César, Augusto César, Juana de Arco, Constantino, Confucio, Buda y Lao-Tse, entre otras personalidades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga los antecedentes de las sociedades africanas antes de la trata de esclavizados.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Explica conceptos del desarrollo social, político y cultural del mundo antiguo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Relaciona el origen de la democracia, el derecho y el gobierno en las civilizaciones antiguas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga temas fundamentales desde la historia antigua hasta la Edad Media, tales como estructuras sociales, feudalismo y mercantilismo, entre otras.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Elabora organizadores gráficos sobre las civilizaciones antiguas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.6.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Construye líneas de tiempo para ubicar cronológicamente eventos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Reconoce la importancia de las siete artes (arquitectura, escultura, cine, literatura, música, danza y pintura) en el contexto cultural y social y en la transformación del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Ilustra representaciones de las siete artes (arquitectura, escultura, cine, literatura, música, danza y pintura) alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Utiliza diferentes recursos tecnológicos para investigar conceptos y eventos históricos de interés personal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Diseña presentaciones digitales para exponer conceptos y eventos históricos de diferentes periodos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Explica cómo la política y líderes destacados desde la Edad Antigua hasta la Edad Media propiciaron cambios que influyeron en las sociedades hasta la actualidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Reconoce a personalidades históricas de trascendencia mundial y sus aportaciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Argumenta en torno a temas de interés social y defiende argumentos relacionados con deberes y derechos de los ciudadanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Investiga sobre los derechos de la niñez en los países alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CC.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CC",
+    "expectation": "Identifica personalidades que abogan por los derechos de los niños alrededor del mundo. Personas, Lugares y Ambiente Analiza la interacción entre las personas, los lugares, las regiones y el ambiente, y desarrolla habilidad para aplicar y modificar perspectivas geográficas que afectan la vida del ser humano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Explica e ilustra los siguientes conceptos: geografía, geología, Pangea, región, continente, relieve, límites territoriales, líneas geográficas, esfera o globo terráqueo, hemisferio, puntos cardinales, sistema de coordenadas, teoría, plano, densidad poblacional y censo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Describe con ejemplos las características geográficas de las diversas regiones del mundo: clima, hidrografía, topografía, relieve, flora y fauna.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Participa de laboratorios cartográficos para construir mapas (título, leyenda, orientación y escala), aplicar líneas geográficas para localizar puntos, determinar localización absoluta de diversos lugares del mundo y utilizar la tecnología en el manejo de información geográfica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Analiza y explica las razones para que se produzcan diferentes tipos de migración en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Presenta ejemplos concretos de procesos migratorios en el mundo (interna, externa, emigración, inmigración), como por ejemplo en África, Europa, Asia y América.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Expone cómo la localización geográfica de algunos países del mundo influye en su desarrollo económico, político y social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Desarrolla búsquedas en internet para construir tablas, gráficas y mapas temáticos de diversos países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Identifica patrones de distribución espacial y temporal: crecimiento, distribución, movilidad poblacional, migraciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Explica por qué es importante plantearse críticamente la relación responsable entre los seres humanos y el ambiente en Puerto Rico y en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Identifica a personalidades y organizaciones internacionales que trabajan a favor de la preservación y la conservación del ambiente: ONU, Greenpeace, Greta Thunberg, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Participa activamente de iniciativas dirigidas a la preservación y la conservación del ambiente.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Evalúa diferentes formas de participación ciudadana que orientan las acciones políticas en diversos países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Asume posturas críticas en torno a asuntos que afectan al medioambiente: cambio climático global y disposición de desperdicios.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Investiga sobre la diversidad del paisaje en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Identifica las diferentes regiones geográficas del mundo: desierto del Sahara, selva amazónica, pampa argentina, tundras de Siberia, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Establece diferencias entre las regiones geográficas del mundo: tipos de clima, ríos, topografía, relieve, flora y fauna.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Interpreta los elementos del mapa para distinguir las características de diversas regiones geográficas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Investiga sobre la diversidad del paisaje en el ámbito global, y utiliza la tecnología para documentar sus hallazgos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Construye mapas interactivos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.8.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Participa de viajes virtuales o estudios de campo por medio de los cuales desarrolla investigación sobre temas relacionados con el medioambiente en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Investiga sobre las relaciones conflictivas entre países fronterizos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Participa de paneles de discusión sobre las relaciones entre países fronterizos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Plantea críticamente la necesidad de expresar solidaridad y empatía con los seres humanos y su relación con el ambiente en los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PLA.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PLA",
+    "expectation": "Expresa sus ideas y opiniones sobre la importancia de la relación responsable entre los seres humanos y el ambiente en el mundo. Desarrollo Personal Afirma los valores de la persona a partir del conocimiento de las características del desarrollo humano, de la inserción social y de la participación ciudadana.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Analiza las semejanzas y las diferencias de la influencia de la familia, la sociedad y la cultura en el comportamiento y las actitudes de las personas en los países del mundo. Compara y contrasta actitudes y valores de la familia puertorriqueña con las familias de otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Identifica valores que los seres humanos acogen y promueven en su comportamiento y sus actitudes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Evalúa a personalidades que son ejemplos de emprendimiento en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Selecciona a personalidades destacadas del mundo que son ejemplo de liderazgo y emprendimiento.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Reconoce el esfuerzo personal para alcanzar metas y lograr calidad y productividad en el trabajo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Distingue profesiones y oficios que contribuyen al desarrollo personal y al bienestar colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que aporta y apoya el trabajo en colaboración.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Identifica fortalezas que lo ayudan en su desarrollo personal y en áreas de oportunidad para superar retos en su aprendizaje.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Practica la autorreflexión para la superación personal.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Produce testimonio oral y escrito en el que resume cómo se superan y alcanzan nuevas metas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Demuestra cuáles son las necesidades reales sobre el trato justo y equitativo entre los seres humanos en su diario vivir, y su impacto en el ámbito social, político y económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Ejecuta iniciativas y comportamientos en los que practica el respeto, la tolerancia, el trato justo y equitativo hacia todos los integrantes de la sociedad en el ámbito social, político y económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Apoya iniciativas para erradicar los prejuicios y los estereotipos, y asume acciones afirmativas en contra de las injusticias sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Participa de foros, debates y coloquios con el propósito de intercambiar puntos de vista.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Valora iniciativas para manejar conflictos e intercambiar ideas con los pares a fin de elegir opciones responsables.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Integra virtudes, valores y talentos en las actividades personales, familiares, escolares y comunitarias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Participa de actividades en las que integra virtudes, valores y talentos en las relaciones personales, familiares, escolares y comunitarias.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Aplica conceptos fundamentales para el desarrollo personal, tales como inviolabilidad de la dignidad humana y derecho de los diversos grupos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Produce representaciones gráficas en las que se promueven los derechos humanos y civiles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Propone normas y reglamentos que promueven la empatía y la sana convivencia social.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Participa de debates y paneles para exponer puntos de vista sobre nuevas formas de reglamentar el comportamiento ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Promueve y exhibe comportamientos que demuestran respeto, tolerancia y trato equitativo y justo hacia las personas con las que se relaciona e interactúa en los diferentes espacios y contextos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Discute sobre experiencias en las que se requiere la integración de destrezas de comunicación asertiva, respetuosa y empática.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Analiza experiencias de su diario vivir en las que demuestra trato justo y equitativo entre los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.DP.10.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "DP",
+    "expectation": "Ofrece soluciones a situaciones de comportamiento violento y trato injusto entre las personas. Identidad Cultural Desarrolla los valores de la cultura a partir del conocimiento de sus elementos constitutivos y la práctica y valoración de sus múltiples expresiones. Desarrolla un sentido de identidad propia y un concepto adecuado de sí mismo a partir de la afirmación de los valores de su cultura y su pueblo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Demuestra el conocimiento relacionado con el concepto identidad cultural en el contexto de los primeros pueblos y civilizaciones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Diseña un collage que incluye conceptos relacionados con la cultura y sus manifestaciones: creencias, valores, cohesión y diversidad cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Demuestra respeto por los símbolos nacionales de otros países y crea ejemplos de cómo se fomentan la lealtad y el patriotismo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Investiga en torno a los símbolos nacionales (himno, escudo y bandera) de diversos países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Dramatiza escenas de cómo los ciudadanos del mundo expresan patriotismo mediante las artes y las actividades cívicas y deportivas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Describe la relación entre los países del mundo a partir del intercambio económico y cultural.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Identifica las actividades económicas y culturales en películas, videos y documentales de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Describe características que distinguen a los puertorriqueños de otros ciudadanos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Personifica y ejemplifica las diferencias culturales entre los puertorriqueños y otros ciudadanos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Determina las semejanzas y diferencias entre la cultura puertorriqueña y otras culturas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Presenta ejemplos de los conceptos de diversidad cultural en el contexto del desarrollo político de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Presenta e ilustra, con imágenes, recursos gráficos y medios digitales, ejemplos del desarrollo político de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Plantea el concepto cultura como un sistema integrado de creencias, valores y comportamientos que se expresan por medio de las iniciativas, las acciones y las actividades cotidianas de los seres humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Dramatiza a un personaje histórico del mundo antiguo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Analiza cómo los hechos y las experiencias se pueden interpretar en forma distinta por las personas que proceden de diferentes culturas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Participa de foros para exponer perspectivas en torno a la cultura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Explica por qué se adoptan símbolos que identifican a una nacionalidad, un pueblo o una nación y por qué se desarrollan respeto y lealtad hacia estos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Diseña representaciones gráficas o artísticas de los símbolos nacionales de los países del mundo utilizando la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Valora críticamente las aportaciones significativas de la cultura que han hecho diversos países del mundo y que representan evidencias de la identidad cultural de dichos países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Recrea diseños de la producción cultural de los países del mundo (obras de arte, inventos, recetas, producción artesanal).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Demuestra respeto, tolerancia y empatía en la relación y el intercambio con las personas de otras culturas y de otros países.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.IC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "IC",
+    "expectation": "Presenta experiencias que demuestran cómo se practican el respeto, la tolerancia y la empatía con ciudadanos de otras culturas. Producción, Distribución y Consumo Examina y plantea cómo se organizan las sociedades humanas para producir, intercambiar y consumir bienes y servicios, y desarrolla habilidad para generar decisiones económicas eficaces tanto en el plano personal como en el ámbito colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica las implicaciones del sistema económico feudalista y las actividades económicas de diversas civilizaciones en la Edad Antigua y la Edad Media.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Crea una tabla comparativa de las actividades económicas de la Edad Antigua y la Edad Media.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.1.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Selecciona una actividad económica y la describe en términos de su aportación al progreso y desarrollo de los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Investiga sobre las diversas tendencias económicas empleadas a lo largo de la historia por las diferentes civilizaciones: producción agraria, mercado de productos, intercambio de mercancías, producción artesanal, mercados de metales preciosos (oro y plata) y uso de la moneda.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Analiza críticamente los objetivos económicos de las conquistas y las invasiones de pueblos y grupos humanos en diferentes momentos históricos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Investiga sobre actividades económicas desarrolladas en los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica actividades y conceptos económicos, tales como importación, exportación, trueque, producción, bienes, servicios, industria, comercio, distribución, consumo, materia prima, feudalismo, mercantilismo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Construye gráficos ilustrados de los conceptos básicos de economía.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.3.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Reconoce el cooperativismo como una herramienta fundamental para el desarrollo económico, personal y colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Analiza el rol de la mujer y de los afrodescendientes en el desarrollo económico de las sociedades del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica cómo la mujer desempeñó roles protagónicos y de liderazgo en las civilizaciones antiguas y en otras culturas del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Investiga y analiza las actividades económicas en las civilizaciones fluviales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica cómo los afrodescendientes contribuyeron al desarrollo económico global a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Reconoce cómo la estructura política y social influenciaron en las actividades económicas durante la Edad Antigua.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Enumera actividades económicas de las primeras civilizaciones durante la Edad Antigua.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica el concepto dependencia económica en el contexto global.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Explica cómo el trabajo cooperativo contribuye al desarrollo económico del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos del cooperativismo como alternativa para el desarrollo económico.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Analiza cómo el ahorro contribuye a alcanzar seguridad y bienestar.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Reconoce la importancia del ahorro para alcanzar una meta económica.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.7.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Distingue entre necesidades y deseos para desarrollar patrones de consumo responsables y el manejo sabio de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.7.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Presenta ejemplos de manejo sabio de las finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Analiza el impacto de alternativas económicas, tales como préstamos, ahorros, gastos e inversiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Investiga los conceptos básicos sobre finanzas personales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Comprende la importancia del trabajo como actividad económica en el desarrollo de las diferentes sociedades del mundo a lo largo del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Compara y contrasta las actividades económicas realizadas por las civilizaciones antiguas (egipcios, griegos, romanos).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Reconoce el emprendimiento como alternativa económica para el desarrollo social responsable de Puerto Rico y otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.PDC.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "PDC",
+    "expectation": "Identifica modelos exitosos de emprendimiento que contribuyen económicamente en Puerto Rico y en el mundo. Conciencia Cívica y Democrática Practica y valora los principios que rigen la vida en una sociedad democrática y demuestra cómo la participación es la herramienta fundamental para el desempeño cívico y ciudadano.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Investiga en torno a diferentes formas de gobierno que implantan diversos países del mundo: democracia, monarquía, monarquía parlamentaria, monarquía constitucional, dictadura.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Utiliza imágenes para parear diferentes formas de gobierno de diversos países del mundo con sus respectivas definiciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Analiza conceptos que ayudan a entender el comportamiento cívico de las personas en comunidad en diferentes países del mundo: leyes, decretos, democracia, imperio, monarquía, teocracia, república, revolución, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Explica la importancia de la vida en una democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.2.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Ilustra con ejemplos de comportamiento democrático en el salón de clases.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.2.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Define y compara los conceptos imperio, monarquía, teocracia y república.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Explica la relación entre el poder político y las actividades económicas en el mundo antiguo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Debate en torno a la relación entre actividades económicas y poder político en el mundo antiguo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.3.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Investiga el origen de las monedas de otros lugares del mundo. (Numismática)",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Demuestra cómo ejerce la función de buen ciudadano como participante de la democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Investiga sobre el origen de la democracia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.4.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Expresa juicios, opiniones y valoraciones en asuntos de debate.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.4.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Demuestra ejemplos de derechos humanos y el respeto por la diversidad en otros países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Explica con ejemplos los orígenes de la democracia en el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Participa de paneles sobre el Código de Hammurabi, el Edicto de Milán, la democracia ateniense, la Carta Magna.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Analiza las prácticas fundamentales de la vida en una sociedad democrática.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Lee y comenta alguna noticia sobre gobierno y democracia en los países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Expresa respeto y tolerancia ante opiniones divergentes.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Manifiesta empatía y reconoce la importancia de posicionarse en el lugar del otro.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Investiga cómo se garantizan y se respetan los derechos de los ciudadanos en diversos países del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Presenta ejemplos de la transgresión de los derechos civiles.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Analiza iniciativas que benefician a los ciudadanos alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Investiga ejemplos de participación ciudadana alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Plantea derechos y deberes de los ciudadanos en los países alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CCD.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CCD",
+    "expectation": "Utiliza la Declaración Universal de Derechos Humanos de las Naciones Unidas para explicar ejemplos de derechos inalienables. Conciencia Global Evidencia, con su comportamiento, que es consciente de la diversidad de responsabilidades que tiene como miembro de una comunidad mundial.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Utiliza mapas para trazar rutas comerciales y migraciones humanas en diferentes periodos de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Traza en un mapa rutas de comercio, viajes marítimos, vuelos, migraciones fronterizas y marítimas (yolas, balsas, pateras).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Presenta ejemplos de conflicto y cooperación entre personas, grupos y naciones del mundo a lo largo de la historia.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Observa películas, videos o documentales para conocer hechos históricos, conflictos, soluciones y protagonistas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Analiza ejemplos de conflicto y cooperación entre personas, grupos y naciones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Menciona las aportaciones de los diferentes grupos migratorios al desarrollo económico del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Valora la importancia de adquirir conciencia de que todos los seres humanos, de los diversos países y continentes, incluidos los puertorriqueños, son miembros de una comunidad global: fronteras abiertas y fronteras militarizadas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Identifica causas y movimientos globales ambientales, sociales (desigualdad), de equidad, políticos, económicos, migraciones y luchas fronterizas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Reconoce la importancia de las relaciones globales para superar los conflictos políticos, intereses económicos y luchas sociales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Redacta argumentos que presenta en la asamblea general de la Organización de las Naciones Unidas (ONU) para solucionar un conflicto que afecta a diversos países del mundo (calentamiento global, desforestación, crisis alimentaria y desigualdad social).",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Argumenta sobre soluciones a problemas comunes que afectan a la humanidad, tales como cambio climático, violencia entre los seres humanos, discriminación, pobreza, guerras, y enfermedades.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Lee y comenta sobre alguna noticia que presente un problema de actualidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Investiga problemas y temas de debate que impactan a las personas en diferentes partes del mundo: conflictos bélicos, pandemias y epidemias, desigualdad, acceso a la educación y a la salud, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Expone posibles soluciones a problemas que impactan a las personas de diferentes partes del mundo: conflictos bélicos, pandemias y epidemias, desigualdad, acceso a la educación y a la salud, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Analiza críticamente cómo las conexiones globales impactan diariamente la vida de los seres humanos: medios de comunicación e internet.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Utiliza la tecnología para investigar sobre problemas comunes que afectan a los países del mundo, y sus posibles soluciones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Analiza la interdependencia entre países de diferentes regiones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Ilustra, con ejemplos en el contexto, las relaciones entre países de diferentes regiones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Produce mensajes con pensamientos originales que contribuyen al entendimiento, la paz y la unidad entre los seres humanos de los diferentes pueblos y naciones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.CG.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "CG",
+    "expectation": "Utiliza expresiones artísticas para manifestar mensajes que contribuyen al entendimiento, la paz y la unidad de los ciudadanos del mundo. Sociedad Científica y Tecnológica Explica cómo el conocimiento integrado que proporcionan las ciencias sociales, las ciencias naturales y la tecnología ayudan al desarrollo y adelanto de la sociedad y al progreso colectivo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Utiliza la tecnología para desempeñar un rol activo en la construcción de su conocimiento sobre las civilizaciones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.1.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Localiza lugares en el mapa utilizando sistemas de posicionamiento global que le permiten ubicar los primeros asentamientos humanos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Evalúa críticamente recursos digitales para construir conocimiento y desarrollar experiencias de aprendizaje significativo de la historia del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.2.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Explica cómo la ciencia y la tecnología aportan a la solución de las necesidades básicas mediante el uso de recursos digitales.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.3",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Selecciona herramientas digitales para investigar, diseñar y crear artefactos innovadores que utilizaron las civilizaciones del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.3.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Identifica ejemplos de artefactos innovadores que utilizaron las civilizaciones del mundo: rueda, reloj de arena, arado, entre otros.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.4",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Selecciona tecnologías que fomentan el trabajo colaborativo para analizar problemas o retos que afectan al mundo contemporáneo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.4.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Utiliza aplicaciones digitales para diseñar gráficos sobre temas contemporáneos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.5",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Identifica el impacto de las redes sociales en la política de Puerto Rico y el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.5.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Reproduce medios digitales para observar películas, documentales y videos sobre eventos históricos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.5.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Produce videos y presentaciones sobre la política en Puerto Rico y el mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.6",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Utiliza la tecnología para definir conceptos de ciencia y tecnología que contribuyen al progreso y desarrollo de la humanidad.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.6.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Utiliza los medios digitales para observar películas, documentales y videos sobre eventos históricos del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.7",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Determina cómo la tecnología ayuda a la preservación de la cultura alrededor del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.7.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Verifica imágenes y sonidos para representar ejemplos de expresión cultural del mundo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.8",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Recopila y analiza información para facilitar la solución de problemas y la toma de decisiones.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.8.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Utiliza plataformas y herramientas apropiadas para comunicar ideas complejas.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.9",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Explora colaborativamente diversos problemas del mundo por causa del uso de la tecnología y plantea soluciones concretas para estos.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.9.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Recopila información y diseña protocolos sobre el uso apropiado de la tecnología.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.10",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Desarrolla los conceptos civismo, ética y legalidad en el entorno digital.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.10.1",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Maneja su identidad y sus acciones en el mundo digital.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  },
+  {
+    "code": "6.SCT.10.2",
+    "subject": "Estudios Sociales",
+    "grade": "6",
+    "domain": "SCT",
+    "expectation": "Protege sus datos personales con privacidad y seguridad durante su navegación en línea. Cambio y Continuidad Estudia la vida de las sociedades en el contexto de los cambios y las transformaciones que se producen con el paso del tiempo.",
+    "source": "DEPR Estándares de Contenido y Expectativas de Grado — Estudios Sociales (2022)"
+  }
+]

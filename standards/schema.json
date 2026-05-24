@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DEPR Standard",
+  "type": "object",
+  "required": ["code", "subject", "grade", "expectation"],
+  "properties": {
+    "code":        { "type": "string", "description": "Código DEPR/CCSS/NGSS — ej. MA.5.NF.1" },
+    "subject":     { "type": "string", "enum": ["Matemáticas","Ciencias","Español","Inglés","Estudios Sociales","Arte","Música","Educación Física"] },
+    "grade":       { "type": "string", "description": "K, 1ro, 2do, ..., 12mo" },
+    "domain":      { "type": "string", "description": "Dominio o hebra (Strand)" },
+    "expectation": { "type": "string", "description": "Texto completo de la expectativa" },
+    "indicators":  { "type": "array", "items": { "type": "string" } },
+    "skills":      { "type": "array", "items": { "type": "string" } },
+    "dok_levels":  { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 4 } },
+    "source":      { "type": "string", "description": "Documento DEPR de origen + año" }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "Id": "204850",
+    "LessonNo": "8",
+    "LessonTitle": "Estructura atómica",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 8
+  },
+  {
+    "Id": "204849",
+    "LessonNo": "7",
+    "LessonTitle": "Tabla periódica y propiedades",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 9
+  },
+  {
+    "Id": "204848",
+    "LessonNo": "6",
+    "LessonTitle": "Enlace químico",
+    "SubjectCode": "qu-sp",
+    "LevelCode": "10",
+    "std": null,
+    "Objective": "",
+    "IsGapClosing": "0",
+    "Blueprint": "1",
+    "Definitions": 7
+  }
+]
