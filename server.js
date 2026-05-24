@@ -83,7 +83,6 @@ function stripMarkdown(text = '') {
   return String(text)
     .replace(/\*\*/g, '')
     .replace(/`/g, '')
-    .replace(/\$+/g, '')
     .replace(/^\s*#+\s*/, '')
     .trim();
 }
@@ -246,6 +245,8 @@ Esquema:
 }
 Reglas:
 - Conserva el idioma del examen.
+- Conserva la notacion matematica en LaTeX tal como aparezca, incluyendo $...$, $$...$$, fracciones, exponentes y raices.
+- Conserva imagenes en markdown como ![descripcion](url) dentro del prompt de la pregunta cuando existan.
 - Si hay opciones A-D, usa multiple_choice y answer debe ser la letra correcta.
 - Si no hay opciones, usa short_answer.
 - No incluyas explicaciones ni hoja de respuestas dentro de prompt.

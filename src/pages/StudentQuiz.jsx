@@ -1,4 +1,5 @@
 import React from 'react';
+import MarkdownMath from '../components/MarkdownMath.jsx';
 
 function getCode() {
   return window.location.pathname.split('/').filter(Boolean).pop()?.toUpperCase() || '';
@@ -79,7 +80,10 @@ export default function StudentQuiz() {
 
             {questions.map((q, index) => (
               <section key={q.id} className="quiz-question">
-                <h2>{index + 1}. {q.prompt}</h2>
+                <div className="quiz-question-prompt">
+                  <span className="quiz-question-number">{index + 1}.</span>
+                  <MarkdownMath>{q.prompt}</MarkdownMath>
+                </div>
                 {q.type === 'multiple_choice' ? (
                   <div className="quiz-options">
                     {q.choices.map((choice) => (
@@ -92,7 +96,10 @@ export default function StudentQuiz() {
                           onChange={(e) => setAnswers((s) => ({ ...s, [q.id]: e.target.value }))}
                           required
                         />
-                        <span>{choice.id}. {choice.text}</span>
+                        <span className="quiz-option-text">
+                          <strong>{choice.id}.</strong>
+                          <MarkdownMath>{choice.text}</MarkdownMath>
+                        </span>
                       </label>
                     ))}
                   </div>

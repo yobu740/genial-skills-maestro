@@ -1812,11 +1812,32 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line);
   padding: 18px 0;
 }
-.quiz-question h2 {
+.quiz-question h2,
+.quiz-question-prompt {
   font-size: 16px;
   color: var(--ink);
   line-height: 1.4;
   margin: 0 0 12px;
+}
+.quiz-question-prompt {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+.quiz-question-number {
+  font-weight: 900;
+  color: var(--navy);
+}
+.quiz-question-prompt .markdown-math p,
+.quiz-option-text .markdown-math p,
+.session-answer-card .markdown-math p {
+  margin: 0;
+}
+.quiz-question-prompt .tm-md-img,
+.session-answer-card .tm-md-img {
+  max-height: 360px;
+  object-fit: contain;
 }
 .quiz-options {
   display: grid;
@@ -1832,13 +1853,23 @@ a { color: inherit; text-decoration: none; }
   padding: 10px 12px;
   cursor: pointer;
 }
+.quiz-option-text {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px;
+  min-width: 0;
+}
+.quiz-option-text strong {
+  color: var(--navy);
+}
 .quiz-question textarea {
   min-height: 90px;
   resize: vertical;
 }
 .quiz-submit,
 .session-qr button,
-.session-results-head button {
+.session-results-head button,
+.session-topbar button {
   background: var(--navy);
   color: #fff;
   border: 0;
@@ -1860,6 +1891,10 @@ a { color: inherit; text-decoration: none; }
 .teacher-session {
   display: grid;
   gap: 18px;
+}
+.session-topbar {
+  display: flex;
+  justify-content: flex-start;
 }
 .session-hero {
   display: flex;
@@ -1930,6 +1965,88 @@ a { color: inherit; text-decoration: none; }
 .session-results th {
   color: var(--muted);
   font-weight: 800;
+}
+.session-results tr.is-selected td {
+  background: #eef7f6;
+}
+.session-link-button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+.session-link-button:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+.session-detail .session-results-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.session-answer-list {
+  display: grid;
+  gap: 12px;
+}
+.session-answer-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+}
+.session-answer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.session-answer-head strong {
+  color: var(--ink);
+}
+.session-answer-head span {
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.session-answer-head .ok {
+  background: #e8f6ed;
+  color: #176b35;
+}
+.session-answer-head .needs-review {
+  background: #fff4df;
+  color: #875200;
+}
+.session-question-text {
+  color: var(--ink-2);
+  margin-bottom: 12px;
+}
+.session-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.session-answer-grid > div {
+  background: var(--bg);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  padding: 10px;
+}
+.session-answer-grid > div > span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -2051,6 +2168,7 @@ a { color: inherit; text-decoration: none; }
   .session-hero { flex-direction: column; }
   .session-code { font-size: 30px; }
   .session-stats { grid-template-columns: 1fr; }
+  .session-answer-grid { grid-template-columns: 1fr; }
 
   /* Section heads */
   .section-head { flex-direction: column; align-items: flex-start; gap: 4px; }
@@ -2394,6 +2512,15 @@ a { color: inherit; text-decoration: none; }
 }
 .tm-math-block .katex-display { margin: 0; }
 .tm-md .katex { font-size: 1.05em; }
+.markdown-math {
+  min-width: 0;
+}
+.markdown-math .katex {
+  font-size: 1.04em;
+}
+.markdown-math .tm-math-block {
+  text-align: left;
+}
 .tm-math-err {
   background: #fdecea;
   color: #7a1a14;
