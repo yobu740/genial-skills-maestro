@@ -2538,6 +2538,13 @@ a { color: inherit; text-decoration: none; }
   gap: 8px;
   margin-bottom: 6px;
 }
+.tm-athenas-action small {
+  display: block;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
 .tm-upload { display: inline-flex; align-items: center; gap: 8px; }
 .tm-upload-btn {
   background: #fff;
@@ -2694,13 +2701,16 @@ a { color: inherit; text-decoration: none; }
 /* ───────── Generated images in tool output ───────── */
 .tm-md-img {
   display: block;
-  max-width: 100%;
+  max-width: min(400px, 100%);   /* cap at 400px desktop, fluid on narrow screens */
   height: auto;
   border-radius: 12px;
   margin: 16px auto;
   box-shadow: 0 4px 14px rgba(39,70,108,.12);
   border: 1px solid var(--line);
+  cursor: zoom-in;
+  transition: transform .15s ease;
 }
+.tm-md-img:hover { transform: scale(1.02); }
 .tm-md-img-loading {
   margin: 16px 0;
   padding: 24px 16px;
