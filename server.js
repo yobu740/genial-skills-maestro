@@ -11,6 +11,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 8000;
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!OPENROUTER_API_KEY) {
   console.error('Missing OPENROUTER_API_KEY in .env');
@@ -39,6 +41,136 @@ for (const [mount, dir] of planFolders) {
 }
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+
+function requireSupabase(res) {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    res.status(503).json({ error: 'Supabase is not configured. Set SUPABASE_URL/VITE_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.' });
+    return false;
+  }
+  return true;
+}
+
+async function supabaseRequest(table, { method = 'GET', query = '', body, prefer } = {}) {
+  const url = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/${table}${query}`;
+  const headers = {
+    apikey: SUPABASE_SERVICE_ROLE_KEY,
+    Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+    'Content-Type': 'application/json',
+  };
+  if (prefer) headers.Prefer = prefer;
+  const res = await fetch(url, {
+    method,
+    headers,
+    body: body === undefined ? undefined : JSON.stringify(body),
+  });
+  const text = await res.text();
+  const data = text ? JSON.parse(text) : null;
+  if (!res.ok) {
+    const msg = data?.message || data?.error || text || `Supabase ${res.status}`;
+    throw new Error(msg);
+  }
+  return data;
+}
+
+function makeSessionCode() {
+  const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 6; i++) code += alphabet[Math.floor(Math.random() * alphabet.length)];
+  return code;
+}
+
+function stripMarkdown(text = '') {
+  return String(text)
+    .replace(/\*\*/g, '')
+    .replace(/`/g, '')
+    .replace(/\$+/g, '')
+    .trim();
+}
+
+function parseAssessmentMarkdown(markdown, fallbackTitle = 'Examen interactivo') {
+  const lines = String(markdown || '').replace(/\r/g, '').split('\n');
+  const title = stripMarkdown(lines.find(l => /^#\s+/.test(l))?.replace(/^#\s+/, '') || fallbackTitle);
+  const answerMap = new Map();
+  let inAnswers = false;
+
+  for (const raw of lines) {
+    const line = stripMarkdown(raw);
+    if (/hoja de respuestas|clave de respuestas|respuestas/i.test(line)) inAnswers = true;
+    if (!inAnswers) continue;
+    const m = line.match(/^(\d+)[.)]\s*(?:respuesta:?\s*)?([A-Da-d]|verdadero|falso|true|false|[-+]?\d+(?:[./]\d+)?)/i);
+    if (m) answerMap.set(Number(m[1]), String(m[2]).trim());
+  }
+
+  const questions = [];
+  let current = null;
+  const optionRe = /^\s*(?:[-*]\s*)?([A-Da-d])[.)]\s+(.+)/;
+  const questionRe = /^\s*(\d+)[.)]\s+(.+)/;
+
+  function flush() {
+    if (!current) return;
+    current.prompt = stripMarkdown(current.prompt);
+    current.choices = current.choices.map(c => ({ ...c, text: stripMarkdown(c.text) })).filter(c => c.text);
+    if (current.choices.length >= 2) current.type = 'multiple_choice';
+    current.answer = answerMap.get(current.number) || current.answer || '';
+    current.points = 1;
+    questions.push(current);
+  }
+
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line || /hoja de respuestas|clave de respuestas/i.test(line)) {
+      if (/hoja de respuestas|clave de respuestas/i.test(line)) break;
+      continue;
+    }
+    const q = line.match(questionRe);
+    if (q) {
+      flush();
+      current = {
+        id: `q${q[1]}`,
+        number: Number(q[1]),
+        type: 'short_answer',
+        prompt: q[2],
+        choices: [],
+        answer: '',
+      };
+      continue;
+    }
+    const opt = line.match(optionRe);
+    if (current && opt) {
+      current.choices.push({ id: opt[1].toUpperCase(), text: opt[2] });
+      continue;
+    }
+    if (current && !/^#{1,6}\s+/.test(line)) current.prompt += ` ${line}`;
+  }
+  flush();
+
+  return {
+    title,
+    questions: questions.slice(0, 50),
+  };
+}
+
+function normalizeAnswer(value) {
+  return String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function scoreAnswers(questions, answers) {
+  let score = 0;
+  let max = 0;
+  for (const q of questions || []) {
+    const points = Number(q.points || 1);
+    max += points;
+    const expected = normalizeAnswer(q.answer);
+    const given = normalizeAnswer(answers?.[q.id]);
+    if (!expected || !given) continue;
+    if (q.type === 'multiple_choice') {
+      if (given === expected || given === expected.charAt(0)) score += points;
+    } else if (given === expected) {
+      score += points;
+    }
+  }
+  return { score, max };
+}
 
 async function callOpenRouter({ model, system, user, stream = false, temperature = 0.7, max_tokens = 6000 }) {
   const body = {
@@ -138,6 +270,132 @@ app.post('/api/compare', async (req, res) => {
     res.json({ results });
   } catch (e) {
     res.status(500).json({ error: String(e) });
+  }
+});
+
+app.post('/api/interactive-assessments', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  const { title, subject = 'Matemáticas', grade, sourceTool = 'Examen de Matemáticas', markdown, values = {} } = req.body || {};
+  if (!markdown || typeof markdown !== 'string') {
+    return res.status(400).json({ error: 'markdown is required' });
+  }
+
+  try {
+    const parsed = parseAssessmentMarkdown(markdown, title || sourceTool);
+    if (!parsed.questions.length) {
+      return res.status(400).json({ error: 'No pude detectar preguntas numeradas en el examen. Revisa que el examen tenga problemas como "1. ..." y opciones A-D si aplica.' });
+    }
+
+    const [assessment] = await supabaseRequest('assessments', {
+      method: 'POST',
+      prefer: 'return=representation',
+      body: [{
+        title: parsed.title,
+        subject,
+        grade: grade || values.grado || null,
+        source_tool: sourceTool,
+        markdown,
+        questions: parsed.questions,
+      }],
+    });
+
+    let session = null;
+    for (let i = 0; i < 5 && !session; i++) {
+      try {
+        [session] = await supabaseRequest('assessment_sessions', {
+          method: 'POST',
+          prefer: 'return=representation',
+          body: [{ assessment_id: assessment.id, code: makeSessionCode(), status: 'open' }],
+        });
+      } catch (e) {
+        if (!/duplicate|unique/i.test(e.message) || i === 4) throw e;
+      }
+    }
+
+    res.json({
+      assessment,
+      session,
+      studentUrl: `/student/quiz/${session.code}`,
+      teacherUrl: `/teacher/session/${session.code}`,
+    });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.get('/api/sessions/:code', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const code = String(req.params.code || '').toUpperCase();
+    const sessions = await supabaseRequest('assessment_sessions', {
+      query: `?code=eq.${encodeURIComponent(code)}&limit=1`,
+    });
+    const session = sessions?.[0];
+    if (!session) return res.status(404).json({ error: 'Sesión no encontrada' });
+    const assessments = await supabaseRequest('assessments', {
+      query: `?id=eq.${encodeURIComponent(session.assessment_id)}&limit=1`,
+    });
+    res.json({ session, assessment: assessments?.[0] || null });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.post('/api/sessions/:code/responses', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  const { studentName, studentIdentifier, answers } = req.body || {};
+  if (!studentName || !answers || typeof answers !== 'object') {
+    return res.status(400).json({ error: 'studentName and answers are required' });
+  }
+  try {
+    const code = String(req.params.code || '').toUpperCase();
+    const sessions = await supabaseRequest('assessment_sessions', {
+      query: `?code=eq.${encodeURIComponent(code)}&limit=1`,
+    });
+    const session = sessions?.[0];
+    if (!session) return res.status(404).json({ error: 'Sesión no encontrada' });
+    if (session.status !== 'open') return res.status(409).json({ error: 'Esta sesión ya no acepta respuestas' });
+
+    const assessments = await supabaseRequest('assessments', {
+      query: `?id=eq.${encodeURIComponent(session.assessment_id)}&limit=1`,
+    });
+    const assessment = assessments?.[0];
+    const result = scoreAnswers(assessment?.questions || [], answers);
+    const [response] = await supabaseRequest('session_responses', {
+      method: 'POST',
+      prefer: 'return=representation',
+      body: [{
+        session_id: session.id,
+        student_name: studentName,
+        student_identifier: studentIdentifier || null,
+        answers,
+        score: result.score,
+        max_score: result.max,
+      }],
+    });
+
+    res.json({ response, score: result.score, maxScore: result.max });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.get('/api/sessions/:code/results', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const code = String(req.params.code || '').toUpperCase();
+    const sessions = await supabaseRequest('assessment_sessions', {
+      query: `?code=eq.${encodeURIComponent(code)}&limit=1`,
+    });
+    const session = sessions?.[0];
+    if (!session) return res.status(404).json({ error: 'Sesión no encontrada' });
+    const [assessments, responses] = await Promise.all([
+      supabaseRequest('assessments', { query: `?id=eq.${encodeURIComponent(session.assessment_id)}&limit=1` }),
+      supabaseRequest('session_responses', { query: `?session_id=eq.${encodeURIComponent(session.id)}&order=submitted_at.desc` }),
+    ]);
+    res.json({ session, assessment: assessments?.[0] || null, responses: responses || [] });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
   }
 });
 
@@ -752,6 +1010,7 @@ app.get('/api/health', (_req, res) => res.json({
   env: {
     hasOpenRouter:      !!OPENROUTER_API_KEY,
     hasReplicate:       !!REPLICATE_API_TOKEN,
+    hasSupabase:        !!(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY),
     weeklyPlansBaseUrl: R2_BASE || '(local)',
   },
 }));

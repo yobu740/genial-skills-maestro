@@ -5,6 +5,8 @@ import Planning from './pages/planning/index.jsx';
 import LessonCatalog from './pages/LessonCatalog.jsx';
 import AIToolsPage from './pages/AIToolsPage.jsx';
 import MyDocuments from './pages/MyDocuments.jsx';
+import StudentQuiz from './pages/StudentQuiz.jsx';
+import TeacherSession from './pages/TeacherSession.jsx';
 import Placeholder from './pages/Placeholder.jsx';
 
 // Map nav href → page key for AppLayout's activePath
@@ -26,6 +28,8 @@ const ROUTES = {
 
 function getInitialPath() {
   const p = window.location.pathname;
+  if (p.startsWith('/student/quiz/')) return '/student/quiz';
+  if (p.startsWith('/teacher/session/')) return '/teacher/session';
   return ROUTES[p] ? p : '/dashboard';
 }
 
@@ -53,9 +57,17 @@ export default function App() {
     setPath(route);
   }
 
-  const route = ROUTES[path] || ROUTES['/dashboard'];
+  const dynamicRoutes = {
+    '/student/quiz': { key: 'student-quiz', Page: StudentQuiz },
+    '/teacher/session': { key: 'teacher-session', Page: TeacherSession },
+  };
+  const route = dynamicRoutes[path] || ROUTES[path] || ROUTES['/dashboard'];
   const PageComponent = route.Page;
   const pageProps = { token, onNavigate: navigate, ...(route.props || {}) };
+
+  if (path === '/student/quiz' || path === '/teacher/session') {
+    return <PageComponent {...pageProps} />;
+  }
 
   return (
     <AppLayout activePath={path} onNavigate={navigate} userName="José Maestro">
