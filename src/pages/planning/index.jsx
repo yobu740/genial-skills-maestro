@@ -134,11 +134,41 @@ export const GENIAL_CSS = `
 .ai-send-btn{background:var(--palette-brand-genial-blue);color:#fff;border:none;border-radius:4px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer}
 .ai-send-btn:disabled{opacity:.45;cursor:not-allowed}
 .ai-fill-btn{background:var(--palette-utility-greenLight);color:#fff;border:none;border-radius:4px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;margin-top:9px;display:inline-flex;align-items:center;gap:6px}
+.sidebarMenu--group{display:block}
+.preview-subtitle{font-size:14px;color:var(--palette-gray-charcoal);margin:-6px 0 20px}
+.preview-note{display:flex;gap:8px;align-items:flex-start;color:#f2af2b;font-size:11.5px;line-height:1.45;margin:8px 0 10px}
+.preview-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:10px 0 12px}
+.preview-filter{display:flex;align-items:center;gap:10px;flex:1 1 430px;min-width:280px}
+.preview-filter select{min-width:280px;max-width:360px;background:#f3f3f3;border:1px solid #ced4da;border-radius:4px;padding:8px 10px;font-size:13px;color:#495057;font-family:inherit}
+.preview-icon-btn{border:0;background:transparent;color:var(--palette-brand-genial-blue);font-size:16px;cursor:pointer;padding:6px 8px;border-radius:4px}
+.preview-icon-btn:hover{background:var(--palette-utility-almostGreen)}
+.table-pdf-preview{border:1px solid var(--palette-gray-silver);background:#fff;max-height:620px;overflow:auto}
+.tablePDF__scroll{overflow:auto;max-height:620px}
+.tablePDF__content{border-collapse:separate;border-spacing:0;min-width:1320px;width:100%;font-size:12px;color:var(--palette-brand-genial-blue)}
+.tablePDF__content th,.tablePDF__content td{border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;vertical-align:top;background:#fff}
+.tablePDF__content thead th{position:sticky;top:0;z-index:2;background:var(--palette-utility-almostGreen);color:#003067;padding:8px 10px;text-align:left}
+.tablePDF__content thead th:first-child{left:0;z-index:3}
+.tablePDF__content tbody th{position:sticky;left:0;z-index:1;width:170px;min-width:170px;background:var(--palette-utility-almostGreen);color:#003067;font-weight:800;padding:10px}
+.tablePDF__content td{min-width:180px;height:86px;padding:0}
+.tablePDF__date-format{display:flex;justify-content:flex-end;font-size:10px;font-weight:800;color:#003067;margin-bottom:4px}
+.tablePDF__infoDate{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.tablePDF__infoDate--day{font-size:13px;font-weight:800;text-transform:uppercase}
+.tablePDF__infoDate--date{font-size:12px;font-weight:500;color:var(--palette-brand-genial-blue)}
+.tablePDF__container{padding:8px 10px}
+.tablePDF__list{list-style:none;margin:0;padding:0}
+.tablePDF__list--item_desc{padding:7px 0}
+.tablePDF__list--item_desc.borderTop{border-top:1px solid #e4e4e4}
+.list--item_firstTitle{margin:0 0 4px;color:#f2af2b;font-size:10.5px;font-weight:800}
+.list--item_desc--desc,.list--item_desc--desc_content{margin:0;color:#33353d;font-size:12px;line-height:1.35}
+.list--item_desc--desc_quiz{margin:0;color:#33353d;font-size:12px;font-weight:700}
+.list--item_desc--desc_quiz-date{margin:2px 0 0;color:#6b7280;font-size:11px}
 
 @media screen and (max-width:700px){
   .planning-two-col{flex:1 1 100%}
   .containerPlanning{flex-wrap:wrap}
   .containerPlanning__sidebar{flex:0 0 100%}
+  .preview-filter{flex:1 1 100%}
+  .preview-filter select{min-width:0;max-width:none;width:100%}
 }
 
 /* FULL PLAN GENERATOR modal */
@@ -231,6 +261,32 @@ export const MOCK = {
 // ─────────────────────────────────────────────────────────────────────────────
 //  IA — usa el proxy /api/generate (OpenRouter Claude Sonnet 4.5)
 // ─────────────────────────────────────────────────────────────────────────────
+function parsePlanDate(value) {
+  const clean = String(value || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (!clean) return new Date(2026, 4, 22);
+  return new Date(Number(clean[3]), Number(clean[1]) - 1, Number(clean[2]));
+}
+
+function formatPlanDate(date) {
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  return `${mm}/${dd}/${date.getFullYear()}`;
+}
+
+function buildPlanDays(openDate) {
+  const base = parsePlanDate(openDate);
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(base);
+    d.setDate(base.getDate() + i);
+    return { label: `DIA ${i + 1}`, date: formatPlanDate(d) };
+  });
+}
+
+function textOrFallback(value, fallback) {
+  const text = String(value || "").trim();
+  return text || fallback;
+}
+
 async function askClaude(system, userMessage) {
   const res = await fetch("/api/generate", {
     method: "POST",
@@ -686,12 +742,155 @@ function CreatePlan({ onBack, onCreated }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  PLAN DETAIL — pantalla principal del plan abierto
 // ─────────────────────────────────────────────────────────────────────────────
+function makePreviewCells(dayIndex, items) {
+  const cells = Array.from({ length: 7 }, () => []);
+  cells[Math.max(0, Math.min(6, dayIndex))] = items.filter(item => item.desc);
+  return cells;
+}
+
+function PlanningPreviewCell({ items }) {
+  if (!items.length) return <span aria-hidden="true" />;
+  return (
+    <div className="tablePDF__container">
+      <ul className="tablePDF__list">
+        {items.map((item, idx) => (
+          <li className="tablePDF__list--item" key={`${item.title}-${idx}`}>
+            <div className={`tablePDF__list--item_desc ${idx ? "borderTop" : ""}`}>
+              <p className="list--item_desc--title list--item_firstTitle">{item.title}</p>
+              {item.time ? (
+                <>
+                  <p className="list--item_desc--desc_quiz">{item.desc}</p>
+                  <p className="list--item_desc--desc_quiz-date">{item.time}</p>
+                </>
+              ) : (
+                <div className="list--item_desc--desc_content">{item.desc}</div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setPreviewLessonId }) {
+  const days = buildPlanDays(plan.OpenDate);
+  const selectedLesson = lessons.find(l => String(l.id) === previewLessonId) || lessons[0] || {
+    id: "demo",
+    title: "Zonas climaticas",
+    startDate: plan.OpenDate,
+    objective: "",
+    standardCode: "",
+  };
+  const selectedDate = formatPlanDate(parsePlanDate(selectedLesson.startDate || plan.OpenDate));
+  const lessonDay = days.findIndex(day => day.date === selectedDate);
+  const contentDay = lessonDay >= 0 ? lessonDay : 4;
+  const evalDay = Math.min(2, days.length - 1);
+  const innovationDay = Math.min(contentDay + 1, 6);
+  const lessonTitle = selectedLesson.title || "Zonas climaticas";
+  const rows = [
+    { label: "Lecciones", cells: makePreviewCells(contentDay, [{ title: "Contenido genial", desc: lessonTitle }]) },
+    {
+      label: "Temas transversales",
+      cells: makePreviewCells(contentDay, [
+        { title: lessonTitle, desc: "Equidad y respeto entre todos los seres humanos" },
+        { title: lessonTitle, desc: "Educacion para la concienciacion ambiental y ecologica" },
+        { title: lessonTitle, desc: "Tecnologia de la informacion y la comunicacion" },
+      ]),
+    },
+    { label: "Estandares", cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: textOrFallback(selectedLesson.standardCode, "Ciencias Terrestres y del Espacio") }]) },
+    {
+      label: "Expectativas",
+      cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: textOrFallback(sectionData["fl-plan1"], "Utiliza evidencia cientifica de varias fuentes de informacion para explicar y representar, mediante modelos, la funcion del Sol y los oceanos en el ciclo del agua y en las zonas climaticas de la Tierra.") }]),
+    },
+    {
+      label: "Objetivos",
+      cells: makePreviewCells(contentDay, [
+        { title: lessonTitle, desc: textOrFallback(selectedLesson.objective, "Aprendera sobre las zonas climaticas y las esferas de la Tierra.") },
+        { title: lessonTitle, desc: "Desarrollara comprension sobre las caracteristicas y componentes de cada zona climatica." },
+        { title: lessonTitle, desc: "Valorara la importancia de conservar y proteger el planeta mediante acciones responsables." },
+      ]),
+    },
+    {
+      label: "Estrategia academica",
+      cells: makePreviewCells(contentDay, [
+        { title: lessonTitle, desc: "Desarrollo conceptual" },
+        { title: lessonTitle, desc: "Comprension lectora" },
+      ]),
+    },
+    { label: "Integracion con otras materias", cells: makePreviewCells(contentDay, [{ title: "Integracion con otras materias", desc: textOrFallback(sectionData["fl-integ"], "Artes Visuales e Ingles") }]) },
+    { label: "Iniciativa o proyecto innovador", cells: makePreviewCells(innovationDay, [{ title: "Iniciativa o proyecto innovador", desc: textOrFallback(sectionData["fl-innov"], "STEM") }]) },
+    {
+      label: "Evaluaciones (Avalúos)",
+      cells: makePreviewCells(evalDay, [
+        { title: lessonTitle, desc: "Prueba 1", time: "10:00 AM" },
+        { title: lessonTitle, desc: "Prueba 2", time: "10:00 AM" },
+        { title: lessonTitle, desc: "Prueba 2b", time: "10:00 AM" },
+      ]),
+    },
+    { label: "Acomodos razonables", cells: makePreviewCells(contentDay, [{ title: "Acomodos razonables", desc: sectionData["fl-acom"] || "" }]) },
+    { label: "Estrategias de instruccion diferenciada", cells: makePreviewCells(contentDay, [{ title: "Estrategias de instruccion diferenciada", desc: sectionData["fl-strat"] || "" }]) },
+    { label: "Materiales", cells: makePreviewCells(contentDay, [{ title: "Materiales", desc: textOrFallback(sectionData["fl-mats"], "Libro digital, pizarra interactiva y recursos visuales de la leccion.") }]) },
+  ];
+
+  return (
+    <>
+      <div className="preview-subtitle">Previsualizar planificacion</div>
+      <div className="preview-note">
+        <span>!</span>
+        <span>Nota: Si sale de esta pagina, el PDF dejara de generarse y el progreso se perdera. El PDF se generara nuevamente cuando regrese a la pagina.</span>
+      </div>
+      <div className="preview-actions">
+        <button type="button" className="pl btn-base btn-primary" onClick={() => window.print()}>Imprimir PDF</button>
+        <div className="preview-filter">
+          <select value={previewLessonId} onChange={e => setPreviewLessonId(e.target.value)} aria-label="Seleccionar leccion">
+            {lessons.map(lesson => <option key={lesson.id} value={lesson.id}>{lesson.title}</option>)}
+          </select>
+          <button type="button" className="preview-icon-btn" title="Buscar leccion">⌕</button>
+          <button type="button" className="preview-icon-btn" title="Limpiar seleccion" onClick={() => setPreviewLessonId(lessons[0]?.id ? String(lessons[0].id) : "")}>⌫</button>
+        </div>
+      </div>
+      <div className="wrapper-tablePDF table-pdf-preview">
+        <div className="tablePDF__scroll">
+          <table className="tablePDF__content">
+            <thead>
+              <tr>
+                <th scope="col" />
+                {days.map(day => (
+                  <th scope="col" key={day.date}>
+                    <span className="tablePDF__date-format">MM/DD/YYYY</span>
+                    <div className="tablePDF__infoDate">
+                      <div className="tablePDF__infoDate--day">{day.label}</div>
+                      <div className="tablePDF__infoDate--date">{day.date}</div>
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(row => (
+                <tr key={row.label}>
+                  <th scope="row">{row.label}</th>
+                  {row.cells.map((items, idx) => (
+                    <td key={`${row.label}-${idx}`}><PlanningPreviewCell items={items} /></td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function PlanDetail({ plan, onBack }) {
-  const [section,     setSection]     = useState("gl-lessons");
+  const [section,     setSection]     = useState("cotejo");
   const [sectionData, setSectionData] = useState({});
   const [lessons,     setLessons]     = useState([
     { id: 1, title: "Zonas climáticas", startDate: "mar.: 05/26/2026", endDate: "mar.: 05/26/2026", countsForGrade: false, availability: "vie.: 05/22/2026" },
   ]);
+  const [previewLessonId, setPreviewLessonId] = useState("1");
   const [showFullPlan, setShowFullPlan] = useState(false);
   const current = MOCK.cotejo.find(s => s.key === section);
 
@@ -723,7 +922,7 @@ function PlanDetail({ plan, onBack }) {
 
   function ContentArea() {
     if (section === "cotejo") {
-      return <p style={{ fontSize: 13, color: "#555" }}>Seleccione una sección del menú lateral para agregar contenido al cotejo.</p>;
+      return <PlanningPreviewArea plan={plan} lessons={lessons} sectionData={sectionData} previewLessonId={previewLessonId} setPreviewLessonId={setPreviewLessonId} />;
     }
 
     if (section === "gl-lessons" || section === "fl-lessons") {
@@ -861,6 +1060,12 @@ function PlanDetail({ plan, onBack }) {
         <div className="containerPlanning__sidebar">
           <nav className="sidebarMenu">
             {MOCK.cotejo.map(s => {
+              if (s.type === "ppal")  return (
+                <div key={s.key} className="sidebarMenu--group">
+                  <div className="sidebarMenu--itemPpal" onClick={() => setSection("cotejo")}><span>⌄</span></div>
+                  <div className={`sidebarMenu--item${section === "cotejo" ? " active" : ""}`} onClick={() => setSection("cotejo")}><a>{s.label}</a></div>
+                </div>
+              );
               if (s.type === "ppal")  return <div key={s.key} className="sidebarMenu--itemPpal" onClick={() => setSection("cotejo")}><span>⌄</span></div>;
               if (s.type === "title") return <div key={s.key} className="sidebarMenu--itemTitle">{s.label}</div>;
               return (
@@ -877,9 +1082,9 @@ function PlanDetail({ plan, onBack }) {
             <span style={{ color: "#999", margin: "0 6px" }}>/</span>
             <span style={{ color: "#555", fontWeight: 500 }}>{current?.label}</span>
           </div>
-          <h2 className="heading-h2" style={{ marginBottom: 14 }}>{current?.label}</h2>
+          <h2 className="heading-h2" style={{ marginBottom: 14 }}>{section === "cotejo" ? "Planificacion" : current?.label}</h2>
           <ContentArea />
-          <AIPanel mode="planning" sectionLabel={current?.label} onFill={handleAIFill} />
+          {section !== "cotejo" && <AIPanel mode="planning" sectionLabel={current?.label} onFill={handleAIFill} />}
         </div>
       </div>
 
