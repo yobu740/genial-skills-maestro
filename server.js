@@ -40,7 +40,7 @@ for (const [mount, dir] of planFolders) {
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
-async function callOpenRouter({ model, system, user, stream = false, temperature = 0.7, max_tokens = 2048 }) {
+async function callOpenRouter({ model, system, user, stream = false, temperature = 0.7, max_tokens = 6000 }) {
   const body = {
     model,
     stream,
@@ -691,10 +691,67 @@ app.get('/api/athenas/grades', async (req, res) => {
   }
 });
 
+/**
+ * /api/generate-image — generates a single image via Replicate (FLUX-schnell).
+ * Body: { prompt: "...", aspect_ratio?: "1:1"|"4:3"|"16:9", style?: "..." }
+ * Returns: { url, took_ms, model }
+ *
+ * Replicate's `Prefer: wait` header makes this synchronous (we wait up to 60s).
+ */
+const REPLICATE_API_TOKEN = process.env.REPLICATE_API_TOKEN;
+
+app.post('/api/generate-image', async (req, res) => {
+  if (!REPLICATE_API_TOKEN) {
+    return res.status(503).json({ error: 'REPLICATE_API_TOKEN not configured' });
+  }
+  const { prompt, aspect_ratio = '4:3', style = '' } = req.body || {};
+  if (!prompt || typeof prompt !== 'string') {
+    return res.status(400).json({ error: 'prompt is required' });
+  }
+
+  const finalPrompt = style ? `${prompt}, ${style}` : prompt;
+  const t0 = Date.now();
+  try {
+    const upstream = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${REPLICATE_API_TOKEN}`,
+        'Content-Type':  'application/json',
+        'Prefer':        'wait',
+      },
+      body: JSON.stringify({
+        input: {
+          prompt: finalPrompt.slice(0, 500),  // FLUX-schnell soft cap
+          aspect_ratio,
+          num_outputs: 1,
+          output_format: 'webp',
+          output_quality: 85,
+          go_fast: true,
+        },
+      }),
+    });
+
+    const data = await upstream.json();
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: data?.detail || data?.error || `Replicate ${upstream.status}` });
+    }
+    if (data.status === 'failed' || data.error) {
+      return res.status(502).json({ error: data.error || 'Replicate prediction failed', detail: data.logs });
+    }
+    const url = Array.isArray(data.output) ? data.output[0] : data.output;
+    if (!url) return res.status(502).json({ error: 'No output URL returned', status: data.status });
+
+    res.json({ url, took_ms: Date.now() - t0, model: 'black-forest-labs/flux-schnell', prompt: finalPrompt });
+  } catch (e) {
+    res.status(500).json({ error: String(e) });
+  }
+});
+
 app.get('/api/health', (_req, res) => res.json({
   ok: true,
   env: {
-    hasOpenRouter: !!OPENROUTER_API_KEY,
+    hasOpenRouter:      !!OPENROUTER_API_KEY,
+    hasReplicate:       !!REPLICATE_API_TOKEN,
     weeklyPlansBaseUrl: R2_BASE || '(local)',
   },
 }));

@@ -178,13 +178,19 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
                   type="button"
                   className="alp-item"
                   onClick={() => handlePick({
-                    // normalize for parent consumers
-                    id:          l.Id,
-                    title:       l.LessonTitle,
-                    standard:    l.Standards?.[0]?.Code || null,
-                    objective:   l.Standards?.[0]?.Description || '',
-                    subjectCode: l.SubjectCode,
-                    levelCode:   l.LevelCode,
+                    // Full normalized shape so parent can build a rich reference block
+                    id:           l.Id,
+                    title:        l.LessonTitle,
+                    lessonNo:     l.LessonNo,
+                    subjectCode:  l.SubjectCode,
+                    levelCode:    l.LevelCode,
+                    blueprint:    l.Blueprint === '1',
+                    isGapClosing: l.IsGapClosing === '1',
+                    standards:    Array.isArray(l.Standards) ? l.Standards : [],
+                    definitions:  Array.isArray(l.Definitions) ? l.Definitions : [],
+                    // legacy convenience fields (first standard)
+                    standard:     l.Standards?.[0]?.Code || null,
+                    objective:    l.Standards?.[0]?.Description || '',
                   })}
                 >
                   <div className="alp-item-title">{l.LessonTitle}</div>

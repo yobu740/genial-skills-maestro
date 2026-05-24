@@ -112,17 +112,18 @@ export async function searchLessons({
     const j = await r.json();
     if (!r.ok || j.error) throw new Error(j.error || `HTTP ${r.status}`);
     if (j.fromMock) return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
-    // Normalize: API returns objects with LessonModel + LessonStandardModelList nesting
+    // Normalize: keep the full Standards + Definitions arrays so consumers
+    // can render the real lesson content (not just title metadata).
     const lessons = (j.lessons || []).map(L => ({
-      Id:          L.LessonModel?.Id,
-      LessonNo:    L.LessonModel?.LessonNo,
-      LevelCode:   L.LessonModel?.LevelCode,
-      SubjectCode: L.LessonModel?.SubjectCode,
-      LessonTitle: L.LessonModel?.LessonTitle,
+      Id:           L.LessonModel?.Id,
+      LessonNo:     L.LessonModel?.LessonNo,
+      LevelCode:    L.LessonModel?.LevelCode,
+      SubjectCode:  L.LessonModel?.SubjectCode,
+      LessonTitle:  L.LessonModel?.LessonTitle,
       IsGapClosing: L.LessonModel?.IsGapClosing,
-      Blueprint:   L.LessonModel?.Blueprint,
-      Standards:   L.LessonStandardModelList || [],
-      Definitions: (L.LessonDefinitionModelList || []).length,
+      Blueprint:    L.LessonModel?.Blueprint,
+      Standards:    L.LessonStandardModelList || [],
+      Definitions:  L.LessonDefinitionModelList || [],
     }));
     return { lessons, total: j.total, fromMock: false };
   } catch (e) {

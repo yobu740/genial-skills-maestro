@@ -165,14 +165,17 @@ Devuelve:
       { name: 'grado',   label: 'Grado',           type: 'select', options: GRADOS, default: '5to' },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + `
+
+## Imágenes de apoyo
+En el Nivel 1 (Soporte) SIEMPRE incluye un tag [IMAGE: ...] con prompt en INGLÉS para una ilustración que ayude al estudiante visual / ELL a comprender el concepto sin depender del texto. Estilo: "educational illustration, clear labeled diagram, simple visual style, age-appropriate". Opcionalmente en Nivel 2 o 3 puedes incluir UNO adicional si aporta. El sistema reemplazará los tags con imágenes reales.`,
     buildPrompt: (f) => `Para "${f.tema}" (${f.grado} grado), produce tres versiones del mismo contenido:
 
 ### Nivel 1 — Soporte (bajo dominio)
-Texto simplificado + vocabulario clave + apoyos visuales sugeridos.
+Texto simplificado + vocabulario clave + **un tag [IMAGE: prompt detallado en inglés] como apoyo visual indispensable**.
 
 ### Nivel 2 — En nivel
-Texto al grado esperado + actividad de aplicación.
+Texto al grado esperado + actividad de aplicación. Puedes incluir un [IMAGE: ...] si suma.
 
 ### Nivel 3 — Extensión (avanzado)
 Texto enriquecido + pregunta de análisis crítico + tarea de investigación.
@@ -366,16 +369,22 @@ Después de la tabla añade:
       { name: 'genero',   label: 'Género',   type: 'select', options: ['Informativo', 'Narrativo', 'Descriptivo', 'Persuasivo'], default: 'Informativo' },
           { name: 'estandares', type: 'standards', subject: 'Español', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + `
+
+## Imagen de portada
+Inmediatamente después del título, incluye un tag [IMAGE: ...] con un prompt DETALLADO en INGLÉS para generar una ilustración que represente el tema central del texto. Estilo: "children's book illustration, soft colors, friendly, age-appropriate". Ejemplo:
+[IMAGE: A colorful children's book illustration of a coquí frog sitting on a glistening wet leaf at night in the Puerto Rican rainforest, with stars and fireflies visible, soft watercolor style, vivid greens and blues]
+SOLO una imagen por lectura. El sistema reemplazará el tag con la imagen real generada.`,
     buildPrompt: (f) => `Crea un texto de lectura ${f.genero.toLowerCase()} para ${f.grado} grado sobre "${f.tema}".
 Longitud: ${f.longitud}.
 
 Estructura:
 1. **Título** atractivo
-2. **Texto** con vocabulario y sintaxis apropiados al grado
-3. **Vocabulario clave** (5-7 palabras, definidas en lenguaje simple)
-4. **3 preguntas literales**, **2 inferenciales**, **1 crítica**
-5. **Clave de respuestas** al final
+2. **Imagen de portada** — un tag [IMAGE: prompt en inglés describiendo el tema visualmente]
+3. **Texto** con vocabulario y sintaxis apropiados al grado
+4. **Vocabulario clave** (5-7 palabras, definidas en lenguaje simple)
+5. **3 preguntas literales**, **2 inferenciales**, **1 crítica**
+6. **Clave de respuestas** al final
 
 Cuando sea posible, incluye una conexión con la cultura, geografía o historia de Puerto Rico.`,
   },
