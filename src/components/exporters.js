@@ -38,8 +38,25 @@ function latexToReadable(text = '') {
     .replace(/[{}]/g, '');
 }
 
+function sanitizePdfText(text = '') {
+  return String(text)
+    .normalize('NFKC')
+    .replace(/✅|☑️|✔️|✔/g, '[OK]')
+    .replace(/❌|✖️|✖/g, '[X]')
+    .replace(/⭐|🌟|★/g, '*')
+    .replace(/➡️|➜|→/g, '->')
+    .replace(/⬅️|←/g, '<-')
+    .replace(/📌|🔹|🔸|▪️|▫️|•/g, '-')
+    .replace(/[\u200D\uFE0E\uFE0F]/g, '')
+    .replace(/[\u{1F000}-\u{1FAFF}]/gu, '')
+    .replace(/[\u{2600}-\u{27BF}]/gu, '')
+    .replace(/\u00A0/g, ' ')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trimEnd();
+}
+
 function markdownToPlainLines(markdown = '') {
-  return latexToReadable(markdown)
+  return sanitizePdfText(latexToReadable(markdown))
     .replace(/```[\s\S]*?```/g, '')
     .replace(/!\[[^\]]*\]\([^)]+\)/g, '[imagen]')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
@@ -51,7 +68,9 @@ function markdownToPlainLines(markdown = '') {
 }
 
 function addWrappedText(doc, text, x, y, maxWidth, lineHeight) {
-  const lines = doc.splitTextToSize(text, maxWidth);
+  const safeText = sanitizePdfText(text);
+  if (!safeText.trim()) return y;
+  const lines = doc.splitTextToSize(safeText, maxWidth);
   doc.text(lines, x, y);
   return y + lines.length * lineHeight;
 }
@@ -293,7 +312,7 @@ export function exportWorksheet(markdown, filename = 'worksheet.pdf', title = 'H
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
-  doc.text(title, marginX, 14);
+  doc.text(sanitizePdfText(title), marginX, 14);
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(10);
   doc.text('Genial Skills · Hoja de trabajo', marginX, 21);
@@ -307,7 +326,7 @@ export function exportWorksheet(markdown, filename = 'worksheet.pdf', title = 'H
   doc.line(marginX, 38, pageW - marginX, 38);
 
   // Content — strip markdown to plaintext, split by lines, convert into questions
-  const cleaned = markdown
+  const cleaned = sanitizePdfText(markdown)
     .replace(/```[\s\S]*?```/g, '')                 // strip code blocks
     .replace(/\$\$[\s\S]*?\$\$/g, ' [ecuación] ')   // math placeholders
     .replace(/\$([^$\n]+?)\$/g, '$1')               // inline math: keep raw text
@@ -336,7 +355,7 @@ export function exportWorksheet(markdown, filename = 'worksheet.pdf', title = 'H
       const level = h[1].length;
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(level === 1 ? 14 : 12);
-      const wrapped = doc.splitTextToSize(h[2], pageW - 2 * marginX);
+      const wrapped = doc.splitTextToSize(sanitizePdfText(h[2]), pageW - 2 * marginX);
       y += 4;
       doc.text(wrapped, marginX, y);
       y += wrapped.length * 6 + 2;
@@ -349,11 +368,11 @@ export function exportWorksheet(markdown, filename = 'worksheet.pdf', title = 'H
     // Numbered question
     const num = line.match(/^\d+\.\s+(.+)/);
     const bullet = line.match(/^[-*]\s+(.+)/);
-    let text = num ? num[1] : bullet ? bullet[1] : line;
+    let text = sanitizePdfText(num ? num[1] : bullet ? bullet[1] : line);
     if (num || bullet) questionNum++;
     const prefix = (num || bullet) ? `${questionNum}.  ` : '';
 
-    const wrapped = doc.splitTextToSize(prefix + text, pageW - 2 * marginX);
+    const wrapped = doc.splitTextToSize(sanitizePdfText(prefix + text), pageW - 2 * marginX);
     doc.text(wrapped, marginX, y);
     y += wrapped.length * 5.6;
 
