@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { getAthenasToken } from "../../services/athenasApi.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  CSS EXACTO — Extraído de main.8968a941.css + :root variables reales
@@ -173,6 +174,14 @@ export const GENIAL_CSS = `
 .fpg-sec-item summary input{accent-color:#27466c}
 .fpg-sec-content{padding:0 14px 12px;font-size:13px;color:#364965;line-height:1.55;white-space:pre-wrap;border-top:1px dashed #eef1f6;margin-top:4px;padding-top:10px}
 .fpg-actions{display:flex;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid #e4e4e4}
+.fpg-badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.04em;margin-left:6px}
+.fpg-badge.live{background:#dcfce7;color:#166534}
+.fpg-badge.cache{background:#f3f4f6;color:#6b7280}
+.alp-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;letter-spacing:.04em}
+.alp-badge.live{background:#dcfce7;color:#166534}
+.alp-badge.cache{background:#f3f4f6;color:#6b7280}
+.alp-bp{background:#eef2ff;color:#3730a3;font-size:10px;padding:1px 6px;border-radius:4px}
+.alp-gc{background:#fef3c7;color:#92400e;font-size:10px;padding:1px 6px;border-radius:4px}
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -915,6 +924,8 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
           dateFrom: plan.OpenDate,
           dateTo:   plan.CloseDate,
           model:   form.model,
+          // Pass the teacher's JWT so the backend can hit Athenas live
+          athenasToken: getAthenasToken() || undefined,
         }),
       });
       const j = await r.json();
@@ -1015,7 +1026,12 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
             <div className="fpg-meta">
               <span>📚 {meta?.standardsUsed || 0} estándares</span>
               <span>·</span>
-              <span>🎯 {meta?.athenasLessons || 0} lecciones de Athenas</span>
+              <span>
+                🎯 {meta?.athenasLessons || 0} lecciones
+                {meta?.athenasSource === "live"
+                  ? <span className="fpg-badge live"> 🟢 Athenas API live</span>
+                  : <span className="fpg-badge cache"> ⚫ cache</span>}
+              </span>
               <span>·</span>
               <span>📋 {meta?.hasFewshot ? "Con plan de referencia" : "Sin plan de referencia"}</span>
             </div>

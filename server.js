@@ -395,9 +395,8 @@ app.post('/api/generate-full-plan', async (req, res) => {
       ? standards.slice(0, 40).map(s => `- **${s.code}** — ${s.expectation}`).join('\n')
       : 'No hay estándares cargados para esta materia/grado.';
 
-    // 2) Try to grab matching Athenas lessons from cache.
-    // Athenas subjectCodes are English-ish abbreviations (sci-sp, mat-sp, etc.)
-    // so we map the Spanish subject name to its possible codes.
+    // 2) Try to grab matching Athenas lessons. Live API first if token supplied,
+    //    otherwise fall back to the local cache (athenas-cache/*.json).
     const ATHENAS_SUBJECT_MAP = {
       'matemáticas':       ['mat-sp', 'mat-en'],
       'matematicas':       ['mat-sp', 'mat-en'],
@@ -419,17 +418,58 @@ app.post('/api/generate-full-plan', async (req, res) => {
       'geometria':         ['geo-sp'],
     };
     const subjectCodes = ATHENAS_SUBJECT_MAP[(subject || '').toLowerCase()] || [];
-    const gradeNorm = String(grade).replace(/[^\dKkPp]/g, '').toLowerCase();
-    const athenasList = await loadAthenasIndex().catch(() => []);
-    const subjMatches = athenasList.filter(l => {
-      const code = (l.subjectCode || '').toLowerCase();
-      const lvl  = String(l.levelCode || '').toLowerCase();
-      const subjMatch = subjectCodes.length
-        ? subjectCodes.includes(code)
-        : code.includes((subject || '').slice(0, 3).toLowerCase());
-      const gradeMatch = !gradeNorm || lvl === gradeNorm;
-      return subjMatch && gradeMatch;
-    }).slice(0, 30);
+    const gradeNorm    = String(grade).replace(/[^\dKkPp]/g, '').toLowerCase();
+    const athenasToken = req.body?.athenasToken || req.get?.('x-athenas-token') || null;
+
+    let subjMatches = [];
+    let athenasSource = 'cache';
+
+    if (athenasToken && subjectCodes.length) {
+      try {
+        const upstream = await fetch(`${BASEAPI_BASE}/teachersapi/lessons/advance`, {
+          method: 'POST',
+          headers: { 'token': athenasToken, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            SubjectCodes:        subjectCodes,
+            LevelCodes:          gradeNorm ? [gradeNorm] : [],
+            StandardCodes:       [],
+            ExpectationCodes:    [],
+            PageNumber:          0,
+            ContentFilter:       '',
+            Limit:               30,
+            OrderByCreationDate: true,
+            OrderByTitle:        null,
+            TeacherInputText:    unit?.slice(0, 60) || '',
+          }),
+        });
+        if (upstream.ok) {
+          const data = await upstream.json();
+          const liveLessons = data?.LessonsDetails?.Lessons || [];
+          subjMatches = liveLessons.map(L => ({
+            id:          L.LessonModel?.Id,
+            title:       L.LessonModel?.LessonTitle,
+            subjectCode: L.LessonModel?.SubjectCode,
+            levelCode:   L.LessonModel?.LevelCode,
+            standard:    L.LessonStandardModelList?.[0]?.Code || null,
+            objective:   L.LessonStandardModelList?.[0]?.Description || '',
+          }));
+          if (subjMatches.length) athenasSource = 'live';
+        }
+      } catch (_) { /* fall through to cache */ }
+    }
+
+    if (!subjMatches.length) {
+      const athenasList = await loadAthenasIndex().catch(() => []);
+      subjMatches = athenasList.filter(l => {
+        const code = (l.subjectCode || '').toLowerCase();
+        const lvl  = String(l.levelCode || '').toLowerCase();
+        const subjMatch = subjectCodes.length
+          ? subjectCodes.includes(code)
+          : code.includes((subject || '').slice(0, 3).toLowerCase());
+        const gradeMatch = !gradeNorm || lvl === gradeNorm;
+        return subjMatch && gradeMatch;
+      }).slice(0, 30);
+    }
     const athenasBlock = subjMatches.length
       ? subjMatches.map(l => `- "${l.title}"${l.standard ? ` (${l.standard})` : ''}${l.objective ? ` — ${l.objective.slice(0, 120)}` : ''}`).join('\n')
       : 'No hay lecciones de Athenas en cache para esta combinación. Sugiere títulos apropiados.';
@@ -530,13 +570,124 @@ Sugiere ${Math.max(3, Math.min(8, weeks * 3))} lecciones distribuidas en el rang
       plan,
       meta: {
         model,
-        standardsUsed: standards.length,
+        standardsUsed:  standards.length,
         athenasLessons: subjMatches.length,
-        hasFewshot: !!example,
+        athenasSource,             // 'live' | 'cache'
+        hasFewshot:     !!example,
       },
     });
   } catch (e) {
     res.status(500).json({ error: String(e) });
+  }
+});
+
+/* ─────────── Athenas + baseapi live proxy ─────────────────────────────────
+ *
+ * The teacher's JWT lives in their browser's localStorage.auth.Token. We do
+ * NOT store it server-side — every request from the SPA carries it in the
+ * `x-athenas-token` header, and we forward it to the real APIs.
+ *
+ * Two upstreams (different header conventions, intentional per the doc):
+ *   - baseapi.genialskillsweb.com   → "token: <jwt>"
+ *   - athenasapi.genialskillsweb.com → "Authorization: Bearer <jwt>"
+ *
+ * If no token is provided, every endpoint returns { fromMock: true, ... }
+ * so the frontend can render the same shape from local cache without branching.
+ */
+const ATHENAS_BASE   = 'https://athenasapi.genialskillsweb.com';
+const BASEAPI_BASE   = 'https://baseapi.genialskillsweb.com';
+
+function getAthenasToken(req) {
+  return req.get('x-athenas-token') || req.body?.athenasToken || null;
+}
+
+app.post('/api/athenas/lessons/search', async (req, res) => {
+  const token = getAthenasToken(req);
+  if (!token) return res.json({ lessons: [], total: 0, fromMock: true, reason: 'no-token' });
+  const {
+    subjectCodes = [], levelCodes = [], standardCodes = [], expectationCodes = [],
+    text = '', page = 0, limit = 12,
+  } = req.body || {};
+  try {
+    const upstream = await fetch(`${BASEAPI_BASE}/teachersapi/lessons/advance`, {
+      method: 'POST',
+      headers: { 'token': token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        SubjectCodes:        subjectCodes,
+        LevelCodes:          levelCodes,
+        StandardCodes:       standardCodes,
+        ExpectationCodes:    expectationCodes,
+        PageNumber:          Number(page) || 0,
+        ContentFilter:       '',
+        Limit:               Number(limit) || 12,
+        OrderByCreationDate: true,
+        OrderByTitle:        null,
+        TeacherInputText:    text || '',
+      }),
+    });
+    if (!upstream.ok) {
+      const txt = await upstream.text();
+      return res.status(upstream.status).json({ error: `baseapi ${upstream.status}: ${txt.slice(0, 200)}`, fromMock: false });
+    }
+    const data = await upstream.json();
+    res.json({
+      lessons:  data?.LessonsDetails?.Lessons || [],
+      total:    data?.LessonsDetails?.TotalResults || 0,
+      fromMock: false,
+    });
+  } catch (e) {
+    res.status(502).json({ error: String(e), fromMock: false });
+  }
+});
+
+app.get('/api/athenas/lessons/:id', async (req, res) => {
+  const token = getAthenasToken(req);
+  if (!token) return res.status(401).json({ error: 'no-token' });
+  try {
+    const upstream = await fetch(`${ATHENAS_BASE}/api/lessons/${encodeURIComponent(req.params.id)}`, {
+      headers: { 'Authorization': `Bearer ${token}` },
+    });
+    if (!upstream.ok) {
+      const txt = await upstream.text();
+      return res.status(upstream.status).json({ error: `athenasapi ${upstream.status}: ${txt.slice(0, 200)}` });
+    }
+    res.json(await upstream.json());
+  } catch (e) {
+    res.status(502).json({ error: String(e) });
+  }
+});
+
+app.get('/api/athenas/subjects', async (req, res) => {
+  const token = getAthenasToken(req);
+  if (!token) return res.json({ subjects: [], fromMock: true });
+  try {
+    const upstream = await fetch(`${ATHENAS_BASE}/api/subjects`, {
+      headers: { 'Authorization': `Bearer ${token}` },
+    });
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `athenasapi ${upstream.status}`, fromMock: false });
+    }
+    const data = await upstream.json();
+    res.json({ subjects: Array.isArray(data) ? data : [], fromMock: false });
+  } catch (e) {
+    res.status(502).json({ error: String(e) });
+  }
+});
+
+app.get('/api/athenas/grades', async (req, res) => {
+  const token = getAthenasToken(req);
+  if (!token) return res.json({ grades: [], fromMock: true });
+  try {
+    const upstream = await fetch(`${BASEAPI_BASE}/teachersapi/grades`, {
+      headers: { 'token': token },
+    });
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `baseapi ${upstream.status}`, fromMock: false });
+    }
+    const data = await upstream.json();
+    res.json({ grades: Array.isArray(data) ? data : [], fromMock: false });
+  } catch (e) {
+    res.status(502).json({ error: String(e) });
   }
 });
 
