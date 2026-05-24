@@ -340,7 +340,13 @@ Incluye:
 2. **Problemas numerados** con dificultad progresiva (fácil → difícil)
    - Para los problemas que se beneficien de contexto visual (verbales, geometría conceptual, fracciones, patrones), incluye un tag [IMAGE: prompt en inglés] como apoyo. Mira las reglas en el system prompt.
 3. Espacio sugerido para trabajo cuando aplique
-4. **--- HOJA DE RESPUESTAS ---** al final con explicación paso a paso de cada problema, no solo la respuesta`,
+4. **--- HOJA DE RESPUESTAS ---** al final con explicación paso a paso de cada problema, no solo la respuesta
+
+Para que pueda convertirse en interactivo, usa esta estructura clara:
+- Cada problema debe comenzar con "1.", "2.", "3.", etc.
+- Si es selección múltiple, cada opción debe estar como "A.", "B.", "C.", "D."
+- En la hoja de respuestas, incluye la clave como "1. A", "2. C", etc.
+- Evita poner la numeración dentro de tablas.`,
   },
 
   'Feedback Personalizado': {

@@ -84,7 +84,38 @@ function stripMarkdown(text = '') {
     .replace(/\*\*/g, '')
     .replace(/`/g, '')
     .replace(/\$+/g, '')
+    .replace(/^\s*#+\s*/, '')
     .trim();
+}
+
+function extractJsonObject(text = '') {
+  const cleaned = String(text).replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '').trim();
+  const start = cleaned.indexOf('{');
+  if (start < 0) return null;
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let i = start; i < cleaned.length; i++) {
+    const ch = cleaned[i];
+    if (escaped) {
+      escaped = false;
+      continue;
+    }
+    if (inString) {
+      if (ch === '\\') escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === '{') depth++;
+    else if (ch === '}') {
+      depth--;
+      if (depth === 0) {
+        try { return JSON.parse(cleaned.slice(start, i + 1)); } catch { return null; }
+      }
+    }
+  }
+  return null;
 }
 
 function parseAssessmentMarkdown(markdown, fallbackTitle = 'Examen interactivo') {
@@ -97,14 +128,14 @@ function parseAssessmentMarkdown(markdown, fallbackTitle = 'Examen interactivo')
     const line = stripMarkdown(raw);
     if (/hoja de respuestas|clave de respuestas|respuestas/i.test(line)) inAnswers = true;
     if (!inAnswers) continue;
-    const m = line.match(/^(\d+)[.)]\s*(?:respuesta:?\s*)?([A-Da-d]|verdadero|falso|true|false|[-+]?\d+(?:[./]\d+)?)/i);
+    const m = line.match(/^(?:problema|pregunta)?\s*(\d+)[.)\-:]?\s*(?:respuesta|clave|correcta)?\s*:?\s*([A-Da-d]|verdadero|falso|true|false|[-+]?\d+(?:[./]\d+)?)/i);
     if (m) answerMap.set(Number(m[1]), String(m[2]).trim());
   }
 
   const questions = [];
   let current = null;
-  const optionRe = /^\s*(?:[-*]\s*)?([A-Da-d])[.)]\s+(.+)/;
-  const questionRe = /^\s*(\d+)[.)]\s+(.+)/;
+  const optionRe = /^\s*(?:[-*]\s*)?([A-Da-d])(?:[.)]|:|-)\s+(.+)/;
+  const questionRe = /^\s*(?:problema|pregunta|ejercicio)?\s*(\d+)(?:[.)]|:|-)\s+(.+)/i;
 
   function flush() {
     if (!current) return;
@@ -117,7 +148,7 @@ function parseAssessmentMarkdown(markdown, fallbackTitle = 'Examen interactivo')
   }
 
   for (const raw of lines) {
-    const line = raw.trim();
+    const line = stripMarkdown(raw).replace(/^\s*[-*]\s+/, '').trim();
     if (!line || /hoja de respuestas|clave de respuestas/i.test(line)) {
       if (/hoja de respuestas|clave de respuestas/i.test(line)) break;
       continue;
@@ -194,6 +225,74 @@ async function callOpenRouter({ model, system, user, stream = false, temperature
     body: JSON.stringify(body),
   });
   return res;
+}
+
+async function structureAssessmentWithAI(markdown, fallbackTitle = 'Examen interactivo') {
+  const system = `Convierte examenes escolares en JSON interactivo.
+Devuelve UNICAMENTE JSON valido, sin markdown.
+Esquema:
+{
+  "title": "titulo",
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice" | "short_answer",
+      "prompt": "texto de la pregunta sin respuesta",
+      "choices": [{"id":"A","text":"opcion"}],
+      "answer": "A o respuesta exacta",
+      "points": 1
+    }
+  ]
+}
+Reglas:
+- Conserva el idioma del examen.
+- Si hay opciones A-D, usa multiple_choice y answer debe ser la letra correcta.
+- Si no hay opciones, usa short_answer.
+- No incluyas explicaciones ni hoja de respuestas dentro de prompt.
+- Maximo 50 preguntas.`;
+
+  const user = `Titulo sugerido: ${fallbackTitle}
+
+Examen:
+"""
+${String(markdown || '').slice(0, 18000)}
+"""`;
+
+  const upstream = await callOpenRouter({
+    model: 'openai/gpt-4o-mini',
+    system,
+    user,
+    stream: false,
+    temperature: 0.1,
+    max_tokens: 5000,
+  });
+  if (!upstream.ok) {
+    const text = await upstream.text();
+    throw new Error(`No pude convertir el examen a interactivo: OpenRouter ${upstream.status}: ${text.slice(0, 300)}`);
+  }
+  const data = await upstream.json();
+  const content = data?.choices?.[0]?.message?.content || '';
+  const parsed = extractJsonObject(content);
+  if (!parsed || !Array.isArray(parsed.questions)) {
+    throw new Error('No pude convertir el examen a una estructura interactiva valida.');
+  }
+  return {
+    title: parsed.title || fallbackTitle,
+    questions: parsed.questions.slice(0, 50).map((q, index) => {
+      const choices = Array.isArray(q.choices) ? q.choices : [];
+      return {
+        id: q.id || `q${index + 1}`,
+        type: choices.length >= 2 ? 'multiple_choice' : 'short_answer',
+        prompt: String(q.prompt || `Pregunta ${index + 1}`).trim(),
+        choices: choices.map((c, i) => ({
+          id: String(c.id || String.fromCharCode(65 + i)).toUpperCase().slice(0, 1),
+          text: String(c.text || c.label || '').trim(),
+        })).filter(c => c.text),
+        answer: String(q.answer || '').trim(),
+        points: Number(q.points || 1),
+      };
+    }),
+  };
 }
 
 // SSE streaming endpoint
@@ -281,9 +380,12 @@ app.post('/api/interactive-assessments', async (req, res) => {
   }
 
   try {
-    const parsed = parseAssessmentMarkdown(markdown, title || sourceTool);
+    let parsed = parseAssessmentMarkdown(markdown, title || sourceTool);
     if (!parsed.questions.length) {
-      return res.status(400).json({ error: 'No pude detectar preguntas numeradas en el examen. Revisa que el examen tenga problemas como "1. ..." y opciones A-D si aplica.' });
+      parsed = await structureAssessmentWithAI(markdown, title || sourceTool);
+    }
+    if (!parsed.questions.length) {
+      return res.status(400).json({ error: 'No pude convertir el contenido a una evaluación interactiva. Intenta regenerar el examen o incluir preguntas claramente separadas.' });
     }
 
     const [assessment] = await supabaseRequest('assessments', {
