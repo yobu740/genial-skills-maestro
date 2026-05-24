@@ -13,6 +13,113 @@ const NAVY = '#27466C';
 const TEAL = '#3DA8A8';
 const AMBER = '#E89B1E';
 
+function latexToReadable(text = '') {
+  return String(text)
+    .replace(/\$\$([\s\S]+?)\$\$/g, (_, m) => `\n${latexToReadable(m)}\n`)
+    .replace(/\$([^$\n]+?)\$/g, (_, m) => latexToReadable(m))
+    .replace(/\\frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}/g, '($1)/($2)')
+    .replace(/\\sqrt\s*\{([^{}]+)\}/g, 'sqrt($1)')
+    .replace(/\\left|\\right/g, '')
+    .replace(/\\times/g, 'x')
+    .replace(/\\div/g, '/')
+    .replace(/\\cdot/g, '*')
+    .replace(/\\leq/g, '<=')
+    .replace(/\\geq/g, '>=')
+    .replace(/\\neq/g, '!=')
+    .replace(/\\pi/g, 'pi')
+    .replace(/\\theta/g, 'theta')
+    .replace(/\\alpha/g, 'alpha')
+    .replace(/\\beta/g, 'beta')
+    .replace(/\\degree/g, ' degrees')
+    .replace(/\^\\circ/g, ' degrees')
+    .replace(/\^{([^{}]+)}/g, '^$1')
+    .replace(/_{([^{}]+)}/g, '_$1')
+    .replace(/\\[a-zA-Z]+/g, '')
+    .replace(/[{}]/g, '');
+}
+
+function markdownToPlainLines(markdown = '') {
+  return latexToReadable(markdown)
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, '[imagen]')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/^>\s+/gm, '')
+    .replace(/\r/g, '')
+    .split('\n');
+}
+
+function addWrappedText(doc, text, x, y, maxWidth, lineHeight) {
+  const lines = doc.splitTextToSize(text, maxWidth);
+  doc.text(lines, x, y);
+  return y + lines.length * lineHeight;
+}
+
+export function exportMarkdownPDF(markdown, filename = 'documento.pdf', title = 'Documento') {
+  const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'letter' });
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const marginX = 18;
+  const marginTop = 20;
+  const marginBottom = 16;
+  const maxWidth = pageW - marginX * 2;
+  let y = marginTop;
+
+  function ensureSpace(needed = 10) {
+    if (y + needed <= pageH - marginBottom) return;
+    doc.addPage();
+    y = marginTop;
+  }
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(16);
+  doc.setTextColor(39, 70, 108);
+  y = addWrappedText(doc, latexToReadable(title), marginX, y, maxWidth, 7) + 3;
+  doc.setDrawColor(61, 168, 168);
+  doc.line(marginX, y, pageW - marginX, y);
+  y += 8;
+
+  for (const raw of markdownToPlainLines(markdown)) {
+    const line = raw.trimEnd();
+    if (!line.trim()) {
+      y += 3;
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,6})\s+(.+)/);
+    const bullet = line.match(/^\s*[-*]\s+(.+)/);
+    const numbered = line.match(/^\s*(\d+)[.)]\s+(.+)/);
+
+    ensureSpace(12);
+    if (heading) {
+      const level = heading[1].length;
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(level === 1 ? 15 : level === 2 ? 13 : 11.5);
+      doc.setTextColor(39, 70, 108);
+      y += level === 1 ? 3 : 1;
+      y = addWrappedText(doc, latexToReadable(heading[2]), marginX, y, maxWidth, 6.5) + 2;
+      continue;
+    }
+
+    doc.setFont('helvetica', bullet || numbered ? 'bold' : 'normal');
+    doc.setFontSize(10.5);
+    doc.setTextColor(26, 39, 64);
+    const text = bullet ? `- ${bullet[1]}` : numbered ? `${numbered[1]}. ${numbered[2]}` : line;
+    y = addWrappedText(doc, latexToReadable(text), marginX, y, maxWidth, 5.5) + 1.5;
+  }
+
+  const total = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= total; i++) {
+    doc.setPage(i);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8.5);
+    doc.setTextColor(130);
+    doc.text(`Pagina ${i} de ${total}`, pageW / 2, pageH - 8, { align: 'center' });
+  }
+  doc.save(filename);
+}
+
 /* ─────────── PDF (rendered output) ─────────── */
 export async function exportPDF(htmlNode, filename = 'documento.pdf') {
   if (!htmlNode) return;
