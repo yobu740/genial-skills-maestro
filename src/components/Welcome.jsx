@@ -1,5 +1,4 @@
 import React from 'react';
-import Ic from './Icons.jsx';
 /* Welcome banner — greeting + stats KPIs + quick-ask CTA */
 
 function useCount(target, dur = 900, deps = []) {
@@ -25,14 +24,23 @@ function Welcome({ teacher }) {
   const grp  = useCount(teacher.stats.gruposHoy);
   const msg  = useCount(teacher.stats.mensajesNuevos);
 
-  const hour = new Date().getHours();
+  const today = new Date();
+  const hour = today.getHours();
   const saludo = hour < 12 ? 'Buenos días' : hour < 19 ? 'Buenas tardes' : 'Buenas noches';
+  const displayDate = new Intl.DateTimeFormat('es-PR', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  }).format(today);
+  const formattedDate = displayDate.charAt(0).toUpperCase() + displayDate.slice(1);
+  const demoWeek = 14;
+  const firstName = (teacher?.name || 'José').split(/\s+/)[0];
 
   return (
     <section className="welcome">
       <div className="greet">
-        <div className="eyebrow">Miércoles · 20 de mayo · Semana 14</div>
-        <h1>{saludo}, José</h1>
+        <div className="eyebrow">{formattedDate} · Semana {demoWeek}</div>
+        <h1>{saludo}, {firstName}</h1>
         <p>Tienes <b>3 entregas por corregir</b> y <b>1 mensaje nuevo</b>.</p>
       </div>
 
