@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import Planning from './pages/planning/index.jsx';
 import LessonCatalog from './pages/LessonCatalog.jsx';
 import AIToolsPage from './pages/AIToolsPage.jsx';
+import MyDocuments from './pages/MyDocuments.jsx';
 import Placeholder from './pages/Placeholder.jsx';
 
 // Map nav href → page key for AppLayout's activePath
@@ -12,6 +13,7 @@ const ROUTES = {
   '/planning-select':             { key: 'planning',    Page: Planning },
   '/lesson-catalog':              { key: 'catalog',     Page: LessonCatalog },
   '/ai-tools':                    { key: 'ai-tools',    Page: AIToolsPage },
+  '/my-documents':                { key: 'documents',   Page: MyDocuments },
   '/profile-update':              { key: 'students',    Page: Placeholder, props: { title: 'Estudiantes' } },
   '/teacher-groups':              { key: 'groups',      Page: Placeholder, props: { title: 'Grupos' } },
   '/record':                      { key: 'progress',    Page: Placeholder, props: { title: 'Progreso' } },

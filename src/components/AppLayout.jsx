@@ -171,6 +171,7 @@ const NAV_ITEMS = [
   { key: "teams",                      label: "Teams",          icon: "teams",       href: "/teams" },
   { key: "lesson-catalog",             label: "Catálogo",       icon: "catalog",     href: "/lesson-catalog" },
   { key: "ai-tools",                   label: "Herramientas IA",icon: "ai-tools",    href: "/ai-tools" },
+  { key: "documents",                  label: "Mis documentos", icon: "documents",   href: "/my-documents" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
