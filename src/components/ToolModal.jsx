@@ -297,7 +297,24 @@ function parseEditableSlides(markdown) {
 
   function flush() {
     if (!current) return;
-    slides.push({ ...current, body: current.body.join('\n').trim() });
+    const rawBody = current.body.join('\n').trim();
+    const image = rawBody.match(/!\[([^\]]*)\]\(([^)\s]+)\)/);
+    const link = rawBody.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
+    const notes = rawBody.match(/(?:^|\n)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
+    const body = rawBody
+      .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
+      .replace(/(?:^|\n)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, '')
+      .trim();
+    slides.push({
+      ...current,
+      body,
+      imageAlt: image?.[1] || '',
+      imageUrl: image?.[2] || '',
+      linkText: link?.[1] || '',
+      linkUrl: link?.[2] || '',
+      notes: notes?.[1]?.trim() || '',
+    });
   }
 
   for (const line of lines) {
@@ -317,12 +334,22 @@ function parseEditableSlides(markdown) {
 function slidesToMarkdown(slides) {
   return slides.map((slide, index) => {
     const heading = index === 0 ? '#' : '##';
-    return `${heading} ${slide.title || 'Contenido'}\n\n${slide.body || ''}`.trim();
+    const parts = [slide.body || ''];
+    if (slide.imageUrl) parts.push(`![${slide.imageAlt || slide.title || 'Imagen'}](${slide.imageUrl})`);
+    if (slide.linkUrl) parts.push(`[${slide.linkText || slide.linkUrl}](${slide.linkUrl})`);
+    if (slide.notes) parts.push(`Notas del maestro: ${slide.notes}`);
+    return `${heading} ${slide.title || 'Contenido'}\n\n${parts.filter(Boolean).join('\n\n')}`.trim();
   }).join('\n\n');
 }
 
 function SlideWorkspace({ value, onChange }) {
   const slides = React.useMemo(() => parseEditableSlides(value), [value]);
+  const [active, setActive] = React.useState(0);
+  const current = slides[Math.min(active, Math.max(slides.length - 1, 0))] || slides[0];
+
+  React.useEffect(() => {
+    if (active > slides.length - 1) setActive(Math.max(slides.length - 1, 0));
+  }, [active, slides.length]);
 
   function updateSlide(index, patch) {
     const next = slides.map((slide, i) => (i === index ? { ...slide, ...patch } : slide));
@@ -331,43 +358,106 @@ function SlideWorkspace({ value, onChange }) {
 
   function addSlide() {
     onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad' }]));
+    setActive(slides.length);
   }
 
   function removeSlide(index) {
     const next = slides.filter((_, i) => i !== index);
     onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '' }]));
+    setActive(Math.max(0, index - 1));
+  }
+
+  function duplicateSlide() {
+    if (!current) return;
+    const next = [...slides.slice(0, active + 1), { ...current, title: `${current.title || 'Slide'} copia` }, ...slides.slice(active + 1)];
+    onChange(slidesToMarkdown(next));
+    setActive(active + 1);
+  }
+
+  function appendBullet() {
+    if (!current) return;
+    const body = `${current.body || ''}\n- Nuevo punto`.trim();
+    updateSlide(active, { body });
   }
 
   return (
     <div className="tm-slide-workspace">
       <div className="tm-slide-rail">
         {slides.map((slide, i) => (
-          <div key={`${i}-${slide.title}`} className="tm-slide-thumb">
+          <button
+            type="button"
+            key={`${i}-${slide.title}`}
+            className={`tm-slide-thumb ${i === active ? 'active' : ''}`}
+            onClick={() => setActive(i)}
+          >
             <span>{i + 1}</span>
             <strong>{slide.title || 'Sin titulo'}</strong>
-          </div>
+          </button>
         ))}
         <button type="button" className="tm-work-add" onClick={addSlide}>+ Slide</button>
       </div>
       <div className="tm-slide-editor">
-        {slides.map((slide, i) => (
-          <section key={i} className="tm-slide-card">
-            <div className="tm-slide-card-head">
-              <span>Slide {i + 1}</span>
-              <button type="button" onClick={() => removeSlide(i)}>Borrar</button>
+        {current && (
+          <>
+            <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
+              <button type="button" onClick={appendBullet}>+ Texto</button>
+              <button type="button" onClick={() => updateSlide(active, { imageUrl: current.imageUrl || 'https://', imageAlt: current.imageAlt || current.title })}>+ Imagen</button>
+              <button type="button" onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}>+ Enlace</button>
+              <button type="button" onClick={duplicateSlide}>Duplicar</button>
+              <button type="button" className="danger" onClick={() => removeSlide(active)}>Borrar</button>
             </div>
-            <input
-              value={slide.title}
-              onChange={(e) => updateSlide(i, { title: e.target.value })}
-              placeholder="Titulo de la diapositiva"
-            />
-            <textarea
-              value={slide.body}
-              onChange={(e) => updateSlide(i, { body: e.target.value })}
-              placeholder="- Punto principal&#10;- Actividad o evidencia"
-            />
-          </section>
-        ))}
+
+            <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
+              <div className="tm-slide-canvas">
+                <input
+                  className="tm-slide-title-input"
+                  value={current.title}
+                  onChange={(e) => updateSlide(active, { title: e.target.value })}
+                  placeholder="Titulo de la diapositiva"
+                />
+                <textarea
+                  className="tm-slide-body-input"
+                  value={current.body}
+                  onChange={(e) => updateSlide(active, { body: e.target.value })}
+                  placeholder="- Punto principal&#10;- Actividad o evidencia"
+                />
+                {current.imageUrl && (
+                  <div className="tm-slide-image-box">
+                    <img src={current.imageUrl} alt={current.imageAlt || ''} />
+                  </div>
+                )}
+                {current.linkUrl && (
+                  <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
+                    {current.linkText || current.linkUrl}
+                  </a>
+                )}
+              </div>
+            </section>
+
+            <aside className="tm-slide-inspector">
+              <label>
+                <span>URL de imagen</span>
+                <input value={current.imageUrl || ''} onChange={(e) => updateSlide(active, { imageUrl: e.target.value })} placeholder="https://..." />
+              </label>
+              <label>
+                <span>Descripcion de imagen</span>
+                <input value={current.imageAlt || ''} onChange={(e) => updateSlide(active, { imageAlt: e.target.value })} placeholder="Descripcion breve" />
+              </label>
+              <label>
+                <span>Texto del enlace</span>
+                <input value={current.linkText || ''} onChange={(e) => updateSlide(active, { linkText: e.target.value })} placeholder="Recurso, video, lectura..." />
+              </label>
+              <label>
+                <span>URL del enlace</span>
+                <input value={current.linkUrl || ''} onChange={(e) => updateSlide(active, { linkUrl: e.target.value })} placeholder="https://..." />
+              </label>
+              <label className="tm-slide-notes">
+                <span>Notas del maestro</span>
+                <textarea value={current.notes || ''} onChange={(e) => updateSlide(active, { notes: e.target.value })} placeholder="Notas para presentar esta diapositiva" />
+              </label>
+            </aside>
+          </>
+        )}
       </div>
     </div>
   );
