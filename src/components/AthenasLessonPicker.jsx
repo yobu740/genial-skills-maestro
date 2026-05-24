@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { searchLessons, hasAthenasToken } from '../services/athenasApi.js';
+import { searchLessons, hasAthenasToken, normalizeGrade, normalizeSubject } from '../services/athenasApi.js';
 
 /**
  * AthenasLessonPicker — searches the Athenas catalog (live API when there's a
@@ -76,7 +76,9 @@ export default function AthenasLessonPicker({ subject, grade, onPick }) {
                 <p>
                   {loading
                     ? 'Cargando…'
-                    : `${total.toLocaleString()} lecciones disponibles${subject ? ` para ${subject}` : ''}${grade ? ` · grado ${grade}` : ''}`}
+                    : `${total.toLocaleString()} lecciones disponibles${
+                        subject ? ` para ${subject} (${normalizeSubject(subject).join('/') || '?'})` : ''
+                      }${grade ? ` · grado ${normalizeGrade(grade) || grade}` : ''}`}
                 </p>
               </div>
               <button type="button" className="alp-close" onClick={() => setOpen(false)}>×</button>

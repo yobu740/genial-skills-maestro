@@ -22,11 +22,83 @@ export function hasAthenasToken() { return !!getAthenasToken(); }
 
 const TOKEN_HEADER = (token) => ({ 'x-athenas-token': token });
 
+/**
+ * Normalize display grade strings like "5to", "1ro", "K", "k" to the Athenas
+ * code format which is just the digit or lowercase "k".
+ */
+export function normalizeGrade(g) {
+  if (g == null) return '';
+  const s = String(g).trim().toLowerCase();
+  if (s === 'k' || s === 'kinder' || s === 'kindergarten') return 'k';
+  const m = s.match(/^(\d{1,2})/);
+  return m ? m[1] : s;
+}
+
+/**
+ * Translate a display subject name (or already-code value) to the Athenas
+ * subjectCode used by the API. Returns an array because one display name can
+ * fan out to multiple codes (e.g. "Ciencias" → sci-sp + bi-sp + qu-sp + fi-sp).
+ *   "Matemáticas"        → ["mat-sp", "mat-en"]
+ *   "mat-sp"             → ["mat-sp"]  (passthrough if it's already a code)
+ *   "Español / Lenguaje" → ["sp"]
+ */
+const SUBJECT_NAME_TO_CODES = {
+  'matemáticas':       ['mat-sp', 'mat-en'],
+  'matematicas':       ['mat-sp', 'mat-en'],
+  'matemática':        ['mat-sp', 'mat-en'],
+  'matematica':        ['mat-sp', 'mat-en'],
+  'math':              ['mat-en', 'mat-sp'],
+  'ciencias':          ['sci-sp', 'sci-en', 'bi-sp', 'qu-sp', 'fi-sp'],
+  'ciencias naturales':['sci-sp'],
+  'science':           ['sci-en', 'sci-sp'],
+  'español':           ['sp'],
+  'espanol':           ['sp'],
+  'español / lenguaje':['sp'],
+  'lenguaje':          ['sp'],
+  'inglés':            ['en'],
+  'ingles':            ['en'],
+  'inglés / ela':      ['en'],
+  'english':           ['en'],
+  'ela':               ['en'],
+  'estudios sociales': ['sci-so'],
+  'social studies':    ['sci-so'],
+  'biología':          ['bi-sp'],
+  'biologia':          ['bi-sp'],
+  'biology':           ['bi-en', 'bi-sp'],
+  'química':           ['qu-sp'],
+  'quimica':           ['qu-sp'],
+  'chemistry':         ['che-en', 'qu-sp'],
+  'física':            ['fi-sp'],
+  'fisica':            ['fi-sp'],
+  'physics':           ['phy-en', 'fi-sp'],
+  'álgebra':           ['a1-sp', 'a2'],
+  'algebra':           ['a1-sp', 'a2'],
+  'álgebra i':         ['a1-sp'],
+  'álgebra ii':        ['a2'],
+  'geometría':         ['geo-sp'],
+  'geometria':         ['geo-sp'],
+  'precalculus':       ['pc-en'],
+  'precálculo':        ['pc-en'],
+};
+
+export function normalizeSubject(s) {
+  if (!s) return [];
+  const key = String(s).trim().toLowerCase();
+  // Already a code? (contains hyphen or short like "sp"/"en")
+  if (/^[a-z0-9]{1,3}(-[a-z0-9]+)?$/.test(key)) return [key];
+  return SUBJECT_NAME_TO_CODES[key] || [];
+}
+
 /* ─────────── Search lessons ─────────── */
 export async function searchLessons({
   subjectCodes = [], levelCodes = [], text = '', page = 0, limit = 12,
   signal,
 } = {}) {
+  // Normalize so callers can pass display strings ("Matemáticas", "5to") or codes.
+  levelCodes = (levelCodes || []).map(normalizeGrade).filter(Boolean);
+  subjectCodes = (subjectCodes || []).flatMap(normalizeSubject).filter(Boolean);
+  subjectCodes = [...new Set(subjectCodes)];
+
   const token = getAthenasToken();
   if (!token) return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
 
