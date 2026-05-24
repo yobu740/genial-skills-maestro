@@ -16,6 +16,28 @@ const MATERIAS = ['Matemáticas', 'Ciencias', 'Español / Lenguaje', 'Inglés / 
 
 const SYSTEM_TEACHER = `Eres un asistente pedagógico experto para maestros de escuela en Puerto Rico. Respondes siempre en español claro y profesional, alineado al Departamento de Educación de Puerto Rico y a estándares comunes (CCSS / NGSS cuando aplique). Genera contenido directamente utilizable: estructurado en markdown, con encabezados, tablas cuando ayuden, y vocabulario apropiado al grado solicitado. No incluyas disclaimers innecesarios. Cuando uses notación matemática (fracciones, exponentes, ecuaciones, raíces, sumatorias, matrices, etc.) escribe SIEMPRE en LaTeX: usa $...$ para fórmulas inline y $$...$$ para bloques destacados. Ejemplos: $\frac{3}{4}$, $x^2 + 2x + 1$, $$\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd}$$. NUNCA escribas fracciones como "3/4" en texto plano cuando representen un concepto matemático.`;
 
+// Append this to system prompts for tools that should generate illustrations.
+// The frontend scans for [IMAGE: ...] tags after streaming and replaces them
+// with real generated images via Replicate FLUX-schnell.
+const IMAGE_INSTRUCTIONS = `
+
+## Generación de imágenes (IMPORTANTE — el sistema las renderiza automáticamente)
+Tienes la capacidad de generar imágenes. Cuando un concepto se beneficie visualmente, inserta un tag en línea con el siguiente formato exacto:
+
+[IMAGE: <prompt detallado en INGLÉS describiendo qué mostrar, estilo, colores, edad apropiada>]
+
+El sistema reemplaza cada tag por la imagen real generada. Reglas:
+- El prompt va en INGLÉS (FLUX entiende mejor).
+- Sé específico: tema + sujeto + ambiente + estilo + colores + audiencia.
+- Estilo recomendado: "children's book illustration, soft colors, age-appropriate, clear, friendly".
+- Para diagramas educativos: "labeled educational diagram, clean lines, simple visual style".
+- NO escribas la palabra "[IMAGE:" en español ni con otra puntuación — debe coincidir exacta.
+- Pon imágenes donde realmente aporten — no inflar (típicamente 1-3 por documento, máximo 5).
+
+Ejemplos:
+[IMAGE: A colorful children's book illustration of a Puerto Rican coquí frog sitting on a wet leaf at night, watercolor style, vivid greens and blues, fireflies in background]
+[IMAGE: A labeled educational diagram showing the parts of a plant cell — nucleus, cytoplasm, cell wall, chloroplasts — simple flat style with clear Spanish labels, white background]`;
+
 const TOOLS = {
   /* ─── Planificación ─── */
   'Plan My Lesson': {
@@ -33,9 +55,11 @@ const TOOLS = {
       { name: 'estandar', label: 'Estándar (opcional)', type: 'text',  placeholder: 'CCSS.MATH.4.NF.A.1' },
           { name: 'estandares', type: 'standards', subjectField: 'materia', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS,
     buildPrompt: (f) => `Crea un plan de lección detallado para ${f.materia}, ${f.grado} grado, sobre "${f.tema}".
 Duración aproximada: ${f.duracion || 60} minutos.${f.estandar ? `\nEstándar a cubrir: ${f.estandar}` : ''}
+
+Si el tema se beneficia visualmente (ciencias, matemáticas, arte, conceptos espaciales), incluye 1-2 tags [IMAGE: prompt en inglés] como apoyo (gancho de inicio o ilustración de concepto clave).
 
 Incluye estas secciones en markdown:
 1. **Objetivos de aprendizaje** (2-3, observables y medibles)
@@ -63,9 +87,9 @@ Incluye estas secciones en markdown:
       { name: 'semanas',  label: 'Duración (semanas)', type: 'number', default: 3 },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS,
     buildPrompt: (f) => `Diseña una unidad STEM de ${f.semanas || 3} semanas para ${f.grado} grado sobre "${f.tema}".
-Integra ciencia, tecnología, ingeniería y matemáticas. Incluye:
+Integra ciencia, tecnología, ingeniería y matemáticas. Incluye 1-2 tags [IMAGE: prompt en inglés] como ilustraciones del tema central o del proyecto integrador. Continúa:
 - **Pregunta esencial** que guíe la unidad
 - **Cronograma semanal** (tabla en markdown: Semana | Foco | Actividades)
 - **Proyecto integrador final** con criterios de evaluación
@@ -86,7 +110,7 @@ Integra ciencia, tecnología, ingeniería y matemáticas. Incluye:
       { name: 'grado',     label: 'Grado', type: 'select', options: GRADOS, default: '5to' },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS,
     buildPrompt: (f) => `Adapta esta lección para un estudiante con perfil: ${f.perfil} (${f.grado} grado).
 
 Lección original:
@@ -99,7 +123,9 @@ Devuelve:
 2. **Lección adaptada completa** — reescrita, no solo notas
 3. **Acomodaciones específicas** (tiempo, formato, presentación, respuesta)
 4. **Sugerencias de scaffolding** concretas
-5. **Cómo evaluar** sin penalizar la condición`,
+5. **Cómo evaluar** sin penalizar la condición
+
+Si el perfil del estudiante se beneficia de apoyo visual (ELL principiante, SPED dislexia, espectro autista), incluye 1-2 tags [IMAGE: prompt en inglés] como scaffolding visual de los conceptos clave.`,
   },
 
   'Objetivos de Lenguaje': {
@@ -165,10 +191,9 @@ Devuelve:
       { name: 'grado',   label: 'Grado',           type: 'select', options: GRADOS, default: '5to' },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER + `
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
 
-## Imágenes de apoyo
-En el Nivel 1 (Soporte) SIEMPRE incluye un tag [IMAGE: ...] con prompt en INGLÉS para una ilustración que ayude al estudiante visual / ELL a comprender el concepto sin depender del texto. Estilo: "educational illustration, clear labeled diagram, simple visual style, age-appropriate". Opcionalmente en Nivel 2 o 3 puedes incluir UNO adicional si aporta. El sistema reemplazará los tags con imágenes reales.`,
+Para esta herramienta específicamente: el Nivel 1 (Soporte) SIEMPRE debe incluir un tag [IMAGE: ...] como apoyo visual. Opcionalmente uno adicional en Nivel 2 o 3 si aporta.`,
     buildPrompt: (f) => `Para "${f.tema}" (${f.grado} grado), produce tres versiones del mismo contenido:
 
 ### Nivel 1 — Soporte (bajo dominio)
@@ -369,12 +394,9 @@ Después de la tabla añade:
       { name: 'genero',   label: 'Género',   type: 'select', options: ['Informativo', 'Narrativo', 'Descriptivo', 'Persuasivo'], default: 'Informativo' },
           { name: 'estandares', type: 'standards', subject: 'Español', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER + `
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
 
-## Imagen de portada
-Inmediatamente después del título, incluye un tag [IMAGE: ...] con un prompt DETALLADO en INGLÉS para generar una ilustración que represente el tema central del texto. Estilo: "children's book illustration, soft colors, friendly, age-appropriate". Ejemplo:
-[IMAGE: A colorful children's book illustration of a coquí frog sitting on a glistening wet leaf at night in the Puerto Rican rainforest, with stars and fireflies visible, soft watercolor style, vivid greens and blues]
-SOLO una imagen por lectura. El sistema reemplazará el tag con la imagen real generada.`,
+Para esta herramienta específicamente: incluye SIEMPRE una imagen de portada justo después del título (un solo [IMAGE: ...] tag por lectura, no más).`,
     buildPrompt: (f) => `Crea un texto de lectura ${f.genero.toLowerCase()} para ${f.grado} grado sobre "${f.tema}".
 Longitud: ${f.longitud}.
 
@@ -401,12 +423,14 @@ Cuando sea posible, incluye una conexión con la cultura, geografía o historia 
       { name: 'cantidad', label: 'Cantidad', type: 'number', default: 10 },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER,
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS,
     buildPrompt: (f) => `Genera ${f.cantidad || 10} palabras de vocabulario académico sobre "${f.tema}" para ${f.grado} grado.
 
 Formato: tabla markdown con columnas: **Palabra | Categoría gramatical | Definición simple | Oración de ejemplo | Sinónimo**.
 
-Después de la tabla incluye **3 actividades** breves para reforzar el vocabulario (ej. completar oraciones, emparejar, crear su propia oración).`,
+Después de la tabla, para las 3-5 palabras MÁS importantes/abstractas, incluye un tag [IMAGE: prompt en inglés] de una tarjeta visual ilustrando ese concepto (estilo: "vocabulary flashcard illustration, single concept clear, age-appropriate, white background, labeled in Spanish").
+
+Termina con **3 actividades** breves para reforzar el vocabulario (ej. completar oraciones, emparejar, crear su propia oración).`,
   },
 
   'Preguntas de Comprensión': {
