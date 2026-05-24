@@ -57,6 +57,14 @@ export default function AIToolsPage() {
     return c;
   }, []);
 
+  if (openTool) {
+    return (
+      <div className="ai-page ai-page-workspace">
+        <ToolModal tool={openTool} onClose={() => setOpenTool(null)} embedded />
+      </div>
+    );
+  }
+
   return (
     <div className="ai-page">
       <header className="ai-page-head">
@@ -120,8 +128,6 @@ export default function AIToolsPage() {
           <div className="ai-page-empty">No hay herramientas que coincidan con tu búsqueda.</div>
         )}
       </div>
-
-      {openTool && <ToolModal tool={openTool} onClose={() => setOpenTool(null)} />}
     </div>
   );
 }
