@@ -869,6 +869,19 @@ function extractPlanJSON(text) {
   return null;
 }
 
+function plainTextFromHtml(value = '') {
+  return String(value)
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /**
  * /api/generate-full-plan — Genera un plan semanal completo combinando:
  *   - Estándares DEPR de la materia + grado
@@ -948,6 +961,9 @@ app.post('/api/generate-full-plan', async (req, res) => {
             levelCode:   L.LessonModel?.LevelCode,
             standard:    L.LessonStandardModelList?.[0]?.Code || null,
             objective:   L.LessonStandardModelList?.[0]?.Description || '',
+            description: plainTextFromHtml(L.LessonDetailModel?.Description || ''),
+            objectives:  (L.LessonObjectiveModelList || []).map(o => plainTextFromHtml(o.Desc || o.Description || '')).filter(Boolean),
+            strategies:  (L.LessonStrategyModelList || []).map(s => plainTextFromHtml(s.Desc || s.Description || '')).filter(Boolean),
           }));
           if (subjMatches.length) athenasSource = 'live';
         }
@@ -967,7 +983,16 @@ app.post('/api/generate-full-plan', async (req, res) => {
       }).slice(0, 30);
     }
     const athenasBlock = subjMatches.length
-      ? subjMatches.map(l => `- "${l.title}"${l.standard ? ` (${l.standard})` : ''}${l.objective ? ` — ${l.objective.slice(0, 120)}` : ''}`).join('\n')
+      ? subjMatches.map(l => {
+          const parts = [
+            `- "${l.title}"${l.standard ? ` (${l.standard})` : ''}`,
+            l.objective ? `Estándar/expectativa: ${l.objective.slice(0, 180)}` : '',
+            l.description ? `Descripción Athenas: ${l.description.slice(0, 900)}` : '',
+            l.objectives?.length ? `Objetivos de la lección: ${l.objectives.slice(0, 4).join(' | ').slice(0, 500)}` : '',
+            l.strategies?.length ? `Estrategias: ${l.strategies.slice(0, 3).join(' | ').slice(0, 400)}` : '',
+          ].filter(Boolean);
+          return parts.join('\n  ');
+        }).join('\n')
       : 'No hay lecciones de Athenas en cache para esta combinación. Sugiere títulos apropiados.';
 
     // 3) Few-shot example
@@ -1010,7 +1035,10 @@ ${exampleBlock}
       "endDate": "MM/DD/YYYY",
       "evaluationDate": "MM/DD/YYYY",
       "duration": "45 min",
-      "countsForGrade": true
+      "countsForGrade": true,
+      "startActivity": "Actividad de inicio tomada o adaptada de la Descripcion de Athenas",
+      "devActivity": "Actividad de desarrollo tomada o adaptada de la Descripcion de Athenas",
+      "endActivity": "Actividad de cierre tomada o adaptada de la Descripcion de Athenas"
     }
   ],
   "sections": {
@@ -1046,6 +1074,9 @@ ${unit}
 
 Regla obligatoria de fechas para pruebas y avaluos:
 ${timingRuleClean}
+
+Regla obligatoria para actividades de la leccion:
+Si una leccion recomendada viene de Athenas y tiene "Descripcion Athenas", analiza esa descripcion para llenar startActivity, devActivity y endActivity. Usa contenido textual concreto de esa descripcion cuando existan actividades claras; si el texto no trae una division explicita, infiere Inicio, Desarrollo y Cierre sin inventar contenido ajeno al tema.
 
 Regla obligatoria para plan de mejoramiento:
 ${improvementInstruction}

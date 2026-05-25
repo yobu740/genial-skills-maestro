@@ -2421,6 +2421,9 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
           countsForGrade: !!l.countsForGrade,
           availability: l.startDate || plan.OpenDate,
           duration: l.duration || "",
+          startActivity: l.startActivity || "",
+          devActivity: l.devActivity || "",
+          endActivity: l.endActivity || "",
         })),
       ]);
     }
@@ -2438,6 +2441,9 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
         countsForGrade: !!l.countsForGrade,
         availability: l.startDate || plan.OpenDate,
         duration: l.duration || "",
+        startActivity: l.startActivity || "",
+        devActivity: l.devActivity || "",
+        endActivity: l.endActivity || "",
       }))] : lessons, SectionData: nextSections });
     }
   }
