@@ -788,39 +788,42 @@ app.get('/api/curriculum-units', async (req, res) => {
       byId.set(id, { ...unit, id, source: 'curated' });
     }
 
-    for (const plan of idx) {
-      const unitNumber = String(plan.unit || '').trim();
-      if (!unitNumber) continue;
-      const planSubject = normalizeSubjectName(plan.subject);
-      const planGrade = normalizeGradeCode(plan.scope);
-      if (selectedSubject && planSubject !== selectedSubject) continue;
-      if (selectedGrade && planGrade !== selectedGrade) continue;
+    const hasCuratedMatch = byId.size > 0 && selectedSubject && selectedGrade;
+    if (!hasCuratedMatch) {
+      for (const plan of idx) {
+        const unitNumber = String(plan.unit || '').trim();
+        if (!unitNumber) continue;
+        const planSubject = normalizeSubjectName(plan.subject);
+        const planGrade = normalizeGradeCode(plan.scope);
+        if (selectedSubject && planSubject !== selectedSubject) continue;
+        if (selectedGrade && planGrade !== selectedGrade) continue;
 
-      const id = `IDX_${planSubject}_${planGrade}_${unitNumber}`.replace(/\s+/g, '_');
-      if (byId.has(id)) {
-        const existing = byId.get(id);
-        existing.resourcesCount = (existing.resourcesCount || 0) + 1;
-        continue;
+        const id = `IDX_${planSubject}_${planGrade}_${unitNumber}`.replace(/\s+/g, '_');
+        if (byId.has(id)) {
+          const existing = byId.get(id);
+          existing.resourcesCount = (existing.resourcesCount || 0) + 1;
+          continue;
+        }
+        byId.set(id, {
+          id,
+          code: unitNumber,
+          subject: plan.subject,
+          grade: plan.scope,
+          title: `Unidad ${unitNumber}`,
+          weeks: null,
+          startWeek: null,
+          endWeek: null,
+          transferObjectives: [],
+          acquisitionObjectives: [],
+          essentialQuestions: [],
+          standards: [],
+          themes: [],
+          vocabulary: [],
+          resources: [],
+          resourcesCount: 1,
+          source: 'weekly-plans-index',
+        });
       }
-      byId.set(id, {
-        id,
-        code: unitNumber,
-        subject: plan.subject,
-        grade: plan.scope,
-        title: `Unidad ${unitNumber}`,
-        weeks: null,
-        startWeek: null,
-        endWeek: null,
-        transferObjectives: [],
-        acquisitionObjectives: [],
-        essentialQuestions: [],
-        standards: [],
-        themes: [],
-        vocabulary: [],
-        resources: [],
-        resourcesCount: 1,
-        source: 'weekly-plans-index',
-      });
     }
 
     const units = [...byId.values()].sort((a, b) => unitSortValue(a) - unitSortValue(b) || String(a.title).localeCompare(String(b.title)));

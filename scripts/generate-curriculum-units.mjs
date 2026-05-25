@@ -16,9 +16,34 @@ function gradeSource(subject, folder, grade) {
   };
 }
 
+function recursiveSource(subject, folder, grade, gradeFolder, filePattern, parser = 'unit-pdf') {
+  return {
+    subject,
+    grade,
+    dir: path.join(ROOT, 'mapas curriculares', folder, gradeFolder),
+    filePattern,
+    recursive: true,
+    parser,
+  };
+}
+
+function socialStudiesSource(grade) {
+  return {
+    subject: 'Estudios Sociales',
+    grade,
+    dir: path.join(ROOT, 'mapas curriculares', 'mapa curricular estudios sociales', `${grade} GRADO`),
+    filePattern: new RegExp(`^${grade}\\..*Bosquejo.*\\.pdf$`, 'i'),
+    parser: 'social-studies-outline',
+  };
+}
+
 const SOURCES = [
   ...Array.from({ length: 8 }, (_, index) => gradeSource('Ciencias', 'mapa curricular ciencias', index + 1)),
   ...Array.from({ length: 8 }, (_, index) => gradeSource('Matemáticas', 'mapa curricular matematicas', index + 1)),
+  ...Array.from({ length: 9 }, (_, index) => recursiveSource('Español', 'mapa curricular espanol', index + 4, `${index + 4} GRADO`, /^.*Unidad \d+\.\d+.*\.pdf$/i)),
+  ...[1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(grade => recursiveSource('Inglés', 'mapa curricular ingles', grade, `${grade} GRADE`, /^Unit \d+\.\d+.*\.pdf$/i, 'english-unit-pdf')),
+  recursiveSource('Inglés', 'mapa curricular ingles', 'K', 'KINDERGARTHEN', /^Unit K\.\d+.*\.pdf$/i, 'english-unit-pdf'),
+  ...Array.from({ length: 8 }, (_, index) => socialStudiesSource(index + 4)),
 ];
 
 function cleanText(value = '') {
@@ -31,8 +56,9 @@ function cleanText(value = '') {
 
 function cleanExtracted(value = '') {
   return cleanText(value)
-    .replace(/Unidad\s+\d+\.\d+\s*:?.*?(?:Ciencias\s+\d+|Matem[aá]ticas|Segundo grado)\s+\d+\s+semanas de instrucci[óo]n\s+p[áa]gina\s+\d+\s+(?:of|de)\s+\d+/gi, '')
+    .replace(/(?:Unidad|Unit)\s+[K\d]+\.\d+\s*:?.*?(?:Ciencias\s+\d+|Matem[aá]ticas|Español|English as a Second Language|Segundo grado)\s+\d+\s+(?:semanas|weeks) de? ?instrucci[óo]n?\s+p[áa]g(?:ina|e)\s+\d+\s+(?:of|de)\s+\d+/gi, '')
     .replace(/p[áa]gina\s+\d+\s+(?:of|de)\s+\d+/gi, '')
+    .replace(/Page\s+\d+\s+of\s+\d+/gi, '')
     .trim();
 }
 
@@ -67,10 +93,10 @@ function extractListBetween(text, startRegex, endRegex) {
 }
 
 function extractEssentialQuestions(text) {
-  const block = sliceBetween(text, /Preguntas Esenciales/i, /Objetivos de Transferencia/i);
+  const block = sliceBetween(text, /Preguntas Esenciales|Essential Questions/i, /Objetivos de Transferencia|Transfer \(T\) and Acquisition \(A\) Goals/i);
   const normalized = block.replace(/\n+/g, ' ');
   const items = [];
-  const regex = /PE(\d+)\.?\s*(.*?)(?=\s+CD\1\.?)\s+CD\1\.?\s*(.*?)(?=\s+PE\d+\.?|$)/g;
+  const regex = /(?:PE|EQ)(\d+)\.?\s*(.*?)(?=\s+(?:CD|EU)\1\.?)\s+(?:CD|EU)\1\.?\s*(.*?)(?=\s+(?:PE|EQ)\d+\.?|$)/g;
   for (const match of normalized.matchAll(regex)) {
     items.push({
       question: cleanExtracted(match[2]),
@@ -81,16 +107,16 @@ function extractEssentialQuestions(text) {
 }
 
 function extractObjectives(text) {
-  const block = sliceBetween(text, /Objetivos de Transferencia/i, /Los est[áa]ndares de Puerto Rico|Los Est[áa]ndares de Puerto Rico/i);
+  const block = sliceBetween(text, /Objetivos de Transferencia|Transfer \(T\) and Acquisition \(A\) Goals/i, /Los est[áa]ndares de Puerto Rico|Los Est[áa]ndares de Puerto Rico|Puerto Rico Core Standards/i);
   const normalized = block.replace(/\n+/g, ' ');
   const transferObjectives = [];
   const acquisitionObjectives = [];
 
-  const transfer = normalized.match(/T\d+\.\s*(.*?)(?=El estudiante adquiere destrezas para|A\d+\.|$)/i);
+  const transfer = normalized.match(/T\d+\.\s*(.*?)(?=El estudiante adquiere destrezas para|The student acquires skills to|A\d+\.|$)/i);
   if (transfer) transferObjectives.push(cleanExtracted(transfer[1]));
 
   const acquisitionRegex = /A\d+\.\s*(.*?)(?=\s+A\d+\.|$)/g;
-  const acquisitionBlock = normalized.replace(/^.*?El estudiante adquiere destrezas para\.\.\./i, '');
+  const acquisitionBlock = normalized.replace(/^.*?(El estudiante adquiere destrezas para|The student acquires skills to)\s*\.{0,4}/i, '');
   for (const match of acquisitionBlock.matchAll(acquisitionRegex)) {
     const objective = cleanExtracted(match[1]);
     if (objective) acquisitionObjectives.push(objective);
@@ -100,10 +126,10 @@ function extractObjectives(text) {
 }
 
 function extractStandards(text) {
-  const block = sliceBetween(text, /Los est[áa]ndares de Puerto Rico \(PRCS\)|Los Est[áa]ndares de Puerto Rico \(PRCS\)/i, /ETAPA 1\s+[-–]/i);
+  const block = sliceBetween(text, /Los est[áa]ndares de Puerto Rico \(PRCS\)|Los Est[áa]ndares de Puerto Rico \(PRCS\)|Puerto Rico Core Standards \(PRCS\)/i, /ETAPA 1\s+[-–]|STAGE 1\s+[-–]/i);
   const normalized = block.replace(/\n+/g, ' ');
   const standards = [];
-  const code = '\\d+\\.[A-ZÁÉÍÓÚÑ]{1,4}\\d*(?:\\.\\d+)+';
+  const code = '[K\\d]+\\.[A-ZÁÉÍÓÚÑ]{1,4}\\d*(?:\\.\\d+)+[a-z]?';
   const regex = new RegExp(`(${code})\\s+(.*?)(?=\\s+${code}\\s+|$)`, 'g');
   for (const match of normalized.matchAll(regex)) {
     const description = cleanExtracted(match[2]).replace(/\s+Unidad\s+\d+\.\d+.*$/i, '').trim();
@@ -114,9 +140,9 @@ function extractStandards(text) {
 
 function parseUnit(text, filename, source) {
   const normalized = cleanText(text);
-  const code = normalized.match(/Unidad\s+(\d+\.\d+)/i)?.[1] || filename.match(/(\d+\.\d+)/)?.[1] || '';
-  const weeks = Number(normalized.match(/(\d+)\s+semanas de instrucci[óo]n/i)?.[1]) || null;
-  const titleHeader = normalized.match(/Unidad\s+\d+\.\d+\s*:?\s*([\s\S]*?)(?:\n\s*(?:Ciencias\s+\d+|Matem[aá]ticas|Segundo grado)\s*\n)/i);
+  const code = normalized.match(/(?:Unidad|Unit)\s+([K\d]+\.\d+)/i)?.[1] || filename.match(/([K\d]+\.\d+)/i)?.[1] || '';
+  const weeks = Number(normalized.match(/(\d+)\s+(?:semanas|weeks)\s+(?:de\s+)?instrucci[óo]n/i)?.[1]) || null;
+  const titleHeader = normalized.match(/(?:Unidad|Unit)\s+[K\d]+\.\d+\s*:?\s*([\s\S]*?)(?:\n\s*(?:Ciencias\s+\d+|Matem[aá]ticas|Español|English as a Second Language|Segundo grado)\s*\n)/i);
   const title = cleanInline(titleHeader?.[1] || `Unidad ${code}`);
   const summary = stripSectionHeading(
     sliceBetween(normalized, /Resumen de\s+la\s+u\s*nidad|Resumen de\s+la\s+U\s*nidad/i, /Temas\s+t\s*ransve\s*r\s*sa\s*les|Temas\s+T\s*ransversales/i),
@@ -127,7 +153,7 @@ function parseUnit(text, filename, source) {
   const { transferObjectives, acquisitionObjectives } = extractObjectives(normalized);
 
   return {
-    id: `${source.subject === 'Ciencias' ? 'SCI' : 'MAT'}_${code.replace('.', '_')}`,
+    id: `${subjectPrefix(source.subject)}_${String(code).replace('.', '_')}`,
     code,
     subject: source.subject,
     grade: source.grade,
@@ -149,6 +175,52 @@ function parseUnit(text, filename, source) {
   };
 }
 
+function subjectPrefix(subject) {
+  if (subject === 'Ciencias') return 'SCI';
+  if (subject === 'Matemáticas') return 'MAT';
+  if (subject === 'Español') return 'ESP';
+  if (subject === 'Inglés') return 'ING';
+  if (subject === 'Estudios Sociales') return 'SOC';
+  return 'CUR';
+}
+
+function parseSocialStudiesOutline(text, filename, source) {
+  const normalized = cleanText(text).replace(/\n+/g, ' ');
+  const unitRegex = new RegExp(`\\b(${source.grade}\\.\\d+)\\s+([A-ZÁÉÍÓÚÑ0-9][A-ZÁÉÍÓÚÑ0-9\\s,¿?¡!:;\\-]*?)?(?=\\s+Temas transversales)`, 'g');
+  const matches = [...normalized.matchAll(unitRegex)];
+  return matches.map((match, index) => {
+    const code = match[1];
+    const nextIndex = matches[index + 1]?.index ?? normalized.length;
+    const chunk = normalized.slice(match.index, nextIndex);
+    const title = cleanInline(match[2] || `Unidad ${code}`).replace(/\s+/g, ' ');
+    const weeks = Number(chunk.match(/Cantidad de semanas:\s*(\d+)/i)?.[1]) || null;
+    const standards = [...new Set((chunk.match(new RegExp(`${source.grade}\\.[A-Z]{1,4}\\.?\\d*\\.\\d+`, 'g')) || []))]
+      .map(indicator => ({ code: indicator, description: '' }));
+    const content = cleanInline((chunk.match(/Contenido\s+Cantidad de semanas:\s*\d+\s+Indicadores\s+(.*?)(?=\s+\d+\.[A-Z]{1,4}|$)/i)?.[1] || '').slice(0, 1200));
+    return {
+      id: `SOC_${String(code).replace('.', '_')}`,
+      code,
+      subject: source.subject,
+      grade: source.grade,
+      title,
+      weeks,
+      summary: content,
+      transferObjectives: [],
+      acquisitionObjectives: [],
+      essentialQuestions: [],
+      standards,
+      themes: [],
+      generatorThemes: [],
+      vocabulary: [],
+      performanceTasks: [],
+      otherEvidence: [],
+      learningActivities: [],
+      sourceFiles: [{ type: 'curriculum_outline', filename }],
+      source: 'generated-local',
+    };
+  });
+}
+
 async function listSourceFiles(source) {
   let names = [];
   try {
@@ -156,7 +228,17 @@ async function listSourceFiles(source) {
   } catch {
     return [];
   }
-  return names.filter(name => source.filePattern.test(name)).sort((a, b) => a.localeCompare(b));
+  const matched = [];
+  async function walk(dir) {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory() && source.recursive) await walk(fullPath);
+      if (entry.isFile() && source.filePattern.test(entry.name)) matched.push(path.relative(source.dir, fullPath));
+    }
+  }
+  await walk(source.dir);
+  return matched.sort((a, b) => a.localeCompare(b));
 }
 
 await fs.mkdir(path.dirname(OUT), { recursive: true });
@@ -167,10 +249,15 @@ for (const source of SOURCES) {
   for (const filename of files) {
     const filePath = path.join(source.dir, filename);
     const data = await pdf(await fs.readFile(filePath));
-    const unit = parseUnit(data.text, filename, source);
-    if (!unit.code) continue;
-    units.push(unit);
-    console.log(`${source.subject} ${source.grade} U${unit.code} ${unit.title} (${data.numpages} pages): ${unit.standards.length} standards`);
+    const parsedUnits = source.parser === 'social-studies-outline'
+      ? parseSocialStudiesOutline(data.text, filename, source)
+      : [parseUnit(data.text, filename, source)];
+    for (const unit of parsedUnits) {
+      if (!unit.code) continue;
+      if (unit.standards.length === 0 && source.subject === 'Inglés') continue;
+      units.push(unit);
+      console.log(`${source.subject} ${source.grade} U${unit.code} ${unit.title} (${data.numpages} pages): ${unit.standards.length} standards`);
+    }
   }
 }
 
