@@ -230,18 +230,21 @@ export const GENIAL_CSS = `
 .alp-bp{background:#eef2ff;color:#3730a3;font-size:10px;padding:1px 6px;border-radius:4px}
 .alp-gc{background:#fef3c7;color:#92400e;font-size:10px;padding:1px 6px;border-radius:4px}
 
-/* Escuelas en mejoramiento escolar — checklist UI */
-.ipc{font-family:'Poppins',system-ui,sans-serif}
-.ipc-banner{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#FFF4DD,#FFEACF);border:1px solid #E89B1E;border-radius:10px;padding:12px 14px;margin-bottom:18px}
-.ipc-banner>div{flex:1}
-.ipc-count{background:#E89B1E;color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:.04em}
-.ipc-row{background:#fff;border:1px solid #e4e4e4;border-radius:10px;margin-bottom:12px;overflow:hidden}
-.ipc-row-head{background:#3DA8A8;color:#fff;padding:10px 14px;font-weight:600;font-size:13.5px;letter-spacing:.01em}
-.ipc-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;padding:8px}
-.ipc-opt{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:#33353d;transition:background .12s}
-.ipc-opt:hover{background:#f4f6f9}
-.ipc-opt.on{background:#E8F5F4;color:#246F6F;font-weight:600}
-.ipc-opt input{accent-color:#3DA8A8;cursor:pointer;width:16px;height:16px;flex-shrink:0}
+/* CreatableSection — list/form pattern (used by fl-plan1, fl-plan2, fl-innov) */
+.cs-form{font-family:'Poppins',system-ui,sans-serif}
+.cs-block{background:#fff;border-bottom:1px solid #e4e4e4;padding:18px 0;margin-bottom:0}
+.cs-block:first-of-type{padding-top:8px}
+.cs-block:last-child{border-bottom:0}
+.cs-block-title{font-size:16px;font-weight:700;color:#33353d;margin:0 0 12px;letter-spacing:.005em}
+.cs-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px 16px}
+.cs-opt{display:inline-flex;align-items:center;gap:10px;padding:8px 4px;cursor:pointer;font-size:13.5px;color:#33353d;transition:color .12s}
+.cs-opt:hover{color:#27466c}
+.cs-opt.on{color:#246F6F;font-weight:600}
+.cs-opt input{accent-color:#3DA8A8;cursor:pointer;width:16px;height:16px;flex-shrink:0;margin:0}
+.cs-days{display:inline-flex;gap:4px;background:#f8f9fb;border:1px solid #e4e4e4;border-radius:8px;padding:8px}
+.cs-day{background:transparent;border:0;width:36px;height:36px;border-radius:6px;font:inherit;font-size:13px;color:#868686;cursor:pointer;font-weight:500;transition:all .12s;text-transform:lowercase}
+.cs-day:hover{background:#e4e4e4;color:#33353d}
+.cs-day.on{background:#3DA8A8;color:#fff;font-weight:700}
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1056,72 +1059,285 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  Escuela en plan de mejoramiento — checklist fijo del DEPR
-//  Options come from the official template; teacher marks all that apply.
+//  CREATABLE SECTIONS — sections that mirror the real DEPR cotejo:
+//    list view (table) → "Crear nueva" → form (date picker + dynamic fields)
+//  Each entry is stored in sectionData[key] as an array of { id, dates, ...fields }.
 // ─────────────────────────────────────────────────────────────────────────────
-const IMPROVEMENT_PLAN_ROWS = [
-  {
-    label: 'Modos de instrucción para promover la respuesta activa del estudiante',
-    options: [
-      'Dirigida por el maestro',
-      'Grupo dirigido por el maestro',
-      'Grupo(s) dirigido(s) por el estudiante',
-      'Práctica guiada',
-      'Práctica individual',
-    ],
-  },
-  {
-    label: 'La lección incluye',
-    options: [
-      'Respuesta activa del estudiante',
-      'Actividad de comprobación del aprendizaje',
-    ],
-  },
-];
+const DAYS_ES = ['lu', 'ma', 'mi', 'ju', 'vi', 'sá', 'do'];
 
-function ImprovementPlanChecklist({ checks, onToggle, onSave }) {
-  const TOTAL = IMPROVEMENT_PLAN_ROWS.reduce((acc, r) => acc + r.options.length, 0);
-  const checkedCount = Object.values(checks || {}).filter(Boolean).length;
+const CREATABLE_SECTIONS = {
+  'fl-plan1': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione los modos de instrucción que desea agregar para promover la respuesta activa del estudiante.',
+    listColumns: [
+      { key: 'modos',   label: 'Modos de instrucción', render: (e) => (e.modos || []).join(', ') },
+      { key: 'incluye', label: 'La lección incluye',   render: (e) => (e.incluye || []).join(', ') },
+      { key: 'dates',   label: 'Días',                 render: renderDates },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'checkboxes', name: 'modos', label: 'Seleccione uno o varios modos de instrucción para promover la respuesta activa del estudiante.', options: [
+        'Dirigida por el maestro', 'Grupo dirigido por el maestro', 'Grupo(s) dirigido(s) por el estudiante',
+        'Práctica guiada', 'Práctica individual',
+      ]},
+      { type: 'checkboxes', name: 'incluye', label: 'La lección incluye:', options: [
+        'Respuesta activa del estudiante', 'Actividad de comprobación del aprendizaje',
+      ]},
+    ],
+  },
+  'fl-plan2': {
+    title: 'Crear nueva',
+    subtitle: 'Escriba la experiencia común (2 a 3 minutos) que desea agregar para la escuela en Plan de Mejoramiento.',
+    listColumns: [
+      { key: 'text',  label: 'Experiencia común', render: (e) => (e.text || '').slice(0, 120) + ((e.text || '').length > 120 ? '…' : '') },
+      { key: 'dates', label: 'Días',              render: renderDates },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'textarea', name: 'text',
+        label: 'Describa la experiencia común (2 a 3 minutos) que se implementará en la escuela en Plan de Mejoramiento.',
+        placeholder: 'Detalle la experiencia común (2 a 3 minutos).',
+        aiAssist: true,
+        rows: 5,
+      },
+    ],
+  },
+  'fl-innov': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione la o las iniciativas o proyectos innovadores que desea integrar a su planificación.',
+    listColumns: [
+      { key: 'tipos', label: 'Iniciativa o proyecto innovador', render: (e) => (e.tipos || []).join(', ') },
+      { key: 'dates', label: 'Días',                            render: renderDates },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'checkboxes', name: 'tipos', label: 'Seleccione las iniciativas o proyectos innovadores que desea agregar.', options: [
+        'Tecnología', 'PBL', 'STEM', 'STEAM', 'Innovación', 'Emprendimiento', 'Otro',
+      ]},
+    ],
+  },
+};
+
+function renderDates(entry) {
+  if (entry?.dates?.wholeWeek) return 'Toda la semana';
+  const days = entry?.dates?.days || [];
+  if (!days.length) return '—';
+  return days.map(d => d[0].toUpperCase() + d.slice(1)).join(', ');
+}
+
+function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext }) {
+  const [editing, setEditing] = useState(null); // null = list view; otherwise the entry being created/edited
+
+  function startCreate() {
+    setEditing({ id: `e_${Date.now()}`, dates: { wholeWeek: false, days: [] } });
+  }
+  function startEdit(entry) { setEditing({ ...entry }); }
+  function cancel() { setEditing(null); }
+  function commit() {
+    onUpsert(editing);
+    setEditing(null);
+  }
+
+  if (editing) {
+    return (
+      <EntryForm
+        cfg={cfg}
+        entry={editing}
+        onChange={setEditing}
+        onCancel={cancel}
+        onSave={commit}
+        aiContext={aiContext}
+      />
+    );
+  }
 
   return (
-    <div className="ipc">
-      <div className="ipc-banner">
-        <span style={{ fontSize: 18 }}>🏫</span>
-        <div>
-          <div style={{ fontWeight: 700, color: '#7A4F00' }}>Escuelas en mejoramiento escolar</div>
-          <div style={{ fontSize: 12, color: '#33353d' }}>
-            Marca los modos de instrucción y los componentes de la lección que aplican. Puedes marcar varios.
-          </div>
-        </div>
-        <span className="ipc-count">{checkedCount}/{TOTAL}</span>
-      </div>
+    <>
+      <p style={{ fontSize: 13, color: '#555', marginBottom: 14 }}>{cfg.subtitle}</p>
+      <button className="pl btn-base btn-primary" style={{ marginBottom: 18 }} onClick={startCreate}>
+        ⊕ Crear nueva
+      </button>
+      {entries.length === 0 ? (
+        <p style={{ textAlign: 'center', color: '#bbb', fontSize: 13, padding: '20px 0' }}>
+          No hay entradas todavía. Click en <strong>+ Crear nueva</strong> para agregar una.
+        </p>
+      ) : (
+        <table className="ppalTable">
+          <thead>
+            <tr>
+              {cfg.listColumns.map(c => <th key={c.key}>{c.label}</th>)}
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {entries.map(e => (
+              <tr key={e.id}>
+                {cfg.listColumns.map(c => <td key={c.key}>{c.render(e) || '—'}</td>)}
+                <td style={{ display: 'flex', gap: 6, justifyContent: 'flex-end' }}>
+                  <button className="btn btn-normal" style={{ padding: '5px 12px' }} onClick={() => startEdit(e)}>✎ Ver/Editar</button>
+                  <button className="pl btn-simple" style={{ color: '#e32f28', fontSize: 16 }} onClick={() => onDelete(e.id)}>🗑</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
+  );
+}
 
-      {IMPROVEMENT_PLAN_ROWS.map(row => (
-        <div key={row.label} className="ipc-row">
-          <div className="ipc-row-head">{row.label}</div>
-          <div className="ipc-options">
-            {row.options.map(opt => {
-              const isChecked = !!checks?.[opt];
-              return (
-                <label key={opt} className={`ipc-opt ${isChecked ? 'on' : ''}`}>
-                  <input
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={() => onToggle(opt)}
-                  />
-                  <span>{opt}</span>
-                </label>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext }) {
+  function setField(name, val) { onChange({ ...entry, [name]: val }); }
+  function toggleDay(day) {
+    const days = entry.dates?.days || [];
+    const next = days.includes(day) ? days.filter(d => d !== day) : [...days, day];
+    onChange({ ...entry, dates: { wholeWeek: false, days: next } });
+  }
+  function setWholeWeek(on) {
+    onChange({ ...entry, dates: { wholeWeek: on, days: on ? [...DAYS_ES] : [] } });
+  }
+  function toggleOpt(name, opt) {
+    const arr = entry[name] || [];
+    const next = arr.includes(opt) ? arr.filter(o => o !== opt) : [...arr, opt];
+    setField(name, next);
+  }
 
-      <div className="Region-w-action" style={{ marginTop: 14, display: 'flex', gap: 10 }}>
-        <button className="pl btn-base btn-primary" onClick={onSave}>
-          💾 Guardar selecciones
+  const canSave = (entry.dates?.days?.length || entry.dates?.wholeWeek) &&
+                  cfg.fields.some(f => f.type !== 'dates' && (
+                    (f.type === 'checkboxes' && (entry[f.name] || []).length > 0) ||
+                    (f.type === 'textarea'   && (entry[f.name] || '').trim().length > 0)
+                  ));
+
+  return (
+    <div className="cs-form">
+      <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
+        <button className="pl btn-base btn-regular" onClick={onCancel}>Cancelar</button>
+        <button className="pl btn-base btn-primary" disabled={!canSave} onClick={onSave}>
+          💾 Guardar
         </button>
       </div>
+
+      {cfg.fields.map((f, i) => {
+        if (f.type === 'dates') {
+          return <DatePickerField key={i} value={entry.dates} onChange={(v) => setField('dates', v)} onToggleDay={toggleDay} onWholeWeek={setWholeWeek} />;
+        }
+        if (f.type === 'checkboxes') {
+          return (
+            <div key={i} className="cs-block">
+              <h3 className="cs-block-title">{f.label}</h3>
+              <div className="cs-checks">
+                {f.options.map(opt => {
+                  const on = (entry[f.name] || []).includes(opt);
+                  return (
+                    <label key={opt} className={`cs-opt ${on ? 'on' : ''}`}>
+                      <input type="checkbox" checked={on} onChange={() => toggleOpt(f.name, opt)} />
+                      <span>{opt}</span>
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }
+        if (f.type === 'textarea') {
+          return (
+            <div key={i} className="cs-block">
+              <h3 className="cs-block-title">{f.label}</h3>
+              {f.aiAssist && <AIAssistButton onText={(t) => setField(f.name, t)} fieldLabel={f.label} aiContext={aiContext} />}
+              <textarea
+                className="form-control"
+                rows={f.rows || 4}
+                placeholder={f.placeholder}
+                value={entry[f.name] || ''}
+                onChange={(e) => setField(f.name, e.target.value)}
+              />
+            </div>
+          );
+        }
+        return null;
+      })}
+    </div>
+  );
+}
+
+function DatePickerField({ value, onToggleDay, onWholeWeek }) {
+  const days = value?.days || [];
+  const wholeWeek = !!value?.wholeWeek;
+  return (
+    <div className="cs-block">
+      <h3 className="cs-block-title">Seleccione la fecha para esta actividad</h3>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 12 }}>
+        <span style={{ fontWeight: 600, color: '#33353d', fontSize: 13 }}>¿Desea que la fecha aplique para toda la semana?</span>
+        <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
+          <input type="radio" name="ww" checked={wholeWeek} onChange={() => onWholeWeek(true)} style={{ accentColor: '#3DA8A8' }} /> Sí
+        </label>
+        <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
+          <input type="radio" name="ww" checked={!wholeWeek} onChange={() => onWholeWeek(false)} style={{ accentColor: '#3DA8A8' }} /> No
+        </label>
+      </div>
+      {!wholeWeek && (
+        <>
+          <div style={{ fontSize: 12, color: '#555', marginBottom: 8 }}>Seleccione los días de la semana que desea para esta actividad:</div>
+          <div className="cs-days">
+            {DAYS_ES.map(d => (
+              <button
+                key={d}
+                type="button"
+                className={`cs-day ${days.includes(d) ? 'on' : ''}`}
+                onClick={() => onToggleDay(d)}
+              >
+                {d}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function AIAssistButton({ onText, fieldLabel, aiContext }) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  async function suggest() {
+    setBusy(true); setError('');
+    try {
+      const sys = `Eres un asistente pedagógico del DEPR de Puerto Rico. Responde con un párrafo breve, claro, profesional, listo para que el maestro lo pegue en el campo "${fieldLabel}". NO uses markdown, NO uses listas — solo texto plano.`;
+      const user = `Plan: ${aiContext?.plan?.PlanName || ''}. Materia: ${aiContext?.plan?.SubjectName || ''}. Grado: ${aiContext?.plan?.LevelCode || ''}. Sección: ${aiContext?.sectionLabel || ''}.\n\nGenera una sugerencia concreta y breve (2-4 oraciones) apropiada para esta sección del cotejo.`;
+      const r = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'anthropic/claude-haiku-4.5', system: sys, user }),
+      });
+      if (!r.ok || !r.body) throw new Error(`HTTP ${r.status}`);
+      const reader = r.body.getReader();
+      const decoder = new TextDecoder();
+      let out = ''; let buf = '';
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n'); buf = lines.pop() ?? '';
+        for (const l of lines) {
+          if (!l.startsWith('data:')) continue;
+          const p = l.slice(5).trim();
+          if (p === '[DONE]') continue;
+          try { const j = JSON.parse(p); if (j.delta) out += j.delta; } catch {}
+        }
+      }
+      onText(out.trim());
+    } catch (e) {
+      setError(e.message || String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+  return (
+    <div style={{ marginBottom: 8 }}>
+      <button type="button" className="pl btn-base btn-regular" style={{ fontSize: 12, padding: '4px 12px' }} disabled={busy} onClick={suggest}>
+        {busy ? '⏳ Generando…' : '✨ Sugerir con IA'}
+      </button>
+      {error && <span style={{ marginLeft: 10, color: '#7a1a14', fontSize: 11 }}>{error}</span>}
     </div>
   );
 }
@@ -1139,33 +1355,7 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
 
-  // "Escuela en plan de mejoramiento" — when enabled, injects an extra
-  // section in the cotejo sidebar between Observaciones and Reflexión.
-  const [inImprovement, setInImprovement] = useState(!!plan.InImprovementPlan);
-  const [improvementChecks, setImprovementChecks] = useState(
-    plan.ImprovementChecks || {}
-  );
-
-  // Build the effective cotejo: inject "Escuelas en mejoramiento escolar"
-  // right before fl-reflex when the flag is on.
-  const effectiveCotejo = useMemo(() => {
-    if (!inImprovement) return MOCK.cotejo;
-    const out = [];
-    for (const item of MOCK.cotejo) {
-      if (item.key === "fl-reflex") {
-        out.push({
-          key: "fl-mejoramiento",
-          label: "Escuelas en mejoramiento escolar",
-          type: "item",
-          group: "Contenido libre",
-        });
-      }
-      out.push(item);
-    }
-    return out;
-  }, [inImprovement]);
-
-  const current = effectiveCotejo.find(s => s.key === section);
+  const current = MOCK.cotejo.find(s => s.key === section);
 
   async function savePlanChanges(next = {}) {
     setSaveStatus("Guardando...");
@@ -1174,8 +1364,6 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
       ...next,
       Lessons: next.Lessons || lessons,
       SectionData: next.SectionData || sectionData,
-      InImprovementPlan: 'InImprovementPlan' in next ? next.InImprovementPlan : inImprovement,
-      ImprovementChecks: next.ImprovementChecks || improvementChecks,
     });
     onPlanSaved?.(saved);
     setSaveStatus(saved.SavedLocally ? "Guardado localmente" : "Guardado");
@@ -1183,17 +1371,22 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
     return saved;
   }
 
-  function toggleImprovement(on) {
-    setInImprovement(on);
-    // If user just enabled it, also auto-jump to the new section so they see it
-    if (on) setSection("fl-mejoramiento");
-    // Persist the flag immediately so it survives reloads
-    savePlanChanges({ InImprovementPlan: on });
+  // Add or replace an entry in a creatable section. Each entry has its own id.
+  function upsertSectionEntry(sectionKey, entry) {
+    const existing = Array.isArray(sectionData[sectionKey]) ? sectionData[sectionKey] : [];
+    const idx = existing.findIndex(e => e.id === entry.id);
+    const next = idx === -1 ? [...existing, entry] : existing.map(e => e.id === entry.id ? entry : e);
+    const nextData = { ...sectionData, [sectionKey]: next };
+    setSectionData(nextData);
+    savePlanChanges({ SectionData: nextData });
   }
 
-  function toggleImprovementCheck(option) {
-    const next = { ...improvementChecks, [option]: !improvementChecks[option] };
-    setImprovementChecks(next);
+  function deleteSectionEntry(sectionKey, entryId) {
+    const existing = Array.isArray(sectionData[sectionKey]) ? sectionData[sectionKey] : [];
+    const next = existing.filter(e => e.id !== entryId);
+    const nextData = { ...sectionData, [sectionKey]: next };
+    setSectionData(nextData);
+    savePlanChanges({ SectionData: nextData });
   }
 
   function handleAIFill(data) {
@@ -1239,12 +1432,14 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
       return <PlanningPreviewArea plan={plan} lessons={lessons} sectionData={sectionData} previewLessonId={previewLessonId} setPreviewLessonId={setPreviewLessonId} />;
     }
 
-    if (section === "fl-mejoramiento") {
+    if (CREATABLE_SECTIONS[section]) {
       return (
-        <ImprovementPlanChecklist
-          checks={improvementChecks}
-          onToggle={toggleImprovementCheck}
-          onSave={() => savePlanChanges({ ImprovementChecks: improvementChecks })}
+        <CreatableSection
+          cfg={CREATABLE_SECTIONS[section]}
+          entries={Array.isArray(sectionData[section]) ? sectionData[section] : []}
+          onUpsert={(entry) => upsertSectionEntry(section, entry)}
+          onDelete={(id) => deleteSectionEntry(section, id)}
+          aiContext={{ plan, sectionLabel: current?.label }}
         />
       );
     }
@@ -1376,36 +1571,15 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
         <strong>Año académico:</strong> {plan.AcademicYear || "agosto 29, 2023 - mayo 31, 2030"}
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#33353d", paddingBottom: 12, borderBottom: "1px solid var(--palette-gray-silver)", marginBottom: 12 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#33353d", paddingBottom: 12, borderBottom: "1px solid var(--palette-gray-silver)", marginBottom: 18 }}>
         <span style={{ color: "#868686" }}>⏱</span>
         <span>Este plan cerrará en: <strong>{plan.ClosesOn || "mayo 31, 2030"}</strong></span>
       </div>
 
-      {/* Plan de mejoramiento escolar toggle — when on, a new sidebar section appears */}
-      <label
-        title="Si la escuela está en plan de mejoramiento, aparece una sección extra del cotejo con los modos de instrucción a marcar."
-        style={{
-          display: "inline-flex", alignItems: "center", gap: 10,
-          padding: "8px 14px", marginBottom: 18,
-          background: inImprovement ? "#FFEACF" : "#F4F6F9",
-          border: `1px solid ${inImprovement ? "#E89B1E" : "#E4E9F0"}`,
-          borderRadius: 999, cursor: "pointer",
-          fontSize: 13, fontWeight: 600, color: inImprovement ? "#7A4F00" : "#364965",
-          transition: "all .15s",
-        }}>
-        <input
-          type="checkbox"
-          checked={inImprovement}
-          onChange={(e) => toggleImprovement(e.target.checked)}
-          style={{ accentColor: "#E89B1E", cursor: "pointer", width: 16, height: 16 }}
-        />
-        🏫 La escuela está en plan de mejoramiento escolar
-      </label>
-
       <div className="containerPlanning">
         <div className="containerPlanning__sidebar">
-          <nav className="sidebarMenu" data-effective-cotejo>
-            {effectiveCotejo.map(s => {
+          <nav className="sidebarMenu">
+            {MOCK.cotejo.map(s => {
               if (s.type === "ppal")  return (
                 <div key={s.key} className="sidebarMenu--group">
                   <div className="sidebarMenu--itemPpal" onClick={() => setSection("cotejo")}><span>⌄</span></div>
