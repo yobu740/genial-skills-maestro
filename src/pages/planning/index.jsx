@@ -466,6 +466,43 @@ function normalizePlanDate(value) {
   return text;
 }
 
+function normalizeCurriculumText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+const SUBJECT_ALIASES = {
+  matematica: "matematicas",
+  matematicas: "matematicas",
+  math: "matematicas",
+  mathematics: "matematicas",
+  ciencias: "ciencias",
+  science: "ciencias",
+  sociales: "estudios sociales",
+  "estudios sociales": "estudios sociales",
+  "ciencias sociales": "estudios sociales",
+  "social studies": "estudios sociales",
+  ingles: "ingles",
+  english: "ingles",
+  ela: "ingles",
+  espanol: "espanol",
+  spanish: "espanol",
+  "artes del lenguaje": "espanol",
+};
+
+function normalizeSubjectName(value) {
+  const normalized = normalizeCurriculumText(value);
+  return SUBJECT_ALIASES[normalized] || normalized;
+}
+
+function normalizeGradeCode(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
 function localPlanningStore() {
   try {
     const saved = JSON.parse(localStorage.getItem("gsm_teacher_plannings") || "[]");
@@ -2741,11 +2778,11 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
     fetch("/data/units.json")
       .then(res => res.ok ? res.json() : { units: [] })
       .then(json => {
-        const subject = String(plan.SubjectName || "").toLowerCase();
-        const grade = String(plan.LevelCode || "").replace(/\D/g, "");
+        const subject = normalizeSubjectName(plan.SubjectName);
+        const grade = normalizeGradeCode(plan.LevelCode);
         const filtered = (json.units || []).filter(u => {
-          const unitSubject = String(u.subject || "").toLowerCase();
-          const unitGrade = String(u.grade || "").replace(/\D/g, "");
+          const unitSubject = normalizeSubjectName(u.subject);
+          const unitGrade = normalizeGradeCode(u.grade);
           return unitSubject === subject && unitGrade === grade;
         });
         setUnits(filtered);
