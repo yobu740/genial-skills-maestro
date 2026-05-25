@@ -1080,6 +1080,52 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
     });
     return cells;
   }
+  function cellsForCreatableSection(sectionKey, title, mapper, fallbackText) {
+    const cells = Array.from({ length: 7 }, () => []);
+    const entries = sectionData[sectionKey];
+    if (Array.isArray(entries) && entries.length > 0) {
+      entries.forEach(e => {
+        const entryDays = e.dates?.wholeWeek 
+          ? days.map(d => d.date) 
+          : (e.dates?.days || []);
+        entryDays.forEach(d => {
+          const dayIdx = days.findIndex(day => day.date === d);
+          if (dayIdx >= 0) {
+            cells[dayIdx].push({
+              title: title,
+              desc: mapper(e)
+            });
+          }
+        });
+      });
+    } else if (fallbackText) {
+      const targetDay = 0;
+      cells[targetDay].push({ title, desc: fallbackText });
+    }
+    return cells;
+  }
+
+  function cellsForTasksSection() {
+    const cells = Array.from({ length: 7 }, () => []);
+    const entries = sectionData["gl-tasks"];
+    if (Array.isArray(entries) && entries.length > 0) {
+      entries.forEach(e => {
+        const items = e.items || [];
+        items.forEach(item => {
+          if (item.date && item.assignmentTitle) {
+            const dayIdx = days.findIndex(day => day.date === item.date);
+            if (dayIdx >= 0) {
+              cells[dayIdx].push({
+                title: "Asignaciones",
+                desc: `${item.assignmentTitle}${e.countsForGrade ? " (Cuenta para nota)" : ""}`
+              });
+            }
+          }
+        });
+      });
+    }
+    return cells;
+  }
     
   const rows = [
     { label: "Lecciones", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => [{ title: "Contenido genial", desc: lessonTitleFor(l) }]) },
@@ -1111,36 +1157,15 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
         { title: lessonTitleFor(l), desc: "Comprension lectora" },
       ]),
     },
-    { label: "Integracion con otras materias", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), () => [{ title: "Integracion con otras materias", desc: textOrFallback(sectionData["fl-integ"] && Array.isArray(sectionData["fl-integ"]) ? sectionData["fl-integ"].map(e => (e.materias || []).join(", ")).filter(Boolean).join("; ") : "", "Artes Visuales e Ingles") }]) },
-    { label: "Iniciativa o proyecto innovador", cells: cellsForLessons(l => Math.min(lessonDayIndex(l, days, plan) + 1, 6), () => [{ title: "Iniciativa o proyecto innovador", desc: textOrFallback(sectionData["fl-innov"] && Array.isArray(sectionData["fl-innov"]) ? sectionData["fl-innov"].map(e => (e.tipos || []).join(", ")).filter(Boolean).join("; ") : "", "STEM") }]) },
-    {
-      label: "Evaluaciones (Avalúos)",
-      cells: cellsForLessons(l => evaluationDayIndex(l, days, plan), l => [
-        { title: lessonTitleFor(l), desc: "Prueba de comprobacion", time: "10:00 AM" },
-      ]),
-    },
-    { label: "Acomodos razonables", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), () => [{ title: "Acomodos razonables", desc: sectionData["fl-acom"] || "" }]) },
-    {
-      label: "Estrategias de instruccion diferenciada",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), () => [{
-        title: "Estrategias de instruccion diferenciada",
-        desc: textOrFallback(sectionData["fl-strat"] && Array.isArray(sectionData["fl-strat"]) ? sectionData["fl-strat"].map(e => `${e.categoria}: ${e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : e.tipo}`).filter(Boolean).join("; ") : "", "Instruccion diferenciada por proceso")
-      }])
-    },
-    {
-      label: "Materiales",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), () => [{
-        title: "Materiales",
-        desc: textOrFallback(sectionData["fl-mats"] && Array.isArray(sectionData["fl-mats"]) ? sectionData["fl-mats"].map(e => (e.materiales || []).join(", ")).filter(Boolean).join("; ") : "", "Libro digital, pizarra interactiva y recursos visuales de la leccion.")
-      }])
-    },
-    {
-      label: "Observaciones",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), () => [{
-        title: "Observaciones",
-        desc: textOrFallback(sectionData["fl-obs"] && Array.isArray(sectionData["fl-obs"]) ? sectionData["fl-obs"].map(e => e.text).filter(Boolean).join("; ") : "", "")
-      }])
-    },
+    { label: "Integracion con otras materias", cells: cellsForCreatableSection("fl-integ", "Integracion con otras materias", e => (e.materias || []).join(", "), "Artes Visuales e Ingles") },
+    { label: "Iniciativa o proyecto innovador", cells: cellsForCreatableSection("fl-innov", "Iniciativa o proyecto innovador", e => (e.tipos || []).join(", "), "STEM") },
+    { label: "Evaluaciones (Avalúos)", cells: cellsForCreatableSection("fl-eval", "Evaluaciones (Avalúos)", e => [...(e.diagnostica || []), ...(e.formativa || []), ...(e.sumativa || [])].join(", ")) },
+    { label: "Acomodos razonables", cells: cellsForCreatableSection("fl-acom", "Acomodos razonables", e => `${e.categoriaAcomodo}: ${(e.acomodos || []).join(", ")}`) },
+    { label: "Estrategias de instruccion diferenciada", cells: cellsForCreatableSection("fl-strat", "Estrategias de instruccion diferenciada", e => `${e.categoria}: ${e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : e.tipo}`, "Instruccion diferenciada por proceso") },
+    { label: "Materiales", cells: cellsForCreatableSection("fl-mats", "Materiales", e => (e.materiales || []).join(", "), "Libro digital, pizarra interactiva y recursos visuales de la leccion.") },
+    { label: "Observaciones", cells: cellsForCreatableSection("fl-obs", "Observaciones", e => e.text) },
+    { label: "Foros", cells: cellsForCreatableSection("gl-forums", "Foros", e => e.titulo) },
+    { label: "Asignaciones", cells: cellsForTasksSection() },
     { label: "Actividad de Inicio", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.startActivity ? [{ title: lessonTitleFor(l), desc: l.startActivity }] : []) },
     { label: "Actividad de desarrollo", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.devActivity ? [{ title: lessonTitleFor(l), desc: l.devActivity }] : []) },
     { label: "Actividad de cierre", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.endActivity ? [{ title: lessonTitleFor(l), desc: l.endActivity }] : []) },
@@ -1257,6 +1282,63 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
 //  Each entry is stored in sectionData[key] as an array of { id, dates, ...fields }.
 // ─────────────────────────────────────────────────────────────────────────────
 const DAYS_ES = ['lu', 'ma', 'mi', 'ju', 'vi', 'sá', 'do'];
+
+const EVAL_OPTIONS = [
+  'Diario Reflexivo', 'Organigrama', 'Reacción Inmediata',
+  'Punto más confuso', 'Ensayo', 'Preprueba',
+  'Postprueba', 'Examen parcial', 'Examen final',
+  'Prueba corta', 'Mapa de conceptos', 'Tirillas Cómicas',
+  'Informe Oral', 'Presentaciones Orales', 'Juegos',
+  'Laboratorio Cartográfico', 'Trabajo de investigación', 'Trabajo especial',
+  'Dramatización', 'Redacción de composición o ensayos', 'Informe Escrito',
+  'Edmodo', 'Torbellino', 'Portafolio',
+  'Entrevistas', 'Panel', 'Encuesta',
+  'Lista de cotejo', 'Otro'
+];
+
+const ACOMODOS_MAP = {
+  "Educación Especial": [
+    "Tiempo adicional (tiempo y medio)",
+    "Lugar libre de distracciones",
+    "Uso de calculadora",
+    "Lectura oral de las pruebas / instrucciones",
+    "Uso de equipo de asistencia tecnológica",
+    "Tutoría individual",
+    "Sentar cerca del maestro",
+    "Dividir el trabajo en partes o sesiones",
+    "Descansos frecuentes",
+    "Uso de manipulativos",
+    "Fórmula de respuesta en el folleto",
+    "Otro"
+  ],
+  "LSP": [
+    "Uso de diccionario bilingüe",
+    "Tiempo adicional para la ejecución",
+    "Aclaraciones de términos o vocabulario en español/inglés",
+    "Simplificación de instrucciones escritas",
+    "Lectura oral en el idioma materno si es necesario",
+    "Uso de apoyos visuales y traducción",
+    "Otro"
+  ],
+  "Sección 504": [
+    "Tiempo adicional para completar tareas",
+    "Lugar preferencial (cerca del maestro/pizarra)",
+    "Lugar libre de distracciones",
+    "Modificación de formato de exámenes (ej. letra más grande)",
+    "Uso de calculadora o computadora para escribir",
+    "Descansos programados o frecuentes",
+    "Otro"
+  ],
+  "Dotados": [
+    "Enriquecimiento curricular con actividades de mayor profundidad",
+    "Tareas o proyectos de investigación independientes",
+    "Materiales de lectura avanzados u opcionales",
+    "Tutoría de pares (apoyo y liderazgo en grupos)",
+    "Velocidad acelerada de aprendizaje en conceptos clave",
+    "Flexibilidad en la demostración del dominio del contenido",
+    "Otro"
+  ]
+};
 
 const STRAT_TYPES = {
   "Contenido": [
@@ -1451,6 +1533,90 @@ const CREATABLE_SECTIONS = {
         condition: (entry) => entry.tipo === 'Otro'
       }
     ]
+  },
+  'fl-eval': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione la o las evaluaciones y avalúos que desea integrar a su planificación',
+    listColumns: [
+      { key: 'evaluaciones', label: 'Evaluaciones (Avalúos)', render: (e) => [...(e.diagnostica || []), ...(e.formativa || []), ...(e.sumativa || [])].join(', ') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      {
+        type: 'checkboxes',
+        name: 'diagnostica',
+        label: 'Seleccione una o varias para la evaluación y avalúos (Diagnóstica)',
+        options: EVAL_OPTIONS
+      },
+      {
+        type: 'checkboxes',
+        name: 'formativa',
+        label: 'Seleccione una o varias para la evaluación y avalúos (Formativa)',
+        options: EVAL_OPTIONS
+      },
+      {
+        type: 'checkboxes',
+        name: 'sumativa',
+        label: 'Seleccione una o varias para la evaluación y avalúos (Sumativa)',
+        options: EVAL_OPTIONS
+      }
+    ]
+  },
+  'fl-acom': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione los acomodos que desea agregar a su planificación',
+    listColumns: [
+      { key: 'categoriaAcomodo', label: 'Tipo de acomodo', render: (e) => e.categoriaAcomodo || '—' },
+      { key: 'acomodos', label: 'Acomodos razonables', render: (e) => (e.acomodos || []).join(', ') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      {
+        type: 'select',
+        name: 'categoriaAcomodo',
+        label: 'Seleccione la categoría de acomodo',
+        options: ['Educación Especial', 'LSP', 'Sección 504', 'Dotados']
+      },
+      {
+        type: 'checkboxes',
+        name: 'acomodos',
+        label: 'Acomodos razonables',
+        options: (entry) => {
+          return ACOMODOS_MAP[entry.categoriaAcomodo] || [];
+        },
+        condition: (entry) => !!entry.categoriaAcomodo
+      }
+    ]
+  },
+  'gl-forums': {
+    title: 'Crear nueva',
+    subtitle: 'Añada el foro que desea agregar a su planificación',
+    listColumns: [
+      { key: 'titulo', label: 'Título del foro', render: (e) => e.titulo || '—' },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'text', name: 'titulo', label: 'Título del foro', placeholder: 'Título del foro' },
+      { type: 'textarea', name: 'descripcion', label: 'Añada la descripción del foro', placeholder: 'Escriba la descripción del foro aquí...', rows: 5 }
+    ]
+  },
+  'gl-tasks': {
+    title: 'Crear nueva',
+    subtitle: 'Añada las asignaciones que desea agregar a su planificación',
+    listColumns: [
+      { key: 'asignaciones', label: 'Asignación asociada', render: (e) => (e.items || []).map(item => item.assignmentTitle).join(', ') },
+      { key: 'fecha', label: 'Fecha', render: (e) => (e.items || []).map(item => item.date).join(', ') },
+      { key: 'nota', label: 'Cuenta para nota', render: (e) => e.countsForGrade ? 'Sí' : 'No' }
+    ],
+    fields: [
+      { type: 'assignments_picker', name: 'items' }
+    ]
   }
 };
 
@@ -1524,6 +1690,19 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan })
 }
 
 function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) {
+  useEffect(() => {
+    if (cfg.fields.some(f => f.type === 'assignments_picker')) {
+      const pickerField = cfg.fields.find(f => f.type === 'assignments_picker');
+      if (!entry[pickerField.name]) {
+        onChange({
+          ...entry,
+          [pickerField.name]: [{ id: `item_${Date.now()}`, date: '', assignmentId: '', assignmentTitle: '' }],
+          countsForGrade: true
+        });
+      }
+    }
+  }, []);
+
   function setField(name, val) { onChange({ ...entry, [name]: val }); }
   function toggleOpt(name, opt) {
     const arr = entry[name] || [];
@@ -1531,10 +1710,10 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
     setField(name, next);
   }
 
-  const hasDates = entry.dates?.wholeWeek || (entry.dates?.days && entry.dates.days.length > 0);
+  const hasDates = !cfg.fields.some(f => f.type === 'dates') || entry.dates?.wholeWeek || (entry.dates?.days && entry.dates.days.length > 0);
   let canSave = hasDates;
   if (cfg.fields.some(f => f.type === 'checkboxes')) {
-    const cbFields = cfg.fields.filter(f => f.type === 'checkboxes');
+    const cbFields = cfg.fields.filter(f => f.type === 'checkboxes' && (!f.condition || f.condition(entry)));
     const cbOk = cbFields.every(f => (entry[f.name] || []).length > 0);
     canSave = canSave && cbOk;
   }
@@ -1543,10 +1722,21 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
     const selOk = selFields.every(f => (entry[f.name] || '').trim().length > 0);
     canSave = canSave && selOk;
   }
+  if (cfg.fields.some(f => f.type === 'text')) {
+    const textFields = cfg.fields.filter(f => f.type === 'text' && (!f.condition || f.condition(entry)));
+    const textOk = textFields.every(f => (entry[f.name] || '').trim().length > 0);
+    canSave = canSave && textOk;
+  }
   if (cfg.fields.some(f => f.type === 'textarea')) {
     const taFields = cfg.fields.filter(f => f.type === 'textarea' && (!f.condition || f.condition(entry)));
     const taOk = taFields.every(f => (entry[f.name] || '').trim().length > 0);
     canSave = canSave && taOk;
+  }
+  if (cfg.fields.some(f => f.type === 'assignments_picker')) {
+    const pickerField = cfg.fields.find(f => f.type === 'assignments_picker');
+    const items = entry[pickerField.name] || [];
+    const pickerOk = items.length > 0 && items.every(item => item.date && item.assignmentId);
+    canSave = canSave && pickerOk;
   }
 
   return (
@@ -1610,12 +1800,27 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
             </div>
           );
         }
+        if (f.type === 'text') {
+          return (
+            <div key={i} className="cs-block">
+              <h3 className="cs-block-title">{f.label}</h3>
+              <input
+                type="text"
+                className="form-control"
+                placeholder={f.placeholder}
+                value={entry[f.name] || ''}
+                onChange={(e) => setField(f.name, e.target.value)}
+              />
+            </div>
+          );
+        }
         if (f.type === 'checkboxes') {
+          const options = typeof f.options === 'function' ? f.options(entry) : (f.options || []);
           return (
             <div key={i} className="cs-block">
               <h3 className="cs-block-title">{f.label}</h3>
               <div className="cs-checks">
-                {f.options.map(opt => {
+                {options.map(opt => {
                   const on = (entry[f.name] || []).includes(opt);
                   return (
                     <label key={opt} className={`cs-opt ${on ? 'on' : ''}`}>
@@ -1640,6 +1845,117 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
                 value={entry[f.name] || ''}
                 onChange={(e) => setField(f.name, e.target.value)}
               />
+            </div>
+          );
+        }
+        if (f.type === 'assignments_picker') {
+          const items = entry[f.name] || [];
+          const handleItemChange = (idx, key, val) => {
+            const next = items.map((item, i) => {
+              if (i === idx) {
+                const updated = { ...item, [key]: val };
+                if (key === 'assignmentId') {
+                  const ass = MOCK.assignments.find(a => String(a.Id) === String(val));
+                  updated.assignmentTitle = ass ? ass.Title : '';
+                }
+                return updated;
+              }
+              return item;
+            });
+            setField(f.name, next);
+          };
+          const handleAddItem = () => {
+            const next = [...items, { id: `item_${Date.now()}_${items.length}`, date: '', assignmentId: '', assignmentTitle: '' }];
+            setField(f.name, next);
+          };
+          const handleRemoveItem = (idx) => {
+            if (items.length <= 1) return;
+            const next = items.filter((_, i) => i !== idx);
+            setField(f.name, next);
+          };
+
+          return (
+            <div key={i}>
+              <div className="cs-block">
+                <h3 className="cs-block-title">Seleccione la fecha para esta actividad</h3>
+                {items.map((item, idx) => (
+                  <div key={item.id || idx} style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 12, flexWrap: 'wrap' }}>
+                    <div style={{ flex: '1 1 180px' }}>
+                      <label style={{ fontSize: 11, fontWeight: 600, color: '#6B7A93', display: 'block', marginBottom: 4 }}>Fecha</label>
+                      <input
+                        type="date"
+                        className="form-control"
+                        value={item.date ? (() => {
+                          const [m, d, y] = item.date.split('/');
+                          return `${y}-${m}-${d}`;
+                        })() : ''}
+                        onChange={(e) => {
+                          const val = e.target.value; // YYYY-MM-DD
+                          const normalized = normalizePlanDate(val); // MM/DD/YYYY
+                          handleItemChange(idx, 'date', normalized);
+                        }}
+                        style={{ background: '#fff', border: '1px solid #ced4da', padding: '8px 12px', fontSize: '14px' }}
+                      />
+                    </div>
+                    <div style={{ flex: '2 1 280px' }}>
+                      <label style={{ fontSize: 11, fontWeight: 600, color: '#6B7A93', display: 'block', marginBottom: 4 }}>Asignación</label>
+                      <select
+                        className="form-select"
+                        value={item.assignmentId || ''}
+                        onChange={(e) => handleItemChange(idx, 'assignmentId', e.target.value)}
+                        style={{ background: '#fff', border: '1px solid #ced4da', padding: '8px 12px', fontSize: '14px' }}
+                      >
+                        <option value="">Seleccionar</option>
+                        {MOCK.assignments.map(ass => (
+                          <option key={ass.Id} value={ass.Id}>{ass.Title}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div style={{ display: 'flex', gap: 6, alignSelf: 'flex-end', paddingBottom: 4 }}>
+                      <button
+                        type="button"
+                        className="preview-icon-btn"
+                        title="Ver asignación"
+                        onClick={() => alert(`Visualizando: ${item.assignmentTitle || 'Seleccione una asignación'}`)}
+                        style={{ padding: '8px', fontSize: '14px' }}
+                      >
+                        👁
+                      </button>
+                      <button
+                        type="button"
+                        className="preview-icon-btn"
+                        title="Eliminar fila"
+                        onClick={() => handleRemoveItem(idx)}
+                        disabled={items.length <= 1}
+                        style={{ padding: '8px', fontSize: '14px', color: items.length <= 1 ? '#ccc' : '#e32f28' }}
+                      >
+                        🗑
+                      </button>
+                    </div>
+                  </div>
+                ))}
+                
+                <div style={{ marginTop: 14 }}>
+                  <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: '13.5px', fontWeight: 600, color: '#33353d' }}>
+                    <input
+                      type="checkbox"
+                      checked={!!entry.countsForGrade}
+                      onChange={(e) => setField('countsForGrade', e.target.checked)}
+                      style={{ accentColor: '#3DA8A8', width: 16, height: 16 }}
+                    />
+                    <span>Marque si la asignación contará para nota</span>
+                  </label>
+                </div>
+                
+                <button
+                  type="button"
+                  className="pl btn-base btn-regular"
+                  onClick={handleAddItem}
+                  style={{ marginTop: 14, fontSize: '12px', padding: '6px 14px' }}
+                >
+                  Añadir otra asignación a este plan
+                </button>
+              </div>
             </div>
           );
         }
@@ -2212,29 +2528,6 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
       );
     }
 
-    if (section === "gl-tasks") {
-      return (
-        <>
-          <p style={{ fontSize: 13, color: "#555", marginBottom: 14 }}>Adjunte asignaciones del módulo de Asignaciones.</p>
-          <button className="pl btn-base btn-primary" style={{ marginBottom: 14 }}>+ Adjuntar asignación</button>
-          {MOCK.assignments.map(a => (
-            <div key={a.Id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: "1px solid var(--palette-gray-silver)", fontSize: 13 }}>
-              <span>📋</span><span>{a.Title}</span>
-              <span style={{ marginLeft: "auto" }}><span className={a.Published ? "badge-published" : "badge-draft"}>{a.Published ? "Publicado" : "Borrador"}</span></span>
-            </div>
-          ))}
-        </>
-      );
-    }
-
-    if (section === "gl-forums") {
-      return (
-        <>
-          <p style={{ fontSize: 13, color: "#555", marginBottom: 14 }}>Cree foros de discusión para promover el diálogo entre estudiantes.</p>
-          <button className="pl btn-base btn-primary">+ Crear foro</button>
-        </>
-      );
-    }
 
     return (
       <>
