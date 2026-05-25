@@ -753,7 +753,9 @@ function ToolModal({ tool, onClose, embedded = false }) {
   const [exporting, setExporting] = React.useState('');
   const [interactiveError, setInteractiveError] = React.useState('');
   const chatHasAthenasLesson = isChat && /LECCI|ATHENAS|Est[aÃ¡]ndares cubiertos|Conceptos \/ Definiciones/i.test(String(values.pregunta || ''));
-  const canMakeInteractive = tool.title === 'Examen de Matemáticas';
+  // Tools opt-in via tool.canMakeInteractive in toolsConfig — any assessment-shaped
+  // output (numbered items + answer key) can be converted to an interactive assessment.
+  const canMakeInteractive = !!tool.canMakeInteractive;
 
   async function handleExportPDF() {
     setExporting('pdf');
@@ -780,7 +782,9 @@ function ToolModal({ tool, onClose, embedded = false }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           title: tool.title,
-          subject: 'Matemáticas',
+          // Subject comes from the tool's form (any subject), fallback to Matemáticas
+          // for the legacy Examen de Matemáticas tool which doesn't expose materia.
+          subject: values.materia || 'Matemáticas',
           grade: values.grado,
           sourceTool: tool.title,
           markdown: output,

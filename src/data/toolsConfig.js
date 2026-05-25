@@ -308,6 +308,7 @@ Cada pregunta debe ser apropiada al grado y al final añade una clave de respues
   'Examen de Matemáticas': {
     category: 'evaluacion',
     title: 'Examen de Matemáticas',
+    canMakeInteractive: true,
     subtitle: 'Crea una prueba matemática con clave de respuestas.',
     defaultModel: 'openai/gpt-4o',
     fields: [
@@ -352,6 +353,7 @@ Para que pueda convertirse en interactivo, usa esta estructura clara:
   'Creador de Assessments': {
     category: 'evaluacion',
     title: 'Creador de Assessments',
+    canMakeInteractive: true,
     subtitle: 'Genera assessments formativos, sumativos o de desempeño para cualquier materia.',
     defaultModel: 'anthropic/claude-sonnet-4.5',
     fields: [
@@ -396,6 +398,7 @@ Incluye:
   'Pruebas Diagnósticas': {
     category: 'evaluacion',
     title: 'Pruebas Diagnósticas',
+    canMakeInteractive: true,
     subtitle: 'Crea pre-tests para identificar conocimientos previos y brechas antes de una unidad.',
     defaultModel: 'anthropic/claude-sonnet-4.5',
     fields: [
