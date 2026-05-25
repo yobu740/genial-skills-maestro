@@ -640,22 +640,24 @@ async function loadPlansIndex() {
 }
 async function loadCurriculumUnitsFile() {
   if (_curriculumUnits) return _curriculumUnits;
+  const units = [];
   try {
     const fs = await import('node:fs/promises');
     const candidates = [
       path.join(__dirname, 'public', 'data', 'units.json'),
       path.join(__dirname, 'dist', 'data', 'units.json'),
+      path.join(__dirname, 'public', 'data', 'curriculum-units.generated.json'),
+      path.join(__dirname, 'dist', 'data', 'curriculum-units.generated.json'),
     ];
     for (const filePath of candidates) {
       try {
         const raw = await fs.readFile(filePath, 'utf8');
         const parsed = JSON.parse(raw);
-        _curriculumUnits = Array.isArray(parsed.units) ? parsed.units : [];
-        return _curriculumUnits;
+        if (Array.isArray(parsed.units)) units.push(...parsed.units);
       } catch {}
     }
   } catch {}
-  _curriculumUnits = [];
+  _curriculumUnits = units;
   return _curriculumUnits;
 }
 async function loadFewshot() {

@@ -1,0 +1,757 @@
+{
+  "generatedAt": "2026-05-25T17:44:47.188Z",
+  "subject": "Ciencias",
+  "grade": 5,
+  "units": [
+    {
+      "id": "SCI_5_1",
+      "code": "5.1",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "Las prácticas de ciencias e ingeniería y la clasificación de los seres vivos",
+      "weeks": 5,
+      "summary": "En esta unidad, el estudiante comprenderá que la ciencia tiene una naturaleza dinámica, inquisitiva e integradora. Formulará preguntas e hipótesis para resolver problemas, utilizando las \nprácticas de ciencias e ingeniería, de manera crítica y colaborativa. De igual manera, el estudiante podrá investigar y comprender que los seres vivos se clasifican en reinos, establecerán las \ndiferencias entre ellos y entenderán cómo cambian a través del tiempo.",
+      "transferObjectives": [
+        "Al final de esta unidad, el estudiante utilizará las prácticas de ciencias e ingeniería para investigar sobre los sistemas de clasificación y cómo se categorizan los seres vivos. Comprenderá la gran diversidad de organismos vivos que existen, para reconocer, identificar y establecer diferencias entre estos, y entender cómo han cambiado a través del tiempo."
+      ],
+      "acquisitionObjectives": [
+        "Llevar a cabo prácticas de ciencias e ingeniería y aplicarlas en la búsqueda de información y la solución de problemas científicos.",
+        "Hacer interpretaciones basadas en los resultados de los experimentos, y utilizar diagramas, tablas, gráficas o modelos para analizar e ilustrar los datos recopilados.",
+        "Diferenciar entre los reinos de la vida (arqueobacteria, eubacteria, protista, hongos, plantas y animales) y explicar la importancia de los microorganismos en el ambiente.",
+        "Clasificar las características principales de cada subgrupo dentro de los invertebrados (porífera, celenterados, gusanos, moluscos, artrópodos, equinodermos).",
+        "Clasificar las características principales de cada subgrupo dentro de los vertebrados (peces, anfibios, reptiles, aves y mamíferos)."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cuáles son las metas específicas de una investigación científica?",
+          "understanding": "El pensamiento científico, sus procesos y las actitudes de colaboración y respeto, se desarrollan a través de la investigación. Se investiga con el propósito de resolver o buscar soluciones a un problema, para generar un nuevo conocimiento o para descubrir lo que no se conoce y compartirlo con toda la comunidad científica."
+        },
+        {
+          "question": "¿Por qué usamos modelos en la ciencia?",
+          "understanding": "Las modelos pueden servir de herramienta para entender y establecer relaciones con el mundo que nos rodea. Los modelos, aunque presenten limitaciones, nos permiten desarrollar ideas y describir fenómenos científicos para desarrollar nuevas tecnologías y conocimiento científico."
+        },
+        {
+          "question": "¿Cómo podemos usar los modelos y diagramas para explicar las diferencias entre los organismos vivos?",
+          "understanding": "Los modelos proveen formas de ver las diferencias entre los organismos vivos, cuando al describir aquellos que no podemos ver, como los microorganismos, se hace imposible distinguirlos. Utilizando modelos y diagramas podemos estudiar organismos pertenecientes a todos los reinos."
+        },
+        {
+          "question": "¿Cómo utilizamos el sistema de clasificación de los seres vivos para ampliar y profundizar nuestro conocimiento científico?",
+          "understanding": "Cuando clasificamos, agrupamos los organismos de acuerdo con sus características. Esto nos permite establecer un orden que facilita el estudio de los seres vivos, considerando su parentesco con otras especies. La clasificación permite organizar la información, a la vez que establece relaciones significativas entre los datos. Los sistemas de clasificación de los organismos nos ayudan a inferir y llevar a cabo investigaciones con base científica y confiable."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.2",
+          "description": "Utiliza pensamiento matemático para determinar la magnitud y las unidades correspondientes a una medida, en el Sistema Internacional de Unidades (SI); y las conversiones propias de esta."
+        },
+        {
+          "code": "5.IT1.3",
+          "description": "Planifica y lleva a cabo investigaciones utilizando las prácticas de ciencias e ingeniería con énfasis en el uso correcto de los instrumentos de experimentación, así como en las reglas de seguridad inherentes a su investigación."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Biológicas"
+        },
+        {
+          "code": "5.CB1.1",
+          "description": "Identifica las características que se utilizan para agrupar los organismos en seis de los siete reinos, mediante el sistema de clasificación."
+        },
+        {
+          "code": "5.CB1.2",
+          "description": "Reconoce que los seres vivos se agrupan en categorías taxonómicas (distintos niveles de organización de los reinos) al interactuar en los ecosistemas."
+        },
+        {
+          "code": "5.CB1.3",
+          "description": "Establece la diferencia entre el reino archeobacteria, el reino eubacteria y el reino protista, para explicar la importancia de los microorganismos en el ambiente y la función que cumplen en el ecosistema."
+        },
+        {
+          "code": "5.CB1.4",
+          "description": "Diferencia entre el reino hongo, el reino planta y el reino animal, para explicar la importancia de estos en el ambiente."
+        },
+        {
+          "code": "5.CB1.5",
+          "description": "Enumera y explica algunos usos que los seres humanos dan a los hongos, y la función que estos cumplen en los ecosistemas."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la Información y la comunicación",
+        "Identidad cultural e interculturalidad"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Tecnología en la sociedad",
+        "Capital social y comunidad"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.1_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_5_2",
+      "code": "5.2",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "Los organismos y su relación con los ecosistemas",
+      "weeks": 9,
+      "summary": "En esta unidad, el estudiante investiga y reconoce que los seres vivos ejercen una función vital para el flujo de la materia y la energía a través de los ecosistemas. Establece las diferencias \nentre ellos y da énfasis particular al reino animal, al reino vegetal y al reino hongo (fungi) incluyendo sus características, diferencias, particularidades y la evolución de estos para adaptarse a \nsu medioambiente. Además, el estudiante investiga y entiende los ciclos de vida, y cómo los seres vivos cambian con el tiempo.",
+      "transferObjectives": [
+        "Al final de esta unidad, el estudiante comprende la gran diversidad de organismos que existen, que cumplen con su ciclo de vida y que –a través del tiempo- se han adaptado a sobrevivir en su medioambiente. También, reconoce las diferencias entre los subgrupos de animales vertebrados e invertebrados; entre las plantas vasculares y las no vasculares; entre distintos tipos de hongo, etcétera. T2. Al terminar la unidad, el estudiante podrá explicar qué factores afectan el crecimiento de las plantas, así como clasificar y distinguir entre los cuatros grupos principales de plantas: briofitas y pteridofitas (plantas no vasculares) y gimnospermas y angiospermas (plantas vasculares). Podrá, además, agrupar las angiospermas en monocotiledóneas y dicotiledóneas. T3. Reconocerá que las plantas proveen alimento a una variedad de organismos y estos se relacionan en las redes alimentarias ya sea alimentándose a su vez unos de otros o descomponiéndose."
+      ],
+      "acquisitionObjectives": [
+        "Investigar sobre las plantas, su diversidad, su importancia y los ciclos de vida que cumplen, para representar sus hallazgos e información a través del diseño y la construcción de modelos o prototipos que describan su valor ecológico y comercial.",
+        "Identificar los factores que intervienen en el crecimiento de las plantas y el rol de cada uno.",
+        "Clasificar plantas de acuerdo con sus características, y comparar y contrastar entre plantas vasculares y no vasculares.",
+        "Clasificar y agrupar animales considerando las características principales de cada subgrupo dentro de los invertebrados (porífera, celenterados, gusanos, moluscos, artrópodos, equinodermos).",
+        "Clasificar y agrupar animales considerando las características principales de cada subgrupo dentro de los vertebrados (peces, anfibios, reptiles, aves y mamíferos).",
+        "Identificar ciclos de transferencia de materia y energía a través de los ecosistemas, mediante modelos, diagramas o prototipos."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se diferencian los organismos vivos y cómo logran sobrevivir en su ambiente?",
+          "understanding": "Los seres vivos tienen funciones y estructuras distintivas. Estas particularidades les permiten adaptarse, relacionarse y reproducirse en su ambiente. Los organismos solo pueden sobrevivir en ambientes que satisfacen sus necesidades particulares. Un ecosistema saludable es aquel en el que múltiples especies de distintos tipos son capaces de satisfacer sus necesidades dentro de una red vital relativamente estable. Las particularidades de cada organismo permiten clasificarlos en grandes grupos y categorías específicas."
+        },
+        {
+          "question": "¿Qué importancia tienen las plantas en la vida diaria y por qué es necesario entender la función de sus estructuras y sus interacciones con su ambiente?",
+          "understanding": "Las plantas son esenciales para mantener la vida en la Tierra. Sin las plantas los demás seres vivos que dependen de ellas morirían. Inician -junto a la luz del sol- el flujo de materia y de energía a través de los ecosistemas de la Tierra, y permiten la vida de todos los organismos que se alimentan directa o indirectamente de ellas, así como de aquellos que respiran oxígeno. Poseen estructuras muy especializadas -como las estomas de sus hojas- para llevar a cabo funciones vitales como obtener bióxido de carbono (CO2) del aire y transformarlo en oxígeno, necesario para la vida humana."
+        },
+        {
+          "question": "¿Como se distinguen los animales vertebrados de los invertebrados, y qué función cumplen junto a los hongos y los microorganismos en los ecosistemas?",
+          "understanding": "Para mantener el equilibrio ecológico, todos los organismos son esenciales. Los animales, vertebrados e invertebrados, juegan papeles determinantes. Su presencia juega un papel importante en los fenómenos y procesos que permiten condiciones adecuadas para la vida. Hasta el animal más minúsculo del planeta cumple una función vital en su ecosistema, de forma que un cambio en sus hábitos alimenticios, es decir, en las cadenas tróficas, puede comprometer la supervivencia de todo lo que le rodea."
+        },
+        {
+          "question": "¿De qué manera ocurre el flujo de materia y energía a través de los organismos en el medioambiente en el que se relacionan, viven y se reproducen?",
+          "understanding": "Para crecer, las plantas adquieren lo que necesitan del ambiente, principalmente del aire y del agua. Estas, junto a las algas y algunas bacterias, captan la energía lumínica y la utilizan para producir nutrientes. Los nutrientes son el alimento que les proporciona a los animales lo que necesitan para crecer, desarrollarse y recuperarse. Además, les provee la energía que necesitan para mantener el calor y el movimiento de su cuerpo. Entonces, los desechos de estos son recuperados por la acción de los hongos y otras bacterias, que devuelven al suelo el material necesario para que las plantas lo recuperen a través de sus raíces. El proceso de descomposición eventualmente devuelve (recicla) algunos materiales al suelo."
+        },
+        {
+          "question": "¿Cómo podemos usar los modelos y diagramas para explicar el flujo de materia y energía a través de los ecosistemas, entre otros eventos?",
+          "understanding": "Los modelos proveen formas de ver las diferencias entre los organismos vivos y sus relaciones con el medioambiente, cuando observar el evento real no es posible. Utilizando modelos y diagramas podemos representar estas relaciones en los ecosistemas. Unidad 5.2 Los organismos y su relación con los ecosistemas Ciencias 5 9 semanas de instrucción página 3 of 25"
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Biológicas"
+        },
+        {
+          "code": "5.CB1.6",
+          "description": "Describe el reino planta y sus características particulares."
+        },
+        {
+          "code": "5.CB1.7",
+          "description": "Identifica y agrupa plantas en vasculares y no vasculares."
+        },
+        {
+          "code": "5.CB1.8",
+          "description": "Clasifica entre plantas con semillas y plantas sin semillas."
+        },
+        {
+          "code": "5.CB1.9",
+          "description": "Crea modelos para representar la diferencia entre las plantas que se reproducen por semillas (las plantas gimnospermas y las plantas angiospermas) y las plantas que se reproducen por esporas."
+        },
+        {
+          "code": "5.CB1.10",
+          "description": "Clasifica y agrupa plantas angiospermas en monocotiledóneas y dicotiledóneas."
+        },
+        {
+          "code": "5.CB1.11",
+          "description": "Describe y representa, mediante gráficos o modelos simples, cómo ocurre el proceso de fotosíntesis en las plantas, para reconocer su importancia en los ecosistemas y para los seres vivos."
+        },
+        {
+          "code": "5.CB1.12",
+          "description": "Explica por qué los musgos y las hepáticas tienen que vivir en lugares húmedos."
+        },
+        {
+          "code": "5.CB1.13",
+          "description": "Distingue las particularidades de los animales vertebrados y de los animales invertebrados, y menciona algunas de las funciones que cumplen en el ecosistema."
+        },
+        {
+          "code": "5.CB1.14",
+          "description": "Clasifica y agrupa animales en vertebrados o invertebrados."
+        },
+        {
+          "code": "5.CB1.15",
+          "description": "Identifica las características principales de cada subgrupo dentro del grupo de los animales invertebrados (porífero, celenterado, gusano, molusco, artrópodo y equinodermo)."
+        },
+        {
+          "code": "5.CB1.16",
+          "description": "Identifica las características principales de cada subgrupo dentro del grupo de los animales vertebrados (peces, anfibios, reptiles, aves y mamíferos)."
+        },
+        {
+          "code": "5.CB2.1",
+          "description": "Explica el rol de la fotosíntesis al representar el movimiento de la materia y el flujo de energía dentro y fuera de un ecosistema."
+        },
+        {
+          "code": "5.CB2.2",
+          "description": "Explica, mediante diagramas o construcción de modelos, el valor comercial y el valor ecológico de las plantas en los ecosistemas."
+        },
+        {
+          "code": "5.CB2.3",
+          "description": "Desarrolla un modelo para describir el movimiento de materia entre productores, consumidores (plantas, animales), descomponedores y el ambiente; y establece la función que cumple cada uno de estos en el proceso."
+        },
+        {
+          "code": "5.CB2.4",
+          "description": "Utiliza modelos para describir que la energía en la comida de los animales (usada para su recuperación, su crecimiento y su movimiento) fue originalmente energía solar."
+        },
+        {
+          "code": "5.CB2.5",
+          "description": "Explica cómo algunos factores (como la presencia o la ausencia de sol o una fuente de luz, el espacio, el agua, los minerales, el terreno y los tipos de suelo) afectan el crecimiento de las plantas en un ecosistema."
+        },
+        {
+          "code": "5.CB2.6",
+          "description": "Apoya el argumento de que las plantas adquieren el material que necesitan para crecer, principalmente, del aire y del agua (no necesariamente del suelo) demostrado mediante medios de cultivos hidropónicos."
+        },
+        {
+          "code": "5.CB4.3",
+          "description": "Explica cómo, entre individuos de la misma especie, las variaciones en características les pueden ofrecer ventajas para sobrevivir, encontrar pareja y reproducirse."
+        },
+        {
+          "code": "5.CB4.4",
+          "description": "Diseña soluciones para que los seres humanos puedan ayudar a manejar y proteger los factores bióticos y abióticos en los ecosistemas."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la concienciación ambiental y ecológica",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Cuidado del medioambiente",
+        "Tecnología en la sociedad",
+        "Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.2_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_5_3",
+      "code": "5.3",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "La Materia",
+      "weeks": 7,
+      "summary": "En esta unidad, el estudiante repasará aspectos relacionados con los procesos de observar y medir las propiedades y características de la materia, con énfasis en masa, peso, volumen, \npuntos de ebullición y puntos de fusión. También tendrá la oportunidad de clasificar la materia según sus propiedades en mezclas o sustancias, y practicar los métodos de separación. \nTendrá la experiencia de hacer experimentos donde podrá observar cambios químicos y físicos, así como reacciones químicas en las que logrará distinguir una sustancia de otra, así como \nla aplicabilidad de la ley de conservación de la materia y la energía. El estudiante también obtendrá una comprensión conceptual de los átomos, las moléculas, los compuestos y las \npartículas subatómicas.",
+      "transferObjectives": [
+        "Al finalizar esta unidad, el estudiante tiene una comprensión de las propiedades de los átomos y las características de la materia. Aprenden que los átomos, las soluciones y los compuestos son formas de nombrar, estudiar y comprender cómo se comporta y cómo está estructurada la materia. A través de la experimentación, los estudiantes pueden diferenciar entre los cambios físicos y químicos."
+      ],
+      "acquisitionObjectives": [
+        "Reconocer que la materia es todo lo que tiene masa y ocupa espacio, y diferenciar entre la masa y el peso de un objeto.",
+        "Comparar y contrastar los cambios físicos y químicos de la materia, y las propiedades que los representan.",
+        "Clasificar la materia; y comparar y contrastar entre sustancias y mezclas.",
+        "Experimentar, utilizando métodos de separación de mezclas.",
+        "Investigar, para explicar la formación y la transformación de la materia por cambios en energía, al aumentar o disminuir calor.",
+        "Utilizar y aplicar su conocimiento sobre la organización de los elementos en la tabla periódica, para predecir la formación de sustancias."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cuál es la estructura básica de la materia?",
+          "understanding": "La materia se compone de pequeñas partículas llamadas átomos, que a su vez constituyen la unidad base de los elementos, los compuestos, las moléculas y las sustancias. Los átomos están compuestos, a su vez, de partículas que permanecen en continuo movimiento. Debido a estas partículas subatómicas, la materia se comporta de maneras predecibles."
+        },
+        {
+          "question": "¿Por qué se utilizan las propiedades físicas y químicas para identificar y clasificar la materia?",
+          "understanding": "Las propiedades físicas y químicas de la materia nos permiten describir y predecir el comportamiento y las características de la materia."
+        },
+        {
+          "question": "¿Cómo se miden las propiedades de la materia?",
+          "understanding": "La materia tiene masa y ocupa espacio. Estas son propiedades cuantitativas que se puede medir y describir matemáticamente."
+        },
+        {
+          "question": "¿Cómo afecta el calor a la materia?",
+          "understanding": "El calor es una forma de energía y ocurre como una expresión del movimiento de las partículas subatómicas que constituyen la materia. Durante los cambios físicos y químicos que sufre la materia, pueden ocurrir cambios que afectan el movimiento de las partículas subatómicas. Estos cambios pueden provocar transformaciones tanto de tipo físico como de tipo químico, al formar nuevas sustancias."
+        },
+        {
+          "question": "¿Cómo está organizada la tabla periódica?",
+          "understanding": "La ubicación de un elemento en la tabla periódica depende de su número atómico y por lo tanto de las propiedades físicas y químicas de ese elemento."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Físicas"
+        },
+        {
+          "code": "5.CF1.1",
+          "description": "Reconoce que la materia se forma de partículas microscópicas denominadas átomos, que a su vez están compuestas de partículas subatómicas."
+        },
+        {
+          "code": "5.CF1.2",
+          "description": "Describe las partes del átomo y las partículas que lo forman (protones, neutrones y electrones)."
+        },
+        {
+          "code": "5.CF1.3",
+          "description": "Construye un modelo del átomo y sus partículas subatómicas."
+        },
+        {
+          "code": "5.CF1.4",
+          "description": "Explica que los elementos están formados de un solo tipo de átomo y que, al combinarse con otros tipos de átomo, originan moléculas y compuestos que -a su vez- son el origen de todas las sustancias (como, por ejemplo, el agua (H 2 O) y el oxígeno (O 2 ), que son esenciales para la vida)."
+        },
+        {
+          "code": "5.CF1.5",
+          "description": "Clasifica la materia, según sus propiedades, en sustancias (elementos y compuestos) y mezclas [mezclas homogéneas (soluciones) y mezclas heterogéneas]."
+        },
+        {
+          "code": "5.CF1.6",
+          "description": "Experimenta, para adquirir destrezas, al utilizar algunos métodos de separación de mezclas como la filtración, la decantación y la evaporación; y entiende la importancia de estos métodos en la vida diaria y en la conservación del ambiente."
+        },
+        {
+          "code": "5.CF1.7",
+          "description": "Identifica -en la tabla periódica- dónde se localizan el número atómico y el número de masa de los átomos, y qué representan estos datos (número de protones, número de electrones y número de neutrones del átomo)."
+        },
+        {
+          "code": "5.CF1.8",
+          "description": "Reconoce que todos los elementos están representados en la tabla periódica, y que esta se organiza según las propiedades que presenta cada elemento."
+        },
+        {
+          "code": "5.CF1.9",
+          "description": "Describe el formato básico de organización de los elementos: en grupos o familias, en periodos, por su propiedad metálica (metal, no metal, metaloide) y por estado de la materia."
+        },
+        {
+          "code": "5.CF1.10",
+          "description": "Investiga para determinar si la combinación de dos sustancias o más resulta en sustancias nuevas; y define el concepto reacción química."
+        },
+        {
+          "code": "5.CF1.11",
+          "description": "Lleva a cabo una investigación para interpretar datos sobre las propiedades de las sustancias, antes y después de que hayan interactuado, para determinar si ha ocurrido una reacción química (reacciones simples y caseras, como uso de bicarbonato de sodio, vinagre, jabón, entre otros)."
+        },
+        {
+          "code": "5.CF1.12",
+          "description": "Analiza cómo las propiedades químicas (la corrosividad, la descomposición, la reactividad, la oxidación, la inflamabilidad) se manifiestan en las reacciones químicas, y reconoce que la masa de los materiales se conserva al ocurrir los cambios químicos."
+        },
+        {
+          "code": "5.CF1.13",
+          "description": "Explica cómo las transformaciones de los materiales están acompañadas por cambios en la energía, reconocibles por el aumento o la disminución de calor (se absorbe energía o se libera energía)."
+        },
+        {
+          "code": "5.CF1.14",
+          "description": "Analiza datos en los que se expresan las cantidades relacionadas con la combinación de dos sustancias o más, con el fin de evidenciar que la masa total se conserva aun al aportarles o quitarles calor a las sustancias; y explica lo que expresa la ley de conservación de Materia y Energía."
+        },
+        {
+          "code": "5.CF1.15",
+          "description": "Explica cómo la ley de conservación de materia y energía se relaciona con el equilibrio de energías en la materia."
+        },
+        {
+          "code": "5.CF1.16",
+          "description": "Explica los términos masa y peso, y establece la diferencia entre ambos."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Tecnología en la sociedad",
+        "Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.3_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_5_4",
+      "code": "5.4",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "Fuerza, movimiento y energía",
+      "weeks": 6,
+      "summary": "En esta unidad los estudiantes investigan y comprenden las características y las interacciones de los objetos en movimiento, de la energía y de las transformaciones de la energía. Los \nestudiantes exploran las relaciones entre los conceptos trabajo y movimiento; y el uso de las máquinas simples y las máquinas compuestas para facilitar la realización de trabajo.",
+      "transferObjectives": [
+        "Al finalizar esta unidad, el estudiante promueve y practica la equidad y el respeto por sus compañeros, a través del trabajo colaborativo y armonioso durante las investigaciones, experimentaciones y cualquier otra tarea grupal diseñada para comprender lo que es movimiento, trabajo, y la relación entre la fuerza y las máquinas. El estudiante también demuestra conocimiento de la Ley de conservación de energía y comprende cómo la energía se conserva, transformándose de una forma a otra."
+      ],
+      "acquisitionObjectives": [
+        "Demostrar que un objeto posee energía.",
+        "Investigar y explicar cómo se relacionan la energía, el movimiento, y el trabajo, al utilizar máquinas.",
+        "Utilizar y comparar diversos tipos de máquinas simples y compuestas.",
+        "Diseñar y construir prototipos que maximicen la transferencia de energía térmica.",
+        "Comprender que la energía nunca se puede crear o destruir; sino, transformar.",
+        "Describir cómo una fuerza logra hacer trabajo sobre un objeto .",
+        "Definir y diferenciar los conceptos fuerza y trabajo."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo sabes que un objeto tiene energía y que esta no se pierde ni se gana, sino que se transforma o se transfiere?",
+          "understanding": "Energía se define como la capacidad para hacer un trabajo, lo cual puede considerarse como la habilidad de generar algún tipo de cambio. Cuando un objeto está en movimiento, ha ocurrido un cambio, por lo que hay energía asociada con ese objeto. Todo objeto tiene, en sí mismo, energía almacenada -conocida como energía potencial- capaz de producir cambios. La energía asociada con el movimiento de un objeto se llama energía cinética. Cuando dos objetos interactúan, cada uno ejerce fuerza sobre el otro, lo que podría causar que se transfiera energía desde o hacia los objetos, por lo que la energía se transfiere de un tipo de energía a otra."
+        },
+        {
+          "question": "¿Cómo sabes que el calor es producto de la transferencia de energía térmica y que esta puede transformarse en otras formas de energía?",
+          "understanding": "El término calor, según se utiliza cotidianamente, se refiere tanto a la energía térmica como a la transferencia de energía por convección, conducción o radiación. El calor se refiere a la energía que se transfiere cuando dos objetos o sistemas se encuentran a distintas temperaturas. El concepto frío realmente no existe, lo que existe es ausencia de calor. La energía se transfiere espontáneamente desde las regiones u objetos más calientes hacia los menos calientes. Esta transferencia debe expresarse en términos de presencia o ausencia de calor."
+        },
+        {
+          "question": "¿Cómo se relacionan los conceptos fuerza y trabajo?",
+          "understanding": "La fuerza es una acción que se expresa cuando hay interacción entre dos cuerpos. Cuando la fuerza aplicada de un cuerpo a otro transforma la energía potencial en energía cinética, provoca cambios y movimiento. El resultado de esta aplicación de fuerza para transformar la energía se denomina trabajo. Un objeto o cuerpo hace trabajo cuando una fuerza cambia el movimiento de ese objeto."
+        },
+        {
+          "question": "¿Qué tipos de máquinas utilizan las personas y para qué?",
+          "understanding": "El ser humano ha creado máquinas para que le faciliten el trabajo. Las máquinas nos permiten hacer trabajo en menos tiempo y con menor esfuerzo. Las máquinas se clasifican como simples o compuestas, según la función y la capacidad para poder facilitar el trabajo para el cual han sido diseñadas."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Físicas"
+        },
+        {
+          "code": "5.CF2.1",
+          "description": "Reconoce que las máquinas nos permiten realizar trabajo con menos esfuerzo."
+        },
+        {
+          "code": "5.CF2.2",
+          "description": "Define y distingue entre fuerza, trabajo y máquina, y entre máquinas simples y máquinas compuestas."
+        },
+        {
+          "code": "5.CF2.3",
+          "description": "Agrupa ejemplos de máquinas simples y máquinas compuestas, y explica sus usos."
+        },
+        {
+          "code": "5.CF2.4",
+          "description": "Diseña una investigación, con su conocimiento sobre máquinas, para demostrar las interacciones entre trabajo, fuerza y energía."
+        },
+        {
+          "code": "5.CF2.5",
+          "description": "Evalúa la importancia y la utilidad de las máquinas para los seres humanos."
+        },
+        {
+          "code": "5.CF3.1",
+          "description": "Define los conceptos energía y transferencia de energía."
+        },
+        {
+          "code": "5.CF3.2",
+          "description": "Identifica y describe las formas de energía (energía cinética, potencial) y los diferentes tipos de energía, tales como: radiante, térmica y energía química."
+        },
+        {
+          "code": "5.CF3.3",
+          "description": "Analiza la importancia de los diferentes tipos de energía en nuestra vida diaria."
+        },
+        {
+          "code": "5.CF3.4",
+          "description": "Explica cómo se relacionan la energía cinética y la energía potencial en sistemas cerrados."
+        },
+        {
+          "code": "5.CF3.5",
+          "description": "Aplica su conocimiento sobre la transferencia de energía, al presentar ejemplos que sostienen la idea de que, cuando cambia la energía cinética de un objeto, se transfiere energía desde el objeto o hacia él."
+        },
+        {
+          "code": "5.CF3.6",
+          "description": "Aplica principios científicos para diseñar, construir y probar un prototipo que minimiza o maximiza la transferencia de energía térmica."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Responsabilidad social en la democracia",
+        "Tecnología en la sociedad",
+        "Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.4_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_5_5",
+      "code": "5.5",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "El agua, los océanos y las zonas climáticas",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante comprende la importancia del agua para la vida. Reconoce el rol de los cuerpos de agua (dulce y salada) en la distribución equilibrada de esta sustancia en el \nPlaneta. A su vez, visualiza y comprende el eslabón que constituyen dichos cuerpos en el ciclo o proceso de formación del agua. Utiliza la experimentación científica y las observaciones para \nexplicar cómo se purifica el agua, habilitándola para el consumo seguro, y cuán indispensable es esta sustancia para la vida en la Tierra. Explica, también, cómo el agua -a su vez- influye en la \nformación de rocas y provoca cambios que conducen a la formación de suelos.",
+      "transferObjectives": [
+        "Al finalizar esta unidad, el estudiante entiende el papel que desempeñan los cuerpos de agua dulce y agua salada en los sistemas biológicos de la Tierra y en las condiciones climáticas. Comprenden, también, la importancia de conservar nuestros recursos acuáticos. Investigan y comprenden el rol que desempeña el ciclo del agua en los sistemas de la Tierra. Diseñan un artefacto o instrumento que le permita llevar a cabo el proceso de filtración y purificación de agua de manera fácil y con materiales de uso común en su hogar. Se familiariza con los desafíos del cuidado y la preservación para lograr el objetivo de desarrollo sostenible #14: Conservar y utilizar de manera sostenible los océanos, los mares y los recursos marinos."
+      ],
+      "acquisitionObjectives": [
+        "Utilizar información científica que le permita corroborar la importancia del agua, del ciclo del agua y de las masas de agua para la sostenibilidad de la vida y el equilibrio de nuestros ecosistemas.",
+        "Diseñar un instrumento casero para llevar a cabo el proceso de filtración y purificación primaria del agua.",
+        "Relacionar el océano y el Sol en la formación de las zonas climáticas y las condiciones atmosféricas de la Tierra.",
+        "Describir, distinguir y comparar las esferas de la Tierra y cómo se relacionan entre ellas."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo obtenemos el agua que usamos en nuestra vida diaria y cuál es su importancia para la vida en el planeta Tierra?",
+          "understanding": "El agua es fundamental para la vida en la Tierra. Todos los seres vivos necesitan del agua para vivir y desarrollarse. Obtenemos el agua de los procesos que conforman el ciclo del agua, que ocurren entre la atmósfera y la superficie de la Tierra. Estos procesos sistemáticos y cíclicos sostienen la circulación del agua a través de la hidrósfera del Planeta y hacerla disponible para su uso. El ciclo del agua es un proceso vital porque permite que haya vida en el Planeta, regula el clima y la temperatura terrestre, así como otras condiciones globales, como la conservación de los ecosistemas tal como se conocen actualmente."
+        },
+        {
+          "question": "¿Qué función ejercen y cómo influyen las grandes masas de agua -como los océanos– sobre la Tierra y el clima?",
+          "understanding": "Casi toda el agua de la Tierra se encuentra en los océanos (agua salada). El agua dulce, por su parte, está en mayor concentración en los glaciares o bajo tierra. Solo una pequeña fracción de agua dulce se encuentra en los ríos, en los lagos, en los humedales y en la atmósfera. El océano –masa continua de agua salada que cubre más del 70 % de la superficie terrestre– y las corrientes oceánicas rigen las condiciones meteorológicas del Planeta. Al interactuar con la atmósfera y con las formaciones terrestres –junto a factores como el viento, la nubosidad, la temperatura, la humedad relativa y la precipitación– permiten determinar los patrones del clima en la Tierra."
+        },
+        {
+          "question": "¿Qué sistemas constituyen nuestra Tierra, y cómo son?",
+          "understanding": "Los sistemas más grandes de la Tierra son la geósfera (constituida de roca sólida, roca derretida, el suelo y los sedimentos), la hidrósfera (que la constituyen los cuerpos de agua y las formaciones de hielo), la atmósfera (constituida por aquello que reconocemos como aire) y la biósfera (formada por todos los seres vivientes, incluidas las plantas, los animales, los microrganismos y los humanos). Estos sistemas se interconectan y ocurre interacción entre ellos; con ello, determinan las características que conforman las zonas climáticas, los ecosistemas y los procesos de formación en la superficie terrestre."
+        },
+        {
+          "question": "¿Cómo impacta el agua en las características de los biomas y los ecosistemas que componen la Tierra?",
+          "understanding": "El movimiento del agua a través de la Tierra da lugar a un sin número de transformaciones y cambios en las características y en los componentes bióticos y abióticos de los ecosistemas. Al medio físico (factor abiótico) lo componen el suelo, el agua, el aire, la temperatura, la humedad, el pH y los nutrientes. Con el movimiento continuo del agua, se regulan el clima, la temperatura y la humedad del lugar; además ocurren la erosión del terreno y el transportarte de sustancias de un lugar a otro. Por ser un ciclo natural y constante, implica que cuenta con la misma cantidad de agua que se va transformando y desplazando. Sin embargo, existen factores -tanto humanos como naturales- que pueden alterar este ciclo hidrológico. Evitar actividades que afectan el ciclo del agua extiende la posibilidad de albergar vida en el Planeta, y mantener el equilibrio de los biomas y los ecosistemas terrestres. Unidad 5.5 El agua, los océanos y las zonas climáticas Ciencias 5 6 semanas de instrucción página 3 of 21"
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Terrestres y del Espacio"
+        },
+        {
+          "code": "5.CT2.1",
+          "description": "Reconoce la necesidad del agua en los ecosistemas."
+        },
+        {
+          "code": "5.CT2.2",
+          "description": "Describe la importancia del ciclo del agua para la vida en el Planeta (como, por ejemplo, en la formación de ríos y otros cuerpos de agua; ofreciendo hábitat y alimentación; satisfaciendo necesidades básicas; para la instauración y funcionamiento de industrias; para el uso doméstico; el uso agrícola y para divertirse)."
+        },
+        {
+          "code": "5.CT2.3",
+          "description": "Establece la diferencia entre el agua potable y el agua como recurso natural."
+        },
+        {
+          "code": "5.CT2.4",
+          "description": "Utiliza fuentes de información científica para describir y construir gráficas que representan las cantidades y los porcentajes de distribución de agua (agua salada y agua dulce) en la Tierra -y en Puerto Rico-, considerando las formaciones acuáticas naturales (masas de agua), como océanos, mares, lagos, ríos, glaciares, formaciones acuáticas subterráneas, acuíferos, y capas de hielo polar."
+        },
+        {
+          "code": "5.CT2.5",
+          "description": "Define el concepto zonas climáticas de la Tierra, y establece su relación con respecto a la posición del Sol."
+        },
+        {
+          "code": "5.CT2.6",
+          "description": "Describe y representa, mediante el diseño de modelos, las zonas climáticas de la Tierra (zona fría, zona templada y zona cálida)."
+        },
+        {
+          "code": "5.CT2.7",
+          "description": "Menciona y describe, de forma general, las cuatro esferas que constituyen la Tierra (geósfera, biósfera, hidrósfera, atmósfera)."
+        },
+        {
+          "code": "5.CT2.8",
+          "description": "Distingue los componentes que conforman cada esfera terrestre."
+        },
+        {
+          "code": "5.CT2.9",
+          "description": "Desarrolla un modelo, a partir de un ejemplo, para describir la interacción de, al menos, dos de las esferas de la Tierra; y cómo influye la energía del Sol en estas interacciones."
+        },
+        {
+          "code": "5.CT2.10",
+          "description": "Explica el efecto del agua en los cambios de la superficie de la Tierra, sobre largos periodos de tiempo (con énfasis en la erosión y la precipitación); y la importancia de la función del Sol en el ciclo del agua."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la concienciación ambiental y ecológica",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Responsabilidad social en la democracia",
+        "Conciencia ecológica",
+        "Tecnología en la sociedad"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.5_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_5_6",
+      "code": "5.6",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "Conservación ambiental y calentamiento global",
+      "weeks": 5,
+      "summary": "En esta unidad, y a través de procesos de investigación, el estudiante adquiere el conocimiento y la apreciación por los ecosistemas, por los recursos naturales que se encuentran en y \nalrededor de Puerto Rico, y analiza los efectos del calentamiento global sobre cada uno de ellos.",
+      "transferObjectives": [
+        "Al finalizar esta unidad, el estudiante comprende sobre la importancia, la apreciación y la conservación de los ecosistemas y los recursos naturales. Analiza los efectos del cambio climático sobre los ecosistemas y propone acciones y posturas de conservación y mitigación, para reducir el impacto del calentamiento global en Puerto Rico y en el Planeta."
+      ],
+      "acquisitionObjectives": [
+        "Analizar los efectos del cambio climático sobre los recursos naturales y los ecosistemas.",
+        "Explicar maneras en las que se pueden reducir las causas del cambio climático, para proteger el ambiente y reducir el calentamiento global.",
+        "Presentar alternativas de mitigación y conservación para los ecosistemas y recursos naturales de Puerto Rico, ante el evidente calentamiento global."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Que es el cambio climático y cómo ha alterado los biomas y los ecosistemas de la Tierra?",
+          "understanding": "Cuando hablamos de cambio climático nos referimos a los cambios globales del clima por el aumento de gases de efecto invernadero (GEI), como el dióxido de carbono, en la atmósfera. El aumento de las emisiones de GEI tiene impactos fuertes y variados en los sistemas naturales y en la sociedad. Como los gases retienen calor, al aumentar su concentración, la atmósfera y los océanos se calientan, provocando cambios y alteraciones en los factores bióticos y abióticos que conforman los ecosistemas."
+        },
+        {
+          "question": "¿A qué se le atribuye los efectos del cambio climático global?",
+          "understanding": "Los efectos del cambio climático global son atribuidos directa o indirectamente a las actividades humanas que alteran la composición de la atmósfera terrestre, que se suma a la variabilidad natural del clima observada durante períodos de tiempo comparables. En los últimos años, estos cambios se han acelerado por actividades como la deforestación, la industrialización y la quema de combustibles fósiles."
+        },
+        {
+          "question": "¿Cómo están cambiando los ecosistemas en Puerto Rico y qué ha provocado estos cambios?",
+          "understanding": "Puerto Rico posee una gran diversidad de ecosistemas, tanto terrestres como acuáticos. Los ecosistemas que se encuentran en Puerto Rico contienen diversidad de plantas y animales. Las actividades humanas, como la agricultura, la industria y la deforestación -entre otras actividades diarias- tienen fuerte impacto sobre nuestros ecosistemas."
+        },
+        {
+          "question": "¿Cómo se pueden proteger los recursos naturales de Puerto Rico?",
+          "understanding": "Los materiales, la energía y los combustibles que diariamente usamos los humanos se derivan de fuentes naturales. Su uso impacta el ambiente de distintas maneras. Algunos son recursos renovables; otros, no. Los recursos naturales que se encuentran en Puerto Rico requieren protección contra el uso indebido o excesivo, provocado por actividades humanas que alteran sus condiciones y afectan las posibilidades de sobrevivencia en nuestros ecosistemas. Implantando y practicando alternativas de cuidado, mitigación y prevención logramos un uso adecuado de nuestros recursos naturales."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.IT1.1",
+          "description": "Desarrolla prácticas de las ciencias e ingeniería -tales como: definir un problema de diseño, desarrollar posibles soluciones y optimizar (mejorar) las soluciones al problema- representándolas mediante el diseño de modelos o prototipos experimentales."
+        },
+        {
+          "code": "5.IT1.4",
+          "description": "Utiliza las prácticas de las ciencias e ingeniería -mediante los procesos de observación, medición, inferencia, predicción, clasificación, comunicación, interpretación de datos, formulación de hipótesis y experimentación- para aplicarlas en el desarrollo de investigaciones y en el diseño de soluciones a problemas."
+        },
+        {
+          "code": "5.IT1.5",
+          "description": "Comunica datos -mediante tablas, gráficas y anotaciones- de manera sistemática, para establecer conclusiones claras y precisas."
+        },
+        {
+          "code": "5.IT1.6",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería, para someter a prueba alguna idea o algún prototipo o diseño de modelos generados. Ciencias Biológicas"
+        },
+        {
+          "code": "5.CB4.1",
+          "description": "Describe los recursos naturales que son esenciales para mantener la biodiversidad en los ecosistemas."
+        },
+        {
+          "code": "5.CB4.2",
+          "description": "Identifica un ecosistema cercano a su comunidad, para describir formas en las que puede evitarse la contaminación que altera los organismos en su ambiente. Ciencias Ambientales"
+        },
+        {
+          "code": "5.CA1.1",
+          "description": "Define y distingue los conceptos cambio climático y calentamiento global."
+        },
+        {
+          "code": "5.CA1.2",
+          "description": "Describe en qué consiste el cambio climático y sus implicaciones a nivel mundial."
+        },
+        {
+          "code": "5.CA1.3",
+          "description": "Reconoce las causas que provocan el cambio climático en los biomas [tundra, taiga, bosque (templado, lluvioso, seco), pradera y desierto] de la Tierra."
+        },
+        {
+          "code": "5.CA1.4",
+          "description": "Identifica los efectos del cambio climático en Puerto Rico."
+        },
+        {
+          "code": "5.CA1.5",
+          "description": "Obtiene y analiza información sobre la forma en la que las comunidades y los individuos usan las ideas científicas para proteger el ambiente y los recursos naturales."
+        },
+        {
+          "code": "5.CA1.6",
+          "description": "Desarrolla alguna alternativa de solución, o proyectos comunitarios, para proteger el ambiente local y contribuir a disminuir los efectos del calentamiento global y el cambio climático en Puerto Rico."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la conciencia ambiental y ecológica",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Cuidado del medio ambiente",
+        "Tecnología en nuestro diario vivir"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.5.6_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    }
+  ]
+}
