@@ -480,7 +480,7 @@ async function fetchSavedPlannings() {
     const res = await fetch("/api/plannings");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    return { plans: data.plans?.length ? data.plans : localPlans, source: "supabase" };
+    return { plans: data.plans?.length ? data.plans : localPlans, source: data.source || "supabase" };
   } catch {
     return { plans: localPlans, source: "local" };
   }
@@ -721,8 +721,6 @@ function AssignmentList({ onBack, onCreate }) {
         <h1 className="heading-h1">Asignaciones</h1>
         <button className="pl btn-base btn-regular" onClick={onCreate}>+ Crear asignación</button>
       </div>
-      {loading && <p style={{ fontSize: 13, color: "#555", marginBottom: 12 }}>Cargando planificaciones guardadas...</p>}
-      {!loading && source === "local" && <p style={{ fontSize: 12, color: "#c3902a", marginBottom: 12 }}>Modo local: las planificaciones se guardan en este navegador hasta que se cree la tabla de Supabase.</p>}
       <table className="ppalTable">
         <thead><tr><th>Título</th><th>Publicado</th><th>Fecha de creación</th><th></th></tr></thead>
         <tbody>

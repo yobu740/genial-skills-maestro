@@ -464,12 +464,15 @@ function planningBody(body = {}) {
 }
 
 app.get('/api/plannings', async (_req, res) => {
-  if (!requireSupabase(res)) return;
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    return res.json({ plans: [], source: 'local', warning: 'Supabase is not configured.' });
+  }
   try {
     const rows = await supabaseRequest('teacher_plannings', { query: '?order=updated_at.desc' });
     res.json({ plans: (rows || []).map(mapPlanningRow) });
   } catch (e) {
-    res.status(500).json({ error: String(e.message || e) });
+    console.warn('[plannings] Falling back to local-only mode:', e.message || e);
+    res.json({ plans: [], source: 'local', warning: String(e.message || e) });
   }
 });
 
