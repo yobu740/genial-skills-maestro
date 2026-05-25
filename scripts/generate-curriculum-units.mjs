@@ -7,32 +7,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'public', 'data', 'curriculum-units.generated.json');
 
+function gradeSource(subject, folder, grade) {
+  return {
+    subject,
+    grade,
+    dir: path.join(ROOT, 'mapas curriculares', folder, `${grade} GRADO`),
+    filePattern: new RegExp(`(?:Unidad[_ ]?|VO\\.|^).*${grade}\\.\\d+.*\\.pdf$`, 'i'),
+  };
+}
+
 const SOURCES = [
-  {
-    subject: 'Ciencias',
-    grade: 5,
-    dir: path.join(ROOT, 'mapas curriculares', 'mapa curricular ciencias', '5 GRADO'),
-    files: [
-      'VO.5.1_Ciencias_FINAL.pdf',
-      'VO.5.2_Ciencias_FINAL.pdf',
-      'VO.5.3_Ciencias_FINAL.pdf',
-      'VO.5.4_Ciencias_FINAL.pdf',
-      'VO.5.5_Ciencias_FINAL.pdf',
-      'VO.5.6_Ciencias_FINAL.pdf',
-    ],
-  },
-  {
-    subject: 'Ciencias',
-    grade: 2,
-    dir: path.join(ROOT, 'mapas curriculares', 'mapa curricular ciencias', '2 GRADO'),
-    filePattern: /^Ciencias_Unidad_2\.\d+\.pdf$/i,
-  },
-  {
-    subject: 'Matemáticas',
-    grade: 2,
-    dir: path.join(ROOT, 'mapas curriculares', 'mapa curricular matematicas', '2 GRADO'),
-    filePattern: /^VO\.Mapa_curricular_Matema.+Unidad 2\.\d+\s*\.pdf$/i,
-  },
+  ...Array.from({ length: 8 }, (_, index) => gradeSource('Ciencias', 'mapa curricular ciencias', index + 1)),
+  ...Array.from({ length: 8 }, (_, index) => gradeSource('Matemáticas', 'mapa curricular matematicas', index + 1)),
 ];
 
 function cleanText(value = '') {
@@ -164,8 +150,12 @@ function parseUnit(text, filename, source) {
 }
 
 async function listSourceFiles(source) {
-  if (source.files) return source.files;
-  const names = await fs.readdir(source.dir);
+  let names = [];
+  try {
+    names = await fs.readdir(source.dir);
+  } catch {
+    return [];
+  }
   return names.filter(name => source.filePattern.test(name)).sort((a, b) => a.localeCompare(b));
 }
 
@@ -178,6 +168,7 @@ for (const source of SOURCES) {
     const filePath = path.join(source.dir, filename);
     const data = await pdf(await fs.readFile(filePath));
     const unit = parseUnit(data.text, filename, source);
+    if (!unit.code) continue;
     units.push(unit);
     console.log(`${source.subject} ${source.grade} U${unit.code} ${unit.title} (${data.numpages} pages): ${unit.standards.length} standards`);
   }
