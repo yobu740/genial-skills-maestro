@@ -229,6 +229,19 @@ export const GENIAL_CSS = `
 .alp-badge.cache{background:#f3f4f6;color:#6b7280}
 .alp-bp{background:#eef2ff;color:#3730a3;font-size:10px;padding:1px 6px;border-radius:4px}
 .alp-gc{background:#fef3c7;color:#92400e;font-size:10px;padding:1px 6px;border-radius:4px}
+
+/* Escuelas en mejoramiento escolar — checklist UI */
+.ipc{font-family:'Poppins',system-ui,sans-serif}
+.ipc-banner{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#FFF4DD,#FFEACF);border:1px solid #E89B1E;border-radius:10px;padding:12px 14px;margin-bottom:18px}
+.ipc-banner>div{flex:1}
+.ipc-count{background:#E89B1E;color:#fff;font-size:12px;font-weight:700;padding:3px 12px;border-radius:999px;letter-spacing:.04em}
+.ipc-row{background:#fff;border:1px solid #e4e4e4;border-radius:10px;margin-bottom:12px;overflow:hidden}
+.ipc-row-head{background:#3DA8A8;color:#fff;padding:10px 14px;font-weight:600;font-size:13.5px;letter-spacing:.01em}
+.ipc-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px;padding:8px}
+.ipc-opt{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:#33353d;transition:background .12s}
+.ipc-opt:hover{background:#f4f6f9}
+.ipc-opt.on{background:#E8F5F4;color:#246F6F;font-weight:600}
+.ipc-opt input{accent-color:#3DA8A8;cursor:pointer;width:16px;height:16px;flex-shrink:0}
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1042,6 +1055,77 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
   );
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+//  Escuela en plan de mejoramiento — checklist fijo del DEPR
+//  Options come from the official template; teacher marks all that apply.
+// ─────────────────────────────────────────────────────────────────────────────
+const IMPROVEMENT_PLAN_ROWS = [
+  {
+    label: 'Modos de instrucción para promover la respuesta activa del estudiante',
+    options: [
+      'Dirigida por el maestro',
+      'Grupo dirigido por el maestro',
+      'Grupo(s) dirigido(s) por el estudiante',
+      'Práctica guiada',
+      'Práctica individual',
+    ],
+  },
+  {
+    label: 'La lección incluye',
+    options: [
+      'Respuesta activa del estudiante',
+      'Actividad de comprobación del aprendizaje',
+    ],
+  },
+];
+
+function ImprovementPlanChecklist({ checks, onToggle, onSave }) {
+  const TOTAL = IMPROVEMENT_PLAN_ROWS.reduce((acc, r) => acc + r.options.length, 0);
+  const checkedCount = Object.values(checks || {}).filter(Boolean).length;
+
+  return (
+    <div className="ipc">
+      <div className="ipc-banner">
+        <span style={{ fontSize: 18 }}>🏫</span>
+        <div>
+          <div style={{ fontWeight: 700, color: '#7A4F00' }}>Escuelas en mejoramiento escolar</div>
+          <div style={{ fontSize: 12, color: '#33353d' }}>
+            Marca los modos de instrucción y los componentes de la lección que aplican. Puedes marcar varios.
+          </div>
+        </div>
+        <span className="ipc-count">{checkedCount}/{TOTAL}</span>
+      </div>
+
+      {IMPROVEMENT_PLAN_ROWS.map(row => (
+        <div key={row.label} className="ipc-row">
+          <div className="ipc-row-head">{row.label}</div>
+          <div className="ipc-options">
+            {row.options.map(opt => {
+              const isChecked = !!checks?.[opt];
+              return (
+                <label key={opt} className={`ipc-opt ${isChecked ? 'on' : ''}`}>
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => onToggle(opt)}
+                  />
+                  <span>{opt}</span>
+                </label>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+
+      <div className="Region-w-action" style={{ marginTop: 14, display: 'flex', gap: 10 }}>
+        <button className="pl btn-base btn-primary" onClick={onSave}>
+          💾 Guardar selecciones
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [section,     setSection]     = useState("cotejo");
   const [sectionData, setSectionData] = useState(plan.SectionData || {});
@@ -1054,7 +1138,34 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [previewLessonId, setPreviewLessonId] = useState("1");
   const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
-  const current = MOCK.cotejo.find(s => s.key === section);
+
+  // "Escuela en plan de mejoramiento" — when enabled, injects an extra
+  // section in the cotejo sidebar between Observaciones and Reflexión.
+  const [inImprovement, setInImprovement] = useState(!!plan.InImprovementPlan);
+  const [improvementChecks, setImprovementChecks] = useState(
+    plan.ImprovementChecks || {}
+  );
+
+  // Build the effective cotejo: inject "Escuelas en mejoramiento escolar"
+  // right before fl-reflex when the flag is on.
+  const effectiveCotejo = React.useMemo(() => {
+    if (!inImprovement) return MOCK.cotejo;
+    const out = [];
+    for (const item of MOCK.cotejo) {
+      if (item.key === "fl-reflex") {
+        out.push({
+          key: "fl-mejoramiento",
+          label: "Escuelas en mejoramiento escolar",
+          type: "item",
+          group: "Contenido libre",
+        });
+      }
+      out.push(item);
+    }
+    return out;
+  }, [inImprovement]);
+
+  const current = effectiveCotejo.find(s => s.key === section);
 
   async function savePlanChanges(next = {}) {
     setSaveStatus("Guardando...");
@@ -1063,11 +1174,26 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
       ...next,
       Lessons: next.Lessons || lessons,
       SectionData: next.SectionData || sectionData,
+      InImprovementPlan: 'InImprovementPlan' in next ? next.InImprovementPlan : inImprovement,
+      ImprovementChecks: next.ImprovementChecks || improvementChecks,
     });
     onPlanSaved?.(saved);
     setSaveStatus(saved.SavedLocally ? "Guardado localmente" : "Guardado");
     setTimeout(() => setSaveStatus(""), 1800);
     return saved;
+  }
+
+  function toggleImprovement(on) {
+    setInImprovement(on);
+    // If user just enabled it, also auto-jump to the new section so they see it
+    if (on) setSection("fl-mejoramiento");
+    // Persist the flag immediately so it survives reloads
+    savePlanChanges({ InImprovementPlan: on });
+  }
+
+  function toggleImprovementCheck(option) {
+    const next = { ...improvementChecks, [option]: !improvementChecks[option] };
+    setImprovementChecks(next);
   }
 
   function handleAIFill(data) {
@@ -1111,6 +1237,16 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
   function ContentArea() {
     if (section === "cotejo") {
       return <PlanningPreviewArea plan={plan} lessons={lessons} sectionData={sectionData} previewLessonId={previewLessonId} setPreviewLessonId={setPreviewLessonId} />;
+    }
+
+    if (section === "fl-mejoramiento") {
+      return (
+        <ImprovementPlanChecklist
+          checks={improvementChecks}
+          onToggle={toggleImprovementCheck}
+          onSave={() => savePlanChanges({ ImprovementChecks: improvementChecks })}
+        />
+      );
     }
 
     if (section === "gl-lessons" || section === "fl-lessons") {
@@ -1240,15 +1376,36 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
         <strong>Año académico:</strong> {plan.AcademicYear || "agosto 29, 2023 - mayo 31, 2030"}
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#33353d", paddingBottom: 12, borderBottom: "1px solid var(--palette-gray-silver)", marginBottom: 18 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 13, color: "#33353d", paddingBottom: 12, borderBottom: "1px solid var(--palette-gray-silver)", marginBottom: 12 }}>
         <span style={{ color: "#868686" }}>⏱</span>
         <span>Este plan cerrará en: <strong>{plan.ClosesOn || "mayo 31, 2030"}</strong></span>
       </div>
 
+      {/* Plan de mejoramiento escolar toggle — when on, a new sidebar section appears */}
+      <label
+        title="Si la escuela está en plan de mejoramiento, aparece una sección extra del cotejo con los modos de instrucción a marcar."
+        style={{
+          display: "inline-flex", alignItems: "center", gap: 10,
+          padding: "8px 14px", marginBottom: 18,
+          background: inImprovement ? "#FFEACF" : "#F4F6F9",
+          border: `1px solid ${inImprovement ? "#E89B1E" : "#E4E9F0"}`,
+          borderRadius: 999, cursor: "pointer",
+          fontSize: 13, fontWeight: 600, color: inImprovement ? "#7A4F00" : "#364965",
+          transition: "all .15s",
+        }}>
+        <input
+          type="checkbox"
+          checked={inImprovement}
+          onChange={(e) => toggleImprovement(e.target.checked)}
+          style={{ accentColor: "#E89B1E", cursor: "pointer", width: 16, height: 16 }}
+        />
+        🏫 La escuela está en plan de mejoramiento escolar
+      </label>
+
       <div className="containerPlanning">
         <div className="containerPlanning__sidebar">
-          <nav className="sidebarMenu">
-            {MOCK.cotejo.map(s => {
+          <nav className="sidebarMenu" data-effective-cotejo>
+            {effectiveCotejo.map(s => {
               if (s.type === "ppal")  return (
                 <div key={s.key} className="sidebarMenu--group">
                   <div className="sidebarMenu--itemPpal" onClick={() => setSection("cotejo")}><span>⌄</span></div>
