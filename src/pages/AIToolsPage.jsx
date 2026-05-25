@@ -39,7 +39,20 @@ function pickIcon(name, category) {
 export default function AIToolsPage() {
   const [active, setActive] = useState('all');
   const [search, setSearch] = useState('');
+  // openTool can be: null | { tool: cfg, initialValues?: {} }
   const [openTool, setOpenTool] = useState(null);
+
+  function openWith(toolCfg, initialValues = null) {
+    setOpenTool({ tool: toolCfg, initialValues });
+  }
+
+  function handleSwitchTool(toolName, initialValues = {}) {
+    const next = TOOLS[toolName];
+    if (!next) return;
+    // Force a fresh modal mount so initialValues take effect for the picker etc.
+    setOpenTool(null);
+    setTimeout(() => setOpenTool({ tool: next, initialValues }), 0);
+  }
 
   const visible = useMemo(() => {
     const entries = Object.entries(TOOLS);
@@ -62,7 +75,13 @@ export default function AIToolsPage() {
   if (openTool) {
     return (
       <div className="ai-page ai-page-workspace">
-        <ToolModal tool={openTool} onClose={() => setOpenTool(null)} embedded />
+        <ToolModal
+          tool={openTool.tool}
+          initialValues={openTool.initialValues}
+          onClose={() => setOpenTool(null)}
+          onSwitchTool={handleSwitchTool}
+          embedded
+        />
       </div>
     );
   }
@@ -108,7 +127,7 @@ export default function AIToolsPage() {
               key={name}
               className="ai-page-card"
               style={{ animation: `fadeUp .4s ${i * 25}ms both` }}
-              onClick={() => setOpenTool(cfg)}
+              onClick={() => openWith(cfg)}
             >
               <div className="ai-page-card-icon" style={{ background: tint.bg, color: tint.fg }}>
                 <Icon />
@@ -119,7 +138,7 @@ export default function AIToolsPage() {
               </div>
               <div className="ai-page-card-foot">
                 <span className="ai-page-cat">{CATEGORIES.find(c => c.id === cfg.category)?.label}</span>
-                <button className="ai-page-use" onClick={(e) => { e.stopPropagation(); setOpenTool(cfg); }}>
+                <button className="ai-page-use" onClick={(e) => { e.stopPropagation(); openWith(cfg); }}>
                   {cfg.isChat ? 'Chatear' : 'Usar'} <Ic.arrow />
                 </button>
               </div>

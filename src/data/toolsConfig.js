@@ -551,6 +551,10 @@ Incluye:
     category: 'evaluacion',
     title: 'Pruebas Diagnósticas',
     canMakeInteractive: true,
+    // After generating, surface a button that opens "Plan de Intervención para
+    // Rezago" pre-filled with the materia/grado/estándares + a summary of the
+    // diagnostic content as the brechas seed.
+    suggestsInterventionPlan: true,
     subtitle: 'Crea pre-tests para identificar conocimientos previos y brechas antes de una unidad.',
     defaultModel: 'anthropic/claude-sonnet-4.5',
     fields: [

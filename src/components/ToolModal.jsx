@@ -973,12 +973,24 @@ function WorksheetWorkspace({ value, onChange, title }) {
   );
 }
 
-function ToolModal({ tool, onClose, embedded = false }) {
+function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSwitchTool = null }) {
   const [model, setModel] = React.useState(tool.defaultModel);
-  const initial = React.useMemo(() => Object.fromEntries(tool.fields.map(f => [
-    f.name,
-    f.default ?? (f.type === 'standards' ? [] : ''),
-  ])), [tool]);
+  const initial = React.useMemo(() => {
+    const base = Object.fromEntries(tool.fields.map(f => [
+      f.name,
+      f.default ?? (f.type === 'standards' ? [] : ''),
+    ]));
+    // Apply any initial values from a parent (e.g. follow-up workflows like
+    // Pruebas Diagnósticas → Plan de Intervención para Rezago).
+    if (initialValues) {
+      for (const k of Object.keys(initialValues)) {
+        if (initialValues[k] !== undefined && initialValues[k] !== null) {
+          base[k] = initialValues[k];
+        }
+      }
+    }
+    return base;
+  }, [tool, initialValues]);
   const [values, setValues] = React.useState(initial);
   const [output, setOutput] = React.useState('');
   const [status, setStatus] = React.useState('idle'); // idle | streaming | done | error
@@ -1184,6 +1196,35 @@ function ToolModal({ tool, onClose, embedded = false }) {
     finally { setExporting(''); }
   }
 
+  /**
+   * Bridge from Pruebas Diagnósticas → Plan de Intervención para Rezago.
+   * Extracts a brechas seed from the diagnostic output and opens the
+   * intervention tool with materia / grado / estándares / brechas pre-filled.
+   * The parent (AIToolsPage) handles the actual tool switch via onSwitchTool.
+   */
+  function handleSwitchToIntervention() {
+    if (!onSwitchTool) return;
+
+    // Extract a focused summary of the diagnostic for the brechas field.
+    // The Plan de Intervención prompt is robust enough to digest raw output,
+    // so we hand it the topic + a truncated dump of what was generated.
+    const topic = values.unidad || values.tema || 'tema del diagnóstico';
+    const truncated = (output || '').slice(0, 1800);
+    const brechasSeed = `Resultados de la Prueba Diagnóstica aplicada sobre: "${topic}".
+
+Asume que varios estudiantes mostraron debilidad en los conceptos centrales de este diagnóstico. Identifica los prerrequisitos faltantes a partir del contenido del pre-test:
+
+${truncated}`;
+
+    onSwitchTool('Plan de Intervención para Rezago', {
+      materia:    values.materia,
+      grado:      values.grado,
+      severidad:  'Brechas específicas (no atraso global)',
+      brechas:    brechasSeed,
+      estandares: Array.isArray(values.estandares) ? values.estandares : [],
+    });
+  }
+
   async function handleMakeInteractive() {
     setExporting('interactive');
     setInteractiveError('');
@@ -1340,6 +1381,15 @@ function ToolModal({ tool, onClose, embedded = false }) {
                   {canMakeInteractive && (
                     <button onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
                       {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
+                    </button>
+                  )}
+                  {tool.suggestsInterventionPlan && onSwitchTool && (
+                    <button
+                      onClick={handleSwitchToIntervention}
+                      title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
+                      style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
+                    >
+                      🫶 Plan de intervención
                     </button>
                   )}
                   <button onClick={downloadOut} title="Descargar markdown crudo">.md</button>
