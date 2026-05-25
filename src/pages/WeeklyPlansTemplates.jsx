@@ -28,6 +28,10 @@ export default function WeeklyPlansTemplates() {
   const [scope,     setScope]   = useState('');
   const [kind,      setKind]    = useState('plan');
   const [q,         setQ]       = useState('');
+  const [unit,      setUnit]    = useState('');
+  const [units,     setUnits]   = useState([]);
+  const [unitContext, setUnitContext] = useState(null);
+  const [loadingUnits, setLoadingUnits] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -35,11 +39,57 @@ export default function WeeklyPlansTemplates() {
     if (subject) params.set('subject', subject);
     if (scope)   params.set('scope', scope);
     if (kind)    params.set('kind', kind);
+    if (unit)    params.set('unit', unit);
+    if (q)       params.set('q', q);
     fetch(`/api/weekly-plans?${params}`)
       .then(r => r.json())
       .then(j => { setData(j); setLoading(false); })
       .catch(e => { setError(String(e)); setLoading(false); });
-  }, [subject, scope, kind]);
+  }, [subject, scope, kind, unit, q]);
+
+  useEffect(() => {
+    setUnit('');
+    setUnitContext(null);
+
+    if (!subject || !scope) {
+      setUnits([]);
+      return;
+    }
+
+    setLoadingUnits(true);
+    fetch('/data/units.json')
+      .then(res => {
+        if (!res.ok) throw new Error('No se pudo cargar units.json');
+        return res.json();
+      })
+      .then(json => {
+        const selectedSubject = subject.toLowerCase();
+        const selectedGrade = String(scope).replace(/\D/g, '');
+        const filteredUnits = (json.units || []).filter(item => {
+          const itemSubject = String(item.subject || '').toLowerCase();
+          const itemGrade = String(item.grade || '').replace(/\D/g, '');
+          return itemSubject === selectedSubject && itemGrade === selectedGrade;
+        });
+        setUnits(filteredUnits);
+      })
+      .catch(err => {
+        console.error('Error loading curriculum units:', err);
+        setUnits([]);
+      })
+      .finally(() => setLoadingUnits(false));
+  }, [subject, scope]);
+
+  const handleUnitChange = (unitId) => {
+    setUnit(unitId);
+    const selected = units.find(item => item.id === unitId || item.code === unitId);
+    setUnitContext(selected || null);
+
+    if (selected) {
+      sessionStorage.setItem('selectedUnit', JSON.stringify(selected));
+    } else {
+      sessionStorage.removeItem('selectedUnit');
+    }
+  };
 
   const filtered = useMemo(() => {
     if (!q.trim()) return data.plans;
@@ -85,6 +135,21 @@ export default function WeeklyPlansTemplates() {
           <option value="">Todo tipo de archivo</option>
           {data.facets.kinds.map(k => <option key={k} value={k}>{KIND_LABEL[k] || k}</option>)}
         </select>
+        <select
+          value={unit}
+          onChange={(e) => handleUnitChange(e.target.value)}
+          disabled={!subject || !scope || loadingUnits}
+          aria-label="Unidad curricular"
+        >
+          <option value="">
+            {loadingUnits ? 'Cargando unidades...' : 'Todas las unidades'}
+          </option>
+          {units.map(item => (
+            <option key={item.id} value={item.code}>
+              Unidad {item.code}: {item.title}
+            </option>
+          ))}
+        </select>
         <input
           type="text"
           placeholder="Buscar por nombre…"
@@ -92,6 +157,62 @@ export default function WeeklyPlansTemplates() {
           onChange={(e) => setQ(e.target.value)}
         />
       </div>
+
+      {unitContext && (
+        <section className="wp-unit-context" aria-label="Contexto de la unidad curricular">
+          <div className="wp-unit-main">
+            <div className="wp-unit-eyebrow">Contexto curricular</div>
+            <h2>Unidad {unitContext.code}: {unitContext.title}</h2>
+            <p>{unitContext.transferObjectives?.[0]}</p>
+          </div>
+          <div className="wp-unit-meta">
+            <span>{unitContext.weeks} semanas</span>
+            <span>Semanas {unitContext.startWeek}-{unitContext.endWeek}</span>
+          </div>
+          <div className="wp-unit-sections">
+            {unitContext.essentialQuestions?.length > 0 && (
+              <div>
+                <h3>Preguntas esenciales</h3>
+                <ul>
+                  {unitContext.essentialQuestions.slice(0, 3).map((item, index) => (
+                    <li key={index}>{item.question}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {unitContext.acquisitionObjectives?.length > 0 && (
+              <div>
+                <h3>Destrezas</h3>
+                <ul>
+                  {unitContext.acquisitionObjectives.slice(0, 4).map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {unitContext.standards?.length > 0 && (
+              <div>
+                <h3>Estándares PRCS</h3>
+                <div className="wp-standards-tags">
+                  {unitContext.standards.map((item, index) => (
+                    <span key={index}>{item.code}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {unitContext.resources?.length > 0 && (
+              <div>
+                <h3>Recursos disponibles</h3>
+                <ul>
+                  {unitContext.resources.slice(0, 5).map((item, index) => (
+                    <li key={index}>{item.title}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {error && <div className="wp-error">Error: {error}</div>}
       {loading && <div className="wp-loading">Cargando…</div>}

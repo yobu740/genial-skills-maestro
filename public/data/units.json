@@ -1,0 +1,161 @@
+{
+  "units": [
+    {
+      "id": "MAT_1_1",
+      "code": "1.1",
+      "subject": "Matemáticas",
+      "grade": 1,
+      "title": "Aprendo al jugar con los números",
+      "weeks": 6,
+      "startWeek": 2,
+      "endWeek": 7,
+      "transferObjectives": [
+        "Al finalizar la unidad, el estudiante lee, escribe, descompone y ordena números hasta el 999 usando valor posicional."
+      ],
+      "acquisitionObjectives": [
+        "Determina el número que está antes, entre o después de un número dado.",
+        "Usa el valor posicional para comparar números de hasta tres dígitos.",
+        "Representa números con modelos, dibujos y expresiones."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Por qué contamos?",
+          "understanding": "Contar ayuda a responder cuántos objetos hay en una colección."
+        },
+        {
+          "question": "¿Cómo nos ayuda el valor posicional a entender los números?",
+          "understanding": "El valor de un dígito cambia según su posición."
+        }
+      ],
+      "standards": [
+        {
+          "code": "1.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales de hasta tres dígitos."
+        },
+        {
+          "code": "1.N.1.2",
+          "description": "Determina y escribe el número que va antes, entre y después."
+        }
+      ],
+      "vocabulary": ["centenas", "decenas", "unidades", "ordinales"],
+      "themes": ["Equidad y respeto entre todos los seres humanos"],
+      "resources": [
+        {
+          "type": "lesson_plan",
+          "title": "Lección: Organizando números",
+          "filename": "lesson-organizando-numeros.doc"
+        },
+        {
+          "type": "learning_activity",
+          "title": "Actividad: Modelos de valor posicional",
+          "filename": "activity-valor-posicional.doc"
+        }
+      ]
+    },
+    {
+      "id": "SCI_5_1",
+      "code": "1",
+      "subject": "Ciencias",
+      "grade": 5,
+      "title": "Sistemas de la Tierra y zonas climáticas",
+      "weeks": 4,
+      "startWeek": 11,
+      "endWeek": 14,
+      "transferObjectives": [
+        "El estudiante usa evidencia científica para explicar la función del Sol, los océanos y el ciclo del agua en las zonas climáticas de la Tierra."
+      ],
+      "acquisitionObjectives": [
+        "Describe las zonas climáticas y sus características.",
+        "Explica la relación entre el Sol, el océano y el ciclo del agua.",
+        "Representa procesos de la Tierra mediante modelos."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo influyen el Sol y los océanos en el clima?",
+          "understanding": "La energía solar y el agua distribuyen calor y humedad en la Tierra."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.CT2",
+          "description": "Utiliza evidencia científica para explicar fenómenos de la Tierra."
+        }
+      ],
+      "vocabulary": ["clima", "zona climática", "ciclo del agua", "océano"],
+      "themes": ["Concienciación ambiental y ecológica"],
+      "resources": [
+        {
+          "type": "lesson_plan",
+          "title": "Zonas climáticas",
+          "filename": "zonas-climaticas.pdf"
+        }
+      ]
+    },
+    {
+      "id": "SOC_5_1",
+      "code": "1",
+      "subject": "Estudios Sociales",
+      "grade": 5,
+      "title": "Comunidades, cultura y ciudadanía",
+      "weeks": 5,
+      "startWeek": 1,
+      "endWeek": 5,
+      "transferObjectives": [
+        "El estudiante analiza cómo la cultura, la geografía y la ciudadanía influyen en la vida de las comunidades."
+      ],
+      "acquisitionObjectives": [
+        "Identifica elementos culturales de una comunidad.",
+        "Relaciona recursos geográficos con formas de vida.",
+        "Propone acciones de participación ciudadana."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Qué hace única a una comunidad?",
+          "understanding": "Las comunidades se forman por personas, cultura, espacio y decisiones compartidas."
+        }
+      ],
+      "standards": [
+        {
+          "code": "CC.5.1",
+          "description": "Analiza aspectos culturales y cívicos de comunidades."
+        }
+      ],
+      "vocabulary": ["comunidad", "cultura", "ciudadanía", "geografía"],
+      "themes": ["Identidad cultural", "Participación ciudadana"],
+      "resources": []
+    },
+    {
+      "id": "ING_5_1",
+      "code": "1",
+      "subject": "Inglés",
+      "grade": 5,
+      "title": "Reading, Writing and Communication",
+      "weeks": 5,
+      "startWeek": 1,
+      "endWeek": 5,
+      "transferObjectives": [
+        "Students communicate ideas clearly through reading, writing, listening and speaking tasks."
+      ],
+      "acquisitionObjectives": [
+        "Identifies main idea and supporting details.",
+        "Uses vocabulary in context.",
+        "Writes short constructed responses with evidence."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "How do readers make meaning from text?",
+          "understanding": "Readers use evidence, vocabulary and context to understand ideas."
+        }
+      ],
+      "standards": [
+        {
+          "code": "5.R.1",
+          "description": "Reads and comprehends grade-level texts."
+        }
+      ],
+      "vocabulary": ["main idea", "details", "evidence", "context"],
+      "themes": ["Communication", "Collaboration"],
+      "resources": []
+    }
+  ]
+}

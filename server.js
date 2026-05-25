@@ -631,10 +631,19 @@ app.get('/api/weekly-plans', async (req, res) => {
   try {
     const idx = await loadPlansIndex();
     let list = idx;
-    const { subject, scope, kind } = req.query;
+    const { subject, scope, kind, unit } = req.query;
     if (subject) list = list.filter(p => (p.subject || '').toLowerCase() === String(subject).toLowerCase());
     if (scope)   list = list.filter(p => (p.scope || '')   === String(scope));
     if (kind)    list = list.filter(p => p.kind === String(kind));
+    if (unit) {
+      const unitText = String(unit);
+      const unitMajor = unitText.split(/[._-]/).filter(Boolean).pop() || unitText;
+      const unitPrefix = unitText.split('.')[0];
+      list = list.filter(p => {
+        const planUnit = String(p.unit || '');
+        return planUnit === unitText || planUnit === unitMajor || planUnit === unitPrefix;
+      });
+    }
     list = list.map(p => ({ ...p, url: publicUrl(p.path) }));
     // also surface available facets so the UI can build dropdowns
     const facets = {
