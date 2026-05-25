@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { getAthenasToken } from "../../services/athenasApi.js";
@@ -1148,7 +1148,7 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
 
   // Build the effective cotejo: inject "Escuelas en mejoramiento escolar"
   // right before fl-reflex when the flag is on.
-  const effectiveCotejo = React.useMemo(() => {
+  const effectiveCotejo = useMemo(() => {
     if (!inImprovement) return MOCK.cotejo;
     const out = [];
     for (const item of MOCK.cotejo) {
