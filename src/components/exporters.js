@@ -198,39 +198,68 @@ export function exportPPTX(markdown, filename = 'presentacion.pptx', title = 'Pr
   const slides = parseMarkdownToSlides(markdown);
   for (const slide of slides) {
     const s = pptx.addSlide();
-    s.background = { color: 'FFFFFF' };
+    s.background = { color: 'F5F7FA' };
+    
+    // Top navy accent banner
     s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 0.5, fill: { color: NAVY } });
+    
+    // Title
     s.addText(slide.title, {
-      x: 0.4, y: 0.65, w: 12.5, h: 0.8,
+      x: 0.4, y: 0.55, w: 12.5, h: 0.8,
       fontSize: 26, bold: true, color: NAVY.replace('#', ''), fontFace: 'Poppins',
+      align: slide.align || 'left',
     });
+    
+    // Decorative title underline line
+    s.addShape(pptx.ShapeType.rect, {
+      x: slide.align === 'center' ? 5.416 : slide.align === 'right' ? 10.433 : 0.4,
+      y: 1.35, w: 2.5, h: 0.04, fill: { color: TEAL }
+    });
+
+    const isSplit = !!slide.imageUrl;
+    const textOptions = {
+      x: 0.5,
+      y: 1.6,
+      w: isSplit ? 7.2 : 12.3,
+      h: 4.8,
+      fontSize: 18,
+      color: '1A2740',
+      fontFace: 'Poppins',
+      lineSpacing: 32,
+      align: slide.align || 'left',
+    };
+
     if (slide.bullets.length) {
       s.addText(
         slide.bullets.map(b => ({ text: b, options: { bullet: true } })),
-        {
-          x: 0.5, y: 1.6, w: 12.3, h: 5.5,
-          fontSize: 18, color: '1A2740', fontFace: 'Poppins', lineSpacing: 32,
-        }
+        textOptions
       );
     } else if (slide.body) {
       s.addText(slide.body, {
-        x: 0.5, y: 1.6, w: 12.3, h: 5.5,
-          fontSize: 16, color: '1A2740', fontFace: 'Poppins',
+        ...textOptions,
+        fontSize: 16,
       });
     }
+
     if (slide.imageUrl) {
       try {
         s.addImage({
           path: slide.imageUrl,
-          x: 8.7, y: 4.1, w: 3.8, h: 2.35,
+          x: 8.2,
+          y: 1.6,
+          w: 4.6,
+          h: 4.8,
+          sizing: { type: 'contain', w: 4.6, h: 4.8 }
         });
       } catch {
         s.addText(slide.imageAlt || 'Imagen', {
-          x: 8.7, y: 4.1, w: 3.8, h: 0.35,
+          x: 8.2, y: 1.6, w: 4.6, h: 0.35,
           fontSize: 11, color: TEAL.replace('#', ''), fontFace: 'Poppins',
+          align: 'center',
         });
       }
     }
+
     if (slide.linkUrl) {
       s.addText(slide.linkText || slide.linkUrl, {
         x: 0.5, y: 6.65, w: 7.4, h: 0.35,
@@ -258,15 +287,20 @@ function parseMarkdownToSlides(md) {
     if (cur) {
       const image = cur.body.match(/!\[([^\]]*)\]\(([^)\s]+)\)/);
       const link = cur.body.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
+      const alignMatch = cur.body.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
       const notes = cur.body.match(/(?:^|\s)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
+      
       cur.imageAlt = image?.[1] || '';
       cur.imageUrl = image?.[2] || '';
       cur.linkText = link?.[1] || '';
       cur.linkUrl = link?.[2] || '';
+      cur.align = alignMatch?.[1] || 'left';
       cur.notes = notes?.[1]?.trim() || '';
+      
       cur.body = cur.body
         .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
         .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
+        .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, ' ')
         .replace(/(?:^|\s)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, ' ')
         .trim();
       cur.bullets = cur.bullets.filter(Boolean);
@@ -282,10 +316,10 @@ function parseMarkdownToSlides(md) {
     if (h1 || h2 || h3) {
       flush();
       const title = (h1 || h2 || h3)[1].replace(/\*\*/g, '').trim();
-      cur = { title, bullets: [], body: '', imageAlt: '', imageUrl: '', linkText: '', linkUrl: '', notes: '' };
+      cur = { title, bullets: [], body: '', imageAlt: '', imageUrl: '', linkText: '', linkUrl: '', align: 'left', notes: '' };
       continue;
     }
-    if (!cur) cur = { title: 'Contenido', bullets: [], body: '', imageAlt: '', imageUrl: '', linkText: '', linkUrl: '', notes: '' };
+    if (!cur) cur = { title: 'Contenido', bullets: [], body: '', imageAlt: '', imageUrl: '', linkText: '', linkUrl: '', align: 'left', notes: '' };
     const bullet = line.match(/^\s*[-*]\s+(.+)/);
     const num = line.match(/^\s*\d+\.\s+(.+)/);
     if (bullet) cur.bullets.push(bullet[1].replace(/\*\*/g, '').trim());
@@ -293,7 +327,6 @@ function parseMarkdownToSlides(md) {
     else if (line.trim()) cur.body += line.trim() + ' ';
   }
   flush();
-  // Drop empty slides
   return slides.filter(s => s.title || s.bullets.length || s.body);
 }
 

@@ -376,10 +376,12 @@ function parseEditableSlides(markdown) {
     const rawBody = current.body.join('\n').trim();
     const image = rawBody.match(/!\[([^\]]*)\]\(([^)\s]+)\)/);
     const link = rawBody.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
+    const alignMatch = rawBody.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
     const notes = rawBody.match(/(?:^|\n)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
     const body = rawBody
       .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
       .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
+      .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, '')
       .replace(/(?:^|\n)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, '')
       .trim();
     slides.push({
@@ -389,6 +391,7 @@ function parseEditableSlides(markdown) {
       imageUrl: image?.[2] || '',
       linkText: link?.[1] || '',
       linkUrl: link?.[2] || '',
+      align: alignMatch?.[1] || 'left',
       notes: notes?.[1]?.trim() || '',
     });
   }
@@ -404,7 +407,7 @@ function parseEditableSlides(markdown) {
     current.body.push(line);
   }
   flush();
-  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '' }];
+  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left' }];
 }
 
 function slidesToMarkdown(slides) {
@@ -413,15 +416,157 @@ function slidesToMarkdown(slides) {
     const parts = [slide.body || ''];
     if (slide.imageUrl) parts.push(`![${slide.imageAlt || slide.title || 'Imagen'}](${slide.imageUrl})`);
     if (slide.linkUrl) parts.push(`[${slide.linkText || slide.linkUrl}](${slide.linkUrl})`);
+    if (slide.align && slide.align !== 'left') parts.push(`<!-- align: ${slide.align} -->`);
     if (slide.notes) parts.push(`Notas del maestro: ${slide.notes}`);
     return `${heading} ${slide.title || 'Contenido'}\n\n${parts.filter(Boolean).join('\n\n')}`.trim();
   }).join('\n\n');
+}
+
+function parseInlineFormatting(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+function markdownToHtmlForEditor(md) {
+  if (!md) return '<div><br></div>';
+  const lines = md.split('\n');
+  let inList = false;
+  const html = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      if (!inList) {
+        html.push('<ul>');
+        inList = true;
+      }
+      const content = parseInlineFormatting(trimmed.substring(2));
+      html.push(`<li>${content}</li>`);
+    } else {
+      if (inList) {
+        html.push('</ul>');
+        inList = false;
+      }
+      if (trimmed === '') {
+        html.push('<div><br></div>');
+      } else {
+        const content = parseInlineFormatting(line);
+        html.push(`<div>${content}</div>`);
+      }
+    }
+  }
+  if (inList) {
+    html.push('</ul>');
+  }
+  return html.join('');
+}
+
+function htmlToMarkdown(html) {
+  if (!html) return '';
+
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+
+  function clean(node) {
+    let text = '';
+    if (node.nodeType === Node.TEXT_NODE) {
+      return node.nodeValue;
+    }
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const tag = node.tagName.toLowerCase();
+      
+      if (tag === 'li') {
+        let childText = '';
+        for (const child of node.childNodes) {
+          childText += clean(child);
+        }
+        return `- ${childText.trim()}\n`;
+      }
+      
+      if (tag === 'strong' || tag === 'b') {
+        let childText = '';
+        for (const child of node.childNodes) {
+          childText += clean(child);
+        }
+        return `**${childText}**`;
+      }
+      
+      if (tag === 'em' || tag === 'i') {
+        let childText = '';
+        for (const child of node.childNodes) {
+          childText += clean(child);
+        }
+        return `*${childText}*`;
+      }
+
+      if (tag === 'br') {
+        return '\n';
+      }
+      if (tag === 'div' || tag === 'p') {
+        let childText = '';
+        for (const child of node.childNodes) {
+          childText += clean(child);
+        }
+        return childText.endsWith('\n') ? childText : childText + '\n';
+      }
+
+      let childText = '';
+      for (const child of node.childNodes) {
+        childText += clean(child);
+      }
+      return childText;
+    }
+    return '';
+  }
+
+  const result = clean(temp);
+  return result
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function SlideBodyEditor({ html, onChange, align, slideIndex }) {
+  const editorRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (editorRef.current) {
+      editorRef.current.innerHTML = html;
+    }
+  }, [slideIndex]);
+
+  const onInput = () => {
+    if (editorRef.current) {
+      onChange(editorRef.current.innerHTML);
+    }
+  };
+
+  return (
+    <div
+      ref={editorRef}
+      contentEditable
+      className="tm-slide-body-input rich-editor"
+      style={{ textAlign: align, outline: 'none' }}
+      onInput={onInput}
+      placeholder="Haz clic aquí para añadir texto o viñetas..."
+    />
+  );
 }
 
 function SlideWorkspace({ value, onChange }) {
   const slides = React.useMemo(() => parseEditableSlides(value), [value]);
   const [active, setActive] = React.useState(0);
   const current = slides[Math.min(active, Math.max(slides.length - 1, 0))] || slides[0];
+
+  const [showImagePicker, setShowImagePicker] = React.useState(false);
+  const [aiImagePrompt, setAiImagePrompt] = React.useState('');
+  const [generatingImage, setGeneratingImage] = React.useState(false);
+  const [customImageUrl, setCustomImageUrl] = React.useState('');
+  const [imageError, setImageError] = React.useState('');
 
   React.useEffect(() => {
     if (active > slides.length - 1) setActive(Math.max(slides.length - 1, 0));
@@ -433,13 +578,13 @@ function SlideWorkspace({ value, onChange }) {
   }
 
   function addSlide() {
-    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad' }]));
+    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left' }]));
     setActive(slides.length);
   }
 
   function removeSlide(index) {
     const next = slides.filter((_, i) => i !== index);
-    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '' }]));
+    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left' }]));
     setActive(Math.max(0, index - 1));
   }
 
@@ -450,10 +595,45 @@ function SlideWorkspace({ value, onChange }) {
     setActive(active + 1);
   }
 
-  function appendBullet() {
-    if (!current) return;
-    const body = `${current.body || ''}\n- Nuevo punto`.trim();
-    updateSlide(active, { body });
+  function handleLocalImageUpload(e) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setImageError('');
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      if (event.target?.result) {
+        updateSlide(active, { imageUrl: event.target.result, imageAlt: file.name });
+        setShowImagePicker(false);
+      }
+    };
+    reader.onerror = () => {
+      setImageError('Error al leer el archivo de imagen.');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  async function handleGenerateAIImage() {
+    if (!aiImagePrompt.trim() || !current) return;
+    setGeneratingImage(true);
+    setImageError('');
+    try {
+      const enhancedPrompt = `${aiImagePrompt}, children's book illustration, soft colors, age-appropriate, clear, friendly, vector style, white background`;
+      const res = await fetch('/api/generate-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt: enhancedPrompt }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) throw new Error(data.error || 'No se pudo generar la imagen');
+      
+      updateSlide(active, { imageUrl: data.url, imageAlt: aiImagePrompt.trim() });
+      setShowImagePicker(false);
+      setAiImagePrompt('');
+    } catch (e) {
+      setImageError(e.message || 'Error de comunicación con el generador de imágenes.');
+    } finally {
+      setGeneratingImage(false);
+    }
   }
 
   return (
@@ -466,75 +646,306 @@ function SlideWorkspace({ value, onChange }) {
             className={`tm-slide-thumb ${i === active ? 'active' : ''}`}
             onClick={() => setActive(i)}
           >
-            <span>{i + 1}</span>
-            <strong>{slide.title || 'Sin titulo'}</strong>
+            <span className="tm-slide-thumb-num">{i + 1}</span>
+            <div className="tm-slide-thumb-card">
+              <strong className="tm-slide-thumb-title">{slide.title || 'Sin título'}</strong>
+              <span className="tm-slide-thumb-preview-type">
+                {slide.imageUrl ? '🖼️ Imagen' : '📝 Texto'}
+                {slide.align && slide.align !== 'left' && ` · ${slide.align === 'center' ? 'Centro' : slide.align === 'right' ? 'Der' : 'Just'}`}
+              </span>
+            </div>
           </button>
         ))}
         <button type="button" className="tm-work-add" onClick={addSlide}>+ Slide</button>
       </div>
+
       <div className="tm-slide-editor">
         {current && (
           <>
             <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
-              <button type="button" onClick={appendBullet}>+ Texto</button>
-              <button type="button" onClick={() => updateSlide(active, { imageUrl: current.imageUrl || 'https://', imageAlt: current.imageAlt || current.title })}>+ Imagen</button>
-              <button type="button" onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}>+ Enlace</button>
-              <button type="button" onClick={duplicateSlide}>Duplicar</button>
-              <button type="button" className="danger" onClick={() => removeSlide(active)}>Borrar</button>
+              <div className="tm-wysiwyg-toolbar">
+                <button
+                  type="button"
+                  title="Negrita"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => document.execCommand('bold', false)}
+                >
+                  <strong>B</strong>
+                </button>
+                <button
+                  type="button"
+                  title="Itálica"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => document.execCommand('italic', false)}
+                >
+                  <em>I</em>
+                </button>
+                <button
+                  type="button"
+                  title="Lista de viñetas"
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => document.execCommand('insertUnorderedList', false)}
+                >
+                  • Lista
+                </button>
+                
+                <div className="tm-toolbar-divider" />
+                
+                <button
+                  type="button"
+                  title="Alinear a la izquierda"
+                  className={current.align === 'left' ? 'active' : ''}
+                  onClick={() => updateSlide(active, { align: 'left' })}
+                >
+                  ⬅
+                </button>
+                <button
+                  type="button"
+                  title="Centrar"
+                  className={current.align === 'center' ? 'active' : ''}
+                  onClick={() => updateSlide(active, { align: 'center' })}
+                >
+                  ↔
+                </button>
+                <button
+                  type="button"
+                  title="Alinear a la derecha"
+                  className={current.align === 'right' ? 'active' : ''}
+                  onClick={() => updateSlide(active, { align: 'right' })}
+                >
+                  ➡
+                </button>
+                <button
+                  type="button"
+                  title="Justificar"
+                  className={current.align === 'justify' ? 'active' : ''}
+                  onClick={() => updateSlide(active, { align: 'justify' })}
+                >
+                  ⇹
+                </button>
+                
+                <div className="tm-toolbar-divider" />
+
+                <button
+                  type="button"
+                  title="Añadir Imagen"
+                  onClick={() => setShowImagePicker(true)}
+                >
+                  🖼️ Imagen
+                </button>
+                
+                <button
+                  type="button"
+                  title="Añadir Enlace"
+                  onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}
+                >
+                  🔗 Enlace
+                </button>
+              </div>
+
+              <div className="tm-slide-actions-right">
+                <button type="button" onClick={duplicateSlide} title="Duplicar diapositiva">Duplicar</button>
+                <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
+              </div>
             </div>
 
             <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
-              <div className="tm-slide-canvas">
-                <input
-                  className="tm-slide-title-input"
-                  value={current.title}
-                  onChange={(e) => updateSlide(active, { title: e.target.value })}
-                  placeholder="Titulo de la diapositiva"
-                />
-                <textarea
-                  className="tm-slide-body-input"
-                  value={current.body}
-                  onChange={(e) => updateSlide(active, { body: e.target.value })}
-                  placeholder="- Punto principal&#10;- Actividad o evidencia"
-                />
-                {current.imageUrl && (
-                  <div className="tm-slide-image-box">
+              <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
+                <div className="tm-slide-canvas-content">
+                  <input
+                    className="tm-slide-title-input"
+                    value={current.title}
+                    onChange={(e) => updateSlide(active, { title: e.target.value })}
+                    placeholder="Título de la diapositiva"
+                    style={{ textAlign: current.align || 'left' }}
+                  />
+                  <SlideBodyEditor
+                    html={markdownToHtmlForEditor(current.body)}
+                    align={current.align || 'left'}
+                    slideIndex={active}
+                    onChange={(newHtml) => {
+                      const newMarkdown = htmlToMarkdown(newHtml);
+                      updateSlide(active, { body: newMarkdown });
+                    }}
+                  />
+                </div>
+
+                {current.imageUrl ? (
+                  <div className="tm-slide-canvas-image">
                     <img src={current.imageUrl} alt={current.imageAlt || ''} />
+                    <button
+                      type="button"
+                      className="tm-slide-image-remove"
+                      onClick={() => updateSlide(active, { imageUrl: '', imageAlt: '' })}
+                      title="Eliminar imagen"
+                    >
+                      ×
+                    </button>
                   </div>
+                ) : (
+                  <button
+                    type="button"
+                    className="tm-canvas-add-image-placeholder"
+                    onClick={() => setShowImagePicker(true)}
+                    title="Hacer clic para añadir imagen de apoyo"
+                  >
+                    <span>📷 Añadir imagen o Generar con IA</span>
+                  </button>
                 )}
+
                 {current.linkUrl && (
                   <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
-                    {current.linkText || current.linkUrl}
+                    🔗 {current.linkText || current.linkUrl}
                   </a>
                 )}
               </div>
             </section>
 
             <aside className="tm-slide-inspector">
-              <label>
-                <span>URL de imagen</span>
-                <input value={current.imageUrl || ''} onChange={(e) => updateSlide(active, { imageUrl: e.target.value })} placeholder="https://..." />
-              </label>
-              <label>
-                <span>Descripcion de imagen</span>
-                <input value={current.imageAlt || ''} onChange={(e) => updateSlide(active, { imageAlt: e.target.value })} placeholder="Descripcion breve" />
-              </label>
-              <label>
-                <span>Texto del enlace</span>
-                <input value={current.linkText || ''} onChange={(e) => updateSlide(active, { linkText: e.target.value })} placeholder="Recurso, video, lectura..." />
-              </label>
-              <label>
-                <span>URL del enlace</span>
-                <input value={current.linkUrl || ''} onChange={(e) => updateSlide(active, { linkUrl: e.target.value })} placeholder="https://..." />
-              </label>
               <label className="tm-slide-notes">
                 <span>Notas del maestro</span>
-                <textarea value={current.notes || ''} onChange={(e) => updateSlide(active, { notes: e.target.value })} placeholder="Notas para presentar esta diapositiva" />
+                <textarea
+                  value={current.notes || ''}
+                  onChange={(e) => updateSlide(active, { notes: e.target.value })}
+                  placeholder="Notas y directrices pedagógicas para presentar esta diapositiva..."
+                />
               </label>
+              <div className="tm-inspector-media-details">
+                {current.imageUrl && (
+                  <div className="tm-inspector-box">
+                    <span>Ajustes de Imagen</span>
+                    <label>
+                      <small>URL de imagen</small>
+                      <input
+                        value={current.imageUrl || ''}
+                        onChange={(e) => updateSlide(active, { imageUrl: e.target.value })}
+                        placeholder="https://..."
+                      />
+                    </label>
+                    <label>
+                      <small>Descripción (alt)</small>
+                      <input
+                        value={current.imageAlt || ''}
+                        onChange={(e) => updateSlide(active, { imageAlt: e.target.value })}
+                        placeholder="Descripción breve de la imagen"
+                      />
+                    </label>
+                  </div>
+                )}
+                {current.linkUrl && (
+                  <div className="tm-inspector-box">
+                    <span>Ajustes de Enlace</span>
+                    <label>
+                      <small>Texto del enlace</small>
+                      <input
+                        value={current.linkText || ''}
+                        onChange={(e) => updateSlide(active, { linkText: e.target.value })}
+                        placeholder="Recurso, video, lectura..."
+                      />
+                    </label>
+                    <label>
+                      <small>URL del enlace</small>
+                      <input
+                        value={current.linkUrl || ''}
+                        onChange={(e) => updateSlide(active, { linkUrl: e.target.value })}
+                        placeholder="https://..."
+                      />
+                    </label>
+                  </div>
+                )}
+              </div>
             </aside>
           </>
         )}
       </div>
+
+      {showImagePicker && (
+        <div className="tm-image-picker-overlay" onClick={(e) => { if (e.target === e.currentTarget) setShowImagePicker(false); }}>
+          <div className="tm-image-picker-card">
+            <header className="tm-image-picker-header">
+              <h3>Añadir imagen a la diapositiva</h3>
+              <button type="button" className="tm-image-picker-close" onClick={() => setShowImagePicker(false)}>×</button>
+            </header>
+            
+            <div className="tm-image-picker-body">
+              <div className="tm-image-picker-section">
+                <h4>🎨 Generar Ilustración con IA</h4>
+                <p>Ingresa una descripción del concepto pedagógico para crear una imagen limpia automáticamente.</p>
+                <div className="tm-ai-prompt-box">
+                  <input
+                    type="text"
+                    placeholder="Ej: Un coquí de Puerto Rico cantando sobre una hoja verde por la noche..."
+                    value={aiImagePrompt}
+                    onChange={(e) => setAiImagePrompt(e.target.value)}
+                    disabled={generatingImage}
+                  />
+                  <button
+                    type="button"
+                    className="tm-btn primary"
+                    onClick={handleGenerateAIImage}
+                    disabled={generatingImage || !aiImagePrompt.trim()}
+                  >
+                    {generatingImage ? 'Generando...' : 'Generar con IA'}
+                  </button>
+                </div>
+                {generatingImage && (
+                  <div className="tm-ai-image-loader">
+                    <span className="tm-spinner" /> Generando imagen con FLUX. Esto toma unos 10 segundos...
+                  </div>
+                )}
+              </div>
+
+              <div className="tm-image-picker-section">
+                <h4>📁 Subir desde tu computadora</h4>
+                <p>Sube un archivo JPG, PNG o SVG desde tu disco local.</p>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleLocalImageUpload}
+                  id="canvas-local-img-upload"
+                  style={{ display: 'none' }}
+                />
+                <button
+                  type="button"
+                  className="tm-btn secondary"
+                  onClick={() => document.getElementById('canvas-local-img-upload').click()}
+                >
+                  Seleccionar archivo de imagen
+                </button>
+              </div>
+
+              <div className="tm-image-picker-section">
+                <h4>🔗 Dirección Web (URL)</h4>
+                <p>Pega el enlace de una imagen existente en internet.</p>
+                <div className="tm-url-input-box">
+                  <input
+                    type="text"
+                    placeholder="https://ejemplo.com/mi-imagen.jpg"
+                    value={customImageUrl}
+                    onChange={(e) => setCustomImageUrl(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="tm-btn secondary"
+                    onClick={() => {
+                      if (customImageUrl.trim()) {
+                        updateSlide(active, { imageUrl: customImageUrl.trim(), imageAlt: current.title });
+                        setShowImagePicker(false);
+                        setCustomImageUrl('');
+                      }
+                    }}
+                    disabled={!customImageUrl.trim()}
+                  >
+                    Añadir URL
+                  </button>
+                </div>
+              </div>
+
+              {imageError && <div className="tm-image-picker-error">⚠️ {imageError}</div>}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

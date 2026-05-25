@@ -132,27 +132,57 @@ Cuando el perfil sea "Rezago académico" (1 grado atrás, 2+ grados, o prerrequi
 - Tono que preserve dignidad — el estudiante NO debe sentirse "atrasado"`,
     buildPrompt: (f) => {
       const isRezago = /rezago/i.test(f.perfil);
-      return `Adapta esta lección para un estudiante con perfil: ${f.perfil} (grado actual: ${f.grado}).
+      return `Adapta la lección provista para un estudiante con perfil "${f.perfil}" (grado actual del estudiante: ${f.grado}).
+Genera el contenido adaptado estructurado como una PRESENTACIÓN DE DIAPOSITIVAS LISTA PARA ENSEÑAR (utiliza formato Markdown de títulos '# ' para la portada y '## ' para cada diapositiva posterior).
 
-Lección original:
+Estructura exactamente la respuesta en las siguientes diapositivas (no agregues otras secciones fuera de esta estructura de diapositivas):
+
+# Diapositiva 1: Portada y Foco de la Adaptación
+- Título de la lección adaptada
+- Perfil del estudiante: ${f.perfil}
+- Grado: ${f.grado}
+Notas del maestro: Explicación de la meta pedagógica de esta lección y cómo conecta con el perfil del estudiante.
+
+## Diapositiva 2: Resumen de Adaptaciones y Prerrequisitos
+- Resumen de adaptaciones aplicadas (lista breve)
+- Prerrequisitos clave a activar o repasar del grado/grados anteriores
+Notas del maestro: Instrucciones de cómo realizar la activación de prerrequisitos (puentes pedagógicos de 5-10 minutos).
+
+## Diapositiva 3: Activación y Vocabulario (Inicio)
+- Vocabulario académico clave adaptado al nivel de comprensión real del estudiante
+- Pregunta o reto de activación inicial
+Notas del maestro: Cómo modelar el vocabulario y guiar la discusión inicial de forma accesible.
+
+## Diapositiva 4: Instrucción Guiada - Concepto Central (Desarrollo Parte 1)
+- Explicación del concepto central con pasos atómicos y sencillos
+- Sentence frames (estructuras de apoyo para respuestas)
+- [IMAGE: A clear educational book illustration for elementary students, showing the central concept visually, white background, detailed, simple colors]
+Notas del maestro: Guía paso a paso para el modelado explícito (estrategia I Do - We Do).
+
+## Diapositiva 5: Práctica de Aplicación (Desarrollo Parte 2)
+- Actividad interactiva o práctica guiada
+- Apoyo visual o scaffolds sugeridos en clase
+Notas del maestro: Cómo circular, monitorear el progreso y proveer retroalimentación inmediata.
+
+## Diapositiva 6: Práctica Independiente / Reto (Desarrollo Parte 3)
+- Ejercicios adaptados que demuestran el dominio
+- Opciones de producto final diferenciadas para demostrar aprendizaje
+Notas del maestro: Instrucciones de acomodación durante la práctica (tiempo extra, uso de manipulativos).
+
+## Diapositiva 7: Cierre y Evaluación (Exit Ticket)
+- Mini-evaluación o exit ticket alineado al objetivo adaptado
+- Criterios de éxito observables
+Notas del maestro: Cómo evaluar el dominio sin penalizar la condición del estudiante.
+
+## Diapositiva 8: Acomodaciones Específicas e Indicadores de Progreso
+- Acomodaciones específicas aplicadas (formato, presentación, respuesta)
+- 3 indicadores observables de progreso para las siguientes semanas
+Notas del maestro: Notas finales de seguimiento y sugerencias para la próxima lección.
+
+Lección original a adaptar:
 """
 ${f.leccion}
-"""
-
-Devuelve:
-1. **Resumen de adaptaciones aplicadas** (lista breve)${isRezago ? `
-2. **Prerrequisitos faltantes identificados** — qué destrezas del grado/grados anteriores asumiría la lección original y el estudiante NO tiene todavía. Sé específico (cita códigos DEPR de grados previos si aplican).
-3. **Lección adaptada completa** — reescrita con vocabulario y profundidad al nivel REAL del estudiante, no al grado nominal. Incluye al menos 1 tag [IMAGE: ...] como scaffold visual.
-4. **Puentes de prerrequisitos** — 2-3 mini-actividades de 5-10 minutos que el maestro pueda hacer ANTES de la lección para activar/enseñar los prerrequisitos faltantes
-5. **Acomodaciones específicas** (tiempo extra, sentence frames, ayudas visuales, peer support)
-6. **Indicadores de progreso** — 3 señales observables de que la adaptación está funcionando` : `
-2. **Lección adaptada completa** — reescrita, no solo notas
-3. **Acomodaciones específicas** (tiempo, formato, presentación, respuesta)
-4. **Sugerencias de scaffolding** concretas`}
-
-${isRezago ? '7. **Cómo evaluar** el dominio sin penalizar la condición (evaluación del progreso, no del desempeño absoluto)' : '5. **Cómo evaluar** sin penalizar la condición'}
-
-${isRezago ? '' : 'Si el perfil del estudiante se beneficia de apoyo visual (ELL principiante, SPED dislexia, espectro autista), incluye 1-2 tags [IMAGE: prompt en inglés] como scaffolding visual de los conceptos clave.'}`;
+"""`;
     },
   },
 
