@@ -1,8 +1,651 @@
 {
-  "generatedAt": "2026-05-25T17:44:47.188Z",
-  "subject": "Ciencias",
-  "grade": 5,
+  "generatedAt": "2026-05-25T17:48:20.093Z",
   "units": [
+    {
+      "id": "SCI_2_1",
+      "code": "2.1",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Prácticas de ciencias e ingeniería",
+      "weeks": 5,
+      "summary": "En esta unidad, el estudiante aplicará las prácticas de ciencias e ingeniería para formular problemas e hipótesis y aprenderá a usar instrumentos de medición para recopilar e interpretar \ndatos durante la experimentación. El estudiante tiene la oportunidad de diseñar modelos y proponer soluciones de ingeniería para resolver problemas cotidianos, integrar la tecnología para \ndesarrollar soluciones, así como evaluar y optimizar esas soluciones.",
+      "transferObjectives": [
+        "El estudiante utilizará sus conocimientos sobre las prácticas de ciencias e ingeniería para identificar soluciones a problemas de investigación, utilizar las herramientas que les permitan medir y recopilar datos cuando lleve a cabo investigaciones y diseñar modelos para formular explicaciones."
+      ],
+      "acquisitionObjectives": [
+        "Formular preguntas e hipótesis para problemas de investigación sencillos.",
+        "Identificar el instrumento adecuado para llevar a cabo un experimento.",
+        "Utilizar instrumentos para recopilar datos de investigaciones sencillas.",
+        "Hacer medidas, con las unidades apropiadas, de algunas propiedades de los materiales.",
+        "Diseñar modelos para representar soluciones a problemas de ingeniería",
+        "Describir cómo la tecnología ayuda a solucionar problemas de ingeniería.",
+        "Identificar fenómenos naturales que producen cambios en el relieve de la superficie de la Tierra."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se utilizan las prácticas de ciencia e ingeniería en la solución de problemas científicos?",
+          "understanding": "Las prácticas de ciencias e ingeniería nos permiten identificar problemas y formular preguntas, proponer soluciones y explicaciones, experimentar e interpretar datos obtenidos en una Investigación y comunicar los resultados obtenidos."
+        },
+        {
+          "question": "¿Para qué se usa la medición en las prácticas de ciencias e ingeniería?",
+          "understanding": "La medición, por medio de instrumentos, es la manera que se usa en las prácticas de ciencias e ingeniería para recopilar e interpretar los datos obtenidos en una investigación."
+        },
+        {
+          "question": "¿Cuál es la utilidad de los modelos al aplicar las prácticas de ciencias e ingeniería?",
+          "understanding": "Los modelos permiten representar procesos, fenómenos, cantidades, interrelaciones, escalas, y patrones que existen en el mundo natural y el mundo creado por los seres humanos."
+        },
+        {
+          "question": "¿Para qué nos sirve la tecnología?",
+          "understanding": "La tecnología facilita el desarrollo de soluciones para resolver problemas cotidianos."
+        },
+        {
+          "question": "¿Cómo afectan los fenómenos naturales la superficie de la Tierra?",
+          "understanding": "Los fenómenos naturales, como la lluvia, el viento, los huracanes y los terremotos, entre otros, producen cambios en la superficie terrestre que alteran el relieve."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.IT1.1",
+          "description": "Desarrolla prácticas de ciencias e ingeniería como procesos para solucionar problemas."
+        },
+        {
+          "code": "2.IT1.2",
+          "description": "Utiliza las prácticas de ciencias e ingeniería para poner a prueba una hipótesis en la posible solución de un problema."
+        },
+        {
+          "code": "2.IT1.3",
+          "description": "Utiliza pensamiento matemático para determinar la medida (y las unidades) de algunas propiedades físicas de los objetos, como la longitud y el volumen (de líquidos); e instrumentos de medición, como la regla, el reloj, un envase calibrado y el termómetro."
+        },
+        {
+          "code": "2.IT1.4",
+          "description": "Aplica los procesos de observación, medición, inferencia, predicción, clasificación, comunicación y experimentación, al utilizar prácticas de ciencias e ingeniería."
+        },
+        {
+          "code": "2.IT1.5",
+          "description": "Utiliza prácticas de ingeniería al definir problemas, desarrollar soluciones y optimizar las soluciones al problema."
+        },
+        {
+          "code": "2.IT1.6",
+          "description": "Representa posibles soluciones a problemas de ingeniería, al diseñar modelos o representaciones visuales."
+        },
+        {
+          "code": "2.IT1.7",
+          "description": "Compara posibles soluciones de ingeniería, las somete a prueba y evalúa cada una de las opciones."
+        },
+        {
+          "code": "2.IT1.8",
+          "description": "Utiliza diversas tecnologías al desarrollar prácticas de ciencias e ingeniería. Ciencias Terrestres y del Espacio"
+        },
+        {
+          "code": "2.CT2.2",
+          "description": "Identifica fenómenos naturales que producen cambios en la superficie terrestre (lluvia, viento, nieve, inundaciones, tormentas, tsunami, terremotos y huracanes, entre otros), y cómo alteran el relieve."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Tecnología en la sociedad"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.1.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_2",
+      "code": "2.2",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Propiedades de la materia",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante clasifica la materia a base de su estado físico, y describe sus propiedades. Investiga sobre diferentes propiedades físicas que distinguen a la materia y sobre los \ncambios que se producen en las propiedades de la materia debido a los cambios de temperatura. Además, investiga y explica los cambios reversibles e irreversibles que se producen en la \nmateria cuando se aplica o se remueve calor.",
+      "transferObjectives": [
+        "Al concluir esta unidad, el estudiante comprende las propiedades y los cambios en los estados de la materia. El estudiante también clasifica las propiedades físicas y las utiliza para describir los materiales y el efecto de los cambios en temperatura en las propiedades de la materia."
+      ],
+      "acquisitionObjectives": [
+        "Describir las propiedades de los estados de la materia: sólido, líquido y gaseoso.",
+        "Clasificar materiales de acuerdo con el estado físico de la materia en que se encuentra.",
+        "Definir lo que es una propiedad física de la materia.",
+        "Identificar diferentes propiedades físicas de la materia.",
+        "Clasificar materiales a base de sus propiedades físicas.",
+        "Describir cómo la temperatura puede producir cambios en las propiedades de los materiales.",
+        "Investigar cambios reversibles y cambios irreversibles que se producen en la materia cuando se añade o se quita calor."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Qué son los estados de la materia?",
+          "understanding": "Los estados de la materia son las formas físicas en que se presentan los materiales y se pueden clasificar como sólidas, líquidas y gaseosas."
+        },
+        {
+          "question": "¿Qué criterios se utilizan para clasificar la materia?",
+          "understanding": "La materia se clasifica a partir de sus propiedades. Las propiedades físicas describen la apariencia externa de un material."
+        },
+        {
+          "question": "¿Cómo influye la temperatura en las propiedades de los materiales?",
+          "understanding": "Los cambios en temperatura alteran las propiedades de la materia."
+        },
+        {
+          "question": "¿Por qué algunos materiales cambian cuando se les aplica calor?",
+          "understanding": "Al aplicar o quitar calor a un material, se producen cambios que pueden ser reversibles o irreversibles. Los cambios irreversibles son aquellos en los que el material se convierte en otro y no se puede recuperar el material original."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CF1.1",
+          "description": "Describe las propiedades de tres de los estados de la materia: sólido, líquido y gaseoso; y clasifica los objetos de acuerdo con el estado en que se encuentren."
+        },
+        {
+          "code": "2.CF1.2",
+          "description": "Describe y agrupa distintos tipos de materiales, según las propiedades físicas observables que presentan."
+        },
+        {
+          "code": "2.CF1.3",
+          "description": "Compara y contrasta la materia de acuerdo con las propiedades físicas que presentan (tamaño, color, maleabilidad, porosidad, forma, textura, dureza, flexibilidad)."
+        },
+        {
+          "code": "2.CF1.4",
+          "description": "Describe cómo los cambios en temperatura pueden producir cambios en algunas propiedades de los materiales (color, forma, tamaño)."
+        },
+        {
+          "code": "2.CF1.5",
+          "description": "Investiga y explica los cambios reversibles y los no-reversibles que ocurren a partir de aplicar o quitar calor a un material."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Emprendimiento e innovación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Autogestión"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.2.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_3",
+      "code": "2.3",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Fuerza y energía",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante recopila datos y experimenta con las fuerzas para describir los diversos tipos de fuerza y movimientos. Investiga las características de los materiales en \nmovimiento para comprender las transformaciones y la manera en que se transfiere la energía. Además, identifica diferentes fuentes de energía y reconoce la importancia de estas en su \nvida.",
+      "transferObjectives": [
+        "El estudiante también identifica cómo se usa la fuerza para mover objetos y describe cómo la energía se transfiere en los materiales que están en movimiento. Además, investiga la importancia del sol, la luz y el calor como fuentes de energía para los seres vivos."
+      ],
+      "acquisitionObjectives": [
+        "Describir cómo ocurren las interacciones magnéticas entre los imanes y algunos metales.",
+        "Investigar la relación entre la fuerza magnética y el movimiento de los objetos.",
+        "Describir el efecto de las fuerzas magnéticas sobre los cambios de posición y movimiento de los objetos.",
+        "Comprender que algunas fuerzas actúan por contacto, y otras actúan a distancia.",
+        "Reconocer que el sol es la fuente principal de energía para los seres vivos, y fuente de luz y calor.",
+        "Comprender que el calor y la luz son formas de energía."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se relaciona la fuerza magnética con el movimiento de los objetos?",
+          "understanding": "La fuerza magnética puede poner los objetos en movimiento debido a que su fuerza de atracción o repulsión puede halar o empujar el objeto."
+        },
+        {
+          "question": "¿Cómo actúan las fuerzas?",
+          "understanding": "Algunas fuerzas actúan por contacto entre los objetos, otras fuerzas, como por ejemplo, la fuerza magnética, actúan a distancia."
+        },
+        {
+          "question": "¿Qué tipo de materiales son atraídos por los imanes?",
+          "understanding": "Algunos materiales hechos de hierro, acero, níquel y cobalto son atraídos por los imanes. Los imanes no atraen a todos los metales, por ejemplo, el cobre, la plata, el aluminio y el oro no son atraídos por los imanes."
+        },
+        {
+          "question": "¿De dónde proviene la energía?",
+          "understanding": "Existen diferentes fuentes de donde proviene la energía que utilizamos, como el sol, los alimentos, el viento, el agua, entre otros."
+        },
+        {
+          "question": "¿Por qué los seres vivos dependen del sol?",
+          "understanding": "El sol es la fuente de energía principal para los seres vivos."
+        },
+        {
+          "question": "¿Cómo se producen la luz y el calor?",
+          "understanding": "La luz y el calor son formas de energía que se propagan a través de diversas fuentes."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CF2.1",
+          "description": "Hace observaciones sobre las distintas fuerzas que ejercen los imanes, y provee ejemplos de sus usos en el mundo real."
+        },
+        {
+          "code": "2.CF2.2",
+          "description": "Describe las interacciones magnéticas entre imanes, con algunos metales y sobre las brújulas."
+        },
+        {
+          "code": "2.CF2.3",
+          "description": "Distingue entre fuerza de contacto y fuerza a distancia."
+        },
+        {
+          "code": "2.CF2.4",
+          "description": "Explica la relación entre la fuerza magnética y el movimiento en los objetos."
+        },
+        {
+          "code": "2.CF2.5",
+          "description": "Compara y contrasta los efectos de las fuerzas magnéticas sobre los cambios en movimiento y posición de los objetos sobre los que se ejercen esas fuerzas."
+        },
+        {
+          "code": "2.CF3.1",
+          "description": "Reconoce diversas fuentes de energía como el Sol, los alimentos, las baterías, el aire, el agua, entre otros."
+        },
+        {
+          "code": "2.CF3.2",
+          "description": "Identifica el Sol como fuente de calor y de luz para el planeta Tierra."
+        },
+        {
+          "code": "2.CF3.3",
+          "description": "Construye un modelo de la Tierra donde identifica el Sol como fuente de luz y de calor para el planeta."
+        },
+        {
+          "code": "2.CF3.4",
+          "description": "Hace observaciones sobre distintas fuentes de energía, como la luz y el calor, y establece similitudes y diferencias entre ambas."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Educación para la paz",
+        "Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.3.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_4",
+      "code": "2.4",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Interacción de los seres vivos con su ambiente",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante investiga y entiende las relaciones entre los organismos y su ambiente, y las estructuras específicas de los organismos que se requieren para la supervivencia. El \nestudiante comprende la compleja e interdependiente red de la vida en la Tierra, e investiga cómo las plantas dependen de los animales para la polinización y poder transportar las semillas \nde un lado a otro.",
+      "transferObjectives": [
+        "Al terminar esta unidad, los estudiantes aprenden a identificar las diferentes partes de una planta y la función que cumplen en su desarrollo, crecimiento y reproducción, así como los elementos necesarios para el mantenimiento de la planta. Además, aprende sobre el rol de los animales en esparcir las semillas y polinizar las plantas."
+      ],
+      "acquisitionObjectives": [
+        "Identificar las partes de las plantas y la función que cumplen en esta.",
+        "Investigar los factores necesarios para que las plantas se desarrollen y crezcan.",
+        "Reconocer la importancia de la flor en el proceso de polinización de las plantas.",
+        "Comprender que los animales ayudan a polinizar las plantas y a esparcir las semillas.",
+        "Identificar las estructuras que ayudan a la reproducción de las plantas."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cuál es la función de las diferentes partes de la planta?",
+          "understanding": "Las partes de la planta —raíces, tallos, hojas, flores— cumplen una función vital para su desarrollo, crecimiento y reproducción."
+        },
+        {
+          "question": "¿Qué necesitan las plantas para desarrollarse y crecer?",
+          "understanding": "Las plantas necesitan luz (energía), aire y agua para desarrollarse y crecer."
+        },
+        {
+          "question": "¿Cómo interaccionan las estructuras de las plantas en el proceso de polinización?",
+          "understanding": "La planta posee estructuras especializadas en la flor, que intervienen en el proceso de polinización."
+        },
+        {
+          "question": "¿Cuál es la función de los animales con respecto a la reproducción de las plantas?",
+          "understanding": "Los animales tienen una función importante en la polinización de las plantas y en esparcir las semillas."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CB2.1",
+          "description": "Realiza observaciones directas de las partes de las plantas (raíces, tallos, hojas, flores) para identificar sus funciones básicas."
+        },
+        {
+          "code": "2.CB2.2",
+          "description": "Reconoce la importancia de la flor —entre otros organismos— en la polinización, como proceso importante en la reproducción de las plantas."
+        },
+        {
+          "code": "2.CB2.3",
+          "description": "Construye modelos o diagramas sobre cómo las estructuras de las plantas interaccionan con el proceso de la polinización."
+        },
+        {
+          "code": "2.CB2.4",
+          "description": "Desarrolla un modelo simple que demuestra la función que cumplen los animales en el proceso de dispersar semillas y polinizar plantas."
+        },
+        {
+          "code": "2.CB2.5",
+          "description": "Experimenta e investiga para determinar si las plantas necesitan luz, aire y agua para crecer."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la concienciación ambiental y ecológica"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria",
+        "Conciencia ecológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.4.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_5",
+      "code": "2.5",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Conozcamos los ecosistemas",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante comprende la compleja e interdependiente red de la vida en la Tierra. Entiende que cada lazo en la cadena alimentaria es importante porque cada ser vivo \ndepende de otros para sobrevivir, no importa cuán grande o pequeño sea. Comprende el concepto cadena alimentaria y cómo las plantas, los animales y los humanos están conectados \necológicamente. Clasifica los animales dependiendo de su tipo de alimentación y coloca los organismos en categorías específicas a base de su estructura y su rol en el ecosistema. Finalmente, \npor medio de los procesos de investigación, el estudiante comprende y desarrolla apreciación por las plantas y su rol en la cadena alimentaria.",
+      "transferObjectives": [
+        "Al terminar esta unidad, los estudiantes comprenden lo que es un ecosistema, una comunidad y un hábitat, y cómo los factores bióticos y abióticos interactúan en los diferentes tipos de ecosistemas (acuáticos y terrestres). Utilizan su conocimiento sobre la cadena alimentaria para comprender que las plantas producen su propio alimento por medio de la fotosíntesis y aprenden a clasificar los animales de acuerdo con su forma de alimentación."
+      ],
+      "acquisitionObjectives": [
+        "Definir los conceptos ecosistema, comunidad y hábitat.",
+        "Identificar los factores bióticos y los factores abióticos en un ecosistema.",
+        "Identificar diferentes tipos de ecosistemas (terrestre y acuático).",
+        "Contrastar el ecosistema terrestre con el ecosistema acuático.",
+        "Explicar que el alimento es la fuente primaria de energía para los seres vivos.",
+        "Describir las cadenas y redes alimentarias.",
+        "Clasificar a los animales a base de su tipo de alimentación."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cuáles son los componentes de un ecosistema?",
+          "understanding": "Los ecosistemas son lugares donde conviven las comunidades de seres vivos (que representan los componentes bióticos) y la materia no viva, que representa los componentes abióticos del ecosistema."
+        },
+        {
+          "question": "¿Cómo fluye la energía dentro de un ecosistema?",
+          "understanding": "La energía fluye de un organismo a otro a través de cadenas alimentarias."
+        },
+        {
+          "question": "¿Cómo las plantas obtienen su alimento?",
+          "understanding": "Las plantas son seres vivos que producen su propio alimento por medio de la fotosíntesis."
+        },
+        {
+          "question": "¿De qué manera los seres vivos dependen unos de otros?",
+          "understanding": "Los consumidores dependen de los productores para obtener su alimentación y otros recursos que les permiten satisfacer sus necesidades."
+        },
+        {
+          "question": "¿Cómo se agrupan los animales?",
+          "understanding": "Los animales se clasifican de diferentes maneras a base de características específicas. Entre estas están la forma en que se alimentan."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CB2.6",
+          "description": "Define ecosistema, comunidad y hábitat."
+        },
+        {
+          "code": "2.CB2.7",
+          "description": "Reconoce los ecosistemas como lugares donde interactúan lo vivo (factores bióticos) y lo no vivo (factores abióticos)."
+        },
+        {
+          "code": "2.CB2.8",
+          "description": "Identifica, mediante ejemplos, los componentes vivos y los no vivos en un ecosistema."
+        },
+        {
+          "code": "2.CB2.9",
+          "description": "Reconoce las cadenas alimentarias y describe la función de las plantas como productores."
+        },
+        {
+          "code": "2.CB2.10",
+          "description": "Clasifica animales de acuerdo con su alimentación: los herbívoros se alimentan de plantas; el frugívoro se alimenta de frutas; el folívoro come hojas; los carnívoros se alimentan de otros animales; y los omnívoros se alimentan de cualquier fuente de alimento."
+        },
+        {
+          "code": "2.CB4.1",
+          "description": "Distingue entre ecosistemas acuáticos de agua dulce (ríos, arroyos) y ecosistemas terrestres (bosques, desiertos)."
+        },
+        {
+          "code": "2.CB4.2",
+          "description": "Observa y compara la biodiversidad de un ecosistema terrestre con la de un ecosistema acuático de Puerto Rico, y los representa con láminas, dibujos, modelos o diagramas. Ciencias Físicas"
+        },
+        {
+          "code": "2.CF3.5",
+          "description": "Explica que el alimento es la fuente primaria de energía de los organismos vivos, y clasifica los diferentes alimentos de acuerdo con su origen (animal o vegetal)."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la concienciación ambiental y ecológica"
+      ],
+      "generatorThemes": [
+        "Responsabilidad social en la democracia",
+        "Conciencia ecológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.5.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_6",
+      "code": "2.6",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "Ciclos, patrones y fenómenos de la Tierra",
+      "weeks": 4,
+      "summary": "En esta unidad, el estudiante comprende cómo los modelos ayudan a estudiar los componentes de los sistemas Tierra, la Luna y el Sol. También, tiene la oportunidad de investigar acerca del \nSol y su relación con la Tierra, así como los patrones cíclicos de la Luna. Además, reconoce la utilidad de los modelos para describir las formaciones terrestres, y de instrumentos que ayudan \na predecir algunos fenómenos naturales.",
+      "transferObjectives": [
+        "El estudiante aplicará sus conocimientos acerca de los ciclos y patrones que se producen en el sistema Sol-Luna-Tierra para describir cómo ocurren el día y la noche y las fases lunares. Además, describe cómo los fenómenos naturales afectan las formaciones terrestres y el relieve de la superficie de la Tierra."
+      ],
+      "acquisitionObjectives": [
+        "Construir un modelo del sistema Sol-Tierra-Luna para explicar ciclos y patrones observables en la Tierra.",
+        "Explicar cómo ocurre el día y la noche por medio de un modelo.",
+        "Describir las fases de la Luna.",
+        "Describir diferentes formaciones terrestres (montañas, llanos, mogotes) y los cuerpos de agua (ríos, lagunas) en algunas zonas de Puerto Rico.",
+        "Identificar los fenómenos naturales y sus efectos sobre la superficie terrestre y en nuestras vidas."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo ayudan los modelos del sistema del Sol, la Tierra y la Luna a comprender los ciclos y patrones observables en la Tierra?",
+          "understanding": "Los modelos son representaciones que ayudan a describir y explicar los ciclos y patrones que ocurren en la Tierra, debidos a la relación del sistema Sol-Luna-Tierra."
+        },
+        {
+          "question": "¿Cómo podemos explicar por qué ocurren el día y la noche?",
+          "understanding": "La posición del Sol con respecto a la Tierra, en diferentes tiempos a lo largo del día, explican los periodos del día y la noche."
+        },
+        {
+          "question": "¿Por qué la Luna se ve diferente a lo largo del ciclo lunar?",
+          "understanding": "La Luna se ve con distintas fases a lo largo del ciclo lunar debido a que a medida que la Tierra, la Luna y el Sol se mueven en sus orbitas, la parte iluminada de la Luna se ve o se oculta, creando una serie de fases lunares predecibles."
+        },
+        {
+          "question": "¿Por qué la superficie de la Tierra no se ve toda igual?",
+          "understanding": "Existen diferentes formaciones terrestres que se han formado a lo largo de los años debido a diferentes fenómenos naturales que afectan la superficie de la Tierra."
+        },
+        {
+          "question": "¿Por qué debemos conocer los fenómenos naturales que ocurren en la Tierra?",
+          "understanding": "Los fenómenos naturales ocasionan grandes cambios en la superficie terrestre y en la vida que habita en la Tierra."
+        },
+        {
+          "question": "¿Cuáles factores afectan el relieve de la superficie terrestre?",
+          "understanding": "Varios factores afectan el relieve de la superficie terrestre, especialmente el agua y el viento."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CT1.1",
+          "description": "Observa un modelo, simulación o cartel sobre la inclinación y la ubicación del eje de la Tierra, para explicar cómo estas afectan la forma en la que la luz del Sol llega a la Tierra."
+        },
+        {
+          "code": "2.CT1.2",
+          "description": "Predice la posición del Sol con respecto a la Tierra, en diferentes tiempos a lo largo del día."
+        },
+        {
+          "code": "2.CT1.3",
+          "description": "Recopila datos observables, a lo largo de varias noches, sobre la posición de la Luna y las estrellas con respecto a la Tierra."
+        },
+        {
+          "code": "2.CT1.4",
+          "description": "Explica la diferencia observable en la forma de la Luna a lo largo de varias noches."
+        },
+        {
+          "code": "2.CT1.5",
+          "description": "Hace observaciones del cielo nocturno para describir, por medio de modelos, las fases de la Luna (luna nueva, cuarto creciente, cuarto menguante y luna llena)."
+        },
+        {
+          "code": "2.CT2.1",
+          "description": "Representa y describe —mediante modelos, diagramas o ilustraciones— las formaciones terrestres (montañas, llanos, mogotes, entre otros) y los cuerpos de agua (ríos, lagunas, entre otros) en algunas zonas de Puerto Rico."
+        },
+        {
+          "code": "2.CT2.2",
+          "description": "Identifica fenómenos naturales que producen cambios en la superficie terrestre (lluvia, viento, nieve, inundaciones, tormentas, tsunami, terremotos y huracanes, entre otros), y cómo alteran el relieve."
+        },
+        {
+          "code": "2.CT2.3",
+          "description": "Compara posibles soluciones para reducir o prevenir los efectos del agua y el viento sobre la superficie terrestre."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Identidad cultural e interculturalidad"
+      ],
+      "generatorThemes": [
+        "Ética en la vida",
+        "Solidaridad"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.6.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "SCI_2_7",
+      "code": "2.7",
+      "subject": "Ciencias",
+      "grade": 2,
+      "title": "El impacto humano en el ambiente",
+      "weeks": 5,
+      "summary": "En esta unidad, el estudiante comprende que los seres humanos tienen un impacto directo en el ambiente. Investiga los efectos de las actividades humanas en los recursos naturales y \nestablece alternativas que ayuden a conservarlos. Además, diseña un plan de acción con prácticas de conservación ambiental, que incluye el diseño y la construcción de un prototipo para \nimplementar prácticas de descomposición de materia orgánica.",
+      "transferObjectives": [
+        "Al terminar la unidad, el estudiante estará capacitado para aplicar su conocimiento acerca del impacto directo que tienen los seres humanos sobre el ambiente y sobre el uso de los recursos naturales, para tomar mejores decisiones, y así contribuir en favor de la conservación del ambiente."
+      ],
+      "acquisitionObjectives": [
+        "Identificar los diferentes recursos naturales y su relación con la biodiversidad.",
+        "Comprender la influencia de la actividad humana en los recursos naturales.",
+        "Describir los efectos de la contaminación en los recursos naturales.",
+        "Poner en práctica un plan de acción sencillo de conservación ambiental con medidas para reducir, reutilizar y reciclar.",
+        "Diseñar un prototipo de un aparato para descomponer la materia orgánica."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se identifican los recursos naturales?",
+          "understanding": "Los recursos naturales son todos aquellos materiales (vivos y no vivos) útiles para el ser humano y de los cuáles nos aprovechamos para satisfacer las necesidades básicas y sobrevivir."
+        },
+        {
+          "question": "¿Por qué es importante cuidar los recursos naturales de nuestra Tierra?",
+          "understanding": "Todos los seres vivos que habitan el planeta dependen de los recursos de la Tierra para sobrevivir."
+        },
+        {
+          "question": "¿Cómo el ser humano impacta el ambiente?",
+          "understanding": "Las actividades humanas tienen un impacto, ya sea positivo o negativo, sobre el ambiente natural."
+        },
+        {
+          "question": "¿Cómo podemos evitar la contaminación de nuestro planeta?",
+          "understanding": "Los seres humanos pueden controlar las actividades que producen contaminación del ambiente."
+        },
+        {
+          "question": "¿Cuál es la responsabilidad social de los seres humanos respecto a la conservación de su ambiente?",
+          "understanding": "El ser humano es responsable de controlar, disminuir y evitar las actividades dañinas para el ambiente."
+        },
+        {
+          "question": "¿Qué soluciones existen para la conservación del ambiente?",
+          "understanding": "El ser humano puede implementar planes de reducción, reúso y reciclaje de materiales, que contribuyen a la conservación del ambiente."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.CB4.3",
+          "description": "Describe en qué consisten los recursos naturales y menciona cómo se relacionan con la biodiversidad de los ecosistemas."
+        },
+        {
+          "code": "2.CB4.4",
+          "description": "Describe la importancia del cuidado de los recursos naturales para organismos (plantas y animales) que viven en los ecosistemas de Puerto Rico. Ciencias Ambientales"
+        },
+        {
+          "code": "2.CA1.1",
+          "description": "Identifica y explica los efectos de la contaminación en diversos recursos naturales (el agua, el suelo y el aire)."
+        },
+        {
+          "code": "2.CA1.2",
+          "description": "Explica cómo las actividades humanas o el impacto de algún fenómeno natural pueden aumentar la contaminación en el ambiente."
+        },
+        {
+          "code": "2.CA1.3",
+          "description": "Desarrolla un plan de acción dirigido a llevar a cabo prácticas de conservación ambiental (reducir, reutilizar y reciclar) en su comunidad."
+        },
+        {
+          "code": "2.CA1.4",
+          "description": "Diseña y construye un prototipo experimental para llevar a cabo prácticas de descomposición de materia orgánica, a través del compostaje."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación para la concienciación ambiental y ecológica"
+      ],
+      "generatorThemes": [
+        "Responsabilidad social en la democracia",
+        "Cuidado del medio ambiente"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "Ciencias_Unidad_2.7.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
     {
       "id": "SCI_5_1",
       "code": "5.1",
@@ -145,7 +788,7 @@
         },
         {
           "question": "¿Cómo podemos usar los modelos y diagramas para explicar el flujo de materia y energía a través de los ecosistemas, entre otros eventos?",
-          "understanding": "Los modelos proveen formas de ver las diferencias entre los organismos vivos y sus relaciones con el medioambiente, cuando observar el evento real no es posible. Utilizando modelos y diagramas podemos representar estas relaciones en los ecosistemas. Unidad 5.2 Los organismos y su relación con los ecosistemas Ciencias 5 9 semanas de instrucción página 3 of 25"
+          "understanding": "Los modelos proveen formas de ver las diferencias entre los organismos vivos y sus relaciones con el medioambiente, cuando observar el evento real no es posible. Utilizando modelos y diagramas podemos representar estas relaciones en los ecosistemas."
         }
       ],
       "standards": [
@@ -563,7 +1206,7 @@
         },
         {
           "question": "¿Cómo impacta el agua en las características de los biomas y los ecosistemas que componen la Tierra?",
-          "understanding": "El movimiento del agua a través de la Tierra da lugar a un sin número de transformaciones y cambios en las características y en los componentes bióticos y abióticos de los ecosistemas. Al medio físico (factor abiótico) lo componen el suelo, el agua, el aire, la temperatura, la humedad, el pH y los nutrientes. Con el movimiento continuo del agua, se regulan el clima, la temperatura y la humedad del lugar; además ocurren la erosión del terreno y el transportarte de sustancias de un lugar a otro. Por ser un ciclo natural y constante, implica que cuenta con la misma cantidad de agua que se va transformando y desplazando. Sin embargo, existen factores -tanto humanos como naturales- que pueden alterar este ciclo hidrológico. Evitar actividades que afectan el ciclo del agua extiende la posibilidad de albergar vida en el Planeta, y mantener el equilibrio de los biomas y los ecosistemas terrestres. Unidad 5.5 El agua, los océanos y las zonas climáticas Ciencias 5 6 semanas de instrucción página 3 of 21"
+          "understanding": "El movimiento del agua a través de la Tierra da lugar a un sin número de transformaciones y cambios en las características y en los componentes bióticos y abióticos de los ecosistemas. Al medio físico (factor abiótico) lo componen el suelo, el agua, el aire, la temperatura, la humedad, el pH y los nutrientes. Con el movimiento continuo del agua, se regulan el clima, la temperatura y la humedad del lugar; además ocurren la erosión del terreno y el transportarte de sustancias de un lugar a otro. Por ser un ciclo natural y constante, implica que cuenta con la misma cantidad de agua que se va transformando y desplazando. Sin embargo, existen factores -tanto humanos como naturales- que pueden alterar este ciclo hidrológico. Evitar actividades que afectan el ciclo del agua extiende la posibilidad de albergar vida en el Planeta, y mantener el equilibrio de los biomas y los ecosistemas terrestres."
         }
       ],
       "standards": [
@@ -749,6 +1392,593 @@
         {
           "type": "curriculum_map",
           "filename": "VO.5.6_Ciencias_FINAL.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_1",
+      "code": "2.1",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Trabajando con los números",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante continuará aplicando las destrezas de comparar, ordenar, leer, escribir y representar números cardinales hasta por lo menos cuatro dígitos. Estudiará los números \npares e impares, y los ordinales hasta el vigésimo lugar. Tendrá la oportunidad de componer y descomponer números cardinales hasta cuatro dígitos. Además, trabajara con diferentes \nrepresentaciones de las fracciones con material concreto y semiconcreto. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la unidad, el estudiante debe leer, escribir, descomponer y ordenar números hasta por lo menos el 9,999 y comprender el valor posicional para crear estrategias matemáticas a un nivel más alto."
+      ],
+      "acquisitionObjectives": [
+        "Leer, escribir, componer y descomponer números hasta 9,999.",
+        "Comparar números usando estrategias, como el valor posicional y la recta numérica.",
+        "Usar los números ordinales apropiadamente.",
+        "Resolver problemas utilizando los conceptos par e impar.",
+        "Representar y comparar fracciones como parte de un número cardinal entero o un conjunto."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Por qué contamos?",
+          "understanding": "Contar nos ayuda a responder la pregunta ¿Cuántos?"
+        },
+        {
+          "question": "¿Por qué estudiamos Matemáticas?",
+          "understanding": "Las herramientas matemáticas se utilizan para resolver problemas matemáticos de la vida diaria."
+        },
+        {
+          "question": "¿Por qué descomponemos números?",
+          "understanding": "Al descomponer números tenemos más flexibilidad para razonarlos."
+        },
+        {
+          "question": "¿De qué manera se relacionan las fracciones con los números cardinales?",
+          "understanding": "Las fracciones representan las partes de un número cardinal entero."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado."
+        },
+        {
+          "code": "2.N.1.2",
+          "description": "Identifica y representa el número cardinal de cuatro dígitos basándose en el significado de las unidades de millar, centenas, decenas y unidades."
+        },
+        {
+          "code": "2.N.1.3",
+          "description": "Representa la respuesta de ordenar y comparar mediante: ➢ una sucesión o patrón ➢ el uso de los signos de comparación <, >, o ="
+        },
+        {
+          "code": "2.N.1.4",
+          "description": "Reconoce e identifica los números pares e impares: ➢ Determina si un conjunto de objetos tiene un número de elementos par o impar. ➢ Reconoce que la suma de dos números pares es par y la suma de dos números impares es par."
+        },
+        {
+          "code": "2.N.1.5",
+          "description": "Aplica el valor posicional de un número cardinal hasta cuatro dígitos para representar unidades de millar, centenas, decenas y unidades. Entiende los siguientes casos especiales: ➢ Se puede decir que 100 es un grupo de diez decenas llamado centena. ➢ Los números 100, 200, 300, 400, 500, 600, 700, 800, 900 se refieren a una, dos, tres, cuatro, cinco, seis, siete, ocho o nueve centenas (con 0 decenas y 0 unidades)."
+        },
+        {
+          "code": "2.N.1.6",
+          "description": "Compone y descompone números cardinales hasta cuatro dígitos. Utiliza la notación desarrollada para representar números cardinales de hasta cuatro dígitos."
+        },
+        {
+          "code": "2.N.1.7",
+          "description": "Nombra y utiliza los números ordinales hasta el vigésimo (20) lugar para resolver problemas matemáticos."
+        },
+        {
+          "code": "2.N.1.8",
+          "description": "El uso de la recta numérica: ➢ Representa números cardinales como longitudes con los puntos correspondientes a los números 0, 1, 2,..., ubicados a la misma distancia a partir del 0. ➢ Representa sumas y diferencias de números cardinales hasta 100."
+        },
+        {
+          "code": "2.N.3.1",
+          "description": "Identifica, reconoce y escribe diferentes representaciones para las fracciones usando materiales concretos y semiconcretos."
+        },
+        {
+          "code": "2.N.3.2",
+          "description": "Representa y compara fracciones como parte de un entero o conjunto usando materiales concretos y semiconcretos.  Procesos y Competencias Fundamentales de Matemáticas (PM) PM1 Comprende problemas a medida que desarrolla su capacidad para resolverlos con confianza. PM2 Razona de manera concreta y semiconcreta, hasta alcanzar la abstracción cuantitativa. PM6 Es preciso en su propio razonamiento y en discusiones con otros. PM7 Discierne y usa patrones o estructuras."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Educación en salud"
+      ],
+      "generatorThemes": [
+        "Diversidad funcional, Ética en la vida diaria, Responsabilidad social",
+        "Salud integral, Participación comunitaria"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.1 .pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_2",
+      "code": "2.2",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Suma y resta",
+      "weeks": 6,
+      "summary": "En esta unidad, el estudiante sumará y restará números cardinales hasta los cuatro dígitos. Utilizará los conceptos de operación inversa, y las propiedades de identidad y conmutativa. También \npracticará los cómputos mentales y la estimación con números y monedas para resolver problemas matemáticos. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al estudiante completar esta unidad debe tener la capacidad de sumar y restar utilizando lápiz y papel, estrategias de estimación, aritmética mental para resolver problemas de la vida diaria y comunicar respuestas."
+      ],
+      "acquisitionObjectives": [
+        "Resolver problemas usando la suma y resta.",
+        "Sumar y restar con dinero en situaciones de la vida diaria."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se relacionan la suma y la resta?",
+          "understanding": "La suma y resta son operaciones inversas."
+        },
+        {
+          "question": "¿Por qué estudiamos matemáticas?",
+          "understanding": "Las herramientas matemáticas se utilizan para resolver problemas de la vida diaria."
+        },
+        {
+          "question": "¿Por qué estimamos?",
+          "understanding": "Estimar nos ayuda a responder a la pregunta: \"¿Más o menos cuánto?\""
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado."
+        },
+        {
+          "code": "2.N.2.1",
+          "description": "Suma y resta con números hasta cuatro dígitos utilizando estrategias basadas en el valor posicional, las propiedades de las operaciones y/o la relación entre la suma y la resta: ➢ sin reagrupar y ➢ reagrupando."
+        },
+        {
+          "code": "2.N.2.2",
+          "description": "Utiliza estrategias basadas en el valor posicional y las propiedades de la suma (identidad de la suma -(0-), conmutativa y asociativa) para realizar sumas de hasta cuatro sumandos."
+        },
+        {
+          "code": "2.N.4.1",
+          "description": "Representa el proceso de suma y resta hasta cuatro dígitos por medio de materiales concretos y representaciones semiconcretas."
+        },
+        {
+          "code": "2.N.4.2",
+          "description": "Utiliza estrategias para resolver ejercicios de suma y resta de cuatro dígitos: ➢ materiales concretos y representación semiconcreta, ➢ estimación, ➢ cálculo mental."
+        },
+        {
+          "code": "2.N.4.3",
+          "description": "Resuelve problemas de suma y resta en situaciones cotidianas: ➢ utiliza la relación inversa entre la suma y la resta para resolver problemas y comprobar resultados, y ➢ expresa la respuesta en forma verbal o numérica. Estándar de Medición"
+        },
+        {
+          "code": "2.M.16.1",
+          "description": "Lee, escribe y representa cantidades monetarias y sus equivalencias; incluye 1¢, 5¢, 10¢, 25¢ hasta el $1.00."
+        },
+        {
+          "code": "2.M.16.2",
+          "description": "Resuelve problemas matemáticos con billetes de un dólar y monedas de 1¢, 5¢, 10¢ y 25¢, utilizando los símbolos $ y ¢. Procesos y Competencias Fundamentales de Matemáticas (PM) PM1 Comprende problemas a medida que desarrolla su capacidad para resolverlos con confianza. PM2 Razona de manera concreta y semiconcreta, hasta alcanzar la abstracción cuantitativa. PM4 Utiliza las matemáticas para resolver problemas cotidianos. PM6 Es preciso en su propio razonamiento y en discusiones con otros."
+        }
+      ],
+      "themes": [
+        ":",
+        "Equidad y respeto entre todos los seres humanos",
+        "Emprendimiento e innovación",
+        "Tem",
+        "as",
+        "g",
+        "eneradores",
+        ":",
+        "Diversidad funcional, Ética en la vida diaria y Responsabilidad social",
+        "Economía, Finanzas, Autogestión, Toma de decisiones y Educación al consumidor"
+      ],
+      "generatorThemes": [],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.2 .pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_3",
+      "code": "2.3",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "¡A divertirnos con la multiplicación y la división!",
+      "weeks": 7,
+      "summary": "En esta unidad el estudiante conocerá la multiplicación como una suma repetida y la división como una resta repetida. Representará la multiplicación con arreglos. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la unidad, el estudiante podrá multiplicar y dividir para resolver problemas del mundo real."
+      ],
+      "acquisitionObjectives": [
+        "Explicar el significado de la multiplicación como la suma repetida.",
+        "Explicar el significado de la división como la resta repetida."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo se relacionan la multiplicación y división?",
+          "understanding": "La multiplicación y división son operaciones inversas."
+        },
+        {
+          "question": "¿Por qué estudiamos matemáticas?",
+          "understanding": "Las herramientas matemáticas se utilizan para resolver problemas matemáticos de la vida diaria."
+        },
+        {
+          "question": "¿Cuál es la multiplicación y la división?",
+          "understanding": "La multiplicación es suma repetida; la división es resta repetida."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado."
+        },
+        {
+          "code": "2.N.5.1",
+          "description": "Utiliza sumas repetidas para representar y determinar el proceso de multiplicar por medio de: ➢ dibujos, ilustraciones, materiales concretos y semiconcretos ➢ arreglos rectangulares."
+        },
+        {
+          "code": "2.N.6.1",
+          "description": "Representa la división con o sin residuo mediante: ➢ el uso de dibujos e ilustraciones, ➢ el uso de materiales concretos y semiconcretos, ➢ la resta repetida ➢ reconoce y distingue entre los símbolos de – y ÷."
+        },
+        {
+          "code": "2.A.8.1",
+          "description": "Utiliza las propiedades conmutativa, asociativa e identidad de la suma y multiplicación para sumar y multiplicar números cardinales (usando combinaciones hasta la tabla del 5)."
+        },
+        {
+          "code": "2.A.9.1",
+          "description": "Identifica, demuestra y establece relaciones de igualdad numérica utilizando palabras, modelos y símbolos."
+        },
+        {
+          "code": "2.A.10.2",
+          "description": "Utiliza la suma para reconocer el número total de objetos que hay ordenados en arreglos rectangulares de hasta 5 filas y 5 columnas para determinar combinaciones básicas. Procesos y Competencias Fundamentales de Matemáticas (PM) PM1 Comprende problemas a medida que desarrolla su capacidad para resolverlos con confianza. PM2 Razona de manera concreta y semiconcreta, hasta alcanzar la abstracción cuantitativa. PM7 Discierne y usa patrones o estructuras. PM8 Identifica y expresa regularidad en los razonamientos repetidos."
+        }
+      ],
+      "themes": [
+        ":",
+        "Equidad y respeto entre todos los seres humanos",
+        "Emprendimiento e innovación"
+      ],
+      "generatorThemes": [
+        ":",
+        "Convivencia, Ética en la vida diaria y Responsabilidad social",
+        "Autogestión, Toma de decisiones y Formación de líderes"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.3.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_4",
+      "code": "2.4",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Aplicando el álgebra",
+      "weeks": 4,
+      "summary": "En esta unidad el estudiante trabajará con patrones. Describirá, identificará, completará y creará patrones crecientes y de repetición. Encontrará reglas para patrones en tablas y encontrará patrones \nen el mundo real. Investigará y analizará cambios en las variables. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la unidad, el estudiante podrá completar y crear patrones e identificar reglas para patrones y desarrollará fundamentos para el álgebra."
+      ],
+      "acquisitionObjectives": [
+        "Reconocer, describir, identificar, ampliar y crear patrones de su diario vivir.",
+        "Analizar cómo un cambio en una variable afecta a otra variable."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Dónde podemos encontrar patrones?",
+          "understanding": "Los patrones se encuentran a todo nuestro alrededor."
+        },
+        {
+          "question": "¿Cómo podemos reconocer un patrón?",
+          "understanding": "Los patrones siguen reglas."
+        },
+        {
+          "question": "¿Por qué estudiamos matemáticas?",
+          "understanding": "Las herramientas matemáticas se utilizan para resolver problemas matemáticos de la vida diaria."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado. Estándar de Álgebra"
+        },
+        {
+          "code": "2.A.7.1",
+          "description": "Reconoce patrones numéricos ➢ Cuenta de 5 en 5, de 10 en 10 y de 100 en 100. ➢ Completa diferentes tablas basadas en una regla para revelar patrones. ➢ Reconoce y describe patrones (ascendentes y descendentes) de su diario vivir. ➢ Amplía y crea patrones (ascendentes y descendentes) de su diario vivir."
+        },
+        {
+          "code": "2.A.10.1",
+          "description": "Escribe una ecuación para expresar números pares como una suma de dos sumandos iguales."
+        },
+        {
+          "code": "2.A.10.2",
+          "description": "Utiliza la suma para reconocer el número total de objetos que hay ordenados en arreglos rectangulares de hasta 5 filas y 5 columnas para determinar combinaciones básicas."
+        },
+        {
+          "code": "2.A.10.3",
+          "description": "Investiga y analiza cómo un cambio en una variable independiente (manipulada) afecta la variable dependiente (de respuesta). Procesos y Competencias Fundamentales de Matemáticas (PM) PM2 Razona de manera concreta y semiconcreta, hasta alcanzar la abstracción cuantitativa. PM7 Discierne y usa patrones o estructuras."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria y Responsabilidad social",
+        "Disciplina digital y Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.4.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_5",
+      "code": "2.5",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Aventuras con la medición",
+      "weeks": 5,
+      "summary": "En esta unidad el estudiante practicará estimar y medir longitud y peso con el sistema inglés y el sistema métrico hasta incluir el cálculo del área y el perímetro. Utilizará los relojes digitales y análogos \npara leer la hora hasta los 5 minutos más cercanos e interpretar la información en un calendario. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la unidad el estudiante medirá longitud, peso, volumen y tiempo, y aplicará estas destrezas en la vida diaria."
+      ],
+      "acquisitionObjectives": [
+        "Estimar y medir la longitud de la configuración del mundo real en unidades de los sistemas métrico e inglés.",
+        "Resolver problemas de medición en la vida diaria que involucren sumas y restas.",
+        "Escribir y decir la hora hasta 5 minutos.",
+        "Determinar área y perímetro.",
+        "Estimar y medir peso y capacidad."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Cómo podemos medir nuestro mundo?",
+          "understanding": "Se usan dos sistemas de medición en el mundo."
+        },
+        {
+          "question": "¿Por qué medimos?",
+          "understanding": "Medimos porque nos ayuda a resolver problemas."
+        },
+        {
+          "question": "¿Por qué estimamos las medidas?",
+          "understanding": "A través de la estimación aproximamos las medidas."
+        },
+        {
+          "question": "¿Por qué medimos en unidades estándar?",
+          "understanding": "Las unidades de medida estándar nos permiten a todos tener uniformidad en las medidas."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado. Estándar de Medición"
+        },
+        {
+          "code": "2.M.14.1",
+          "description": "Estima y mide longitudes utilizando unidades estandarizadas (pulgadas, pies, centímetros y metros)."
+        },
+        {
+          "code": "2.M.14.2",
+          "description": "Selecciona la herramienta adecuada (cinta de medir, regla, yarda o metro) para medir la longitud de un objeto."
+        },
+        {
+          "code": "2.M.14.3",
+          "description": "Usa la suma y la resta hasta 100 para resolver problemas matemáticos que incluyan longitudes en las mismas unidades."
+        },
+        {
+          "code": "2.M.14.4",
+          "description": "Describe la relación entre pulgada, pie y yarda, así como la relación entre milímetro, centímetro y metro."
+        },
+        {
+          "code": "2.M.14.5",
+          "description": "Estima y utiliza las medidas del sistema métrico e inglés para comparar peso y capacidad en ambos sistemas."
+        },
+        {
+          "code": "2.M.15.1",
+          "description": "Lee, escribe e interpreta la hora en relojes análogos y digitales hasta los 5 minutos más cercanos, usa a.m. y p.m. y resuelve problemas de la vida diaria."
+        },
+        {
+          "code": "2.M.15.2",
+          "description": "Lee, identifica e interpreta información sobre el calendario."
+        },
+        {
+          "code": "2.M.17.1",
+          "description": "Determina el perímetro al utilizar modelos concretos y semiconcretos en: ➢ cuadrados ➢ rectángulos ➢ rombos ➢ paralelogramos ➢ trapecios ➢ triángulos ➢ otros polígonos"
+        },
+        {
+          "code": "2.M.17.2",
+          "description": "Determina el área utilizando modelos concretos y semiconcretos en ➢ cuadrados y ➢ rectángulos con factores iguales o menores de 5. Procesos y Competencias Fundamentales de Matemáticas (PM)  PM1 Comprende problemas a medida que desarrolla su capacidad para resolverlos con confianza. PM2 Razona de manera concreta y semiconcreta, hasta alcanzar la abstracción cuantitativa. PM4 Utiliza las matemáticas para resolver problemas cotidianos."
+        }
+      ],
+      "themes": [
+        ":",
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación"
+      ],
+      "generatorThemes": [
+        "Convivencia, Ética en la vida diaria y Responsabilidad social",
+        "Disciplina digital, Investigación, Tecnología y Sociedad y Conciencia tecnológica"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.5.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_6",
+      "code": "2.6",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Construyendo con la geometría",
+      "weeks": 5,
+      "summary": "En esta unidad el estudiante estudiará formas bidimensionales y tridimensionales. Describirá, clasificará y construirá formas en diferentes orientaciones y, además, aprenderá a reconocerlas. \nConstruirá formas y las separará para crear otras figuras. Al final el estudiante utilizará las ideas geométricas para resolver problemas. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la clase, el estudiante podrá trabajar con formas y otros conceptos geométricos para resolver problemas en el mundo real."
+      ],
+      "acquisitionObjectives": [
+        "Comparar y contrastar figuras bidimensionales.",
+        "Comparar y contrastar figuras tridimensionales.",
+        "Identificar traslaciones y rotaciones.",
+        "Identificar la simetría en situaciones del mundo real tales como en la arquitectura.",
+        "Componer y descomponer figuras bidimensionales."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Qué tipos de problemas del mundo real podemos resolver con las ideas geométricas?",
+          "understanding": "Las ideas geométricas nos ayudan a resolver problemas del mundo real."
+        },
+        {
+          "question": "¿Qué le pasa a una forma si se cambia su posición en el espacio?",
+          "understanding": "Cambiar la posición de una figura geométrica en el espacio no cambia la forma."
+        },
+        {
+          "question": "¿Dónde podemos encontrar figuras geométricas?",
+          "understanding": "Las figuras geométricas se encuentran en todo nuestro alrededor."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado. Estándar de Geometría"
+        },
+        {
+          "code": "2.G.11.1",
+          "description": "Figuras geométricas tridimensionales (cilindro, esfera, pirámide, prisma rectangular, cono y cubo) ➢ Identifica y describe los atributos (caras, aristas y vértices) ➢ Compara y contrasta ➢ Construye por atributos ➢ Compone y descompone figuras para formar otras figuras"
+        },
+        {
+          "code": "2.G.11.2",
+          "description": "Figuras geométricas bidimensionales (triángulos, cuadriláteros, pentágonos, hexágonos) ➢ Identifica y describe ➢ Compara y contrasta ➢ Construye por atributos (lados y ángulos)"
+        },
+        {
+          "code": "2.G.12.1",
+          "description": "Reconoce y describe transformaciones de figuras geométricas bidimensionales ➢ Traslación ➢ Rotación ➢ Reflexión"
+        },
+        {
+          "code": "2.G.13.1",
+          "description": "Determina si una figura geométrica tiene eje de simetría y lo traza."
+        },
+        {
+          "code": "2.G.13.2",
+          "description": "Identifica en la arquitectura y en su entorno estructuras que tienen eje de simetría y explica cómo se determina si tiene simetría o no. Procesos y Competencias Fundamentales de Matemáticas (PM) PM1 Comprende problemas a medida que desarrolla su capacidad para resolverlos con confianza. PM4 Utiliza las matemáticas para resolver problemas cotidianos.  ETAPA 1 (Resultados deseados) ETAPA 2 (Evidencia) ETAPA 3 (de aprendizaje) Alineación de objetivos de aprendizaje Enfoque de contenido (El estudiante comprenderá...) Vocabulario de contenido Tareas de desempeño Otra evidencia Actividades de aprendizaje sugeridas y ejemplos para planes de la lección PRCS:"
+        },
+        {
+          "code": "2.N.1.1",
+          "description": "2.G.11.1"
+        },
+        {
+          "code": "2.G.11.2",
+          "description": "2.G.12.1 PM: PM1 PM4 PE/CD: PE1/CD1 PE2/CD2 PE3/CD3 T/A: T1 A1 A2 A3 A5 • Los números cardinales al menos hasta 9, 999 (énfasis desde 7, 500 y 9, 999). • Los atributos de figuras tridimensionales (caras, aristas y vértices). • Los atributos (lados y ángulos) de figuras bidimensionales. • Las transformaciones en figuras bidimensionales. • Formas tridimensionales como esferas, pirámides, cubos y prismas rectangulares. • Formas bidimensionales como círculos, triángulos, cuadrados y rectángulos. • cara • arista • vértices • lados • ángulos • traslación • rotación • reflexión Para obtener descripciones completas, por favor ver la sección “Tareas de desempeño” al final de este mapa. Formas de tangrama • En esta tarea los estudiantes formarán y separarán figuras planas (bidimensionales) para formar otras figuras (ver abajo). ¿Cómo empacamos? • En esta tarea los estudiantes resolverán problemas de la vida real utilizando formas geométricas (ver abajo). Registro diario • ¿De qué manera son diferentes las formas bidimensionales y las tridimensionales? Observaciones • Vaya alrededor del salón mientras los estudiantes trabajan en cualquier tarea manual. Note que utilicen el vocabulario adecuado. Para obtener descripciones completas, ver las secciones \"Actividades de aprendizaje\" y \"Ejemplos para planes de la lección\" al final de este mapa. Conteo • El maestro, a través de las actividades de rutina con los estudiantes, trabajará el conteo de números cardinales haciendo énfasis en los números desde el 7, 500 hasta el 9, 999. Figuras en el mundo • Repase con los estudiantes las diferentes figuras bidimensionales y tridimensionales, así como sus atributos (cantidad de lados, ángulos, caras, aristas y vértices). Entregue a los estudiantes un papel donde escribirán todas las figuras, bidimensionales y tridimensionales que observen en el salón, así como sus atributos, y que puedan relacionar con dichas figuras (ver abajo). Usando redes • Utilizar redes (modelos, patrones o plantillas) y una tabla donde aparezca cada figura en la primera columna. La segunda columna será para escribir el nombre y la tercera para anotar alguna descripción o atributo de la figura con el fin de explorarla (ver abajo). Bingo • ¡Juguemos bingo! Use el modelo adjunto para crear un cartón de bingo de formas (ver abajo y anejo: “2.6 Actividad de aprendizaje: Bingo”). Formas al revés • Los estudiantes dibujarán formas con orientaciones diferentes y  ETAPA 1 (Resultados deseados) ETAPA 2 (Evidencia) ETAPA 3 (de aprendizaje) Alineación de objetivos de aprendizaje Enfoque de contenido (El estudiante comprenderá...) Vocabulario de contenido Tareas de desempeño Otra evidencia Actividades de aprendizaje sugeridas y ejemplos para planes de la lección discutirán por qué la figura no cambia a pesar de su orientación (ver abajo). Rotación y traslación • Repase los conceptos de traslación y rotación en esta actividad (ver abajo)."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos",
+        "Tecnología de la información y la comunicación",
+        "Te",
+        "mas",
+        "g",
+        "eneradores",
+        "Diversidad funcional y Responsabilidad social",
+        "Investigación, Tecnología y Sociedad"
+      ],
+      "generatorThemes": [],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.6 .pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "MAT_2_7",
+      "code": "2.7",
+      "subject": "Matemáticas",
+      "grade": 2,
+      "title": "Interpretando las gráficas y la probabilidad",
+      "weeks": 5,
+      "summary": "En esta unidad el estudiante trabajará con datos y materiales concretos. Recopilará, organizará y responderá a preguntas basadas en tablas o gráficas. Basándose en la información dada, podrá \ndeterminar el evento más probable. \n \nNota: Los indicadores a continuación se deben enseñar de manera explícita. Las destrezas y los conceptos asociados con los indicadores se deben reforzar a lo largo del año.",
+      "transferObjectives": [
+        "Al finalizar la unidad el estudiante trabajara con el análisis de datos y la probabilidad para ayudarlos a hacer predicciones basadas en la posibilidad de un resultado."
+      ],
+      "acquisitionObjectives": [
+        "Resolver problemas utilizando datos suministrados en tablas y gráficas.",
+        "Predecir el resultado de un experimento simple."
+      ],
+      "essentialQuestions": [
+        {
+          "question": "¿Por qué estudiamos el análisis de datos?",
+          "understanding": "Recopilamos, organizamos y analizamos datos para responder preguntas y tomar decisiones."
+        },
+        {
+          "question": "¿Cuáles son las diferentes formas de organizar y presentar los datos de manera útil?",
+          "understanding": "Las diferentes formas de organizar datos es a través de tablas y gráficas que los representen."
+        },
+        {
+          "question": "¿Por qué estudiamos probabilidad?",
+          "understanding": "La probabilidad nos ayuda a predecir eventos futuros."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.N.1.1",
+          "description": "Cuenta, lee y escribe números cardinales hasta cuatro dígitos a partir de un número dado. Estándar de Análisis de Datos y Probabilidad"
+        },
+        {
+          "code": "2.E.18.1",
+          "description": "Utiliza la información presentada en una tabla, gráfica pictórica o de barras para resolver problemas matemáticos y contestar preguntas."
+        },
+        {
+          "code": "2.E.19.1",
+          "description": "Realiza experimentos de probabilidad con materiales concretos y datos cuantitativos (ejemplo: Lanzar una moneda)."
+        },
+        {
+          "code": "2.E.19.2",
+          "description": "Determina el suceso más probable a partir de una información dada (ejemplo: En una ruleta dividida en cuatro partes iguales, tres partes son amarillas y una es verde. Al girar la flecha, ¿Cuál es el suceso más probable?). Procesos y Competencias Fundamentales de Matemáticas (PM) PM4 Utiliza las matemáticas para resolver problemas cotidianos."
+        }
+      ],
+      "themes": [
+        "Equidad y respeto entre todos los seres humanos"
+      ],
+      "generatorThemes": [
+        "Ética en la vida diaria y Responsabilidad social"
+      ],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "VO.Mapa_curricular_Matemáticas_Unidad 2.7 .pdf"
         }
       ],
       "source": "generated-local"
