@@ -349,6 +349,97 @@ Para que pueda convertirse en interactivo, usa esta estructura clara:
 - Evita poner la numeración dentro de tablas.`,
   },
 
+  'Creador de Assessments': {
+    category: 'evaluacion',
+    title: 'Creador de Assessments',
+    subtitle: 'Genera assessments formativos, sumativos o de desempeño para cualquier materia.',
+    defaultModel: 'anthropic/claude-sonnet-4.5',
+    fields: [
+      { name: 'materia',  label: 'Materia',  type: 'select', options: MATERIAS, required: true },
+      { name: 'grado',    label: 'Grado',    type: 'select', options: GRADOS, default: '5to', required: true },
+      { name: 'tema',     label: 'Tema o unidad', type: 'text', placeholder: 'Ej: Ecosistemas y cadenas alimentarias', required: true },
+      { name: 'tipo',     label: 'Tipo de assessment', type: 'select', options: [
+        'Formativo (durante la unidad)',
+        'Sumativo (final de unidad)',
+        'De desempeño (performance-based)',
+        'Exit ticket (5-10 min)',
+        'Quiz corto',
+      ], default: 'Formativo (durante la unidad)', required: true },
+      { name: 'cantidad', label: 'Cantidad de ítems', type: 'number', default: 10 },
+      { name: 'formato',  label: 'Formato de ítems', type: 'select', options: [
+        'Selección múltiple', 'Respuesta corta', 'Abierto / ensayo', 'Performance task', 'Mixto',
+      ], default: 'Mixto' },
+      { name: 'estandares', type: 'standards', subjectField: 'materia', gradeField: 'grado' },
+    ],
+    system: SYSTEM_TEACHER + `
+
+Para esta herramienta:
+- Construye un assessment alineado a estándares DEPR (cita códigos cuando los selecciones).
+- Variedad de niveles cognitivos (DOK 1-3 mínimo; DOK 4 en assessments sumativos).
+- Para Performance task: rúbrica analítica al final (criterios × niveles).
+- Para Exit ticket: máximo 3-5 items, foco en el objetivo del día.
+- Formato compatible con assessment interactivo: items numerados (1., 2., 3.), opciones (A., B., C., D.) y hoja de respuestas con clave "1. A", "2. C", etc.`,
+    buildPrompt: (f) => `Crea un assessment de ${f.materia} para ${f.grado} grado sobre "${f.tema}".
+Tipo: ${f.tipo}
+Cantidad: ${f.cantidad || 10} ítems
+Formato: ${f.formato}
+
+Incluye:
+1. **Título** del assessment + propósito breve (1 línea)
+2. **Instrucciones para el estudiante** (2-3 líneas, claras al grado)
+3. **Estándares medidos** (lista con códigos DEPR + descripción breve)
+4. **Items numerados** con dificultad progresiva
+5. ${f.formato === 'Performance task' ? '**Rúbrica analítica** (4 niveles × criterios)' : '**Hoja de respuestas / clave** al final con explicación breve por item'}
+6. **Nota para el maestro**: cómo interpretar resultados + qué destreza mide cada bloque`,
+  },
+
+  'Pruebas Diagnósticas': {
+    category: 'evaluacion',
+    title: 'Pruebas Diagnósticas',
+    subtitle: 'Crea pre-tests para identificar conocimientos previos y brechas antes de una unidad.',
+    defaultModel: 'anthropic/claude-sonnet-4.5',
+    fields: [
+      { name: 'materia',  label: 'Materia',  type: 'select', options: MATERIAS, required: true },
+      { name: 'grado',    label: 'Grado',    type: 'select', options: GRADOS, default: '5to', required: true },
+      { name: 'unidad',   label: 'Unidad o tema próximo a enseñar', type: 'text', placeholder: 'Ej: Fracciones equivalentes (lo que voy a comenzar)', required: true },
+      { name: 'momento',  label: 'Momento del año', type: 'select', options: [
+        'Inicio del año escolar',
+        'Antes de comenzar una unidad nueva',
+        'Mitad de año (revisión global)',
+        'Identificación de brechas (gap-closing)',
+      ], default: 'Antes de comenzar una unidad nueva', required: true },
+      { name: 'cantidad', label: 'Cantidad de ítems', type: 'number', default: 12 },
+      { name: 'estandares', type: 'standards', subjectField: 'materia', gradeField: 'grado' },
+    ],
+    system: SYSTEM_TEACHER + `
+
+Para esta herramienta de prueba diagnóstica:
+- El propósito NO es calificar — es identificar qué saben los estudiantes ANTES de enseñar.
+- Mezcla items de **prerequisitos** (lo que deben saber del grado anterior / unidad anterior) con items que **anticipan** el contenido nuevo (sin esperar dominio).
+- Vocabulario claro al grado, instrucciones breves.
+- Variedad: selección múltiple para diagnosticar concepto, respuesta corta para diagnosticar proceso, una pregunta abierta para diagnosticar comprensión.
+- AL FINAL incluye una **guía interpretativa** con 3 niveles:
+  • Listo (80%+) → puede empezar la unidad sin scaffolding
+  • Parcial (50-79%) → necesita repaso focalizado de X conceptos
+  • Necesita base (≤49%) → requiere intervención previa o adaptación
+- Y una sección "**Recomendaciones de diferenciación**" según los resultados.
+- Formato compatible con assessment interactivo (items 1./2./3., opciones A./B./C./D., clave en hoja de respuestas).`,
+    buildPrompt: (f) => `Crea una **prueba diagnóstica** de ${f.materia} para ${f.grado} grado.
+Unidad/tema próximo: "${f.unidad}"
+Momento: ${f.momento}
+Cantidad: ${f.cantidad || 12} ítems
+
+Estructura:
+1. **Título** + propósito diagnóstico (1-2 líneas: qué quieres descubrir)
+2. **Mensaje al estudiante** que reduzca ansiedad: "Esto NO cuenta para nota, es para ayudarme a planificar mejor las clases."
+3. **Bloque A — Prerrequisitos** (4-6 ítems): lo que necesitan dominar del grado/unidad previa para entender lo nuevo
+4. **Bloque B — Anticipación** (resto de ítems): items que tocan el contenido NUEVO. No esperes dominio — es para ver chispas de comprensión.
+5. **Hoja de respuestas / clave** con explicación breve de cada respuesta
+6. **Guía interpretativa**: tabla de 3 niveles de preparación (Listo / Parcial / Necesita base) con qué hacer en cada caso
+7. **Recomendaciones de diferenciación** específicas según los conceptos donde más estudiantes podrían fallar
+8. **Tabla de seguimiento** (markdown) para que el maestro registre resultados por estudiante`,
+  },
+
   'Feedback Personalizado': {
     category: 'evaluacion',
     title: 'Feedback Personalizado',

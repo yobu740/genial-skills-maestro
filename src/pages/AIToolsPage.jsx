@@ -27,6 +27,7 @@ function pickIcon(name, category) {
     'Plan My Lesson': Ic.doc, 'STEM Unit Planner': Ic.flask, 'Adaptar Lección': Ic.layers, 'Objetivos de Lenguaje': Ic.target,
     'Estrategia de Grupos': Ic.grupos, 'Diferenciar Contenido': Ic.layers, 'Diferenciar Proceso': Ic.sliders, 'Diferenciar Producto': Ic.trophy,
     'Crear Rúbrica': Ic.pendientes, 'Preguntas DOK': Ic.brain, 'Examen de Matemáticas': Ic.calc, 'Feedback Personalizado': Ic.msg2, 'Choice Board': Ic.board,
+    'Creador de Assessments': Ic.check, 'Pruebas Diagnósticas': Ic.target,
     'Lectura por Nivel': Ic.book, 'Vocabulario Académico': Ic.abc, 'Preguntas de Comprensión': Ic.help, 'Evaluación Lexile': Ic.ruler,
     'Asistente de Matemáticas': Ic.calc, 'Asistente de Ciencias': Ic.flask, 'Asistente de ELA (Inglés)': Ic.book,
     'Estudios Sociales': Ic.globe, 'Asistente de Idiomas': Ic.speech, 'Coach de Ed. Especial': Ic.heart, 'Coach para ELL': Ic.globe,
