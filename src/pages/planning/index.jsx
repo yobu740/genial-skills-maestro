@@ -466,43 +466,6 @@ function normalizePlanDate(value) {
   return text;
 }
 
-function normalizeCurriculumText(value) {
-  return String(value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
-const SUBJECT_ALIASES = {
-  matematica: "matematicas",
-  matematicas: "matematicas",
-  math: "matematicas",
-  mathematics: "matematicas",
-  ciencias: "ciencias",
-  science: "ciencias",
-  sociales: "estudios sociales",
-  "estudios sociales": "estudios sociales",
-  "ciencias sociales": "estudios sociales",
-  "social studies": "estudios sociales",
-  ingles: "ingles",
-  english: "ingles",
-  ela: "ingles",
-  espanol: "espanol",
-  spanish: "espanol",
-  "artes del lenguaje": "espanol",
-};
-
-function normalizeSubjectName(value) {
-  const normalized = normalizeCurriculumText(value);
-  return SUBJECT_ALIASES[normalized] || normalized;
-}
-
-function normalizeGradeCode(value) {
-  return String(value || "").replace(/\D/g, "");
-}
-
 function localPlanningStore() {
   try {
     const saved = JSON.parse(localStorage.getItem("gsm_teacher_plannings") || "[]");
@@ -2775,17 +2738,14 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
 
   useEffect(() => {
     setLoadingUnits(true);
-    fetch("/data/units.json")
+    const params = new URLSearchParams({
+      subject: plan.SubjectName || "",
+      scope: plan.LevelCode || "",
+    });
+    fetch(`/api/curriculum-units?${params}`)
       .then(res => res.ok ? res.json() : { units: [] })
       .then(json => {
-        const subject = normalizeSubjectName(plan.SubjectName);
-        const grade = normalizeGradeCode(plan.LevelCode);
-        const filtered = (json.units || []).filter(u => {
-          const unitSubject = normalizeSubjectName(u.subject);
-          const unitGrade = normalizeGradeCode(u.grade);
-          return unitSubject === subject && unitGrade === grade;
-        });
-        setUnits(filtered);
+        setUnits(json.units || []);
       })
       .catch(() => setUnits([]))
       .finally(() => setLoadingUnits(false));

@@ -631,11 +631,32 @@ app.get('/api/sessions/:code/results', async (req, res) => {
 // Weekly plans index — list with optional subject/scope/kind filters
 let _plansIndex = null;
 let _fewshot = null;
+let _curriculumUnits = null;
 async function loadPlansIndex() {
   if (_plansIndex) return _plansIndex;
   const raw = await import('node:fs/promises').then(m => m.readFile(path.join(__dirname, 'weekly-plans-index.json'), 'utf8'));
   _plansIndex = JSON.parse(raw);
   return _plansIndex;
+}
+async function loadCurriculumUnitsFile() {
+  if (_curriculumUnits) return _curriculumUnits;
+  try {
+    const fs = await import('node:fs/promises');
+    const candidates = [
+      path.join(__dirname, 'public', 'data', 'units.json'),
+      path.join(__dirname, 'dist', 'data', 'units.json'),
+    ];
+    for (const filePath of candidates) {
+      try {
+        const raw = await fs.readFile(filePath, 'utf8');
+        const parsed = JSON.parse(raw);
+        _curriculumUnits = Array.isArray(parsed.units) ? parsed.units : [];
+        return _curriculumUnits;
+      } catch {}
+    }
+  } catch {}
+  _curriculumUnits = [];
+  return _curriculumUnits;
 }
 async function loadFewshot() {
   if (_fewshot) return _fewshot;
@@ -644,6 +665,49 @@ async function loadFewshot() {
     _fewshot = JSON.parse(raw);
   } catch { _fewshot = []; }
   return _fewshot;
+}
+
+function normalizeCurriculumText(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+const SUBJECT_ALIASES = {
+  matematica: 'matematicas',
+  matematicas: 'matematicas',
+  math: 'matematicas',
+  mathematics: 'matematicas',
+  ciencias: 'ciencias',
+  science: 'ciencias',
+  sociales: 'estudios sociales',
+  'estudios sociales': 'estudios sociales',
+  'ciencias sociales': 'estudios sociales',
+  'social studies': 'estudios sociales',
+  ingles: 'ingles',
+  english: 'ingles',
+  ela: 'ingles',
+  espanol: 'espanol',
+  spanish: 'espanol',
+  'artes del lenguaje': 'espanol',
+};
+
+function normalizeSubjectName(value) {
+  const normalized = normalizeCurriculumText(value);
+  return SUBJECT_ALIASES[normalized] || normalized;
+}
+
+function normalizeGradeCode(value) {
+  return String(value || '').replace(/\D/g, '');
+}
+
+function unitSortValue(unit) {
+  const text = String(unit?.code || unit?.unit || unit?.id || '');
+  const number = Number(text.match(/\d+(\.\d+)?/)?.[0]);
+  return Number.isFinite(number) ? number : 999;
 }
 
 /**
@@ -702,6 +766,65 @@ app.get('/api/weekly-plans', async (req, res) => {
     res.json({ count: list.length, facets, plans: list });
   } catch (e) {
     res.status(500).json({ error: String(e) });
+  }
+});
+
+app.get('/api/curriculum-units', async (req, res) => {
+  try {
+    const [curated, idx] = await Promise.all([loadCurriculumUnitsFile(), loadPlansIndex()]);
+    const { subject, grade, scope } = req.query;
+    const selectedSubject = normalizeSubjectName(subject);
+    const selectedGrade = normalizeGradeCode(grade || scope);
+    const byId = new Map();
+
+    for (const unit of curated) {
+      const unitSubject = normalizeSubjectName(unit.subject);
+      const unitGrade = normalizeGradeCode(unit.grade);
+      if (selectedSubject && unitSubject !== selectedSubject) continue;
+      if (selectedGrade && unitGrade !== selectedGrade) continue;
+      const id = unit.id || `${unitSubject}_${unitGrade}_${unit.code || unit.unit || byId.size + 1}`;
+      byId.set(id, { ...unit, id, source: 'curated' });
+    }
+
+    for (const plan of idx) {
+      const unitNumber = String(plan.unit || '').trim();
+      if (!unitNumber) continue;
+      const planSubject = normalizeSubjectName(plan.subject);
+      const planGrade = normalizeGradeCode(plan.scope);
+      if (selectedSubject && planSubject !== selectedSubject) continue;
+      if (selectedGrade && planGrade !== selectedGrade) continue;
+
+      const id = `IDX_${planSubject}_${planGrade}_${unitNumber}`.replace(/\s+/g, '_');
+      if (byId.has(id)) {
+        const existing = byId.get(id);
+        existing.resourcesCount = (existing.resourcesCount || 0) + 1;
+        continue;
+      }
+      byId.set(id, {
+        id,
+        code: unitNumber,
+        subject: plan.subject,
+        grade: plan.scope,
+        title: `Unidad ${unitNumber}`,
+        weeks: null,
+        startWeek: null,
+        endWeek: null,
+        transferObjectives: [],
+        acquisitionObjectives: [],
+        essentialQuestions: [],
+        standards: [],
+        themes: [],
+        vocabulary: [],
+        resources: [],
+        resourcesCount: 1,
+        source: 'weekly-plans-index',
+      });
+    }
+
+    const units = [...byId.values()].sort((a, b) => unitSortValue(a) - unitSortValue(b) || String(a.title).localeCompare(String(b.title)));
+    res.json({ count: units.length, units });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e), units: [] });
   }
 });
 

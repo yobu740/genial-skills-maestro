@@ -20,43 +20,6 @@ const KIND_COLOR = {
   other:         { bg: '#F4F6F9', fg: '#6B7A93' },
 };
 
-function normalizeCurriculumText(value) {
-  return String(value || '')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
-}
-
-const SUBJECT_ALIASES = {
-  matematica: 'matematicas',
-  matematicas: 'matematicas',
-  math: 'matematicas',
-  mathematics: 'matematicas',
-  ciencias: 'ciencias',
-  science: 'ciencias',
-  sociales: 'estudios sociales',
-  'estudios sociales': 'estudios sociales',
-  'ciencias sociales': 'estudios sociales',
-  'social studies': 'estudios sociales',
-  ingles: 'ingles',
-  english: 'ingles',
-  ela: 'ingles',
-  espanol: 'espanol',
-  spanish: 'espanol',
-  'artes del lenguaje': 'espanol',
-};
-
-function normalizeSubjectName(value) {
-  const normalized = normalizeCurriculumText(value);
-  return SUBJECT_ALIASES[normalized] || normalized;
-}
-
-function normalizeGradeCode(value) {
-  return String(value || '').replace(/\D/g, '');
-}
-
 export default function WeeklyPlansTemplates() {
   const [data,      setData]    = useState({ count: 0, facets: { subjects: [], scopes: [], kinds: [] }, plans: [] });
   const [loading,   setLoading] = useState(true);
@@ -94,20 +57,14 @@ export default function WeeklyPlansTemplates() {
     }
 
     setLoadingUnits(true);
-    fetch('/data/units.json')
+    const params = new URLSearchParams({ subject, scope });
+    fetch(`/api/curriculum-units?${params}`)
       .then(res => {
-        if (!res.ok) throw new Error('No se pudo cargar units.json');
+        if (!res.ok) throw new Error('No se pudieron cargar las unidades');
         return res.json();
       })
       .then(json => {
-        const selectedSubject = normalizeSubjectName(subject);
-        const selectedGrade = normalizeGradeCode(scope);
-        const filteredUnits = (json.units || []).filter(item => {
-          const itemSubject = normalizeSubjectName(item.subject);
-          const itemGrade = normalizeGradeCode(item.grade);
-          return itemSubject === selectedSubject && itemGrade === selectedGrade;
-        });
-        setUnits(filteredUnits);
+        setUnits(json.units || []);
       })
       .catch(err => {
         console.error('Error loading curriculum units:', err);
