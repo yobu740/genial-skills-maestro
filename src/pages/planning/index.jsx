@@ -1086,8 +1086,27 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
       ]),
     },
     { label: "Acomodos razonables", cells: makePreviewCells(contentDay, [{ title: "Acomodos razonables", desc: sectionData["fl-acom"] || "" }]) },
-    { label: "Estrategias de instruccion diferenciada", cells: makePreviewCells(contentDay, [{ title: "Estrategias de instruccion diferenciada", desc: sectionData["fl-strat"] || "" }]) },
-    { label: "Materiales", cells: makePreviewCells(contentDay, [{ title: "Materiales", desc: textOrFallback(sectionData["fl-mats"], "Libro digital, pizarra interactiva y recursos visuales de la leccion.") }]) },
+    {
+      label: "Estrategias de instruccion diferenciada",
+      cells: makePreviewCells(contentDay, [{
+        title: "Estrategias de instruccion diferenciada",
+        desc: textOrFallback(sectionData["fl-strat"] && Array.isArray(sectionData["fl-strat"]) ? sectionData["fl-strat"].map(e => `${e.categoria}: ${e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : e.tipo}`).filter(Boolean).join("; ") : "", "Instruccion diferenciada por proceso")
+      }])
+    },
+    {
+      label: "Materiales",
+      cells: makePreviewCells(contentDay, [{
+        title: "Materiales",
+        desc: textOrFallback(sectionData["fl-mats"] && Array.isArray(sectionData["fl-mats"]) ? sectionData["fl-mats"].map(e => (e.materiales || []).join(", ")).filter(Boolean).join("; ") : "", "Libro digital, pizarra interactiva y recursos visuales de la leccion.")
+      }])
+    },
+    {
+      label: "Observaciones",
+      cells: makePreviewCells(contentDay, [{
+        title: "Observaciones",
+        desc: textOrFallback(sectionData["fl-obs"] && Array.isArray(sectionData["fl-obs"]) ? sectionData["fl-obs"].map(e => e.text).filter(Boolean).join("; ") : "", "")
+      }])
+    },
     { label: "Actividad de Inicio", cells: makePreviewCells(contentDay, selectedLesson.startActivity ? [{ title: lessonTitle, desc: selectedLesson.startActivity }] : []) },
     { label: "Actividad de desarrollo", cells: makePreviewCells(contentDay, selectedLesson.devActivity ? [{ title: lessonTitle, desc: selectedLesson.devActivity }] : []) },
     { label: "Actividad de cierre", cells: makePreviewCells(contentDay, selectedLesson.endActivity ? [{ title: lessonTitle, desc: selectedLesson.endActivity }] : []) },
@@ -1204,6 +1223,36 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
 // ─────────────────────────────────────────────────────────────────────────────
 const DAYS_ES = ['lu', 'ma', 'mi', 'ju', 'vi', 'sá', 'do'];
 
+const STRAT_TYPES = {
+  "Contenido": [
+    "Lecturas graduadas de complejidad variable",
+    "Organizadores gráficos y visuales",
+    "Material auditivo y audiovisual",
+    "Glosarios y vocabulario de apoyo",
+    "Otro"
+  ],
+  "Proceso": [
+    "Grupos de trabajo flexibles",
+    "Centros de interés o de aprendizaje",
+    "Andamiaje o instrucción guiada",
+    "Tiempo extendido para ejecución",
+    "Otro"
+  ],
+  "Producto": [
+    "Proyectos individuales o grupales",
+    "Demostraciones prácticas",
+    "Evaluaciones adaptadas u orales",
+    "Portafolios o diarios de aprendizaje",
+    "Otro"
+  ],
+  "Ambiente de aprendizaje": [
+    "Áreas de trabajo silencioso",
+    "Espacios de colaboración interactiva",
+    "Organización física adaptada del aula",
+    "Otro"
+  ]
+};
+
 const CREATABLE_SECTIONS = {
   'fl-plan1': {
     title: 'Crear nueva',
@@ -1300,6 +1349,73 @@ const CREATABLE_SECTIONS = {
         condition: (entry) => entry.incluirReflexion !== 'No'
       }
     ]
+  },
+  'fl-obs': {
+    title: 'Crear nueva',
+    subtitle: 'Escriba la observación que desea agregar a su planificación.',
+    listColumns: [
+      { key: 'text', label: 'Observación', render: (e) => (e.text || '').slice(0, 120) + ((e.text || '').length > 120 ? '…' : '') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'textarea', name: 'text', label: 'Escriba la observación que desea agregar a su planificación', placeholder: 'Detalle la observación', aiAssist: true, rows: 5 }
+    ]
+  },
+  'fl-mats': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione los acomodos razonables o adaptaciones curriculares que desea agregar a su planificación.',
+    listColumns: [
+      { key: 'materiales', label: 'Materiales', render: (e) => (e.materiales || []).join(', ') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'checkboxes', name: 'materiales', label: 'Seleccione uno o varios para su planificación', options: [
+        'Materiales escolares (crayolas, papel, tijeras, etc.)', 'Calculadora', 'Papel cuadriculado', 'Cuaderno de mapas',
+        'Diccionario', 'Materiales de arte', 'Fotocopias (ejercicios, pruebas, etc.)', 'Libreta de la clase',
+        'Equipo de laboratorio', 'Carteles, cartulinas', 'Recursos tecnológicos (materiales/equipo)', 'Texto del curso',
+        'Libreta de vocabulario', 'Equipo de deporte', 'Portafolios', 'Otra'
+      ]}
+    ]
+  },
+  'fl-strat': {
+    title: 'Crear nueva',
+    subtitle: 'Agregue la estrategia de instrucción diferenciada que desea para la planificación.',
+    listColumns: [
+      { key: 'categoria', label: 'Categoría', render: (e) => e.categoria || '—' },
+      { key: 'tipo', label: 'Tipo de estrategia', render: (e) => e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : (e.tipo || '—') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      {
+        type: 'radios',
+        name: 'categoria',
+        label: 'Categoría',
+        options: ['Contenido', 'Proceso', 'Producto', 'Ambiente de aprendizaje'],
+        defaultValue: 'Contenido'
+      },
+      {
+        type: 'select',
+        name: 'tipo',
+        label: 'Tipo de estrategia',
+        options: (entry) => {
+          const cat = entry.categoria || 'Contenido';
+          return STRAT_TYPES[cat] || [];
+        }
+      },
+      {
+        type: 'textarea',
+        name: 'otroTipo',
+        label: 'Escriba el tipo de estrategia personalizado',
+        placeholder: 'Detalle la estrategia aquí...',
+        condition: (entry) => entry.tipo === 'Otro'
+      }
+    ]
   }
 };
 
@@ -1310,7 +1426,7 @@ function renderDates(entry) {
   return days.map(d => d[0].toUpperCase() + d.slice(1)).join(', ');
 }
 
-function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext }) {
+function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan }) {
   const [editing, setEditing] = useState(null); // null = list view; otherwise the entry being created/edited
 
   function startCreate() {
@@ -1332,6 +1448,7 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext }) {
         onCancel={cancel}
         onSave={commit}
         aiContext={aiContext}
+        plan={plan}
       />
     );
   }
@@ -1357,7 +1474,7 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext }) {
           <tbody>
             {entries.map(e => (
               <tr key={e.id}>
-                {cfg.listColumns.map(c => <td key={c.key}>{c.render(e) || '—'}</td>)}
+                {cfg.listColumns.map(c => <td key={c.key}>{c.render(e, plan) || '—'}</td>)}
                 <td style={{ display: 'flex', gap: 6, justifyContent: 'flex-end' }}>
                   <button className="btn btn-normal" style={{ padding: '5px 12px' }} onClick={() => startEdit(e)}>✎ Ver/Editar</button>
                   <button className="pl btn-simple" style={{ color: '#e32f28', fontSize: 16 }} onClick={() => onDelete(e.id)}>🗑</button>
@@ -1371,27 +1488,31 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext }) {
   );
 }
 
-function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext }) {
+function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) {
   function setField(name, val) { onChange({ ...entry, [name]: val }); }
-  function toggleDay(day) {
-    const days = entry.dates?.days || [];
-    const next = days.includes(day) ? days.filter(d => d !== day) : [...days, day];
-    onChange({ ...entry, dates: { wholeWeek: false, days: next } });
-  }
-  function setWholeWeek(on) {
-    onChange({ ...entry, dates: { wholeWeek: on, days: on ? [...DAYS_ES] : [] } });
-  }
   function toggleOpt(name, opt) {
     const arr = entry[name] || [];
     const next = arr.includes(opt) ? arr.filter(o => o !== opt) : [...arr, opt];
     setField(name, next);
   }
 
-  const canSave = (entry.dates?.days?.length || entry.dates?.wholeWeek) &&
-                  cfg.fields.some(f => f.type !== 'dates' && (
-                    (f.type === 'checkboxes' && (entry[f.name] || []).length > 0) ||
-                    (f.type === 'textarea'   && (entry[f.name] || '').trim().length > 0)
-                  ));
+  const hasDates = entry.dates?.wholeWeek || (entry.dates?.days && entry.dates.days.length > 0);
+  let canSave = hasDates;
+  if (cfg.fields.some(f => f.type === 'checkboxes')) {
+    const cbFields = cfg.fields.filter(f => f.type === 'checkboxes');
+    const cbOk = cbFields.every(f => (entry[f.name] || []).length > 0);
+    canSave = canSave && cbOk;
+  }
+  if (cfg.fields.some(f => f.type === 'select')) {
+    const selFields = cfg.fields.filter(f => f.type === 'select' && (!f.condition || f.condition(entry)));
+    const selOk = selFields.every(f => (entry[f.name] || '').trim().length > 0);
+    canSave = canSave && selOk;
+  }
+  if (cfg.fields.some(f => f.type === 'textarea')) {
+    const taFields = cfg.fields.filter(f => f.type === 'textarea' && (!f.condition || f.condition(entry)));
+    const taOk = taFields.every(f => (entry[f.name] || '').trim().length > 0);
+    canSave = canSave && taOk;
+  }
 
   return (
     <div className="cs-form">
@@ -1403,8 +1524,56 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext }) {
       </div>
 
       {cfg.fields.map((f, i) => {
+        if (f.condition && !f.condition(entry)) return null;
+
         if (f.type === 'dates') {
-          return <DatePickerField key={i} value={entry.dates} onChange={(v) => setField('dates', v)} onToggleDay={toggleDay} onWholeWeek={setWholeWeek} />;
+          return (
+            <DatePickerField
+              key={i}
+              plan={plan}
+              value={entry.dates}
+              onChange={(v) => setField('dates', v)}
+            />
+          );
+        }
+        if (f.type === 'radios') {
+          const val = entry[f.name] !== undefined ? entry[f.name] : (f.defaultValue || '');
+          return (
+            <div key={i} className="cs-block">
+              <h3 className="cs-block-title">{f.label}</h3>
+              <div style={{ display: 'flex', gap: 18, marginTop: 8 }}>
+                {f.options.map(opt => (
+                  <label key={opt} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer', fontSize: '13.5px' }}>
+                    <input
+                      type="radio"
+                      name={f.name}
+                      checked={val === opt}
+                      onChange={() => setField(f.name, opt)}
+                      style={{ accentColor: '#3DA8A8' }}
+                    />
+                    <span>{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          );
+        }
+        if (f.type === 'select') {
+          const options = typeof f.options === 'function' ? f.options(entry) : (f.options || []);
+          return (
+            <div key={i} className="cs-block">
+              <h3 className="cs-block-title">{f.label}</h3>
+              <select
+                className="form-select"
+                value={entry[f.name] || ''}
+                onChange={(e) => setField(f.name, e.target.value)}
+                style={{ background: '#fff', border: '1px solid #ced4da', padding: '8px 12px', fontSize: '14px' }}
+              >
+                <option value="">Seleccionar</option>
+                {options.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+              </select>
+            </div>
+          );
         }
         if (f.type === 'checkboxes') {
           return (
@@ -1445,8 +1614,7 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext }) {
   );
 }
 
-function DatePickerField({ value, onToggleDay, onWholeWeek }) {
-  const days = value?.days || [];
+function DatePickerField({ plan, value, onChange }) {
   const wholeWeek = !!value?.wholeWeek;
   return (
     <div className="cs-block">
@@ -1454,29 +1622,33 @@ function DatePickerField({ value, onToggleDay, onWholeWeek }) {
       <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 12 }}>
         <span style={{ fontWeight: 600, color: '#33353d', fontSize: 13 }}>¿Desea que la fecha aplique para toda la semana?</span>
         <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
-          <input type="radio" name="ww" checked={wholeWeek} onChange={() => onWholeWeek(true)} style={{ accentColor: '#3DA8A8' }} /> Sí
+          <input
+            type="radio"
+            name="ww"
+            checked={wholeWeek}
+            onChange={() => onChange({ wholeWeek: true, days: buildPlanDays(plan.OpenDate).map(d => d.date) })}
+            style={{ accentColor: '#3DA8A8' }}
+          /> Sí
         </label>
         <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}>
-          <input type="radio" name="ww" checked={!wholeWeek} onChange={() => onWholeWeek(false)} style={{ accentColor: '#3DA8A8' }} /> No
+          <input
+            type="radio"
+            name="ww"
+            checked={!wholeWeek}
+            onChange={() => onChange({ wholeWeek: false, days: [] })}
+            style={{ accentColor: '#3DA8A8' }}
+          /> No
         </label>
       </div>
-      {!wholeWeek && (
-        <>
-          <div style={{ fontSize: 12, color: '#555', marginBottom: 8 }}>Seleccione los días de la semana que desea para esta actividad:</div>
-          <div className="cs-days">
-            {DAYS_ES.map(d => (
-              <button
-                key={d}
-                type="button"
-                className={`cs-day ${days.includes(d) ? 'on' : ''}`}
-                onClick={() => onToggleDay(d)}
-              >
-                {d}
-              </button>
-            ))}
-          </div>
-        </>
-      )}
+      <div style={{ fontSize: 12, color: '#555', marginBottom: 8 }}>
+        Seleccione los días de la semana que desea para esta actividad:
+      </div>
+      <MonthlyCalendar
+        plan={plan}
+        value={value}
+        onChange={onChange}
+        disabled={false}
+      />
     </div>
   );
 }
