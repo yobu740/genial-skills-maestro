@@ -202,6 +202,10 @@ export const GENIAL_CSS = `
 .fpg-field>span{display:block;font-size:12px;font-weight:600;color:#33353d;margin-bottom:6px}
 .fpg-field textarea,.fpg-field input,.fpg-field select{width:100%;background:#fff;border:1px solid #e4e4e4;border-radius:9px;padding:9px 11px;font-family:inherit;font-size:13.5px;outline:0;resize:vertical;color:#1A2740}
 .fpg-field textarea:focus,.fpg-field select:focus{border-color:#27466c;box-shadow:0 0 0 3px rgba(39,70,108,.12)}
+.fpg-check{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;background:#f8fbfc;border:1px solid #d7eceb;border-radius:10px;padding:12px 14px;color:#1A2740;cursor:pointer}
+.fpg-check input{margin-top:2px;accent-color:#4ba7a1}
+.fpg-check strong{display:block;font-size:13px;color:#27466c;margin-bottom:2px}
+.fpg-check span{display:block;font-size:12px;line-height:1.45;color:#6B7A93}
 .fpg-generate{background:linear-gradient(135deg,#6745EA,#4ba7a1);color:#fff;border:0;border-radius:10px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 2px 8px rgba(103,69,234,.25)}
 .fpg-generate:disabled{opacity:.55;cursor:not-allowed}
 .fpg-error{background:#fdecea;color:#7a1a14;border:1px solid #f4c4c0;padding:10px 12px;border-radius:8px;font-size:12.5px}
@@ -2641,7 +2645,7 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
 const SECTION_LABELS = Object.fromEntries(MOCK.cotejo.map(s => [s.key, s.label]));
 
 function FullPlanGenerator({ plan, onApply, onClose }) {
-  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5" });
+  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5", schoolImprovementPlan: false });
   const [status, setStatus]   = useState("idle");   // idle | generating | preview | error
   const [error, setError]     = useState("");
   const [result, setResult]   = useState(null);
@@ -2665,6 +2669,7 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
           dateFrom: plan.OpenDate,
           dateTo:   plan.CloseDate,
           model:   form.model,
+          schoolImprovementPlan: !!form.schoolImprovementPlan,
           // Pass the teacher's JWT so the backend can hit Athenas live
           athenasToken: getAthenasToken() || undefined,
         }),
@@ -2730,6 +2735,17 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
                   value={form.lessonsHint}
                   onChange={e => setForm(p => ({ ...p, lessonsHint: e.target.value }))}
                 />
+              </label>
+              <label className="fpg-check">
+                <input
+                  type="checkbox"
+                  checked={!!form.schoolImprovementPlan}
+                  onChange={e => setForm(p => ({ ...p, schoolImprovementPlan: e.target.checked }))}
+                />
+                <span>
+                  <strong>La escuela está en plan de mejoramiento</strong>
+                  Activar para que la IA complete las áreas de respuesta activa del estudiante y experiencia común.
+                </span>
               </label>
               <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                 <label className="fpg-field" style={{ flex: "0 0 180px" }}>

@@ -831,10 +831,10 @@ function extractPlanJSON(text) {
  *   - Un plan few-shot de referencia
  * Devuelve JSON estructurado con lecciones + contenido por cada sección del cotejo.
  *
- * Body: { subject, grade, unit, weeks?, lessonsHint?, dateFrom?, dateTo?, model? }
+ * Body: { subject, grade, unit, weeks?, lessonsHint?, dateFrom?, dateTo?, model?, schoolImprovementPlan? }
  */
 app.post('/api/generate-full-plan', async (req, res) => {
-  const { subject, grade, unit, weeks = 1, lessonsHint, dateFrom, dateTo, model = 'anthropic/claude-haiku-4.5' } = req.body || {};
+  const { subject, grade, unit, weeks = 1, lessonsHint, dateFrom, dateTo, model = 'anthropic/claude-haiku-4.5', schoolImprovementPlan = false } = req.body || {};
   if (!subject || !grade || !unit) {
     return res.status(400).json({ error: 'subject, grade y unit son requeridos' });
   }
@@ -931,6 +931,13 @@ app.post('/api/generate-full-plan', async (req, res) => {
     const exampleBlock = example
       ? `## Ejemplo de plan DEPR real del distrito (referencia de formato/estilo)\nMateria: ${example.subject} · Grado ${example.scope}\n\n"""\n${example.text.slice(0, 2200)}\n"""`
       : '';
+    const improvementSectionsSchema = schoolImprovementPlan
+      ? `    "fl-plan1":    "Plan de mejoramiento - respuesta activa del estudiante",
+    "fl-plan2":    "Plan de mejoramiento - experiencia común (2-3 minutos de inicio)",`
+      : '';
+    const improvementInstruction = schoolImprovementPlan
+      ? 'La escuela ESTA en plan de mejoramiento. Debes completar fl-plan1 y fl-plan2 con estrategias concretas, observables y alineadas al tema semanal.'
+      : 'La escuela NO esta en plan de mejoramiento. No incluyas fl-plan1 ni fl-plan2 en el JSON de sections; deja esas dos areas sin trabajar.';
 
     const system = `Eres un asistente experto en planificación instruccional del Departamento de Educación de Puerto Rico (DEPR).
 Tu tarea: generar un plan semanal completo en formato Cotejo de Planificación, listo para entregarse.
@@ -971,8 +978,7 @@ ${exampleBlock}
     "fl-eval":     "Evaluaciones formativas y sumativa con criterios",
     "fl-acom":     "Acomodos razonables específicos (504/PEI, ELL, dotados)",
     "fl-strat":    "Estrategias de instrucción diferenciada (mínimo 3)",
-    "fl-plan1":    "Plan de mejoramiento - respuesta activa del estudiante",
-    "fl-plan2":    "Plan de mejoramiento - experiencia común (2-3 minutos de inicio)",
+${improvementSectionsSchema}
     "fl-mats":     "Materiales necesarios (lista en bullets)",
     "fl-obs":      "Observaciones / notas para el maestro",
     "fl-reflex":   "Reflexión de praxis - preguntas para autoevaluación"
@@ -995,6 +1001,9 @@ ${unit}
 
 Regla obligatoria de fechas para pruebas y avaluos:
 ${timingRuleClean}
+
+Regla obligatoria para plan de mejoramiento:
+${improvementInstruction}
 
 ${lessonsHint ? `Lecciones específicas que el maestro quiere incluir o priorizar:\n${lessonsHint}` : 'El maestro no especificó lecciones — recomiéndaselas tú basándote en el catálogo y los estándares.'}
 
@@ -1020,6 +1029,10 @@ Sugiere ${Math.max(3, Math.min(8, weeks * 3))} lecciones distribuidas en el rang
     const plan = extractPlanJSON(content);
     if (!plan) {
       return res.status(502).json({ error: 'El modelo no devolvió JSON válido.', raw: content });
+    }
+    if (!schoolImprovementPlan && plan.sections && typeof plan.sections === 'object') {
+      delete plan.sections['fl-plan1'];
+      delete plan.sections['fl-plan2'];
     }
 
     res.json({
