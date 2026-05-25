@@ -41,7 +41,7 @@ const SOURCES = [
   ...Array.from({ length: 8 }, (_, index) => gradeSource('Ciencias', 'mapa curricular ciencias', index + 1)),
   ...Array.from({ length: 8 }, (_, index) => gradeSource('Matemáticas', 'mapa curricular matematicas', index + 1)),
   ...Array.from({ length: 9 }, (_, index) => recursiveSource('Español', 'mapa curricular espanol', index + 4, `${index + 4} GRADO`, /^.*Unidad \d+\.\d+.*\.pdf$/i)),
-  ...[1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(grade => recursiveSource('Inglés', 'mapa curricular ingles', grade, `${grade} GRADE`, /^Unit \d+\.\d+.*\.pdf$/i, 'english-unit-pdf')),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(grade => recursiveSource('Inglés', 'mapa curricular ingles', grade, `${grade} GRADE`, /\bUnit \d+\.\d+.*\.pdf$/i, 'english-unit-pdf')),
   recursiveSource('Inglés', 'mapa curricular ingles', 'K', 'KINDERGARTHEN', /^Unit K\.\d+.*\.pdf$/i, 'english-unit-pdf'),
   ...Array.from({ length: 8 }, (_, index) => socialStudiesSource(index + 4)),
 ];

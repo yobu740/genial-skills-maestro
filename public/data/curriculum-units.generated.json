@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T19:41:47.947Z",
+  "generatedAt": "2026-05-25T20:34:57.065Z",
   "units": [
     {
       "id": "SCI_1_1",
@@ -20471,6 +20471,661 @@
         {
           "type": "curriculum_map",
           "filename": "1.3 UNIT\\Unit 1.3 How Can I Help.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "ING_2_1",
+      "code": "2.1",
+      "subject": "Inglés",
+      "grade": 2,
+      "title": "Bilingual and Proud",
+      "weeks": null,
+      "summary": "",
+      "transferObjectives": [
+        "The student will leave the class able to use the understanding of bilingualism and its importance in society to develop his/her own identity as a bilingual speaker who can move through different cultures by speaking more than one language. He/she will make connections between his/her life and those around them, as well as with characters and people he/she reads about to better understand his/her life and its influences."
+      ],
+      "acquisitionObjectives": [
+        "Offer basic opinions and discuss topics in groups of varying size, using words and phrases acquired through conversations, reading, and being read to.",
+        "Retell conversations and fictional and informational texts.",
+        "Respond orally to stories, readalouds, and presentations, using a growing number of general academic and content-specific words.",
+        "Describe the connection between two individuals, events, ideas, or pieces of information in stories and informational text.",
+        "Use information from personal experiences and a variety of sources (e.g., word wall, book talks, grade-appropriate texts) to answer a question in writing.",
+        "Collaborate with peers to draw and write texts using grade-level appropriate high-frequency words (e.g., Dolch Sight Words List). Unit 2.1: Bilingual and Proud English as a Second Language 5 weeks of instruction"
+      ],
+      "essentialQuestions": [
+        {
+          "question": "What does it mean to be bilingual?",
+          "understanding": "Being bilingual is more than speaking two languages; it enables a person to move between different cultures and have more opportunities in life."
+        },
+        {
+          "question": "How are English and Spanish similar and different?",
+          "understanding": "English and Spanish both have roots in Latin and have cognates that can help users comprehend new vocabulary. Knowing one language helps understand and learn the other."
+        },
+        {
+          "question": "Am I the same person when I speak in English as when I speak in Spanish?",
+          "understanding": "Language can bring out different aspects of our personality."
+        },
+        {
+          "question": "Why do words matter?",
+          "understanding": "We choose our words carefully because they represent how we think and feel, they demonstrate our knowledge of growing vocabulary, and they influence the lives of others around us. ‘"
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.LS.1.1",
+          "description": "Listen to and interact with peers during social interactions; read-alouds (fiction and nonfiction texts); oral presentations; and partner discussions."
+        },
+        {
+          "code": "2.LS.1.1b",
+          "description": "Ask and answer questions appropriate to the topic and offer opinions in conversations using learned phrases and open responses."
+        },
+        {
+          "code": "2.LS.1.1c",
+          "description": "Use gestures, expressions, and simple words/phrases to demonstrate engagement and understanding in a socially appropriate manner."
+        },
+        {
+          "code": "2.LS.1.1d",
+          "description": "Listen and respond to simple and increasingly complex instructions, commands, and directions."
+        },
+        {
+          "code": "2.LS.1.1e",
+          "description": "Offer and respond to greetings/farewells using appropriate courtesy expressions."
+        },
+        {
+          "code": "2.LS.2.1",
+          "description": "Participate in class, group, and partner discussions by listening attentively, following turn-taking rules, and asking and answering questions using complete sentences and demonstrating confidence about personal experience and texts."
+        },
+        {
+          "code": "2.LS.3.1",
+          "description": "Exchange common social and more formal greetings, retell texts, and recount experiences using increasingly detailed sentences."
+        },
+        {
+          "code": "2.LS.3.1b",
+          "description": "Expand sentences to provide details (e.g., time, manner, place, cause) in shared language activities guided by the teacher and sometimes independently."
+        },
+        {
+          "code": "2.LS.4.1",
+          "description": "Retell conversations and summarize fictional and informational texts. Respond to stories, read-alouds, and presentations orally using a growing number of general academic, and content-specific words."
+        },
+        {
+          "code": "2.LS.5.1",
+          "description": "Offer and support opinions by providing good reasons and increasingly detailed examples from experience and texts."
+        },
+        {
+          "code": "2.LS.6.1",
+          "description": "Describe personal experiences, using extended vocabulary, with a growing number of nouns, noun phrases, adjectives, and verbs, to provide details appropriate to the situation."
+        },
+        {
+          "code": "2.LS.7.1a",
+          "description": "Retell texts and recount experiences using complete sentences, key words, and a growing number of general, academic, and domain‐specific words to add detail while speaking. Foundational Skills"
+        },
+        {
+          "code": "2.FS.1.1",
+          "description": "Demonstrate understanding of the organization and basics features of print."
+        },
+        {
+          "code": "2.FS.1.1b",
+          "description": "Recognize that spoken words are represented in written language by specific sequence of letters."
+        },
+        {
+          "code": "2.FS.1.1c",
+          "description": "Recognize that the alphabet consists of consonants and vowels."
+        },
+        {
+          "code": "2.FS.2.1",
+          "description": "Demonstrate understanding of spoken words, syllables, and sounds (phonemes)."
+        },
+        {
+          "code": "2.FS.3.1",
+          "description": "2.FS.3.1e Decode words with common prefixes and suffixes."
+        },
+        {
+          "code": "2.FS.3.1f",
+          "description": "Identify words with inconsistent but common spelling-sound correspondence."
+        },
+        {
+          "code": "2.FS.3.1h",
+          "description": "Read (100-150) high-frequency words by sight (e.g., the, of, to, you, she, my, is, are, do, does). Unit 2.1: Bilingual and Proud English as a Second Language 5 weeks of instruction"
+        },
+        {
+          "code": "2.FS.4.1",
+          "description": "Read with sufficient accuracy and fluency to support comprehension. (See Fluency assessment tools in the appendix.)"
+        },
+        {
+          "code": "2.FS.4.1a",
+          "description": "Read on level texts with purpose and understanding."
+        },
+        {
+          "code": "2.FS.4.1c",
+          "description": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary. Reading"
+        },
+        {
+          "code": "2.R.1.1",
+          "description": "With prompting and support, describe ideas, phenomena (e.g., erosion), and textual elements (e.g., central message, character traits) using greater detail based on understanding of a variety of grade‐level and read- aloud texts or multimedia resources."
+        },
+        {
+          "code": "2.R.1.1b",
+          "description": "Distinguish fiction vs. nonfiction. 2.R.2.1I Identify the main topic and summarize key details of an informational text. 2.R.3.1I Describe the connection between two individuals, events ideas, or pieces of information in an informational text. 2.R.4.1I Ask and answer questions to help determine or clarify the meaning of words and phrases in an informational text."
+        },
+        {
+          "code": "2.R.8.1",
+          "description": "With prompting and support, identify the reasons an author gives to support points in a text."
+        },
+        {
+          "code": "2.R.10.1",
+          "description": "Read literary texts (e.g., folktale, realistic fiction, animal fantasy, legends, fairytales, poetry) and informational (e.g., science or social science articles) with purpose and understanding. Writing"
+        },
+        {
+          "code": "2.W.1.1",
+          "description": "Write to express feelings, familiar topics, experiences, and describe a picture. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in short paragraphs of 3-5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.2.1",
+          "description": "Work independently and collaborate with peers to draw and write informational texts. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in short paragraphs of 3-5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.6.1",
+          "description": "Participate in shared research and writing projects (e.g., record science observations or read several books on a single topic to produce a report)."
+        },
+        {
+          "code": "2.W.7.1",
+          "description": "Gather information from a variety of sources (literary and informational) to draw evidence from grade level texts to support answers to questions in writing."
+        },
+        {
+          "code": "2.W.8.1",
+          "description": "Recall information to answer a question about a single topic."
+        },
+        {
+          "code": "2.W.8.1a",
+          "description": "With guidance and support, use a combination of drawing, dictating, invented and creative writing, and/or labeling a picture with a few words following a prompt. Language"
+        },
+        {
+          "code": "2.LA.1.1",
+          "description": "Demonstrate command of English grammar and usage conventions when writing and speaking."
+        },
+        {
+          "code": "2.LA.1.1i",
+          "description": "Use frequently occurring conjunctions (e.g., and, but, or, so, because)."
+        },
+        {
+          "code": "2.LA.2.1",
+          "description": "Demonstrate command of English capitalization, punctuation, and spelling conventions when writing. Unit 2.1: Bilingual and Proud English as a Second Language 5 weeks of instruction"
+        },
+        {
+          "code": "2.LA.3.1",
+          "description": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+        },
+        {
+          "code": "2.LA.4.1c",
+          "description": "Identify frequently occurring root words (e.g., look) and their inflectional forms (e.g., looks/looked/looking)."
+        },
+        {
+          "code": "2.LA.4.1d",
+          "description": "Use the root word as a clue to the meaning of an unknown word with the same root (e.g., addition, additional)."
+        },
+        {
+          "code": "2.LA.5.1",
+          "description": "Recognize word relationships and differences in word meanings."
+        },
+        {
+          "code": "2.LA.6.1",
+          "description": "Use words and phrases acquired through conversations, reading, and being read to. Respond to texts, using adjectives and connecting words (e.g., the conjunctions “like” and “because”). Unit 2.1: Bilingual and Proud English as a Second Language 5 weeks of instruction"
+        }
+      ],
+      "themes": [],
+      "generatorThemes": [],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "2.1 UNIT\\HJBR Unit 2.1 Bilingual and Proud.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "ING_2_2",
+      "code": "2.2",
+      "subject": "Inglés",
+      "grade": 2,
+      "title": "Elements of a Fiction Story",
+      "weeks": null,
+      "summary": "",
+      "transferObjectives": [
+        "Students will leave the class able to use their learning to identify story elements and to compare and contrast characters’ character traits within different stories."
+      ],
+      "acquisitionObjectives": [
+        "Listen, interact, and participate in social and class settings as well as express ideas and opinions in a more complex form.",
+        "Describe ideas and text elements, retell key features of a text, compare and contrast characters, and know and apply phonics and word analysis as well as common prefixes and suffixes to decode words.",
+        "Write with a command of English grammar conventions for capitalization, punctuation, and spelling as well as include input from peers on strengthening pieces of writing.",
+        "Demonstrate command of the English language and the ability to use word families, segmentation, word knowledge, or reference materials to spell or decode unknown words. Unit 2.2: Elements of a Fiction Story English as a Second Language 4 weeks of instruction"
+      ],
+      "essentialQuestions": [
+        {
+          "question": "How and why are stories organized in different ways?",
+          "understanding": "Different types of literature have different characteristics that influence the organizational structure."
+        },
+        {
+          "question": "What can we learn from the different elements in stories?",
+          "understanding": "We learn about art, history, and values and how to share what is being learned."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.LS.1.1",
+          "description": "Listen and interact with peers during social interactions, read-alouds, (fiction and nonfiction texts); oral presentations; and class, group, and partner discussions."
+        },
+        {
+          "code": "2.LS.1.1a",
+          "description": "Listen and respond to simple 5W and 1H questions."
+        },
+        {
+          "code": "2.LS.1.1b",
+          "description": "Ask and answer questions appropriate to the topic and offer opinions in conversations using learned phrases and open responses."
+        },
+        {
+          "code": "2.LS.1.1d",
+          "description": "Listen and respond to simple and increasingly complex instructions, commands, and directions."
+        },
+        {
+          "code": "2.LS.1.1f",
+          "description": "Repeat and respond to chants, poems, songs, and rhymes using phrases, physical movements, etc."
+        },
+        {
+          "code": "2.LS.2.1",
+          "description": "Participate in class, group, and partner discussions by listening attentively, following turn-taking rules, asking and answering questions using complete sentences, and demonstrating confidence about personal experiences and texts."
+        },
+        {
+          "code": "2.LS.3.1",
+          "description": "Exchange common social and more formal greetings, retell texts, and recount experiences, using increasingly detailed complete sentences."
+        },
+        {
+          "code": "2.LS.3.1a",
+          "description": "Use words, phrases, and expanded sentences to express ideas for a variety of purposes (e.g., to communicate needs and desires)."
+        },
+        {
+          "code": "2.LS.3.1b",
+          "description": "Expand sentences to provide details (e.g., time manner, place, cause) in shared language activities guided by the teacher and sometimes independently."
+        },
+        {
+          "code": "2.LS.4.1",
+          "description": "Retell conversations and summarize fictional and informational texts. Respond to stories, read-alouds, and presentations orally using a growing number of general academic and content-specific words."
+        },
+        {
+          "code": "2.LS.5.1",
+          "description": "Offer and support opinions by providing good reasons and increasingly detailed examples from experience and texts."
+        },
+        {
+          "code": "2.LS.7.1",
+          "description": "Plan and deliver brief oral presentations on a variety of familiar topics using illustrations, words, phrases, or vocabulary from a text (e.g., integrating print or technological/ digital resources)."
+        },
+        {
+          "code": "2.LS.7.1a",
+          "description": "Retell texts and recount experiences using complete sentences, keywords, and a growing number of general academic and domain‐specific words in order to add detail while speaking. Foundational Skills"
+        },
+        {
+          "code": "2.FS.1.1",
+          "description": "Demonstrate understanding of the organization and basic features of print."
+        },
+        {
+          "code": "2.FS.1.1a",
+          "description": "Follow words from left to right, top to bottom, and page by page."
+        },
+        {
+          "code": "2.FS.1.1b",
+          "description": "Recognize that spoken words are represented in written language by specific sequences of letters."
+        },
+        {
+          "code": "2.FS.1.1g",
+          "description": "Apply the distinguishing features of a sentence when writing (e.g., first word, capitalization, ending punctuation)."
+        },
+        {
+          "code": "2.FS.2.1",
+          "description": "Demonstrate command of spoken words, syllables, and sounds (phonemes)."
+        },
+        {
+          "code": "2.FS.2.1b",
+          "description": "Identify syllables through actions (e.g., clapping). Unit 2.2: Elements of a Fiction Story English as a Second Language 4 weeks of instruction"
+        },
+        {
+          "code": "2.FS.2.1f",
+          "description": "Isolate and pronounce the initial, medial vowel, and final sounds (phonemes) in spoken monosyllabic words."
+        },
+        {
+          "code": "2.FS.2.1g",
+          "description": "Segment spoken monosyllabic words into their complete sequence of individual sounds (phonemes)."
+        },
+        {
+          "code": "2.FS.3.1",
+          "description": "Understand and apply grade-level phonics and word analysis skills to decode short and long sound patterns and their variants both in isolation and in text. (See assessment tools in the appendix.)"
+        },
+        {
+          "code": "2.FS.3.1e",
+          "description": "Decode words with common prefixes and suffixes."
+        },
+        {
+          "code": "2.FS.3.1g",
+          "description": "Recognize and read grade-appropriate irregularly spelled words."
+        },
+        {
+          "code": "2.FS.3.1h",
+          "description": "Read (100-150) high-frequency words by sight (e.g., the, of, to, you, she, my, is, are, do, does)."
+        },
+        {
+          "code": "2.FS.4.1",
+          "description": "Read with sufficient accuracy and fluency to support comprehension. (see fluency assessment tools in the appendix)"
+        },
+        {
+          "code": "2.FS.4.1a",
+          "description": "Read on-level text with purpose and understanding."
+        },
+        {
+          "code": "2.FS.4.1c",
+          "description": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary. Reading"
+        },
+        {
+          "code": "2.R.1.1",
+          "description": "With prompting and support, describe ideas, phenomena (e.g., erosion), and textual elements (e.g., central message, character traits) using greater detail based on understanding a variety of grade‐level and read-aloud texts or multimedia resources. 2.R.2.1L Identify the main idea or lesson and summarize supporting details of the story. 2.R.3.1L Describe how characters in a story respond to major events and challenges. 2.R.6.1L Identify who is telling the story at various points in a text."
+        },
+        {
+          "code": "2.R.7.1",
+          "description": "Use the information gained from illustrations and words in print or in a digital text to demonstrate understanding of its character’s setting or plot. 2.R.9.1L Compare and contrast the adventures and experiences of characters in familiar stories."
+        },
+        {
+          "code": "2.R.10.1",
+          "description": "Read literary texts (e.g., folktale, realistic fiction, animal fantasy, legends, fairytales, poetry) and informational (e.g., science or social science articles) with purpose and understanding. Writing"
+        },
+        {
+          "code": "2.W.1.1",
+          "description": "Write to express feelings, familiar topics, and experiences, and describe a picture. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in paragraphs of 3 – 5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.3.1",
+          "description": "Collaborate with peers to draw and write literary texts. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in paragraphs of 3 – 5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.4.1",
+          "description": "With guidance and support, brainstorm ideas for writing on the topic (e.g., additional text, drawings, visual displays, labels) to strengthen writing."
+        },
+        {
+          "code": "2.W.6.1",
+          "description": "Participate in shared research and writing projects (e.g., record science observations, or read several books on a single topic to produce a report). Unit 2.2: Elements of a Fiction Story English as a Second Language 4 weeks of instruction"
+        },
+        {
+          "code": "2.W.7.1",
+          "description": "Gather information from a variety of sources (literary and informational) to draw evidence from grade-level texts to support answers to questions in writing."
+        },
+        {
+          "code": "2.W.8.1a",
+          "description": "With guidance and support, use a combination of drawing dictating, invented and creative writing, and/or labeling a picture with a few words following a prompt. Language"
+        },
+        {
+          "code": "2.LA.1.1",
+          "description": "Demonstrate command of English grammar and usage conventions when writing or speaking."
+        },
+        {
+          "code": "2.LA.1.1d",
+          "description": "Form and use the past tense of frequently occurring irregular verbs (e.g., sat, hid, told)."
+        },
+        {
+          "code": "2.LA.1.1e",
+          "description": "Form and use the past tense of frequently occurring regular verbs (e.g., want/wanted, play/played)."
+        },
+        {
+          "code": "2.LA.1.1i",
+          "description": "Use frequently occurring conjunctions (e.g., and, but, or, so, because)."
+        },
+        {
+          "code": "2.LA.2.1",
+          "description": "Demonstrate command of English capitalization, punctuation, and spelling conventions when writing."
+        },
+        {
+          "code": "2.LA.2.1d",
+          "description": "Generalize learned spelling patterns (word families) when writing words (e.g., at: mat, cat, sat; ake: cake, bake, make)."
+        },
+        {
+          "code": "2.LA.2.1f",
+          "description": "Use conventional spelling for basic sight words with common spelling patterns and for frequently occurring irregular words (e.g., said = /s/ /e/ /d/)."
+        },
+        {
+          "code": "2.LA.2.1g",
+          "description": "Use conventional spelling for grade appropriate words with common spelling patterns and for some irregular words."
+        },
+        {
+          "code": "2.LA.2.1h",
+          "description": "Consult reference materials, including dictionaries, to check and correct spelling as needed."
+        },
+        {
+          "code": "2.LA.3.1",
+          "description": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+        },
+        {
+          "code": "2.LA.4.1b",
+          "description": "Determine the meaning of the new word that is formed when a prefix is added to a known word (e.g., happy/unhappy, tell/retell)."
+        },
+        {
+          "code": "2.LA.5.1",
+          "description": "Recognize word relationships and differences in word meanings."
+        },
+        {
+          "code": "2.LA.6.1",
+          "description": "Use words and phrases acquired through conversations, reading, and being read to. Respond to texts using adjectives and connecting words (e.g., conjunctions “like” and “because”). Unit 2.2: Elements of a Fiction Story English as a Second Language 4 weeks of instruction"
+        }
+      ],
+      "themes": [],
+      "generatorThemes": [],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "2.2 UNIT\\HJBR Unit 2.2 Elements of a Fiction Story.pdf"
+        }
+      ],
+      "source": "generated-local"
+    },
+    {
+      "id": "ING_2_3",
+      "code": "2.3",
+      "subject": "Inglés",
+      "grade": 2,
+      "title": "Heroes",
+      "weeks": null,
+      "summary": "",
+      "transferObjectives": [
+        "The student will leave the class able to use his/her learning about the characteristics of heroes to recognize heroes in his/her life and also knowing how one’s perspective influences who we think are heroes."
+      ],
+      "acquisitionObjectives": [
+        "Listen and interact including expanding answers, retelling texts, and offering and supporting opinions by providing sound reasoning.",
+        "Describe text elements and the connections in different texts, and identify similarities and differences between texts.",
+        "Write grade-level appropriate texts by remembering or gathering information and applying the features of a sentence.",
+        "Demonstrate a command of English grammar in all aspects of communication as well as using a variety of punctuation. Unit 2.3: Heroes English as a Second Language 5 weeks of instruction"
+      ],
+      "essentialQuestions": [
+        {
+          "question": "What makes a hero? What characteristics should a hero have?",
+          "understanding": "Heroes are people we admire for a courageous act they have done to accomplish their goals."
+        },
+        {
+          "question": "Why is a hero to one person not a hero to another?",
+          "understanding": "Each person has his or her own belief in what makes a hero, but everyday people can become heroes."
+        },
+        {
+          "question": "What do good readers do?",
+          "understanding": "Good readers know when they do not understand something and use clues from the text to aid in comprehension of a word or a part in the story."
+        }
+      ],
+      "standards": [
+        {
+          "code": "2.LS.1.1",
+          "description": "Listen and interact with peers during social interactions, read-alouds, (fiction and nonfiction texts); oral presentations; and class, group, and partner discussions."
+        },
+        {
+          "code": "2.LS.1.1a",
+          "description": "Listen and respond to simple 5W and 1H questions."
+        },
+        {
+          "code": "2.LS.1.1b",
+          "description": "Ask and answer questions appropriate to the topic and offer opinions in conversations using learned phrases and open responses."
+        },
+        {
+          "code": "2.LS.1.1d",
+          "description": "Listen and respond to simple and increasingly complex instructions, commands, and directions."
+        },
+        {
+          "code": "2.LS.2.1",
+          "description": "Participate in class, group, and partner discussions by listening attentively, following turn-taking rules, asking and answering questions using complete sentences, and demonstrating confidence about personal experiences and texts."
+        },
+        {
+          "code": "2.LS.3.1",
+          "description": "Exchange common social and more formal greetings, retell texts, and recount experiences, using increasingly detailed complete sentences."
+        },
+        {
+          "code": "2.LS.3.1a",
+          "description": "Use words, phrases, and expanded sentences to express ideas for a variety of purposes (e.g., to communicate needs and desires)."
+        },
+        {
+          "code": "2.LS.3.1b",
+          "description": "Expand sentences to provide details (e.g., time manner, place, cause) in shared language activities guided by the teacher and sometimes independently."
+        },
+        {
+          "code": "2.LS.4.1",
+          "description": "Retell conversations and summarize fictional and informational texts. Respond to stories, read-alouds, and presentations orally using a growing number of general academic and content-specific words."
+        },
+        {
+          "code": "2.LS.5.1",
+          "description": "Offer and support opinions by providing good reasons and increasingly detailed examples from experience and texts."
+        },
+        {
+          "code": "2.LS.7.1a",
+          "description": "Retell texts and recount experiences using complete sentences, keywords, and a growing number of general academic and domain‐specific words in order to add detail while speaking. Foundational Skills"
+        },
+        {
+          "code": "2.FS.1.1",
+          "description": "Demonstrate understanding of the organization and basic features of print."
+        },
+        {
+          "code": "2.FS.1.1e",
+          "description": "Recognize and name all upper and lowercase letters of the alphabet."
+        },
+        {
+          "code": "2.FS.1.1f",
+          "description": "Recognize that print conveys specific meaning and that pictures may support meaning."
+        },
+        {
+          "code": "2.FS.1.1g",
+          "description": "Apply the distinguishing features of a sentence when writing (e.g., first word, capitalization, ending punctuation)."
+        },
+        {
+          "code": "2.FS.2.1",
+          "description": "Demonstrate understanding of spoken words, syllables, and sounds phonemes."
+        },
+        {
+          "code": "2.FS.2.1b",
+          "description": "Identify syllables through actions (e.g., clapping)."
+        },
+        {
+          "code": "2.FS.2.1c",
+          "description": "Manipulate sounds and words in shared, guided, and independent activities, such as singing chanting. Or participating in finger plays."
+        },
+        {
+          "code": "2.FS.3.1",
+          "description": "Understand and apply grade level phonics and word analysis skills to decode short and long sound patterns and their variants both in isolation and in text. (See assessment in the appendix)"
+        },
+        {
+          "code": "2.FS.3.1a",
+          "description": "Distinguish long and vowels when reading regularly spelled monosyllabic words."
+        },
+        {
+          "code": "2.FS.3.1f",
+          "description": "Identify words with inconsistent but common spelling-sound correspondences."
+        },
+        {
+          "code": "2.FS.3.1h",
+          "description": "Read (100-150) high-frequency words by sight (e.g., the, of, to, you, she, my, is, are, do, does). Unit 2.3: Heroes English as a Second Language 5 weeks of instruction"
+        },
+        {
+          "code": "2.FS.4.1",
+          "description": "Read with sufficient accuracy and fluency to support comprehension. (see fluency assessment tools in the appendix)"
+        },
+        {
+          "code": "2.FS.4.1a",
+          "description": "Read on-level text with purpose and understanding."
+        },
+        {
+          "code": "2.FS.4.1c",
+          "description": "Use context to confirm or self-correct word recognition and understanding, rereading as necessary. Reading"
+        },
+        {
+          "code": "2.R.1.1",
+          "description": "With prompting and support, describe ideas, phenomena (e.g., erosion), and textual elements (e.g., central message, character traits) using greater detail based on understanding a variety of grade‐level and read-aloud texts or multimedia resources. 2.R.3.1L Describe how characters in a story respond to major events and challenges. 2.R.3.1I Describe the connection between two individuals, events, ideas, or pieces of information in an informational text. 2.R.9.1I Compare and contrast basic similarities in and differences between two informational texts on the same topic (e.g., in illustrations, descriptions, or procedures)."
+        },
+        {
+          "code": "2.R.10.1",
+          "description": "Read literary texts (e.g., folktale, realistic fiction, animal fantasy, legends, fairytales, poetry) and informational (e.g., science or social science articles) with purpose and understanding. Writing"
+        },
+        {
+          "code": "2.W.1.1",
+          "description": "Write to express feelings, familiar topics, and experiences, and describe a picture. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in paragraphs of 3 – 5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.3.1",
+          "description": "Collaborate with peers to draw and write literary texts. Use grade-level appropriate high-frequency words (e.g., sight words list) to write simple sentences (subject + verb + object) in paragraphs of 3 – 5 sentences. (Include 4 or more words per sentence.)"
+        },
+        {
+          "code": "2.W.7.1",
+          "description": "Gather information from a variety of sources (literary and informational) to draw evidence from grade-level texts to support answers to questions in writing. Language"
+        },
+        {
+          "code": "2.LA.1.1",
+          "description": "Demonstrate command of English grammar and usage when writing or speaking."
+        },
+        {
+          "code": "2.LA.2.1",
+          "description": "Demonstrate command of the conventions of English capitalization, punctuation, and spelling when writing."
+        },
+        {
+          "code": "2.LA.2.1b",
+          "description": "Use punctuation for declarative, interrogative, and exclamatory sentences."
+        },
+        {
+          "code": "2.LA.2.1g",
+          "description": "Use conventional spelling for grade appropriate words with common spelling patterns and for some irregular words."
+        },
+        {
+          "code": "2.LA.2.1h",
+          "description": "Consult reference materials, including dictionaries, to check and correct spelling as needed."
+        },
+        {
+          "code": "2.LA.3.1",
+          "description": "Use knowledge of language and its conventions when writing, speaking, reading, or listening."
+        },
+        {
+          "code": "2.LA.3.1a",
+          "description": "Choose words and phrases for different purposes (e.g., slang, written vs. spoken, formal vs. informal)."
+        },
+        {
+          "code": "2.LA.6.1",
+          "description": "Use words and phrases acquired through conversations, reading and being read to, and responding to texts, including using adjectives and connecting words (e.g., conjunctions “like” and “”because”). Unit 2.3: Heroes English as a Second Language 5 weeks of instruction"
+        }
+      ],
+      "themes": [],
+      "generatorThemes": [],
+      "vocabulary": [],
+      "performanceTasks": [],
+      "otherEvidence": [],
+      "learningActivities": [],
+      "sourceFiles": [
+        {
+          "type": "curriculum_map",
+          "filename": "2.3 UNIT\\HJBR Unit 2.3 Heroes.pdf"
         }
       ],
       "source": "generated-local"
