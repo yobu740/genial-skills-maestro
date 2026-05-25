@@ -944,6 +944,7 @@ ${exampleBlock}
       "standardCode": "5.CT2.1",
       "startDate": "MM/DD/YYYY",
       "endDate": "MM/DD/YYYY",
+      "evaluationDate": "MM/DD/YYYY",
       "duration": "45 min",
       "countsForGrade": true
     }
@@ -968,6 +969,8 @@ ${exampleBlock}
 
 Responde ÚNICAMENTE con el JSON. Sin explicaciones antes ni después. Sin markdown.`;
 
+    const timingRuleClean = 'Para cada leccion, la evaluationDate debe ser posterior a startDate: idealmente el proximo dia lectivo, o dos dias despues si la semana queda muy cargada. Nunca pongas una prueba, quiz o avaluo antes del dia en que se discute la leccion; solo usa el mismo dia si la leccion cae el ultimo dia del rango y no existe un dia posterior disponible.';
+
     const user = `Genera el plan completo para esta unidad:
 
 Materia: ${subject}
@@ -977,6 +980,9 @@ Cantidad de semanas: ${weeks}
 
 Unidad / tema a trabajar:
 ${unit}
+
+Regla obligatoria de fechas para pruebas y avaluos:
+${timingRuleClean}
 
 ${lessonsHint ? `Lecciones específicas que el maestro quiere incluir o priorizar:\n${lessonsHint}` : 'El maestro no especificó lecciones — recomiéndaselas tú basándote en el catálogo y los estándares.'}
 
