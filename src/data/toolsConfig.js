@@ -101,17 +101,38 @@ Integra ciencia, tecnología, ingeniería y matemáticas. Incluye 1-2 tags [IMAG
   'Adaptar Lección': {
     category: 'planificacion',
     title: 'Adaptar Lección',
-    subtitle: 'Adapta una lección existente para estudiantes ELL o con necesidades especiales.',
+    subtitle: 'Adapta una lección existente para estudiantes ELL, SPED, rezago o avanzados.',
     defaultModel: 'anthropic/claude-sonnet-4.5',
     fields: [
 
       { name: 'leccion',   label: 'Pega la lección original', type: 'textarea', placeholder: 'Pega aquí el plan o describe la lección…', required: true, rows: 8 },
-      { name: 'perfil',    label: 'Perfil del estudiante',    type: 'select', options: ['ELL nivel principiante', 'ELL nivel intermedio', 'SPED — dislexia', 'SPED — TDAH', 'SPED — espectro autista', 'Estudiante avanzado'], required: true },
-      { name: 'grado',     label: 'Grado', type: 'select', options: GRADOS, default: '5to' },
+      { name: 'perfil',    label: 'Perfil del estudiante',    type: 'select', options: [
+        'ELL nivel principiante',
+        'ELL nivel intermedio',
+        'SPED — dislexia',
+        'SPED — TDAH',
+        'SPED — espectro autista',
+        'Rezago académico — 1 grado atrás',
+        'Rezago académico — 2+ grados atrás',
+        'Rezago en prerrequisitos específicos',
+        'Estudiante avanzado',
+      ], required: true },
+      { name: 'grado',     label: 'Grado actual del estudiante', type: 'select', options: GRADOS, default: '5to' },
           { name: 'estandares', type: 'standards', gradeField: 'grado' },
 ],
-    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS,
-    buildPrompt: (f) => `Adapta esta lección para un estudiante con perfil: ${f.perfil} (${f.grado} grado).
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
+
+Cuando el perfil sea "Rezago académico" (1 grado atrás, 2+ grados, o prerrequisitos):
+- Identifica explícitamente qué prerrequisitos del grado/grados anteriores faltan
+- Baja el vocabulario al nivel del estudiante (no al de su grado nominal)
+- Divide cada paso del proceso en sub-pasos atomizados
+- Agrega sentence frames para apoyar respuesta
+- Sugiere tags [IMAGE: ...] como scaffolds visuales en conceptos abstractos
+- Incluye "puentes" — actividades cortas que conectan lo que sabe con lo nuevo
+- Tono que preserve dignidad — el estudiante NO debe sentirse "atrasado"`,
+    buildPrompt: (f) => {
+      const isRezago = /rezago/i.test(f.perfil);
+      return `Adapta esta lección para un estudiante con perfil: ${f.perfil} (grado actual: ${f.grado}).
 
 Lección original:
 """
@@ -119,13 +140,20 @@ ${f.leccion}
 """
 
 Devuelve:
-1. **Resumen de adaptaciones aplicadas** (lista breve)
+1. **Resumen de adaptaciones aplicadas** (lista breve)${isRezago ? `
+2. **Prerrequisitos faltantes identificados** — qué destrezas del grado/grados anteriores asumiría la lección original y el estudiante NO tiene todavía. Sé específico (cita códigos DEPR de grados previos si aplican).
+3. **Lección adaptada completa** — reescrita con vocabulario y profundidad al nivel REAL del estudiante, no al grado nominal. Incluye al menos 1 tag [IMAGE: ...] como scaffold visual.
+4. **Puentes de prerrequisitos** — 2-3 mini-actividades de 5-10 minutos que el maestro pueda hacer ANTES de la lección para activar/enseñar los prerrequisitos faltantes
+5. **Acomodaciones específicas** (tiempo extra, sentence frames, ayudas visuales, peer support)
+6. **Indicadores de progreso** — 3 señales observables de que la adaptación está funcionando` : `
 2. **Lección adaptada completa** — reescrita, no solo notas
 3. **Acomodaciones específicas** (tiempo, formato, presentación, respuesta)
-4. **Sugerencias de scaffolding** concretas
-5. **Cómo evaluar** sin penalizar la condición
+4. **Sugerencias de scaffolding** concretas`}
 
-Si el perfil del estudiante se beneficia de apoyo visual (ELL principiante, SPED dislexia, espectro autista), incluye 1-2 tags [IMAGE: prompt en inglés] como scaffolding visual de los conceptos clave.`,
+${isRezago ? '7. **Cómo evaluar** el dominio sin penalizar la condición (evaluación del progreso, no del desempeño absoluto)' : '5. **Cómo evaluar** sin penalizar la condición'}
+
+${isRezago ? '' : 'Si el perfil del estudiante se beneficia de apoyo visual (ELL principiante, SPED dislexia, espectro autista), incluye 1-2 tags [IMAGE: prompt en inglés] como scaffolding visual de los conceptos clave.'}`;
+    },
   },
 
   'Objetivos de Lenguaje': {
@@ -254,6 +282,100 @@ Tabla markdown con: **Opción | Descripción | Habilidades que demuestra | Tiemp
 Las opciones deben variar en modalidad (escrito, oral, visual, multimedia, performativo, kinestésico) y nivel de dificultad. Todas evaluables con la misma rúbrica.
 
 Al final añade un **párrafo de uso** explicando cómo presentar el choice board al estudiante.`,
+  },
+
+  'Plan de Intervención para Rezago': {
+    category: 'diferenciacion',
+    title: 'Plan de Intervención para Rezago',
+    subtitle: 'Genera un plan multi-semana de intervención para estudiantes con rezago académico.',
+    defaultModel: 'anthropic/claude-sonnet-4.5',
+    fields: [
+      { name: 'materia',  label: 'Materia',  type: 'select', options: MATERIAS, required: true },
+      { name: 'grado',    label: 'Grado actual de los estudiantes', type: 'select', options: GRADOS, default: '5to', required: true },
+      { name: 'severidad', label: 'Severidad del rezago', type: 'select', options: [
+        '1 grado atrás',
+        '2 grados atrás',
+        '3+ grados atrás',
+        'Brechas específicas (no atraso global)',
+      ], default: '1 grado atrás', required: true },
+      { name: 'brechas', label: 'Brechas o conceptos específicos donde fallan', type: 'textarea', required: true, rows: 4,
+        placeholder: 'Ej: No dominan multiplicación de 1 dígito · No reconocen fracciones equivalentes con modelos visuales · No identifican idea principal en textos cortos…' },
+      { name: 'cantidad', label: 'Cantidad de estudiantes en el grupo', type: 'number', default: 6 },
+      { name: 'tiempo',   label: 'Tiempo disponible', type: 'select', options: [
+        '10-15 min diarios (warm-up)',
+        '20-30 min, 3 veces por semana',
+        '45-60 min pull-out, 2 veces por semana',
+        'Bloque dedicado de 1 hora diaria',
+      ], default: '20-30 min, 3 veces por semana', required: true },
+      { name: 'semanas',  label: 'Duración del plan (semanas)', type: 'number', default: 6 },
+      { name: 'estandares', label: 'Estándares del grado actual con los que más conectarán', type: 'standards', subjectField: 'materia', gradeField: 'grado' },
+    ],
+    system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
+
+Para esta herramienta de intervención de rezago:
+
+PRINCIPIOS:
+- El estudiante NO es el problema. Las adaptaciones preservan dignidad.
+- Trabajar SOBRE prerrequisitos faltantes con destrezas del grado anterior, mientras se conecta con el contenido del grado actual.
+- Cada mini-lección es CORTA, FOCALIZADA, REPETIBLE.
+- Progresión: fluidez automática → comprensión conceptual → aplicación → transferencia.
+- Monitoreo frecuente (cada 2 semanas mínimo) para ajustar.
+
+INVESTIGACIÓN APLICABLE:
+- Multi-tiered system of supports (MTSS / RTI)
+- High-leverage practices (HLPs) de instrucción intensiva
+- Error analysis estructurado
+- Spaced retrieval / repaso espaciado
+- Modelado explícito "I do → We do → You do"
+
+Cuando aporte visualmente al plan, incluye tags [IMAGE: prompt en inglés] para conceptos centrales que necesitan visualización.`,
+    buildPrompt: (f) => `Diseña un plan de intervención de **${f.semanas || 6} semanas** para ${f.cantidad || 6} estudiantes de ${f.grado} grado con rezago en ${f.materia}.
+
+**Severidad:** ${f.severidad}
+**Tiempo disponible:** ${f.tiempo}
+
+**Brechas identificadas:**
+"""
+${f.brechas}
+"""
+
+Devuelve el plan en este formato:
+
+## 1. Análisis del rezago
+- Prerrequisitos faltantes (cita códigos DEPR del grado anterior donde corresponda)
+- Hipótesis de causa (procesual, conceptual, fluidez, vocabulario, etc.)
+- Por qué este plan funcionará (1-2 oraciones)
+
+## 2. Objetivos SMART del plan
+3 objetivos específicos, medibles, alcanzables en ${f.semanas || 6} semanas
+
+## 3. Cronograma semanal (tabla markdown)
+Semana | Foco | Destreza específica | Conexión con grado actual
+
+## 4. Mini-lecciones secuenciadas
+Para CADA semana, 3-5 mini-lecciones según el tiempo disponible. Para cada mini-lección:
+- **Título** + **destreza objetivo**
+- **Materiales** (mantén bajo — papel, lápiz, manipulativos comunes)
+- **Estructura**: hook 2 min → modelado 5 min → práctica guiada → independiente → cierre
+- **Ejemplos concretos** (no genéricos)
+- **Verificación rápida** (exit ticket de 1-2 preguntas)
+
+## 5. Checkpoints de monitoreo
+Cada 2 semanas: qué medir + cómo interpretar + qué ajustar.
+
+## 6. Estrategias específicas para este grupo
+- Cómo agrupar dentro del grupo
+- Cómo dar feedback sin desmotivar
+- Cómo usar peer tutoring (si hay estudiantes mixtos en banda "Parcial")
+- Recursos del catálogo Athenas marcados como Gap-Closing si están disponibles
+
+## 7. Comunicación con la familia
+Plantilla breve para informar a los padres sobre el plan, qué hacer en casa (5-10 min al día), y cómo celebrar el progreso.
+
+## 8. Indicadores de éxito
+3-4 señales observables (no solo numéricas) de que el plan está funcionando antes de que termine.
+
+Tono: profesional, esperanzador, accionable. NO uses lenguaje deficitario.`,
   },
 
   /* ─── Evaluación ─── */

@@ -26,6 +26,7 @@ function pickIcon(name, category) {
   const map = {
     'Plan My Lesson': Ic.doc, 'STEM Unit Planner': Ic.flask, 'Adaptar Lección': Ic.layers, 'Objetivos de Lenguaje': Ic.target,
     'Estrategia de Grupos': Ic.grupos, 'Diferenciar Contenido': Ic.layers, 'Diferenciar Proceso': Ic.sliders, 'Diferenciar Producto': Ic.trophy,
+    'Plan de Intervención para Rezago': Ic.heart,
     'Crear Rúbrica': Ic.pendientes, 'Preguntas DOK': Ic.brain, 'Examen de Matemáticas': Ic.calc, 'Feedback Personalizado': Ic.msg2, 'Choice Board': Ic.board,
     'Creador de Assessments': Ic.check, 'Pruebas Diagnósticas': Ic.target,
     'Lectura por Nivel': Ic.book, 'Vocabulario Académico': Ic.abc, 'Preguntas de Comprensión': Ic.help, 'Evaluación Lexile': Ic.ruler,
