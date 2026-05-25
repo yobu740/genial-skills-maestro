@@ -245,6 +245,112 @@ export const GENIAL_CSS = `
 .cs-day{background:transparent;border:0;width:36px;height:36px;border-radius:6px;font:inherit;font-size:13px;color:#868686;cursor:pointer;font-weight:500;transition:all .12s;text-transform:lowercase}
 .cs-day:hover{background:#e4e4e4;color:#33353d}
 .cs-day.on{background:#3DA8A8;color:#fff;font-weight:700}
+
+/* Nuevo Calendario Mensual */
+.cal-container {
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+  margin-top: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.cal-header {
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  color: #27466c;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-day-header {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8f959b;
+  text-transform: lowercase;
+  padding-bottom: 6px;
+}
+.cal-week-row {
+  display: contents;
+}
+.cal-day-cell {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #ccc;
+  cursor: not-allowed;
+  font-weight: 400;
+}
+.cal-day-cell.active {
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+}
+.cal-day-cell.active:hover {
+  background: #eeefef;
+}
+.cal-day-cell.selected {
+  background: #3da8a8 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+.cal-day-cell.other-month.active {
+  color: #666;
+}
+.cal-day-cell.other-month:not(.active) {
+  color: #f0f0f0;
+}
+
+/* Estilos para ChipsInput */
+.chips-input-container {
+  margin-top: 6px;
+}
+.chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.chip-item {
+  background: #e8f5f4;
+  color: #31665a;
+  border: 1px solid #b8dedb;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.chip-remove {
+  background: transparent;
+  border: none;
+  color: #868686;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1;
+}
+.chip-remove:hover {
+  color: #e32f28;
+}
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -318,6 +424,31 @@ function buildPlanDays(openDate) {
 function textOrFallback(value, fallback) {
   const text = String(value || "").trim();
   return text || fallback;
+}
+
+function getSpanishDayAbbrev(date) {
+  const abbrevs = ["Dom.", "Lun.", "Mar.", "Mié.", "Jue.", "Vie.", "Sáb."];
+  return abbrevs[date.getDay()];
+}
+
+function formatTableDate(dateStr) {
+  if (!dateStr) return "—";
+  const d = parsePlanDate(dateStr);
+  return `${getSpanishDayAbbrev(d)}: ${dateStr}`;
+}
+
+function getEntryStartEndDates(dates, planOpenDate, planCloseDate) {
+  if (!dates) return { start: "", end: "" };
+  if (dates.wholeWeek) {
+    return { start: planOpenDate, end: planCloseDate };
+  }
+  const days = dates.days || [];
+  if (!days.length) return { start: "", end: "" };
+  const sorted = [...days].map(parsePlanDate).sort((a, b) => a - b);
+  return {
+    start: formatPlanDate(sorted[0]),
+    end: formatPlanDate(sorted[sorted.length - 1]),
+  };
 }
 
 function normalizePlanDate(value) {
@@ -909,38 +1040,43 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
   const evalDay = Math.min(2, days.length - 1);
   const innovationDay = Math.min(contentDay + 1, 6);
   const lessonTitle = selectedLesson.title || "Zonas climaticas";
+  
+  const standardsText = selectedLesson.standards && selectedLesson.standards.length > 0
+    ? selectedLesson.standards.join(", ")
+    : (selectedLesson.standardCode || "Ciencias Terrestres y del Espacio");
+    
   const rows = [
     { label: "Lecciones", cells: makePreviewCells(contentDay, [{ title: "Contenido genial", desc: lessonTitle }]) },
     {
       label: "Temas transversales",
-      cells: makePreviewCells(contentDay, [
+      cells: makePreviewCells(contentDay, selectedLesson.transversals ? [{ title: lessonTitle, desc: selectedLesson.transversals }] : [
         { title: lessonTitle, desc: "Equidad y respeto entre todos los seres humanos" },
-        { title: lessonTitle, desc: "Educacion para la concienciacion ambiental y ecologica" },
+        { title: lessonTitle, desc: "Educacion para la conciacion ambiental y ecologica" },
         { title: lessonTitle, desc: "Tecnologia de la informacion y la comunicacion" },
       ]),
     },
-    { label: "Estandares", cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: textOrFallback(selectedLesson.standardCode, "Ciencias Terrestres y del Espacio") }]) },
+    { label: "Estandares", cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: standardsText }]) },
     {
       label: "Expectativas",
-      cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: textOrFallback(sectionData["fl-plan1"], "Utiliza evidencia cientifica de varias fuentes de informacion para explicar y representar, mediante modelos, la funcion del Sol y los oceanos en el ciclo del agua y en las zonas climaticas de la Tierra.") }]),
+      cells: makePreviewCells(contentDay, [{ title: lessonTitle, desc: textOrFallback(selectedLesson.expectations, textOrFallback(sectionData["fl-plan1"] && Array.isArray(sectionData["fl-plan1"]) ? sectionData["fl-plan1"].map(e => e.modos?.join(", ")).filter(Boolean).join("; ") : "", "Utiliza evidencia cientifica de varias fuentes de informacion para explicar y representar, mediante modelos, la funcion del Sol y los oceanos en el ciclo del agua y en las zonas climaticas de la Tierra.")) }]),
     },
     {
       label: "Objetivos",
-      cells: makePreviewCells(contentDay, [
-        { title: lessonTitle, desc: textOrFallback(selectedLesson.objective, "Aprendera sobre las zonas climaticas y las esferas de la Tierra.") },
+      cells: makePreviewCells(contentDay, selectedLesson.objectives ? [{ title: lessonTitle, desc: selectedLesson.objectives }] : [
+        { title: lessonTitle, desc: "Aprendera sobre las zonas climaticas y las esferas de la Tierra." },
         { title: lessonTitle, desc: "Desarrollara comprension sobre las caracteristicas y componentes de cada zona climatica." },
         { title: lessonTitle, desc: "Valorara la importancia de conservar y proteger el planeta mediante acciones responsables." },
       ]),
     },
     {
       label: "Estrategia academica",
-      cells: makePreviewCells(contentDay, [
+      cells: makePreviewCells(contentDay, selectedLesson.strategy ? [{ title: lessonTitle, desc: selectedLesson.strategy }] : [
         { title: lessonTitle, desc: "Desarrollo conceptual" },
         { title: lessonTitle, desc: "Comprension lectora" },
       ]),
     },
-    { label: "Integracion con otras materias", cells: makePreviewCells(contentDay, [{ title: "Integracion con otras materias", desc: textOrFallback(sectionData["fl-integ"], "Artes Visuales e Ingles") }]) },
-    { label: "Iniciativa o proyecto innovador", cells: makePreviewCells(innovationDay, [{ title: "Iniciativa o proyecto innovador", desc: textOrFallback(sectionData["fl-innov"], "STEM") }]) },
+    { label: "Integracion con otras materias", cells: makePreviewCells(contentDay, [{ title: "Integracion con otras materias", desc: textOrFallback(sectionData["fl-integ"] && Array.isArray(sectionData["fl-integ"]) ? sectionData["fl-integ"].map(e => (e.materias || []).join(", ")).filter(Boolean).join("; ") : "", "Artes Visuales e Ingles") }]) },
+    { label: "Iniciativa o proyecto innovador", cells: makePreviewCells(innovationDay, [{ title: "Iniciativa o proyecto innovador", desc: textOrFallback(sectionData["fl-innov"] && Array.isArray(sectionData["fl-innov"]) ? sectionData["fl-innov"].map(e => (e.tipos || []).join(", ")).filter(Boolean).join("; ") : "", "STEM") }]) },
     {
       label: "Evaluaciones (Avalúos)",
       cells: makePreviewCells(evalDay, [
@@ -952,6 +1088,9 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
     { label: "Acomodos razonables", cells: makePreviewCells(contentDay, [{ title: "Acomodos razonables", desc: sectionData["fl-acom"] || "" }]) },
     { label: "Estrategias de instruccion diferenciada", cells: makePreviewCells(contentDay, [{ title: "Estrategias de instruccion diferenciada", desc: sectionData["fl-strat"] || "" }]) },
     { label: "Materiales", cells: makePreviewCells(contentDay, [{ title: "Materiales", desc: textOrFallback(sectionData["fl-mats"], "Libro digital, pizarra interactiva y recursos visuales de la leccion.") }]) },
+    { label: "Actividad de Inicio", cells: makePreviewCells(contentDay, selectedLesson.startActivity ? [{ title: lessonTitle, desc: selectedLesson.startActivity }] : []) },
+    { label: "Actividad de desarrollo", cells: makePreviewCells(contentDay, selectedLesson.devActivity ? [{ title: lessonTitle, desc: selectedLesson.devActivity }] : []) },
+    { label: "Actividad de cierre", cells: makePreviewCells(contentDay, selectedLesson.endActivity ? [{ title: lessonTitle, desc: selectedLesson.endActivity }] : []) },
   ];
 
   async function downloadPlanningPdf() {
@@ -1072,7 +1211,8 @@ const CREATABLE_SECTIONS = {
     listColumns: [
       { key: 'modos',   label: 'Modos de instrucción', render: (e) => (e.modos || []).join(', ') },
       { key: 'incluye', label: 'La lección incluye',   render: (e) => (e.incluye || []).join(', ') },
-      { key: 'dates',   label: 'Días',                 render: renderDates },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
     ],
     fields: [
       { type: 'dates' },
@@ -1090,7 +1230,8 @@ const CREATABLE_SECTIONS = {
     subtitle: 'Escriba la experiencia común (2 a 3 minutos) que desea agregar para la escuela en Plan de Mejoramiento.',
     listColumns: [
       { key: 'text',  label: 'Experiencia común', render: (e) => (e.text || '').slice(0, 120) + ((e.text || '').length > 120 ? '…' : '') },
-      { key: 'dates', label: 'Días',              render: renderDates },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
     ],
     fields: [
       { type: 'dates' },
@@ -1107,7 +1248,8 @@ const CREATABLE_SECTIONS = {
     subtitle: 'Seleccione la o las iniciativas o proyectos innovadores que desea integrar a su planificación.',
     listColumns: [
       { key: 'tipos', label: 'Iniciativa o proyecto innovador', render: (e) => (e.tipos || []).join(', ') },
-      { key: 'dates', label: 'Días',                            render: renderDates },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
     ],
     fields: [
       { type: 'dates' },
@@ -1116,6 +1258,49 @@ const CREATABLE_SECTIONS = {
       ]},
     ],
   },
+  'fl-integ': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione la o las materias que desea integrar a su planificación.',
+    listColumns: [
+      { key: 'materias', label: 'Materias', render: (e) => (e.materias || []).join(', ') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      { type: 'checkboxes', name: 'materias', label: 'Seleccione la o las materias que desea integrar a su planificación.', options: [
+        'Artes Visuales (Inglés)', 'Estudios Sociales', 'Español', 'Matemáticas', 'Ciencias', 'Inglés', 'Salud', 'Educación Física', 'Música', 'Teatro', 'Otro'
+      ]},
+    ],
+  },
+  'fl-reflex': {
+    title: 'Crear nueva',
+    subtitle: 'Seleccione las reflexiones de praxis que desea agregar a su planificación.',
+    listColumns: [
+      { key: 'text', label: 'Reflexión', render: (e) => e.incluirReflexion === 'No' ? 'No se incluye reflexión' : (e.text || '').slice(0, 120) + ((e.text || '').length > 120 ? '…' : '') },
+      { key: 'startDate', label: 'Fecha de inicio', render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).start) },
+      { key: 'endDate',   label: 'Fecha de fin',    render: (e, plan) => formatTableDate(getEntryStartEndDates(e.dates, plan?.OpenDate, plan?.CloseDate).end) },
+    ],
+    fields: [
+      { type: 'dates' },
+      {
+        type: 'radios',
+        name: 'incluirReflexion',
+        label: 'Desea incluir reflexión',
+        options: ['Sí', 'No'],
+        defaultValue: 'Sí'
+      },
+      {
+        type: 'textarea',
+        name: 'text',
+        label: 'Detalle la reflexión',
+        placeholder: 'Escriba la reflexión de praxis aquí...',
+        aiAssist: true,
+        rows: 5,
+        condition: (entry) => entry.incluirReflexion !== 'No'
+      }
+    ]
+  }
 };
 
 function renderDates(entry) {
@@ -1342,6 +1527,235 @@ function AIAssistButton({ onText, fieldLabel, aiContext }) {
   );
 }
 
+function MonthlyCalendar({ plan, value, onChange, disabled }) {
+  const openDate = parsePlanDate(plan.OpenDate);
+  const closeDate = parsePlanDate(plan.CloseDate);
+  const year = openDate.getFullYear();
+  const month = openDate.getMonth();
+  const MONTHS_ES = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+  ];
+  const DAYS_ES_COLS = ["lu", "ma", "mi", "ju", "vi", "sá", "do"];
+  const getDayOfWeekIndex = (d) => {
+    const day = d.getDay();
+    return day === 0 ? 6 : day - 1;
+  };
+  const firstOfMonth = new Date(year, month, 1);
+  const startDayIndex = getDayOfWeekIndex(firstOfMonth);
+  const startGridDate = new Date(firstOfMonth);
+  startGridDate.setDate(firstOfMonth.getDate() - startDayIndex);
+  const weeks = [];
+  const currentDate = new Date(startGridDate);
+  const numWeeks = (startDayIndex + new Date(year, month + 1, 0).getDate()) > 35 ? 6 : 5;
+  for (let w = 0; w < numWeeks; w++) {
+    const week = [];
+    for (let d = 0; d < 7; d++) {
+      week.push(new Date(currentDate));
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    weeks.push(week);
+  }
+  const selectedDays = value?.days || [];
+  const wholeWeek = !!value?.wholeWeek;
+  const isDateBetween = (d, start, end) => {
+    const ds = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const ss = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    const es = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+    return ds >= ss && ds <= es;
+  };
+  const toggleDate = (date) => {
+    if (disabled || wholeWeek) return;
+    const dateStr = formatPlanDate(date);
+    const nextDays = selectedDays.includes(dateStr)
+      ? selectedDays.filter(d => d !== dateStr)
+      : [...selectedDays, dateStr];
+    onChange({ wholeWeek: false, days: nextDays });
+  };
+  return (
+    <div className="cal-container">
+      <div className="cal-header">
+        {MONTHS_ES[month]} {year}
+      </div>
+      <div className="cal-grid">
+        {DAYS_ES_COLS.map(d => (
+          <div key={d} className="cal-day-header">{d}</div>
+        ))}
+        {weeks.map((week, wIdx) => (
+          <div key={wIdx} className="cal-week-row">
+            {week.map((date, dIdx) => {
+              const dateStr = formatPlanDate(date);
+              const active = isDateBetween(date, openDate, closeDate);
+              const isSelected = wholeWeek ? active : selectedDays.includes(dateStr);
+              let className = "cal-day-cell";
+              if (active) className += " active";
+              if (isSelected) className += " selected";
+              if (date.getMonth() !== month) className += " other-month";
+              return (
+                <button
+                  key={dIdx}
+                  type="button"
+                  className={className}
+                  onClick={() => active && toggleDate(date)}
+                  disabled={disabled || !active || wholeWeek}
+                >
+                  {date.getDate()}
+                </button>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ChipsInput({ value = [], onChange }) {
+  const [inputValue, setInputValue] = useState("");
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const val = inputValue.trim();
+      if (val && !value.includes(val)) {
+        onChange([...value, val]);
+      }
+      setInputValue("");
+    }
+  };
+  const removeChip = (chipToRemove) => {
+    onChange(value.filter(c => c !== chipToRemove));
+  };
+  return (
+    <div className="chips-input-container">
+      <div className="chips-list">
+        {value.map(chip => (
+          <span key={chip} className="chip-item">
+            {chip}
+            <button type="button" className="chip-remove" onClick={() => removeChip(chip)}>×</button>
+          </span>
+        ))}
+      </div>
+      <div style={{ position: "relative" }}>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Ingrese los datos..."
+          value={inputValue}
+          onChange={e => setInputValue(e.target.value)}
+          onKeyDown={handleKeyDown}
+        />
+        <span style={{ position: "absolute", right: 12, top: 12, color: "#aaa", pointerEvents: "none" }}>▼</span>
+      </div>
+      <div style={{ fontSize: 11, color: "#888", marginTop: 4 }}>
+        Escriba y presione <strong>ENTER</strong> para agregar
+      </div>
+      <div style={{ fontSize: 11, color: "#c3902a", marginTop: 4, display: "flex", gap: 4, alignItems: "center" }}>
+        <span>⚠</span>
+        <span>Nota: luego de pulsar ENTER no podrán ser modificables, deberá eliminarlos y volverlos agregar</span>
+      </div>
+    </div>
+  );
+}
+
+function LessonForm({ plan, lesson, onChange, onCancel, onSave }) {
+  const setField = (name, val) => onChange({ ...lesson, [name]: val });
+  const toggleSection = (sectionName) => {
+    const nextSelected = {
+      ...lesson.selectedSections,
+      [sectionName]: !lesson.selectedSections[sectionName]
+    };
+    onChange({ ...lesson, selectedSections: nextSelected });
+  };
+  const hasDates = lesson.dates?.wholeWeek || (lesson.dates?.days && lesson.dates.days.length > 0);
+  const canSave = lesson.title.trim().length > 0 && hasDates;
+  const SECTIONS_CONFIG = [
+    { key: "standards", label: "Estándares", type: "chips" },
+    { key: "expectations", label: "Expectativas", type: "textarea", placeholder: "Escriba las expectativas..." },
+    { key: "strategy", label: "Estrategia académica", type: "textarea", placeholder: "Escriba las estrategias académicas..." },
+    { key: "objectives", label: "Objetivos", type: "textarea", placeholder: "Escriba los objetivos..." },
+    { key: "units", label: "Unidades", type: "textarea", placeholder: "Escriba las unidades..." },
+    { key: "transversals", label: "Temas transversales", type: "textarea", placeholder: "Escriba los temas transversales..." },
+    { key: "startActivity", label: "Actividad de Inicio", type: "textarea", placeholder: "Escriba la actividad de inicio..." },
+    { key: "devActivity", label: "Actividad de desarrollo", type: "textarea", placeholder: "Escriba la actividad de desarrollo..." },
+    { key: "endActivity", label: "Actividad de cierre", type: "textarea", placeholder: "Escriba la actividad de cierre..." },
+  ];
+  return (
+    <div className="cs-form">
+      <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
+        <button className="pl btn-base btn-regular" onClick={onCancel}>Cancelar</button>
+        <button className="pl btn-base btn-primary" disabled={!canSave} onClick={() => onSave(lesson)}>
+          💾 Guardar
+        </button>
+      </div>
+      <DatePickerField
+        plan={plan}
+        value={lesson.dates}
+        onChange={(v) => setField('dates', v)}
+      />
+      <div className="cs-block">
+        <h2 className="heading-h2" style={{ color: '#27466c', fontSize: '18px', marginBottom: '14px' }}>
+          Desarrolle la lección para esta actividad
+        </h2>
+        <div className="form-group-fields">
+          <div className="form-label-value-group">
+            <label>Título de la lección</label>
+          </div>
+          <input
+            className="form-control"
+            placeholder="Título de la lección"
+            value={lesson.title}
+            onChange={e => setField('title', e.target.value)}
+          />
+        </div>
+      </div>
+      {SECTIONS_CONFIG.map(sec => {
+        const isSelected = !!lesson.selectedSections?.[sec.key];
+        return (
+          <div key={sec.key} className="cs-block" style={{ borderTop: '1px solid #e4e4e4', paddingTop: '16px' }}>
+            <h3 className="cs-block-title" style={{ fontSize: '15px', color: '#27466c', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span>{sec.label}</span>
+            </h3>
+            <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: '13px', color: '#6B7A93', marginBottom: '8px' }}>
+              <input
+                type="checkbox"
+                checked={isSelected}
+                onChange={() => toggleSection(sec.key)}
+                style={{ accentColor: '#3DA8A8' }}
+              />
+              <span>Seleccione este contenido para la lección</span>
+            </label>
+            {isSelected && (
+              <div style={{ marginTop: '10px' }}>
+                {sec.type === "chips" ? (
+                  <ChipsInput
+                    value={lesson.standards}
+                    onChange={(val) => setField('standards', val)}
+                  />
+                ) : (
+                  <>
+                    <AIAssistButton
+                      onText={(t) => setField(sec.key, t)}
+                      fieldLabel={sec.label}
+                      aiContext={{ plan, sectionLabel: sec.label }}
+                    />
+                    <textarea
+                      className="form-control"
+                      rows={4}
+                      placeholder={sec.placeholder}
+                      value={lesson[sec.key] || ''}
+                      onChange={e => setField(sec.key, e.target.value)}
+                    />
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [section,     setSection]     = useState("cotejo");
   const [sectionData, setSectionData] = useState(plan.SectionData || {});
@@ -1354,6 +1768,7 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [previewLessonId, setPreviewLessonId] = useState("1");
   const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
+  const [editingLesson, setEditingLesson] = useState(null);
 
   const current = MOCK.cotejo.find(s => s.key === section);
 
@@ -1427,6 +1842,81 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
     }
   }
 
+  function startCreateLesson() {
+    setEditingLesson({
+      id: `l_${Date.now()}`,
+      title: "",
+      dates: { wholeWeek: false, days: [] },
+      selectedSections: {
+        standards: false,
+        expectations: false,
+        strategy: false,
+        objectives: false,
+        units: false,
+        transversals: false,
+        startActivity: false,
+        devActivity: false,
+        endActivity: false,
+      },
+      standards: [],
+      expectations: "",
+      strategy: "",
+      objectives: "",
+      units: "",
+      transversals: "",
+      startActivity: "",
+      devActivity: "",
+      endActivity: "",
+      countsForGrade: false,
+    });
+  }
+
+  function startEditLesson(l) {
+    setEditingLesson({
+      ...l,
+      selectedSections: l.selectedSections || {
+        standards: !!l.standardCode || (l.standards && l.standards.length > 0),
+        expectations: !!l.expectations,
+        strategy: !!l.strategy,
+        objectives: !!l.objective || !!l.objectives,
+        units: !!l.units,
+        transversals: !!l.transversals,
+        startActivity: !!l.startActivity,
+        devActivity: !!l.devActivity,
+        endActivity: !!l.endActivity,
+      },
+      standards: l.standards || (l.standardCode ? [l.standardCode] : []),
+      expectations: l.expectations || "",
+      strategy: l.strategy || "",
+      objectives: l.objectives || l.objective || "",
+      units: l.units || "",
+      transversals: l.transversals || "",
+      startActivity: l.startActivity || "",
+      devActivity: l.devActivity || "",
+      endActivity: l.endActivity || "",
+    });
+  }
+
+  function commitLesson(l) {
+    const { start, end } = getEntryStartEndDates(l.dates, plan.OpenDate, plan.CloseDate);
+    const formattedStart = formatTableDate(start);
+    const formattedEnd = formatTableDate(end);
+    const standardCode = (l.standards || []).join(", ");
+    const nextLesson = {
+      ...l,
+      startDate: formattedStart,
+      endDate: formattedEnd,
+      standardCode,
+      availability: formattedStart,
+    };
+    const nextLessons = lessons.some(x => String(x.id) === String(l.id))
+      ? lessons.map(x => String(x.id) === String(l.id) ? nextLesson : x)
+      : [...lessons, nextLesson];
+    setLessons(nextLessons);
+    savePlanChanges({ Lessons: nextLessons });
+    setEditingLesson(null);
+  }
+
   function ContentArea() {
     if (section === "cotejo") {
       return <PlanningPreviewArea plan={plan} lessons={lessons} sectionData={sectionData} previewLessonId={previewLessonId} setPreviewLessonId={setPreviewLessonId} />;
@@ -1440,15 +1930,27 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
           onUpsert={(entry) => upsertSectionEntry(section, entry)}
           onDelete={(id) => deleteSectionEntry(section, id)}
           aiContext={{ plan, sectionLabel: current?.label }}
+          plan={plan}
         />
       );
     }
 
     if (section === "gl-lessons" || section === "fl-lessons") {
+      if (editingLesson) {
+        return (
+          <LessonForm
+            plan={plan}
+            lesson={editingLesson}
+            onChange={setEditingLesson}
+            onCancel={() => setEditingLesson(null)}
+            onSave={commitLesson}
+          />
+        );
+      }
       return (
         <>
           <p style={{ fontSize: 13, color: "#555", marginBottom: 14 }}>Añada las lecciones que desea agregar a su planificación</p>
-          <button className="pl btn-base btn-primary" style={{ marginBottom: 18 }}>⊕ Crear nueva</button>
+          <button className="pl btn-base btn-primary" style={{ marginBottom: 18 }} onClick={startCreateLesson}>⊕ Crear nueva</button>
           <table className="ppalTable">
             <thead>
               <tr>
@@ -1466,12 +1968,26 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
                   <td>{l.title}</td>
                   <td>{l.startDate}</td>
                   <td>{l.endDate}</td>
-                  <td><input type="checkbox" defaultChecked={l.countsForGrade} /></td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={!!l.countsForGrade}
+                      onChange={(e) => {
+                        const next = lessons.map(x => x.id === l.id ? { ...x, countsForGrade: e.target.checked } : x);
+                        setLessons(next);
+                        savePlanChanges({ Lessons: next });
+                      }}
+                    />
+                  </td>
                   <td>{l.availability}</td>
                   <td style={{ display: "flex", gap: 6, justifyContent: "flex-end" }}>
                     <button className="btn btn-normal" style={{ padding: "5px 12px" }}>🗄 Presentar</button>
-                    <button className="btn btn-normal" style={{ padding: "5px 12px" }}>✎ Ver/Editar</button>
-                    <button className="pl btn-simple" style={{ color: "#e32f28", fontSize: 16 }} onClick={() => setLessons(p => p.filter(x => x.id !== l.id))}>🗑</button>
+                    <button className="btn btn-normal" style={{ padding: "5px 12px" }} onClick={() => startEditLesson(l)}>✎ Ver/Editar</button>
+                    <button className="pl btn-simple" style={{ color: "#e32f28", fontSize: 16 }} onClick={() => {
+                      const next = lessons.filter(x => x.id !== l.id);
+                      setLessons(next);
+                      savePlanChanges({ Lessons: next });
+                    }}>🗑</button>
                   </td>
                 </tr>
               ))}
