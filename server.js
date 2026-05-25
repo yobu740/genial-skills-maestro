@@ -463,6 +463,24 @@ function planningBody(body = {}) {
   };
 }
 
+function mapAssignmentRow(row) {
+  return {
+    Id: row.id,
+    Title: row.title,
+    Published: row.published,
+    CreatedAt: row.created_at,
+    Questions: row.questions || [],
+  };
+}
+
+function assignmentBody(body = {}) {
+  return {
+    title: body.Title || body.title || 'Nueva asignacion',
+    published: body.Published ?? body.published ?? true,
+    questions: Array.isArray(body.Questions) ? body.Questions : (Array.isArray(body.questions) ? body.questions : []),
+  };
+}
+
 app.get('/api/plannings', async (_req, res) => {
   if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
     return res.json({ plans: [], source: 'local', warning: 'Supabase is not configured.' });
@@ -473,6 +491,33 @@ app.get('/api/plannings', async (_req, res) => {
   } catch (e) {
     console.warn('[plannings] Falling back to local-only mode:', e.message || e);
     res.json({ plans: [], source: 'local', warning: String(e.message || e) });
+  }
+});
+
+app.get('/api/assignments', async (_req, res) => {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    return res.json({ assignments: [], source: 'local', warning: 'Supabase is not configured.' });
+  }
+  try {
+    const rows = await supabaseRequest('teacher_assignments', { query: '?order=created_at.desc' });
+    res.json({ assignments: (rows || []).map(mapAssignmentRow) });
+  } catch (e) {
+    console.warn('[assignments] Falling back to local-only mode:', e.message || e);
+    res.json({ assignments: [], source: 'local', warning: String(e.message || e) });
+  }
+});
+
+app.post('/api/assignments', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const [row] = await supabaseRequest('teacher_assignments', {
+      method: 'POST',
+      prefer: 'return=representation',
+      body: [assignmentBody(req.body)],
+    });
+    res.json({ assignment: mapAssignmentRow(row) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
   }
 });
 

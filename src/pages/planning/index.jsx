@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { getAthenasToken } from "../../services/athenasApi.js";
+import WeeklyPlansTemplates from "../WeeklyPlansTemplates.jsx";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  CSS EXACTO — Extraído de main.8968a941.css + :root variables reales
@@ -478,6 +479,59 @@ function saveLocalPlanningStore(plans) {
   localStorage.setItem("gsm_teacher_plannings", JSON.stringify(plans));
 }
 
+function normalizeAssignment(row = {}) {
+  return {
+    Id: row.Id || row.id || `local-assignment-${Date.now()}`,
+    Title: row.Title || row.title || "Nueva asignacion",
+    Published: !!(row.Published ?? row.published),
+    CreatedAt: normalizePlanDate(row.CreatedAt || row.createdAt || new Date().toISOString().slice(0, 10)),
+    Questions: Array.isArray(row.Questions) ? row.Questions : (Array.isArray(row.questions) ? row.questions : []),
+  };
+}
+
+function localAssignmentStore() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("gsm_teacher_assignments") || "[]");
+    return Array.isArray(saved) ? saved.map(normalizeAssignment) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalAssignmentStore(assignments) {
+  localStorage.setItem("gsm_teacher_assignments", JSON.stringify(assignments.map(normalizeAssignment)));
+}
+
+async function fetchSavedAssignments() {
+  const localAssignments = localAssignmentStore();
+  try {
+    const res = await fetch("/api/assignments");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    return { assignments: data.assignments?.length ? data.assignments.map(normalizeAssignment) : localAssignments, source: data.source || "supabase" };
+  } catch {
+    return { assignments: localAssignments, source: "local" };
+  }
+}
+
+async function createSavedAssignment(assignment) {
+  const body = normalizeAssignment(assignment);
+  try {
+    const res = await fetch("/api/assignments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return normalizeAssignment((await res.json()).assignment);
+  } catch {
+    const localAssignment = { ...body, Id: body.Id || `local-assignment-${Date.now()}`, SavedLocally: true };
+    const assignments = [localAssignment, ...localAssignmentStore().filter(a => String(a.Id) !== String(localAssignment.Id))];
+    saveLocalAssignmentStore(assignments);
+    return localAssignment;
+  }
+}
+
 async function fetchSavedPlannings() {
   const localPlans = localPlanningStore();
   try {
@@ -715,7 +769,8 @@ function PlanningSelect({ onEnterAssignments, onEnterPlanning }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  ASSIGNMENT LIST
 // ─────────────────────────────────────────────────────────────────────────────
-function AssignmentList({ onBack, onCreate }) {
+function AssignmentList({ onBack, onCreate, assignments = [], loading = false, source = "supabase" }) {
+  const rows = assignments.length ? assignments : MOCK.assignments;
   return (
     <div className="wrapper-principal-container animated delay-05s fadeIn">
       <div className="double-border--principal">
@@ -725,10 +780,12 @@ function AssignmentList({ onBack, onCreate }) {
         <h1 className="heading-h1">Asignaciones</h1>
         <button className="pl btn-base btn-regular" onClick={onCreate}>+ Crear asignación</button>
       </div>
+      {loading && <p style={{ fontSize: 13, color: "#555", marginBottom: 12 }}>Cargando asignaciones guardadas...</p>}
+      {!loading && source === "local" && <p style={{ fontSize: 12, color: "#c3902a", marginBottom: 12 }}>Modo local: las asignaciones se guardan en este navegador hasta que Supabase este disponible.</p>}
       <table className="ppalTable">
         <thead><tr><th>Título</th><th>Publicado</th><th>Fecha de creación</th><th></th></tr></thead>
         <tbody>
-          {MOCK.assignments.map(a => (
+          {rows.map(a => (
             <tr key={a.Id}>
               <td>{a.Title}</td>
               <td><span className={a.Published ? "badge-published" : "badge-draft"}>{a.Published ? "Sí" : "No"}</span></td>
@@ -745,10 +802,11 @@ function AssignmentList({ onBack, onCreate }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  ASSIGNMENT MANAGER
 // ─────────────────────────────────────────────────────────────────────────────
-function AssignmentManager({ onBack }) {
+function AssignmentManager({ onBack, onSaved }) {
   const [title,      setTitle]      = useState("");
   const [activeType, setActiveType] = useState("1");
   const [questions,  setQuestions]  = useState([]);
+  const [saving,     setSaving]     = useState(false);
   const typeLabel = { "1": "Selección", "2": "Pareo", "3": "Abierto", "4": "Cierto o Falso" };
 
   function addQuestion() {
@@ -765,6 +823,20 @@ function AssignmentManager({ onBack }) {
       Options: q.Options || ["","","",""], CorrectIndex: q.CorrectIndex ?? 0,
       Pairs: q.Pairs || [{ l: "", r: "" }],
     })));
+  }
+
+  async function saveAssignment() {
+    if (!title.trim()) return;
+    setSaving(true);
+    const saved = await createSavedAssignment({
+      Title: title.trim(),
+      Published: true,
+      CreatedAt: new Date().toISOString().slice(0, 10),
+      Questions: questions,
+    });
+    setSaving(false);
+    onSaved?.(saved);
+    onBack();
   }
 
   return (
@@ -855,7 +927,7 @@ function AssignmentManager({ onBack }) {
 
         <div className="Region-w-action d-flex align-items-center" style={{ gap: 10 }}>
           <button className="btn btn-normal" onClick={addQuestion}>+ Añadir pregunta ({typeLabel[activeType]})</button>
-          <button className="pl btn-base btn-regular" onClick={() => alert("Asignación guardada")}>Guardar</button>
+          <button className="pl btn-base btn-regular" onClick={saveAssignment} disabled={saving || !title.trim()}>{saving ? "Guardando..." : "Guardar"}</button>
         </div>
       </div>
 
@@ -867,7 +939,7 @@ function AssignmentManager({ onBack }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  PLANNING LIST
 // ─────────────────────────────────────────────────────────────────────────────
-function PlanningList({ onBack, onCreatePlan, onOpenPlan, plans, loading, source }) {
+function PlanningList({ onBack, onCreatePlan, onOpenPlan, onOpenTemplates, plans, loading, source }) {
   return (
     <div className="wrapper-principal-container animated delay-05s fadeIn">
       <div className="double-border--principal">
@@ -875,7 +947,7 @@ function PlanningList({ onBack, onCreatePlan, onOpenPlan, plans, loading, source
       </div>
       <div className="d-flex align-items-center" style={{ justifyContent: "space-between", marginBottom: 14 }}>
         <h1 className="heading-h1">Planificación</h1>
-        <button className="pl btn-base btn-regular" onClick={onCreatePlan}>+ Crear planificación</button>
+        <div className="d-flex align-items-center" style={{ gap: 10 }}><button className="pl btn-base btn-simple" onClick={onOpenTemplates}>Plantillas / mapas curriculares</button><button className="pl btn-base btn-regular" onClick={onCreatePlan}>+ Crear planificacion</button></div>
       </div>
       <table className="ppalTable">
         <thead><tr><th>Nombre del plan</th><th>Materia</th><th>Grado</th><th>Fecha inicio</th><th>Fecha fin</th><th>Estado</th><th></th></tr></thead>
@@ -1629,7 +1701,7 @@ function renderDates(entry) {
   return days.map(d => d[0].toUpperCase() + d.slice(1)).join(', ');
 }
 
-function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan }) {
+function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan, assignments = [] }) {
   const [editing, setEditing] = useState(null); // null = list view; otherwise the entry being created/edited
 
   function startCreate() {
@@ -1652,6 +1724,7 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan })
         onSave={commit}
         aiContext={aiContext}
         plan={plan}
+        assignments={assignments}
       />
     );
   }
@@ -1691,7 +1764,7 @@ function CreatableSection({ cfg, entries, onUpsert, onDelete, aiContext, plan })
   );
 }
 
-function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) {
+function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan, assignments = [] }) {
   useEffect(() => {
     if (cfg.fields.some(f => f.type === 'assignments_picker')) {
       const pickerField = cfg.fields.find(f => f.type === 'assignments_picker');
@@ -1857,7 +1930,7 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
               if (i === idx) {
                 const updated = { ...item, [key]: val };
                 if (key === 'assignmentId') {
-                  const ass = MOCK.assignments.find(a => String(a.Id) === String(val));
+                  const ass = (assignments.length ? assignments : MOCK.assignments).find(a => String(a.Id) === String(val));
                   updated.assignmentTitle = ass ? ass.Title : '';
                 }
                 return updated;
@@ -1908,7 +1981,7 @@ function EntryForm({ cfg, entry, onChange, onCancel, onSave, aiContext, plan }) 
                         style={{ background: '#fff', border: '1px solid #ced4da', padding: '8px 12px', fontSize: '14px' }}
                       >
                         <option value="">Seleccionar</option>
-                        {MOCK.assignments.map(ass => (
+                        {(assignments.length ? assignments : MOCK.assignments).map(ass => (
                           <option key={ass.Id} value={ass.Id}>{ass.Title}</option>
                         ))}
                       </select>
@@ -2281,7 +2354,7 @@ function LessonForm({ plan, lesson, onChange, onCancel, onSave }) {
   );
 }
 
-function PlanDetail({ plan, onBack, onPlanSaved }) {
+function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
   const [section,     setSection]     = useState("cotejo");
   const [sectionData, setSectionData] = useState(plan.SectionData || {});
   const [lessons,     setLessons]     = useState([
@@ -2458,6 +2531,7 @@ function PlanDetail({ plan, onBack, onPlanSaved }) {
           onDelete={(id) => deleteSectionEntry(section, id)}
           aiContext={{ plan, sectionLabel: current?.label }}
           plan={plan}
+          assignments={assignments}
         />
       );
     }
@@ -2646,12 +2720,47 @@ const SECTION_LABELS = Object.fromEntries(MOCK.cotejo.map(s => [s.key, s.label])
 
 function FullPlanGenerator({ plan, onApply, onClose }) {
   const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5", schoolImprovementPlan: false });
+  const [units, setUnits]     = useState([]);
+  const [selectedUnitId, setSelectedUnitId] = useState("");
+  const [loadingUnits, setLoadingUnits] = useState(false);
   const [status, setStatus]   = useState("idle");   // idle | generating | preview | error
   const [error, setError]     = useState("");
   const [result, setResult]   = useState(null);
   const [meta, setMeta]       = useState(null);
   const [selectedSections, setSelectedSections] = useState({}); // key → bool
   const [selectedLessons, setSelectedLessons]   = useState([]); // boolean per lesson index
+
+  useEffect(() => {
+    setLoadingUnits(true);
+    fetch("/data/units.json")
+      .then(res => res.ok ? res.json() : { units: [] })
+      .then(json => {
+        const subject = String(plan.SubjectName || "").toLowerCase();
+        const grade = String(plan.LevelCode || "").replace(/\D/g, "");
+        const filtered = (json.units || []).filter(u => {
+          const unitSubject = String(u.subject || "").toLowerCase();
+          const unitGrade = String(u.grade || "").replace(/\D/g, "");
+          return unitSubject === subject && unitGrade === grade;
+        });
+        setUnits(filtered);
+      })
+      .catch(() => setUnits([]))
+      .finally(() => setLoadingUnits(false));
+  }, [plan.SubjectName, plan.LevelCode]);
+
+  function handleUnitSelect(unitId) {
+    setSelectedUnitId(unitId);
+    const selected = units.find(u => u.id === unitId);
+    if (!selected) return;
+    const context = [
+      `Unidad ${selected.code}: ${selected.title}`,
+      selected.transferObjectives?.[0],
+      selected.essentialQuestions?.length ? `Preguntas esenciales: ${selected.essentialQuestions.map(q => q.question).join("; ")}` : "",
+      selected.acquisitionObjectives?.length ? `Destrezas: ${selected.acquisitionObjectives.join("; ")}` : "",
+      selected.standards?.length ? `Estándares: ${selected.standards.map(s => `${s.code} - ${s.description}`).join("; ")}` : "",
+    ].filter(Boolean).join("\n");
+    setForm(p => ({ ...p, unit: context }));
+  }
 
   async function generate() {
     if (!form.unit.trim()) return;
@@ -2718,6 +2827,13 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
         {status !== "preview" && (
           <div className="fpg-body">
             <div className="fpg-form">
+              <label className="fpg-field">
+                <span>Seleccionar unidad curricular</span>
+                <select value={selectedUnitId} onChange={e => handleUnitSelect(e.target.value)} disabled={loadingUnits || !units.length}>
+                  <option value="">{loadingUnits ? "Cargando unidades..." : units.length ? "Seleccionar unidad del mapa curricular" : "No hay unidades cargadas para esta materia/grado"}</option>
+                  {units.map(u => <option key={u.id} value={u.id}>Unidad {u.code}: {u.title}</option>)}
+                </select>
+              </label>
               <label className="fpg-field">
                 <span>Unidad o tema a trabajar *</span>
                 <textarea
@@ -2857,6 +2973,9 @@ export default function PlanningModule() {
   const [plans, setPlans] = useState(MOCK.plans);
   const [plansLoading, setPlansLoading] = useState(false);
   const [plansSource, setPlansSource] = useState("supabase");
+  const [assignments, setAssignments] = useState(MOCK.assignments);
+  const [assignmentsLoading, setAssignmentsLoading] = useState(false);
+  const [assignmentsSource, setAssignmentsSource] = useState("supabase");
 
   useEffect(() => {
     let cancelled = false;
@@ -2870,6 +2989,18 @@ export default function PlanningModule() {
     return () => { cancelled = true; };
   }, []);
 
+  useEffect(() => {
+    let cancelled = false;
+    setAssignmentsLoading(true);
+    fetchSavedAssignments().then(({ assignments: saved, source }) => {
+      if (cancelled) return;
+      setAssignments(saved.length ? saved : MOCK.assignments);
+      setAssignmentsSource(source);
+      setAssignmentsLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, []);
+
   function upsertPlan(saved) {
     setPlan(saved);
     setPlans(prev => {
@@ -2878,15 +3009,23 @@ export default function PlanningModule() {
     });
   }
 
+  function upsertAssignment(saved) {
+    setAssignments(prev => {
+      const exists = prev.some(a => String(a.Id) === String(saved.Id));
+      return exists ? prev.map(a => String(a.Id) === String(saved.Id) ? saved : a) : [saved, ...prev];
+    });
+  }
+
   return (
     <>
       <style>{GENIAL_CSS}</style>
       {view === "select"             && <PlanningSelect onEnterAssignments={() => setView("assignment-list")} onEnterPlanning={() => setView("planning-list")} />}
-      {view === "assignment-list"    && <AssignmentList onBack={() => setView("select")} onCreate={() => setView("assignment-manager")} />}
-      {view === "assignment-manager" && <AssignmentManager onBack={() => setView("assignment-list")} />}
-      {view === "planning-list"      && <PlanningList plans={plans} loading={plansLoading} source={plansSource} onBack={() => setView("select")} onCreatePlan={() => setView("create-plan")} onOpenPlan={p => { setPlan(p); setView("plan-detail"); }} />}
+      {view === "assignment-list"    && <AssignmentList assignments={assignments} loading={assignmentsLoading} source={assignmentsSource} onBack={() => setView("select")} onCreate={() => setView("assignment-manager")} />}
+      {view === "assignment-manager" && <AssignmentManager onBack={() => setView("assignment-list")} onSaved={upsertAssignment} />}
+      {view === "planning-list"      && <PlanningList plans={plans} loading={plansLoading} source={plansSource} onBack={() => setView("select")} onOpenTemplates={() => setView("weekly-templates")} onCreatePlan={() => setView("create-plan")} onOpenPlan={p => { setPlan(p); setView("plan-detail"); }} />}
+      {view === "weekly-templates"   && <div className="wrapper-principal-container animated delay-05s fadeIn"><div className="double-border--principal"><button className="btn-back col-no-padding-left" onClick={() => setView("planning-list")}>← Atrás</button></div><WeeklyPlansTemplates /></div>}
       {view === "create-plan"        && <CreatePlan onBack={() => setView("planning-list")} onCreated={p => { upsertPlan(p); setView("plan-detail"); }} />}
-      {view === "plan-detail" && plan && <PlanDetail plan={plan} onPlanSaved={upsertPlan} onBack={() => setView("planning-list")} />}
+      {view === "plan-detail" && plan && <PlanDetail plan={plan} assignments={assignments} onPlanSaved={upsertPlan} onBack={() => setView("planning-list")} />}
     </>
   );
 }
