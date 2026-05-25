@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import { getAthenasToken } from "../../services/athenasApi.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -162,6 +164,11 @@ export const GENIAL_CSS = `
 .list--item_desc--desc,.list--item_desc--desc_content{margin:0;color:#33353d;font-size:12px;line-height:1.35}
 .list--item_desc--desc_quiz{margin:0;color:#33353d;font-size:12px;font-weight:700}
 .list--item_desc--desc_quiz-date{margin:2px 0 0;color:#6b7280;font-size:11px}
+.planning-print-sheet{background:#fff;color:#33353d}
+.planning-print-header{display:none;padding:0 0 12px;border-bottom:1px solid #d7dee8;margin-bottom:12px}
+.planning-print-title{font-size:18px;font-weight:800;color:#2a426d;margin:0 0 6px}
+.planning-print-meta{font-size:11px;color:#33353d;line-height:1.5}
+.preview-status{font-size:12px;color:var(--palette-utility-greenDark);min-height:18px}
 
 @media screen and (max-width:700px){
   .planning-two-col{flex:1 1 100%}
@@ -169,6 +176,16 @@ export const GENIAL_CSS = `
   .containerPlanning__sidebar{flex:0 0 100%}
   .preview-filter{flex:1 1 100%}
   .preview-filter select{min-width:0;max-width:none;width:100%}
+}
+
+@media print{
+  body *{visibility:hidden!important}
+  .planning-print-sheet,.planning-print-sheet *{visibility:visible!important}
+  .planning-print-sheet{position:absolute;left:0;top:0;width:100%;padding:18px}
+  .planning-print-header{display:block}
+  .preview-actions,.preview-note{display:none!important}
+  .table-pdf-preview,.tablePDF__scroll{max-height:none!important;overflow:visible!important;border:0}
+  .tablePDF__content{min-width:1320px}
 }
 
 /* FULL PLAN GENERATOR modal */
@@ -285,6 +302,79 @@ function buildPlanDays(openDate) {
 function textOrFallback(value, fallback) {
   const text = String(value || "").trim();
   return text || fallback;
+}
+
+function normalizePlanDate(value) {
+  if (!value) return "";
+  const text = String(value);
+  const iso = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (iso) return `${iso[2]}/${iso[3]}/${iso[1]}`;
+  const us = text.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (us) return `${String(us[1]).padStart(2, "0")}/${String(us[2]).padStart(2, "0")}/${us[3]}`;
+  return text;
+}
+
+function localPlanningStore() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("gsm_teacher_plannings") || "[]");
+    return Array.isArray(saved) ? saved : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalPlanningStore(plans) {
+  localStorage.setItem("gsm_teacher_plannings", JSON.stringify(plans));
+}
+
+async function fetchSavedPlannings() {
+  const localPlans = localPlanningStore();
+  try {
+    const res = await fetch("/api/plannings");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    return { plans: data.plans?.length ? data.plans : localPlans, source: "supabase" };
+  } catch {
+    return { plans: localPlans, source: "local" };
+  }
+}
+
+async function createSavedPlanning(plan) {
+  const body = { ...plan, OpenDate: normalizePlanDate(plan.OpenDate), CloseDate: normalizePlanDate(plan.CloseDate) };
+  try {
+    const res = await fetch("/api/plannings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()).plan;
+  } catch {
+    const localPlan = { ...body, PlanId: body.PlanId || `local-${Date.now()}`, SavedLocally: true };
+    const plans = [localPlan, ...localPlanningStore().filter(p => String(p.PlanId) !== String(localPlan.PlanId))];
+    saveLocalPlanningStore(plans);
+    return localPlan;
+  }
+}
+
+async function updateSavedPlanning(plan) {
+  const body = { ...plan, OpenDate: normalizePlanDate(plan.OpenDate), CloseDate: normalizePlanDate(plan.CloseDate) };
+  try {
+    const res = await fetch(`/api/plannings/${encodeURIComponent(body.PlanId)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()).plan;
+  } catch {
+    const plans = localPlanningStore();
+    const next = plans.some(p => String(p.PlanId) === String(body.PlanId))
+      ? plans.map(p => String(p.PlanId) === String(body.PlanId) ? { ...p, ...body, SavedLocally: true } : p)
+      : [{ ...body, SavedLocally: true }, ...plans];
+    saveLocalPlanningStore(next);
+    return { ...body, SavedLocally: true };
+  }
 }
 
 async function askClaude(system, userMessage) {
@@ -484,6 +574,8 @@ function AssignmentList({ onBack, onCreate }) {
         <h1 className="heading-h1">Asignaciones</h1>
         <button className="pl btn-base btn-regular" onClick={onCreate}>+ Crear asignación</button>
       </div>
+      {loading && <p style={{ fontSize: 13, color: "#555", marginBottom: 12 }}>Cargando planificaciones guardadas...</p>}
+      {!loading && source === "local" && <p style={{ fontSize: 12, color: "#c3902a", marginBottom: 12 }}>Modo local: las planificaciones se guardan en este navegador hasta que se cree la tabla de Supabase.</p>}
       <table className="ppalTable">
         <thead><tr><th>Título</th><th>Publicado</th><th>Fecha de creación</th><th></th></tr></thead>
         <tbody>
@@ -626,7 +718,7 @@ function AssignmentManager({ onBack }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  PLANNING LIST
 // ─────────────────────────────────────────────────────────────────────────────
-function PlanningList({ onBack, onCreatePlan, onOpenPlan }) {
+function PlanningList({ onBack, onCreatePlan, onOpenPlan, plans, loading, source }) {
   return (
     <div className="wrapper-principal-container animated delay-05s fadeIn">
       <div className="double-border--principal">
@@ -639,7 +731,7 @@ function PlanningList({ onBack, onCreatePlan, onOpenPlan }) {
       <table className="ppalTable">
         <thead><tr><th>Nombre del plan</th><th>Materia</th><th>Grado</th><th>Fecha inicio</th><th>Fecha fin</th><th>Estado</th><th></th></tr></thead>
         <tbody>
-          {MOCK.plans.map(p => (
+          {plans.map(p => (
             <tr key={p.PlanId}>
               <td>{p.PlanName}</td><td>{p.SubjectName}</td><td>{p.LevelCode}</td>
               <td>{p.OpenDate}</td><td>{p.CloseDate}</td>
@@ -647,6 +739,9 @@ function PlanningList({ onBack, onCreatePlan, onOpenPlan }) {
               <td><button className="pl btn-base btn-regular" onClick={() => onOpenPlan(p)}>Abrir</button></td>
             </tr>
           ))}
+          {!plans.length && !loading && (
+            <tr><td colSpan={7} style={{ textAlign: "center", color: "#999", padding: 18 }}>No hay planificaciones guardadas.</td></tr>
+          )}
         </tbody>
       </table>
     </div>
@@ -658,17 +753,25 @@ function PlanningList({ onBack, onCreatePlan, onOpenPlan }) {
 // ─────────────────────────────────────────────────────────────────────────────
 function CreatePlan({ onBack, onCreated }) {
   const [form, setForm] = useState({ name: "", subject: "", grade: "", group: "", dateFrom: "", dateTo: "" });
+  const [saving, setSaving] = useState(false);
   const f = k => e => setForm(p => ({ ...p, [k]: e.target.value }));
-  function submit() {
-    onCreated({
+  async function submit() {
+    setSaving(true);
+    const saved = await createSavedPlanning({
       ...MOCK.plans[0],
+      PlanId: `plan-${Date.now()}`,
       PlanName: form.name || "Nuevo Plan",
       SubjectName: form.subject || "Ciencias",
       LevelCode: form.grade || "5",
       GroupName: form.group || "Grupo A",
-      OpenDate: form.dateFrom || "05/22/2026",
-      CloseDate: form.dateTo || "05/28/2026",
+      OpenDate: normalizePlanDate(form.dateFrom) || "05/22/2026",
+      CloseDate: normalizePlanDate(form.dateTo) || "05/28/2026",
+      IsPlanOpen: true,
+      Lessons: [],
+      SectionData: {},
     });
+    setSaving(false);
+    onCreated(saved);
   }
   return (
     <div className="wrapper-principal-container animated delay-05s fadeIn">
@@ -732,7 +835,7 @@ function CreatePlan({ onBack, onCreated }) {
         </div>
         <div className="Region-w-action d-flex align-items-center" style={{ gap: 10 }}>
           <button className="pl btn-base btn-regular" onClick={onBack}>Cancelar</button>
-          <button className="btn btn-normal" onClick={submit}>Crear planificación</button>
+          <button className="btn btn-normal" onClick={submit} disabled={saving}>{saving ? "Guardando..." : "Crear planificación"}</button>
         </div>
       </div>
     </div>
@@ -774,6 +877,8 @@ function PlanningPreviewCell({ items }) {
 }
 
 function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setPreviewLessonId }) {
+  const printRef = useRef(null);
+  const [pdfStatus, setPdfStatus] = useState("");
   const days = buildPlanDays(plan.OpenDate);
   const selectedLesson = lessons.find(l => String(l.id) === previewLessonId) || lessons[0] || {
     id: "demo",
@@ -833,6 +938,50 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
     { label: "Materiales", cells: makePreviewCells(contentDay, [{ title: "Materiales", desc: textOrFallback(sectionData["fl-mats"], "Libro digital, pizarra interactiva y recursos visuales de la leccion.") }]) },
   ];
 
+  async function downloadPlanningPdf() {
+    if (!printRef.current) return;
+    setPdfStatus("Generando PDF...");
+    const header = printRef.current.querySelector(".planning-print-header");
+    const scroll = printRef.current.querySelector(".tablePDF__scroll");
+    const wrapper = printRef.current.querySelector(".table-pdf-preview");
+    if (header) header.style.display = "block";
+    const oldScroll = scroll ? { maxHeight: scroll.style.maxHeight, overflow: scroll.style.overflow } : null;
+    const oldWrapper = wrapper ? { maxHeight: wrapper.style.maxHeight, overflow: wrapper.style.overflow } : null;
+    if (scroll) { scroll.style.maxHeight = "none"; scroll.style.overflow = "visible"; }
+    if (wrapper) { wrapper.style.maxHeight = "none"; wrapper.style.overflow = "visible"; }
+    const canvas = await html2canvas(printRef.current, {
+      scale: 2,
+      backgroundColor: "#ffffff",
+      useCORS: true,
+      windowWidth: printRef.current.scrollWidth,
+      scrollX: 0,
+      scrollY: 0,
+    });
+    if (header) header.style.display = "";
+    if (scroll && oldScroll) { scroll.style.maxHeight = oldScroll.maxHeight; scroll.style.overflow = oldScroll.overflow; }
+    if (wrapper && oldWrapper) { wrapper.style.maxHeight = oldWrapper.maxHeight; wrapper.style.overflow = oldWrapper.overflow; }
+    const pdf = new jsPDF({ orientation: "landscape", unit: "pt", format: "legal" });
+    const pageW = pdf.internal.pageSize.getWidth();
+    const pageH = pdf.internal.pageSize.getHeight();
+    const margin = 24;
+    const imgW = pageW - margin * 2;
+    const imgH = (canvas.height * imgW) / canvas.width;
+    const img = canvas.toDataURL("image/png");
+    let y = margin;
+    let remaining = imgH;
+    while (remaining > 0) {
+      pdf.addImage(img, "PNG", margin, y, imgW, imgH);
+      remaining -= pageH - margin * 2;
+      if (remaining > 0) {
+        pdf.addPage();
+        y -= pageH - margin * 2;
+      }
+    }
+    pdf.save(`${plan.PlanName || "Planning Preview"}.pdf`);
+    setPdfStatus("PDF descargado");
+    setTimeout(() => setPdfStatus(""), 1800);
+  }
+
   return (
     <>
       <div className="preview-subtitle">Previsualizar planificacion</div>
@@ -841,13 +990,21 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
         <span>Nota: Si sale de esta pagina, el PDF dejara de generarse y el progreso se perdera. El PDF se generara nuevamente cuando regrese a la pagina.</span>
       </div>
       <div className="preview-actions">
-        <button type="button" className="pl btn-base btn-primary" onClick={() => window.print()}>Imprimir PDF</button>
+        <button type="button" className="pl btn-base btn-primary" onClick={downloadPlanningPdf}>Imprimir PDF</button>
         <div className="preview-filter">
           <select value={previewLessonId} onChange={e => setPreviewLessonId(e.target.value)} aria-label="Seleccionar leccion">
             {lessons.map(lesson => <option key={lesson.id} value={lesson.id}>{lesson.title}</option>)}
           </select>
           <button type="button" className="preview-icon-btn" title="Buscar leccion">⌕</button>
           <button type="button" className="preview-icon-btn" title="Limpiar seleccion" onClick={() => setPreviewLessonId(lessons[0]?.id ? String(lessons[0].id) : "")}>⌫</button>
+        </div>
+      </div>
+      {pdfStatus && <div className="preview-status">{pdfStatus}</div>}
+      <div className="planning-print-sheet" ref={printRef}>
+      <div className="planning-print-header">
+        <h1 className="planning-print-title">{plan.PlanName || "Planificacion"}</h1>
+        <div className="planning-print-meta">
+          <strong>Plan semanal, Semana #{plan.WeekNumber || "209"} - Rango:</strong> {plan.OpenDate} - {plan.CloseDate} | <strong>Grupo:</strong> {plan.GroupName} | <strong>Materia y grado:</strong> {plan.SubjectName} {plan.LevelCode}
         </div>
       </div>
       <div className="wrapper-tablePDF table-pdf-preview">
@@ -880,19 +1037,38 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
           </table>
         </div>
       </div>
+      </div>
     </>
   );
 }
 
-function PlanDetail({ plan, onBack }) {
+function PlanDetail({ plan, onBack, onPlanSaved }) {
   const [section,     setSection]     = useState("cotejo");
-  const [sectionData, setSectionData] = useState({});
+  const [sectionData, setSectionData] = useState(plan.SectionData || {});
   const [lessons,     setLessons]     = useState([
+    ...(Array.isArray(plan.Lessons) ? plan.Lessons : []),
+    ...(!Array.isArray(plan.Lessons) || plan.Lessons.length === 0 ? [
     { id: 1, title: "Zonas climáticas", startDate: "mar.: 05/26/2026", endDate: "mar.: 05/26/2026", countsForGrade: false, availability: "vie.: 05/22/2026" },
+    ] : []),
   ]);
   const [previewLessonId, setPreviewLessonId] = useState("1");
+  const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
   const current = MOCK.cotejo.find(s => s.key === section);
+
+  async function savePlanChanges(next = {}) {
+    setSaveStatus("Guardando...");
+    const saved = await updateSavedPlanning({
+      ...plan,
+      ...next,
+      Lessons: next.Lessons || lessons,
+      SectionData: next.SectionData || sectionData,
+    });
+    onPlanSaved?.(saved);
+    setSaveStatus(saved.SavedLocally ? "Guardado localmente" : "Guardado");
+    setTimeout(() => setSaveStatus(""), 1800);
+    return saved;
+  }
 
   function handleAIFill(data) {
     if (data.content) setSectionData(p => ({ ...p, [section]: data.content }));
@@ -916,7 +1092,19 @@ function PlanDetail({ plan, onBack }) {
       ]);
     }
     if (sections && typeof sections === "object") {
-      setSectionData(prev => ({ ...prev, ...sections }));
+      const nextSections = { ...sectionData, ...sections };
+      setSectionData(nextSections);
+      savePlanChanges({ Lessons: Array.isArray(newLessons) && newLessons.length ? [...lessons, ...newLessons.map((l, i) => ({
+        id: Date.now() + i,
+        title: l.title || `Lección ${i + 1}`,
+        objective: l.objective || "",
+        standardCode: l.standardCode || "",
+        startDate: l.startDate || plan.OpenDate,
+        endDate: l.endDate || plan.CloseDate,
+        countsForGrade: !!l.countsForGrade,
+        availability: l.startDate || plan.OpenDate,
+        duration: l.duration || "",
+      }))] : lessons, SectionData: nextSections });
     }
   }
 
@@ -997,7 +1185,8 @@ function PlanDetail({ plan, onBack }) {
         <p style={{ fontSize: 13, color: "#555", marginBottom: 14 }}>Complete el contenido para esta sección.</p>
         <textarea className="form-control" rows={8} placeholder={`Escriba aquí el contenido para "${current?.label}"…`} value={sectionData[section] || ""} onChange={e => setSectionData(p => ({ ...p, [section]: e.target.value }))} />
         <div className="Region-w-action" style={{ marginTop: 14 }}>
-          <button className="pl btn-base btn-primary" onClick={() => alert("Sección guardada")}>Guardar</button>
+          <button className="pl btn-base btn-primary" onClick={() => savePlanChanges()}>Guardar</button>
+          {saveStatus && <span style={{ marginLeft: 10, fontSize: 12, color: "#31665a" }}>{saveStatus}</span>}
         </div>
       </>
     );
@@ -1302,15 +1491,39 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
 export default function PlanningModule() {
   const [view, setView] = useState("select");
   const [plan, setPlan] = useState(MOCK.plans[0]);
+  const [plans, setPlans] = useState(MOCK.plans);
+  const [plansLoading, setPlansLoading] = useState(false);
+  const [plansSource, setPlansSource] = useState("supabase");
+
+  useEffect(() => {
+    let cancelled = false;
+    setPlansLoading(true);
+    fetchSavedPlannings().then(({ plans: saved, source }) => {
+      if (cancelled) return;
+      setPlans(saved.length ? saved : MOCK.plans);
+      setPlansSource(source);
+      setPlansLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, []);
+
+  function upsertPlan(saved) {
+    setPlan(saved);
+    setPlans(prev => {
+      const exists = prev.some(p => String(p.PlanId) === String(saved.PlanId));
+      return exists ? prev.map(p => String(p.PlanId) === String(saved.PlanId) ? saved : p) : [saved, ...prev];
+    });
+  }
+
   return (
     <>
       <style>{GENIAL_CSS}</style>
       {view === "select"             && <PlanningSelect onEnterAssignments={() => setView("assignment-list")} onEnterPlanning={() => setView("planning-list")} />}
       {view === "assignment-list"    && <AssignmentList onBack={() => setView("select")} onCreate={() => setView("assignment-manager")} />}
       {view === "assignment-manager" && <AssignmentManager onBack={() => setView("assignment-list")} />}
-      {view === "planning-list"      && <PlanningList onBack={() => setView("select")} onCreatePlan={() => setView("create-plan")} onOpenPlan={p => { setPlan(p); setView("plan-detail"); }} />}
-      {view === "create-plan"        && <CreatePlan onBack={() => setView("planning-list")} onCreated={p => { setPlan(p); setView("plan-detail"); }} />}
-      {view === "plan-detail" && plan && <PlanDetail plan={plan} onBack={() => setView("planning-list")} />}
+      {view === "planning-list"      && <PlanningList plans={plans} loading={plansLoading} source={plansSource} onBack={() => setView("select")} onCreatePlan={() => setView("create-plan")} onOpenPlan={p => { setPlan(p); setView("plan-detail"); }} />}
+      {view === "create-plan"        && <CreatePlan onBack={() => setView("planning-list")} onCreated={p => { upsertPlan(p); setView("plan-detail"); }} />}
+      {view === "plan-detail" && plan && <PlanDetail plan={plan} onPlanSaved={upsertPlan} onBack={() => setView("planning-list")} />}
     </>
   );
 }

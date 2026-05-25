@@ -426,6 +426,84 @@ app.post('/api/interactive-assessments', async (req, res) => {
   }
 });
 
+function mapPlanningRow(row) {
+  return {
+    PlanId: row.id,
+    PlanName: row.plan_name,
+    SubjectName: row.subject_name,
+    LevelCode: row.level_code,
+    GroupName: row.group_name,
+    OpenDate: row.open_date,
+    CloseDate: row.close_date,
+    WeekNumber: row.week_number || '209',
+    PeriodLabel: row.period_label,
+    AcademicYear: row.academic_year,
+    ClosesOn: row.closes_on,
+    IsPlanOpen: row.is_plan_open,
+    Lessons: row.lessons || [],
+    SectionData: row.section_data || {},
+  };
+}
+
+function planningBody(body = {}) {
+  return {
+    plan_name: body.PlanName || body.planName || 'Nuevo Plan',
+    subject_name: body.SubjectName || body.subjectName || 'Ciencias',
+    level_code: body.LevelCode || body.levelCode || '5',
+    group_name: body.GroupName || body.groupName || null,
+    open_date: body.OpenDate || body.openDate || null,
+    close_date: body.CloseDate || body.closeDate || null,
+    week_number: body.WeekNumber || body.weekNumber || '209',
+    period_label: body.PeriodLabel || body.periodLabel || null,
+    academic_year: body.AcademicYear || body.academicYear || null,
+    closes_on: body.ClosesOn || body.closesOn || null,
+    is_plan_open: body.IsPlanOpen ?? body.isPlanOpen ?? true,
+    lessons: Array.isArray(body.Lessons) ? body.Lessons : [],
+    section_data: body.SectionData && typeof body.SectionData === 'object' ? body.SectionData : {},
+  };
+}
+
+app.get('/api/plannings', async (_req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const rows = await supabaseRequest('teacher_plannings', { query: '?order=updated_at.desc' });
+    res.json({ plans: (rows || []).map(mapPlanningRow) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.post('/api/plannings', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const [row] = await supabaseRequest('teacher_plannings', {
+      method: 'POST',
+      prefer: 'return=representation',
+      body: [planningBody(req.body)],
+    });
+    res.json({ plan: mapPlanningRow(row) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.patch('/api/plannings/:id', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const id = String(req.params.id || '');
+    const [row] = await supabaseRequest('teacher_plannings', {
+      method: 'PATCH',
+      query: `?id=eq.${encodeURIComponent(id)}`,
+      prefer: 'return=representation',
+      body: planningBody(req.body),
+    });
+    if (!row) return res.status(404).json({ error: 'Planificacion no encontrada' });
+    res.json({ plan: mapPlanningRow(row) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
 app.get('/api/sessions/:code', async (req, res) => {
   if (!requireSupabase(res)) return;
   try {
