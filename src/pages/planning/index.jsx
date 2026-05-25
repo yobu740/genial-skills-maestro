@@ -1694,6 +1694,136 @@ const CREATABLE_SECTIONS = {
   }
 };
 
+function normalizeGeneratedText(value) {
+  if (value == null) return "";
+  if (typeof value === "string") return value;
+  if (Array.isArray(value)) return value.map(normalizeGeneratedText).filter(Boolean).join("; ");
+  if (typeof value === "object") {
+    return Object.entries(value)
+      .filter(([key]) => key !== "dates" && key !== "id")
+      .map(([key, val]) => `${key}: ${normalizeGeneratedText(val)}`)
+      .filter(Boolean)
+      .join("; ");
+  }
+  return String(value);
+}
+
+function comparableText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function normalizeGeneratedDates(value, plan) {
+  if (value?.dates?.wholeWeek || Array.isArray(value?.dates?.days)) return value.dates;
+  if (value?.wholeWeek || Array.isArray(value?.days)) return value;
+  const days = buildPlanDays(plan?.OpenDate).map(d => d.date);
+  return { wholeWeek: true, days };
+}
+
+function optionsForField(field, entry) {
+  return typeof field.options === "function" ? field.options(entry) : (field.options || []);
+}
+
+function selectedOptionsFromValue(rawValue, options, sourceText, fallback = []) {
+  const rawItems = Array.isArray(rawValue)
+    ? rawValue
+    : String(rawValue || "").split(/[,;\n]/).map(s => s.trim()).filter(Boolean);
+  const normalizedRaw = rawItems.map(comparableText);
+  const source = comparableText(sourceText);
+  const matches = options.filter(opt => {
+    const needle = comparableText(opt);
+    return normalizedRaw.some(item => item === needle || item.includes(needle) || needle.includes(item)) ||
+      (needle && source.includes(needle));
+  });
+  if (matches.length) return matches;
+  return fallback.filter(opt => options.includes(opt));
+}
+
+function fallbackCheckboxes(sectionKey, fieldName, options) {
+  const byField = {
+    "fl-plan1:modos": ["PrÃ¡ctica guiada", "Dirigida por el maestro"],
+    "fl-plan1:incluye": ["Respuesta activa del estudiante", "Actividad de comprobaciÃ³n del aprendizaje"],
+    "fl-integ:materias": ["MatemÃ¡ticas", "Ciencias"],
+    "fl-innov:tipos": ["STEM"],
+    "fl-eval:diagnostica": ["Preprueba"],
+    "fl-eval:formativa": ["Lista de cotejo"],
+    "fl-eval:sumativa": ["Prueba corta"],
+    "fl-mats:materiales": ["Texto del curso", "Recursos tecnolÃ³gicos (materiales/equipo)"],
+  };
+  return byField[`${sectionKey}:${fieldName}`] || options.slice(0, 1);
+}
+
+function normalizeGeneratedEntry(sectionKey, rawEntry, plan, index) {
+  const cfg = CREATABLE_SECTIONS[sectionKey];
+  const source = normalizeGeneratedText(rawEntry);
+  const entry = {
+    id: rawEntry?.id || `ai_${sectionKey}_${Date.now()}_${index}`,
+    dates: normalizeGeneratedDates(rawEntry, plan),
+  };
+
+  for (const field of cfg.fields) {
+    if (field.type === "dates" || field.type === "assignments_picker") continue;
+
+    if (field.type === "radios") {
+      const options = optionsForField(field, entry);
+      const found = selectedOptionsFromValue(rawEntry?.[field.name], options, source, [field.defaultValue || options[0]]);
+      entry[field.name] = found[0] || field.defaultValue || options[0] || "";
+      continue;
+    }
+
+    if (field.type === "select") {
+      const options = optionsForField(field, entry);
+      const found = selectedOptionsFromValue(rawEntry?.[field.name], options, source, [options[0]]);
+      entry[field.name] = found[0] || options[0] || "";
+      continue;
+    }
+
+    if (field.type === "checkboxes") {
+      const options = optionsForField(field, entry);
+      entry[field.name] = selectedOptionsFromValue(
+        rawEntry?.[field.name],
+        options,
+        source,
+        fallbackCheckboxes(sectionKey, field.name, options)
+      );
+      continue;
+    }
+
+    if (field.type === "text" || field.type === "textarea") {
+      entry[field.name] = rawEntry?.[field.name] || (field.name === "titulo" ? `Sugerencia de ${SECTION_LABELS[sectionKey] || sectionKey}` : source);
+    }
+  }
+
+  return entry;
+}
+
+function normalizeGeneratedSections(rawSections, plan) {
+  const normalized = {};
+  for (const [sectionKey, value] of Object.entries(rawSections || {})) {
+    const cfg = CREATABLE_SECTIONS[sectionKey];
+    if (!cfg) {
+      normalized[sectionKey] = value;
+      continue;
+    }
+    if (cfg.fields.some(field => field.type === "assignments_picker")) continue;
+    const rawEntries = Array.isArray(value) ? value : [value];
+    normalized[sectionKey] = rawEntries
+      .filter(entry => entry != null && normalizeGeneratedText(entry).trim())
+      .map((entry, index) => normalizeGeneratedEntry(sectionKey, entry, plan, index));
+  }
+  return normalized;
+}
+
+function renderGeneratedSectionContent(content) {
+  if (typeof content === "string") return content;
+  if (Array.isArray(content)) {
+    return content.map(item => normalizeGeneratedText(item)).filter(Boolean).join("\n\n");
+  }
+  return normalizeGeneratedText(content);
+}
+
 function renderDates(entry) {
   if (entry?.dates?.wholeWeek) return 'Toda la semana';
   const days = entry?.dates?.days || [];
@@ -2807,8 +2937,9 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
     for (const [k, v] of Object.entries(result?.sections || {})) {
       if (selectedSections[k]) sections[k] = v;
     }
+    const normalizedSections = normalizeGeneratedSections(sections, plan);
     const lessons = (result?.lessons || []).filter((_, i) => selectedLessons[i]);
-    onApply({ lessons, sections });
+    onApply({ lessons, sections: normalizedSections });
     onClose();
   }
 
@@ -2949,7 +3080,7 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
                     />
                     <strong>{SECTION_LABELS[key] || key}</strong>
                   </summary>
-                  <div className="fpg-sec-content">{content}</div>
+                  <div className="fpg-sec-content">{renderGeneratedSectionContent(content)}</div>
                 </details>
               ))}
             </section>

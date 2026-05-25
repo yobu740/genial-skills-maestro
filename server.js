@@ -1130,8 +1130,8 @@ app.post('/api/generate-full-plan', async (req, res) => {
       ? `## Ejemplo de plan DEPR real del distrito (referencia de formato/estilo)\nMateria: ${example.subject} · Grado ${example.scope}\n\n"""\n${example.text.slice(0, 2200)}\n"""`
       : '';
     const improvementSectionsSchema = schoolImprovementPlan
-      ? `    "fl-plan1":    "Plan de mejoramiento - respuesta activa del estudiante",
-    "fl-plan2":    "Plan de mejoramiento - experiencia común (2-3 minutos de inicio)",`
+      ? `    "fl-plan1":    [{ "dates": { "wholeWeek": true }, "modos": ["Practica guiada"], "incluye": ["Respuesta activa del estudiante"] }],
+    "fl-plan2":    [{ "dates": { "wholeWeek": true }, "text": "Experiencia comun de 2 a 3 minutos..." }],`
       : '';
     const improvementInstruction = schoolImprovementPlan
       ? 'La escuela ESTA en plan de mejoramiento. Debes completar fl-plan1 y fl-plan2 con estrategias concretas, observables y alineadas al tema semanal.'
@@ -1171,20 +1171,32 @@ ${exampleBlock}
   ],
   "sections": {
     "gl-lessons":  "Resumen de qué lecciones se cubren y por qué",
-    "gl-forums":   "Foro de discusión sugerido con prompt inicial",
-    "gl-tasks":    "Asignaciones recomendadas + criterios de calificación",
+    "gl-forums":   [{ "dates": { "wholeWeek": true }, "titulo": "Foro de discusion", "descripcion": "Prompt inicial..." }],
     "fl-lessons":  "Lecciones libres complementarias",
-    "fl-integ":    "Integración con otras materias (al menos 2 conexiones específicas)",
-    "fl-innov":    "Iniciativa o proyecto innovador (1 idea concreta con pasos)",
-    "fl-eval":     "Evaluaciones formativas y sumativa con criterios",
-    "fl-acom":     "Acomodos razonables específicos (504/PEI, ELL, dotados)",
-    "fl-strat":    "Estrategias de instrucción diferenciada (mínimo 3)",
+    "fl-integ":    [{ "dates": { "wholeWeek": true }, "materias": ["Matematicas"] }],
+    "fl-innov":    [{ "dates": { "wholeWeek": true }, "tipos": ["STEM"] }],
+    "fl-eval":     [{ "dates": { "wholeWeek": true }, "diagnostica": ["Preprueba"], "formativa": ["Lista de cotejo"], "sumativa": ["Prueba corta"] }],
+    "fl-acom":     [{ "dates": { "wholeWeek": true }, "categoriaAcomodo": "LSP", "acomodos": ["Uso de apoyos visuales y traduccion"] }],
+    "fl-strat":    [{ "dates": { "wholeWeek": true }, "categoria": "Proceso", "tipo": "Grupos de trabajo flexibles" }],
 ${improvementSectionsSchema}
-    "fl-mats":     "Materiales necesarios (lista en bullets)",
-    "fl-obs":      "Observaciones / notas para el maestro",
-    "fl-reflex":   "Reflexión de praxis - preguntas para autoevaluación"
+    "fl-mats":     [{ "dates": { "wholeWeek": true }, "materiales": ["Texto del curso", "Recursos tecnologicos (materiales/equipo)"] }],
+    "fl-obs":      [{ "dates": { "wholeWeek": true }, "text": "Observaciones / notas para el maestro" }],
+    "fl-reflex":   [{ "dates": { "wholeWeek": true }, "incluirReflexion": "Si", "text": "Reflexion de praxis..." }]
   }
 }
+
+Las secciones que en la plataforma son checkboxes, radios o selects DEBEN devolverse como arreglos de objetos estructurados, no como parrafos. Usa solamente estas llaves para esas secciones:
+- fl-integ: materias[]
+- fl-innov: tipos[]
+- fl-eval: diagnostica[], formativa[], sumativa[]
+- fl-acom: categoriaAcomodo, acomodos[]
+- fl-strat: categoria, tipo, otroTipo opcional
+- fl-plan1: modos[], incluye[]
+- fl-mats: materiales[]
+- fl-reflex: incluirReflexion, text
+- fl-obs: text
+- gl-forums: titulo, descripcion
+No incluyas gl-tasks si no tienes IDs reales de asignaciones existentes.
 
 Responde ÚNICAMENTE con el JSON. Sin explicaciones antes ni después. Sin markdown.`;
 
