@@ -417,9 +417,13 @@ function formatPlanDate(date) {
   return `${mm}/${dd}/${date.getFullYear()}`;
 }
 
-function buildPlanDays(openDate) {
+function buildPlanDays(openDate, closeDate) {
   const base = parsePlanDate(openDate);
-  return Array.from({ length: 7 }, (_, i) => {
+  const end = closeDate ? parsePlanDate(closeDate) : null;
+  const dayCount = end && end >= base
+    ? Math.min(14, Math.max(1, Math.round((end - base) / 86400000) + 1))
+    : 5;
+  return Array.from({ length: dayCount }, (_, i) => {
     const d = new Date(base);
     d.setDate(base.getDate() + i);
     return { label: `DIA ${i + 1}`, date: formatPlanDate(d) };
@@ -1022,16 +1026,22 @@ function CreatePlan({ onBack, onCreated }) {
   const f = k => e => setForm(p => ({ ...p, [k]: e.target.value }));
   async function submit() {
     setSaving(true);
+    const start = normalizePlanDate(form.dateFrom) || formatPlanDate(new Date());
+    const fallbackEnd = new Date(parsePlanDate(start));
+    fallbackEnd.setDate(fallbackEnd.getDate() + 4);
     const saved = await createSavedPlanning({
-      ...MOCK.plans[0],
       PlanId: `plan-${Date.now()}`,
       PlanName: form.name || "Nuevo Plan",
-      SubjectName: form.subject || "Ciencias",
-      LevelCode: form.grade || "5",
+      SubjectName: form.subject || "",
+      LevelCode: form.grade || "",
       GroupName: form.group || "Grupo A",
-      OpenDate: normalizePlanDate(form.dateFrom) || "05/22/2026",
-      CloseDate: normalizePlanDate(form.dateTo) || "05/28/2026",
+      OpenDate: start,
+      CloseDate: normalizePlanDate(form.dateTo) || formatPlanDate(fallbackEnd),
       IsPlanOpen: true,
+      WeekNumber: "",
+      PeriodLabel: "",
+      AcademicYear: "",
+      ClosesOn: "",
       Lessons: [],
       SectionData: {},
     });
@@ -1110,9 +1120,9 @@ function CreatePlan({ onBack, onCreated }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  PLAN DETAIL — pantalla principal del plan abierto
 // ─────────────────────────────────────────────────────────────────────────────
-function makePreviewCells(dayIndex, items) {
-  const cells = Array.from({ length: 7 }, () => []);
-  cells[Math.max(0, Math.min(6, dayIndex))] = items.filter(item => item.desc);
+function makePreviewCells(dayIndex, items, dayCount = 5) {
+  const cells = Array.from({ length: dayCount }, () => []);
+  cells[Math.max(0, Math.min(dayCount - 1, dayIndex))] = items.filter(item => item.desc);
   return cells;
 }
 
@@ -1167,39 +1177,32 @@ function PlanningPreviewCell({ items }) {
 function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setPreviewLessonId }) {
   const printRef = useRef(null);
   const [pdfStatus, setPdfStatus] = useState("");
-  const days = buildPlanDays(plan.OpenDate);
-  const fallbackLesson = {
-    id: "demo",
-    title: "Zonas climaticas",
-    startDate: plan.OpenDate,
-    objective: "",
-    standardCode: "",
-  };
-  const allLessons = lessons.length ? lessons : [fallbackLesson];
+  const days = buildPlanDays(plan.OpenDate, plan.CloseDate);
+  const allLessons = lessons;
   const isAllLessons = previewLessonId === "__all__";
-  const selectedLesson = isAllLessons ? allLessons[0] : (lessons.find(l => String(l.id) === previewLessonId) || allLessons[0]);
-  const previewLessons = isAllLessons ? allLessons : [selectedLesson];
+  const selectedLesson = isAllLessons ? null : lessons.find(l => String(l.id) === previewLessonId);
+  const previewLessons = isAllLessons ? allLessons : (selectedLesson ? [selectedLesson] : []);
 
   function lessonTitleFor(lesson) {
-    return lesson?.title || "Zonas climaticas";
+    return lesson?.title || "Leccion";
   }
 
   function standardsFor(lesson) {
     return lesson?.standards && lesson.standards.length > 0
       ? lesson.standards.join(", ")
-      : (lesson?.standardCode || "Ciencias Terrestres y del Espacio");
+      : (lesson?.standardCode || "");
   }
 
   function cellsForLessons(dayResolver, itemBuilder) {
-    const cells = Array.from({ length: 7 }, () => []);
+    const cells = Array.from({ length: days.length }, () => []);
     previewLessons.forEach((lesson, index) => {
-      const targetDay = Math.max(0, Math.min(6, dayResolver(lesson, index)));
+      const targetDay = Math.max(0, Math.min(days.length - 1, dayResolver(lesson, index)));
       cells[targetDay].push(...itemBuilder(lesson, index).filter(item => item.desc));
     });
     return cells;
   }
   function cellsForCreatableSection(sectionKey, title, mapper, fallbackText) {
-    const cells = Array.from({ length: 7 }, () => []);
+    const cells = Array.from({ length: days.length }, () => []);
     const entries = sectionData[sectionKey];
     if (Array.isArray(entries) && entries.length > 0) {
       entries.forEach(e => {
@@ -1224,7 +1227,7 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
   }
 
   function cellsForTasksSection() {
-    const cells = Array.from({ length: 7 }, () => []);
+    const cells = Array.from({ length: days.length }, () => []);
     const entries = sectionData["gl-tasks"];
     if (Array.isArray(entries) && entries.length > 0) {
       entries.forEach(e => {
@@ -1249,38 +1252,27 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
     { label: "Lecciones", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => [{ title: "Contenido genial", desc: lessonTitleFor(l) }]) },
     {
       label: "Temas transversales",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.transversals ? [{ title: lessonTitleFor(l), desc: l.transversals }] : [
-        { title: lessonTitleFor(l), desc: "Equidad y respeto entre todos los seres humanos" },
-        { title: lessonTitleFor(l), desc: "Educacion para la conciacion ambiental y ecologica" },
-        { title: lessonTitleFor(l), desc: "Tecnologia de la informacion y la comunicacion" },
-      ]),
+      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.transversals ? [{ title: lessonTitleFor(l), desc: l.transversals }] : []),
     },
     { label: "Estandares", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => [{ title: lessonTitleFor(l), desc: standardsFor(l) }]) },
     {
       label: "Expectativas",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => [{ title: lessonTitleFor(l), desc: textOrFallback(l.expectations, textOrFallback(sectionData["fl-plan1"] && Array.isArray(sectionData["fl-plan1"]) ? sectionData["fl-plan1"].map(e => e.modos?.join(", ")).filter(Boolean).join("; ") : "", "Utiliza evidencia cientifica de varias fuentes de informacion para explicar y representar, mediante modelos, la funcion del Sol y los oceanos en el ciclo del agua y en las zonas climaticas de la Tierra.")) }]),
+      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => [{ title: lessonTitleFor(l), desc: l.expectations || l.expectation || "" }]),
     },
     {
       label: "Objetivos",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.objectives ? [{ title: lessonTitleFor(l), desc: l.objectives }] : [
-        { title: lessonTitleFor(l), desc: "Aprendera sobre las zonas climaticas y las esferas de la Tierra." },
-        { title: lessonTitleFor(l), desc: "Desarrollara comprension sobre las caracteristicas y componentes de cada zona climatica." },
-        { title: lessonTitleFor(l), desc: "Valorara la importancia de conservar y proteger el planeta mediante acciones responsables." },
-      ]),
+      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.objectives || l.objective ? [{ title: lessonTitleFor(l), desc: l.objectives || l.objective }] : []),
     },
     {
       label: "Estrategia academica",
-      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.strategy ? [{ title: lessonTitleFor(l), desc: l.strategy }] : [
-        { title: lessonTitleFor(l), desc: "Desarrollo conceptual" },
-        { title: lessonTitleFor(l), desc: "Comprension lectora" },
-      ]),
+      cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.strategy ? [{ title: lessonTitleFor(l), desc: l.strategy }] : []),
     },
-    { label: "Integracion con otras materias", cells: cellsForCreatableSection("fl-integ", "Integracion con otras materias", e => (e.materias || []).join(", "), "Artes Visuales e Ingles") },
-    { label: "Iniciativa o proyecto innovador", cells: cellsForCreatableSection("fl-innov", "Iniciativa o proyecto innovador", e => (e.tipos || []).join(", "), "STEM") },
+    { label: "Integracion con otras materias", cells: cellsForCreatableSection("fl-integ", "Integracion con otras materias", e => (e.materias || []).join(", ")) },
+    { label: "Iniciativa o proyecto innovador", cells: cellsForCreatableSection("fl-innov", "Iniciativa o proyecto innovador", e => (e.tipos || []).join(", ")) },
     { label: "Evaluaciones (Avalúos)", cells: cellsForCreatableSection("fl-eval", "Evaluaciones (Avalúos)", e => [...(e.diagnostica || []), ...(e.formativa || []), ...(e.sumativa || [])].join(", ")) },
     { label: "Acomodos razonables", cells: cellsForCreatableSection("fl-acom", "Acomodos razonables", e => `${e.categoriaAcomodo}: ${(e.acomodos || []).join(", ")}`) },
-    { label: "Estrategias de instruccion diferenciada", cells: cellsForCreatableSection("fl-strat", "Estrategias de instruccion diferenciada", e => `${e.categoria}: ${e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : e.tipo}`, "Instruccion diferenciada por proceso") },
-    { label: "Materiales", cells: cellsForCreatableSection("fl-mats", "Materiales", e => (e.materiales || []).join(", "), "Libro digital, pizarra interactiva y recursos visuales de la leccion.") },
+    { label: "Estrategias de instruccion diferenciada", cells: cellsForCreatableSection("fl-strat", "Estrategias de instruccion diferenciada", e => `${e.categoria}: ${e.tipo === 'Otro' ? (e.otroTipo || 'Otro') : e.tipo}`) },
+    { label: "Materiales", cells: cellsForCreatableSection("fl-mats", "Materiales", e => (e.materiales || []).join(", ")) },
     { label: "Observaciones", cells: cellsForCreatableSection("fl-obs", "Observaciones", e => e.text) },
     { label: "Foros", cells: cellsForCreatableSection("gl-forums", "Foros", e => e.titulo) },
     { label: "Asignaciones", cells: cellsForTasksSection() },
@@ -1762,7 +1754,7 @@ function comparableText(value) {
 function normalizeGeneratedDates(value, plan) {
   if (value?.dates?.wholeWeek || Array.isArray(value?.dates?.days)) return value.dates;
   if (value?.wholeWeek || Array.isArray(value?.days)) return value;
-  const days = buildPlanDays(plan?.OpenDate).map(d => d.date);
+  const days = buildPlanDays(plan?.OpenDate, plan?.CloseDate).map(d => d.date);
   return { wholeWeek: true, days };
 }
 
@@ -2226,7 +2218,7 @@ function DatePickerField({ plan, value, onChange }) {
             type="radio"
             name="ww"
             checked={wholeWeek}
-            onChange={() => onChange({ wholeWeek: true, days: buildPlanDays(plan.OpenDate).map(d => d.date) })}
+            onChange={() => onChange({ wholeWeek: true, days: buildPlanDays(plan.OpenDate, plan.CloseDate).map(d => d.date) })}
             style={{ accentColor: '#3DA8A8' }}
           /> Sí
         </label>
@@ -2531,13 +2523,8 @@ function LessonForm({ plan, lesson, onChange, onCancel, onSave }) {
 function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
   const [section,     setSection]     = useState("cotejo");
   const [sectionData, setSectionData] = useState(plan.SectionData || {});
-  const [lessons,     setLessons]     = useState([
-    ...(Array.isArray(plan.Lessons) ? plan.Lessons : []),
-    ...(!Array.isArray(plan.Lessons) || plan.Lessons.length === 0 ? [
-    { id: 1, title: "Zonas climáticas", startDate: "mar.: 05/26/2026", endDate: "mar.: 05/26/2026", countsForGrade: false, availability: "vie.: 05/22/2026" },
-    ] : []),
-  ]);
-  const [previewLessonId, setPreviewLessonId] = useState("1");
+  const [lessons,     setLessons]     = useState(Array.isArray(plan.Lessons) ? plan.Lessons : []);
+  const [previewLessonId, setPreviewLessonId] = useState("__all__");
   const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
   const [editingName, setEditingName] = useState(false);
@@ -2600,45 +2587,42 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
     if (data.content) setSectionData(p => ({ ...p, [section]: data.content }));
   }
 
+  function mapGeneratedLesson(l, i, seed = Date.now()) {
+    return {
+      id: l.id || `${seed}_${i}`,
+      title: l.title || `Leccion ${i + 1}`,
+      objective: l.objective || "",
+      standardCode: l.standardCode || "",
+      standards: Array.isArray(l.standards) ? l.standards : (l.standardCode ? [l.standardCode] : []),
+      expectations: l.expectations || l.expectation || "",
+      strategy: l.strategy || "",
+      objectives: l.objectives || l.objective || "",
+      units: l.units || "",
+      transversals: l.transversals || "",
+      startDate: l.startDate || plan.OpenDate,
+      endDate: l.endDate || l.startDate || plan.OpenDate,
+      evaluationDate: l.evaluationDate || "",
+      countsForGrade: !!l.countsForGrade,
+      availability: l.startDate || plan.OpenDate,
+      duration: l.duration || "",
+      startActivity: l.startActivity || "",
+      devActivity: l.devActivity || "",
+      endActivity: l.endActivity || "",
+    };
+  }
+
   function applyFullPlan({ lessons: newLessons, sections }) {
-    if (Array.isArray(newLessons) && newLessons.length) {
-      setLessons(prev => [
-        ...prev,
-        ...newLessons.map((l, i) => ({
-          id: Date.now() + i,
-          title: l.title || `Lección ${i + 1}`,
-          objective: l.objective || "",
-          standardCode: l.standardCode || "",
-          startDate: l.startDate || plan.OpenDate,
-          endDate: l.endDate || plan.CloseDate,
-          evaluationDate: l.evaluationDate || "",
-          countsForGrade: !!l.countsForGrade,
-          availability: l.startDate || plan.OpenDate,
-          duration: l.duration || "",
-          startActivity: l.startActivity || "",
-          devActivity: l.devActivity || "",
-          endActivity: l.endActivity || "",
-        })),
-      ]);
-    }
+    const generatedLessons = Array.isArray(newLessons) && newLessons.length
+      ? newLessons.map((l, i) => mapGeneratedLesson(l, i))
+      : [];
+    const nextLessons = generatedLessons.length ? [...lessons, ...generatedLessons] : lessons;
+    if (generatedLessons.length) setLessons(nextLessons);
     if (sections && typeof sections === "object") {
       const nextSections = { ...sectionData, ...sections };
       setSectionData(nextSections);
-      savePlanChanges({ Lessons: Array.isArray(newLessons) && newLessons.length ? [...lessons, ...newLessons.map((l, i) => ({
-        id: Date.now() + i,
-        title: l.title || `Lección ${i + 1}`,
-        objective: l.objective || "",
-        standardCode: l.standardCode || "",
-        startDate: l.startDate || plan.OpenDate,
-        endDate: l.endDate || plan.CloseDate,
-        evaluationDate: l.evaluationDate || "",
-        countsForGrade: !!l.countsForGrade,
-        availability: l.startDate || plan.OpenDate,
-        duration: l.duration || "",
-        startActivity: l.startActivity || "",
-        devActivity: l.devActivity || "",
-        endActivity: l.endActivity || "",
-      }))] : lessons, SectionData: nextSections });
+      savePlanChanges({ Lessons: nextLessons, SectionData: nextSections });
+    } else if (generatedLessons.length) {
+      savePlanChanges({ Lessons: nextLessons });
     }
   }
 

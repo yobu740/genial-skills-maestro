@@ -1128,6 +1128,108 @@ function plainTextFromHtml(value = '') {
     .trim();
 }
 
+function parseUSDate(value) {
+  const m = String(value || '').match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (!m) return null;
+  const date = new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function formatUSDate(date) {
+  return [
+    String(date.getMonth() + 1).padStart(2, '0'),
+    String(date.getDate()).padStart(2, '0'),
+    date.getFullYear(),
+  ].join('/');
+}
+
+function formatUSDateFromAny(value) {
+  const parsed = parseUSDate(value);
+  return parsed ? formatUSDate(parsed) : String(value || '');
+}
+
+function datesBetweenInclusive(dateFrom, dateTo) {
+  const start = parseUSDate(dateFrom);
+  const end = parseUSDate(dateTo);
+  if (!start || !end || end < start) return [];
+  const days = [];
+  const cursor = new Date(start);
+  while (cursor <= end && days.length < 14) {
+    days.push(formatUSDate(cursor));
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return days;
+}
+
+function pickDistributedDate(days, index, total) {
+  if (!days.length) return '';
+  if (total <= 1) return days[0];
+  const slot = Math.round((index * (days.length - 1)) / (total - 1));
+  return days[Math.max(0, Math.min(days.length - 1, slot))];
+}
+
+function normalizeSectionDates(sections, validDays) {
+  if (!sections || typeof sections !== 'object' || !validDays.length) return sections;
+  const valid = new Set(validDays);
+  const normalizeDates = (dates) => {
+    if (!dates || typeof dates !== 'object') return { wholeWeek: true, days: validDays };
+    if (dates.wholeWeek) return { ...dates, wholeWeek: true, days: validDays };
+    const days = Array.isArray(dates.days)
+      ? dates.days.map(formatUSDateFromAny).filter(day => valid.has(day))
+      : [];
+    return days.length ? { ...dates, wholeWeek: false, days } : { wholeWeek: true, days: validDays };
+  };
+  const next = {};
+  for (const [key, value] of Object.entries(sections)) {
+    if (Array.isArray(value)) {
+      next[key] = value.map(entry => (
+        entry && typeof entry === 'object' ? { ...entry, dates: normalizeDates(entry.dates) } : entry
+      ));
+    } else {
+      next[key] = value;
+    }
+  }
+  return next;
+}
+
+function normalizeGeneratedPlan(plan, { dateFrom, dateTo, standards = [] } = {}) {
+  const days = datesBetweenInclusive(dateFrom, dateTo);
+  const lessons = Array.isArray(plan?.lessons) ? plan.lessons : [];
+  const expectationByCode = new Map(
+    standards
+      .map(s => [String(s.code || '').trim().toLowerCase(), s.expectation || s.description || ''])
+      .filter(([code]) => code)
+  );
+  const normalizedLessons = lessons.map((lesson, index) => {
+    const standardCodes = Array.isArray(lesson.standards)
+      ? lesson.standards
+      : String(lesson.standardCode || '').split(/[,;]/).map(s => s.trim()).filter(Boolean);
+    const firstCode = String(lesson.standardCode || standardCodes[0] || '').trim();
+    const matchedExpectation = expectationByCode.get(firstCode.toLowerCase()) || '';
+    const startDate = days.length
+      ? pickDistributedDate(days, index, lessons.length)
+      : formatUSDateFromAny(lesson.startDate || dateFrom);
+    const startIdx = days.indexOf(startDate);
+    const evaluationDate = days.length && startIdx >= 0
+      ? days[Math.min(days.length - 1, startIdx + 1)]
+      : formatUSDateFromAny(lesson.evaluationDate || startDate);
+    return {
+      ...lesson,
+      standardCode: firstCode,
+      standards: standardCodes.length ? standardCodes : (firstCode ? [firstCode] : []),
+      expectations: lesson.expectations || lesson.expectation || matchedExpectation,
+      startDate,
+      endDate: startDate,
+      evaluationDate,
+    };
+  });
+  return {
+    ...plan,
+    lessons: normalizedLessons,
+    sections: normalizeSectionDates(plan?.sections, days),
+  };
+}
+
 /**
  * /api/generate-full-plan — Genera un plan semanal completo combinando:
  *   - Estándares DEPR de la materia + grado
@@ -1277,6 +1379,7 @@ ${exampleBlock}
       "title": "Título de la lección",
       "objective": "Objetivo de aprendizaje",
       "standardCode": "5.CT2.1",
+      "expectations": "Texto completo de la expectativa DEPR correspondiente al standardCode",
       "startDate": "MM/DD/YYYY",
       "endDate": "MM/DD/YYYY",
       "evaluationDate": "MM/DD/YYYY",
@@ -1333,6 +1436,12 @@ ${unit}
 Regla obligatoria de fechas para pruebas y avaluos:
 ${timingRuleClean}
 
+Regla obligatoria de calendario:
+Usa solamente fechas entre ${dateFrom || 'la fecha inicial'} y ${dateTo || 'la fecha final'} inclusive. No inventes sabados, domingos ni fechas fuera del rango. Distribuye las lecciones proporcionalmente en ese rango; si hay menos lecciones que dias, deja dias sin leccion antes de repetir o rellenar.
+
+Regla obligatoria de expectativas:
+Cada leccion debe incluir "standardCode" y "expectations". "expectations" debe ser el texto completo de la expectativa DEPR asociada al codigo seleccionado, no una estrategia ni una actividad.
+
 Regla obligatoria para actividades de la leccion:
 Si una leccion recomendada viene de Athenas y tiene "Descripcion Athenas", analiza esa descripcion para llenar startActivity, devActivity y endActivity. Usa contenido textual concreto de esa descripcion cuando existan actividades claras; si el texto no trae una division explicita, infiere Inicio, Desarrollo y Cierre sin inventar contenido ajeno al tema.
 
@@ -1369,9 +1478,11 @@ Sugiere ${Math.max(3, Math.min(8, weeks * 3))} lecciones distribuidas en el rang
       delete plan.sections['fl-plan2'];
     }
 
+    const normalizedPlan = normalizeGeneratedPlan(plan, { dateFrom, dateTo, standards });
+
     res.json({
       ok: true,
-      plan,
+      plan: normalizedPlan,
       meta: {
         model,
         standardsUsed:  standards.length,
