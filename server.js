@@ -21,8 +21,17 @@ if (!OPENROUTER_API_KEY) {
 
 app.use(express.json({ limit: '1mb' }));
 
-// In production, serve the built Vite app from /dist
-app.use(express.static(path.join(__dirname, 'dist')));
+// In production, serve the built Vite app from /dist. Do not cache index.html:
+// after a deploy, a stale HTML file can point to hashed assets that no longer exist.
+app.use(express.static(path.join(__dirname, 'dist'), {
+  setHeaders(res, filePath) {
+    if (path.basename(filePath) === 'index.html') {
+      res.setHeader('Cache-Control', 'no-store');
+    } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+  },
+}));
 
 /**
  * Weekly plan files (PDF/DOCX/PPTX) are large (~6GB). They are NOT in the repo.
@@ -1619,6 +1628,7 @@ app.get('/api/health', (_req, res) => res.json({
 app.get(/^\/(?!api\/|plans-files\/|icons\/|assets\/).*/, (_req, res, next) => {
   const indexPath = path.join(__dirname, 'dist', 'index.html');
   if (!fsSync.existsSync(indexPath)) return next();
+  res.setHeader('Cache-Control', 'no-store');
   res.sendFile(indexPath);
 });
 
