@@ -29,6 +29,12 @@ const ROOTS = [
 const SUBJECT_MAP = {
   'EDU-FIS':       'Educación Física',
   'ENGLISH':       'Inglés',
+  'MATE':          'Matemáticas',
+  'MAT':           'Matemáticas',
+  'MATH':          'Matemáticas',
+  'CIENCIAS':      'Ciencias',
+  'ESPANOL':       'Español',
+  'ADQLENGUA':     'Español',
   'SOCIALES':      'Estudios Sociales',
   'SALUD':         'Salud',
   'BA-ARTES':      'Artes Visuales',

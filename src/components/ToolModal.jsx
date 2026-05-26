@@ -291,7 +291,7 @@ function mdToHtml(md) {
   const stash = (latex, displayMode) => {
     const idx = mathParts.length;
     mathParts.push({ latex, displayMode });
-    return ` MATH${idx} `;
+    return `__GSM_MATH_${idx}__`;
   };
   let work = md
     // $$...$$ block (greedy across lines)
@@ -355,7 +355,7 @@ function mdToHtml(md) {
   }).join('\n');
 
   // Re-insert KaTeX-rendered math at the placeholder positions
-  html = html.replace(/\s?MATH(\d+)\s?/g, (_, n) => {
+  html = html.replace(/__GSM_MATH_(\d+)__/g, (_, n) => {
     const m = mathParts[Number(n)];
     if (!m) return '';
     const rendered = renderMath(m.latex, m.displayMode);
@@ -414,7 +414,7 @@ function parseEditableSlides(markdown) {
     const heading = line.match(/^(#{1,3})\s+(.+)/);
     if (heading) {
       flush();
-      current = { title: heading[2].replace(/\*\*/g, '').trim(), body: [] };
+      current = { title: stripSlideLabels(heading[2]).replace(/\*\*/g, '').trim(), body: [] };
       continue;
     }
     if (!current) current = { title: 'Contenido', body: [] };
@@ -422,6 +422,10 @@ function parseEditableSlides(markdown) {
   }
   flush();
   return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }];
+}
+
+function stripSlideLabels(text = '') {
+  return String(text).replace(/^\s*(?:diapositiva|dispositiva|slide)\s*\d+\s*[:.)-]?\s*/i, '');
 }
 
 function slidesToMarkdown(slides) {
@@ -444,6 +448,8 @@ const DEFAULT_SLIDE_LAYOUT = {
   body: { x: 100, y: 178, w: 1080, h: 438 },
   image: { x: 824, y: 278, w: 320, h: 230 },
 };
+const FONT_OPTIONS = ['Poppins', 'Sora', 'Overlock', 'Georgia', 'Verdana'];
+const DEFAULT_SLIDE_STYLE = { fontFace: 'Poppins', bodySize: 18, titleSize: 30 };
 
 function parseSlideLayout(raw) {
   if (!raw) return defaultSlideLayout();
@@ -456,6 +462,26 @@ function parseSlideLayout(raw) {
 
 function defaultSlideLayout() {
   return normalizeSlideLayout(DEFAULT_SLIDE_LAYOUT);
+}
+
+function parseSlideStyle(raw) {
+  if (!raw) return defaultSlideStyle();
+  try {
+    return normalizeSlideStyle(JSON.parse(raw));
+  } catch {
+    return defaultSlideStyle();
+  }
+}
+
+function defaultSlideStyle() {
+  return normalizeSlideStyle(DEFAULT_SLIDE_STYLE);
+}
+
+function normalizeSlideStyle(style = {}) {
+  const bodySize = clampNumber(style?.bodySize, 13, 26, DEFAULT_SLIDE_STYLE.bodySize);
+  const titleSize = clampNumber(style?.titleSize, 20, 42, Math.max(bodySize + 10, DEFAULT_SLIDE_STYLE.titleSize));
+  const fontFace = FONT_OPTIONS.includes(style?.fontFace) ? style.fontFace : DEFAULT_SLIDE_STYLE.fontFace;
+  return { fontFace, bodySize, titleSize };
 }
 
 function normalizeSlideLayout(layout = {}) {
@@ -591,13 +617,13 @@ function htmlToMarkdown(html) {
 }
 
 function cleanGeneratedOutput(text = '') {
-  return String(text).replace(
+  return stripEditorMetadata(String(text).replace(
     /^(\s*(?:#{1,6}\s*|[-*]\s+|\d+[.)]\s+)?)\s*(?:diapositiva|dispositiva|slide)\s*\d+\s*[:.)-]?\s*/gim,
     (_, prefix = '') => prefix
-  );
+  ).replace(/^\s*:\s*(?:K|Pre-K|Kinder|[1-9](?:ro|do|to|mo)?|1[0-2](?:mo)?)\s*$/gim, ''));
 }
 
-function SlideBodyEditor({ html, onChange, align, slideIndex }) {
+function SlideBodyEditor({ html, onChange, align, slideIndex, style }) {
   const editorRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -617,7 +643,12 @@ function SlideBodyEditor({ html, onChange, align, slideIndex }) {
       ref={editorRef}
       contentEditable
       className="tm-slide-body-input rich-editor"
-      style={{ textAlign: align, outline: 'none' }}
+      style={{
+        textAlign: align,
+        outline: 'none',
+        fontFamily: `${style.fontFace}, system-ui, sans-serif`,
+        fontSize: `${style.bodySize}px`,
+      }}
       onInput={onInput}
       placeholder="Haz clic aquí para añadir texto o viñetas..."
     />
@@ -700,6 +731,11 @@ function SlideWorkspace({ value, onChange }) {
     updateSlide(active, { layout: { ...layout, [part]: normalizeBox(box, layout[part]) } });
   }
 
+  function updateSlideStyle(patch) {
+    const style = normalizeSlideStyle(current?.style || defaultSlideStyle());
+    updateSlide(active, { style: normalizeSlideStyle({ ...style, ...patch }) });
+  }
+
   function beginImageDrag(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -726,13 +762,13 @@ function SlideWorkspace({ value, onChange }) {
   }
 
   function addSlide() {
-    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left', layout: defaultSlideLayout() }]));
+    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
     setActive(slides.length);
   }
 
   function removeSlide(index) {
     const next = slides.filter((_, i) => i !== index);
-    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left', layout: defaultSlideLayout() }]));
+    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
     setActive(Math.max(0, index - 1));
   }
 
@@ -790,6 +826,7 @@ function SlideWorkspace({ value, onChange }) {
     [current?.body, active]
   );
   const currentLayout = normalizeSlideLayout(current?.layout || defaultSlideLayout());
+  const currentStyle = normalizeSlideStyle(current?.style || defaultSlideStyle());
 
   return (
     <div className="tm-slide-workspace tm-presentation-studio">
@@ -844,15 +881,24 @@ function SlideWorkspace({ value, onChange }) {
                     ↷
                   </button>
                   <div className="tm-toolbar-divider" />
-                  <select className="tm-toolbar-select" value="Overlock" onChange={() => {}} title="Tipografia">
-                    <option>Overlock</option>
-                    <option>Sora</option>
-                    <option>Arial</option>
+                  <select
+                    className="tm-toolbar-select"
+                    value={currentStyle.fontFace}
+                    onChange={(e) => updateSlideStyle({ fontFace: e.target.value })}
+                    title="Tipografia"
+                  >
+                    {FONT_OPTIONS.map(font => <option key={font} value={font}>{font}</option>)}
                   </select>
-                  <select className="tm-toolbar-size" value="28" onChange={() => {}} title="Tamano de texto">
-                    <option value="22">22</option>
-                    <option value="28">28</option>
-                    <option value="34">34</option>
+                  <select
+                    className="tm-toolbar-size"
+                    value={currentStyle.bodySize}
+                    onChange={(e) => {
+                      const bodySize = Number(e.target.value);
+                      updateSlideStyle({ bodySize, titleSize: Math.min(42, bodySize + 12) });
+                    }}
+                    title="Tamano de texto"
+                  >
+                    {[14, 16, 18, 20, 22, 24, 26].map(size => <option key={size} value={size}>{size}</option>)}
                   </select>
                   <div className="tm-toolbar-divider" />
                   <button
@@ -971,7 +1017,11 @@ function SlideWorkspace({ value, onChange }) {
                       value={current.title}
                       onChange={(e) => updateSlide(active, { title: e.target.value })}
                       placeholder="Título de la diapositiva"
-                      style={{ textAlign: current.align || 'left' }}
+                      style={{
+                        textAlign: current.align || 'left',
+                        fontFamily: `${currentStyle.fontFace}, system-ui, sans-serif`,
+                        fontSize: `${currentStyle.titleSize}px`,
+                      }}
                     />
                   </MovableSlideBox>
                   <MovableSlideBox
@@ -984,6 +1034,7 @@ function SlideWorkspace({ value, onChange }) {
                       html={currentBodyHtml}
                       align={current.align || 'left'}
                       slideIndex={active}
+                      style={currentStyle}
                       onChange={(newHtml) => {
                         const newMarkdown = htmlToMarkdown(newHtml);
                         updateSlide(active, { body: newMarkdown });
@@ -1199,6 +1250,7 @@ function SlideWorkspace({ value, onChange }) {
 
 function DocumentWorkspace({ value, onChange }) {
   const [docMode, setDocMode] = React.useState('edit'); // edit | preview
+  const visibleValue = stripEditorMetadata(value);
 
   return (
     <div className="tm-doc-workspace">
@@ -1224,14 +1276,14 @@ function DocumentWorkspace({ value, onChange }) {
         {docMode === 'edit' && (
           <textarea
             className="tm-doc-textarea"
-            value={value}
+            value={visibleValue}
             onChange={(e) => onChange(e.target.value)}
             spellCheck
             placeholder="Edita el contenido en formato Markdown aquí..."
           />
         )}
         {docMode === 'preview' && (
-          <div className="tm-doc-preview tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(value) }} />
+          <div className="tm-doc-preview tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(visibleValue) }} />
         )}
       </div>
     </div>
@@ -1239,6 +1291,7 @@ function DocumentWorkspace({ value, onChange }) {
 }
 
 function WorksheetWorkspace({ value, onChange, title }) {
+  const visibleValue = stripEditorMetadata(value);
   return (
     <div className="tm-worksheet-workspace">
       <div className="tm-paper-preview">
@@ -1249,13 +1302,13 @@ function WorksheetWorkspace({ value, onChange, title }) {
           </header>
           <div
             className="tm-paper-body"
-            dangerouslySetInnerHTML={{ __html: mdToHtml(value) }}
+            dangerouslySetInnerHTML={{ __html: mdToHtml(visibleValue) }}
           />
         </div>
       </div>
       <label className="tm-work-editor">
         <span>Contenido editable de la hoja</span>
-        <textarea value={value} onChange={(e) => onChange(e.target.value)} />
+        <textarea value={visibleValue} onChange={(e) => onChange(e.target.value)} />
       </label>
     </div>
   );

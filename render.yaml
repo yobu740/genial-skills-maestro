@@ -16,6 +16,10 @@ services:
         sync: false                 # ← MUST be set in Render dashboard (never committed)
       - key: REPLICATE_API_TOKEN
         sync: false                 # ← For image generation (Lectura por Nivel, Diferenciar Contenido)
+      - key: SUPABASE_URL
+        sync: false                 # Required for shared assignments/plannings storage.
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false                 # Required server-side only. Use the Supabase service_role key, not anon.
       - key: PORT
         value: 8001
       - key: WEEKLY_PLANS_BASE_URL

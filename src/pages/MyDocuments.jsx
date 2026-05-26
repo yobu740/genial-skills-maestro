@@ -18,6 +18,13 @@ function formatDate(value) {
   }).format(new Date(value));
 }
 
+function stripEditorMetadata(text = '') {
+  return String(text)
+    .replace(/<!--\s*(?:layout|style):\s*[\s\S]*?-->/gi, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 export default function MyDocuments() {
   const [docs, setDocs] = React.useState(() => listDocuments());
   const [query, setQuery] = React.useState('');
@@ -133,7 +140,7 @@ export default function MyDocuments() {
             >
               <span className="docs-item-title">{doc.title}</span>
               <span className="docs-item-meta">{doc.toolTitle} · {formatDate(doc.updatedAt)}</span>
-              <span className="docs-item-preview">{(doc.content || '').slice(0, 150)}</span>
+              <span className="docs-item-preview">{stripEditorMetadata(doc.content || '').slice(0, 150)}</span>
             </button>
           ))}
           {!filtered.length && (
@@ -170,7 +177,7 @@ export default function MyDocuments() {
                   <button type="button" className="danger" onClick={removeActive}>🗑️ Borrar</button>
                 </div>
               </div>
-              <pre className="docs-content">{active.content}</pre>
+              <pre className="docs-content">{stripEditorMetadata(active.content)}</pre>
             </>
           ) : (
             <div className="docs-empty">

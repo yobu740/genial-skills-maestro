@@ -1571,8 +1571,8 @@ a { color: inherit; text-decoration: none; }
 }
 .tm-slide-drag-handle {
   position: absolute;
-  left: 0;
-  top: -24px;
+  left: 8px;
+  top: 8px;
   height: 22px;
   border: 1px solid rgba(39, 70, 108, 0.18);
   background: rgba(255,255,255,.94);
@@ -1584,7 +1584,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: .04em;
   text-transform: uppercase;
   cursor: move;
-  opacity: 0;
+  opacity: .9;
   z-index: 8;
   box-shadow: 0 6px 18px rgba(39,70,108,.12);
 }
@@ -3881,14 +3881,11 @@ a { color: inherit; text-decoration: none; }
 
 .tm-presentation-studio .tm-slide-title-input {
   color: #263875;
-  font-family: 'Sora', system-ui, sans-serif;
-  font-size: clamp(24px, 2.4vw, 36px);
   letter-spacing: 0;
 }
 
 .tm-presentation-studio .tm-slide-body-input.rich-editor {
   color: #454d59;
-  font-size: clamp(15px, 1.45vw, 22px);
   line-height: 1.34;
 }
 

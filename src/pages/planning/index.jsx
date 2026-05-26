@@ -508,9 +508,13 @@ async function fetchSavedAssignments() {
     const res = await fetch("/api/assignments");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    return { assignments: data.assignments?.length ? data.assignments.map(normalizeAssignment) : localAssignments, source: data.source || "supabase" };
-  } catch {
-    return { assignments: localAssignments, source: "local" };
+    return {
+      assignments: data.assignments?.length ? data.assignments.map(normalizeAssignment) : localAssignments,
+      source: data.source || "supabase",
+      warning: data.warning || "",
+    };
+  } catch (error) {
+    return { assignments: localAssignments, source: "local", warning: String(error?.message || error) };
   }
 }
 
@@ -791,8 +795,13 @@ function PlanningSelect({ onEnterAssignments, onEnterPlanning }) {
 // ─────────────────────────────────────────────────────────────────────────────
 //  ASSIGNMENT LIST
 // ─────────────────────────────────────────────────────────────────────────────
-function AssignmentList({ onBack, onCreate, assignments = [], loading = false, source = "supabase" }) {
+function AssignmentList({ onBack, onCreate, assignments = [], loading = false, source = "supabase", warning = "" }) {
   const rows = assignments.length ? assignments : MOCK.assignments;
+  const storageMessage = source === "local"
+    ? "Modo local: las asignaciones se guardan en este navegador hasta que Supabase este disponible."
+    : source === "supabase-error"
+      ? `Supabase esta configurado, pero no se pudo leer la tabla de asignaciones: ${warning || "revise permisos o tablas."}`
+      : "";
   return (
     <div className="wrapper-principal-container animated delay-05s fadeIn">
       <div className="double-border--principal">
@@ -803,7 +812,7 @@ function AssignmentList({ onBack, onCreate, assignments = [], loading = false, s
         <button className="pl btn-base btn-regular" onClick={onCreate}>+ Crear asignación</button>
       </div>
       {loading && <p style={{ fontSize: 13, color: "#555", marginBottom: 12 }}>Cargando asignaciones guardadas...</p>}
-      {!loading && source === "local" && <p style={{ fontSize: 12, color: "#c3902a", marginBottom: 12 }}>Modo local: las asignaciones se guardan en este navegador hasta que Supabase este disponible.</p>}
+      {!loading && storageMessage && <p style={{ fontSize: 12, color: "#c3902a", marginBottom: 12 }}>{storageMessage}</p>}
       <table className="ppalTable">
         <thead><tr><th>Título</th><th>Publicado</th><th>Fecha de creación</th><th></th></tr></thead>
         <tbody>
@@ -3194,6 +3203,7 @@ export default function PlanningModule() {
   const [assignments, setAssignments] = useState(MOCK.assignments);
   const [assignmentsLoading, setAssignmentsLoading] = useState(false);
   const [assignmentsSource, setAssignmentsSource] = useState("supabase");
+  const [assignmentsWarning, setAssignmentsWarning] = useState("");
 
   useEffect(() => {
     let cancelled = false;
@@ -3210,10 +3220,11 @@ export default function PlanningModule() {
   useEffect(() => {
     let cancelled = false;
     setAssignmentsLoading(true);
-    fetchSavedAssignments().then(({ assignments: saved, source }) => {
+    fetchSavedAssignments().then(({ assignments: saved, source, warning }) => {
       if (cancelled) return;
       setAssignments(saved.length ? saved : MOCK.assignments);
       setAssignmentsSource(source);
+      setAssignmentsWarning(warning || "");
       setAssignmentsLoading(false);
     });
     return () => { cancelled = true; };
@@ -3238,7 +3249,7 @@ export default function PlanningModule() {
     <>
       <style>{GENIAL_CSS}</style>
       {view === "select"             && <PlanningSelect onEnterAssignments={() => setView("assignment-list")} onEnterPlanning={() => setView("planning-list")} />}
-      {view === "assignment-list"    && <AssignmentList assignments={assignments} loading={assignmentsLoading} source={assignmentsSource} onBack={() => setView("select")} onCreate={() => setView("assignment-manager")} />}
+      {view === "assignment-list"    && <AssignmentList assignments={assignments} loading={assignmentsLoading} source={assignmentsSource} warning={assignmentsWarning} onBack={() => setView("select")} onCreate={() => setView("assignment-manager")} />}
       {view === "assignment-manager" && <AssignmentManager onBack={() => setView("assignment-list")} onSaved={upsertAssignment} />}
       {view === "planning-list"      && <PlanningList plans={plans} loading={plansLoading} source={plansSource} onBack={() => setView("select")} onOpenTemplates={() => setView("weekly-templates")} onCreatePlan={() => setView("create-plan")} onOpenPlan={p => { setPlan(p); setView("plan-detail"); }} />}
       {view === "weekly-templates"   && <div className="wrapper-principal-container animated delay-05s fadeIn"><div className="double-border--principal"><button className="btn-back col-no-padding-left" onClick={() => setView("planning-list")}>← Atrás</button></div><WeeklyPlansTemplates /></div>}

@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SECRET_KEY;
 
 if (!OPENROUTER_API_KEY) {
   console.error('Missing OPENROUTER_API_KEY in .env');
@@ -503,7 +503,7 @@ app.get('/api/assignments', async (_req, res) => {
     res.json({ assignments: (rows || []).map(mapAssignmentRow) });
   } catch (e) {
     console.warn('[assignments] Falling back to local-only mode:', e.message || e);
-    res.json({ assignments: [], source: 'local', warning: String(e.message || e) });
+    res.json({ assignments: [], source: 'supabase-error', warning: String(e.message || e) });
   }
 });
 
@@ -703,13 +703,23 @@ function normalizeSubjectName(value) {
 }
 
 function normalizeGradeCode(value) {
-  return String(value || '').replace(/\D/g, '');
+  const raw = String(value || '').trim().toLowerCase();
+  if (/^(k|kindergarten|kinder|pre-k|prek|pk|p)$/.test(raw)) return raw.startsWith('pre') || raw === 'pk' || raw === 'p' ? 'pk' : 'k';
+  return raw.replace(/\D/g, '');
 }
 
 function unitSortValue(unit) {
   const text = String(unit?.code || unit?.unit || unit?.id || '');
   const number = Number(text.match(/\d+(\.\d+)?/)?.[0]);
   return Number.isFinite(number) ? number : 999;
+}
+
+function findFewshotExample(examples = [], subject, grade) {
+  const selectedSubject = normalizeSubjectName(subject);
+  const selectedGrade = normalizeGradeCode(grade);
+  const sameSubject = examples.filter(example => normalizeSubjectName(example.subject) === selectedSubject);
+  if (!sameSubject.length) return examples[0] || null;
+  return sameSubject.find(example => normalizeGradeCode(example.scope || example.grade) === selectedGrade) || sameSubject[0];
 }
 
 /**
@@ -788,42 +798,48 @@ app.get('/api/curriculum-units', async (req, res) => {
       byId.set(id, { ...unit, id, source: 'curated' });
     }
 
-    const hasCuratedMatch = byId.size > 0 && selectedSubject && selectedGrade;
-    if (!hasCuratedMatch) {
-      for (const plan of idx) {
-        const unitNumber = String(plan.unit || '').trim();
-        if (!unitNumber) continue;
-        const planSubject = normalizeSubjectName(plan.subject);
-        const planGrade = normalizeGradeCode(plan.scope);
-        if (selectedSubject && planSubject !== selectedSubject) continue;
-        if (selectedGrade && planGrade !== selectedGrade) continue;
+    for (const plan of idx) {
+      const unitNumber = String(plan.unit || '').trim();
+      if (!unitNumber) continue;
+      const planSubject = normalizeSubjectName(plan.subject);
+      const planGrade = normalizeGradeCode(plan.scope);
+      if (selectedSubject && planSubject !== selectedSubject) continue;
+      if (selectedGrade && planGrade !== selectedGrade) continue;
 
-        const id = `IDX_${planSubject}_${planGrade}_${unitNumber}`.replace(/\s+/g, '_');
-        if (byId.has(id)) {
-          const existing = byId.get(id);
-          existing.resourcesCount = (existing.resourcesCount || 0) + 1;
-          continue;
-        }
-        byId.set(id, {
-          id,
-          code: unitNumber,
-          subject: plan.subject,
-          grade: plan.scope,
-          title: `Unidad ${unitNumber}`,
-          weeks: null,
-          startWeek: null,
-          endWeek: null,
-          transferObjectives: [],
-          acquisitionObjectives: [],
-          essentialQuestions: [],
-          standards: [],
-          themes: [],
-          vocabulary: [],
-          resources: [],
-          resourcesCount: 1,
-          source: 'weekly-plans-index',
-        });
+      const matchingCurated = [...byId.values()].find(unit => {
+        const unitTail = String(unit.code || unit.unit || '').split(/[._-]/).filter(Boolean).pop();
+        return unitTail === unitNumber;
+      });
+      if (matchingCurated) {
+        matchingCurated.resourcesCount = (matchingCurated.resourcesCount || 0) + 1;
+        continue;
       }
+
+      const id = `IDX_${planSubject}_${planGrade}_${unitNumber}`.replace(/\s+/g, '_');
+      if (byId.has(id)) {
+        const existing = byId.get(id);
+        existing.resourcesCount = (existing.resourcesCount || 0) + 1;
+        continue;
+      }
+      byId.set(id, {
+        id,
+        code: unitNumber,
+        subject: plan.subject,
+        grade: plan.scope,
+        title: `Unidad ${unitNumber}`,
+        weeks: null,
+        startWeek: null,
+        endWeek: null,
+        transferObjectives: [],
+        acquisitionObjectives: [],
+        essentialQuestions: [],
+        standards: [],
+        themes: [],
+        vocabulary: [],
+        resources: [],
+        resourcesCount: 1,
+        source: 'weekly-plans-index',
+      });
     }
 
     const units = [...byId.values()].sort((a, b) => unitSortValue(a) - unitSortValue(b) || String(a.title).localeCompare(String(b.title)));
@@ -900,8 +916,8 @@ app.get('/api/fewshot-plans', async (req, res) => {
     const fs = await loadFewshot();
     let list = fs;
     const { subject, scope } = req.query;
-    if (subject) list = list.filter(p => (p.subject || '').toLowerCase() === String(subject).toLowerCase());
-    if (scope)   list = list.filter(p => (p.scope || '')   === String(scope));
+    if (subject) list = list.filter(p => normalizeSubjectName(p.subject) === normalizeSubjectName(subject));
+    if (scope)   list = list.filter(p => normalizeGradeCode(p.scope) === normalizeGradeCode(scope));
     res.json({ count: list.length, examples: list });
   } catch (e) {
     res.status(500).json({ error: String(e) });
@@ -1125,7 +1141,7 @@ app.post('/api/generate-full-plan', async (req, res) => {
 
     // 3) Few-shot example
     const fewshot = await loadFewshot().catch(() => []);
-    const example = fewshot.find(e => (e.subject || '').toLowerCase() === subject.toLowerCase()) || fewshot[0];
+    const example = findFewshotExample(fewshot, subject, grade);
     const exampleBlock = example
       ? `## Ejemplo de plan DEPR real del distrito (referencia de formato/estilo)\nMateria: ${example.subject} · Grado ${example.scope}\n\n"""\n${example.text.slice(0, 2200)}\n"""`
       : '';
@@ -1466,12 +1482,41 @@ app.post('/api/generate-image', async (req, res) => {
   }
 });
 
+app.get('/api/storage-health', async (_req, res) => {
+  const configured = !!(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY);
+  const checks = {
+    teacher_assignments: { ok: false, error: configured ? null : 'Supabase is not configured.' },
+    teacher_plannings: { ok: false, error: configured ? null : 'Supabase is not configured.' },
+  };
+
+  if (configured) {
+    for (const table of Object.keys(checks)) {
+      try {
+        await supabaseRequest(table, { query: '?select=id&limit=1' });
+        checks[table] = { ok: true, error: null };
+      } catch (e) {
+        checks[table] = { ok: false, error: String(e.message || e) };
+      }
+    }
+  }
+
+  res.json({
+    ok: configured && Object.values(checks).every(check => check.ok),
+    configured,
+    hasUrl: !!SUPABASE_URL,
+    hasServiceRoleKey: !!SUPABASE_SERVICE_ROLE_KEY,
+    checks,
+  });
+});
+
 app.get('/api/health', (_req, res) => res.json({
   ok: true,
   env: {
     hasOpenRouter:      !!OPENROUTER_API_KEY,
     hasReplicate:       !!REPLICATE_API_TOKEN,
     hasSupabase:        !!(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY),
+    hasSupabaseUrl:     !!SUPABASE_URL,
+    hasSupabaseServiceRoleKey: !!SUPABASE_SERVICE_ROLE_KEY,
     weeklyPlansBaseUrl: R2_BASE || '(local)',
   },
 }));
