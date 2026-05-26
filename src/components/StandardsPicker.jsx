@@ -76,11 +76,18 @@ export default function StandardsPicker({ subject, grade, value = [], onChange }
 
   function clear() { onChange?.([]); }
 
-  // Empty state — no subject/grade yet
+  // When neither subject nor grade are set (and there's no way to set them
+  // from the parent form) the picker can't do anything useful — render nothing
+  // so the user doesn't get an unsatisfiable "Elige materia y grado" warning
+  // in tools that don't expose those fields.
+  if (!subject && !grade) return null;
+
+  // Only one of (subject, grade) is set — show a focused hint about what's still missing.
   if (!subject || !grade) {
+    const missing = !subject ? 'materia' : 'grado';
     return (
       <div className="sp-hint">
-        Elige <b>materia</b> y <b>grado</b> arriba para cargar los estándares DEPR.
+        Elige <b>{missing}</b> arriba para cargar los estándares DEPR.
       </div>
     );
   }

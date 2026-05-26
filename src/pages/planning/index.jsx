@@ -2220,7 +2220,7 @@ function AIAssistButton({ onText, fieldLabel, aiContext }) {
       const r = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'anthropic/claude-haiku-4.5', system: sys, user }),
+        body: JSON.stringify({ model: 'openai/gpt-4o-mini', system: sys, user }),
       });
       if (!r.ok || !r.body) throw new Error(`HTTP ${r.status}`);
       const reader = r.body.getReader();
@@ -2855,7 +2855,7 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
 const SECTION_LABELS = Object.fromEntries(MOCK.cotejo.map(s => [s.key, s.label]));
 
 function FullPlanGenerator({ plan, onApply, onClose }) {
-  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5", schoolImprovementPlan: false });
+  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "openai/gpt-4o-mini", schoolImprovementPlan: false });
   const [units, setUnits]     = useState([]);
   const [selectedUnitId, setSelectedUnitId] = useState("");
   const [loadingUnits, setLoadingUnits] = useState(false);
@@ -2997,23 +2997,12 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
                   Activar para que la IA complete las áreas de respuesta activa del estudiante y experiencia común.
                 </span>
               </label>
-              <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-                <label className="fpg-field" style={{ flex: "0 0 180px" }}>
-                  <span>Semanas a cubrir</span>
-                  <select value={form.weeks} onChange={e => setForm(p => ({ ...p, weeks: e.target.value }))}>
-                    {[1,2,3,4,5,6].map(n => <option key={n} value={n}>{n} {n === 1 ? "semana" : "semanas"}</option>)}
-                  </select>
-                </label>
-                <label className="fpg-field" style={{ flex: "1 1 280px" }}>
-                  <span>Modelo de IA</span>
-                  <select value={form.model} onChange={e => setForm(p => ({ ...p, model: e.target.value }))}>
-                    <option value="anthropic/claude-haiku-4.5">Claude Haiku 4.5 — rápido (~40s)</option>
-                    <option value="anthropic/claude-sonnet-4.5">Claude Sonnet 4.5 — mejor calidad (~90s)</option>
-                    <option value="openai/gpt-4o">GPT-4o — alternativa</option>
-                    <option value="openai/gpt-4o-mini">GPT-4o mini — más rápido</option>
-                  </select>
-                </label>
-              </div>
+              <label className="fpg-field" style={{ flex: "0 0 180px" }}>
+                <span>Semanas a cubrir</span>
+                <select value={form.weeks} onChange={e => setForm(p => ({ ...p, weeks: e.target.value }))}>
+                  {[1,2,3,4,5,6].map(n => <option key={n} value={n}>{n} {n === 1 ? "semana" : "semanas"}</option>)}
+                </select>
+              </label>
 
               {status === "error" && <div className="fpg-error">Error: {error}</div>}
 

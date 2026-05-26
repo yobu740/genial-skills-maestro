@@ -106,7 +106,7 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
   return (
     <>
       <button type="button" className="tm-upload-btn" onClick={() => setOpen(true)}>
-        📚 Elegir de Athenas
+        📚 Elegir Contenido
       </button>
       {open && (
         <div className="alp-backdrop" onMouseDown={(e) => { if (e.target === e.currentTarget) setOpen(false); }}>
@@ -114,7 +114,7 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
             <header className="alp-head">
               <div>
                 <h3>
-                  Catálogo de lecciones Athenas
+                  Catálogo de contenido
                   <span className={`alp-badge ${fromMock ? 'cache' : 'live'}`} title={fromMock ? 'Usando cache local — no hay JWT' : 'Live: baseapi.genialskillsweb.com'}>
                     {fromMock ? '⚫ Cache' : '🟢 API Live'}
                   </span>

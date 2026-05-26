@@ -1,7 +1,7 @@
 import React from 'react';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
-import { MODELS } from "../data/toolsConfig.js";
+// MODELS dropdown was removed by request — default is hardcoded to gpt-4o-mini below.
 import Ic from './Icons.jsx';
 import StandardsPicker from './StandardsPicker.jsx';
 import AthenasLessonPicker from './AthenasLessonPicker.jsx';
@@ -377,11 +377,13 @@ function parseEditableSlides(markdown) {
     const image = rawBody.match(/!\[([^\]]*)\]\(([^)\s]+)\)/);
     const link = rawBody.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
     const alignMatch = rawBody.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
+    const layoutMatch = rawBody.match(/<!-- layout:\s*([\s\S]*?)\s*-->/i);
     const notes = rawBody.match(/(?:^|\n)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
     const body = rawBody
       .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
       .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
       .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, '')
+      .replace(/<!-- layout:\s*[\s\S]*?\s*-->/gi, '')
       .replace(/(?:^|\n)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, '')
       .trim();
     slides.push({
@@ -392,6 +394,7 @@ function parseEditableSlides(markdown) {
       linkText: link?.[1] || '',
       linkUrl: link?.[2] || '',
       align: alignMatch?.[1] || 'left',
+      layout: parseSlideLayout(layoutMatch?.[1]),
       notes: notes?.[1]?.trim() || '',
     });
   }
@@ -407,7 +410,7 @@ function parseEditableSlides(markdown) {
     current.body.push(line);
   }
   flush();
-  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left' }];
+  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left', layout: defaultSlideLayout() }];
 }
 
 function slidesToMarkdown(slides) {
@@ -417,9 +420,54 @@ function slidesToMarkdown(slides) {
     if (slide.imageUrl) parts.push(`![${slide.imageAlt || slide.title || 'Imagen'}](${slide.imageUrl})`);
     if (slide.linkUrl) parts.push(`[${slide.linkText || slide.linkUrl}](${slide.linkUrl})`);
     if (slide.align && slide.align !== 'left') parts.push(`<!-- align: ${slide.align} -->`);
+    if (slide.layout) parts.push(`<!-- layout: ${JSON.stringify(normalizeSlideLayout(slide.layout))} -->`);
     if (slide.notes) parts.push(`Notas del maestro: ${slide.notes}`);
     return `${heading} ${slide.title || 'Contenido'}\n\n${parts.filter(Boolean).join('\n\n')}`.trim();
   }).join('\n\n');
+}
+
+const SLIDE_CANVAS = { w: 1280, h: 720 };
+const DEFAULT_SLIDE_LAYOUT = {
+  title: { x: 86, y: 66, w: 1110, h: 92 },
+  body: { x: 100, y: 178, w: 1080, h: 438 },
+  image: { x: 824, y: 278, w: 320, h: 230 },
+};
+
+function parseSlideLayout(raw) {
+  if (!raw) return defaultSlideLayout();
+  try {
+    return normalizeSlideLayout(JSON.parse(raw));
+  } catch {
+    return defaultSlideLayout();
+  }
+}
+
+function defaultSlideLayout() {
+  return normalizeSlideLayout(DEFAULT_SLIDE_LAYOUT);
+}
+
+function normalizeSlideLayout(layout = {}) {
+  return {
+    title: normalizeBox(layout?.title, DEFAULT_SLIDE_LAYOUT.title),
+    body: normalizeBox(layout?.body, DEFAULT_SLIDE_LAYOUT.body),
+    image: normalizeBox(layout?.image, DEFAULT_SLIDE_LAYOUT.image),
+  };
+}
+
+function normalizeBox(box, fallback) {
+  const value = { ...fallback, ...(box || {}) };
+  return {
+    x: clampNumber(value.x, 0, SLIDE_CANVAS.w - 80, fallback.x),
+    y: clampNumber(value.y, 0, SLIDE_CANVAS.h - 60, fallback.y),
+    w: clampNumber(value.w, 120, SLIDE_CANVAS.w, fallback.w),
+    h: clampNumber(value.h, 42, SLIDE_CANVAS.h, fallback.h),
+  };
+}
+
+function clampNumber(value, min, max, fallback) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(min, Math.min(max, n));
 }
 
 function parseInlineFormatting(text) {
@@ -557,6 +605,54 @@ function SlideBodyEditor({ html, onChange, align, slideIndex }) {
   );
 }
 
+function MovableSlideBox({ box, className = '', label, onMove, children }) {
+  const safeBox = normalizeBox(box, DEFAULT_SLIDE_LAYOUT.body);
+
+  function beginDrag(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const canvas = e.currentTarget.closest('.tm-slide-canvas');
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const scale = rect.width / SLIDE_CANVAS.w;
+    const start = { x: e.clientX, y: e.clientY, box: safeBox };
+
+    const onPointerMove = (moveEvent) => {
+      const next = normalizeBox({
+        ...start.box,
+        x: start.box.x + (moveEvent.clientX - start.x) / scale,
+        y: start.box.y + (moveEvent.clientY - start.y) / scale,
+      }, start.box);
+      onMove(next);
+    };
+
+    const onPointerUp = () => {
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+    };
+
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', onPointerUp, { once: true });
+  }
+
+  return (
+    <div
+      className={`tm-slide-textbox ${className}`}
+      style={{
+        left: `${(safeBox.x / SLIDE_CANVAS.w) * 100}%`,
+        top: `${(safeBox.y / SLIDE_CANVAS.h) * 100}%`,
+        width: `${(safeBox.w / SLIDE_CANVAS.w) * 100}%`,
+        height: `${(safeBox.h / SLIDE_CANVAS.h) * 100}%`,
+      }}
+    >
+      <button type="button" className="tm-slide-drag-handle" onPointerDown={beginDrag} title={`Mover ${label}`}>
+        {label}
+      </button>
+      {children}
+    </div>
+  );
+}
+
 function SlideWorkspace({ value, onChange }) {
   const slides = React.useMemo(() => parseEditableSlides(value), [value]);
   const [active, setActive] = React.useState(0);
@@ -580,14 +676,44 @@ function SlideWorkspace({ value, onChange }) {
     onChange(slidesToMarkdown(next));
   }
 
+  function updateLayoutPart(part, box) {
+    const layout = normalizeSlideLayout(current?.layout || defaultSlideLayout());
+    updateSlide(active, { layout: { ...layout, [part]: normalizeBox(box, layout[part]) } });
+  }
+
+  function beginImageDrag(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const canvas = e.currentTarget.closest('.tm-slide-canvas');
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    const scale = rect.width / SLIDE_CANVAS.w;
+    const start = { x: e.clientX, y: e.clientY, box: currentLayout.image };
+
+    const move = (event) => {
+      updateLayoutPart('image', {
+        ...start.box,
+        x: start.box.x + (event.clientX - start.x) / scale,
+        y: start.box.y + (event.clientY - start.y) / scale,
+      });
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up, { once: true });
+  }
+
   function addSlide() {
-    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left' }]));
+    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left', layout: defaultSlideLayout() }]));
     setActive(slides.length);
   }
 
   function removeSlide(index) {
     const next = slides.filter((_, i) => i !== index);
-    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left' }]));
+    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left', layout: defaultSlideLayout() }]));
     setActive(Math.max(0, index - 1));
   }
 
@@ -644,6 +770,7 @@ function SlideWorkspace({ value, onChange }) {
     () => markdownToHtmlForEditor(current?.body || ''),
     [current?.body, active]
   );
+  const currentLayout = normalizeSlideLayout(current?.layout || defaultSlideLayout());
 
   return (
     <div className="tm-slide-workspace tm-presentation-studio">
@@ -813,7 +940,13 @@ function SlideWorkspace({ value, onChange }) {
 
               <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
                 <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
-                  <div className="tm-slide-canvas-content">
+                  <div className="tm-slide-canvas-content" aria-hidden="true" />
+                  <MovableSlideBox
+                    box={currentLayout.title}
+                    label="Titulo"
+                    className="title-box"
+                    onMove={(box) => updateLayoutPart('title', box)}
+                  >
                     <input
                       className="tm-slide-title-input"
                       value={current.title}
@@ -821,6 +954,13 @@ function SlideWorkspace({ value, onChange }) {
                       placeholder="Título de la diapositiva"
                       style={{ textAlign: current.align || 'left' }}
                     />
+                  </MovableSlideBox>
+                  <MovableSlideBox
+                    box={currentLayout.body}
+                    label="Texto"
+                    className="body-box"
+                    onMove={(box) => updateLayoutPart('body', box)}
+                  >
                     <SlideBodyEditor
                       html={currentBodyHtml}
                       align={current.align || 'left'}
@@ -830,10 +970,26 @@ function SlideWorkspace({ value, onChange }) {
                         updateSlide(active, { body: newMarkdown });
                       }}
                     />
-                  </div>
+                  </MovableSlideBox>
 
                   {current.imageUrl ? (
-                    <div className="tm-slide-canvas-image">
+                    <div
+                      className="tm-slide-canvas-image"
+                      style={{
+                        left: `${(currentLayout.image.x / SLIDE_CANVAS.w) * 100}%`,
+                        top: `${(currentLayout.image.y / SLIDE_CANVAS.h) * 100}%`,
+                        width: `${(currentLayout.image.w / SLIDE_CANVAS.w) * 100}%`,
+                        height: `${(currentLayout.image.h / SLIDE_CANVAS.h) * 100}%`,
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="tm-slide-drag-handle image-handle"
+                        onPointerDown={beginImageDrag}
+                        title="Mover imagen"
+                      >
+                        Imagen
+                      </button>
                       <img src={current.imageUrl} alt={current.imageAlt || ''} />
                       <button
                         type="button"
@@ -1023,19 +1179,12 @@ function SlideWorkspace({ value, onChange }) {
 }
 
 function DocumentWorkspace({ value, onChange }) {
-  const [docMode, setDocMode] = React.useState('split'); // split | edit | preview
+  const [docMode, setDocMode] = React.useState('edit'); // edit | preview
 
   return (
     <div className="tm-doc-workspace">
       <div className="tm-doc-toolbar">
         <div className="tm-doc-mode-selector">
-          <button
-            type="button"
-            className={docMode === 'split' ? 'active' : ''}
-            onClick={() => setDocMode('split')}
-          >
-            📖 Vista Dividida
-          </button>
           <button
             type="button"
             className={docMode === 'edit' ? 'active' : ''}
@@ -1053,7 +1202,7 @@ function DocumentWorkspace({ value, onChange }) {
         </div>
       </div>
       <div className={`tm-doc-body mode-${docMode}`}>
-        {(docMode === 'edit' || docMode === 'split') && (
+        {docMode === 'edit' && (
           <textarea
             className="tm-doc-textarea"
             value={value}
@@ -1062,7 +1211,7 @@ function DocumentWorkspace({ value, onChange }) {
             placeholder="Edita el contenido en formato Markdown aquí..."
           />
         )}
-        {(docMode === 'preview' || docMode === 'split') && (
+        {docMode === 'preview' && (
           <div className="tm-doc-preview tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(value) }} />
         )}
       </div>
@@ -1094,7 +1243,10 @@ function WorksheetWorkspace({ value, onChange, title }) {
 }
 
 function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSwitchTool = null }) {
-  const [model, setModel] = React.useState(tool.defaultModel);
+  // Single default model for all tools — picker removed from the UI by request.
+  // To swap models later, change DEFAULT_AI_MODEL or restore the dropdown below.
+  const DEFAULT_AI_MODEL = 'openai/gpt-4o-mini';
+  const [model] = React.useState(DEFAULT_AI_MODEL);
   const initial = React.useMemo(() => {
     const base = Object.fromEntries(tool.fields.map(f => [
       f.name,
@@ -1290,14 +1442,6 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     });
   }
 
-  function downloadOut() {
-    const blob = new Blob([output], { type: 'text/markdown;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = `${tool.title.replace(/\s+/g,'_')}.md`;
-    a.click(); URL.revokeObjectURL(url);
-  }
-
   const safeTitle = tool.title.replace(/\s+/g, '_');
   const [exporting, setExporting] = React.useState('');
   const [interactiveError, setInteractiveError] = React.useState('');
@@ -1458,7 +1602,6 @@ ${truncated}`;
                     🫶 Plan de intervención
                   </button>
                 )}
-                <button type="button" onClick={downloadOut} title="Descargar markdown crudo">.md</button>
                 <button type="button" onClick={() => setShowForm(true)} title="Modificar parámetros del formulario">Ajustar</button>
               </div>
             </div>
@@ -1478,13 +1621,6 @@ ${truncated}`;
 
         <div className={`tm-body ${showForm ? '' : 'form-collapsed'}`}>
           <form className="tm-form" onSubmit={generate}>
-            <label className="tm-field">
-              <span>Modelo</span>
-              <select value={model} onChange={(e) => setModel(e.target.value)}>
-                {MODELS.map(m => <option key={m.id} value={m.id}>{m.label}</option>)}
-              </select>
-            </label>
-
             {isChat && (
               <label className="tm-field tm-athenas-action">
                 <span>Cuando uses una leccion de Athenas</span>
@@ -1600,7 +1736,6 @@ ${truncated}`;
                         🫶 Plan de intervención
                       </button>
                     )}
-                    <button type="button" onClick={downloadOut} title="Descargar markdown crudo">.md</button>
                     <button type="button" onClick={generate} title="Regenerar">↻ Regenerar</button>
                   </div>
                 )}
