@@ -2,10 +2,10 @@ import React from 'react';
 import Ic from '../components/Icons.jsx';
 import {
   deleteDocument,
-  exportDocumentMarkdown,
   listDocuments,
   updateDocument,
 } from '../services/documentStore.js';
+import { exportMarkdownPDF, exportPPTX, exportWorksheet } from '../components/exporters.js';
 
 function formatDate(value) {
   if (!value) return '';
@@ -18,21 +18,12 @@ function formatDate(value) {
   }).format(new Date(value));
 }
 
-function downloadMarkdown(doc) {
-  const blob = new Blob([exportDocumentMarkdown(doc)], { type: 'text/markdown;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${(doc.title || 'documento_ia').replace(/[^\w-]+/g, '_')}.md`;
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
 export default function MyDocuments() {
   const [docs, setDocs] = React.useState(() => listDocuments());
   const [query, setQuery] = React.useState('');
   const [activeId, setActiveId] = React.useState(null);
   const [copied, setCopied] = React.useState(false);
+  const [exporting, setExporting] = React.useState('');
 
   React.useEffect(() => {
     const refresh = () => setDocs(listDocuments());
@@ -75,6 +66,39 @@ export default function MyDocuments() {
     await navigator.clipboard.writeText(active.content || '');
     setCopied(true);
     setTimeout(() => setCopied(false), 1200);
+  }
+
+  async function handleExportPDF() {
+    if (!active) return;
+    setExporting('pdf');
+    try {
+      const safeTitle = (active.title || 'documento').replace(/\s+/g, '_');
+      exportMarkdownPDF(active.content, `${safeTitle}.pdf`, active.toolTitle);
+    } finally {
+      setExporting('');
+    }
+  }
+
+  async function handleExportPPTX() {
+    if (!active) return;
+    setExporting('pptx');
+    try {
+      const safeTitle = (active.title || 'documento').replace(/\s+/g, '_');
+      await exportPPTX(active.content, `${safeTitle}.pptx`, active.toolTitle);
+    } finally {
+      setExporting('');
+    }
+  }
+
+  function handleExportWorksheet() {
+    if (!active) return;
+    setExporting('worksheet');
+    try {
+      const safeTitle = (active.title || 'documento').replace(/\s+/g, '_');
+      exportWorksheet(active.content, `${safeTitle}_worksheet.pdf`, active.toolTitle);
+    } finally {
+      setExporting('');
+    }
   }
 
   return (
@@ -133,9 +157,17 @@ export default function MyDocuments() {
                   </div>
                 </div>
                 <div className="docs-actions">
-                  <button onClick={copyActive}>{copied ? 'Copiado' : 'Copiar'}</button>
-                  <button onClick={() => downloadMarkdown(active)}>Descargar .md</button>
-                  <button className="danger" onClick={removeActive}>Borrar</button>
+                  <button type="button" onClick={copyActive}>{copied ? 'Copiado' : '📋 Copiar'}</button>
+                  <button type="button" onClick={handleExportPDF} disabled={!!exporting}>
+                    {exporting === 'pdf' ? '⏳ PDF' : '📄 PDF'}
+                  </button>
+                  <button type="button" onClick={handleExportPPTX} disabled={!!exporting}>
+                    {exporting === 'pptx' ? '⏳ PPTX' : '📊 PPTX'}
+                  </button>
+                  <button type="button" onClick={handleExportWorksheet} disabled={!!exporting}>
+                    {exporting === 'worksheet' ? '⏳ Worksheet' : '📝 Worksheet'}
+                  </button>
+                  <button type="button" className="danger" onClick={removeActive}>🗑️ Borrar</button>
                 </div>
               </div>
               <pre className="docs-content">{active.content}</pre>

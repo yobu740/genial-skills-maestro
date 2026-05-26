@@ -56,7 +56,7 @@ function sanitizePdfText(text = '') {
 }
 
 function markdownToPlainLines(markdown = '') {
-  return sanitizePdfText(latexToReadable(markdown))
+  return sanitizePdfText(latexToReadable(stripSlideNumberLabels(markdown)))
     .replace(/```[\s\S]*?```/g, '')
     .replace(/!\[[^\]]*\]\([^)]+\)/g, '[imagen]')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
@@ -65,6 +65,13 @@ function markdownToPlainLines(markdown = '') {
     .replace(/^>\s+/gm, '')
     .replace(/\r/g, '')
     .split('\n');
+}
+
+function stripSlideNumberLabels(text = '') {
+  return String(text).replace(
+    /^(\s*(?:#{1,6}\s*|[-*]\s+|\d+[.)]\s+)?)\s*(?:diapositiva|dispositiva|slide)\s*\d+\s*[:.)-]?\s*/gim,
+    (_, prefix = '') => prefix
+  );
 }
 
 function addWrappedText(doc, text, x, y, maxWidth, lineHeight) {
@@ -194,44 +201,42 @@ export function exportPPTX(markdown, filename = 'presentacion.pptx', title = 'Pr
     fontSize: 16, color: TEAL.replace('#', ''), fontFace: 'Poppins',
   });
 
-  // Split markdown by H1/H2 headings — each heading starts a new slide
   const slides = parseMarkdownToSlides(markdown);
   for (const slide of slides) {
     const s = pptx.addSlide();
-    s.background = { color: 'F5F7FA' };
-    
-    // Top navy accent banner
-    s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 0.5, fill: { color: NAVY } });
-    
-    // Title
-    s.addText(slide.title, {
-      x: 0.4, y: 0.55, w: 12.5, h: 0.8,
-      fontSize: 26, bold: true, color: NAVY.replace('#', ''), fontFace: 'Poppins',
-      align: slide.align || 'left',
-    });
-    
-    // Decorative title underline line
+    s.background = { color: 'F7F9FC' };
+    const layout = normalizeSlideLayout(slide.layout);
+
+    s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 0.18, fill: { color: NAVY } });
+    s.addShape(pptx.ShapeType.rect, { x: 0.46, y: 0.58, w: 0.07, h: 5.95, fill: { color: TEAL } });
     s.addShape(pptx.ShapeType.rect, {
-      x: slide.align === 'center' ? 5.416 : slide.align === 'right' ? 10.433 : 0.4,
-      y: 1.35, w: 2.5, h: 0.04, fill: { color: TEAL }
+      x: 0.82, y: 6.85, w: 11.7, h: 0.03,
+      fill: { color: 'DDE5F0' },
+      line: { transparency: 100 },
     });
 
-    const isSplit = !!slide.imageUrl;
+    s.addText(slide.title, {
+      ...pxBoxToInches(layout.title),
+      fontSize: 28, bold: true, color: NAVY.replace('#', ''), fontFace: 'Poppins',
+      align: slide.align || 'left',
+      valign: 'mid',
+      fit: 'shrink',
+    });
+
     const textOptions = {
-      x: 0.5,
-      y: 1.6,
-      w: isSplit ? 7.2 : 12.3,
-      h: 4.8,
-      fontSize: 18,
+      ...pxBoxToInches(layout.body),
+      fontSize: slide.bullets.length > 7 ? 15 : 16,
       color: '1A2740',
       fontFace: 'Poppins',
-      lineSpacing: 32,
+      paraSpaceAfterPt: 7,
+      fit: 'shrink',
       align: slide.align || 'left',
+      valign: 'top',
     };
 
     if (slide.bullets.length) {
       s.addText(
-        slide.bullets.map(b => ({ text: b, options: { bullet: true } })),
+        slide.bullets.slice(0, 9).map(b => ({ text: b, options: { bullet: { indent: 18 } } })),
         textOptions
       );
     } else if (slide.body) {
@@ -242,18 +247,16 @@ export function exportPPTX(markdown, filename = 'presentacion.pptx', title = 'Pr
     }
 
     if (slide.imageUrl) {
+      const imageBox = pxBoxToInches(layout.image);
       try {
         s.addImage({
           path: slide.imageUrl,
-          x: 8.2,
-          y: 1.6,
-          w: 4.6,
-          h: 4.8,
-          sizing: { type: 'contain', w: 4.6, h: 4.8 }
+          ...imageBox,
+          sizing: { type: 'contain', w: imageBox.w, h: imageBox.h }
         });
       } catch {
         s.addText(slide.imageAlt || 'Imagen', {
-          x: 8.2, y: 1.6, w: 4.6, h: 0.35,
+          x: imageBox.x, y: imageBox.y, w: imageBox.w, h: 0.35,
           fontSize: 11, color: TEAL.replace('#', ''), fontFace: 'Poppins',
           align: 'center',
         });
@@ -262,7 +265,7 @@ export function exportPPTX(markdown, filename = 'presentacion.pptx', title = 'Pr
 
     if (slide.linkUrl) {
       s.addText(slide.linkText || slide.linkUrl, {
-        x: 0.5, y: 6.65, w: 7.4, h: 0.35,
+        x: 0.84, y: 6.56, w: 7.4, h: 0.35,
         fontSize: 12,
         color: TEAL.replace('#', ''),
         fontFace: 'Poppins',
@@ -271,7 +274,7 @@ export function exportPPTX(markdown, filename = 'presentacion.pptx', title = 'Pr
     }
     if (slide.notes) s.addNotes(slide.notes);
     s.addText('Genial Skills', {
-      x: 0.5, y: 7.1, w: 12.3, h: 0.3,
+      x: 0.84, y: 7.08, w: 11.7, h: 0.3,
       fontSize: 10, color: '8B97AC', fontFace: 'Poppins', align: 'right',
     });
   }
@@ -288,6 +291,7 @@ function parseMarkdownToSlides(md) {
       const image = cur.body.match(/!\[([^\]]*)\]\(([^)\s]+)\)/);
       const link = cur.body.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
       const alignMatch = cur.body.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
+      const layoutMatch = cur.body.match(/<!-- layout:\s*([\s\S]*?)\s*-->/i);
       const notes = cur.body.match(/(?:^|\s)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
       
       cur.imageAlt = image?.[1] || '';
@@ -295,12 +299,14 @@ function parseMarkdownToSlides(md) {
       cur.linkText = link?.[1] || '';
       cur.linkUrl = link?.[2] || '';
       cur.align = alignMatch?.[1] || 'left';
+      cur.layout = parseSlideLayout(layoutMatch?.[1]);
       cur.notes = notes?.[1]?.trim() || '';
       
       cur.body = cur.body
         .replace(/!\[[^\]]*\]\([^)]+\)/g, ' ')
         .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
         .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, ' ')
+        .replace(/<!-- layout:\s*[\s\S]*?\s*-->/gi, ' ')
         .replace(/(?:^|\s)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, ' ')
         .trim();
       cur.bullets = cur.bullets.filter(Boolean);
@@ -315,7 +321,7 @@ function parseMarkdownToSlides(md) {
     const h3 = line.match(/^###\s+(.+)/);
     if (h1 || h2 || h3) {
       flush();
-      const title = (h1 || h2 || h3)[1].replace(/\*\*/g, '').trim();
+      const title = stripSlideNumberLabels((h1 || h2 || h3)[1]).replace(/\*\*/g, '').trim();
       cur = { title, bullets: [], body: '', imageAlt: '', imageUrl: '', linkText: '', linkUrl: '', align: 'left', notes: '' };
       continue;
     }
@@ -328,6 +334,56 @@ function parseMarkdownToSlides(md) {
   }
   flush();
   return slides.filter(s => s.title || s.bullets.length || s.body);
+}
+
+const SLIDE_CANVAS = { w: 1280, h: 720 };
+const PPTX_CANVAS = { w: 13.333, h: 7.5 };
+const DEFAULT_SLIDE_LAYOUT = {
+  title: { x: 86, y: 66, w: 1110, h: 92 },
+  body: { x: 100, y: 178, w: 1080, h: 438 },
+  image: { x: 824, y: 278, w: 320, h: 230 },
+};
+
+function parseSlideLayout(raw) {
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+function normalizeSlideLayout(layout = {}) {
+  return {
+    title: normalizeBox(layout?.title, DEFAULT_SLIDE_LAYOUT.title),
+    body: normalizeBox(layout?.body, DEFAULT_SLIDE_LAYOUT.body),
+    image: normalizeBox(layout?.image, DEFAULT_SLIDE_LAYOUT.image),
+  };
+}
+
+function normalizeBox(box, fallback) {
+  const value = { ...fallback, ...(box || {}) };
+  return {
+    x: clampNumber(value.x, 0, SLIDE_CANVAS.w - 80, fallback.x),
+    y: clampNumber(value.y, 0, SLIDE_CANVAS.h - 60, fallback.y),
+    w: clampNumber(value.w, 120, SLIDE_CANVAS.w, fallback.w),
+    h: clampNumber(value.h, 42, SLIDE_CANVAS.h, fallback.h),
+  };
+}
+
+function clampNumber(value, min, max, fallback) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(min, Math.min(max, n));
+}
+
+function pxBoxToInches(box) {
+  return {
+    x: (box.x / SLIDE_CANVAS.w) * PPTX_CANVAS.w,
+    y: (box.y / SLIDE_CANVAS.h) * PPTX_CANVAS.h,
+    w: (box.w / SLIDE_CANVAS.w) * PPTX_CANVAS.w,
+    h: (box.h / SLIDE_CANVAS.h) * PPTX_CANVAS.h,
+  };
 }
 
 /* ─────────── Worksheet (student-facing PDF) ─────────── */
@@ -359,7 +415,7 @@ export function exportWorksheet(markdown, filename = 'worksheet.pdf', title = 'H
   doc.line(marginX, 38, pageW - marginX, 38);
 
   // Content — strip markdown to plaintext, split by lines, convert into questions
-  const cleaned = sanitizePdfText(markdown)
+  const cleaned = sanitizePdfText(stripSlideNumberLabels(markdown))
     .replace(/```[\s\S]*?```/g, '')                 // strip code blocks
     .replace(/\$\$[\s\S]*?\$\$/g, ' [ecuación] ')   // math placeholders
     .replace(/\$([^$\n]+?)\$/g, '$1')               // inline math: keep raw text

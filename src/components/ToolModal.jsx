@@ -281,6 +281,7 @@ async function resolveImageTags(text, setOutput, setImageStatus) {
 
 function mdToHtml(md) {
   if (!md) return '';
+  md = stripEditorMetadata(md);
 
   // 1) Extract math blocks first so HTML-escape + markdown can't mangle them.
   //    Block first ($$...$$), then inline ($...$). Inline avoids matching currency
@@ -366,6 +367,13 @@ function mdToHtml(md) {
   return html;
 }
 
+function stripEditorMetadata(text = '') {
+  return String(text)
+    .replace(/<!--\s*(?:layout|style):\s*[\s\S]*?-->/gi, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function parseEditableSlides(markdown) {
   const lines = String(markdown || '').split('\n');
   const slides = [];
@@ -378,12 +386,14 @@ function parseEditableSlides(markdown) {
     const link = rawBody.match(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
     const alignMatch = rawBody.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
     const layoutMatch = rawBody.match(/<!-- layout:\s*([\s\S]*?)\s*-->/i);
+    const styleMatch = rawBody.match(/<!-- style:\s*([\s\S]*?)\s*-->/i);
     const notes = rawBody.match(/(?:^|\n)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
     const body = rawBody
       .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
       .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1')
       .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, '')
       .replace(/<!-- layout:\s*[\s\S]*?\s*-->/gi, '')
+      .replace(/<!-- style:\s*[\s\S]*?\s*-->/gi, '')
       .replace(/(?:^|\n)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, '')
       .trim();
     slides.push({
@@ -395,6 +405,7 @@ function parseEditableSlides(markdown) {
       linkUrl: link?.[2] || '',
       align: alignMatch?.[1] || 'left',
       layout: parseSlideLayout(layoutMatch?.[1]),
+      style: parseSlideStyle(styleMatch?.[1]),
       notes: notes?.[1]?.trim() || '',
     });
   }
@@ -410,7 +421,7 @@ function parseEditableSlides(markdown) {
     current.body.push(line);
   }
   flush();
-  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left', layout: defaultSlideLayout() }];
+  return slides.length ? slides : [{ title: 'Contenido', body: markdown || '', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }];
 }
 
 function slidesToMarkdown(slides) {
@@ -421,6 +432,7 @@ function slidesToMarkdown(slides) {
     if (slide.linkUrl) parts.push(`[${slide.linkText || slide.linkUrl}](${slide.linkUrl})`);
     if (slide.align && slide.align !== 'left') parts.push(`<!-- align: ${slide.align} -->`);
     if (slide.layout) parts.push(`<!-- layout: ${JSON.stringify(normalizeSlideLayout(slide.layout))} -->`);
+    if (slide.style) parts.push(`<!-- style: ${JSON.stringify(normalizeSlideStyle(slide.style))} -->`);
     if (slide.notes) parts.push(`Notas del maestro: ${slide.notes}`);
     return `${heading} ${slide.title || 'Contenido'}\n\n${parts.filter(Boolean).join('\n\n')}`.trim();
   }).join('\n\n');
@@ -576,6 +588,13 @@ function htmlToMarkdown(html) {
   return result
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+function cleanGeneratedOutput(text = '') {
+  return String(text).replace(
+    /^(\s*(?:#{1,6}\s*|[-*]\s+|\d+[.)]\s+)?)\s*(?:diapositiva|dispositiva|slide)\s*\d+\s*[:.)-]?\s*/gim,
+    (_, prefix = '') => prefix
+  );
 }
 
 function SlideBodyEditor({ html, onChange, align, slideIndex }) {
@@ -1407,6 +1426,8 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
 
       // ─── Post-process [IMAGE: prompt] tags into real generated images ───
       acc = await resolveImageTags(acc, setOutput, setImageStatus);
+      acc = cleanGeneratedOutput(acc);
+      setOutput(acc);
 
       setShowForm(false);
       const hasSlides = /^\s*##?\s+/m.test(acc);

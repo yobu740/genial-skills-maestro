@@ -6,7 +6,7 @@ import Ic from './Icons.jsx';
 // from the right-column AI prompt, keeping the dashboard visually cohesive.
 const ENTRAR_ACCENT = '#E88B19';
 
-function QuickGrid() {
+function QuickGrid({ onNavigate }) {
   // Soft pastel tints — pale background + darker icon color. Title stays in ink.
   const cards = [
     {
@@ -78,7 +78,23 @@ function QuickGrid() {
             <p>{c.desc}</p>
             <div className="qa-foot">
               <div className="meta">{c.meta}</div>
-              <button className="enter" style={{ color: ENTRAR_ACCENT }}>
+              <button
+                className="enter"
+                style={{ color: ENTRAR_ACCENT }}
+                onClick={() => {
+                  const routesMap = {
+                    grupos: '/teacher-groups',
+                    pendientes: '/pending-teacher-assignments',
+                    mensajeria: '/messages',
+                    planificacion: '/planning-select',
+                    progreso: '/record',
+                    estudiantes: '/profile-update',
+                  };
+                  if (onNavigate && routesMap[c.id]) {
+                    onNavigate(routesMap[c.id]);
+                  }
+                }}
+              >
                 Entrar <Ic.arrow />
               </button>
             </div>

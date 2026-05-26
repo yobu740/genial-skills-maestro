@@ -134,47 +134,48 @@ Cuando el perfil sea "Rezago académico" (1 grado atrás, 2+ grados, o prerrequi
       const isRezago = /rezago/i.test(f.perfil);
       return `Adapta la lección provista para un estudiante con perfil "${f.perfil}" (grado actual del estudiante: ${f.grado}).
 Genera el contenido adaptado estructurado como una PRESENTACIÓN DE DIAPOSITIVAS LISTA PARA ENSEÑAR (utiliza formato Markdown de títulos '# ' para la portada y '## ' para cada diapositiva posterior).
+No escribas "Diapositiva 1:", "Diapositiva 2:", "Slide 1:" ni variantes como "Dispositiva" en los títulos o en el cuerpo; usa solamente títulos pedagógicos reutilizables también como worksheet.
 
 Estructura exactamente la respuesta en las siguientes diapositivas (no agregues otras secciones fuera de esta estructura de diapositivas):
 
-# Diapositiva 1: Portada y Foco de la Adaptación
+# Portada y Foco de la Adaptación
 - Título de la lección adaptada
 - Perfil del estudiante: ${f.perfil}
 - Grado: ${f.grado}
 Notas del maestro: Explicación de la meta pedagógica de esta lección y cómo conecta con el perfil del estudiante.
 
-## Diapositiva 2: Resumen de Adaptaciones y Prerrequisitos
+## Resumen de Adaptaciones y Prerrequisitos
 - Resumen de adaptaciones aplicadas (lista breve)
 - Prerrequisitos clave a activar o repasar del grado/grados anteriores
 Notas del maestro: Instrucciones de cómo realizar la activación de prerrequisitos (puentes pedagógicos de 5-10 minutos).
 
-## Diapositiva 3: Activación y Vocabulario (Inicio)
+## Activación y Vocabulario (Inicio)
 - Vocabulario académico clave adaptado al nivel de comprensión real del estudiante
 - Pregunta o reto de activación inicial
 Notas del maestro: Cómo modelar el vocabulario y guiar la discusión inicial de forma accesible.
 
-## Diapositiva 4: Instrucción Guiada - Concepto Central (Desarrollo Parte 1)
+## Instrucción Guiada - Concepto Central (Desarrollo Parte 1)
 - Explicación del concepto central con pasos atómicos y sencillos
 - Sentence frames (estructuras de apoyo para respuestas)
 - [IMAGE: A clear educational book illustration for elementary students, showing the central concept visually, white background, detailed, simple colors]
 Notas del maestro: Guía paso a paso para el modelado explícito (estrategia I Do - We Do).
 
-## Diapositiva 5: Práctica de Aplicación (Desarrollo Parte 2)
+## Práctica de Aplicación (Desarrollo Parte 2)
 - Actividad interactiva o práctica guiada
 - Apoyo visual o scaffolds sugeridos en clase
 Notas del maestro: Cómo circular, monitorear el progreso y proveer retroalimentación inmediata.
 
-## Diapositiva 6: Práctica Independiente / Reto (Desarrollo Parte 3)
+## Práctica Independiente / Reto (Desarrollo Parte 3)
 - Ejercicios adaptados que demuestran el dominio
 - Opciones de producto final diferenciadas para demostrar aprendizaje
 Notas del maestro: Instrucciones de acomodación durante la práctica (tiempo extra, uso de manipulativos).
 
-## Diapositiva 7: Cierre y Evaluación (Exit Ticket)
+## Cierre y Evaluación (Exit Ticket)
 - Mini-evaluación o exit ticket alineado al objetivo adaptado
 - Criterios de éxito observables
 Notas del maestro: Cómo evaluar el dominio sin penalizar la condición del estudiante.
 
-## Diapositiva 8: Acomodaciones Específicas e Indicadores de Progreso
+## Acomodaciones Específicas e Indicadores de Progreso
 - Acomodaciones específicas aplicadas (formato, presentación, respuesta)
 - 3 indicadores observables de progreso para las siguientes semanas
 Notas del maestro: Notas finales de seguimiento y sugerencias para la próxima lección.

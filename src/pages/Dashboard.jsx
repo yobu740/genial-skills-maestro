@@ -20,7 +20,7 @@ export default function Dashboard({ onNavigate }) {
         <AITools />
       </div>
       <div className="content-right">
-        <RightColumn />
+        <RightColumn onNavigate={onNavigate} />
       </div>
     </div>
   );

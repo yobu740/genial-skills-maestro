@@ -4,7 +4,7 @@ import Ic from './Icons.jsx';
 /* Right column — Academic period + weekly plan + AI prompt */
 
 const ASK_TOOL = {
-  title: 'Crear con IA',
+  title: 'Asistente IA',
   subtitle: 'Pídele a la IA cualquier cosa que necesites como maestro.',
   defaultModel: 'anthropic/claude-sonnet-4.5',
   fields: [
@@ -15,21 +15,50 @@ const ASK_TOOL = {
   buildPrompt: (f) => f.pregunta,
 };
 
-function RightColumn() {
+function RightColumn({ onNavigate }) {
   const [askOpen, setAskOpen] = React.useState(false);
   const [draft, setDraft] = React.useState('');
+  const [weekPlan, setWeekPlan] = React.useState([]);
+
+  React.useEffect(() => {
+    try {
+      const savedPlans = JSON.parse(localStorage.getItem("gsm_teacher_plannings") || "[]");
+      const lessonsThisWeek = [];
+      if (savedPlans && savedPlans.length > 0) {
+        for (const plan of savedPlans) {
+          const lessonsList = plan.Lessons || [];
+          for (const lesson of lessonsList) {
+            lessonsThisWeek.push({
+              subj: plan.SubjectName || 'Planificación',
+              unit: lesson.title || 'Lección',
+              groups: plan.GroupName || 'Grupo'
+            });
+          }
+        }
+      }
+      if (lessonsThisWeek.length > 0) {
+        setWeekPlan(lessonsThisWeek.slice(0, 5));
+      } else {
+        setWeekPlan([
+          { subj:'Matemáticas',     unit:'Unidad 6 · Fracciones equivalentes',     groups:'5A · 5B' },
+          { subj:'Ciencias',        unit:'Unidad 4 · Ecosistemas de Puerto Rico',  groups:'5A' },
+          { subj:'Estudios Sociales', unit:'Unidad 3 · Geografía del Caribe',      groups:'5B' },
+        ]);
+      }
+    } catch (e) {
+      console.error(e);
+      setWeekPlan([
+        { subj:'Matemáticas',     unit:'Unidad 6 · Fracciones equivalentes',     groups:'5A · 5B' },
+        { subj:'Ciencias',        unit:'Unidad 4 · Ecosistemas de Puerto Rico',  groups:'5A' },
+        { subj:'Estudios Sociales', unit:'Unidad 3 · Geografía del Caribe',      groups:'5B' },
+      ]);
+    }
+  }, []);
 
   // Academic period progress
   const weekNow = 14;
   const weekTotal = 18;
   const pct = Math.round((weekNow / weekTotal) * 100);
-
-  // What the teacher is working on this week
-  const weekPlan = [
-    { subj:'Matemáticas',     unit:'Unidad 6 · Fracciones equivalentes',     groups:'5A · 5B' },
-    { subj:'Ciencias',        unit:'Unidad 4 · Ecosistemas de Puerto Rico',  groups:'5A' },
-    { subj:'Estudios Sociales', unit:'Unidad 3 · Geografía del Caribe',      groups:'5B' },
-  ];
 
   // Open modal with the current draft pre-filled
   const openAsk = () => {
@@ -63,7 +92,15 @@ function RightColumn() {
       <div className="widget">
         <div className="w-head">
           <h3>Plan de esta semana</h3>
-          <a href="#">Editar</a>
+          <a
+            href="/planning-select"
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('/planning-select');
+            }}
+          >
+            Editar
+          </a>
         </div>
         <ul className="plan-list">
           {weekPlan.map((p, i) => (
@@ -78,7 +115,7 @@ function RightColumn() {
 
       {/* AI prompt */}
       <div className="widget ai-ask">
-        <h3><span className="sparkle"><Ic.sparkle /></span> Crear con IA</h3>
+        <h3><span className="sparkle"><Ic.sparkle /></span> Asistente IA</h3>
         <p>Describe lo que necesitas y la IA te ayudará a empezar.</p>
         <div className="field">
           <textarea
