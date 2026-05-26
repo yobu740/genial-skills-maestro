@@ -2496,6 +2496,26 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
   const [previewLessonId, setPreviewLessonId] = useState("1");
   const [saveStatus, setSaveStatus] = useState("");
   const [showFullPlan, setShowFullPlan] = useState(false);
+  const [editingName, setEditingName] = useState(false);
+  const [nameDraft, setNameDraft] = useState(plan.PlanName || "");
+
+  // Keep draft in sync if the plan name changes externally (e.g. fresh load).
+  useEffect(() => { setNameDraft(plan.PlanName || ""); }, [plan.PlanName]);
+
+  function startEditName() {
+    setNameDraft(plan.PlanName || "");
+    setEditingName(true);
+  }
+  function commitName() {
+    const trimmed = (nameDraft || "").trim();
+    if (!trimmed || trimmed === plan.PlanName) { setEditingName(false); return; }
+    setEditingName(false);
+    savePlanChanges({ PlanName: trimmed });
+  }
+  function cancelEditName() {
+    setNameDraft(plan.PlanName || "");
+    setEditingName(false);
+  }
   const [editingLesson, setEditingLesson] = useState(null);
 
   const current = MOCK.cotejo.find(s => s.key === section);
@@ -2758,8 +2778,48 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
       <button className="btn-back" onClick={onBack} style={{ marginBottom: 14 }}>← Atrás</button>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, gap: 12, flexWrap: "wrap" }}>
-        <h1 className="heading-h1" style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          {plan.PlanName} <span style={{ fontSize: 14, color: "#999", cursor: "pointer" }}>✎</span>
+        <h1 className="heading-h1" style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0 }}>
+          {editingName ? (
+            <input
+              autoFocus
+              type="text"
+              value={nameDraft}
+              onChange={(e) => setNameDraft(e.target.value)}
+              onBlur={commitName}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") { e.preventDefault(); commitName(); }
+                else if (e.key === "Escape") { e.preventDefault(); cancelEditName(); }
+              }}
+              maxLength={120}
+              style={{
+                font: "inherit", color: "inherit",
+                background: "#fff",
+                border: "2px solid #f2af2b",
+                borderRadius: 6,
+                padding: "2px 10px",
+                outline: 0,
+                minWidth: 200,
+                width: `${Math.max(20, Math.min(60, (nameDraft || "").length + 2))}ch`,
+              }}
+              aria-label="Editar nombre del plan"
+            />
+          ) : (
+            <>
+              {plan.PlanName}
+              <button
+                type="button"
+                onClick={startEditName}
+                title="Cambiar el nombre del plan"
+                aria-label="Editar nombre del plan"
+                style={{
+                  background: "transparent", border: 0, padding: 4,
+                  fontSize: 14, color: "#999", cursor: "pointer", lineHeight: 1,
+                }}
+              >
+                ✎
+              </button>
+            </>
+          )}
         </h1>
         <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
           <button
