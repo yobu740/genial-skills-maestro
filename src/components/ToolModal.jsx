@@ -640,10 +640,22 @@ function SlideWorkspace({ value, onChange }) {
   }
 
   const hasMedia = current && (current.imageUrl || current.linkUrl);
+  const currentBodyHtml = React.useMemo(
+    () => markdownToHtmlForEditor(current?.body || ''),
+    [current?.body, active]
+  );
 
   return (
-    <div className="tm-slide-workspace">
+    <div className="tm-slide-workspace tm-presentation-studio">
       <div className="tm-slide-rail">
+        <div className="tm-slide-rail-head">
+          <div className="tm-slide-rail-tabs" aria-label="Vista de diapositivas">
+            <button type="button" className="active" title="Vista de miniaturas">Grid</button>
+            <button type="button" title="Vista de lista">List</button>
+          </div>
+          <strong>{slides.length} slides</strong>
+        </div>
+        <button type="button" className="tm-work-add" onClick={addSlide}>+ Add Slide</button>
         {slides.map((slide, i) => (
           <button
             type="button"
@@ -661,7 +673,6 @@ function SlideWorkspace({ value, onChange }) {
             </div>
           </button>
         ))}
-        <button type="button" className="tm-work-add" onClick={addSlide}>+ Slide</button>
       </div>
 
       <div className="tm-slide-editor" style={{ gridTemplateColumns: showInspector && hasMedia ? '1fr 280px' : '1fr' }}>
@@ -670,6 +681,34 @@ function SlideWorkspace({ value, onChange }) {
             <div className="tm-slide-center-area">
               <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
                 <div className="tm-wysiwyg-toolbar">
+                  <button
+                    type="button"
+                    title="Deshacer"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => document.execCommand('undo', false)}
+                  >
+                    ↶
+                  </button>
+                  <button
+                    type="button"
+                    title="Rehacer"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => document.execCommand('redo', false)}
+                  >
+                    ↷
+                  </button>
+                  <div className="tm-toolbar-divider" />
+                  <select className="tm-toolbar-select" value="Overlock" onChange={() => {}} title="Tipografia">
+                    <option>Overlock</option>
+                    <option>Sora</option>
+                    <option>Arial</option>
+                  </select>
+                  <select className="tm-toolbar-size" value="28" onChange={() => {}} title="Tamano de texto">
+                    <option value="22">22</option>
+                    <option value="28">28</option>
+                    <option value="34">34</option>
+                  </select>
+                  <div className="tm-toolbar-divider" />
                   <button
                     type="button"
                     title="Negrita"
@@ -764,7 +803,10 @@ function SlideWorkspace({ value, onChange }) {
                 </div>
 
                 <div className="tm-slide-actions-right">
+                  <button type="button" className="primary" onClick={() => setShowImagePicker(true)} title="Pedir cambios o recursos visuales">Request Changes</button>
+                  <button type="button" className={showInspector ? 'active' : ''} onClick={() => setShowInspector(!showInspector)} title="Mostrar estilos y propiedades">Styles</button>
                   <button type="button" onClick={duplicateSlide} title="Duplicar diapositiva">Duplicar</button>
+                  <button type="button" className="present" title="Modo presentacion">Present</button>
                   <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
                 </div>
               </div>
@@ -780,7 +822,7 @@ function SlideWorkspace({ value, onChange }) {
                       style={{ textAlign: current.align || 'left' }}
                     />
                     <SlideBodyEditor
-                      html={markdownToHtmlForEditor(current.body)}
+                      html={currentBodyHtml}
                       align={current.align || 'left'}
                       slideIndex={active}
                       onChange={(newHtml) => {
