@@ -4,57 +4,79 @@ import { TOOLS } from "../data/toolsConfig.js";
 import Ic from './Icons.jsx';
 /* AI Tools Panel — tabs: Planificación · Diferenciación · Evaluación · Lectura · Asistentes */
 
-const AI_DATA = {
-  planificacion: {
-    label: 'Planificación',
-    items: [
-      { name:'Plan My Lesson',         desc:'Genera planes según materia, grado y estándar.', Icon: Ic.doc,    bg:'#E9F2FA', fg:'#27466C' },
-      { name:'STEM Unit Planner',      desc:'Diseña unidades STEM completas con proyectos.',   Icon: Ic.flask,  bg:'#DFF5E8', fg:'#246B49' },
-      { name:'Adaptar Lección',        desc:'Adapta planes para ELL o necesidades especiales.',Icon: Ic.layers, bg:'#FFE9D6', fg:'#A8521A' },
-      { name:'Objetivos de Lenguaje',  desc:'Crea metas lingüísticas para estudiantes ELL.',   Icon: Ic.target, bg:'#EEE9FF', fg:'#6745EA' },
-    ],
-  },
-  diferenciacion: {
-    label: 'Diferenciación',
-    items: [
-      { name:'Estrategia de Grupos',    desc:'Sugiere agrupaciones según el nivel actual.',   Icon: Ic.grupos,  bg:'#E6F5F4', fg:'#246F6F' },
-      { name:'Diferenciar Contenido',   desc:'Adapta el qué se enseña a cada estudiante.',     Icon: Ic.layers,  bg:'#FFE9D6', fg:'#A8521A' },
-      { name:'Diferenciar Proceso',     desc:'Adapta cómo aprende cada estudiante.',           Icon: Ic.sliders, bg:'#EEE9FF', fg:'#6745EA' },
-      { name:'Diferenciar Producto',    desc:'Adapta cómo demuestran lo aprendido.',           Icon: Ic.trophy,  bg:'#FFF0D6', fg:'#B16C00' },
-    ],
-  },
-  evaluacion: {
-    label: 'Evaluación',
-    items: [
-      { name:'Crear Rúbrica',          desc:'Genera rúbricas para cualquier tarea o proyecto.', Icon: Ic.pendientes,bg:'#E9F2FA', fg:'#27466C' },
-      { name:'Preguntas DOK',          desc:'Crea preguntas por nivel de complejidad cognitiva.',Icon: Ic.brain,    bg:'#EEE9FF', fg:'#6745EA' },
-      { name:'Examen de Matemáticas',  desc:'Crea pruebas matemáticas adaptadas al grado.',     Icon: Ic.calc,     bg:'#DFF5E8', fg:'#246B49' },
-      { name:'Feedback Personalizado', desc:'Retroalimentación individual para cada estudiante.',Icon: Ic.msg2,    bg:'#E6F5F4', fg:'#246F6F' },
-      { name:'Choice Board',           desc:'Tablero de opciones diferenciadas para tareas.',   Icon: Ic.board,    bg:'#FFE9D6', fg:'#A8521A' },
-    ],
-  },
-  lectura: {
-    label: 'Lectura',
-    items: [
-      { name:'Lectura por Nivel',         desc:'Crea textos adaptados por grado escolar.',    Icon: Ic.book,  bg:'#E9F2FA', fg:'#27466C' },
-      { name:'Vocabulario Académico',     desc:'Genera listas de vocabulario por temática.',  Icon: Ic.abc,   bg:'#FFE9D6', fg:'#A8521A' },
-      { name:'Preguntas de Comprensión',  desc:'Literal, inferencial y crítica en un click.', Icon: Ic.help,  bg:'#EEE9FF', fg:'#6745EA' },
-      { name:'Evaluación Lexile',         desc:'Pruebas por nivel lector con feedback.',      Icon: Ic.ruler, bg:'#DFF5E8', fg:'#246B49' },
-    ],
-  },
-  asistentes: {
-    label: 'Asistentes',
-    items: [
-      { name:'Asistente de Matemáticas',  desc:'Experto en álgebra, geometría y aritmética.', Icon: Ic.calc,   bg:'#E9F2FA', fg:'#27466C' },
-      { name:'Asistente de Ciencias',      desc:'Biología, química, física y experimentos.',  Icon: Ic.flask,  bg:'#DFF5E8', fg:'#246B49' },
-      { name:'Asistente de ELA (Inglés)',  desc:'Gramática, escritura y comprensión.',        Icon: Ic.book,   bg:'#FFF0D6', fg:'#B16C00' },
-      { name:'Estudios Sociales',          desc:'Historia, geografía y cultura.',             Icon: Ic.globe,  bg:'#E6F5F4', fg:'#246F6F' },
-      { name:'Asistente de Idiomas',       desc:'Inglés, español y traducción contextual.',   Icon: Ic.speech, bg:'#EEE9FF', fg:'#6745EA' },
-      { name:'Coach de Ed. Especial',      desc:'Estrategias para estudiantes con SPED.',     Icon: Ic.heart,  bg:'#FBE3E2', fg:'#9D3835' },
-      { name:'Coach para ELL',             desc:'Apoyo a aprendices de inglés.',              Icon: Ic.globe,  bg:'#FFE9D6', fg:'#A8521A' },
-    ],
-  },
+// AI_DATA is derived from toolsConfig.TOOLS at module load time, so adding a
+// new tool there automatically surfaces it here (and in AIToolsPage). No more
+// drift between the home grid and the dedicated Herramientas IA page.
+const CATEGORY_LABELS = {
+  planificacion:  'Planificación',
+  diferenciacion: 'Diferenciación',
+  evaluacion:     'Evaluación',
+  lectura:        'Lectura',
+  asistentes:     'Asistentes',
 };
+
+// Soft tint per category — matches the AIToolsPage palette for consistency.
+const CAT_TINT = {
+  planificacion:  { bg: '#E9F2FA', fg: '#27466C' },
+  diferenciacion: { bg: '#FFE9D6', fg: '#A8521A' },
+  evaluacion:     { bg: '#EEE9FF', fg: '#6745EA' },
+  lectura:        { bg: '#DFF5E8', fg: '#246B49' },
+  asistentes:     { bg: '#FFF0D6', fg: '#B16C00' },
+};
+
+// Per-tool icon mapping. Same list as AIToolsPage.pickIcon so the home and the
+// dedicated page show identical icons.
+const ICON_BY_NAME = {
+  'Plan My Lesson': Ic.doc,
+  'STEM Unit Planner': Ic.flask,
+  'Adaptar Lección': Ic.layers,
+  'Objetivos de Lenguaje': Ic.target,
+  'Estrategia de Grupos': Ic.grupos,
+  'Diferenciar Contenido': Ic.layers,
+  'Diferenciar Proceso': Ic.sliders,
+  'Diferenciar Producto': Ic.trophy,
+  'Plan de Intervención para Rezago': Ic.heart,
+  'Crear Rúbrica': Ic.pendientes,
+  'Preguntas DOK': Ic.brain,
+  'Examen de Matemáticas': Ic.calc,
+  'Feedback Personalizado': Ic.msg2,
+  'Choice Board': Ic.board,
+  'Creador de Assessments': Ic.check,
+  'Pruebas Diagnósticas': Ic.target,
+  'Lectura por Nivel': Ic.book,
+  'Vocabulario Académico': Ic.abc,
+  'Preguntas de Comprensión': Ic.help,
+  'Evaluación Lexile': Ic.ruler,
+  'Asistente de Matemáticas': Ic.calc,
+  'Asistente de Ciencias': Ic.flask,
+  'Asistente de ELA (Inglés)': Ic.book,
+  'Estudios Sociales': Ic.globe,
+  'Asistente de Idiomas': Ic.speech,
+  'Coach de Ed. Especial': Ic.heart,
+  'Coach para ELL': Ic.globe,
+};
+
+const AI_DATA = (() => {
+  const out = {};
+  for (const [name, cfg] of Object.entries(TOOLS)) {
+    const cat = cfg.category || 'planificacion';
+    if (!out[cat]) out[cat] = { label: CATEGORY_LABELS[cat] || cat, items: [] };
+    const tint = CAT_TINT[cat] || CAT_TINT.planificacion;
+    out[cat].items.push({
+      name,
+      desc: cfg.subtitle || '',
+      Icon: ICON_BY_NAME[name] || Ic.sparkle,
+      bg: tint.bg,
+      fg: tint.fg,
+    });
+  }
+  // Preserve a sensible category order on the tabs even if TOOLS iteration order
+  // doesn't already match (object iteration is insertion order in modern JS,
+  // but be explicit here).
+  return Object.fromEntries(
+    Object.keys(CATEGORY_LABELS).filter(k => out[k]).map(k => [k, out[k]])
+  );
+})();
 
 function AITools() {
   const tabs = Object.keys(AI_DATA);

@@ -638,9 +638,31 @@ function AIPanel({ mode, sectionLabel, onFill }) {
     if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
   }, [messages]);
 
-  const SYS_ASSIGNMENT = `Eres un asistente educativo de Puerto Rico. Genera preguntas en JSON sin markdown:
-{"title":"...","questions":[{"TypeId":"1","Text":"...","Options":["a","b","c","d"],"CorrectIndex":0}]}
-TypeId: 1=Selección, 2=Pareo, 3=Abierto, 4=Cierto o Falso. Responde en español.`;
+  const SYS_ASSIGNMENT = `Eres un asistente educativo de Puerto Rico. Genera preguntas en JSON puro (sin markdown, sin texto antes ni después).
+
+Estructura general:
+{"title":"...","questions":[ /* uno o varios objetos según el tipo */ ]}
+
+TIPOS DE PREGUNTA y SHAPE EXACTO (usa exactamente estos nombres de campo):
+
+1) Selección múltiple (TypeId: "1"):
+   {"TypeId":"1","Text":"La pregunta","Options":["op A","op B","op C","op D"],"CorrectIndex":0}
+   CorrectIndex es el índice (0-based) de la opción correcta dentro de Options.
+
+2) Pareo (TypeId: "2"):
+   {"TypeId":"2","Text":"Instrucción del pareo","Pairs":[{"l":"premisa 1","r":"respuesta 1"},{"l":"premisa 2","r":"respuesta 2"}]}
+   "l" = premisa (lado izquierdo), "r" = respuesta (lado derecho). Mínimo 3 pares.
+   NUNCA uses "pairs" (lowercase), "pareados", "matches", "premise/response" — DEBE ser "Pairs" con "l"/"r" exactos.
+
+3) Abierto (TypeId: "3"):
+   {"TypeId":"3","Text":"La pregunta abierta"}
+   (Sin Options ni Pairs — el estudiante escribe libre.)
+
+4) Cierto o Falso (TypeId: "4"):
+   {"TypeId":"4","Text":"La afirmación","CorrectIndex":0}
+   CorrectIndex: 0 = Cierto, 1 = Falso.
+
+Responde en español. Solo el JSON, sin explicaciones.`;
 
   const SYS_PLANNING = `Eres asistente de planificación instruccional para maestros de Puerto Rico.
 Genera contenido JSON sin markdown: {"content":"texto completo para la sección"}
@@ -818,10 +840,23 @@ function AssignmentManager({ onBack, onSaved }) {
 
   function handleAIFill(data) {
     if (data.title) setTitle(data.title);
+
+    // The model sometimes invents alternate field names for Pareo despite the
+    // prompt being explicit. Normalize whatever shape comes in to {l, r}.
+    function normalizePairs(q) {
+      const candidates = q.Pairs || q.pairs || q.pareados || q.pareos || q.matches || q.matching || null;
+      if (!Array.isArray(candidates) || candidates.length === 0) return [{ l: "", r: "" }];
+      return candidates.map(p => ({
+        l: p?.l ?? p?.L ?? p?.left ?? p?.premise ?? p?.premisa ?? p?.lhs ?? p?.term ?? "",
+        r: p?.r ?? p?.R ?? p?.right ?? p?.response ?? p?.respuesta ?? p?.rhs ?? p?.match ?? p?.definition ?? "",
+      }));
+    }
+
     if (data.questions) setQuestions(data.questions.map((q, i) => ({
-      id: Date.now() + i, TypeId: q.TypeId || "1", Text: q.Text || "",
-      Options: q.Options || ["","","",""], CorrectIndex: q.CorrectIndex ?? 0,
-      Pairs: q.Pairs || [{ l: "", r: "" }],
+      id: Date.now() + i, TypeId: q.TypeId || "1", Text: q.Text || q.text || q.Prompt || q.prompt || "",
+      Options: q.Options || q.options || q.choices || ["","","",""],
+      CorrectIndex: q.CorrectIndex ?? q.correctIndex ?? q.correct ?? 0,
+      Pairs: normalizePairs(q),
     })));
   }
 
