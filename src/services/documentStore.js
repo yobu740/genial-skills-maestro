@@ -14,14 +14,69 @@ function readAll() {
   return Array.isArray(docs) ? docs : [];
 }
 
+function sortDocs(docs) {
+  return [...docs].sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+}
+
 function writeAll(docs) {
   if (typeof window === 'undefined') return;
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(docs));
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sortDocs(docs)));
   window.dispatchEvent(new CustomEvent('genial-documents-changed', { detail: docs }));
 }
 
+function isNewer(a, b) {
+  return new Date(a?.updatedAt || a?.createdAt || 0) > new Date(b?.updatedAt || b?.createdAt || 0);
+}
+
+function mergeDocuments(localDocs, cloudDocs) {
+  const byId = new Map();
+  for (const doc of cloudDocs || []) byId.set(doc.id, doc);
+  for (const doc of localDocs || []) {
+    const existing = byId.get(doc.id);
+    if (!existing || isNewer(doc, existing)) byId.set(doc.id, doc);
+  }
+  return sortDocs([...byId.values()]);
+}
+
+async function upsertCloudDocument(doc) {
+  const res = await fetch('/api/documents', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(doc),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return (await res.json()).document;
+}
+
 export function listDocuments() {
-  return readAll().sort((a, b) => new Date(b.updatedAt || b.createdAt) - new Date(a.updatedAt || a.createdAt));
+  return sortDocs(readAll());
+}
+
+export async function syncDocumentsWithCloud() {
+  const localDocs = readAll();
+  try {
+    const res = await fetch('/api/documents');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (data.source && data.source !== 'supabase') {
+      return { documents: sortDocs(localDocs), source: data.source, warning: data.warning || '' };
+    }
+
+    const cloudDocs = Array.isArray(data.documents) ? data.documents : [];
+    const merged = mergeDocuments(localDocs, cloudDocs);
+    writeAll(merged);
+
+    const cloudById = new Map(cloudDocs.map(doc => [doc.id, doc]));
+    const toUpload = merged.filter(doc => {
+      const cloud = cloudById.get(doc.id);
+      return !cloud || isNewer(doc, cloud);
+    });
+    await Promise.allSettled(toUpload.map(upsertCloudDocument));
+
+    return { documents: listDocuments(), source: 'supabase', warning: '' };
+  } catch (error) {
+    return { documents: sortDocs(localDocs), source: 'local', warning: String(error?.message || error) };
+  }
 }
 
 export function saveGeneratedDocument({
@@ -54,11 +109,13 @@ export function saveGeneratedDocument({
   };
 
   writeAll([doc, ...readAll()]);
+  upsertCloudDocument(doc).catch(() => {});
   return doc;
 }
 
 export function deleteDocument(id) {
   writeAll(readAll().filter((doc) => doc.id !== id));
+  fetch(`/api/documents/${encodeURIComponent(id)}`, { method: 'DELETE' }).catch(() => {});
 }
 
 export function updateDocument(id, patch) {
@@ -69,6 +126,13 @@ export function updateDocument(id, patch) {
     return updated;
   });
   writeAll(docs);
+  if (updated) {
+    fetch(`/api/documents/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updated),
+    }).catch(() => {});
+  }
   return updated;
 }
 

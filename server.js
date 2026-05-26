@@ -473,11 +473,44 @@ function mapAssignmentRow(row) {
   };
 }
 
+function mapDocumentRow(row) {
+  return {
+    id: row.id,
+    title: row.title,
+    toolTitle: row.tool_title,
+    category: row.category,
+    kind: row.kind,
+    model: row.model,
+    content: row.content,
+    prompt: row.prompt,
+    values: row.values || {},
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
 function assignmentBody(body = {}) {
   return {
     title: body.Title || body.title || 'Nueva asignacion',
     published: body.Published ?? body.published ?? true,
     questions: Array.isArray(body.Questions) ? body.Questions : (Array.isArray(body.questions) ? body.questions : []),
+  };
+}
+
+function documentBody(body = {}) {
+  const now = new Date().toISOString();
+  return {
+    id: String(body.id || `doc_${Date.now()}`),
+    title: body.title || body.toolTitle || 'Documento IA',
+    tool_title: body.toolTitle || body.title || 'Herramienta IA',
+    category: body.category || 'ia',
+    kind: body.kind || 'markdown',
+    model: body.model || '',
+    content: String(body.content || ''),
+    prompt: body.prompt || '',
+    values: body.values && typeof body.values === 'object' ? body.values : {},
+    created_at: body.createdAt || now,
+    updated_at: body.updatedAt || now,
   };
 }
 
@@ -504,6 +537,66 @@ app.get('/api/assignments', async (_req, res) => {
   } catch (e) {
     console.warn('[assignments] Falling back to local-only mode:', e.message || e);
     res.json({ assignments: [], source: 'supabase-error', warning: String(e.message || e) });
+  }
+});
+
+app.get('/api/documents', async (_req, res) => {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    return res.json({ documents: [], source: 'local', warning: 'Supabase is not configured.' });
+  }
+  try {
+    const rows = await supabaseRequest('teacher_documents', { query: '?order=updated_at.desc' });
+    res.json({ documents: (rows || []).map(mapDocumentRow) });
+  } catch (e) {
+    console.warn('[documents] Falling back to local-only mode:', e.message || e);
+    res.json({ documents: [], source: 'supabase-error', warning: String(e.message || e) });
+  }
+});
+
+app.post('/api/documents', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const [row] = await supabaseRequest('teacher_documents', {
+      method: 'POST',
+      prefer: 'resolution=merge-duplicates,return=representation',
+      body: [documentBody(req.body)],
+    });
+    res.json({ document: mapDocumentRow(row) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.patch('/api/documents/:id', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const id = String(req.params.id || '');
+    const body = documentBody({ ...req.body, id });
+    delete body.created_at;
+    const [row] = await supabaseRequest('teacher_documents', {
+      method: 'PATCH',
+      query: `?id=eq.${encodeURIComponent(id)}`,
+      prefer: 'return=representation',
+      body,
+    });
+    if (!row) return res.status(404).json({ error: 'Documento no encontrado' });
+    res.json({ document: mapDocumentRow(row) });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
+  }
+});
+
+app.delete('/api/documents/:id', async (req, res) => {
+  if (!requireSupabase(res)) return;
+  try {
+    const id = String(req.params.id || '');
+    await supabaseRequest('teacher_documents', {
+      method: 'DELETE',
+      query: `?id=eq.${encodeURIComponent(id)}`,
+    });
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message || e) });
   }
 });
 
@@ -1486,6 +1579,7 @@ app.get('/api/storage-health', async (_req, res) => {
   const configured = !!(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY);
   const checks = {
     teacher_assignments: { ok: false, error: configured ? null : 'Supabase is not configured.' },
+    teacher_documents: { ok: false, error: configured ? null : 'Supabase is not configured.' },
     teacher_plannings: { ok: false, error: configured ? null : 'Supabase is not configured.' },
   };
 

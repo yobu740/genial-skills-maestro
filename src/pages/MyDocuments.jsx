@@ -3,6 +3,7 @@ import Ic from '../components/Icons.jsx';
 import {
   deleteDocument,
   listDocuments,
+  syncDocumentsWithCloud,
   updateDocument,
 } from '../services/documentStore.js';
 import { exportMarkdownPDF, exportPPTX, exportWorksheet } from '../components/exporters.js';
@@ -31,12 +32,20 @@ export default function MyDocuments() {
   const [activeId, setActiveId] = React.useState(null);
   const [copied, setCopied] = React.useState(false);
   const [exporting, setExporting] = React.useState('');
+  const [syncState, setSyncState] = React.useState({ loading: true, source: 'local', warning: '' });
 
   React.useEffect(() => {
+    let cancelled = false;
     const refresh = () => setDocs(listDocuments());
+    syncDocumentsWithCloud().then(({ documents, source, warning }) => {
+      if (cancelled) return;
+      setDocs(documents);
+      setSyncState({ loading: false, source, warning });
+    });
     window.addEventListener('genial-documents-changed', refresh);
     window.addEventListener('storage', refresh);
     return () => {
+      cancelled = true;
       window.removeEventListener('genial-documents-changed', refresh);
       window.removeEventListener('storage', refresh);
     };
@@ -132,6 +141,12 @@ export default function MyDocuments() {
             <strong>{filtered.length}</strong>
             <span>{filtered.length === 1 ? 'documento' : 'documentos'}</span>
           </div>
+          {syncState.loading && <div className="docs-empty-mini">Sincronizando documentos...</div>}
+          {!syncState.loading && syncState.source !== 'supabase' && (
+            <div className="docs-empty-mini">
+              Documentos en este navegador. {syncState.warning ? `Supabase: ${syncState.warning}` : ''}
+            </div>
+          )}
           {filtered.map((doc) => (
             <button
               key={doc.id}
