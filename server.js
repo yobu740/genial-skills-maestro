@@ -1407,7 +1407,10 @@ app.post('/api/generate-image', async (req, res) => {
   try {
     while (attempt < MAX_ATTEMPTS) {
       attempt++;
-      const upstream = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-schnell/predictions', {
+      // FLUX 1.1 Pro — sharper, anatomically correct, much better proportions
+      // than schnell. ~$0.04/img · 5-8s per image. Supports prompt_upsampling
+      // which expands the prompt internally via an LLM for richer outputs.
+      const upstream = await fetch('https://api.replicate.com/v1/models/black-forest-labs/flux-1.1-pro/predictions', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${REPLICATE_API_TOKEN}`,
@@ -1418,10 +1421,10 @@ app.post('/api/generate-image', async (req, res) => {
           input: {
             prompt: finalPrompt.slice(0, 500),
             aspect_ratio,
-            num_outputs: 1,
             output_format: 'webp',
-            output_quality: 85,
-            go_fast: true,
+            output_quality: 90,
+            safety_tolerance: 2,
+            prompt_upsampling: true,
           },
         }),
       });
@@ -1453,7 +1456,7 @@ app.post('/api/generate-image', async (req, res) => {
       return res.json({
         url,
         took_ms: Date.now() - t0,
-        model: 'black-forest-labs/flux-schnell',
+        model: 'black-forest-labs/flux-1.1-pro',
         prompt: finalPrompt,
         attempts: attempt,
       });
