@@ -1249,7 +1249,7 @@ function SlideWorkspace({ value, onChange }) {
 }
 
 function DocumentWorkspace({ value, onChange }) {
-  const [docMode, setDocMode] = React.useState('edit'); // edit | preview
+  const [docMode, setDocMode] = React.useState('preview'); // edit | preview
   const visibleValue = stripEditorMetadata(value);
 
   return (
@@ -1261,7 +1261,7 @@ function DocumentWorkspace({ value, onChange }) {
             className={docMode === 'edit' ? 'active' : ''}
             onClick={() => setDocMode('edit')}
           >
-            ✏️ Editor Markdown
+            ✏️ Editor Texto
           </button>
           <button
             type="button"
@@ -1279,7 +1279,7 @@ function DocumentWorkspace({ value, onChange }) {
             value={visibleValue}
             onChange={(e) => onChange(e.target.value)}
             spellCheck
-            placeholder="Edita el contenido en formato Markdown aquí..."
+            placeholder="Edita el contenido aqui..."
           />
         )}
         {docMode === 'preview' && (

@@ -209,6 +209,8 @@ export const GENIAL_CSS = `
 .fpg-check span{display:block;font-size:12px;line-height:1.45;color:#6B7A93}
 .fpg-generate{background:linear-gradient(135deg,#6745EA,#4ba7a1);color:#fff;border:0;border-radius:10px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 2px 8px rgba(103,69,234,.25)}
 .fpg-generate:disabled{opacity:.55;cursor:not-allowed}
+.fpg-loader{width:16px;height:16px;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:fpgSpin .75s linear infinite}
+@keyframes fpgSpin{to{transform:rotate(360deg)}}
 .fpg-error{background:#fdecea;color:#7a1a14;border:1px solid #f4c4c0;padding:10px 12px;border-radius:8px;font-size:12.5px}
 .fpg-meta{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#6B7A93;background:#f4f6f9;padding:8px 12px;border-radius:8px;margin-bottom:16px}
 .fpg-section{margin-bottom:20px}
@@ -2943,7 +2945,7 @@ function PlanDetail({ plan, onBack, onPlanSaved, assignments = [] }) {
 const SECTION_LABELS = Object.fromEntries(MOCK.cotejo.map(s => [s.key, s.label]));
 
 function FullPlanGenerator({ plan, onApply, onClose }) {
-  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "openai/gpt-4o-mini", schoolImprovementPlan: false });
+  const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5", schoolImprovementPlan: false });
   const [units, setUnits]     = useState([]);
   const [selectedUnitId, setSelectedUnitId] = useState("");
   const [loadingUnits, setLoadingUnits] = useState(false);
@@ -3099,7 +3101,7 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
                 onClick={generate}
                 disabled={!form.unit.trim() || status === "generating"}
               >
-                {status === "generating" ? "Generando plan… (puede tardar 20–30s)" : "✨ Generar plan completo"}
+                {status === "generating" ? <><span className="fpg-loader" aria-hidden="true" /> Generando plan...</> : "✨ Generar plan completo"}
               </button>
             </div>
           </div>
