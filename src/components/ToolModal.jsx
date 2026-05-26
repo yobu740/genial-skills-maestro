@@ -568,6 +568,9 @@ function SlideWorkspace({ value, onChange }) {
   const [customImageUrl, setCustomImageUrl] = React.useState('');
   const [imageError, setImageError] = React.useState('');
 
+  const [showInspector, setShowInspector] = React.useState(false);
+  const [showNotes, setShowNotes] = React.useState(true);
+
   React.useEffect(() => {
     if (active > slides.length - 1) setActive(Math.max(slides.length - 1, 0));
   }, [active, slides.length]);
@@ -636,6 +639,8 @@ function SlideWorkspace({ value, onChange }) {
     }
   }
 
+  const hasMedia = current && (current.imageUrl || current.linkUrl);
+
   return (
     <div className="tm-slide-workspace">
       <div className="tm-slide-rail">
@@ -659,202 +664,227 @@ function SlideWorkspace({ value, onChange }) {
         <button type="button" className="tm-work-add" onClick={addSlide}>+ Slide</button>
       </div>
 
-      <div className="tm-slide-editor">
+      <div className="tm-slide-editor" style={{ gridTemplateColumns: showInspector && hasMedia ? '1fr 280px' : '1fr' }}>
         {current && (
           <>
-            <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
-              <div className="tm-wysiwyg-toolbar">
-                <button
-                  type="button"
-                  title="Negrita"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => document.execCommand('bold', false)}
-                >
-                  <strong>B</strong>
-                </button>
-                <button
-                  type="button"
-                  title="Itálica"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => document.execCommand('italic', false)}
-                >
-                  <em>I</em>
-                </button>
-                <button
-                  type="button"
-                  title="Lista de viñetas"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => document.execCommand('insertUnorderedList', false)}
-                >
-                  • Lista
-                </button>
-                
-                <div className="tm-toolbar-divider" />
-                
-                <button
-                  type="button"
-                  title="Alinear a la izquierda"
-                  className={current.align === 'left' ? 'active' : ''}
-                  onClick={() => updateSlide(active, { align: 'left' })}
-                >
-                  ⬅
-                </button>
-                <button
-                  type="button"
-                  title="Centrar"
-                  className={current.align === 'center' ? 'active' : ''}
-                  onClick={() => updateSlide(active, { align: 'center' })}
-                >
-                  ↔
-                </button>
-                <button
-                  type="button"
-                  title="Alinear a la derecha"
-                  className={current.align === 'right' ? 'active' : ''}
-                  onClick={() => updateSlide(active, { align: 'right' })}
-                >
-                  ➡
-                </button>
-                <button
-                  type="button"
-                  title="Justificar"
-                  className={current.align === 'justify' ? 'active' : ''}
-                  onClick={() => updateSlide(active, { align: 'justify' })}
-                >
-                  ⇹
-                </button>
-                
-                <div className="tm-toolbar-divider" />
+            <div className="tm-slide-center-area">
+              <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
+                <div className="tm-wysiwyg-toolbar">
+                  <button
+                    type="button"
+                    title="Negrita"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => document.execCommand('bold', false)}
+                  >
+                    <strong>B</strong>
+                  </button>
+                  <button
+                    type="button"
+                    title="Itálica"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => document.execCommand('italic', false)}
+                  >
+                    <em>I</em>
+                  </button>
+                  <button
+                    type="button"
+                    title="Lista de viñetas"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => document.execCommand('insertUnorderedList', false)}
+                  >
+                    • Lista
+                  </button>
+                  
+                  <div className="tm-toolbar-divider" />
+                  
+                  <button
+                    type="button"
+                    title="Alinear a la izquierda"
+                    className={current.align === 'left' ? 'active' : ''}
+                    onClick={() => updateSlide(active, { align: 'left' })}
+                  >
+                    ⬅
+                  </button>
+                  <button
+                    type="button"
+                    title="Centrar"
+                    className={current.align === 'center' ? 'active' : ''}
+                    onClick={() => updateSlide(active, { align: 'center' })}
+                  >
+                    ↔
+                  </button>
+                  <button
+                    type="button"
+                    title="Alinear a la derecha"
+                    className={current.align === 'right' ? 'active' : ''}
+                    onClick={() => updateSlide(active, { align: 'right' })}
+                  >
+                    ➡
+                  </button>
+                  <button
+                    type="button"
+                    title="Justificar"
+                    className={current.align === 'justify' ? 'active' : ''}
+                    onClick={() => updateSlide(active, { align: 'justify' })}
+                  >
+                    ⇹
+                  </button>
+                  
+                  <div className="tm-toolbar-divider" />
 
-                <button
-                  type="button"
-                  title="Añadir Imagen"
-                  onClick={() => setShowImagePicker(true)}
-                >
-                  🖼️ Imagen
-                </button>
-                
-                <button
-                  type="button"
-                  title="Añadir Enlace"
-                  onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}
-                >
-                  🔗 Enlace
-                </button>
+                  <button
+                    type="button"
+                    title="Añadir Imagen"
+                    onClick={() => setShowImagePicker(true)}
+                  >
+                    🖼️ Imagen
+                  </button>
+                  
+                  <button
+                    type="button"
+                    title="Añadir Enlace"
+                    onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}
+                  >
+                    🔗 Enlace
+                  </button>
+
+                  {hasMedia && (
+                    <>
+                      <div className="tm-toolbar-divider" />
+                      <button
+                        type="button"
+                        className={showInspector ? 'active' : ''}
+                        onClick={() => setShowInspector(!showInspector)}
+                        title="Configuración de Imagen/Enlace"
+                      >
+                        ⚙️ Propiedades
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                <div className="tm-slide-actions-right">
+                  <button type="button" onClick={duplicateSlide} title="Duplicar diapositiva">Duplicar</button>
+                  <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
+                </div>
               </div>
 
-              <div className="tm-slide-actions-right">
-                <button type="button" onClick={duplicateSlide} title="Duplicar diapositiva">Duplicar</button>
-                <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
+              <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
+                <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
+                  <div className="tm-slide-canvas-content">
+                    <input
+                      className="tm-slide-title-input"
+                      value={current.title}
+                      onChange={(e) => updateSlide(active, { title: e.target.value })}
+                      placeholder="Título de la diapositiva"
+                      style={{ textAlign: current.align || 'left' }}
+                    />
+                    <SlideBodyEditor
+                      html={markdownToHtmlForEditor(current.body)}
+                      align={current.align || 'left'}
+                      slideIndex={active}
+                      onChange={(newHtml) => {
+                        const newMarkdown = htmlToMarkdown(newHtml);
+                        updateSlide(active, { body: newMarkdown });
+                      }}
+                    />
+                  </div>
+
+                  {current.imageUrl ? (
+                    <div className="tm-slide-canvas-image">
+                      <img src={current.imageUrl} alt={current.imageAlt || ''} />
+                      <button
+                        type="button"
+                        className="tm-slide-image-remove"
+                        onClick={() => updateSlide(active, { imageUrl: '', imageAlt: '' })}
+                        title="Eliminar imagen"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      type="button"
+                      className="tm-canvas-add-image-placeholder"
+                      onClick={() => setShowImagePicker(true)}
+                      title="Hacer clic para añadir imagen de apoyo"
+                    >
+                      <span>📷 Añadir imagen o Generar con IA</span>
+                    </button>
+                  )}
+
+                  {current.linkUrl && (
+                    <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
+                      🔗 {current.linkText || current.linkUrl}
+                    </a>
+                  )}
+                </div>
+              </section>
+
+              <div className="tm-slide-notes-pane">
+                <header className="tm-notes-header" onClick={() => setShowNotes(!showNotes)}>
+                  <span>📝 Notas del maestro</span>
+                  <button type="button">{showNotes ? '▼ Ocultar' : '▲ Mostrar'}</button>
+                </header>
+                {showNotes && (
+                  <textarea
+                    className="tm-notes-textarea"
+                    value={current.notes || ''}
+                    onChange={(e) => updateSlide(active, { notes: e.target.value })}
+                    placeholder="Escribe aquí las directrices pedagógicas o notas para presentar esta diapositiva..."
+                  />
+                )}
               </div>
             </div>
 
-            <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
-              <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
-                <div className="tm-slide-canvas-content">
-                  <input
-                    className="tm-slide-title-input"
-                    value={current.title}
-                    onChange={(e) => updateSlide(active, { title: e.target.value })}
-                    placeholder="Título de la diapositiva"
-                    style={{ textAlign: current.align || 'left' }}
-                  />
-                  <SlideBodyEditor
-                    html={markdownToHtmlForEditor(current.body)}
-                    align={current.align || 'left'}
-                    slideIndex={active}
-                    onChange={(newHtml) => {
-                      const newMarkdown = htmlToMarkdown(newHtml);
-                      updateSlide(active, { body: newMarkdown });
-                    }}
-                  />
+            {showInspector && hasMedia && (
+              <aside className="tm-slide-inspector">
+                <div className="tm-inspector-media-details">
+                  {current.imageUrl && (
+                    <div className="tm-inspector-box">
+                      <span>Ajustes de Imagen</span>
+                      <label>
+                        <small>URL de imagen</small>
+                        <input
+                          value={current.imageUrl || ''}
+                          onChange={(e) => updateSlide(active, { imageUrl: e.target.value })}
+                          placeholder="https://..."
+                        />
+                      </label>
+                      <label>
+                        <small>Descripción (alt)</small>
+                        <input
+                          value={current.imageAlt || ''}
+                          onChange={(e) => updateSlide(active, { imageAlt: e.target.value })}
+                          placeholder="Descripción breve de la imagen"
+                        />
+                      </label>
+                    </div>
+                  )}
+                  {current.linkUrl && (
+                    <div className="tm-inspector-box">
+                      <span>Ajustes de Enlace</span>
+                      <label>
+                        <small>Texto del enlace</small>
+                        <input
+                          value={current.linkText || ''}
+                          onChange={(e) => updateSlide(active, { linkText: e.target.value })}
+                          placeholder="Recurso, video, lectura..."
+                        />
+                      </label>
+                      <label>
+                        <small>URL del enlace</small>
+                        <input
+                          value={current.linkUrl || ''}
+                          onChange={(e) => updateSlide(active, { linkUrl: e.target.value })}
+                          placeholder="https://..."
+                        />
+                      </label>
+                    </div>
+                  )}
                 </div>
-
-                {current.imageUrl ? (
-                  <div className="tm-slide-canvas-image">
-                    <img src={current.imageUrl} alt={current.imageAlt || ''} />
-                    <button
-                      type="button"
-                      className="tm-slide-image-remove"
-                      onClick={() => updateSlide(active, { imageUrl: '', imageAlt: '' })}
-                      title="Eliminar imagen"
-                    >
-                      ×
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    type="button"
-                    className="tm-canvas-add-image-placeholder"
-                    onClick={() => setShowImagePicker(true)}
-                    title="Hacer clic para añadir imagen de apoyo"
-                  >
-                    <span>📷 Añadir imagen o Generar con IA</span>
-                  </button>
-                )}
-
-                {current.linkUrl && (
-                  <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
-                    🔗 {current.linkText || current.linkUrl}
-                  </a>
-                )}
-              </div>
-            </section>
-
-            <aside className="tm-slide-inspector">
-              <label className="tm-slide-notes">
-                <span>Notas del maestro</span>
-                <textarea
-                  value={current.notes || ''}
-                  onChange={(e) => updateSlide(active, { notes: e.target.value })}
-                  placeholder="Notas y directrices pedagógicas para presentar esta diapositiva..."
-                />
-              </label>
-              <div className="tm-inspector-media-details">
-                {current.imageUrl && (
-                  <div className="tm-inspector-box">
-                    <span>Ajustes de Imagen</span>
-                    <label>
-                      <small>URL de imagen</small>
-                      <input
-                        value={current.imageUrl || ''}
-                        onChange={(e) => updateSlide(active, { imageUrl: e.target.value })}
-                        placeholder="https://..."
-                      />
-                    </label>
-                    <label>
-                      <small>Descripción (alt)</small>
-                      <input
-                        value={current.imageAlt || ''}
-                        onChange={(e) => updateSlide(active, { imageAlt: e.target.value })}
-                        placeholder="Descripción breve de la imagen"
-                      />
-                    </label>
-                  </div>
-                )}
-                {current.linkUrl && (
-                  <div className="tm-inspector-box">
-                    <span>Ajustes de Enlace</span>
-                    <label>
-                      <small>Texto del enlace</small>
-                      <input
-                        value={current.linkText || ''}
-                        onChange={(e) => updateSlide(active, { linkText: e.target.value })}
-                        placeholder="Recurso, video, lectura..."
-                      />
-                    </label>
-                    <label>
-                      <small>URL del enlace</small>
-                      <input
-                        value={current.linkUrl || ''}
-                        onChange={(e) => updateSlide(active, { linkUrl: e.target.value })}
-                        placeholder="https://..."
-                      />
-                    </label>
-                  </div>
-                )}
-              </div>
-            </aside>
+              </aside>
+            )}
           </>
         )}
       </div>
@@ -950,6 +980,54 @@ function SlideWorkspace({ value, onChange }) {
   );
 }
 
+function DocumentWorkspace({ value, onChange }) {
+  const [docMode, setDocMode] = React.useState('split'); // split | edit | preview
+
+  return (
+    <div className="tm-doc-workspace">
+      <div className="tm-doc-toolbar">
+        <div className="tm-doc-mode-selector">
+          <button
+            type="button"
+            className={docMode === 'split' ? 'active' : ''}
+            onClick={() => setDocMode('split')}
+          >
+            📖 Vista Dividida
+          </button>
+          <button
+            type="button"
+            className={docMode === 'edit' ? 'active' : ''}
+            onClick={() => setDocMode('edit')}
+          >
+            ✏️ Editor Markdown
+          </button>
+          <button
+            type="button"
+            className={docMode === 'preview' ? 'active' : ''}
+            onClick={() => setDocMode('preview')}
+          >
+            👁️ Vista Previa
+          </button>
+        </div>
+      </div>
+      <div className={`tm-doc-body mode-${docMode}`}>
+        {(docMode === 'edit' || docMode === 'split') && (
+          <textarea
+            className="tm-doc-textarea"
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            spellCheck
+            placeholder="Edita el contenido en formato Markdown aquí..."
+          />
+        )}
+        {(docMode === 'preview' || docMode === 'split') && (
+          <div className="tm-doc-preview tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(value) }} />
+        )}
+      </div>
+    </div>
+  );
+}
+
 function WorksheetWorkspace({ value, onChange, title }) {
   return (
     <div className="tm-worksheet-workspace">
@@ -998,7 +1076,8 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
   const [history, setHistory] = React.useState([]); // for chat-mode tools
   const [savedDoc, setSavedDoc]   = React.useState(null);
   const [imageStatus, setImageStatus] = React.useState(''); // '' | 'generating-3-of-5' | 'done'
-  const [workspaceView, setWorkspaceView] = React.useState('preview');
+  const [showForm, setShowForm] = React.useState(true);
+  const [activeTab, setActiveTab] = React.useState('document');
   const [athenasAction, setAthenasAction] = React.useState('profundizar');
   const abortRef = React.useRef(null);
   const outRef = React.useRef(null);
@@ -1076,7 +1155,8 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     setError('');
     setOutput('');
     setSavedDoc(null);
-    setWorkspaceView('preview');
+    setShowForm(true);
+    setActiveTab('document');
     setStatus('streaming');
 
     const rawUserPrompt = tool.buildPrompt(values);
@@ -1133,6 +1213,10 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
 
       // ─── Post-process [IMAGE: prompt] tags into real generated images ───
       acc = await resolveImageTags(acc, setOutput, setImageStatus);
+
+      setShowForm(false);
+      const hasSlides = /^\s*##?\s+/m.test(acc);
+      setActiveTab(hasSlides ? 'presentation' : 'document');
 
       setSavedDoc(saveGeneratedDocument({
         title: tool.title,
@@ -1253,24 +1337,104 @@ ${truncated}`;
     }
   }
 
+  const showWorkspaceHeader = status !== 'streaming' && output !== '';
+
   return (
     <div
       className={embedded ? 'tm-workspace-shell' : 'tm-backdrop'}
       onMouseDown={(e) => { if (!embedded && e.target === e.currentTarget) onClose(); }}
     >
       <div className={`tm-modal ${embedded ? 'embedded' : ''}`} role={embedded ? 'region' : 'dialog'} aria-label={tool.title}>
-        <header className="tm-head">
-          <div>
-            <div className="tm-eyebrow"><Ic.sparkle /> Herramienta IA</div>
-            <h2>{tool.title}</h2>
-            <p>{tool.subtitle}</p>
-          </div>
-          <button className={embedded ? 'tm-back' : 'tm-close'} onClick={onClose} aria-label={embedded ? 'Volver a herramientas' : 'Cerrar'}>
-            {embedded ? 'Volver' : '×'}
-          </button>
-        </header>
+        {showWorkspaceHeader ? (
+          <header className="tm-suite-head">
+            <div className="tm-suite-header-left">
+              <button type="button" className="tm-suite-back-btn" onClick={onClose} aria-label={embedded ? 'Volver a herramientas' : 'Cerrar'}>
+                ← Volver
+              </button>
+              <div className="tm-suite-title-area">
+                <h3>{tool.title}</h3>
+              </div>
+            </div>
 
-        <div className="tm-body">
+            <div className="tm-header-tabs" role="tablist" aria-label="Selección de documento">
+              <button
+                type="button"
+                className={`tm-header-tab ${activeTab === 'document' ? 'active' : ''}`}
+                onClick={() => setActiveTab('document')}
+              >
+                📝 {tool.title === 'Adaptar Lección' ? 'Lección Adaptada' : 'Documento'}
+              </button>
+              <button
+                type="button"
+                className={`tm-header-tab ${activeTab === 'presentation' ? 'active' : ''}`}
+                onClick={() => setActiveTab('presentation')}
+              >
+                📊 Presentación PPT
+              </button>
+              <button
+                type="button"
+                className={`tm-header-tab ${activeTab === 'worksheet' ? 'active' : ''}`}
+                onClick={() => setActiveTab('worksheet')}
+              >
+                📝 Hoja de Trabajo
+              </button>
+            </div>
+
+            <div className="tm-suite-header-right">
+              <button
+                type="button"
+                className={`tm-header-toggle-form ${showForm ? 'active' : ''}`}
+                onClick={() => setShowForm(!showForm)}
+                title="Alternar parámetros de entrada"
+              >
+                ⚙️ Parámetros
+              </button>
+
+              <div className="tm-suite-header-actions">
+                <button type="button" className="tm-copy" onClick={copyOut} title="Copiar al portapapeles">📋 Copiar</button>
+                <button type="button" onClick={handleExportPDF} disabled={!!exporting} title="Descargar como PDF">
+                  {exporting === 'pdf' ? '⏳' : '📄'} PDF
+                </button>
+                <button type="button" onClick={handleExportPPTX} disabled={!!exporting} title="Descargar como PowerPoint">
+                  {exporting === 'pptx' ? '⏳' : '📊'} PPTX
+                </button>
+                <button type="button" onClick={handleExportWorksheet} disabled={!!exporting} title="Descargar como hoja de trabajo (con espacio para respuestas)">
+                  {exporting === 'worksheet' ? '⏳' : '📝'} Worksheet
+                </button>
+                {canMakeInteractive && (
+                  <button type="button" onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
+                    {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
+                  </button>
+                )}
+                {tool.suggestsInterventionPlan && onSwitchTool && (
+                  <button
+                    type="button"
+                    onClick={handleSwitchToIntervention}
+                    title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
+                    style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
+                  >
+                    🫶 Plan de intervención
+                  </button>
+                )}
+                <button type="button" onClick={downloadOut} title="Descargar markdown crudo">.md</button>
+                <button type="button" onClick={() => setShowForm(true)} title="Modificar parámetros del formulario">Ajustar</button>
+              </div>
+            </div>
+          </header>
+        ) : (
+          <header className="tm-head">
+            <div>
+              <div className="tm-eyebrow"><Ic.sparkle /> Herramienta IA</div>
+              <h2>{tool.title}</h2>
+              <p>{tool.subtitle}</p>
+            </div>
+            <button className={embedded ? 'tm-back' : 'tm-close'} onClick={onClose} aria-label={embedded ? 'Volver a herramientas' : 'Cerrar'}>
+              {embedded ? 'Volver' : '×'}
+            </button>
+          </header>
+        )}
+
+        <div className={`tm-body ${showForm ? '' : 'form-collapsed'}`}>
           <form className="tm-form" onSubmit={generate}>
             <label className="tm-field">
               <span>Modelo</span>
@@ -1357,76 +1521,71 @@ ${truncated}`;
           </form>
 
           <div className="tm-output">
-            <div className="tm-out-head">
-              <div className="tm-out-title">
-                {status === 'streaming' && <span className="tm-spinner" />}
-                {status === 'idle'      && <span className="tm-dim">Resultado aparecerá aquí…</span>}
-                {status === 'streaming' && <span>Generando…</span>}
-                {status === 'done'      && <span>{savedDoc ? 'Resultado guardado en Mis documentos' : 'Resultado'}</span>}
-                {status === 'error'     && <span style={{color:'#b3261e'}}>Error</span>}
-                {imageStatus           && <span className="tm-img-status">🎨 {imageStatus}</span>}
-              </div>
-              {output && status !== 'streaming' && (
-                <div className="tm-out-actions">
-                  <button className="tm-copy" onClick={copyOut} title="Copiar al portapapeles">📋 Copiar</button>
-                  <button onClick={handleExportPDF} disabled={!!exporting} title="Descargar como PDF">
-                    {exporting === 'pdf' ? '⏳' : '📄'} PDF
-                  </button>
-                  <button onClick={handleExportPPTX} disabled={!!exporting} title="Descargar como PowerPoint">
-                    {exporting === 'pptx' ? '⏳' : '📊'} PPTX
-                  </button>
-                  <button onClick={handleExportWorksheet} disabled={!!exporting} title="Descargar como hoja de trabajo (con espacio para respuestas)">
-                    {exporting === 'worksheet' ? '⏳' : '📝'} Worksheet
-                  </button>
-                  {canMakeInteractive && (
-                    <button onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
-                      {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
-                    </button>
-                  )}
-                  {tool.suggestsInterventionPlan && onSwitchTool && (
-                    <button
-                      onClick={handleSwitchToIntervention}
-                      title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
-                      style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
-                    >
-                      🫶 Plan de intervención
-                    </button>
-                  )}
-                  <button onClick={downloadOut} title="Descargar markdown crudo">.md</button>
-                  <button onClick={generate} title="Regenerar">↻ Regenerar</button>
+            {!showWorkspaceHeader && (
+              <div className="tm-out-head">
+                <div className="tm-out-title">
+                  {status === 'streaming' && <span className="tm-spinner" />}
+                  {status === 'idle'      && <span className="tm-dim">Resultado aparecerá aquí…</span>}
+                  {status === 'streaming' && <span>Generando…</span>}
+                  {status === 'done'      && <span>{savedDoc ? 'Resultado guardado en Mis documentos' : 'Resultado'}</span>}
+                  {status === 'error'     && <span style={{color:'#b3261e'}}>Error</span>}
+                  {imageStatus           && <span className="tm-img-status">🎨 {imageStatus}</span>}
                 </div>
-              )}
-            </div>
+                {output && status !== 'streaming' && (
+                  <div className="tm-out-actions">
+                    <button type="button" className="tm-copy" onClick={copyOut} title="Copiar al portapapeles">📋 Copiar</button>
+                    <button type="button" onClick={handleExportPDF} disabled={!!exporting} title="Descargar como PDF">
+                      {exporting === 'pdf' ? '⏳' : '📄'} PDF
+                    </button>
+                    <button type="button" onClick={handleExportPPTX} disabled={!!exporting} title="Descargar como PowerPoint">
+                      {exporting === 'pptx' ? '⏳' : '📊'} PPTX
+                    </button>
+                    <button type="button" onClick={handleExportWorksheet} disabled={!!exporting} title="Descargar como hoja de trabajo (con espacio para respuestas)">
+                      {exporting === 'worksheet' ? '⏳' : '📝'} Worksheet
+                    </button>
+                    {canMakeInteractive && (
+                      <button type="button" onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
+                        {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
+                      </button>
+                    )}
+                    {tool.suggestsInterventionPlan && onSwitchTool && (
+                      <button
+                        type="button"
+                        onClick={handleSwitchToIntervention}
+                        title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
+                        style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
+                      >
+                        🫶 Plan de intervención
+                      </button>
+                    )}
+                    <button type="button" onClick={downloadOut} title="Descargar markdown crudo">.md</button>
+                    <button type="button" onClick={generate} title="Regenerar">↻ Regenerar</button>
+                  </div>
+                )}
+              </div>
+            )}
             {interactiveError && <div className="tm-inline-error">{interactiveError}</div>}
 
             {error ? (
               <pre className="tm-error">{error}</pre>
-            ) : (
+            ) : status === 'streaming' ? (
+              <div ref={outRef} className="tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(output) }} />
+            ) : output ? (
               <>
-                {output && status !== 'streaming' && (
-                  <div className="tm-work-tabs" role="tablist" aria-label="Vista del resultado">
-                    <button type="button" className={workspaceView === 'preview' ? 'active' : ''} onClick={() => setWorkspaceView('preview')}>Vista</button>
-                    <button type="button" className={workspaceView === 'edit' ? 'active' : ''} onClick={() => setWorkspaceView('edit')}>Editar texto</button>
-                    <button type="button" className={workspaceView === 'slides' ? 'active' : ''} onClick={() => setWorkspaceView('slides')}>Editor PPT</button>
-                    <button type="button" className={workspaceView === 'worksheet' ? 'active' : ''} onClick={() => setWorkspaceView('worksheet')}>Worksheet</button>
-                  </div>
+                {activeTab === 'document' && (
+                  <DocumentWorkspace value={output} onChange={setOutput} />
                 )}
-
-                {workspaceView === 'edit' && output ? (
-                  <textarea
-                    className="tm-editor"
-                    value={output}
-                    onChange={(e) => setOutput(e.target.value)}
-                    spellCheck
-                  />
-                ) : workspaceView === 'slides' && output ? (
+                {activeTab === 'presentation' && (
                   <SlideWorkspace value={output} onChange={setOutput} />
-                ) : workspaceView === 'worksheet' && output ? (
+                )}
+                {activeTab === 'worksheet' && (
                   <WorksheetWorkspace value={output} onChange={setOutput} title={tool.title} />
-                ) : (
-                  <div ref={outRef} className="tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(output) }} />
                 )}
               </>
+            ) : (
+              <div className="tm-out-placeholder">
+                <span className="tm-dim">El resultado generado aparecerá aquí...</span>
+              </div>
             )}
 
             {isChat && history.length > 0 && status === 'done' && (
