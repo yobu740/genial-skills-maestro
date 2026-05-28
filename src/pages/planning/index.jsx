@@ -424,10 +424,11 @@ function buildPlanDays(openDate, closeDate) {
   const dayCount = end && end >= base
     ? Math.min(14, Math.max(1, Math.round((end - base) / 86400000) + 1))
     : 5;
+  const WEEKDAYS = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
   return Array.from({ length: dayCount }, (_, i) => {
     const d = new Date(base);
     d.setDate(base.getDate() + i);
-    return { label: `DIA ${i + 1}`, date: formatPlanDate(d) };
+    return { label: WEEKDAYS[d.getDay()], date: formatPlanDate(d) };
   });
 }
 
