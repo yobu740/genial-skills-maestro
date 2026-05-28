@@ -3365,46 +3365,118 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
 }
 
-/* Tabs en el Cabezal (Top Tabs) */
-.tm-header-tabs {
-  display: flex;
-  background: #f1f3f7;
-  padding: 4px;
-  border-radius: 10px;
-  gap: 2px;
-}
-
-.tm-header-tab {
-  background: transparent;
-  border: 0;
-  padding: 8px 16px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--ink-3);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.15s ease;
+/* Barra de acciones del documento (Convertir / Descargar / etc.) */
+.tm-suite-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-.tm-header-tab:hover {
-  background: rgba(0, 0, 0, 0.04);
+.tm-action-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tm-action-btn:hover:not(:disabled) {
+  background: var(--bg);
+  border-color: var(--ink-3);
   color: var(--ink);
 }
 
-.tm-header-tab.active {
-  background: #fff;
-  color: var(--navy);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+.tm-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* Acciones y Controles en Cabezal de Suite */
-.tm-suite-header-right {
+.tm-action-btn.convert {
+  background: #EEE9FF;
+  border-color: #d4c9ff;
+  color: #6745EA;
+}
+
+.tm-action-btn.convert:hover:not(:disabled) {
+  background: #e4ddff;
+  color: #5436d6;
+}
+
+.tm-action-btn.worksheet {
+  background: #DFF5E8;
+  border-color: #b8e3c9;
+  color: #246B49;
+}
+
+.tm-action-btn.worksheet:hover:not(:disabled) {
+  background: #cfeede;
+  color: #1c5639;
+}
+
+.tm-action-btn.ghost {
+  background: var(--bg);
+  border-color: var(--line);
+  color: var(--ink-2);
+}
+
+.tm-copy.ok {
+  background: #e0f5e6 !important;
+  color: #166534 !important;
+  border-color: #aed6b8 !important;
+}
+
+/* Dropdown de descarga */
+.tm-download-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.tm-download-trigger .tm-caret {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.tm-download-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 210px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  z-index: 40;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tm-download-dropdown button {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 9px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.tm-download-dropdown button:hover {
+  background: var(--bg);
 }
 
 .tm-header-toggle-form {
@@ -3432,41 +3504,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--navy-50);
   border-color: var(--navy-300);
   color: var(--navy);
-}
-
-.tm-suite-header-actions {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.tm-suite-header-actions button {
-  border: 1px solid var(--line);
-  background: #fff;
-  border-radius: 8px;
-  padding: 7px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--ink-2);
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-}
-
-.tm-suite-header-actions button:hover:not(:disabled) {
-  background: var(--bg);
-  border-color: var(--ink-3);
-  color: var(--ink);
-}
-
-.tm-suite-header-actions button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.tm-suite-header-actions .tm-copy.ok {
-  background: #e0f5e6 !important;
-  color: #166534 !important;
-  border-color: #aed6b8 !important;
 }
 
 /* Editor de Documento Dividido (Markdown Side-by-Side) */

@@ -1314,6 +1314,43 @@ function WorksheetWorkspace({ value, onChange, title }) {
   );
 }
 
+// Download options collapsed into a single ⬇ dropdown so the header doesn't
+// show a row of competing buttons.
+function DownloadMenu({ exporting, onPDF, onPPTX, onWorksheet }) {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!open) return undefined;
+    const onDoc = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [open]);
+
+  const run = (fn) => { setOpen(false); fn(); };
+
+  return (
+    <div className="tm-download-menu" ref={ref}>
+      <button
+        type="button"
+        className="tm-action-btn tm-download-trigger"
+        onClick={() => setOpen(o => !o)}
+        disabled={!!exporting}
+        title="Opciones de descarga"
+      >
+        {exporting ? '⏳' : '⬇'} Descargar <span className="tm-caret">▾</span>
+      </button>
+      {open && (
+        <div className="tm-download-dropdown" role="menu">
+          <button type="button" role="menuitem" onClick={() => run(onPDF)}>📄 PDF (imprimible)</button>
+          <button type="button" role="menuitem" onClick={() => run(onPPTX)}>📊 PowerPoint (.pptx)</button>
+          <button type="button" role="menuitem" onClick={() => run(onWorksheet)}>📝 Hoja de trabajo</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSwitchTool = null }) {
   // Single default model for all tools — picker removed from the UI by request.
   // To swap models later, change DEFAULT_AI_MODEL or restore the dropdown below.
@@ -1343,7 +1380,10 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
   const [savedDoc, setSavedDoc]   = React.useState(null);
   const [imageStatus, setImageStatus] = React.useState(''); // '' | 'generating-3-of-5' | 'done'
   const [showForm, setShowForm] = React.useState(true);
-  const [activeTab, setActiveTab] = React.useState('document');
+  // viewMode: 'document' (default printable preview) | 'presentation' | 'worksheet'
+  const [viewMode, setViewMode] = React.useState('document');
+  const [presentationMarkdown, setPresentationMarkdown] = React.useState('');
+  const [converting, setConverting] = React.useState(''); // '' | 'presentation'
   const [athenasAction, setAthenasAction] = React.useState('profundizar');
   const abortRef = React.useRef(null);
   const outRef = React.useRef(null);
@@ -1422,7 +1462,8 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     setOutput('');
     setSavedDoc(null);
     setShowForm(true);
-    setActiveTab('document');
+    setViewMode('document');
+    setPresentationMarkdown('');   // invalidate any prior conversion
     setStatus('streaming');
 
     const rawUserPrompt = tool.buildPrompt(values);
@@ -1483,8 +1524,7 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
       setOutput(acc);
 
       setShowForm(false);
-      const hasSlides = /^\s*##?\s+/m.test(acc);
-      setActiveTab(hasSlides ? 'presentation' : 'document');
+      setViewMode('document');   // always land on the printable document view
 
       setSavedDoc(saveGeneratedDocument({
         title: tool.title,
@@ -1509,6 +1549,64 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     setStatus('idle');
   }
 
+  // Collect an SSE /api/generate stream into a single string (non-incremental).
+  async function streamToString({ system, user }) {
+    const res = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model, system, user }),
+    });
+    if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let acc = '', buf = '';
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const lines = buf.split('\n'); buf = lines.pop() ?? '';
+      for (const l of lines) {
+        if (!l.startsWith('data:')) continue;
+        const p = l.slice(5).trim();
+        if (p === '[DONE]') continue;
+        try { const j = JSON.parse(p); if (j.error) throw new Error(j.error); if (j.delta) acc += j.delta; } catch {}
+      }
+    }
+    return acc;
+  }
+
+  // "Convertir a Presentación" — a dedicated AI pass restructures the document
+  // into clean slide markdown, THEN opens the slide editor. Cached so a second
+  // click just re-opens the editor without re-spending tokens.
+  async function convertToPresentation() {
+    if (presentationMarkdown) { setViewMode('presentation'); return; }
+    setConverting('presentation');
+    setError('');
+    try {
+      const sys = `Eres un diseñador instruccional experto. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas clara, lista para proyectar en el salón.
+
+Reglas de estructura:
+- Primera línea: "# " con el título de la presentación (una sola vez).
+- Cada diapositiva empieza con "## " y su título.
+- Bajo cada "##", usa bullets cortos con "- " (máximo 5 por slide; frases concisas, NO párrafos largos).
+- Divide en 7-12 diapositivas con flujo lógico: portada, objetivos/agenda, desarrollo por secciones, una actividad o ejemplo, y cierre/repaso.
+- Cuando una diapositiva se beneficie de una imagen, incluye un tag [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration"].
+- NO incluyas claves de respuestas largas ni notas internas del maestro como diapositivas.
+- Mantén el español del contenido original.
+Responde SOLO con el markdown de la presentación, sin explicaciones.`;
+      const user = `Convierte este contenido en una presentación de diapositivas:\n\n"""\n${output}\n"""`;
+      let md = await streamToString({ system: sys, user });
+      md = await resolveImageTags(md, () => {}, setImageStatus);
+      md = cleanGeneratedOutput(md);
+      setPresentationMarkdown(md);
+      setViewMode('presentation');
+    } catch (e) {
+      setError('No pude convertir a presentación: ' + (e.message || e));
+    } finally {
+      setConverting('');
+    }
+  }
+
   function copyOut() {
     navigator.clipboard.writeText(output).then(() => {
       const el = document.querySelector('.tm-copy');
@@ -1531,7 +1629,10 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
   }
   async function handleExportPPTX() {
     setExporting('pptx');
-    try { await exportPPTX(output, `${safeTitle}.pptx`, tool.title); }
+    // Prefer the AI-restructured slide markdown if the user converted; else
+    // fall back to splitting the raw document.
+    const source = presentationMarkdown || output;
+    try { await exportPPTX(source, `${safeTitle}.pptx`, tool.title); }
     finally { setExporting(''); }
   }
   function handleExportWorksheet() {
@@ -1616,31 +1717,66 @@ ${truncated}`;
               </div>
             </div>
 
-            <div className="tm-header-tabs" role="tablist" aria-label="Selección de documento">
-              <button
-                type="button"
-                className={`tm-header-tab ${activeTab === 'document' ? 'active' : ''}`}
-                onClick={() => setActiveTab('document')}
-              >
-                📝 {tool.title === 'Adaptar Lección' ? 'Lección Adaptada' : 'Documento'}
-              </button>
-              <button
-                type="button"
-                className={`tm-header-tab ${activeTab === 'presentation' ? 'active' : ''}`}
-                onClick={() => setActiveTab('presentation')}
-              >
-                📊 Presentación PPT
-              </button>
-              <button
-                type="button"
-                className={`tm-header-tab ${activeTab === 'worksheet' ? 'active' : ''}`}
-                onClick={() => setActiveTab('worksheet')}
-              >
-                📝 Hoja de Trabajo
-              </button>
-            </div>
+            <div className="tm-suite-actions" role="toolbar" aria-label="Acciones del documento">
+              {viewMode !== 'document' && (
+                <button
+                  type="button"
+                  className="tm-action-btn ghost"
+                  onClick={() => setViewMode('document')}
+                  title="Regresar a la vista del documento"
+                >
+                  ← Volver al documento
+                </button>
+              )}
 
-            <div className="tm-suite-header-right">
+              {viewMode === 'document' && (
+                <>
+                  <button
+                    type="button"
+                    className="tm-action-btn convert"
+                    onClick={convertToPresentation}
+                    disabled={!!converting}
+                    title="La IA reestructura el contenido en una presentación editable"
+                  >
+                    {converting === 'presentation' ? '⏳ Convirtiendo…' : '📊 Convertir a Presentación'}
+                  </button>
+                  <button
+                    type="button"
+                    className="tm-action-btn worksheet"
+                    onClick={() => setViewMode('worksheet')}
+                    title="Crea una hoja de trabajo imprimible con espacio para respuestas"
+                  >
+                    📝 Generar Hoja de trabajo
+                  </button>
+                </>
+              )}
+
+              <DownloadMenu
+                exporting={exporting}
+                onPDF={handleExportPDF}
+                onPPTX={handleExportPPTX}
+                onWorksheet={handleExportWorksheet}
+              />
+
+              <button type="button" className="tm-copy tm-action-btn" onClick={copyOut} title="Copiar al portapapeles">📋 Copiar</button>
+
+              {canMakeInteractive && (
+                <button type="button" className="tm-action-btn" onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
+                  {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
+                </button>
+              )}
+              {tool.suggestsInterventionPlan && onSwitchTool && (
+                <button
+                  type="button"
+                  className="tm-action-btn"
+                  onClick={handleSwitchToIntervention}
+                  title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
+                  style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
+                >
+                  🫶 Plan de intervención
+                </button>
+              )}
+
               <button
                 type="button"
                 className={`tm-header-toggle-form ${showForm ? 'active' : ''}`}
@@ -1649,35 +1785,6 @@ ${truncated}`;
               >
                 ⚙️ Parámetros
               </button>
-
-              <div className="tm-suite-header-actions">
-                <button type="button" className="tm-copy" onClick={copyOut} title="Copiar al portapapeles">📋 Copiar</button>
-                <button type="button" onClick={handleExportPDF} disabled={!!exporting} title="Descargar como PDF">
-                  {exporting === 'pdf' ? '⏳' : '📄'} PDF
-                </button>
-                <button type="button" onClick={handleExportPPTX} disabled={!!exporting} title="Descargar como PowerPoint">
-                  {exporting === 'pptx' ? '⏳' : '📊'} PPTX
-                </button>
-                <button type="button" onClick={handleExportWorksheet} disabled={!!exporting} title="Descargar como hoja de trabajo (con espacio para respuestas)">
-                  {exporting === 'worksheet' ? '⏳' : '📝'} Worksheet
-                </button>
-                {canMakeInteractive && (
-                  <button type="button" onClick={handleMakeInteractive} disabled={!!exporting} title="Crear sesión con QR para estudiantes">
-                    {exporting === 'interactive' ? '⏳' : '▦'} Interactivo
-                  </button>
-                )}
-                {tool.suggestsInterventionPlan && onSwitchTool && (
-                  <button
-                    type="button"
-                    onClick={handleSwitchToIntervention}
-                    title="Genera un Plan de Intervención para Rezago pre-llenado con los datos de esta prueba diagnóstica"
-                    style={{ background: '#FFE9D6', color: '#A8521A', fontWeight: 700 }}
-                  >
-                    🫶 Plan de intervención
-                  </button>
-                )}
-                <button type="button" onClick={() => setShowForm(true)} title="Modificar parámetros del formulario">Ajustar</button>
-              </div>
             </div>
           </header>
         ) : (
@@ -1823,13 +1930,13 @@ ${truncated}`;
               <div ref={outRef} className="tm-md" dangerouslySetInnerHTML={{ __html: mdToHtml(output) }} />
             ) : output ? (
               <>
-                {activeTab === 'document' && (
+                {viewMode === 'document' && (
                   <DocumentWorkspace value={output} onChange={setOutput} />
                 )}
-                {activeTab === 'presentation' && (
-                  <SlideWorkspace value={output} onChange={setOutput} />
+                {viewMode === 'presentation' && (
+                  <SlideWorkspace value={presentationMarkdown} onChange={setPresentationMarkdown} />
                 )}
-                {activeTab === 'worksheet' && (
+                {viewMode === 'worksheet' && (
                   <WorksheetWorkspace value={output} onChange={setOutput} title={tool.title} />
                 )}
               </>
