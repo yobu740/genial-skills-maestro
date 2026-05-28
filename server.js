@@ -1274,7 +1274,10 @@ app.post('/api/generate-full-plan', async (req, res) => {
       'geometría':         ['geo-sp'],
       'geometria':         ['geo-sp'],
     };
-    const subjectCodes = ATHENAS_SUBJECT_MAP[(subject || '').toLowerCase()] || [];
+    // Accent/encoding-insensitive subject match (e.g. "Matemáticas" === "matematicas").
+    const stripDiacritics = (x) => String(x || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+    const subjKey = stripDiacritics(subject);
+    const subjectCodes = (Object.entries(ATHENAS_SUBJECT_MAP).find(([k]) => stripDiacritics(k) === subjKey) || [])[1] || [];
     const gradeNorm    = String(grade).replace(/[^\dKkPp]/g, '').toLowerCase();
     const athenasToken = req.body?.athenasToken || req.get?.('x-athenas-token') || null;
 
