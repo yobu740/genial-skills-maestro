@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { searchLessons, getSubjects, hasAthenasToken, normalizeGrade, normalizeSubject } from '../services/athenasApi.js';
+import { searchLessons, getLessonDetail, normalizeGrade, normalizeSubject } from '../services/athenasApi.js';
 
 const FALLBACK_SUBJECT_OPTIONS = [
   { Code: 'sp',     Name: 'Español' },
@@ -36,6 +36,7 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
   const [error,    setError]    = useState('');
   const [q,        setQ]        = useState('');
   const [fromMock, setFromMock] = useState(false);
+  const [picking,  setPicking]  = useState('');   // lesson Id currently loading detail
 
   // Internal filters — initialized from props, but editable by the user
   const [subject, setSubject]   = useState('');
@@ -53,19 +54,6 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
     setSubject(codes[0] || '');
     setGrade(normalizeGrade(gradeProp || ''));
   }, [open, subjectProp, gradeProp]);
-
-  // Fetch live subjects list once the modal opens (only if we have a token)
-  useEffect(() => {
-    if (!open || !hasAthenasToken()) return;
-    let cancelled = false;
-    getSubjects().then(({ subjects, fromMock }) => {
-      if (cancelled) return;
-      if (!fromMock && Array.isArray(subjects) && subjects.length) {
-        setSubjectOptions(subjects);
-      }
-    });
-    return () => { cancelled = true; };
-  }, [open]);
 
   // Run search whenever filters change
   useEffect(() => {
@@ -98,9 +86,28 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
     return () => clearTimeout(debounceRef.current);
   }, [open, subject, grade, q]);
 
-  function handlePick(lesson) {
-    onPick?.(lesson);
-    setOpen(false);
+  // Metadata-only fallback shape (lowercase keys) in case the detail call fails.
+  function basicShape(l) {
+    return {
+      id: l.Id, title: l.LessonTitle, lessonNo: l.LessonNo,
+      subjectCode: l.SubjectCode, levelCode: l.LevelCode,
+      blueprint: l.Blueprint === '1', isGapClosing: l.IsGapClosing === '1',
+      standards: [], definitions: [], description: '', objectives: [],
+      examples: [], performanceTasks: [], strategies: [], themes: [],
+    };
+  }
+
+  async function handlePick(l) {
+    setPicking(String(l.Id));
+    try {
+      const detail = await getLessonDetail(l.Id);
+      onPick?.(detail && detail.title ? detail : basicShape(l));
+    } catch {
+      onPick?.(basicShape(l));
+    } finally {
+      setPicking('');
+      setOpen(false);
+    }
   }
 
   return (
@@ -115,7 +122,7 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
               <div>
                 <h3>
                   Catálogo de contenido
-                  <span className={`alp-badge ${fromMock ? 'cache' : 'live'}`} title={fromMock ? 'Usando cache local — no hay JWT' : 'Live: baseapi.genialskillsweb.com'}>
+                  <span className={`alp-badge ${fromMock ? 'cache' : 'live'}`} title={fromMock ? 'Usando cache local — elige materia y grado' : 'Live: athenasapi (X-API-KEY)'}>
                     {fromMock ? '⚫ Cache' : '🟢 API Live'}
                   </span>
                 </h3>
@@ -164,12 +171,7 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
               {!loading && items.length === 0 && !error && (
                 <div className="alp-empty">
                   No hay lecciones que coincidan con los filtros.<br/>
-                  {!hasAthenasToken() && (
-                    <small>
-                      Para usar la API real, setea el token en consola del browser:<br/>
-                      <code>localStorage.setItem('auth', JSON.stringify({'{'} Token: '...JWT...' {'}'}))</code>
-                    </small>
-                  )}
+                  <small>Elige una <strong>materia</strong> y un <strong>grado</strong> para ver el catálogo de Athenas.</small>
                 </div>
               )}
               {items.map(l => (
@@ -177,39 +179,21 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
                   key={l.Id || l.LessonTitle}
                   type="button"
                   className="alp-item"
-                  onClick={() => handlePick({
-                    // Full normalized shape — the formatter in ToolModal builds
-                    // a rich markdown reference block from all of this.
-                    id:               l.Id,
-                    title:            l.LessonTitle,
-                    lessonNo:         l.LessonNo,
-                    subjectCode:      l.SubjectCode,
-                    levelCode:        l.LevelCode,
-                    blueprint:        l.Blueprint === '1',
-                    isGapClosing:     l.IsGapClosing === '1',
-                    standards:        Array.isArray(l.Standards)        ? l.Standards        : [],
-                    definitions:      Array.isArray(l.Definitions)      ? l.Definitions      : [],
-                    description:      l.Description || '',
-                    objectives:       Array.isArray(l.Objectives)       ? l.Objectives       : [],
-                    examples:         Array.isArray(l.Examples)         ? l.Examples         : [],
-                    performanceTasks: Array.isArray(l.PerformanceTasks) ? l.PerformanceTasks : [],
-                    strategies:       Array.isArray(l.Strategies)       ? l.Strategies       : [],
-                    themes:           Array.isArray(l.Themes)           ? l.Themes           : [],
-                    // legacy convenience (first standard)
-                    standard:     l.Standards?.[0]?.Code || null,
-                    objective:    l.Standards?.[0]?.Description || '',
-                  })}
+                  disabled={!!picking}
+                  onClick={() => handlePick(l)}
                 >
-                  <div className="alp-item-title">{l.LessonTitle}</div>
+                  <div className="alp-item-title">
+                    {l.LessonTitle}
+                    {picking === String(l.Id) && <span className="alp-loading"> · cargando…</span>}
+                  </div>
                   <div className="alp-item-meta">
-                    {l.Standards?.[0]?.Code && <span className="alp-std">{l.Standards[0].Code}</span>}
+                    {l.LessonNo && <span>Lección {l.LessonNo}</span>}
                     <span>{l.SubjectCode}</span>
                     <span>·</span>
                     <span>Grado {l.LevelCode}</span>
                     {l.Blueprint === '1' && <span className="alp-bp">📐 Blueprint</span>}
                     {l.IsGapClosing === '1' && <span className="alp-gc">🌉 Gap closing</span>}
                   </div>
-                  {l.Standards?.[0]?.Description && <div className="alp-item-obj">{l.Standards[0].Description.slice(0, 200)}</div>}
                 </button>
               ))}
             </div>

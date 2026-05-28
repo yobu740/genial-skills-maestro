@@ -1606,6 +1606,117 @@ app.get('/api/athenas/grades', async (req, res) => {
   }
 });
 
+/* ─────────── Athenas API-KEY proxy (no teacher JWT needed) ─────────────────
+ *
+ * The dev team issued a server-side X-API-KEY, so the prototype can pull the
+ * real published-lesson catalog for everyone (no localStorage JWT bridge).
+ * Endpoints used upstream:
+ *   GET  api/lessons/published/genial-web/{subjectCode}/{levelCode}  → catalog
+ *   POST api/lessons/lesson/                                         → full lesson
+ * The key lives only in process.env.ATHENAS_API_KEY (never committed).
+ */
+const ATHENAS_DEV_BASE = (process.env.ATHENAS_API_BASE || 'https://athenasapi-dev.genialskillsweb.com').replace(/\/$/, '');
+const ATHENAS_API_KEY  = process.env.ATHENAS_API_KEY || '';
+
+async function fetchPublishedLessons(subjectCode, levelCode) {
+  const url = `${ATHENAS_DEV_BASE}/api/lessons/published/genial-web/${encodeURIComponent(subjectCode)}/${encodeURIComponent(levelCode)}`;
+  const r = await fetch(url, { headers: { 'X-API-KEY': ATHENAS_API_KEY } });
+  if (!r.ok) throw new Error(`published ${r.status}`);
+  const j = await r.json();
+  return Array.isArray(j?.LessonRequestModel) ? j.LessonRequestModel : [];
+}
+
+// Catalog listing — fans out over subject×level pairs, merges, filters, paginates.
+app.post('/api/athenas/lessons/published', async (req, res) => {
+  const { subjectCodes = [], levelCodes = [], text = '', page = 0, limit = 30 } = req.body || {};
+  if (!ATHENAS_API_KEY) return res.json({ lessons: [], total: 0, fromMock: true, reason: 'no-key' });
+  if (!subjectCodes.length || !levelCodes.length) return res.json({ lessons: [], total: 0, fromMock: false });
+  try {
+    const pairs = [];
+    for (const s of subjectCodes) for (const l of levelCodes) pairs.push([s, l]);
+    const lists = await Promise.all(pairs.map(([s, l]) => fetchPublishedLessons(s, l).catch(() => [])));
+    const seen = new Set();
+    let all = lists.flat().filter(x => {
+      const id = String(x.Id);
+      if (seen.has(id)) return false;
+      seen.add(id);
+      return true;
+    });
+    if (text) {
+      const q = String(text).toLowerCase();
+      all = all.filter(x => String(x.LessonTitle || '').toLowerCase().includes(q));
+    }
+    const total = all.length;
+    const start = (Number(page) || 0) * (Number(limit) || 30);
+    res.json({ lessons: all.slice(start, start + (Number(limit) || 30)), total, fromMock: false });
+  } catch (e) {
+    res.status(502).json({ error: String(e), fromMock: false });
+  }
+});
+
+// Build a { Code, Description } pair from one ConstructedCode entry, dropping
+// the "Nivel" (grade) part so only the real standard/expectation text remains.
+function normalizeConstructedCode(c) {
+  const code = c.ConstructedFullCode || c.ConstructedCodeFull || c.MainCode || '';
+  const parts = Array.isArray(c.ConstructedCodeCodeModels) ? c.ConstructedCodeCodeModels : [];
+  const desc = parts
+    .filter(p => String(p.CodeTypeId) !== '3')   // 3 = Nivel (grade)
+    .map(p => p.CodeDescription)
+    .filter(Boolean)
+    .join(', ');
+  return { Code: code, Description: desc };
+}
+
+// Full lesson detail — normalized to the lowercase shape the SPA formatter uses.
+app.post('/api/athenas/lesson', async (req, res) => {
+  const { lessonId, examType = '1' } = req.body || {};
+  if (!ATHENAS_API_KEY) return res.status(503).json({ error: 'no-key' });
+  if (!lessonId) return res.status(400).json({ error: 'lessonId required' });
+  try {
+    const r = await fetch(`${ATHENAS_DEV_BASE}/api/lessons/lesson/`, {
+      method: 'POST',
+      headers: { 'X-API-KEY': ATHENAS_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        LessonId: String(lessonId),
+        IsForOutsideSource: false,
+        AddLessonNo: true,
+        AddQuizDetails: false,
+        ShowUrlInstead: false,
+        OnlyPublishedQuizzes: true,
+        IsForGame: false,
+        ExamType: String(examType),
+      }),
+    });
+    if (!r.ok) {
+      const t = await r.text();
+      return res.status(r.status).json({ error: `athenas ${r.status}: ${t.slice(0, 200)}` });
+    }
+    const j = await r.json();
+    const m = j.LessonModifierRequestModel || {};
+    const lm = m.LessonModel || {};
+    res.json({
+      id:           lm.Id,
+      title:        lm.LessonTitle,
+      lessonNo:     lm.LessonNo,
+      subjectCode:  lm.SubjectCode,
+      levelCode:    lm.LevelCode,
+      blueprint:    lm.Blueprint === '1',
+      isGapClosing: lm.IsGapClosing === '1',
+      description:  m.LessonDetailModel?.Description || '',
+      concept:      m.LessonDetailModel?.Concept || '',
+      standards:    (m.ConstructedCodeHandleModelList || []).map(normalizeConstructedCode).filter(s => s.Code),
+      definitions:  (m.LessonDefinitionModelList || []).map(d => ({ Name: d.Name, Desc: d.Desc })),
+      examples:     (m.LessonExampleModelList || []).map(e => ({ Name: e.Name, Desc: e.Desc })),
+      objectives:   (m.LessonObjectiveModelList || []).map(o => ({ Desc: o.Desc })),
+      performanceTasks: (m.LessonPerformanceTaskModelList || []).map(t => ({ Desc: t.Desc })),
+      strategies:   (m.LessonStrategyModelList || []).map(s => ({ Desc: s.Desc })),
+      themes:       (m.LessonTransversalThemeModelList || []).map(t => ({ Desc: t.Desc })),
+    });
+  } catch (e) {
+    res.status(502).json({ error: String(e) });
+  }
+});
+
 /**
  * /api/generate-image — generates a single image via Replicate (FLUX-schnell).
  * Body: { prompt: "...", aspect_ratio?: "1:1"|"4:3"|"16:9", style?: "..." }

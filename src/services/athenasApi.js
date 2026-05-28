@@ -89,9 +89,13 @@ export function normalizeSubject(s) {
   return SUBJECT_NAME_TO_CODES[key] || [];
 }
 
-/* ─────────── Search lessons ─────────── */
+/* ─────────── Search lessons (published catalog via server X-API-KEY) ───────
+ * The published endpoint returns metadata only (title, id, subject, level).
+ * Full pedagogical content is fetched lazily with getLessonDetail() when the
+ * teacher actually picks a lesson — no need to enrich every search row.
+ */
 export async function searchLessons({
-  subjectCodes = [], levelCodes = [], text = '', page = 0, limit = 12,
+  subjectCodes = [], levelCodes = [], text = '', page = 0, limit = 30,
   signal,
 } = {}) {
   // Normalize so callers can pass display strings ("Matemáticas", "5to") or codes.
@@ -99,60 +103,53 @@ export async function searchLessons({
   subjectCodes = (subjectCodes || []).flatMap(normalizeSubject).filter(Boolean);
   subjectCodes = [...new Set(subjectCodes)];
 
-  const token = getAthenasToken();
-  if (!token) return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
+  if (!subjectCodes.length || !levelCodes.length) {
+    return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
+  }
 
   try {
-    const r = await fetch('/api/athenas/lessons/search', {
+    const r = await fetch('/api/athenas/lessons/published', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', ...TOKEN_HEADER(token) },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ subjectCodes, levelCodes, text, page, limit }),
       signal,
     });
     const j = await r.json();
     if (!r.ok || j.error) throw new Error(j.error || `HTTP ${r.status}`);
     if (j.fromMock) return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
-    // Normalize: keep ALL pedagogical content the LLM needs to actually
-    // adapt/build on the real lesson — not just metadata.
-    // Confirmed fields via live API inspection on sci-sp/2:
-    //   LessonDetailModel.Description   — lesson body in HTML
-    //   LessonObjectiveModelList[].Desc — learning objectives
-    //   LessonDefinitionModelList[].{Name,Desc} — vocab + definitions (HTML)
-    //   LessonExampleModelList[].{Name,Desc}    — concept examples (HTML w/ images)
-    //   LessonPerformanceTaskModelList[].Desc   — performance tasks
-    //   LessonStrategyModelList[].Desc          — teaching strategies
+    // Published rows are metadata-only; detail is fetched on pick.
     const lessons = (j.lessons || []).map(L => ({
-      Id:           L.LessonModel?.Id,
-      LessonNo:     L.LessonModel?.LessonNo,
-      LevelCode:    L.LessonModel?.LevelCode,
-      SubjectCode:  L.LessonModel?.SubjectCode,
-      LessonTitle:  L.LessonModel?.LessonTitle,
-      IsGapClosing: L.LessonModel?.IsGapClosing,
-      Blueprint:    L.LessonModel?.Blueprint,
-      Standards:    L.LessonStandardModelList     || [],
-      Definitions:  L.LessonDefinitionModelList   || [],
-      Description:  L.LessonDetailModel?.Description || '',
-      Objectives:   L.LessonObjectiveModelList    || [],
-      Examples:     L.LessonExampleModelList      || [],
-      PerformanceTasks: L.LessonPerformanceTaskModelList || [],
-      Strategies:   L.LessonStrategyModelList     || [],
-      Themes:       L.LessonTransversalThemeModelList || [],
+      Id:           L.Id,
+      LessonNo:     L.LessonNo,
+      LevelCode:    L.LevelCode,
+      SubjectCode:  L.SubjectCode,
+      LessonTitle:  L.LessonTitle,
+      IsGapClosing: L.IsGapClosing,
+      Blueprint:    L.Blueprint,
+      Standards:    [],
     }));
     return { lessons, total: j.total, fromMock: false };
   } catch (e) {
     if (e.name === 'AbortError') throw e;
-    console.warn('[athenasApi] live search failed, falling back to cache:', e.message);
+    console.warn('[athenasApi] published search failed, falling back to cache:', e.message);
     return localCacheSearch({ subjectCodes, levelCodes, text, page, limit });
   }
 }
 
-/* ─────────── Single lesson detail ─────────── */
-export async function getLessonDetail(lessonId) {
-  const token = getAthenasToken();
-  if (!token) return null;
+/* ─────────── Single lesson detail (full pedagogical content) ───────────────
+ * Returns the normalized lowercase shape that formatLessonAsReference expects:
+ *   { id, title, lessonNo, subjectCode, levelCode, blueprint, isGapClosing,
+ *     description, concept, standards:[{Code,Description}],
+ *     definitions/examples:[{Name,Desc}], objectives/performanceTasks/
+ *     strategies/themes:[{Desc}] }
+ */
+export async function getLessonDetail(lessonId, examType = '1') {
+  if (!lessonId) return null;
   try {
-    const r = await fetch(`/api/athenas/lessons/${encodeURIComponent(lessonId)}`, {
-      headers: TOKEN_HEADER(token),
+    const r = await fetch('/api/athenas/lesson', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lessonId, examType }),
     });
     if (!r.ok) return null;
     return await r.json();

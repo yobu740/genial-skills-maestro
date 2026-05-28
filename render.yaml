@@ -16,6 +16,10 @@ services:
         sync: false                 # ← MUST be set in Render dashboard (never committed)
       - key: REPLICATE_API_TOKEN
         sync: false                 # ← For image generation (Lectura por Nivel, Diferenciar Contenido)
+      - key: ATHENAS_API_KEY
+        sync: false                 # ← Server-side X-API-KEY to pull published Athenas lessons
+      - key: ATHENAS_API_BASE
+        sync: false                 # Optional. Defaults to https://athenasapi-dev.genialskillsweb.com
       - key: SUPABASE_URL
         sync: false                 # Required for shared assignments/plannings storage.
       - key: SUPABASE_SERVICE_ROLE_KEY
