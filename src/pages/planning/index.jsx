@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import { getAthenasToken } from "../../services/athenasApi.js";
 import WeeklyPlansTemplates from "../WeeklyPlansTemplates.jsx";
@@ -1283,48 +1282,147 @@ function PlanningPreviewArea({ plan, lessons, sectionData, previewLessonId, setP
     { label: "Actividad de cierre", cells: cellsForLessons(l => lessonDayIndex(l, days, plan), l => l.endActivity ? [{ title: lessonTitleFor(l), desc: l.endActivity }] : []) },
   ];
 
-  async function downloadPlanningPdf() {
-    if (!printRef.current) return;
+  // Vector table export (no rasterization): the whole week fits across a
+  // landscape page width, the day-column header repeats on every page, and
+  // rows break at line boundaries so text is never cut mid-line. Margins are
+  // honored on all sides.
+  function downloadPlanningPdf() {
     setPdfStatus("Generando PDF...");
-    const header = printRef.current.querySelector(".planning-print-header");
-    const scroll = printRef.current.querySelector(".tablePDF__scroll");
-    const wrapper = printRef.current.querySelector(".table-pdf-preview");
-    if (header) header.style.display = "block";
-    const oldScroll = scroll ? { maxHeight: scroll.style.maxHeight, overflow: scroll.style.overflow } : null;
-    const oldWrapper = wrapper ? { maxHeight: wrapper.style.maxHeight, overflow: wrapper.style.overflow } : null;
-    if (scroll) { scroll.style.maxHeight = "none"; scroll.style.overflow = "visible"; }
-    if (wrapper) { wrapper.style.maxHeight = "none"; wrapper.style.overflow = "visible"; }
-    const canvas = await html2canvas(printRef.current, {
-      scale: 2,
-      backgroundColor: "#ffffff",
-      useCORS: true,
-      windowWidth: printRef.current.scrollWidth,
-      scrollX: 0,
-      scrollY: 0,
-    });
-    if (header) header.style.display = "";
-    if (scroll && oldScroll) { scroll.style.maxHeight = oldScroll.maxHeight; scroll.style.overflow = oldScroll.overflow; }
-    if (wrapper && oldWrapper) { wrapper.style.maxHeight = oldWrapper.maxHeight; wrapper.style.overflow = oldWrapper.overflow; }
-    const pdf = new jsPDF({ orientation: "landscape", unit: "pt", format: "legal" });
-    const pageW = pdf.internal.pageSize.getWidth();
-    const pageH = pdf.internal.pageSize.getHeight();
-    const margin = 24;
-    const imgW = pageW - margin * 2;
-    const imgH = (canvas.height * imgW) / canvas.width;
-    const img = canvas.toDataURL("image/png");
-    let y = margin;
-    let remaining = imgH;
-    while (remaining > 0) {
-      pdf.addImage(img, "PNG", margin, y, imgW, imgH);
-      remaining -= pageH - margin * 2;
-      if (remaining > 0) {
-        pdf.addPage();
-        y -= pageH - margin * 2;
+    try {
+      const pdf = new jsPDF({ orientation: "landscape", unit: "pt", format: "letter" });
+      const pageW = pdf.internal.pageSize.getWidth();   // 792
+      const pageH = pdf.internal.pageSize.getHeight();  // 612
+      const margin = 28;
+      const pageBottom = pageH - margin;
+
+      const labelW = 96;
+      const dayW = (pageW - margin * 2 - labelW) / days.length;
+      const fontSize = 8;
+      const lineH = 10.5;
+      const padX = 4;
+      const padY = 5;
+      const headerH = 30;
+
+      const TEAL = [75, 167, 161];
+      const INK = [42, 66, 109];
+      const GRID = [208, 214, 222];
+      const WHITE = [255, 255, 255];
+
+      const colX = [margin, margin + labelW];
+      for (let i = 1; i <= days.length; i++) colX.push(margin + labelW + dayW * i);
+
+      const cellRect = (x, y, w, h, fill) => {
+        if (fill) { pdf.setFillColor(...fill); pdf.rect(x, y, w, h, "F"); }
+        pdf.setDrawColor(...GRID); pdf.setLineWidth(0.6);
+        pdf.rect(x, y, w, h, "S");
+      };
+
+      const drawColumnHeader = (y) => {
+        cellRect(colX[0], y, labelW, headerH, TEAL);
+        days.forEach((d, i) => {
+          const x = colX[i + 1];
+          cellRect(x, y, dayW, headerH, TEAL);
+          pdf.setTextColor(...WHITE);
+          pdf.setFont("helvetica", "bold"); pdf.setFontSize(8.5);
+          pdf.text(String(d.label || ""), x + padX, y + 13);
+          pdf.setFont("helvetica", "normal"); pdf.setFontSize(8);
+          pdf.text(String(d.date || ""), x + padX, y + 24);
+        });
+        return y + headerH;
+      };
+
+      const buildLines = (items, colW) => {
+        const maxW = colW - padX * 2;
+        const lines = [];
+        (items || []).forEach((it, idx) => {
+          if (idx > 0) lines.push({ t: "", b: false });
+          if (it.title) {
+            pdf.setFont("helvetica", "bold"); pdf.setFontSize(fontSize);
+            pdf.splitTextToSize(String(it.title), maxW).forEach(t => lines.push({ t, b: true }));
+          }
+          if (it.desc) {
+            pdf.setFont("helvetica", "normal"); pdf.setFontSize(fontSize);
+            pdf.splitTextToSize(String(it.desc), maxW).forEach(t => lines.push({ t, b: false }));
+          }
+          if (it.time) {
+            pdf.setFont("helvetica", "normal"); pdf.setFontSize(fontSize);
+            pdf.splitTextToSize(String(it.time), maxW).forEach(t => lines.push({ t, b: false }));
+          }
+        });
+        return lines;
+      };
+
+      const buildLabelLines = (label) => {
+        pdf.setFont("helvetica", "bold"); pdf.setFontSize(8);
+        return pdf.splitTextToSize(String(label), labelW - padX * 2).map(t => ({ t, b: true }));
+      };
+
+      // ── Title + meta (first page only) ──
+      let y = margin;
+      pdf.setFont("helvetica", "bold"); pdf.setFontSize(15); pdf.setTextColor(...INK);
+      pdf.text(String(plan.PlanName || "Planificacion"), pageW / 2, y + 6, { align: "center" });
+      y += 20;
+      pdf.setFont("helvetica", "normal"); pdf.setFontSize(9); pdf.setTextColor(...INK);
+      const meta = `Semana #${plan.WeekNumber || ""}  ·  ${plan.OpenDate || ""} - ${plan.CloseDate || ""}  ·  Grupo: ${plan.GroupName || ""}  ·  ${plan.SubjectName || ""} ${plan.LevelCode || ""}`;
+      pdf.text(meta, pageW / 2, y + 4, { align: "center" });
+      y += 16;
+
+      y = drawColumnHeader(y);
+
+      // ── Rows (skip fully-empty ones) ──
+      const visibleRows = rows.filter(r => r.cells.some(c => c.length));
+      for (const row of visibleRows) {
+        const cellLines = row.cells.map(items => buildLines(items, dayW));
+        const labelLines = buildLabelLines(row.label);
+        const lineCount = Math.max(labelLines.length, ...cellLines.map(c => c.length), 1);
+
+        let start = 0;
+        while (start < lineCount) {
+          let avail = Math.floor((pageBottom - y - padY * 2) / lineH);
+          if (avail < 1) {
+            pdf.addPage(); y = drawColumnHeader(margin);
+            avail = Math.floor((pageBottom - y - padY * 2) / lineH);
+          }
+          const take = Math.min(lineCount - start, avail);
+          const bandH = take * lineH + padY * 2;
+
+          // label column
+          cellRect(colX[0], y, labelW, bandH, TEAL);
+          pdf.setTextColor(...WHITE);
+          for (let li = 0; li < take; li++) {
+            const tok = labelLines[start + li];
+            if (!tok || !tok.t) continue;
+            pdf.setFont("helvetica", tok.b ? "bold" : "normal"); pdf.setFontSize(8);
+            pdf.text(tok.t, colX[0] + padX, y + padY + li * lineH + 8);
+          }
+
+          // day columns
+          days.forEach((d, i) => {
+            const x = colX[i + 1];
+            cellRect(x, y, dayW, bandH, null);
+            pdf.setTextColor(...INK);
+            const lines = cellLines[i];
+            for (let li = 0; li < take; li++) {
+              const tok = lines[start + li];
+              if (!tok || !tok.t) continue;
+              pdf.setFont("helvetica", tok.b ? "bold" : "normal"); pdf.setFontSize(fontSize);
+              pdf.text(tok.t, x + padX, y + padY + li * lineH + 8);
+            }
+          });
+
+          y += bandH;
+          start += take;
+          if (start < lineCount) { pdf.addPage(); y = drawColumnHeader(margin); }
+        }
       }
+
+      pdf.save(`${plan.PlanName || "Planificacion"}.pdf`);
+      setPdfStatus("PDF descargado");
+    } catch (e) {
+      setPdfStatus("Error al generar PDF: " + (e.message || e));
+    } finally {
+      setTimeout(() => setPdfStatus(""), 1800);
     }
-    pdf.save(`${plan.PlanName || "Planning Preview"}.pdf`);
-    setPdfStatus("PDF descargado");
-    setTimeout(() => setPdfStatus(""), 1800);
   }
 
   return (
