@@ -1281,7 +1281,16 @@ app.post('/api/generate-full-plan', async (req, res) => {
     let subjMatches = [];
     let athenasSource = 'cache';
 
-    if (athenasToken && subjectCodes.length) {
+    // Prefer the server-side X-API-KEY (works for everyone, no teacher JWT).
+    if (ATHENAS_API_KEY && subjectCodes.length && gradeNorm) {
+      try {
+        subjMatches = await fetchAthenasPlanLessons(subjectCodes, gradeNorm, unit, 8);
+        if (subjMatches.length) athenasSource = 'live';
+      } catch (_) { /* fall through */ }
+    }
+
+    // Legacy fallback: teacher JWT against baseapi (only if the key path found nothing).
+    if (!subjMatches.length && athenasToken && subjectCodes.length) {
       try {
         const upstream = await fetch(`${BASEAPI_BASE}/teachersapi/lessons/advance`, {
           method: 'POST',
@@ -1667,6 +1676,54 @@ function normalizeConstructedCode(c) {
   return { Code: code, Description: desc };
 }
 
+// Plain-text lesson detail for prompt context (HTML stripped). Used by the
+// full-plan generator so the LLM can build on the real Athenas lesson body.
+async function fetchLessonDetailPlain(lessonId) {
+  const r = await fetch(`${ATHENAS_DEV_BASE}/api/lessons/lesson/`, {
+    method: 'POST',
+    headers: { 'X-API-KEY': ATHENAS_API_KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ LessonId: String(lessonId), AddLessonNo: true, OnlyPublishedQuizzes: true, ExamType: '1' }),
+  });
+  if (!r.ok) throw new Error(`lesson ${r.status}`);
+  const j = await r.json();
+  const m = j.LessonModifierRequestModel || {};
+  const lm = m.LessonModel || {};
+  const std = (m.ConstructedCodeHandleModelList || []).map(normalizeConstructedCode).filter(s => s.Code);
+  return {
+    id:          lm.Id,
+    title:       lm.LessonTitle,
+    subjectCode: lm.SubjectCode,
+    levelCode:   lm.LevelCode,
+    standard:    std[0]?.Code || null,
+    objective:   std[0]?.Description || '',
+    description: plainTextFromHtml(m.LessonDetailModel?.Description || ''),
+    objectives:  (m.LessonObjectiveModelList || []).map(o => plainTextFromHtml(o.Desc || '')).filter(Boolean),
+    strategies:  (m.LessonStrategyModelList || []).map(s => plainTextFromHtml(s.Desc || '')).filter(Boolean),
+  };
+}
+
+// Pull a handful of relevant published lessons (with full detail) for the plan
+// generator. Filters the catalog by the unit text when possible, then enriches
+// the top matches. Returns [] when no key/subject/level so callers can fall back.
+async function fetchAthenasPlanLessons(subjectCodes, levelCode, text, maxDetail = 8) {
+  if (!ATHENAS_API_KEY || !subjectCodes.length || !levelCode) return [];
+  const lists = await Promise.all(subjectCodes.map(s => fetchPublishedLessons(s, levelCode).catch(() => [])));
+  const seen = new Set();
+  let all = lists.flat().filter(x => {
+    const id = String(x.Id);
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+  if (text) {
+    const q = String(text).toLowerCase();
+    const matched = all.filter(x => String(x.LessonTitle || '').toLowerCase().includes(q));
+    if (matched.length) all = matched;
+  }
+  const detailed = await Promise.all(all.slice(0, maxDetail).map(x => fetchLessonDetailPlain(x.Id).catch(() => null)));
+  return detailed.filter(Boolean);
+}
+
 // Full lesson detail — normalized to the lowercase shape the SPA formatter uses.
 app.post('/api/athenas/lesson', async (req, res) => {
   const { lessonId, examType = '1' } = req.body || {};
@@ -1839,6 +1896,7 @@ app.get('/api/health', (_req, res) => res.json({
   env: {
     hasOpenRouter:      !!OPENROUTER_API_KEY,
     hasReplicate:       !!REPLICATE_API_TOKEN,
+    hasAthenas:         !!ATHENAS_API_KEY,
     hasSupabase:        !!(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY),
     hasSupabaseUrl:     !!SUPABASE_URL,
     hasSupabaseServiceRoleKey: !!SUPABASE_SERVICE_ROLE_KEY,
