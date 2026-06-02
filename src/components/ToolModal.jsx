@@ -902,7 +902,7 @@ function PresentationMode({ slides, startAt = 0, onExit }) {
   );
 }
 
-function SlideWorkspace({ value, onChange }) {
+export function SlideWorkspace({ value, onChange }) {
   const slides = React.useMemo(() => parseEditableSlides(value), [value]);
   const [active, setActive] = React.useState(0);
   const current = slides[Math.min(active, Math.max(slides.length - 1, 0))] || slides[0];

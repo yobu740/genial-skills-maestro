@@ -810,6 +810,20 @@ function normalizeGradeCode(value) {
   return raw.replace(/\D/g, '');
 }
 
+function gradeMatchesScope(selectedGrade, candidateScope) {
+  const selected = String(selectedGrade || '').trim().toLowerCase();
+  const candidate = String(candidateScope || '').trim().toLowerCase();
+  if (!selected || !candidate) return true;
+  if (normalizeGradeCode(selected) === normalizeGradeCode(candidate)) return true;
+
+  const selectedNumber = Number(selected.match(/\d+/)?.[0]);
+  const range = candidate.match(/^(\d+|k|pk|p)\s*-\s*(\d+)$/i);
+  if (!Number.isFinite(selectedNumber) || !range) return false;
+  const start = /^(k|pk|p)$/i.test(range[1]) ? 0 : Number(range[1]);
+  const end = Number(range[2]);
+  return selectedNumber >= start && selectedNumber <= end;
+}
+
 function unitSortValue(unit) {
   const text = String(unit?.code || unit?.unit || unit?.id || '');
   const number = Number(text.match(/\d+(\.\d+)?/)?.[0]);
@@ -857,10 +871,11 @@ app.get('/api/weekly-plans', async (req, res) => {
   try {
     const idx = await loadPlansIndex();
     let list = idx;
-    const { subject, scope, kind, unit } = req.query;
+    const { subject, scope, kind, unit, week } = req.query;
     if (subject) list = list.filter(p => (p.subject || '').toLowerCase() === String(subject).toLowerCase());
     if (scope)   list = list.filter(p => (p.scope || '')   === String(scope));
     if (kind)    list = list.filter(p => p.kind === String(kind));
+    if (week)    list = list.filter(p => String(p.week || '') === String(week));
     if (unit) {
       const unitText = String(unit);
       const unitMajor = unitText.split(/[._-]/).filter(Boolean).pop() || unitText;
@@ -895,7 +910,7 @@ app.get('/api/curriculum-units', async (req, res) => {
       const unitSubject = normalizeSubjectName(unit.subject);
       const unitGrade = normalizeGradeCode(unit.grade);
       if (selectedSubject && unitSubject !== selectedSubject) continue;
-      if (selectedGrade && unitGrade !== selectedGrade) continue;
+      if (selectedGrade && !gradeMatchesScope(selectedGrade, unit.grade)) continue;
       const id = unit.id || `${unitSubject}_${unitGrade}_${unit.code || unit.unit || byId.size + 1}`;
       byId.set(id, { ...unit, id, source: 'curated' });
     }
@@ -906,7 +921,7 @@ app.get('/api/curriculum-units', async (req, res) => {
       const planSubject = normalizeSubjectName(plan.subject);
       const planGrade = normalizeGradeCode(plan.scope);
       if (selectedSubject && planSubject !== selectedSubject) continue;
-      if (selectedGrade && planGrade !== selectedGrade) continue;
+      if (selectedGrade && !gradeMatchesScope(selectedGrade, plan.scope)) continue;
 
       const matchingCurated = [...byId.values()].find(unit => {
         const unitTail = String(unit.code || unit.unit || '').split(/[._-]/).filter(Boolean).pop();
@@ -914,6 +929,10 @@ app.get('/api/curriculum-units', async (req, res) => {
       });
       if (matchingCurated) {
         matchingCurated.resourcesCount = (matchingCurated.resourcesCount || 0) + 1;
+        matchingCurated.availableWeeks = [...new Set([...(matchingCurated.availableWeeks || []), plan.week].filter(Boolean))].sort((a, b) => a - b);
+        matchingCurated.weeks = matchingCurated.availableWeeks.length || matchingCurated.weeks;
+        matchingCurated.startWeek = matchingCurated.availableWeeks[0] || matchingCurated.startWeek;
+        matchingCurated.endWeek = matchingCurated.availableWeeks.at(-1) || matchingCurated.endWeek;
         continue;
       }
 
@@ -921,17 +940,23 @@ app.get('/api/curriculum-units', async (req, res) => {
       if (byId.has(id)) {
         const existing = byId.get(id);
         existing.resourcesCount = (existing.resourcesCount || 0) + 1;
+        existing.availableWeeks = [...new Set([...(existing.availableWeeks || []), plan.week].filter(Boolean))].sort((a, b) => a - b);
+        existing.weeks = existing.availableWeeks.length;
+        existing.startWeek = existing.availableWeeks[0] || null;
+        existing.endWeek = existing.availableWeeks.at(-1) || null;
         continue;
       }
+      const availableWeeks = plan.week ? [plan.week] : [];
       byId.set(id, {
         id,
         code: unitNumber,
         subject: plan.subject,
         grade: plan.scope,
-        title: `Unidad ${unitNumber}`,
-        weeks: null,
-        startWeek: null,
-        endWeek: null,
+        title: plan.unitTitle || `Unidad ${unitNumber}`,
+        weeks: availableWeeks.length,
+        startWeek: availableWeeks[0] || null,
+        endWeek: availableWeeks.at(-1) || null,
+        availableWeeks,
         transferObjectives: [],
         acquisitionObjectives: [],
         essentialQuestions: [],
@@ -1115,17 +1140,110 @@ function extractPlanJSON(text) {
   return null;
 }
 
+function decodeHtmlEntities(value = '') {
+  const named = {
+    amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+    bull: '\u2022', iquest: '\u00bf', iexcl: '\u00a1', ndash: '-', mdash: '-',
+    aacute: '\u00e1', eacute: '\u00e9', iacute: '\u00ed', oacute: '\u00f3', uacute: '\u00fa',
+    Aacute: '\u00c1', Eacute: '\u00c9', Iacute: '\u00cd', Oacute: '\u00d3', Uacute: '\u00da',
+    ntilde: '\u00f1', Ntilde: '\u00d1', uuml: '\u00fc', Uuml: '\u00dc',
+    ldquo: '"', rdquo: '"', lsquo: "'", rsquo: "'",
+  };
+  return String(value).replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, entity) => {
+    if (entity[0] === '#') {
+      const isHex = entity[1]?.toLowerCase() === 'x';
+      const code = parseInt(entity.slice(isHex ? 2 : 1), isHex ? 16 : 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    return Object.prototype.hasOwnProperty.call(named, entity) ? named[entity] : match;
+  });
+}
+
 function plainTextFromHtml(value = '') {
-  return String(value)
+  return decodeHtmlEntities(String(value)
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/gi, ' ')
-    .replace(/&amp;/gi, '&')
-    .replace(/&lt;/gi, '<')
-    .replace(/&gt;/gi, '>')
+    .replace(/&amp;/gi, '&'))
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function compactLessonText(value = '') {
+  return plainTextFromHtml(value)
+    .replace(/https?:\/\/\S+/gi, ' ')
+    .replace(/\b[a-f0-9-]{24,}\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function pushLessonSection(lines, title, value) {
+  const text = compactLessonText(value);
+  if (!text) return;
+  lines.push(`${title}: ${text}`);
+}
+
+function pushLessonList(lines, title, list, mapper) {
+  if (!Array.isArray(list) || !list.length) return;
+  const items = list.map(mapper).map(compactLessonText).filter(Boolean);
+  if (!items.length) return;
+  lines.push(`${title}:`);
+  items.forEach((item, index) => lines.push(`${index + 1}. ${item}`));
+}
+
+function collectExtraAthenasText(root) {
+  const wantedKeys = /desc|description|concept|objective|question|answer|instruction|activity|strategy|task|theme|text|title|name/i;
+  const skipKeys = /id|guid|url|image|audio|video|file|path|token|password|created|updated|date|color/i;
+  const seen = new Set();
+  const out = [];
+
+  function walk(value, key = '') {
+    if (value == null) return;
+    if (typeof value === 'string') {
+      if (!wantedKeys.test(key) || skipKeys.test(key)) return;
+      const text = compactLessonText(value);
+      if (text.length < 24 || seen.has(text)) return;
+      seen.add(text);
+      out.push(`${key}: ${text}`);
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach(item => walk(item, key));
+      return;
+    }
+    if (typeof value === 'object') {
+      Object.entries(value).forEach(([childKey, childValue]) => walk(childValue, childKey));
+    }
+  }
+
+  walk(root);
+  return out;
+}
+
+function buildAthenasFullText(m) {
+  const lines = [];
+  const detail = m.LessonDetailModel || {};
+  pushLessonSection(lines, 'Concepto', detail.Concept);
+  pushLessonSection(lines, 'Descripcion de la leccion', detail.Description);
+  pushLessonList(lines, 'Objetivos', m.LessonObjectiveModelList, o => o.Desc || o.Description || o.Objective || '');
+  pushLessonList(lines, 'Definiciones', m.LessonDefinitionModelList, d => `${d.Name || d.Title || ''}${d.Name || d.Title ? ': ' : ''}${d.Desc || d.Description || d.Definition || ''}`);
+  pushLessonList(lines, 'Ejemplos', m.LessonExampleModelList, e => `${e.Name || e.Title || ''}${e.Name || e.Title ? ': ' : ''}${e.Desc || e.Description || ''}`);
+  pushLessonList(lines, 'Tareas de desempeno', m.LessonPerformanceTaskModelList, t => t.Desc || t.Description || t.Name || '');
+  pushLessonList(lines, 'Estrategias de ensenanza', m.LessonStrategyModelList, s => s.Desc || s.Description || s.Name || '');
+  pushLessonList(lines, 'Temas transversales', m.LessonTransversalThemeModelList, t => t.Desc || t.Description || t.Name || '');
+  pushLessonList(lines, 'Preguntas o evaluaciones publicadas', m.LessonQuestionModelList || m.QuizQuestionModelList || m.LessonQuizQuestionModelList, q => [
+    q.Question || q.QuestionText || q.Desc || q.Description || q.Text || '',
+    q.Answer || q.CorrectAnswer || q.AnswerText || '',
+  ].filter(Boolean).join(' Respuesta: '));
+
+  const extra = collectExtraAthenasText(m)
+    .filter(line => !lines.some(existing => existing.includes(line.split(':')[1]?.trim() || line)));
+  if (extra.length) {
+    lines.push('Contenido adicional del API:');
+    lines.push(...extra);
+  }
+  return lines.join('\n');
 }
 
 function parseUSDate(value) {
@@ -1740,7 +1858,7 @@ app.post('/api/athenas/lesson', async (req, res) => {
         LessonId: String(lessonId),
         IsForOutsideSource: false,
         AddLessonNo: true,
-        AddQuizDetails: false,
+        AddQuizDetails: true,
         ShowUrlInstead: false,
         OnlyPublishedQuizzes: true,
         IsForGame: false,
@@ -1771,6 +1889,7 @@ app.post('/api/athenas/lesson', async (req, res) => {
       performanceTasks: (m.LessonPerformanceTaskModelList || []).map(t => ({ Desc: t.Desc })),
       strategies:   (m.LessonStrategyModelList || []).map(s => ({ Desc: s.Desc })),
       themes:       (m.LessonTransversalThemeModelList || []).map(t => ({ Desc: t.Desc })),
+      fullText:      buildAthenasFullText(m),
     });
   } catch (e) {
     res.status(502).json({ error: String(e) });

@@ -3047,6 +3047,7 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
   const [form, setForm]       = useState({ unit: "", lessonsHint: "", weeks: 1, model: "anthropic/claude-haiku-4.5", schoolImprovementPlan: false });
   const [units, setUnits]     = useState([]);
   const [selectedUnitId, setSelectedUnitId] = useState("");
+  const [selectedWeek, setSelectedWeek] = useState("");
   const [loadingUnits, setLoadingUnits] = useState(false);
   const [status, setStatus]   = useState("idle");   // idle | generating | preview | error
   const [error, setError]     = useState("");
@@ -3070,18 +3071,31 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
       .finally(() => setLoadingUnits(false));
   }, [plan.SubjectName, plan.LevelCode]);
 
-  function handleUnitSelect(unitId) {
-    setSelectedUnitId(unitId);
-    const selected = units.find(u => u.id === unitId);
-    if (!selected) return;
+  function unitContext(selected, week = "") {
     const context = [
       `Unidad ${selected.code}: ${selected.title}`,
+      week ? `Semana seleccionada: ${week}` : "",
       selected.transferObjectives?.[0],
       selected.essentialQuestions?.length ? `Preguntas esenciales: ${selected.essentialQuestions.map(q => q.question).join("; ")}` : "",
       selected.acquisitionObjectives?.length ? `Destrezas: ${selected.acquisitionObjectives.join("; ")}` : "",
       selected.standards?.length ? `Estándares: ${selected.standards.map(s => `${s.code} - ${s.description}`).join("; ")}` : "",
     ].filter(Boolean).join("\n");
-    setForm(p => ({ ...p, unit: context }));
+    return context;
+  }
+
+  function handleUnitSelect(unitId) {
+    setSelectedUnitId(unitId);
+    setSelectedWeek("");
+    const selected = units.find(u => u.id === unitId);
+    if (!selected) return;
+    setForm(p => ({ ...p, unit: unitContext(selected) }));
+  }
+
+  function handleWeekSelect(week) {
+    setSelectedWeek(week);
+    const selected = units.find(u => u.id === selectedUnitId);
+    if (!selected) return;
+    setForm(p => ({ ...p, unit: unitContext(selected, week), weeks: 1 }));
   }
 
   async function generate() {
@@ -3155,6 +3169,13 @@ function FullPlanGenerator({ plan, onApply, onClose }) {
                 <select value={selectedUnitId} onChange={e => handleUnitSelect(e.target.value)} disabled={loadingUnits || !units.length}>
                   <option value="">{loadingUnits ? "Cargando unidades..." : units.length ? "Seleccionar unidad del mapa curricular" : "No hay unidades cargadas para esta materia/grado"}</option>
                   {units.map(u => <option key={u.id} value={u.id}>Unidad {u.code}: {u.title}</option>)}
+                </select>
+              </label>
+              <label className="fpg-field">
+                <span>Seleccionar semana de la unidad</span>
+                <select value={selectedWeek} onChange={e => handleWeekSelect(e.target.value)} disabled={!selectedUnitId || !units.find(u => u.id === selectedUnitId)?.availableWeeks?.length}>
+                  <option value="">Planificar la unidad completa</option>
+                  {(units.find(u => u.id === selectedUnitId)?.availableWeeks || []).map(week => <option key={week} value={week}>Semana {week}</option>)}
                 </select>
               </label>
               <label className="fpg-field">

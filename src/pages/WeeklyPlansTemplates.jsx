@@ -29,6 +29,7 @@ export default function WeeklyPlansTemplates() {
   const [kind,      setKind]    = useState('plan');
   const [q,         setQ]       = useState('');
   const [unit,      setUnit]    = useState('');
+  const [week,      setWeek]    = useState('');
   const [units,     setUnits]   = useState([]);
   const [unitContext, setUnitContext] = useState(null);
   const [loadingUnits, setLoadingUnits] = useState(false);
@@ -40,15 +41,17 @@ export default function WeeklyPlansTemplates() {
     if (scope)   params.set('scope', scope);
     if (kind)    params.set('kind', kind);
     if (unit)    params.set('unit', unit);
+    if (week)    params.set('week', week);
     if (q)       params.set('q', q);
     fetch(`/api/weekly-plans?${params}`)
       .then(r => r.json())
       .then(j => { setData(j); setLoading(false); })
       .catch(e => { setError(String(e)); setLoading(false); });
-  }, [subject, scope, kind, unit, q]);
+  }, [subject, scope, kind, unit, week, q]);
 
   useEffect(() => {
     setUnit('');
+    setWeek('');
     setUnitContext(null);
 
     if (!subject || !scope) {
@@ -75,6 +78,7 @@ export default function WeeklyPlansTemplates() {
 
   const handleUnitChange = (unitId) => {
     setUnit(unitId);
+    setWeek('');
     const selected = units.find(item => item.id === unitId || item.code === unitId);
     setUnitContext(selected || null);
 
@@ -144,6 +148,17 @@ export default function WeeklyPlansTemplates() {
             </option>
           ))}
         </select>
+        <select
+          value={week}
+          onChange={(e) => setWeek(e.target.value)}
+          disabled={!unitContext?.availableWeeks?.length}
+          aria-label="Semana de la unidad"
+        >
+          <option value="">Todas las semanas</option>
+          {(unitContext?.availableWeeks || []).map(item => (
+            <option key={item} value={item}>Semana {item}</option>
+          ))}
+        </select>
         <input
           type="text"
           placeholder="Buscar por nombre…"
@@ -160,8 +175,8 @@ export default function WeeklyPlansTemplates() {
             <p>{unitContext.transferObjectives?.[0]}</p>
           </div>
           <div className="wp-unit-meta">
-            <span>{unitContext.weeks} semanas</span>
-            <span>Semanas {unitContext.startWeek}-{unitContext.endWeek}</span>
+            <span>{unitContext.weeks || 0} semanas</span>
+            {unitContext.startWeek && <span>Semanas {unitContext.startWeek}-{unitContext.endWeek}</span>}
           </div>
           <div className="wp-unit-sections">
             {unitContext.essentialQuestions?.length > 0 && (

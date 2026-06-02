@@ -15,6 +15,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import pdf from 'pdf-parse/lib/pdf-parse.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -125,6 +126,33 @@ function parseFile(absPath) {
   };
 }
 
+function extractUnitTitle(text, unit) {
+  const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+  const match = normalized.match(new RegExp(`\\bUnidad\\s+${unit}\\s*:\\s*(.*?)(?=\\s+Temas?\\s+transversales\\s*:)`, 'i'));
+  return match?.[1]?.trim() || '';
+}
+
+async function addExtractedUnitTitles(plans) {
+  const titles = new Map();
+  const subjects = new Set(['Español', 'Salud']);
+
+  for (const plan of plans) {
+    if (!subjects.has(plan.subject) || plan.kind !== 'plan' || plan.ext !== 'pdf') continue;
+    const key = `${plan.subject}|${plan.scope}|${plan.unit}`;
+    if (titles.has(key)) continue;
+    try {
+      const data = await pdf(await fs.readFile(path.join(ROOT, plan.path)));
+      const title = extractUnitTitle(data.text, plan.unit);
+      if (title) titles.set(key, title);
+    } catch {}
+  }
+
+  return plans.map(plan => {
+    const unitTitle = titles.get(`${plan.subject}|${plan.scope}|${plan.unit}`);
+    return unitTitle ? { ...plan, unitTitle } : plan;
+  });
+}
+
 console.log('Walking all weekly plans folders…');
 let all = [];
 for (const r of ROOTS) {
@@ -144,6 +172,8 @@ all = all.filter(p => {
   seen.add(key);
   return true;
 });
+
+all = await addExtractedUnitTitles(all);
 
 // Sort: subject, scope, unit, week, kind
 all.sort((a, b) =>

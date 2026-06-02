@@ -86,27 +86,29 @@ export default function AthenasLessonPicker({ subject: subjectProp, grade: grade
     return () => clearTimeout(debounceRef.current);
   }, [open, subject, grade, q]);
 
-  // Metadata-only fallback shape (lowercase keys) in case the detail call fails.
-  function basicShape(l) {
-    return {
-      id: l.Id, title: l.LessonTitle, lessonNo: l.LessonNo,
-      subjectCode: l.SubjectCode, levelCode: l.LevelCode,
-      blueprint: l.Blueprint === '1', isGapClosing: l.IsGapClosing === '1',
-      standards: [], definitions: [], description: '', objectives: [],
-      examples: [], performanceTasks: [], strategies: [], themes: [],
-    };
-  }
-
   async function handlePick(l) {
     setPicking(String(l.Id));
+    setError('');
     try {
       const detail = await getLessonDetail(l.Id);
-      onPick?.(detail && detail.title ? detail : basicShape(l));
-    } catch {
-      onPick?.(basicShape(l));
+      const hasRealContent = detail && (
+        detail.fullText ||
+        detail.description ||
+        detail.concept ||
+        detail.definitions?.length ||
+        detail.examples?.length ||
+        detail.objectives?.length
+      );
+      if (!hasRealContent) {
+        setError('No pude cargar el contenido completo de esa lección. Intenta otra vez o revisa la conexión/API de Athenas.');
+        return;
+      }
+      onPick?.(detail);
+      setOpen(false);
+    } catch (e) {
+      setError('No pude cargar el contenido completo de esa lección. Intenta otra vez o revisa la conexión/API de Athenas.');
     } finally {
       setPicking('');
-      setOpen(false);
     }
   }
 

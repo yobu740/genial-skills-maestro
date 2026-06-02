@@ -5151,3 +5151,377 @@ a { color: inherit; text-decoration: none; }
   .tm-present-nav.next { right: 12px; }
 }
 
+/* ==========================================================================
+   Rediseño Premium de la Biblioteca de Documentos (MyDocuments.jsx)
+   ========================================================================== */
+
+/* Contenedor de la barra de búsqueda */
+.docs-search-bar {
+  margin: 10px 8px;
+}
+
+/* Categorías (Pills) en la barra lateral */
+.docs-categories {
+  display: flex;
+  gap: 6px;
+  padding: 4px 8px 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 8px;
+}
+
+.docs-cat-btn {
+  background: #f1f3f5;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.docs-cat-btn:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.docs-cat-btn.active {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(39, 70, 108, 0.2);
+}
+
+/* Tarjetas de documentos (Sidebar) */
+.docs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-items-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.docs-item {
+  border: 1px solid var(--line-soft) !important;
+  background: #fff !important;
+  margin: 6px 8px !important;
+  border-radius: 12px !important;
+  padding: 14px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02) !important;
+  transition: all 0.2s ease !important;
+  width: calc(100% - 16px) !important;
+  display: block !important;
+}
+
+.docs-item:hover {
+  background: #f8fafc !important;
+  border-color: var(--line) !important;
+  transform: translateY(-1px);
+}
+
+.docs-item.active {
+  background: #f0f4f8 !important;
+  border-color: #a0b3c6 !important;
+  box-shadow: 0 3px 6px rgba(39, 70, 108, 0.05) !important;
+}
+
+.docs-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.docs-item-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* Categoría Badge (Lección, Evaluación, etc.) */
+.docs-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.docs-badge.badge-leccion {
+  background: #e6f5f4;
+  color: #246f6f;
+}
+
+.docs-badge.badge-evaluacion {
+  background: #fbebe9;
+  color: #a0413d;
+}
+
+.docs-badge.badge-otros {
+  background: #f1f3f5;
+  color: #555;
+}
+
+.docs-item-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.docs-item-preview {
+  font-size: 12px;
+  color: #4b5563;
+  margin-top: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+/* Visor / Lector del documento seleccionado */
+.docs-reader-header-area {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.docs-reader-head {
+  padding: 20px 24px 16px;
+  border-bottom: none !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Pestañas de modo (Preview / Editor) */
+.docs-mode-tabs {
+  display: flex;
+  background: #f1f3f7;
+  padding: 3px;
+  border-radius: 8px;
+  gap: 1px;
+  align-self: center;
+}
+
+.docs-mode-tab {
+  background: transparent;
+  border: 0;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.docs-mode-tab:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--ink);
+}
+
+.docs-mode-tab.active {
+  background: #fff;
+  color: var(--navy);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Barra de Herramientas de Acciones (Downloads/Delete) */
+.docs-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: #fafbfc;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.docs-download-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.docs-btn-action {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.docs-btn-action:hover:not(:disabled) {
+  background: var(--bg);
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.docs-btn-action.btn-pdf {
+  border-color: #bcd5f0;
+  color: #27466c;
+}
+.docs-btn-action.btn-pdf:hover {
+  background: #f0f4fa;
+}
+
+.docs-btn-action.btn-pptx {
+  border-color: #bce6e2;
+  color: #246f6f;
+}
+.docs-btn-action.btn-pptx:hover {
+  background: #edf8f7;
+}
+
+.docs-btn-action.btn-worksheet {
+  border-color: #fedcbd;
+  color: #b27516;
+}
+.docs-btn-action.btn-worksheet:hover {
+  background: #fff6ed;
+}
+
+.docs-btn-action.danger {
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+.docs-btn-action.danger:hover {
+  background: #fef2f2;
+}
+
+/* Área de contenido del visor */
+.docs-content-container {
+  background: #f3f4f6; /* light grey layout container */
+  padding: 30px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 0;
+  flex: 1;
+}
+
+/* Hoja premium tamaño carta / A4 */
+.docs-preview-sheet {
+  background: #fff;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  min-height: 100%;
+  color: var(--ink);
+}
+
+/* Textarea del editor en pantalla completa */
+.docs-editor-textarea {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  min-height: 450px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 30px;
+  font-family: var(--font-mono, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  outline: none;
+  resize: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.docs-editor-textarea:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(39, 70, 108, 0.1);
+}
+
+/* Soporte de diapositiva pantalla completa en Mis Documentos */
+.docs-content-container.mode-presentation {
+  padding: 16px;
+  align-items: stretch;
+  overflow-y: hidden;
+}
+
+.docs-slide-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Estado Vacío de la Biblioteca */
+.docs-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  color: var(--muted);
+  height: 100%;
+  width: 100%;
+}
+
+.docs-empty-state svg {
+  width: 72px;
+  height: 72px;
+  color: #a0b3c6;
+  margin-bottom: 20px;
+}
+
+.docs-empty-state h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.docs-empty-state p {
+  font-size: 13.5px;
+  max-width: 45ch;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.docs-cta-btn {
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.docs-cta-btn:hover {
+  background: var(--navy-700);
+}
+
+
