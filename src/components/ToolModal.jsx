@@ -42,13 +42,31 @@ function formatLessonAsReference(lesson) {
     });
   }
 
+  if (lesson.fullText) {
+    const fullText = stripDefinitionHtml(lesson.fullText);
+    if (fullText) {
+      lines.push('');
+      lines.push('CONTENIDO COMPLETO REAL DE ATHENAS:');
+      lines.push(fullText);
+    }
+  }
+
   // Lesson body (HTML stripped) — the actual pedagogical text the teacher uses
   if (lesson.description) {
     const desc = stripDefinitionHtml(lesson.description);
     if (desc) {
       lines.push('');
       lines.push('Descripción / cuerpo de la lección:');
-      lines.push(desc.length > 1500 ? desc.slice(0, 1500) + '…' : desc);
+      lines.push(desc);
+    }
+  }
+
+  if (lesson.concept) {
+    const concept = stripDefinitionHtml(lesson.concept);
+    if (concept) {
+      lines.push('');
+      lines.push('Concepto central:');
+      lines.push(concept);
     }
   }
 
@@ -79,8 +97,7 @@ function formatLessonAsReference(lesson) {
       const name = e.Name || e.Title || '';
       const body = stripDefinitionHtml(e.Desc || e.Description || '');
       if (name || body) {
-        const truncated = body.length > 280 ? body.slice(0, 280) + '…' : body;
-        lines.push(`  • ${name}${name && truncated ? ': ' : ''}${truncated}`.trim());
+        lines.push(`  • ${name}${name && body ? ': ' : ''}${body}`.trim());
       }
     });
   }
@@ -120,13 +137,32 @@ function formatLessonAsReference(lesson) {
  * For an LLM prompt we want plain readable text — strip tags, drop audio,
  * decode common entities, collapse whitespace.
  */
+function decodeHtmlEntities(value = '') {
+  const named = {
+    amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+    bull: '\u2022', iquest: '\u00bf', iexcl: '\u00a1', ndash: '-', mdash: '-',
+    aacute: '\u00e1', eacute: '\u00e9', iacute: '\u00ed', oacute: '\u00f3', uacute: '\u00fa',
+    Aacute: '\u00c1', Eacute: '\u00c9', Iacute: '\u00cd', Oacute: '\u00d3', Uacute: '\u00da',
+    ntilde: '\u00f1', Ntilde: '\u00d1', uuml: '\u00fc', Uuml: '\u00dc',
+    ldquo: '"', rdquo: '"', lsquo: "'", rsquo: "'",
+  };
+  return String(value).replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, entity) => {
+    if (entity[0] === '#') {
+      const isHex = entity[1]?.toLowerCase() === 'x';
+      const code = parseInt(entity.slice(isHex ? 2 : 1), isHex ? 16 : 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+    }
+    return Object.prototype.hasOwnProperty.call(named, entity) ? named[entity] : match;
+  });
+}
+
 function stripDefinitionHtml(html) {
   if (!html) return '';
-  return String(html)
+  return decodeHtmlEntities(String(html)
     .replace(/<audio[\s\S]*?<\/audio>/gi, '')              // drop audio players
     .replace(/<[^>]+>/g, ' ')                               // strip all other tags
     .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&'))
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -163,10 +199,14 @@ Deja espacio indicado para que el estudiante conteste.`,
     ppt: `Convierte la leccion en una presentacion PowerPoint editable:
 Usa estructura markdown con # para titulo y ## para cada slide.
 Incluye 8-10 slides con bullets breves, notas del maestro, actividad rapida y cierre.
+Para cada slide incluye metadatos: <!-- type: hook|objective|concept|example|comparison|process|activity|recap|exit -->, <!-- claim: idea central --> y <!-- visual: intencion visual -->.
+Varia los tipos de slide para que la presentacion tenga ritmo visual.
 Cuando aporte visualmente, sugiere tags [IMAGE: prompt en ingles].`,
   };
 
   return `La maestra selecciono una leccion de Athenas. No hagas solo un analisis general.
+Usa el bloque "CONTENIDO COMPLETO REAL DE ATHENAS" como fuente principal. No inventes actividades, conceptos, ejemplos, datos ni respuestas que no esten apoyados por esa fuente.
+Si falta algun dato en la leccion, dilo como "no aparece en la fuente" en vez de completarlo por imaginacion.
 
 Accion solicitada: ${ATHENAS_ASSISTANT_ACTIONS.find(a => a.value === action)?.label || action}
 
@@ -387,6 +427,9 @@ function parseEditableSlides(markdown) {
     const alignMatch = rawBody.match(/<!-- align:\s*(left|center|right|justify)\s*-->/i);
     const layoutMatch = rawBody.match(/<!-- layout:\s*([\s\S]*?)\s*-->/i);
     const styleMatch = rawBody.match(/<!-- style:\s*([\s\S]*?)\s*-->/i);
+    const typeMatch = rawBody.match(/<!-- type:\s*([a-z-]+)\s*-->/i);
+    const claimMatch = rawBody.match(/<!-- claim:\s*([\s\S]*?)\s*-->/i);
+    const visualMatch = rawBody.match(/<!-- visual:\s*([\s\S]*?)\s*-->/i);
     const notes = rawBody.match(/(?:^|\n)(?:Notas?|Notas del maestro):\s*([\s\S]+)/i);
     const body = rawBody
       .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
@@ -394,6 +437,9 @@ function parseEditableSlides(markdown) {
       .replace(/<!-- align:\s*(left|center|right|justify)\s*-->/gi, '')
       .replace(/<!-- layout:\s*[\s\S]*?\s*-->/gi, '')
       .replace(/<!-- style:\s*[\s\S]*?\s*-->/gi, '')
+      .replace(/<!-- type:\s*[a-z-]+\s*-->/gi, '')
+      .replace(/<!-- claim:\s*[\s\S]*?\s*-->/gi, '')
+      .replace(/<!-- visual:\s*[\s\S]*?\s*-->/gi, '')
       .replace(/(?:^|\n)(?:Notas?|Notas del maestro):\s*[\s\S]+$/i, '')
       .trim();
     slides.push({
@@ -406,6 +452,9 @@ function parseEditableSlides(markdown) {
       align: alignMatch?.[1] || 'left',
       layout: parseSlideLayout(layoutMatch?.[1]),
       style: parseSlideStyle(styleMatch?.[1]),
+      type: normalizeSlideType(typeMatch?.[1], slides.length),
+      claim: claimMatch?.[1]?.trim() || '',
+      visualIntent: visualMatch?.[1]?.trim() || '',
       notes: notes?.[1]?.trim() || '',
     });
   }
@@ -434,6 +483,9 @@ function slidesToMarkdown(slides) {
     const parts = [slide.body || ''];
     if (slide.imageUrl) parts.push(`![${slide.imageAlt || slide.title || 'Imagen'}](${slide.imageUrl})`);
     if (slide.linkUrl) parts.push(`[${slide.linkText || slide.linkUrl}](${slide.linkUrl})`);
+    if (slide.type) parts.push(`<!-- type: ${normalizeSlideType(slide.type, index)} -->`);
+    if (slide.claim) parts.push(`<!-- claim: ${slide.claim} -->`);
+    if (slide.visualIntent) parts.push(`<!-- visual: ${slide.visualIntent} -->`);
     if (slide.align && slide.align !== 'left') parts.push(`<!-- align: ${slide.align} -->`);
     if (slide.layout) parts.push(`<!-- layout: ${JSON.stringify(normalizeSlideLayout(slide.layout))} -->`);
     if (slide.style) parts.push(`<!-- style: ${JSON.stringify(normalizeSlideStyle(slide.style))} -->`);
@@ -450,6 +502,17 @@ const DEFAULT_SLIDE_LAYOUT = {
 };
 const FONT_OPTIONS = ['Poppins', 'Sora', 'Overlock', 'Georgia', 'Verdana'];
 const DEFAULT_SLIDE_STYLE = { fontFace: 'Poppins', bodySize: 18, titleSize: 30 };
+const SLIDE_TYPE_OPTIONS = [
+  { value: 'hook', label: 'Activar' },
+  { value: 'objective', label: 'Objetivo' },
+  { value: 'concept', label: 'Concepto' },
+  { value: 'example', label: 'Ejemplo' },
+  { value: 'comparison', label: 'Comparar' },
+  { value: 'process', label: 'Proceso' },
+  { value: 'activity', label: 'Actividad' },
+  { value: 'recap', label: 'Repaso' },
+  { value: 'exit', label: 'Cierre' },
+];
 
 function parseSlideLayout(raw) {
   if (!raw) return defaultSlideLayout();
@@ -475,6 +538,13 @@ function parseSlideStyle(raw) {
 
 function defaultSlideStyle() {
   return normalizeSlideStyle(DEFAULT_SLIDE_STYLE);
+}
+
+function normalizeSlideType(type, index = 0) {
+  const raw = String(type || '').trim().toLowerCase();
+  if (raw === 'closing' || raw === 'exit-ticket') return 'exit';
+  if (SLIDE_TYPE_OPTIONS.some(option => option.value === raw)) return raw;
+  return index === 0 ? 'hook' : 'concept';
 }
 
 function normalizeSlideStyle(style = {}) {
@@ -762,13 +832,13 @@ function SlideWorkspace({ value, onChange }) {
   }
 
   function addSlide() {
-    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
+    onChange(slidesToMarkdown([...slides, { title: 'Nueva diapositiva', body: '- Punto clave\n- Evidencia o actividad', type: 'concept', claim: 'Idea principal que debe quedar clara.', visualIntent: 'Representacion visual simple del concepto.', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
     setActive(slides.length);
   }
 
   function removeSlide(index) {
     const next = slides.filter((_, i) => i !== index);
-    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
+    onChange(slidesToMarkdown(next.length ? next : [{ title: 'Contenido', body: '', type: 'concept', align: 'left', layout: defaultSlideLayout(), style: defaultSlideStyle() }]));
     setActive(Math.max(0, index - 1));
   }
 
@@ -827,6 +897,8 @@ function SlideWorkspace({ value, onChange }) {
   );
   const currentLayout = normalizeSlideLayout(current?.layout || defaultSlideLayout());
   const currentStyle = normalizeSlideStyle(current?.style || defaultSlideStyle());
+  const currentType = normalizeSlideType(current?.type, active);
+  const currentTypeLabel = SLIDE_TYPE_OPTIONS.find(option => option.value === currentType)?.label || 'Concepto';
 
   return (
     <div className="tm-slide-workspace tm-presentation-studio">
@@ -848,6 +920,9 @@ function SlideWorkspace({ value, onChange }) {
           >
             <span className="tm-slide-thumb-num">{i + 1}</span>
             <div className="tm-slide-thumb-card">
+              <span className={`tm-slide-thumb-role role-${normalizeSlideType(slide.type, i)}`}>
+                {SLIDE_TYPE_OPTIONS.find(option => option.value === normalizeSlideType(slide.type, i))?.label || 'Concepto'}
+              </span>
               <strong className="tm-slide-thumb-title">{slide.title || 'Sin título'}</strong>
               <span className="tm-slide-thumb-preview-type">
                 {slide.imageUrl ? '🖼️ Imagen' : '📝 Texto'}
@@ -899,6 +974,14 @@ function SlideWorkspace({ value, onChange }) {
                     title="Tamano de texto"
                   >
                     {[14, 16, 18, 20, 22, 24, 26].map(size => <option key={size} value={size}>{size}</option>)}
+                  </select>
+                  <select
+                    className="tm-toolbar-select"
+                    value={currentType}
+                    onChange={(e) => updateSlide(active, { type: normalizeSlideType(e.target.value, active) })}
+                    title="Rol de la diapositiva"
+                  >
+                    {SLIDE_TYPE_OPTIONS.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
                   </select>
                   <div className="tm-toolbar-divider" />
                   <button
@@ -1001,6 +1084,26 @@ function SlideWorkspace({ value, onChange }) {
                   <button type="button" className="present" title="Modo presentacion">Present</button>
                   <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
                 </div>
+              </div>
+
+              <div className="tm-slide-storybar">
+                <div className={`tm-story-role role-${currentType}`}>{currentTypeLabel}</div>
+                <label>
+                  <span>Idea central</span>
+                  <input
+                    value={current.claim || ''}
+                    onChange={(e) => updateSlide(active, { claim: e.target.value })}
+                    placeholder="Qué debe entender o hacer el estudiante en esta diapositiva"
+                  />
+                </label>
+                <label>
+                  <span>Visual</span>
+                  <input
+                    value={current.visualIntent || ''}
+                    onChange={(e) => updateSlide(active, { visualIntent: e.target.value })}
+                    placeholder="Qué debería mostrar el apoyo visual"
+                  />
+                </label>
               </div>
 
               <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
@@ -1314,6 +1417,112 @@ function WorksheetWorkspace({ value, onChange, title }) {
   );
 }
 
+// Visible "Athenas lesson loaded" card. Lets the teacher confirm what the AI
+// will actually analyze, instead of trusting an opaque text dump in a textarea.
+// Body of the lesson is expandable so the form stays compact by default.
+function AthenasLessonCard({ lesson, onRemove }) {
+  const [expanded, setExpanded] = React.useState(false);
+  if (!lesson) return null;
+  const desc = stripDefinitionHtml(lesson.description || '');
+  const concept = stripDefinitionHtml(lesson.concept || '');
+  const stdCount  = (lesson.standards || []).length;
+  const defsCount = (lesson.definitions || []).length;
+  const objsCount = (lesson.objectives || []).length;
+  const exCount   = (lesson.examples || []).length;
+  return (
+    <div className="tm-athenas-card">
+      <div className="tm-athenas-card-head">
+        <div className="tm-athenas-card-title">
+          <span className="tm-athenas-card-icon">📘</span>
+          <div>
+            <div className="tm-athenas-card-name">{lesson.title || 'Lección Athenas'}</div>
+            <div className="tm-athenas-card-meta">
+              {lesson.subjectCode && <span>{lesson.subjectCode}</span>}
+              {lesson.levelCode && <><span>·</span><span>Grado {lesson.levelCode}</span></>}
+              {lesson.lessonNo && <><span>·</span><span>Lección {lesson.lessonNo}</span></>}
+              {lesson.blueprint && <span className="tm-athenas-pill blueprint">📐 Blueprint</span>}
+              {lesson.isGapClosing && <span className="tm-athenas-pill gap">🌉 Gap closing</span>}
+            </div>
+          </div>
+        </div>
+        <button type="button" className="tm-athenas-card-remove" onClick={onRemove} title="Quitar lección">✕</button>
+      </div>
+
+      <div className="tm-athenas-card-stats">
+        <span><strong>{stdCount}</strong> estándares</span>
+        <span><strong>{objsCount}</strong> objetivos</span>
+        <span><strong>{defsCount}</strong> conceptos / definiciones</span>
+        <span><strong>{exCount}</strong> ejemplos</span>
+      </div>
+
+      {(lesson.standards || []).length > 0 && (
+        <div className="tm-athenas-card-standards">
+          {lesson.standards.slice(0, 6).map((s, i) => (
+            <span key={i} className="tm-athenas-std-chip" title={s.Description || ''}>{s.Code}</span>
+          ))}
+          {lesson.standards.length > 6 && <span className="tm-athenas-std-more">+{lesson.standards.length - 6}</span>}
+        </div>
+      )}
+
+      <button type="button" className="tm-athenas-card-toggle" onClick={() => setExpanded(e => !e)}>
+        {expanded ? '▾ Ocultar contenido completo' : '▸ Ver contenido completo de la lección'}
+      </button>
+
+      {expanded && (
+        <div className="tm-athenas-card-body">
+          {concept && (
+            <div className="tm-athenas-section">
+              <div className="tm-athenas-section-title">Concepto central</div>
+              <div className="tm-athenas-section-text">{concept}</div>
+            </div>
+          )}
+          {desc && (
+            <div className="tm-athenas-section">
+              <div className="tm-athenas-section-title">Descripción / cuerpo de la lección</div>
+              <div className="tm-athenas-section-text">{desc}</div>
+            </div>
+          )}
+          {objsCount > 0 && (
+            <div className="tm-athenas-section">
+              <div className="tm-athenas-section-title">Objetivos de aprendizaje</div>
+              <ul className="tm-athenas-section-list">
+                {lesson.objectives.map((o, i) => {
+                  const t = stripDefinitionHtml(o.Desc || o.Description || '');
+                  return t ? <li key={i}>{t}</li> : null;
+                })}
+              </ul>
+            </div>
+          )}
+          {defsCount > 0 && (
+            <div className="tm-athenas-section">
+              <div className="tm-athenas-section-title">Conceptos / Definiciones</div>
+              <ul className="tm-athenas-section-list">
+                {lesson.definitions.map((d, i) => {
+                  const term = d.Name || '';
+                  const body = stripDefinitionHtml(d.Desc || d.Description || '');
+                  return (term || body) ? <li key={i}><strong>{term}</strong>{term && body ? ': ' : ''}{body}</li> : null;
+                })}
+              </ul>
+            </div>
+          )}
+          {exCount > 0 && (
+            <div className="tm-athenas-section">
+              <div className="tm-athenas-section-title">Ejemplos pedagógicos</div>
+              <ul className="tm-athenas-section-list">
+                {lesson.examples.map((e, i) => {
+                  const name = e.Name || '';
+                  const body = stripDefinitionHtml(e.Desc || e.Description || '');
+                  return (name || body) ? <li key={i}>{name && <strong>{name}: </strong>}{body}</li> : null;
+                })}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Download options collapsed into a single ⬇ dropdown so the header doesn't
 // show a row of competing buttons.
 function DownloadMenu({ exporting, onPDF, onPPTX, onWorksheet }) {
@@ -1385,6 +1594,10 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
   const [presentationMarkdown, setPresentationMarkdown] = React.useState('');
   const [converting, setConverting] = React.useState(''); // '' | 'presentation'
   const [athenasAction, setAthenasAction] = React.useState('profundizar');
+  // Map of fieldName → structured Athenas lesson, so we can render a visible
+  // "lesson loaded" card on top of the textarea (the prompt still uses the
+  // formatted reference text stored in values[fieldName]).
+  const [pickedLessons, setPickedLessons] = React.useState({});
   const abortRef = React.useRef(null);
   const outRef = React.useRef(null);
 
@@ -1583,13 +1796,19 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     setConverting('presentation');
     setError('');
     try {
-      const sys = `Eres un diseñador instruccional experto. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas clara, lista para proyectar en el salón.
+      const sys = `Eres un diseñador instruccional experto y director de arte educativo. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas clara, visual y lista para proyectar en el salón.
 
 Reglas de estructura:
 - Primera línea: "# " con el título de la presentación (una sola vez).
 - Cada diapositiva empieza con "## " y su título.
 - Bajo cada "##", usa bullets cortos con "- " (máximo 5 por slide; frases concisas, NO párrafos largos).
-- Divide en 7-12 diapositivas con flujo lógico: portada, objetivos/agenda, desarrollo por secciones, una actividad o ejemplo, y cierre/repaso.
+- Divide en 7-12 diapositivas con flujo lógico: activación, objetivo, conceptos clave, ejemplo, comparación o proceso cuando aplique, actividad, repaso y cierre.
+- Para cada diapositiva incluye estos metadatos HTML, cada uno en su propia línea:
+  <!-- type: hook|objective|concept|example|comparison|process|activity|recap|exit -->
+  <!-- claim: una oración con la idea central que la diapositiva debe probar o lograr -->
+  <!-- visual: intención visual concreta para la composición o imagen -->
+- Varía los tipos de diapositiva; no uses "concept" en todas.
+- Los títulos deben ser pedagógicos y específicos, no "Introducción" ni "Contenido".
 - Cuando una diapositiva se beneficie de una imagen, incluye un tag [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration"].
 - NO incluyas claves de respuestas largas ni notas internas del maestro como diapositivas.
 - Mantén el español del contenido original.
@@ -1841,18 +2060,33 @@ ${truncated}`;
                           grade={values.grado}
                           onPick={(lesson) => {
                             setField(f.name, formatLessonAsReference(lesson));
+                            setPickedLessons(prev => ({ ...prev, [f.name]: lesson }));
                           }}
                         />
                       </span>
                     )}
                   </span>
                   {f.type === 'textarea' ? (
+                    pickedLessons[f.name] ? (
+                      <AthenasLessonCard
+                        lesson={pickedLessons[f.name]}
+                        onRemove={() => {
+                          setPickedLessons(prev => {
+                            const next = { ...prev };
+                            delete next[f.name];
+                            return next;
+                          });
+                          setField(f.name, '');
+                        }}
+                      />
+                    ) : (
                     <textarea
                       rows={f.rows || 4}
                       placeholder={f.placeholder}
                       value={values[f.name]}
                       onChange={(e) => setField(f.name, e.target.value)}
                     />
+                    )
                   ) : f.type === 'select' ? (
                     <select value={values[f.name]} onChange={(e) => setField(f.name, e.target.value)}>
                       <option value="">— elegir —</option>

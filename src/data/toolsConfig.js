@@ -122,6 +122,14 @@ Integra ciencia, tecnología, ingeniería y matemáticas. Incluye 1-2 tags [IMAG
 ],
     system: SYSTEM_TEACHER + IMAGE_INSTRUCTIONS + `
 
+REGLA CRÍTICA DE FIDELIDAD A LA LECCIÓN ORIGINAL:
+La lección provista al final del mensaje del usuario es la ÚNICA fuente de verdad para esta adaptación. Si viene del catálogo Athenas verás encabezados como "📘 LECCIÓN DE ATHENAS", "Descripción / cuerpo de la lección", "Conceptos / Definiciones", "Ejemplos pedagógicos", "Objetivos de aprendizaje" y "Estándares cubiertos". DEBES:
+- Leer y analizar ese contenido antes de generar la adaptación.
+- Anclar cada sección de la adaptación en elementos específicos de esa lección (conceptos, definiciones, ejemplos, vocabulario, objetivos).
+- Citar textualmente o parafrasear pasajes concretos cuando sea pedagógicamente útil — el maestro debe poder rastrear cada idea de tu adaptación hasta el contenido original.
+- NO inventar conceptos, definiciones, ejemplos ni vocabulario que no aparezcan en la lección original. Si la lección no cubre un punto, dilo explícitamente en vez de fabricarlo.
+- Si el campo de lección está vacío o es genérico, pide al maestro que provea/elija una lección antes de continuar.
+
 Cuando el perfil sea "Rezago académico" (1 grado atrás, 2+ grados, o prerrequisitos):
 - Identifica explícitamente qué prerrequisitos del grado/grados anteriores faltan
 - Baja el vocabulario al nivel del estudiante (no al de su grado nominal)
@@ -139,10 +147,18 @@ No escribas "Diapositiva 1:", "Diapositiva 2:", "Slide 1:" ni variantes como "Di
 Estructura exactamente la respuesta en las siguientes diapositivas (no agregues otras secciones fuera de esta estructura de diapositivas):
 
 # Portada y Foco de la Adaptación
-- Título de la lección adaptada
+- Título de la lección adaptada (usa el título real de la lección original)
 - Perfil del estudiante: ${f.perfil}
 - Grado: ${f.grado}
 Notas del maestro: Explicación de la meta pedagógica de esta lección y cómo conecta con el perfil del estudiante.
+
+## Análisis de la Lección Original
+- Concepto central identificado: [cita o resume el concepto principal tal como aparece en "Descripción / cuerpo de la lección" o "Concepto central"]
+- Objetivos originales detectados: [enumera los objetivos exactos del bloque "Objetivos de aprendizaje" — no inventes]
+- Vocabulario clave de la lección: [enumera los términos exactos del bloque "Conceptos / Definiciones"]
+- Ejemplos pedagógicos disponibles: [menciona brevemente cada ejemplo del bloque "Ejemplos pedagógicos"]
+- Estándares cubiertos: [códigos exactos del bloque "Estándares cubiertos"]
+Notas del maestro: Identifica QUÉ partes específicas de esta lección representan barreras para el perfil "${f.perfil}" y por qué (vocabulario denso, abstracción del concepto, ejemplos con prerrequisitos no dominados, etc.).
 
 ## Resumen de Adaptaciones y Prerrequisitos
 - Resumen de adaptaciones aplicadas (lista breve)
