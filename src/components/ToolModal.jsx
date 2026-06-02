@@ -773,6 +773,94 @@ function MovableSlideBox({ box, className = '', label, onMove, children }) {
   );
 }
 
+// Real fullscreen presentation overlay — arrow-key navigation, ESC to exit,
+// auto-fits to viewport. Reads styling from each slide's own style/layout.
+function PresentationMode({ slides, startAt = 0, onExit }) {
+  const [idx, setIdx] = React.useState(Math.min(startAt, Math.max(slides.length - 1, 0)));
+  const current = slides[Math.min(idx, slides.length - 1)] || slides[0];
+  const total = slides.length;
+
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') onExit();
+      else if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown' || e.key === 'Enter') {
+        setIdx(i => Math.min(i + 1, total - 1));
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+        setIdx(i => Math.max(i - 1, 0));
+      } else if (e.key === 'Home') setIdx(0);
+      else if (e.key === 'End') setIdx(total - 1);
+    };
+    window.addEventListener('keydown', onKey);
+    document.documentElement.requestFullscreen?.().catch(() => {});
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+      if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+    };
+  }, [total, onExit]);
+
+  const style = normalizeSlideStyle(current?.style || defaultSlideStyle());
+  const bodyHtml = mdToHtml(current?.body || '');
+  const fontFamily = `${style.fontFace}, system-ui, sans-serif`;
+  const align = current?.align || 'left';
+
+  return (
+    <div className="tm-present-overlay" role="dialog" aria-modal="true" aria-label="Presentación">
+      <div className="tm-present-stage" key={idx}>
+        <article className="tm-present-slide" style={{ textAlign: align, fontFamily }}>
+          {current?.title && (
+            <h1 className="tm-present-title" style={{ fontSize: `clamp(40px, ${Math.max(style.titleSize * 2.6, 48)}px, 96px)` }}>
+              {current.title}
+            </h1>
+          )}
+          {current?.imageUrl && (
+            <div className="tm-present-image-wrap">
+              <img src={current.imageUrl} alt={current.imageAlt || ''} />
+            </div>
+          )}
+          {bodyHtml && (
+            <div
+              className="tm-present-body tm-md"
+              style={{ fontSize: `clamp(20px, ${Math.max(style.bodySize * 1.9, 24)}px, 36px)` }}
+              dangerouslySetInnerHTML={{ __html: bodyHtml }}
+            />
+          )}
+          {current?.linkUrl && (
+            <a className="tm-present-link" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
+              🔗 {current.linkText || current.linkUrl}
+            </a>
+          )}
+        </article>
+      </div>
+
+      <button className="tm-present-nav prev" onClick={() => setIdx(i => Math.max(i - 1, 0))} disabled={idx === 0} aria-label="Anterior">‹</button>
+      <button className="tm-present-nav next" onClick={() => setIdx(i => Math.min(i + 1, total - 1))} disabled={idx === total - 1} aria-label="Siguiente">›</button>
+
+      <div className="tm-present-chrome">
+        <span className="tm-present-counter">
+          <strong>{String(idx + 1).padStart(2, '0')}</strong>
+          <span>/ {String(total).padStart(2, '0')}</span>
+        </span>
+        <div className="tm-present-dots" aria-hidden="true">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              className={`dot ${i === idx ? 'on' : ''}`}
+              onClick={() => setIdx(i)}
+              aria-label={`Ir a diapositiva ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <button className="tm-present-exit" onClick={onExit} title="Salir (ESC)" aria-label="Salir">✕</button>
+      <div className="tm-present-hint" aria-hidden="true">ESC — salir &nbsp;·&nbsp; ← → — navegar</div>
+    </div>
+  );
+}
+
 function SlideWorkspace({ value, onChange }) {
   const slides = React.useMemo(() => parseEditableSlides(value), [value]);
   const [active, setActive] = React.useState(0);
@@ -786,6 +874,8 @@ function SlideWorkspace({ value, onChange }) {
 
   const [showInspector, setShowInspector] = React.useState(false);
   const [showNotes, setShowNotes] = React.useState(true);
+  const [showIntent, setShowIntent] = React.useState(true);
+  const [presenting, setPresenting] = React.useState(false);
 
   React.useEffect(() => {
     if (active > slides.length - 1) setActive(Math.max(slides.length - 1, 0));
@@ -901,364 +991,313 @@ function SlideWorkspace({ value, onChange }) {
   const currentTypeLabel = SLIDE_TYPE_OPTIONS.find(option => option.value === currentType)?.label || 'Concepto';
 
   return (
-    <div className="tm-slide-workspace tm-presentation-studio">
-      <div className="tm-slide-rail">
-        <div className="tm-slide-rail-head">
-          <div className="tm-slide-rail-tabs" aria-label="Vista de diapositivas">
-            <button type="button" className="active" title="Vista de miniaturas">Grid</button>
-            <button type="button" title="Vista de lista">List</button>
-          </div>
-          <strong>{slides.length} slides</strong>
-        </div>
-        <button type="button" className="tm-work-add" onClick={addSlide}>+ Add Slide</button>
-        {slides.map((slide, i) => (
-          <button
-            type="button"
-            key={`${i}-${slide.title}`}
-            className={`tm-slide-thumb ${i === active ? 'active' : ''}`}
-            onClick={() => setActive(i)}
-          >
-            <span className="tm-slide-thumb-num">{i + 1}</span>
-            <div className="tm-slide-thumb-card">
-              <span className={`tm-slide-thumb-role role-${normalizeSlideType(slide.type, i)}`}>
-                {SLIDE_TYPE_OPTIONS.find(option => option.value === normalizeSlideType(slide.type, i))?.label || 'Concepto'}
-              </span>
-              <strong className="tm-slide-thumb-title">{slide.title || 'Sin título'}</strong>
-              <span className="tm-slide-thumb-preview-type">
-                {slide.imageUrl ? '🖼️ Imagen' : '📝 Texto'}
-                {slide.align && slide.align !== 'left' && ` · ${slide.align === 'center' ? 'Centro' : slide.align === 'right' ? 'Der' : 'Just'}`}
+    <>
+      <div className="tm-studio">
+        <header className="tm-studio-topbar">
+          <div className="tm-studio-brand">
+            <span className="tm-studio-mark" aria-hidden="true">◆</span>
+            <div className="tm-studio-brand-text">
+              <span className="tm-studio-eyebrow">Studio</span>
+              <span className="tm-studio-counter">
+                <strong>{String(active + 1).padStart(2, '0')}</strong>
+                <span className="slash" aria-hidden="true">/</span>
+                <span className="total">{String(slides.length).padStart(2, '0')}</span>
+                <span className="label">diapositivas</span>
               </span>
             </div>
-          </button>
-        ))}
-      </div>
+          </div>
+          <div className="tm-studio-top-actions">
+            <button type="button" className="tm-studio-btn" onClick={duplicateSlide} title="Duplicar esta diapositiva">
+              <span aria-hidden="true">⎘</span> Duplicar
+            </button>
+            <button type="button" className="tm-studio-btn danger" onClick={() => removeSlide(active)} title="Eliminar esta diapositiva">
+              <span aria-hidden="true">✕</span> Eliminar
+            </button>
+            <button type="button" className="tm-studio-btn primary" onClick={() => setPresenting(true)} title="Iniciar presentación (pantalla completa)">
+              <span className="play" aria-hidden="true">▶</span> Presentar
+            </button>
+          </div>
+        </header>
 
-      <div className="tm-slide-editor" style={{ gridTemplateColumns: showInspector && hasMedia ? '1fr 280px' : '1fr' }}>
-        {current && (
-          <>
-            <div className="tm-slide-center-area">
-              <div className="tm-slide-toolbar" role="toolbar" aria-label="Herramientas de diapositiva">
-                <div className="tm-wysiwyg-toolbar">
-                  <button
-                    type="button"
-                    title="Deshacer"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => document.execCommand('undo', false)}
-                  >
-                    ↶
-                  </button>
-                  <button
-                    type="button"
-                    title="Rehacer"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => document.execCommand('redo', false)}
-                  >
-                    ↷
-                  </button>
-                  <div className="tm-toolbar-divider" />
+        <div className="tm-studio-body" style={{ gridTemplateColumns: showInspector && hasMedia ? '240px 1fr 280px' : '240px 1fr' }}>
+          <aside className="tm-studio-rail" aria-label="Lista de diapositivas">
+            <button type="button" className="tm-studio-rail-add" onClick={addSlide}>
+              <span aria-hidden="true">＋</span> Nueva diapositiva
+            </button>
+            <ol className="tm-studio-rail-list">
+              {slides.map((slide, i) => {
+                const role = normalizeSlideType(slide.type, i);
+                const roleLabel = SLIDE_TYPE_OPTIONS.find(o => o.value === role)?.label || 'Concepto';
+                return (
+                  <li key={`${i}-${slide.title}`}>
+                    <button
+                      type="button"
+                      className={`tm-studio-rail-item ${i === active ? 'active' : ''}`}
+                      onClick={() => setActive(i)}
+                    >
+                      <span className="num">{String(i + 1).padStart(2, '0')}</span>
+                      <div className="meta">
+                        <span className={`role role-${role}`}>{roleLabel}</span>
+                        <strong className="title">{slide.title || 'Sin título'}</strong>
+                      </div>
+                      {slide.imageUrl && <span className="badge" title="Con imagen" aria-hidden="true">◐</span>}
+                    </button>
+                  </li>
+                );
+              })}
+            </ol>
+          </aside>
+
+          {current && (
+            <main className="tm-studio-stage">
+              <div className="tm-studio-toolbar" role="toolbar" aria-label="Edición">
+                <div className="tg">
                   <select
-                    className="tm-toolbar-select"
+                    className="ti"
                     value={currentStyle.fontFace}
                     onChange={(e) => updateSlideStyle({ fontFace: e.target.value })}
-                    title="Tipografia"
+                    title="Tipografía"
                   >
                     {FONT_OPTIONS.map(font => <option key={font} value={font}>{font}</option>)}
                   </select>
                   <select
-                    className="tm-toolbar-size"
+                    className="ti narrow"
                     value={currentStyle.bodySize}
                     onChange={(e) => {
                       const bodySize = Number(e.target.value);
                       updateSlideStyle({ bodySize, titleSize: Math.min(42, bodySize + 12) });
                     }}
-                    title="Tamano de texto"
+                    title="Tamaño de cuerpo"
                   >
                     {[14, 16, 18, 20, 22, 24, 26].map(size => <option key={size} value={size}>{size}</option>)}
                   </select>
                   <select
-                    className="tm-toolbar-select"
+                    className="ti"
                     value={currentType}
                     onChange={(e) => updateSlide(active, { type: normalizeSlideType(e.target.value, active) })}
-                    title="Rol de la diapositiva"
+                    title="Rol pedagógico"
                   >
                     {SLIDE_TYPE_OPTIONS.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
                   </select>
-                  <div className="tm-toolbar-divider" />
-                  <button
-                    type="button"
-                    title="Negrita"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => document.execCommand('bold', false)}
-                  >
-                    <strong>B</strong>
-                  </button>
-                  <button
-                    type="button"
-                    title="Itálica"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => document.execCommand('italic', false)}
-                  >
-                    <em>I</em>
-                  </button>
-                  <button
-                    type="button"
-                    title="Lista de viñetas"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => document.execCommand('insertUnorderedList', false)}
-                  >
-                    • Lista
-                  </button>
-                  
-                  <div className="tm-toolbar-divider" />
-                  
-                  <button
-                    type="button"
-                    title="Alinear a la izquierda"
-                    className={current.align === 'left' ? 'active' : ''}
-                    onClick={() => updateSlide(active, { align: 'left' })}
-                  >
-                    ⬅
-                  </button>
-                  <button
-                    type="button"
-                    title="Centrar"
-                    className={current.align === 'center' ? 'active' : ''}
-                    onClick={() => updateSlide(active, { align: 'center' })}
-                  >
-                    ↔
-                  </button>
-                  <button
-                    type="button"
-                    title="Alinear a la derecha"
-                    className={current.align === 'right' ? 'active' : ''}
-                    onClick={() => updateSlide(active, { align: 'right' })}
-                  >
-                    ➡
-                  </button>
-                  <button
-                    type="button"
-                    title="Justificar"
-                    className={current.align === 'justify' ? 'active' : ''}
-                    onClick={() => updateSlide(active, { align: 'justify' })}
-                  >
-                    ⇹
-                  </button>
-                  
-                  <div className="tm-toolbar-divider" />
+                </div>
 
-                  <button
-                    type="button"
-                    title="Añadir Imagen"
-                    onClick={() => setShowImagePicker(true)}
-                  >
-                    🖼️ Imagen
-                  </button>
-                  
-                  <button
-                    type="button"
-                    title="Añadir Enlace"
-                    onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })}
-                  >
-                    🔗 Enlace
-                  </button>
+                <div className="tg">
+                  <button type="button" title="Negrita" onMouseDown={(e) => e.preventDefault()} onClick={() => document.execCommand('bold', false)}><strong>B</strong></button>
+                  <button type="button" title="Itálica" onMouseDown={(e) => e.preventDefault()} onClick={() => document.execCommand('italic', false)}><em>I</em></button>
+                  <button type="button" title="Lista" onMouseDown={(e) => e.preventDefault()} onClick={() => document.execCommand('insertUnorderedList', false)}>• Lista</button>
+                </div>
 
+                <div className="tg align">
+                  <button type="button" title="Alinear izquierda" className={current.align === 'left' ? 'active' : ''} onClick={() => updateSlide(active, { align: 'left' })} aria-label="Alinear izquierda">⟵</button>
+                  <button type="button" title="Centrar" className={current.align === 'center' ? 'active' : ''} onClick={() => updateSlide(active, { align: 'center' })} aria-label="Centrar">↔</button>
+                  <button type="button" title="Alinear derecha" className={current.align === 'right' ? 'active' : ''} onClick={() => updateSlide(active, { align: 'right' })} aria-label="Alinear derecha">⟶</button>
+                </div>
+
+                <div className="tg insert">
+                  <button type="button" onClick={() => setShowImagePicker(true)} title="Añadir imagen o generar con IA">
+                    <span aria-hidden="true">＋</span> Imagen
+                  </button>
+                  <button type="button" onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })} title="Añadir enlace">
+                    <span aria-hidden="true">＋</span> Enlace
+                  </button>
                   {hasMedia && (
-                    <>
-                      <div className="tm-toolbar-divider" />
-                      <button
-                        type="button"
-                        className={showInspector ? 'active' : ''}
-                        onClick={() => setShowInspector(!showInspector)}
-                        title="Configuración de Imagen/Enlace"
-                      >
-                        ⚙️ Propiedades
-                      </button>
-                    </>
-                  )}
-                </div>
-
-                <div className="tm-slide-actions-right">
-                  <button type="button" className="primary" onClick={() => setShowImagePicker(true)} title="Pedir cambios o recursos visuales">Request Changes</button>
-                  <button type="button" className={showInspector ? 'active' : ''} onClick={() => setShowInspector(!showInspector)} title="Mostrar estilos y propiedades">Styles</button>
-                  <button type="button" onClick={duplicateSlide} title="Duplicar diapositiva">Duplicar</button>
-                  <button type="button" className="present" title="Modo presentacion">Present</button>
-                  <button type="button" className="danger" onClick={() => removeSlide(active)} title="Eliminar diapositiva">Borrar</button>
-                </div>
-              </div>
-
-              <div className="tm-slide-storybar">
-                <div className={`tm-story-role role-${currentType}`}>{currentTypeLabel}</div>
-                <label>
-                  <span>Idea central</span>
-                  <input
-                    value={current.claim || ''}
-                    onChange={(e) => updateSlide(active, { claim: e.target.value })}
-                    placeholder="Qué debe entender o hacer el estudiante en esta diapositiva"
-                  />
-                </label>
-                <label>
-                  <span>Visual</span>
-                  <input
-                    value={current.visualIntent || ''}
-                    onChange={(e) => updateSlide(active, { visualIntent: e.target.value })}
-                    placeholder="Qué debería mostrar el apoyo visual"
-                  />
-                </label>
-              </div>
-
-              <section className="tm-slide-stage" aria-label={`Slide ${active + 1}`}>
-                <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
-                  <div className="tm-slide-canvas-content" aria-hidden="true" />
-                  <MovableSlideBox
-                    box={currentLayout.title}
-                    label="Titulo"
-                    className="title-box"
-                    onMove={(box) => updateLayoutPart('title', box)}
-                  >
-                    <input
-                      className="tm-slide-title-input"
-                      value={current.title}
-                      onChange={(e) => updateSlide(active, { title: e.target.value })}
-                      placeholder="Título de la diapositiva"
-                      style={{
-                        textAlign: current.align || 'left',
-                        fontFamily: `${currentStyle.fontFace}, system-ui, sans-serif`,
-                        fontSize: `${currentStyle.titleSize}px`,
-                      }}
-                    />
-                  </MovableSlideBox>
-                  <MovableSlideBox
-                    box={currentLayout.body}
-                    label="Texto"
-                    className="body-box"
-                    onMove={(box) => updateLayoutPart('body', box)}
-                  >
-                    <SlideBodyEditor
-                      html={currentBodyHtml}
-                      align={current.align || 'left'}
-                      slideIndex={active}
-                      style={currentStyle}
-                      onChange={(newHtml) => {
-                        const newMarkdown = htmlToMarkdown(newHtml);
-                        updateSlide(active, { body: newMarkdown });
-                      }}
-                    />
-                  </MovableSlideBox>
-
-                  {current.imageUrl ? (
-                    <div
-                      className="tm-slide-canvas-image"
-                      style={{
-                        left: `${(currentLayout.image.x / SLIDE_CANVAS.w) * 100}%`,
-                        top: `${(currentLayout.image.y / SLIDE_CANVAS.h) * 100}%`,
-                        width: `${(currentLayout.image.w / SLIDE_CANVAS.w) * 100}%`,
-                        height: `${(currentLayout.image.h / SLIDE_CANVAS.h) * 100}%`,
-                      }}
-                    >
-                      <button
-                        type="button"
-                        className="tm-slide-drag-handle image-handle"
-                        onPointerDown={beginImageDrag}
-                        title="Mover imagen"
-                      >
-                        Imagen
-                      </button>
-                      <img src={current.imageUrl} alt={current.imageAlt || ''} />
-                      <button
-                        type="button"
-                        className="tm-slide-image-remove"
-                        onClick={() => updateSlide(active, { imageUrl: '', imageAlt: '' })}
-                        title="Eliminar imagen"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      className="tm-canvas-add-image-placeholder"
-                      onClick={() => setShowImagePicker(true)}
-                      title="Hacer clic para añadir imagen de apoyo"
-                    >
-                      <span>📷 Añadir imagen o Generar con IA</span>
+                    <button type="button" className={showInspector ? 'active' : ''} onClick={() => setShowInspector(!showInspector)} title="Propiedades del recurso">
+                      ⚙ Propiedades
                     </button>
                   )}
+                </div>
 
-                  {current.linkUrl && (
-                    <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
-                      🔗 {current.linkText || current.linkUrl}
-                    </a>
-                  )}
+                <div className="tg right">
+                  <button type="button" title="Deshacer" onMouseDown={(e) => e.preventDefault()} onClick={() => document.execCommand('undo', false)}>↶</button>
+                  <button type="button" title="Rehacer" onMouseDown={(e) => e.preventDefault()} onClick={() => document.execCommand('redo', false)}>↷</button>
+                </div>
+              </div>
+
+              <section className="tm-studio-canvas-wrap" aria-label={`Diapositiva ${active + 1}`}>
+                <div className="tm-studio-canvas-frame" key={active}>
+                  <div className={`tm-slide-canvas ${current.imageUrl ? 'has-image' : ''}`} style={{ textAlign: current.align || 'left' }}>
+                    <div className="tm-slide-canvas-content" aria-hidden="true" />
+                    <MovableSlideBox
+                      box={currentLayout.title}
+                      label="Titulo"
+                      className="title-box"
+                      onMove={(box) => updateLayoutPart('title', box)}
+                    >
+                      <input
+                        className="tm-slide-title-input"
+                        value={current.title}
+                        onChange={(e) => updateSlide(active, { title: e.target.value })}
+                        placeholder="Título de la diapositiva"
+                        style={{
+                          textAlign: current.align || 'left',
+                          fontFamily: `${currentStyle.fontFace}, system-ui, sans-serif`,
+                          fontSize: `${currentStyle.titleSize}px`,
+                        }}
+                      />
+                    </MovableSlideBox>
+                    <MovableSlideBox
+                      box={currentLayout.body}
+                      label="Texto"
+                      className="body-box"
+                      onMove={(box) => updateLayoutPart('body', box)}
+                    >
+                      <SlideBodyEditor
+                        html={currentBodyHtml}
+                        align={current.align || 'left'}
+                        slideIndex={active}
+                        style={currentStyle}
+                        onChange={(newHtml) => {
+                          const newMarkdown = htmlToMarkdown(newHtml);
+                          updateSlide(active, { body: newMarkdown });
+                        }}
+                      />
+                    </MovableSlideBox>
+
+                    {current.imageUrl ? (
+                      <div
+                        className="tm-slide-canvas-image"
+                        style={{
+                          left: `${(currentLayout.image.x / SLIDE_CANVAS.w) * 100}%`,
+                          top: `${(currentLayout.image.y / SLIDE_CANVAS.h) * 100}%`,
+                          width: `${(currentLayout.image.w / SLIDE_CANVAS.w) * 100}%`,
+                          height: `${(currentLayout.image.h / SLIDE_CANVAS.h) * 100}%`,
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="tm-slide-drag-handle image-handle"
+                          onPointerDown={beginImageDrag}
+                          title="Mover imagen"
+                        >
+                          Imagen
+                        </button>
+                        <img src={current.imageUrl} alt={current.imageAlt || ''} />
+                        <button
+                          type="button"
+                          className="tm-slide-image-remove"
+                          onClick={() => updateSlide(active, { imageUrl: '', imageAlt: '' })}
+                          title="Eliminar imagen"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        className="tm-canvas-add-image-placeholder"
+                        onClick={() => setShowImagePicker(true)}
+                        title="Añadir imagen o generar con IA"
+                      >
+                        <span>＋ Imagen o IA</span>
+                      </button>
+                    )}
+
+                    {current.linkUrl && (
+                      <a className="tm-slide-link-chip" href={current.linkUrl} target="_blank" rel="noopener noreferrer">
+                        🔗 {current.linkText || current.linkUrl}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </section>
 
-              <div className="tm-slide-notes-pane">
-                <header className="tm-notes-header" onClick={() => setShowNotes(!showNotes)}>
-                  <span>📝 Notas del maestro</span>
-                  <button type="button">{showNotes ? '▼ Ocultar' : '▲ Mostrar'}</button>
-                </header>
-                {showNotes && (
-                  <textarea
-                    className="tm-notes-textarea"
-                    value={current.notes || ''}
-                    onChange={(e) => updateSlide(active, { notes: e.target.value })}
-                    placeholder="Escribe aquí las directrices pedagógicas o notas para presentar esta diapositiva..."
-                  />
-                )}
-              </div>
-            </div>
+              <div className="tm-studio-sidekick">
+                <details className="tm-studio-collapsible" open={showIntent} onToggle={(e) => setShowIntent(e.currentTarget.open)}>
+                  <summary>
+                    <span className="dot intent" aria-hidden="true" />
+                    Intención pedagógica
+                    <span className={`role-tag role-${currentType}`}>{currentTypeLabel}</span>
+                  </summary>
+                  <div className="tm-studio-collapsible-body grid2">
+                    <label>
+                      <span>Idea central</span>
+                      <input
+                        value={current.claim || ''}
+                        onChange={(e) => updateSlide(active, { claim: e.target.value })}
+                        placeholder="Qué debe entender o hacer el estudiante"
+                      />
+                    </label>
+                    <label>
+                      <span>Visual</span>
+                      <input
+                        value={current.visualIntent || ''}
+                        onChange={(e) => updateSlide(active, { visualIntent: e.target.value })}
+                        placeholder="Qué debería mostrar el apoyo visual"
+                      />
+                    </label>
+                  </div>
+                </details>
 
-            {showInspector && hasMedia && (
-              <aside className="tm-slide-inspector">
-                <div className="tm-inspector-media-details">
-                  {current.imageUrl && (
-                    <div className="tm-inspector-box">
-                      <span>Ajustes de Imagen</span>
-                      <label>
-                        <small>URL de imagen</small>
-                        <input
-                          value={current.imageUrl || ''}
-                          onChange={(e) => updateSlide(active, { imageUrl: e.target.value })}
-                          placeholder="https://..."
-                        />
-                      </label>
-                      <label>
-                        <small>Descripción (alt)</small>
-                        <input
-                          value={current.imageAlt || ''}
-                          onChange={(e) => updateSlide(active, { imageAlt: e.target.value })}
-                          placeholder="Descripción breve de la imagen"
-                        />
-                      </label>
-                    </div>
-                  )}
-                  {current.linkUrl && (
-                    <div className="tm-inspector-box">
-                      <span>Ajustes de Enlace</span>
-                      <label>
-                        <small>Texto del enlace</small>
-                        <input
-                          value={current.linkText || ''}
-                          onChange={(e) => updateSlide(active, { linkText: e.target.value })}
-                          placeholder="Recurso, video, lectura..."
-                        />
-                      </label>
-                      <label>
-                        <small>URL del enlace</small>
-                        <input
-                          value={current.linkUrl || ''}
-                          onChange={(e) => updateSlide(active, { linkUrl: e.target.value })}
-                          placeholder="https://..."
-                        />
-                      </label>
-                    </div>
-                  )}
+                <details className="tm-studio-collapsible" open={showNotes} onToggle={(e) => setShowNotes(e.currentTarget.open)}>
+                  <summary>
+                    <span className="dot notes" aria-hidden="true" />
+                    Notas del maestro
+                    <span className="muted">para guiar la lección</span>
+                  </summary>
+                  <div className="tm-studio-collapsible-body">
+                    <textarea
+                      className="tm-studio-notes-textarea"
+                      value={current.notes || ''}
+                      onChange={(e) => updateSlide(active, { notes: e.target.value })}
+                      placeholder="Directrices pedagógicas o notas para presentar esta diapositiva..."
+                    />
+                  </div>
+                </details>
+              </div>
+            </main>
+          )}
+
+          {showInspector && hasMedia && (
+            <aside className="tm-studio-inspector" aria-label="Propiedades del recurso">
+              <header className="tm-studio-inspector-head">
+                <strong>Propiedades</strong>
+                <button type="button" className="tm-studio-inspector-close" onClick={() => setShowInspector(false)} aria-label="Cerrar">✕</button>
+              </header>
+              {current.imageUrl && (
+                <div className="tm-studio-inspector-box">
+                  <span className="title">🖼 Imagen</span>
+                  <label>
+                    <small>URL</small>
+                    <input
+                      value={current.imageUrl || ''}
+                      onChange={(e) => updateSlide(active, { imageUrl: e.target.value })}
+                      placeholder="https://..."
+                    />
+                  </label>
+                  <label>
+                    <small>Descripción (alt)</small>
+                    <input
+                      value={current.imageAlt || ''}
+                      onChange={(e) => updateSlide(active, { imageAlt: e.target.value })}
+                      placeholder="Descripción breve de la imagen"
+                    />
+                  </label>
                 </div>
-              </aside>
-            )}
-          </>
-        )}
-      </div>
+              )}
+              {current.linkUrl && (
+                <div className="tm-studio-inspector-box">
+                  <span className="title">🔗 Enlace</span>
+                  <label>
+                    <small>Texto</small>
+                    <input
+                      value={current.linkText || ''}
+                      onChange={(e) => updateSlide(active, { linkText: e.target.value })}
+                      placeholder="Recurso, video, lectura..."
+                    />
+                  </label>
+                  <label>
+                    <small>URL</small>
+                    <input
+                      value={current.linkUrl || ''}
+                      onChange={(e) => updateSlide(active, { linkUrl: e.target.value })}
+                      placeholder="https://..."
+                    />
+                  </label>
+                </div>
+              )}
+            </aside>
+          )}
+        </div>
 
       {showImagePicker && (
         <div className="tm-image-picker-overlay" onClick={(e) => { if (e.target === e.currentTarget) setShowImagePicker(false); }}>
@@ -1347,7 +1386,16 @@ function SlideWorkspace({ value, onChange }) {
           </div>
         </div>
       )}
-    </div>
+      </div>
+
+      {presenting && (
+        <PresentationMode
+          slides={slides}
+          startAt={active}
+          onExit={() => setPresenting(false)}
+        />
+      )}
+    </>
   );
 }
 
