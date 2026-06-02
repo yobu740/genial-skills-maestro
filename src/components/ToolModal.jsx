@@ -1025,26 +1025,22 @@ function SlideWorkspace({ value, onChange }) {
               <span aria-hidden="true">＋</span> Nueva diapositiva
             </button>
             <ol className="tm-studio-rail-list">
-              {slides.map((slide, i) => {
-                const role = normalizeSlideType(slide.type, i);
-                const roleLabel = SLIDE_TYPE_OPTIONS.find(o => o.value === role)?.label || 'Concepto';
-                return (
-                  <li key={`${i}-${slide.title}`}>
-                    <button
-                      type="button"
-                      className={`tm-studio-rail-item ${i === active ? 'active' : ''}`}
-                      onClick={() => setActive(i)}
-                    >
-                      <span className="num">{String(i + 1).padStart(2, '0')}</span>
-                      <div className="meta">
-                        <span className={`role role-${role}`}>{roleLabel}</span>
-                        <strong className="title">{slide.title || 'Sin título'}</strong>
-                      </div>
-                      {slide.imageUrl && <span className="badge" title="Con imagen" aria-hidden="true">◐</span>}
-                    </button>
-                  </li>
-                );
-              })}
+              {slides.map((slide, i) => (
+                <li key={`${i}-${slide.title}`}>
+                  <button
+                    type="button"
+                    className={`tm-studio-rail-item ${i === active ? 'active' : ''}`}
+                    onClick={() => setActive(i)}
+                  >
+                    <span className="num">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="meta">
+                      <strong className="title">{slide.title || 'Sin título'}</strong>
+                      <span className="preview">{(slide.body || '').replace(/[#*`>\-]/g, '').trim().slice(0, 48) || 'Sin contenido'}</span>
+                    </div>
+                    {slide.imageUrl && <span className="badge" title="Con imagen" aria-hidden="true">◐</span>}
+                  </button>
+                </li>
+              ))}
             </ol>
           </aside>
 
@@ -1070,14 +1066,6 @@ function SlideWorkspace({ value, onChange }) {
                     title="Tamaño de cuerpo"
                   >
                     {[14, 16, 18, 20, 22, 24, 26].map(size => <option key={size} value={size}>{size}</option>)}
-                  </select>
-                  <select
-                    className="ti"
-                    value={currentType}
-                    onChange={(e) => updateSlide(active, { type: normalizeSlideType(e.target.value, active) })}
-                    title="Rol pedagógico"
-                  >
-                    {SLIDE_TYPE_OPTIONS.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}
                   </select>
                 </div>
 
@@ -1206,7 +1194,6 @@ function SlideWorkspace({ value, onChange }) {
                   <summary>
                     <span className="dot intent" aria-hidden="true" />
                     Intención pedagógica
-                    <span className={`role-tag role-${currentType}`}>{currentTypeLabel}</span>
                   </summary>
                   <div className="tm-studio-collapsible-body grid2">
                     <label>
@@ -1838,31 +1825,51 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
 
   // "Convertir a Presentación" — a dedicated AI pass restructures the document
   // into clean slide markdown, THEN opens the slide editor. Cached so a second
-  // click just re-opens the editor without re-spending tokens.
+  // click just re-opens the editor without re-spending tokens. Uses Claude
+  // Sonnet for structure quality (mini was producing empty leading slides).
   async function convertToPresentation() {
     if (presentationMarkdown) { setViewMode('presentation'); return; }
     setConverting('presentation');
     setError('');
     try {
-      const sys = `Eres un diseñador instruccional experto y director de arte educativo. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas clara, visual y lista para proyectar en el salón.
+      const sys = `Eres un diseñador instruccional experto. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas IMPECABLE, lista para proyectar en el salón.
 
-Reglas de estructura:
-- Primera línea: "# " con el título de la presentación (una sola vez).
-- Cada diapositiva empieza con "## " y su título.
-- Bajo cada "##", usa bullets cortos con "- " (máximo 5 por slide; frases concisas, NO párrafos largos).
-- Divide en 7-12 diapositivas con flujo lógico: activación, objetivo, conceptos clave, ejemplo, comparación o proceso cuando aplique, actividad, repaso y cierre.
-- Para cada diapositiva incluye estos metadatos HTML, cada uno en su propia línea:
-  <!-- type: hook|objective|concept|example|comparison|process|activity|recap|exit -->
-  <!-- claim: una oración con la idea central que la diapositiva debe probar o lograr -->
-  <!-- visual: intención visual concreta para la composición o imagen -->
-- Varía los tipos de diapositiva; no uses "concept" en todas.
-- Los títulos deben ser pedagógicos y específicos, no "Introducción" ni "Contenido".
-- Cuando una diapositiva se beneficie de una imagen, incluye un tag [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration"].
-- NO incluyas claves de respuestas largas ni notas internas del maestro como diapositivas.
+REGLAS ESTRICTAS DE ESTRUCTURA (todas obligatorias):
+- NO uses "# " (un solo hash) en ningún lugar. Cada diapositiva — INCLUIDA la primera — empieza con "## " seguido del título.
+- TODAS las diapositivas DEBEN tener cuerpo: 3 a 5 bullets concretos con "- ". NUNCA dejes una diapositiva con solo el título. Si no tienes contenido real para una diapositiva, NO la incluyas.
+- Diapositiva 1 = PORTADA con contenido real: tema/título de la lección, objetivo en una frase, grado/perfil del estudiante si aplica. Mínimo 3 bullets concretos.
+- Diapositiva 2 = AGENDA / "Qué vamos a aprender": 3-5 bullets enumerando las secciones que vienen.
+- A partir de la 3, desarrolla por secciones del contenido original: conceptos clave, vocabulario, ejemplo concreto, práctica guiada, práctica independiente, cierre o exit ticket.
+- Total: 7 a 12 diapositivas. Flujo lógico, sin redundancia, sin slides huecos.
+- Cuando una diapositiva se beneficie de una imagen, incluye [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration, soft colors, age-appropriate, white background"] al final de los bullets de esa diapositiva.
+- Bullets concisos: 6-12 palabras cada uno, frases declarativas (NO párrafos).
+- NO incluyas como diapositivas: "Notas del maestro", claves de respuesta largas, instrucciones internas, metadatos.
 - Mantén el español del contenido original.
-Responde SOLO con el markdown de la presentación, sin explicaciones.`;
-      const user = `Convierte este contenido en una presentación de diapositivas:\n\n"""\n${output}\n"""`;
-      let md = await streamToString({ system: sys, user });
+
+Responde SOLO con el markdown de la presentación, sin introducción ni explicación. Empieza directamente con "## ".`;
+      const user = `Convierte este contenido en una presentación de diapositivas siguiendo las reglas al pie de la letra. Contenido fuente:\n\n"""\n${output}\n"""`;
+      // Override the modal's default model — Sonnet for structure quality.
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'anthropic/claude-sonnet-4.5', system: sys, user }),
+      });
+      if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let md = '', buf = '';
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n'); buf = lines.pop() ?? '';
+        for (const l of lines) {
+          if (!l.startsWith('data:')) continue;
+          const p = l.slice(5).trim();
+          if (p === '[DONE]') continue;
+          try { const j = JSON.parse(p); if (j.error) throw new Error(j.error); if (j.delta) md += j.delta; } catch {}
+        }
+      }
       md = await resolveImageTags(md, () => {}, setImageStatus);
       md = cleanGeneratedOutput(md);
       setPresentationMarkdown(md);
