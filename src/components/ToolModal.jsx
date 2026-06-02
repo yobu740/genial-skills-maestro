@@ -1876,25 +1876,37 @@ function ToolModal({ tool, onClose, embedded = false, initialValues = null, onSw
     setConverting('presentation');
     setError('');
     try {
-      const sys = `Eres un diseñador instruccional experto. Conviertes contenido educativo en una PRESENTACIÓN de diapositivas IMPECABLE, lista para proyectar en el salón.
+      const sys = `Eres un diseñador instruccional. Tu trabajo es REFORMATEAR contenido educativo ya generado para proyectarlo en clase. NO es reinventar ni reinterpretar.
 
-REGLAS ESTRICTAS DE ESTRUCTURA (todas obligatorias):
-- NO uses "# " (un solo hash) en ningún lugar. Cada diapositiva — INCLUIDA la primera — empieza con "## " seguido del título.
-- TODAS las diapositivas DEBEN tener cuerpo: 3 a 5 bullets concretos con "- ". NUNCA dejes una diapositiva con solo el título. Si no tienes contenido real para una diapositiva, NO la incluyas.
-- Diapositiva 1 = PORTADA con contenido real: tema/título de la lección, objetivo en una frase, grado/perfil del estudiante si aplica. Mínimo 3 bullets concretos.
-- Diapositiva 2 = AGENDA / "Qué vamos a aprender": 3-5 bullets enumerando las secciones que vienen.
-- A partir de la 3, desarrolla por secciones del contenido original: conceptos clave, vocabulario, ejemplo concreto, práctica guiada, práctica independiente, cierre o exit ticket.
-- Total: 7 a 12 diapositivas. Flujo lógico, sin redundancia, sin slides huecos.
-- Cuando una diapositiva se beneficie de una imagen, incluye [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration, soft colors, age-appropriate, white background"] al final de los bullets de esa diapositiva.
-- Bullets concisos: 6-12 palabras cada uno, frases declarativas (NO párrafos).
+PRINCIPIO RECTOR (FIDELIDAD AL DOCUMENTO FUENTE):
+- Cada diapositiva DEBE corresponder a una sección o subsección concreta del documento fuente. Si el documento tiene secciones como "Análisis de la Lección Original", "Activación y Vocabulario", "Práctica Independiente", etc., cada una de ellas es una (o más) diapositivas. Sigue el orden y los títulos del original lo más fielmente posible.
+- NO inventes contenido nuevo. NO parafrasees de forma que cambie el significado. PRESERVA términos técnicos, definiciones, ejemplos, ecuaciones y vocabulario tal como aparecen.
+- Si el documento ya contiene una "Portada" o sección equivalente, úsala como Diapositiva 1 con sus bullets reales. Si NO la tiene, créala con: tema/título de la lección, objetivo en una frase, grado/perfil del estudiante. Mínimo 3 bullets concretos.
+- Tu intervención se limita a: (a) elegir 3-5 puntos clave por sección, (b) condensarlos en bullets concisos (6-12 palabras cada uno), (c) mantener el flujo lógico del original.
+
+REGLAS ESTRICTAS DE ESTRUCTURA:
+- NO uses "# " (un solo hash) en ningún lugar. Cada diapositiva empieza con "## " seguido del título.
+- TODAS las diapositivas DEBEN tener cuerpo: 3 a 5 bullets concretos con "- ". NUNCA dejes una diapositiva con solo el título.
+- Total: entre 7 y 12 diapositivas. Sin redundancia, sin slides huecos. Si el documento es corto, menos diapositivas.
+- Bullets concisos: 6-12 palabras, frases declarativas (NO párrafos).
 - NO incluyas como diapositivas: "Notas del maestro", claves de respuesta largas, instrucciones internas, metadatos.
 - Mantén el español del contenido original.
 
+IMÁGENES (REGLAS DURAS):
+- Máximo UNA imagen por diapositiva, y SOLO cuando aporte valor pedagógico real.
+- Formato exacto: [IMAGE: prompt detallado en INGLÉS, estilo "clean educational illustration, soft colors, age-appropriate, white background"]
+- El prompt debe ser ÚNICO para cada diapositiva: describe específicamente lo que esa diapositiva enseña. NUNCA repitas el mismo prompt en distintas diapositivas. NUNCA pongas el mismo prompt varias veces dentro de la misma diapositiva.
+- Colócalo en su propia línea al final de los bullets de esa diapositiva. NUNCA como bullet (no empieces con "- ").
+
 PRESERVACIÓN DE MATEMÁTICAS (CRÍTICO):
-Si el contenido fuente contiene expresiones matemáticas en notación LaTeX — delimitadas por $...$ (inline), $$...$$ (display), \\(...\\) o \\[...\\] — DEBES preservar cada expresión EXACTAMENTE como aparece, incluidos los delimitadores. NUNCA conviertas LaTeX a texto plano (no escribas "x al cuadrado" cuando el original sea $x^2$). NUNCA elimines $ ni \\( \\). Las fórmulas, ecuaciones y símbolos matemáticos son contenido literal de la lección y se renderizan en la diapositiva.
+Si el contenido fuente contiene expresiones matemáticas en notación LaTeX — delimitadas por $...$ (inline), $$...$$ (display), \\(...\\) o \\[...\\] — DEBES preservar cada expresión EXACTAMENTE como aparece, incluidos los delimitadores. NUNCA conviertas LaTeX a texto plano (no escribas "x al cuadrado" cuando el original sea $x^2$). NUNCA elimines $ ni \\( \\). Las fórmulas, ecuaciones y símbolos matemáticos son contenido literal de la lección.
 
 Responde SOLO con el markdown de la presentación, sin introducción ni explicación. Empieza directamente con "## ".`;
-      const user = `Convierte este contenido en una presentación de diapositivas siguiendo las reglas al pie de la letra. Contenido fuente:\n\n"""\n${output}\n"""`;
+      // Strip already-rendered ![alt](url) image markdown from the source so the
+      // model doesn't echo the alt text into bullets. The conversion model will
+      // place fresh [IMAGE: ...] tags where appropriate.
+      const sourceClean = String(output).replace(/!\[[^\]]*\]\([^)]+\)/g, '').replace(/\n{3,}/g, '\n\n').trim();
+      const user = `REFORMATEA este documento como una presentación de diapositivas para clase. Sigue el orden, los títulos y el contenido del documento — tu rol es estructurarlo en slides, NO reescribirlo.\n\nDOCUMENTO FUENTE:\n\n"""\n${sourceClean}\n"""`;
       // Override the modal's default model — Sonnet for structure quality.
       const res = await fetch('/api/generate', {
         method: 'POST',
@@ -1917,6 +1929,18 @@ Responde SOLO con el markdown de la presentación, sin introducción ni explicac
           try { const j = JSON.parse(p); if (j.error) throw new Error(j.error); if (j.delta) md += j.delta; } catch {}
         }
       }
+      // Safety net: dedupe identical [IMAGE: ...] tags within each slide
+      // (between ## headings) before generating, so a repeated prompt only
+      // produces one image and one alt — never bullet-spam.
+      md = md.split(/(?=^## )/m).map(section => {
+        const seen = new Set();
+        return section.replace(/\[IMAGE:\s*([^\]]+)\]/gi, (full, prompt) => {
+          const key = prompt.trim().toLowerCase();
+          if (seen.has(key)) return '';
+          seen.add(key);
+          return full;
+        });
+      }).join('');
       md = await resolveImageTags(md, () => {}, setImageStatus);
       md = cleanGeneratedOutput(md);
       setPresentationMarkdown(md);
