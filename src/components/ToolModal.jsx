@@ -580,12 +580,45 @@ function clampNumber(value, min, max, fallback) {
 
 function parseInlineFormatting(text) {
   if (!text) return '';
-  return text
+
+  // Stash math FIRST so escaping + bold/italic regex never touch LaTeX. Each
+  // match becomes an opaque sentinel that the final pass replaces with a
+  // KaTeX-rendered, contenteditable=false span carrying the original LaTeX in
+  // data-tex — that's how htmlToMarkdown round-trips back to "$...$" without
+  // losing anything.
+  const mathParts = [];
+  const stash = (latex, displayMode) => {
+    const idx = mathParts.length;
+    mathParts.push({ latex, displayMode });
+    return ` MATH${idx} `;
+  };
+  const work = text
+    .replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => stash(tex.trim(), true))
+    .replace(/\\\[([\s\S]+?)\\\]/g, (_, tex) => stash(tex.trim(), true))
+    .replace(/\$(?!\s)([^\n$]+?)(?<!\s)\$(?!\d)/g, (_, tex) => stash(tex, false))
+    .replace(/\\\(([^\n]+?)\\\)/g, (_, tex) => stash(tex, false));
+
+  let out = work
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+  out = out.replace(/ MATH(\d+) /g, (_, n) => {
+    const m = mathParts[Number(n)];
+    if (!m) return '';
+    const rendered = renderMath(m.latex, m.displayMode);
+    const safeTex = m.latex
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    const delim = m.displayMode ? '$$' : '$';
+    return `<span class="tm-math-inline${m.displayMode ? ' display' : ''}" contenteditable="false" data-tex="${safeTex}" data-delim="${delim}">${rendered}</span>`;
+  });
+
+  return out;
 }
 
 function markdownToHtmlForEditor(md) {
@@ -635,7 +668,15 @@ function htmlToMarkdown(html) {
     }
     if (node.nodeType === Node.ELEMENT_NODE) {
       const tag = node.tagName.toLowerCase();
-      
+
+      // Math span — restore from data-tex (the rendered KaTeX HTML is opaque
+      // text noise; the LaTeX source is the authoritative form).
+      if (tag === 'span' && node.classList?.contains('tm-math-inline')) {
+        const tex = node.getAttribute('data-tex') || '';
+        const delim = node.getAttribute('data-delim') || '$';
+        return `${delim}${tex}${delim}`;
+      }
+
       if (tag === 'li') {
         let childText = '';
         for (const child of node.childNodes) {
@@ -1085,7 +1126,10 @@ function SlideWorkspace({ value, onChange }) {
                   <button type="button" onClick={() => setShowImagePicker(true)} title="Añadir imagen o generar con IA">
                     <span aria-hidden="true">＋</span> Imagen
                   </button>
-                  <button type="button" onClick={() => updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' })} title="Añadir enlace">
+                  <button type="button" onClick={() => {
+                    updateSlide(active, { linkUrl: current.linkUrl || 'https://', linkText: current.linkText || 'Recurso' });
+                    setShowInspector(true);
+                  }} title="Añadir enlace">
                     <span aria-hidden="true">＋</span> Enlace
                   </button>
                   {hasMedia && (
@@ -1845,6 +1889,9 @@ REGLAS ESTRICTAS DE ESTRUCTURA (todas obligatorias):
 - Bullets concisos: 6-12 palabras cada uno, frases declarativas (NO párrafos).
 - NO incluyas como diapositivas: "Notas del maestro", claves de respuesta largas, instrucciones internas, metadatos.
 - Mantén el español del contenido original.
+
+PRESERVACIÓN DE MATEMÁTICAS (CRÍTICO):
+Si el contenido fuente contiene expresiones matemáticas en notación LaTeX — delimitadas por $...$ (inline), $$...$$ (display), \\(...\\) o \\[...\\] — DEBES preservar cada expresión EXACTAMENTE como aparece, incluidos los delimitadores. NUNCA conviertas LaTeX a texto plano (no escribas "x al cuadrado" cuando el original sea $x^2$). NUNCA elimines $ ni \\( \\). Las fórmulas, ecuaciones y símbolos matemáticos son contenido literal de la lección y se renderizan en la diapositiva.
 
 Responde SOLO con el markdown de la presentación, sin introducción ni explicación. Empieza directamente con "## ".`;
       const user = `Convierte este contenido en una presentación de diapositivas siguiendo las reglas al pie de la letra. Contenido fuente:\n\n"""\n${output}\n"""`;

@@ -4702,6 +4702,24 @@ a { color: inherit; text-decoration: none; }
   border-radius: 0;
 }
 
+/* Inline math inside slide bodies — KaTeX styles handle most of it;
+   we just keep the wrapper visually flush with surrounding text and
+   prevent the contenteditable cursor from stranding inside the span. */
+.tm-math-inline {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0 1px;
+}
+
+.tm-math-inline.display {
+  display: block;
+  margin: 8px 0;
+  text-align: center;
+}
+
 /* ── Sidekick (intent + notes collapsibles) ───────────────────────────── */
 .tm-studio-sidekick {
   display: flex;
@@ -5100,6 +5118,7 @@ a { color: inherit; text-decoration: none; }
   height: 36px;
   font-size: 14px;
   cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transition: all 0.15s;
 }
